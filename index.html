@@ -18,13 +18,15 @@ html{
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     background:#080808;
     color:#fff;
     overflow-x:hidden;
 }
 
-button,input,select{
+button,
+input,
+select{
     font:inherit;
 }
 
@@ -32,30 +34,34 @@ button{
     cursor:pointer;
 }
 
-/* =========================
-   INFO
-========================= */
+/* ==================================================
+   INFO BAR
+================================================== */
 
 .top-info{
     background:#fff;
     color:#000;
     text-align:center;
+
     padding:9px 15px;
+
     font-size:11px;
     font-weight:800;
     letter-spacing:.8px;
 }
 
-/* =========================
+/* ==================================================
    NAVIGATION
-========================= */
+================================================== */
 
 nav{
     position:absolute;
     top:34px;
     left:0;
+
     width:100%;
-    z-index:20;
+
+    z-index:30;
 
     display:flex;
     align-items:center;
@@ -80,8 +86,10 @@ nav{
 .logo-est{
     display:block;
     margin-top:7px;
+
     font-size:9px;
     letter-spacing:4px;
+
     opacity:.75;
 }
 
@@ -95,8 +103,10 @@ nav{
 .nav-button{
     color:#fff;
     text-decoration:none;
+
     background:none;
     border:0;
+
     font-size:12px;
     font-weight:700;
     letter-spacing:1px;
@@ -113,6 +123,7 @@ nav{
 
 .cart-count{
     position:absolute;
+
     top:-10px;
     right:-13px;
 
@@ -120,6 +131,7 @@ nav{
     height:17px;
 
     border-radius:50%;
+
     background:#fff;
     color:#000;
 
@@ -131,9 +143,9 @@ nav{
     font-weight:900;
 }
 
-/* =========================
+/* ==================================================
    HERO
-========================= */
+================================================== */
 
 .hero{
     position:relative;
@@ -150,40 +162,38 @@ nav{
 }
 
 /*
-   HAUPTBANNER
+   DAS HAUPTBILD
 
-   Das Bild liegt direkt als Hintergrund
-   hinter dem kompletten Hero.
+   Car-1 liegt direkt hinter dem großen Logo.
 */
 
-.hero-image{
+.hero-car-background{
     position:absolute;
-    inset:0;
 
-    width:100%;
-    height:100%;
+    inset:0;
 
     z-index:0;
 
-    background-image:url("assets/Car-1(2).JPG");
+    background-image:url("assets/Car-1.JPG");
+
+    background-size:cover;
+    background-position:center center;
     background-repeat:no-repeat;
 
-    /*
-       Das Bild bleibt groß und füllt
-       den kompletten Banner.
-    */
-    background-size:cover;
+    transform:scale(1.02);
 
-    /*
-       IMMER MITTIG
-    */
-    background-position:center center;
+    filter:brightness(.52);
 }
 
-/* dunkler Verlauf */
+/*
+   Zusätzlicher Verlauf.
+   Das Auto bleibt sichtbar,
+   aber das Logo bekommt Kontrast.
+*/
 
 .hero-overlay{
     position:absolute;
+
     inset:0;
 
     z-index:1;
@@ -191,28 +201,36 @@ nav{
     background:
         linear-gradient(
             to bottom,
-            rgba(0,0,0,.50) 0%,
-            rgba(0,0,0,.12) 35%,
-            rgba(0,0,0,.18) 55%,
-            rgba(0,0,0,.86) 100%
+            rgba(0,0,0,.45) 0%,
+            rgba(0,0,0,.08) 32%,
+            rgba(0,0,0,.10) 52%,
+            rgba(0,0,0,.42) 75%,
+            rgba(0,0,0,.92) 100%
         );
 }
 
-/* zusätzlicher dezenter Verlauf */
+/*
+   Dezente Vignette
+*/
 
 .hero-overlay::after{
     content:"";
 
     position:absolute;
+
     inset:0;
 
     background:
         radial-gradient(
-            circle at center,
-            transparent 15%,
-            rgba(0,0,0,.18) 100%
+            ellipse at center,
+            transparent 25%,
+            rgba(0,0,0,.35) 100%
         );
 }
+
+/* ==================================================
+   HERO CONTENT
+================================================== */
 
 .hero-content{
     position:relative;
@@ -220,11 +238,11 @@ nav{
     z-index:2;
 
     width:100%;
-    max-width:1200px;
+    max-width:1300px;
 
     min-height:850px;
 
-    padding:140px 30px 80px;
+    padding:120px 30px 70px;
 
     display:flex;
     flex-direction:column;
@@ -235,9 +253,13 @@ nav{
     text-align:center;
 }
 
-/* großes Logo */
+/*
+   GROßES LOGO
+*/
 
 .hero-logo{
+    position:relative;
+
     font-size:clamp(65px,11vw,155px);
 
     line-height:.82;
@@ -246,11 +268,16 @@ nav{
 
     letter-spacing:clamp(2px,.8vw,10px);
 
+    color:#fff;
+
     text-shadow:
-        0 5px 30px rgba(0,0,0,.8);
+        0 5px 20px rgba(0,0,0,.95),
+        0 0 35px rgba(0,0,0,.55);
 }
 
-/* EST */
+/*
+   EST. 2025
+*/
 
 .hero-est{
     margin-top:30px;
@@ -261,20 +288,21 @@ nav{
 
     letter-spacing:9px;
 
-    opacity:.9;
+    opacity:.92;
 
     text-shadow:
-        0 3px 15px rgba(0,0,0,.9);
+        0 3px 15px rgba(0,0,0,.95);
 }
 
-/* =========================
-   SLOGAN
-========================= */
+/*
+   SPRUCH
+   Viel Abstand zum Logo
+*/
 
 .hero-slogan{
-    margin-top:135px;
+    margin-top:125px;
 
-    max-width:900px;
+    max-width:950px;
 
     text-align:center;
 }
@@ -282,14 +310,14 @@ nav{
 .hero-slogan-main{
     font-size:clamp(25px,4vw,56px);
 
-    line-height:1.05;
+    line-height:1.08;
 
     font-weight:900;
 
-    letter-spacing:2px;
+    letter-spacing:1.5px;
 
     text-shadow:
-        0 4px 25px rgba(0,0,0,.9);
+        0 4px 25px rgba(0,0,0,.95);
 }
 
 .hero-slogan-main span{
@@ -299,7 +327,7 @@ nav{
 .hero-slogan-small{
     margin-top:30px;
 
-    font-size:clamp(11px,1.5vw,17px);
+    font-size:clamp(11px,1.4vw,17px);
 
     font-weight:700;
 
@@ -308,7 +336,7 @@ nav{
     opacity:.95;
 
     text-shadow:
-        0 3px 15px rgba(0,0,0,.9);
+        0 3px 15px rgba(0,0,0,.95);
 }
 
 .hero-description{
@@ -326,9 +354,9 @@ nav{
         0 2px 12px rgba(0,0,0,.95);
 }
 
-/* =========================
+/* ==================================================
    SECTIONS
-========================= */
+================================================== */
 
 section{
     padding:100px 5%;
@@ -341,19 +369,23 @@ section{
 
 .section-title h2{
     font-size:clamp(30px,5vw,55px);
+
     font-weight:900;
+
     letter-spacing:2px;
 }
 
 .section-title p{
     margin-top:12px;
+
     color:#888;
+
     font-size:13px;
 }
 
-/* =========================
+/* ==================================================
    SHOP
-========================= */
+================================================== */
 
 .shop{
     background:#080808;
@@ -361,21 +393,27 @@ section{
 
 .categories{
     display:flex;
+
     justify-content:center;
     flex-wrap:wrap;
+
     gap:10px;
+
     margin-bottom:45px;
 }
 
 .category-btn{
     border:1px solid #333;
+
     background:transparent;
     color:#fff;
 
     padding:11px 20px;
 
     font-size:11px;
+
     font-weight:700;
+
     letter-spacing:1px;
 }
 
@@ -387,9 +425,11 @@ section{
 
 .products{
     max-width:1200px;
+
     margin:auto;
 
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
 
     gap:22px;
@@ -401,20 +441,25 @@ section{
     border:1px solid #1d1d1d;
 
     transition:.25s;
+
+    cursor:pointer;
 }
 
 .product:hover{
     transform:translateY(-5px);
+
     border-color:#444;
 }
 
 .product-image{
     width:100%;
+
     height:340px;
 
     background:#151515;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
@@ -440,11 +485,13 @@ section{
 
 .product-info h3{
     font-size:13px;
+
     margin-bottom:7px;
 }
 
 .product-info p{
     font-size:12px;
+
     color:#888;
 }
 
@@ -452,12 +499,13 @@ section{
     margin-top:13px;
 
     font-size:13px;
+
     font-weight:800;
 }
 
-/* =========================
+/* ==================================================
    EVENTS
-========================= */
+================================================== */
 
 .events{
     background:#0c0c0c;
@@ -465,9 +513,11 @@ section{
 
 .events-grid{
     max-width:1050px;
+
     margin:auto;
 
     display:grid;
+
     grid-template-columns:repeat(2,1fr);
 
     gap:22px;
@@ -493,12 +543,15 @@ section{
 
 .event h3{
     font-size:25px;
+
     margin-bottom:10px;
 }
 
 .event-location{
     font-size:12px;
+
     color:#aaa;
+
     margin-bottom:18px;
 }
 
@@ -521,13 +574,15 @@ section{
     padding:12px 18px;
 
     font-size:10px;
+
     font-weight:900;
+
     letter-spacing:1px;
 }
 
-/* =========================
+/* ==================================================
    CARS
-========================= */
+================================================== */
 
 .cars-section{
     background:#080808;
@@ -535,12 +590,12 @@ section{
 
 .cars{
     max-width:1050px;
+
     margin:auto;
 
     display:grid;
 
-    grid-template-columns:
-        repeat(2,minmax(0,1fr));
+    grid-template-columns:repeat(2,minmax(0,1fr));
 
     gap:18px;
 }
@@ -567,6 +622,7 @@ section{
     display:block;
 
     width:100%;
+
     height:225px;
 
     object-fit:cover;
@@ -584,12 +640,13 @@ section{
 
 .car-info h3{
     font-size:14px;
+
     letter-spacing:1px;
 }
 
-/* =========================
+/* ==================================================
    ABOUT
-========================= */
+================================================== */
 
 .about{
     background:#0c0c0c;
@@ -611,9 +668,9 @@ section{
     font-size:15px;
 }
 
-/* =========================
+/* ==================================================
    CONTACT
-========================= */
+================================================== */
 
 .contact{
     background:#080808;
@@ -657,9 +714,9 @@ section{
     font-weight:700;
 }
 
-/* =========================
+/* ==================================================
    FOOTER
-========================= */
+================================================== */
 
 footer{
     padding:35px 5%;
@@ -683,9 +740,9 @@ footer p{
     letter-spacing:1px;
 }
 
-/* =========================
+/* ==================================================
    MODAL
-========================= */
+================================================== */
 
 .modal{
     position:fixed;
@@ -699,7 +756,6 @@ footer p{
     display:none;
 
     align-items:center;
-
     justify-content:center;
 
     padding:20px;
@@ -780,7 +836,6 @@ footer p{
 
 .size{
     width:48px;
-
     height:40px;
 
     background:#181818;
@@ -792,6 +847,7 @@ footer p{
 
 .size.active{
     background:#fff;
+
     color:#000;
 }
 
@@ -813,9 +869,9 @@ footer p{
     letter-spacing:1px;
 }
 
-/* =========================
+/* ==================================================
    CART
-========================= */
+================================================== */
 
 .cart-panel{
     position:fixed;
@@ -929,9 +985,9 @@ footer p{
     line-height:1.5;
 }
 
-/* =========================
+/* ==================================================
    ACCOUNT
-========================= */
+================================================== */
 
 .account-tabs{
     display:flex;
@@ -1009,9 +1065,9 @@ footer p{
     gap:10px;
 }
 
-/* =========================
+/* ==================================================
    LANGUAGE
-========================= */
+================================================== */
 
 .language select{
     background:transparent;
@@ -1031,9 +1087,9 @@ footer p{
     color:#fff;
 }
 
-/* =========================
+/* ==================================================
    TABLET
-========================= */
+================================================== */
 
 @media(max-width:900px){
 
@@ -1054,9 +1110,9 @@ footer p{
     }
 }
 
-/* =========================
+/* ==================================================
    MOBILE
-========================= */
+================================================== */
 
 @media(max-width:600px){
 
@@ -1088,7 +1144,9 @@ footer p{
         font-size:10px;
     }
 
-    /* MOBILE HERO */
+    /* ------------------------------
+       MOBILE HERO
+    ------------------------------ */
 
     .hero{
         height:760px;
@@ -1096,44 +1154,35 @@ footer p{
         min-height:760px;
     }
 
-    .hero-image{
-        /*
-          Das Bild bleibt auch auf dem Handy
-          exakt mittig.
-        */
+    .hero-car-background{
         background-position:center center;
 
-        /*
-          Das Bild füllt den Banner,
-          ohne sich zu wiederholen.
-        */
         background-size:cover;
+
+        filter:brightness(.48);
     }
 
     .hero-content{
         min-height:760px;
 
-        padding:125px 20px 55px;
+        padding:120px 20px 50px;
     }
 
     .hero-logo{
-        font-size:18vw;
+        font-size:17vw;
 
-        letter-spacing:2px;
+        letter-spacing:1px;
+
+        white-space:nowrap;
     }
 
     .hero-est{
-        margin-top:22px;
+        margin-top:24px;
 
         font-size:9px;
 
         letter-spacing:6px;
     }
-
-    /*
-       Der Spruch ist bewusst weit
-       vom Logo entfernt.
-    */
 
     .hero-slogan{
         margin-top:105px;
@@ -1142,15 +1191,15 @@ footer p{
     }
 
     .hero-slogan-main{
-        font-size:27px;
+        font-size:26px;
 
         line-height:1.08;
 
-        letter-spacing:1px;
+        letter-spacing:.5px;
     }
 
     .hero-slogan-small{
-        margin-top:22px;
+        margin-top:23px;
 
         font-size:9px;
 
@@ -1170,6 +1219,8 @@ footer p{
     section{
         padding:70px 18px;
     }
+
+    /* SHOP */
 
     .products{
         grid-template-columns:1fr 1fr;
@@ -1193,9 +1244,13 @@ footer p{
         font-size:11px;
     }
 
+    /* EVENTS */
+
     .events-grid{
         grid-template-columns:1fr;
     }
+
+    /* CARS */
 
     .cars{
         grid-template-columns:1fr;
@@ -1213,6 +1268,8 @@ footer p{
         height:205px;
     }
 
+    /* MODAL */
+
     .modal-box{
         padding:22px;
     }
@@ -1221,9 +1278,13 @@ footer p{
         height:300px;
     }
 
+    /* ACCOUNT */
+
     .form-grid{
         grid-template-columns:1fr;
     }
+
+    /* FOOTER */
 
     footer{
         flex-direction:column;
@@ -1238,17 +1299,17 @@ footer p{
 
 <body>
 
-<!-- =========================
+<!-- ==================================================
      INFO BAR
-========================= -->
+================================================== -->
 
 <div class="top-info">
     SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BESTELLUNGEN DERZEIT MÖGLICH!
 </div>
 
-<!-- =========================
+<!-- ==================================================
      NAVIGATION
-========================= -->
+================================================== -->
 
 <nav>
 
@@ -1314,26 +1375,36 @@ footer p{
 
 </nav>
 
-<!-- =========================
+<!-- ==================================================
      HERO
-========================= -->
+================================================== -->
 
 <section class="hero" id="home">
 
-    <!-- DEIN HAUPTBANNER -->
-    <div class="hero-image"></div>
+    <!--
+        CAR-1 ALS GROSSES HAUPTBILD
+        DIREKT HINTER DEM LOGO
+    -->
+
+    <div class="hero-car-background"></div>
 
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
 
+        <!-- GROSSES LOGO -->
+
         <div class="hero-logo">
             ГОНЩИКИ
         </div>
 
+        <!-- EST -->
+
         <div class="hero-est">
             EST. 2025
         </div>
+
+        <!-- SPRUCH -->
 
         <div class="hero-slogan">
 
@@ -1365,9 +1436,9 @@ footer p{
 
 </section>
 
-<!-- =========================
+<!-- ==================================================
      SHOP
-========================= -->
+================================================== -->
 
 <section class="shop" id="shop">
 
@@ -1422,9 +1493,9 @@ footer p{
 
 </section>
 
-<!-- =========================
+<!-- ==================================================
      EVENTS
-========================= -->
+================================================== -->
 
 <section class="events" id="events">
 
@@ -1494,13 +1565,11 @@ footer p{
 
 </section>
 
-<!-- =========================
+<!-- ==================================================
      CARS
-========================= -->
+================================================== -->
 
-<section
-    class="cars-section"
-    id="cars">
+<section class="cars-section" id="cars">
 
     <div class="section-title">
 
@@ -1518,7 +1587,7 @@ footer p{
 
             <img
                 src="assets/Car-1.JPG"
-                alt="Gonschiki">
+                alt="">
 
             <div class="car-info">
                 <h3>GONSCHIKI #01</h3>
@@ -1530,7 +1599,7 @@ footer p{
 
             <img
                 src="assets/Car-2.JPG"
-                alt="Gonschiki">
+                alt="">
 
             <div class="car-info">
                 <h3>GONSCHIKI #02</h3>
@@ -1542,7 +1611,7 @@ footer p{
 
             <img
                 src="assets/Car-3.jpg"
-                alt="Gonschiki">
+                alt="">
 
             <div class="car-info">
                 <h3>GONSCHIKI #03</h3>
@@ -1554,7 +1623,7 @@ footer p{
 
             <img
                 src="assets/Car-4.jpg"
-                alt="Gonschiki">
+                alt="">
 
             <div class="car-info">
                 <h3>GONSCHIKI #04</h3>
@@ -1566,7 +1635,7 @@ footer p{
 
             <img
                 src="assets/Car-5.jpg"
-                alt="Gonschiki">
+                alt="">
 
             <div class="car-info">
                 <h3>GONSCHIKI #05</h3>
@@ -1578,13 +1647,11 @@ footer p{
 
 </section>
 
-<!-- =========================
+<!-- ==================================================
      ABOUT
-========================= -->
+================================================== -->
 
-<section
-    class="about"
-    id="about">
+<section class="about" id="about">
 
     <div class="section-title">
 
@@ -1605,13 +1672,11 @@ footer p{
 
 </section>
 
-<!-- =========================
+<!-- ==================================================
      CONTACT
-========================= -->
+================================================== -->
 
-<section
-    class="contact"
-    id="contact">
+<section class="contact" id="contact">
 
     <div class="section-title">
 
@@ -1639,9 +1704,9 @@ footer p{
 
 </section>
 
-<!-- =========================
+<!-- ==================================================
      FOOTER
-========================= -->
+================================================== -->
 
 <footer>
 
@@ -1655,9 +1720,9 @@ footer p{
 
 </footer>
 
-<!-- =========================
+<!-- ==================================================
      PRODUCT MODAL
-========================= -->
+================================================== -->
 
 <div
     class="modal"
@@ -1726,9 +1791,9 @@ footer p{
 
 </div>
 
-<!-- =========================
+<!-- ==================================================
      CART
-========================= -->
+================================================== -->
 
 <div
     class="cart-panel"
@@ -1770,9 +1835,9 @@ footer p{
 
 </div>
 
-<!-- =========================
+<!-- ==================================================
      ACCOUNT
-========================= -->
+================================================== -->
 
 <div
     class="modal"
@@ -1801,6 +1866,8 @@ footer p{
             </button>
 
         </div>
+
+        <!-- LOGIN -->
 
         <form
             class="form active"
@@ -1838,6 +1905,8 @@ footer p{
             </button>
 
         </form>
+
+        <!-- REGISTER -->
 
         <form
             class="form"
@@ -1968,9 +2037,9 @@ footer p{
 
 <script>
 
-/* =========================
+/* ==================================================
    PRODUKTE
-========================= */
+================================================== */
 
 const products = [
 
@@ -2047,16 +2116,15 @@ const products = [
 ];
 
 let currentProduct=null;
-
 let selectedSize=null;
 
 let cart=JSON.parse(
-    localStorage.getItem("gonschikiCart")||"[]"
+    localStorage.getItem("gonschikiCart") || "[]"
 );
 
-/* =========================
-   SHOP
-========================= */
+/* ==================================================
+   SHOP RENDERN
+================================================== */
 
 function renderProducts(list=products){
 
@@ -2113,6 +2181,10 @@ function renderProducts(list=products){
 
 }
 
+/* ==================================================
+   FILTER
+================================================== */
+
 function filterProducts(category,button){
 
     document
@@ -2140,9 +2212,9 @@ function filterProducts(category,button){
 
 }
 
-/* =========================
+/* ==================================================
    PRODUKT MODAL
-========================= */
+================================================== */
 
 function openProduct(index){
 
@@ -2227,9 +2299,9 @@ function addCurrentProduct(){
 
 }
 
-/* =========================
+/* ==================================================
    WARENKORB
-========================= */
+================================================== */
 
 function saveCart(){
 
@@ -2333,9 +2405,9 @@ function closeCart(){
 
 }
 
-/* =========================
+/* ==================================================
    ACCOUNT
-========================= */
+================================================== */
 
 function openAccount(){
 
@@ -2464,7 +2536,7 @@ function login(event){
         JSON.parse(
             localStorage.getItem(
                 "gonschikiAccount"
-            )||"null"
+            ) || "null"
         );
 
     if(account && account.email===email){
@@ -2483,9 +2555,9 @@ function login(event){
 
 }
 
-/* =========================
-   MODALS
-========================= */
+/* ==================================================
+   MODALS SCHLIESSEN
+================================================== */
 
 function closeModal(id){
 
@@ -2514,9 +2586,9 @@ document
 
     });
 
-/* =========================
+/* ==================================================
    EVENTS
-========================= */
+================================================== */
 
 function previewMessage(){
 
@@ -2526,9 +2598,9 @@ function previewMessage(){
 
 }
 
-/* =========================
-   SPRACHE
-========================= */
+/* ==================================================
+   SPRACHEN
+================================================== */
 
 const translations={
 
@@ -2590,7 +2662,7 @@ function loadLanguage(){
     const language=
         localStorage.getItem(
             "gonschikiLanguage"
-        )||"de";
+        ) || "de";
 
     document
         .getElementById("languageSelect")
@@ -2600,9 +2672,9 @@ function loadLanguage(){
 
 }
 
-/* =========================
+/* ==================================================
    START
-========================= */
+================================================== */
 
 renderProducts();
 
