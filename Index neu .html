@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Gonschiki Crew — Streetwear × Car Culture. Est. 2025.">
+<title>ГОНЩИКИ — Gonschiki Crew</title>
+<style>
+:root{--bg:#070707;--panel:#101010;--line:#252525;--text:#f5f5f5;--muted:#929292}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.45}
+a{color:inherit;text-decoration:none}
+header{position:fixed;z-index:10;top:0;left:0;right:0;background:rgba(7,7,7,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{max-width:1200px;margin:auto;padding:18px 28px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:900;font-size:18px;letter-spacing:.12em}
+.nav a{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#bbb;margin-left:25px}
+.nav a:hover{color:#fff}
+.hero{min-height:100vh;padding:150px 24px 80px;display:flex;align-items:center;justify-content:center;text-align:center;background:radial-gradient(circle at 50% 42%,#292929 0,#111 30%,#070707 67%)}
+.kicker{text-transform:uppercase;letter-spacing:.32em;font-size:11px;color:#999;margin-bottom:25px}
+.hero h1{font-size:clamp(64px,13vw,155px);line-height:.78;letter-spacing:-.08em;font-weight:1000}
+.est{margin:30px 0 38px;color:#aaa;letter-spacing:.5em;font-size:13px}
+.button{display:inline-block;border:1px solid #eee;padding:14px 24px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.15em;transition:.2s}
+.button:hover{background:#fff;color:#000}
+.section{max-width:1200px;margin:auto;padding:105px 28px}
+.section-head{margin-bottom:45px}
+.eyebrow{color:#777;text-transform:uppercase;letter-spacing:.28em;font-size:10px}
+h2{font-size:clamp(38px,6vw,72px);letter-spacing:-.055em;line-height:1;margin-top:12px}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.card{background:var(--panel);border:1px solid var(--line);overflow:hidden}
+.product-image{aspect-ratio:1/1;background:linear-gradient(145deg,#1a1a1a,#080808);display:grid;place-items:center;position:relative}
+.garment{width:86%;height:86%;max-width:470px;filter:drop-shadow(0 18px 24px rgba(0,0,0,.35))}
+.info{padding:22px;display:flex;justify-content:space-between;gap:15px}
+.info h3{font-size:16px}.sub{font-size:12px;color:var(--muted);margin-top:5px}
+.price{font-weight:800;white-space:nowrap}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+.about p{color:#aaa;max-width:560px;font-size:18px;line-height:1.8}
+.statement{font-size:clamp(32px,5vw,62px);font-weight:900;line-height:.98;letter-spacing:-.05em}
+.social{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:90px 24px;text-align:center}
+.social .handle{display:block;font-size:clamp(34px,7vw,80px);font-weight:900;letter-spacing:-.06em;margin:15px 0 30px}
+footer{max-width:1200px;margin:auto;padding:35px 28px;display:flex;justify-content:space-between;color:#666;font-size:11px;text-transform:uppercase;letter-spacing:.12em}
+@media(max-width:700px){
+.nav{padding:16px 18px}.navlinks a{margin-left:12px;font-size:9px}
+.hero{padding-left:18px;padding-right:18px}.hero h1{font-size:20vw}
+.products,.about{grid-template-columns:1fr;gap:18px}
+.section{padding:75px 18px}.about{gap:35px}.about p{font-size:16px}
+.info{display:block}.price{margin-top:12px}
+footer{padding:28px 18px;gap:20px}
+}
+</style>
+</head>
+<body>
+<header>
+<nav class="nav">
+<a class="brand" href="#">ГОНЩИКИ</a>
+<div class="navlinks">
+<a href="#shop">Shop</a><a href="#crew">Crew</a><a href="#instagram">Instagram</a>
+</div>
+</nav>
+</header>
+
+<main>
+<section class="hero">
+<div>
+<div class="kicker">Streetwear × Car Culture × Germany</div>
+<h1>ГОНЩИКИ</h1>
+<div class="est">EST. 2025</div>
+<a class="button" href="#shop">Collection 01</a>
+</div>
+</section>
+
+<section class="section" id="shop">
+<div class="section-head">
+<div class="eyebrow">Gonschiki Crew / Collection 01</div>
+<h2>Crewwear.</h2>
+</div>
+<div class="products">
+<article class="card">
+<div class="product-image">
+<svg class="garment" viewBox="0 0 500 500" role="img" aria-label="Schwarzer Gonschiki Hoodie Prototyp">
+<defs><filter id="shadow"><feDropShadow dx="0" dy="16" stdDeviation="16" flood-opacity=".35"/></filter></defs>
+<path d="M185 112 Q145 132 88 181 L135 254 175 225 160 405 Q250 430 340 405 L325 225 365 254 412 181 Q355 132 315 112 L285 88 Q250 108 215 88Z" fill="#050505" stroke="#383838" stroke-width="4" filter="url(#shadow)"/>
+<path d="M190 111 Q250 155 310 111" fill="none" stroke="#292929" stroke-width="12"/>
+<path d="M218 95 Q250 130 282 95" fill="none" stroke="#444" stroke-width="4"/>
+<text x="250" y="248" fill="white" font-size="24" font-weight="900" text-anchor="middle" letter-spacing="2">ГОНЩИКИ</text>
+<text x="250" y="273" fill="#aaa" font-size="10" font-weight="700" text-anchor="middle" letter-spacing="4">EST. 2025</text>
+</svg>
+</div>
+<div class="info"><div><h3>ГОНЩИКИ Hoodie</h3><div class="sub">Schwarz · Front / Back Print</div></div><div class="price">69,90 €</div></div>
+</article>
+<article class="card">
+<div class="product-image">
+<svg class="garment" viewBox="0 0 500 500" role="img" aria-label="Schwarzes Gonschiki T-Shirt Prototyp">
+<path d="M180 105 L225 80 Q250 100 275 80 L320 105 395 160 350 230 315 205 330 410 170 410 185 205 150 230 105 160Z" fill="#050505" stroke="#383838" stroke-width="4"/>
+<path d="M225 81 Q250 125 275 81" fill="none" stroke="#3d3d3d" stroke-width="7"/>
+<text x="250" y="248" fill="white" font-size="24" font-weight="900" text-anchor="middle" letter-spacing="2">ГОНЩИКИ</text>
+<text x="250" y="273" fill="#aaa" font-size="10" font-weight="700" text-anchor="middle" letter-spacing="4">EST. 2025</text>
+</svg>
+</div>
+<div class="info"><div><h3>ГОНЩИКИ T-Shirt</h3><div class="sub">Schwarz · Front / Back Print</div></div><div class="price">39,90 €</div></div>
+</article>
+</div>
+</section>
+
+<section class="section" id="crew">
+<div class="about">
+<div><div class="eyebrow">The Crew</div><h2>More than<br>just a brand.</h2></div>
+<div><div class="statement">Schwarze Essentials.<br>Klare Designs.<br>Eine Crew.</div><p style="margin-top:28px">Gonschiki Crew verbindet Automotive Culture und Streetwear. Gegründet 2025 — für Menschen, die Autos nicht einfach nur fahren, sondern leben.</p></div>
+</div>
+</section>
+
+<section class="social" id="instagram">
+<div class="eyebrow">Follow the Crew</div>
+<a class="handle" href="https://instagram.com/gonschikicrew" target="_blank">@gonschikicrew</a>
+<a class="button" href="https://instagram.com/gonschikicrew" target="_blank">Instagram öffnen</a>
+</section>
+</main>
+
+<footer><span>© 2025–2026 Gonschiki Crew</span><span>ГОНЩИКИ / EST. 2025</span></footer>
+</body>
+</html>
