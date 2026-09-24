@@ -2,460 +2,599 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>ГОНЩИКИ — EST. 2025</title>
 
 <style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:#090909;
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
 }
+button{font:inherit}
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%}
 
-html {
-  scroll-behavior: smooth;
-}
+/* =========================
+   INFO LEISTE
+========================= */
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #0a0a0a;
-  color: #fff;
-  line-height: 1.5;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  display: block;
-  width: 100%;
+.info-bar{
+  height:34px;
+  background:#fff;
+  color:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  white-space:nowrap;
 }
 
 /* =========================
    NAVIGATION
 ========================= */
 
-.nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-
-  height: 78px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 0 5vw;
-
-  background: rgba(10,10,10,0.94);
-  border-bottom: 1px solid #222;
-
-  backdrop-filter: blur(12px);
+.nav{
+  height:82px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:#090909;
+  border-bottom:1px solid #252525;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 5vw;
 }
 
-/* LOGO OBEN LINKS */
+/* ГОНЩИКИ OBEN */
 
-.logo {
-  font-weight: 900;
-  letter-spacing: 0.04em;
-  font-size: 20px;
-  line-height: 1;
+.logo{
+  display:flex;
+  flex-direction:column;
+  font-weight:900;
+  font-size:22px;
+  line-height:.9;
+  letter-spacing:.02em;
 }
 
-.logo span {
-  display: block;
-  font-size: 10px;
-  letter-spacing: 0.28em;
-  margin-top: 7px;
-  color: #aaa;
+.logo-est{
+  margin-top:7px;
+  color:#888;
+  font-size:9px;
+  letter-spacing:.3em;
 }
 
-.nav-links {
-  display: flex;
-  gap: 30px;
-
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+.nav-links{
+  display:flex;
+  gap:28px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
 }
 
-.nav-links a {
-  color: #ddd;
-  transition: 0.2s;
-}
+.nav-links a:hover{color:#999}
 
-.nav-links a:hover {
-  color: #fff;
+.cart-button{
+  border:1px solid #fff;
+  background:#fff;
+  color:#000;
+  padding:10px 14px;
+  cursor:pointer;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.1em;
 }
-
 
 /* =========================
    HERO
 ========================= */
 
-.hero {
-  min-height: 100vh;
-
-  position: relative;
-
-  display: flex;
-  align-items: flex-end;
-
-  overflow: hidden;
-
-  padding: 140px 5vw 8vw;
+.hero{
+  height:calc(100vh - 116px);
+  min-height:600px;
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  padding:7vw 5vw;
+  overflow:hidden;
 }
 
-.hero::before {
-  content: "";
+.hero-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
-  position: absolute;
-  inset: 0;
-
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
   background:
-    linear-gradient(
-      90deg,
-      rgba(0,0,0,0.82) 0%,
-      rgba(0,0,0,0.4) 55%,
-      rgba(0,0,0,0.2) 100%
-    ),
-    linear-gradient(
-      0deg,
-      rgba(0,0,0,0.85),
-      transparent 55%
-    );
-
-  z-index: 1;
+    linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.2)),
+    linear-gradient(0deg,rgba(0,0,0,.8),transparent);
 }
 
-.hero-bg {
-  position: absolute;
-  inset: 0;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:800px;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-
-  max-width: 800px;
+.kicker{
+  color:#aaa;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  margin-bottom:20px;
 }
 
-.kicker {
-  color: #aaa;
-
-  text-transform: uppercase;
-  letter-spacing: 0.25em;
-
-  font-size: 12px;
-  font-weight: 700;
-
-  margin-bottom: 20px;
+.hero h1{
+  font-size:clamp(50px,8vw,110px);
+  line-height:.87;
+  letter-spacing:-.06em;
+  margin-bottom:25px;
 }
 
-.hero h1 {
-  font-size: clamp(48px, 8vw, 110px);
-
-  line-height: 0.9;
-  letter-spacing: -0.055em;
-
-  max-width: 850px;
-
-  margin-bottom: 25px;
+.hero p{
+  max-width:560px;
+  color:#ccc;
+  font-size:15px;
+  margin-bottom:30px;
 }
 
-.hero p {
-  max-width: 570px;
-
-  color: #d0d0d0;
-
-  font-size: 16px;
-
-  margin-bottom: 32px;
+.btn{
+  display:inline-block;
+  background:#fff;
+  color:#000;
+  padding:15px 24px;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.15em;
+  text-transform:uppercase;
 }
-
-.btn {
-  display: inline-block;
-
-  border: 1px solid #fff;
-
-  padding: 14px 24px;
-
-  font-size: 11px;
-  font-weight: 800;
-
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-
-  transition: 0.2s;
-}
-
-.btn:hover {
-  background: #fff;
-  color: #000;
-}
-
 
 /* =========================
    SECTIONS
 ========================= */
 
-.section {
-  padding: 120px 5vw;
-
-  border-top: 1px solid #202020;
+.section{
+  padding:110px 5vw;
+  border-top:1px solid #202020;
 }
 
-.section-head {
-  display: flex;
-
-  justify-content: space-between;
-  align-items: flex-end;
-
-  gap: 30px;
-
-  margin-bottom: 45px;
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  margin-bottom:45px;
 }
 
-.section-number {
-  color: #777;
-
-  font-size: 12px;
-  letter-spacing: 0.2em;
-
-  margin-bottom: 10px;
+.number{
+  color:#777;
+  font-size:11px;
+  letter-spacing:.2em;
+  margin-bottom:10px;
 }
 
-.section h2 {
-  font-size: clamp(38px, 6vw, 75px);
-
-  line-height: 0.95;
-  letter-spacing: -0.045em;
+h2{
+  font-size:clamp(40px,6vw,75px);
+  line-height:.9;
+  letter-spacing:-.05em;
 }
 
-.section-note {
-  color: #888;
-
-  font-size: 12px;
-
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
+.note{
+  color:#777;
+  font-size:10px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
 }
-
 
 /* =========================
-   SHOP
+   KATEGORIEN
 ========================= */
 
-.products {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
-
-  gap: 28px;
+.categories{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:30px;
 }
 
-.product {
-  min-width: 0;
+.category{
+  border:1px solid #333;
+  background:transparent;
+  color:#fff;
+  padding:10px 17px;
+  cursor:pointer;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
 }
 
-.product-image {
-  aspect-ratio: 4 / 5;
-
-  overflow: hidden;
-
-  background: #111;
-
-  border: 1px solid #202020;
+.category.active,
+.category:hover{
+  background:#fff;
+  color:#000;
 }
 
-.product-image img {
-  width: 100%;
-  height: 100%;
+/* =========================
+   PRODUKTE
+========================= */
 
-  object-fit: cover;
-
-  transition: transform 0.45s ease;
+.products{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
 }
 
-.product:hover .product-image img {
-  transform: scale(1.035);
+.product{
+  cursor:pointer;
 }
 
-.product-info {
-  padding: 17px 2px 0;
-
-  display: flex;
-
-  justify-content: space-between;
-
-  gap: 15px;
+.product-image{
+  position:relative;
+  aspect-ratio:4/5;
+  overflow:hidden;
+  background:#111;
 }
 
-.product-title {
-  font-weight: 800;
-  font-size: 14px;
+.product-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.4s;
 }
 
-.product-meta {
-  color: #777;
-
-  font-size: 10px;
-
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-
-  margin-top: 5px;
+.product:hover img{
+  transform:scale(1.04);
 }
 
-.product-price {
-  color: #999;
-
-  font-size: 11px;
-
-  white-space: nowrap;
+.product-info{
+  padding:15px 0;
 }
 
+.product-name{
+  font-size:13px;
+  font-weight:800;
+}
+
+.product-category{
+  color:#777;
+  font-size:9px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-top:5px;
+}
+
+.product-price{
+  margin-top:8px;
+  font-size:11px;
+  color:#aaa;
+}
 
 /* =========================
    CARS
 ========================= */
 
-.cars {
-  display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
-  gap: 24px;
+.cars{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:22px;
 }
 
-.car {
-  position: relative;
-
-  overflow: hidden;
-
-  background: #111;
+.car{
+  position:relative;
+  overflow:hidden;
 }
 
-.car img {
-  aspect-ratio: 16 / 10;
-
-  object-fit: cover;
-
-  transition: transform 0.5s ease;
+.car img{
+  aspect-ratio:16/10;
+  object-fit:cover;
+  transition:.4s;
 }
 
-.car:hover img {
-  transform: scale(1.025);
+.car:hover img{transform:scale(1.025)}
+
+.car-name{
+  position:absolute;
+  bottom:18px;
+  left:20px;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  text-shadow:0 2px 10px #000;
 }
-
-.car-label {
-  position: absolute;
-
-  left: 20px;
-  bottom: 18px;
-
-  font-size: 12px;
-  font-weight: 800;
-
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-
-  text-shadow: 0 2px 8px #000;
-}
-
 
 /* =========================
    ABOUT
 ========================= */
 
-.manifesto {
-  min-height: 55vh;
-
-  display: flex;
-  align-items: center;
+.manifesto{
+  min-height:55vh;
+  display:flex;
+  align-items:center;
 }
 
-.manifesto-text {
-  max-width: 1000px;
-
-  font-size: clamp(32px, 5vw, 72px);
-
-  line-height: 1.02;
-
-  letter-spacing: -0.04em;
-
-  font-weight: 800;
+.manifesto-text{
+  font-size:clamp(35px,5vw,75px);
+  font-weight:900;
+  line-height:1;
+  letter-spacing:-.05em;
 }
 
-.manifesto-text span {
-  color: #666;
-}
-
+.manifesto-text span{color:#555}
 
 /* =========================
    CONTACT
 ========================= */
 
-.contact {
-  display: flex;
-
-  justify-content: space-between;
-  align-items: flex-end;
-
-  gap: 50px;
+.contact{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:40px;
 }
 
-.contact h2 {
-  max-width: 850px;
+.contact-info{
+  color:#999;
+  font-size:13px;
+  line-height:2;
 }
 
-.contact-right {
-  color: #999;
+.contact-info a{color:#fff}
 
-  font-size: 13px;
+/* =========================
+   PRODUKT MODAL
+========================= */
 
-  line-height: 2;
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.88);
+  z-index:3000;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
 }
 
-.contact-right a {
-  color: #fff;
+.modal.open{display:flex}
+
+.modal-box{
+  width:min(900px,100%);
+  max-height:90vh;
+  overflow:auto;
+  background:#111;
+  border:1px solid #333;
+  display:grid;
+  grid-template-columns:1fr 1fr;
 }
 
+.modal-image{
+  background:#090909;
+}
+
+.modal-image img{
+  width:100%;
+  height:100%;
+  min-height:500px;
+  object-fit:cover;
+}
+
+.modal-info{
+  padding:35px;
+}
+
+.close{
+  float:right;
+  border:0;
+  background:none;
+  color:#fff;
+  font-size:25px;
+  cursor:pointer;
+}
+
+.modal-category{
+  color:#777;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  margin-top:35px;
+}
+
+.modal-title{
+  font-size:32px;
+  font-weight:900;
+  line-height:1;
+  margin:12px 0;
+}
+
+.modal-price{
+  color:#aaa;
+  margin-bottom:30px;
+}
+
+.size-title{
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+
+.sizes{
+  display:flex;
+  gap:8px;
+  margin-bottom:25px;
+}
+
+.size{
+  width:45px;
+  height:42px;
+  border:1px solid #444;
+  background:#111;
+  color:#fff;
+  cursor:pointer;
+}
+
+.size.selected{
+  background:#fff;
+  color:#000;
+  border-color:#fff;
+}
+
+.add-cart{
+  width:100%;
+  padding:17px;
+  border:0;
+  background:#fff;
+  color:#000;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+
+.add-cart:hover{
+  background:#ddd;
+}
+
+/* =========================
+   WARENKORB
+========================= */
+
+.cart-panel{
+  position:fixed;
+  right:0;
+  top:0;
+  width:min(430px,100%);
+  height:100vh;
+  background:#111;
+  z-index:4000;
+  transform:translateX(100%);
+  transition:.3s;
+  border-left:1px solid #333;
+  display:flex;
+  flex-direction:column;
+}
+
+.cart-panel.open{
+  transform:translateX(0);
+}
+
+.cart-header{
+  height:80px;
+  border-bottom:1px solid #333;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 25px;
+}
+
+.cart-header h3{
+  font-size:16px;
+  letter-spacing:.05em;
+}
+
+.cart-close{
+  background:none;
+  color:#fff;
+  border:0;
+  font-size:24px;
+  cursor:pointer;
+}
+
+.cart-items{
+  flex:1;
+  overflow:auto;
+  padding:20px;
+}
+
+.cart-item{
+  display:grid;
+  grid-template-columns:75px 1fr auto;
+  gap:12px;
+  padding:15px 0;
+  border-bottom:1px solid #292929;
+}
+
+.cart-item img{
+  width:75px;
+  height:90px;
+  object-fit:cover;
+}
+
+.cart-item-name{
+  font-size:12px;
+  font-weight:800;
+}
+
+.cart-item-meta{
+  color:#777;
+  font-size:10px;
+  margin-top:5px;
+}
+
+.remove{
+  background:none;
+  border:0;
+  color:#777;
+  cursor:pointer;
+  font-size:10px;
+}
+
+.cart-footer{
+  border-top:1px solid #333;
+  padding:22px;
+}
+
+.total{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:18px;
+  font-size:14px;
+  font-weight:900;
+}
+
+.checkout{
+  width:100%;
+  background:#fff;
+  color:#000;
+  border:0;
+  padding:17px;
+  font-weight:900;
+  font-size:10px;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
 
 /* =========================
    FOOTER
 ========================= */
 
-footer {
-  border-top: 1px solid #222;
-
-  padding: 35px 5vw;
-
-  display: flex;
-
-  justify-content: space-between;
-
-  color: #666;
-
-  font-size: 10px;
-
-  letter-spacing: 0.12em;
-
-  text-transform: uppercase;
+footer{
+  border-top:1px solid #222;
+  padding:35px 5vw;
+  display:flex;
+  justify-content:space-between;
+  color:#666;
+  font-size:9px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
 }
 
 
@@ -463,115 +602,103 @@ footer {
    MOBILE
 ========================= */
 
-@media (max-width: 800px) {
+@media(max-width:800px){
 
-  .nav {
-    height: 68px;
-
-    padding: 0 5vw;
+  .info-bar{
+    font-size:8px;
   }
 
-  .logo {
-    font-size: 16px;
+  .nav{
+    height:70px;
+    padding:0 4vw;
   }
 
-  .logo span {
-    font-size: 8px;
-    margin-top: 5px;
+  .logo{
+    font-size:17px;
   }
 
-  .nav-links {
-    gap: 12px;
-
-    font-size: 9px;
-
-    letter-spacing: 0.1em;
+  .nav-links{
+    gap:12px;
+    font-size:8px;
   }
 
-  .hero {
-    min-height: 92vh;
-
-    padding:
-      120px
-      5vw
-      12vw;
+  .cart-button{
+    padding:8px 10px;
+    font-size:8px;
   }
 
-  .hero h1 {
-    font-size: clamp(45px, 14vw, 75px);
+  .hero{
+    height:calc(100vh - 104px);
+    min-height:550px;
+    padding:8vw 5vw;
   }
 
-  .hero p {
-    font-size: 14px;
+  .hero h1{
+    font-size:clamp(48px,14vw,75px);
   }
 
-  .section {
-    padding: 85px 5vw;
+  .hero p{
+    font-size:13px;
   }
 
-  .section-head {
-    display: block;
-
-    margin-bottom: 30px;
+  .section{
+    padding:80px 5vw;
   }
 
-  .section-note {
-    margin-top: 18px;
+  .section-head{
+    display:block;
   }
 
-  .products {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-
-    gap: 18px;
+  .note{
+    margin-top:15px;
   }
 
-  .product-info {
-    display: block;
+  .products{
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
   }
 
-  .product-price {
-    margin-top: 6px;
+  .product-name{
+    font-size:11px;
   }
 
-  .cars {
-    grid-template-columns: 1fr;
-
-    gap: 18px;
+  .cars{
+    grid-template-columns:1fr;
   }
 
-  .contact {
-    display: block;
+  .modal-box{
+    grid-template-columns:1fr;
+    max-height:94vh;
   }
 
-  .contact-right {
-    margin-top: 30px;
+  .modal-image img{
+    min-height:300px;
+    max-height:50vh;
   }
 
-  footer {
-    display: block;
-
-    line-height: 2;
+  .modal-info{
+    padding:22px;
   }
 
-  footer div + div {
-    margin-top: 8px;
-  }
-}
-
-@media (max-width: 480px) {
-
-  .nav-links a:nth-child(3) {
-    display: none;
+  .modal-category{
+    margin-top:0;
   }
 
-  .products {
-    grid-template-columns:
-      1fr 1fr;
+  .contact{
+    display:block;
   }
 
-  .product-title {
-    font-size: 12px;
+  .contact-info{
+    margin-top:25px;
+  }
+
+  footer{
+    display:block;
+    line-height:2;
+  }
+
+  footer div+div{
+    margin-top:8px;
   }
 }
 </style>
@@ -582,41 +709,42 @@ footer {
 
 
 <!-- =========================
-     NAVIGATION
+     INFO LEISTE
+========================= -->
+
+<div class="info-bar">
+  KOSTENLOSER VERSAND AB 100 € &nbsp; • &nbsp;
+  ГОНЩИКИ EST. 2025 &nbsp; • &nbsp;
+  STREETWEAR × CAR CULTURE
+</div>
+
+
+<!-- =========================
+     NAV
 ========================= -->
 
 <nav class="nav">
 
-  <a class="logo" href="#top">
-
+  <a href="#top" class="logo">
     ГОНЩИКИ
-
-    <span>
-      EST. 2025
-    </span>
-
+    <span class="logo-est">EST. 2025</span>
   </a>
 
 
   <div class="nav-links">
 
-    <a href="#shop">
-      Shop
-    </a>
-
-    <a href="#cars">
-      Cars
-    </a>
-
-    <a href="#about">
-      About
-    </a>
-
-    <a href="#contact">
-      Contact
-    </a>
+    <a href="#shop">Shop</a>
+    <a href="#cars">Autos</a>
+    <a href="#about">Über uns</a>
+    <a href="#contact">Kontakt</a>
 
   </div>
+
+
+  <button class="cart-button" onclick="openCart()">
+    WARENKORB
+    (<span id="cart-count">0</span>)
+  </button>
 
 </nav>
 
@@ -631,7 +759,7 @@ footer {
   <img
     class="hero-bg"
     src="assets/Car-1.JPG"
-    alt="ГОНЩИКИ Car"
+    alt="ГОНЩИКИ"
   >
 
 
@@ -655,11 +783,8 @@ footer {
     </p>
 
 
-    <a
-      class="btn"
-      href="#shop"
-    >
-      Shop the Drop
+    <a class="btn" href="#shop">
+      ZUR KOLLEKTION
     </a>
 
   </div>
@@ -672,68 +797,98 @@ footer {
      SHOP
 ========================= -->
 
-<section
-  class="section"
-  id="shop"
->
+<section class="section" id="shop">
 
   <div class="section-head">
 
     <div>
 
-      <div class="section-number">
-        01 / Current Drop
+      <div class="number">
+        01 / AKTUELLE KOLLEKTION
       </div>
 
       <h2>
-        OUR PIECES
+        UNSERE PIECES
       </h2>
 
     </div>
 
-
-    <div class="section-note">
+    <div class="note">
       ГОНЩИКИ EST. 2025
     </div>
 
   </div>
 
 
+  <!-- DEUTSCHE KATEGORIEN -->
 
-  <div class="products">
+  <div class="categories">
+
+    <button
+      class="category active"
+      onclick="filterProducts('alle',this)"
+    >
+      Alle
+    </button>
+
+    <button
+      class="category"
+      onclick="filterProducts('shirts',this)"
+    >
+      Shirts
+    </button>
+
+    <button
+      class="category"
+      onclick="filterProducts('hoodies',this)"
+    >
+      Hoodies
+    </button>
+
+    <button
+      class="category"
+      onclick="filterProducts('zipper',this)"
+    >
+      Zipper
+    </button>
+
+    <button
+      class="category"
+      onclick="filterProducts('hosen',this)"
+    >
+      Hosen
+    </button>
+
+  </div>
 
 
-    <!-- 1 -->
+  <div class="products" id="products">
 
-    <article class="product">
+
+    <!-- SHIRT RUSSIA -->
+
+    <article
+      class="product"
+      data-category="shirts"
+      onclick="openProduct(0)"
+    >
 
       <div class="product-image">
-
-        <img
-          src="assets/Shirt-black-Russia.jpg"
-          alt="ГОНЩИКИ T-Shirt Russia"
-        >
-
+        <img src="assets/Shirt-black-Russia.jpg">
       </div>
-
 
       <div class="product-info">
 
-        <div>
-
-          <div class="product-title">
-            ГОНЩИКИ T-Shirt Russia
-          </div>
-
-          <div class="product-meta">
-            Black / Russia
-          </div>
-
+        <div class="product-name">
+          ГОНЩИКИ Shirt Schwarz – Russia
         </div>
 
+        <div class="product-category">
+          Shirt
+        </div>
 
         <div class="product-price">
-          Coming soon
+          39,90 €
         </div>
 
       </div>
@@ -741,38 +896,30 @@ footer {
     </article>
 
 
+    <!-- ZIPPER -->
 
-    <!-- 2 -->
-
-    <article class="product">
+    <article
+      class="product"
+      data-category="zipper"
+      onclick="openProduct(1)"
+    >
 
       <div class="product-image">
-
-        <img
-          src="assets/Zipper-black-Kreuz.jpg"
-          alt="ГОНЩИКИ Zipper Kreuz"
-        >
-
+        <img src="assets/Zipper-black-Kreuz.jpg">
       </div>
-
 
       <div class="product-info">
 
-        <div>
-
-          <div class="product-title">
-            ГОНЩИКИ Zipper Kreuz
-          </div>
-
-          <div class="product-meta">
-            Black / Kreuz
-          </div>
-
+        <div class="product-name">
+          ГОНЩИКИ Zipper Schwarz – Kreuz
         </div>
 
+        <div class="product-category">
+          Zipper
+        </div>
 
         <div class="product-price">
-          Coming soon
+          69,90 €
         </div>
 
       </div>
@@ -780,38 +927,30 @@ footer {
     </article>
 
 
+    <!-- HOODIE E36 -->
 
-    <!-- 3 -->
-
-    <article class="product">
+    <article
+      class="product"
+      data-category="hoodies"
+      onclick="openProduct(2)"
+    >
 
       <div class="product-image">
-
-        <img
-          src="assets/Hoodie-black-e36.jpg"
-          alt="ГОНЩИКИ Hoodie E36"
-        >
-
+        <img src="assets/Hoodie-black-e36.jpg">
       </div>
-
 
       <div class="product-info">
 
-        <div>
-
-          <div class="product-title">
-            ГОНЩИКИ Hoodie E36
-          </div>
-
-          <div class="product-meta">
-            Black / E36
-          </div>
-
+        <div class="product-name">
+          ГОНЩИКИ Hoodie Schwarz – E36
         </div>
 
+        <div class="product-category">
+          Hoodie
+        </div>
 
         <div class="product-price">
-          Coming soon
+          69,90 €
         </div>
 
       </div>
@@ -819,38 +958,30 @@ footer {
     </article>
 
 
+    <!-- HOODIE E34 -->
 
-    <!-- 4 -->
-
-    <article class="product">
+    <article
+      class="product"
+      data-category="hoodies"
+      onclick="openProduct(3)"
+    >
 
       <div class="product-image">
-
-        <img
-          src="assets/Hoodie-black-e34.jpg"
-          alt="ГОНЩИКИ Hoodie E34"
-        >
-
+        <img src="assets/Hoodie-black-e34.jpg">
       </div>
-
 
       <div class="product-info">
 
-        <div>
-
-          <div class="product-title">
-            ГОНЩИКИ Hoodie E34
-          </div>
-
-          <div class="product-meta">
-            Black / E34
-          </div>
-
+        <div class="product-name">
+          ГОНЩИКИ Hoodie Schwarz – E34
         </div>
 
+        <div class="product-category">
+          Hoodie
+        </div>
 
         <div class="product-price">
-          Coming soon
+          69,90 €
         </div>
 
       </div>
@@ -858,38 +989,30 @@ footer {
     </article>
 
 
+    <!-- HOODIE KREUZ -->
 
-    <!-- 5 -->
-
-    <article class="product">
+    <article
+      class="product"
+      data-category="hoodies"
+      onclick="openProduct(4)"
+    >
 
       <div class="product-image">
-
-        <img
-          src="assets/Hoodie-black-Kreuz.jpg"
-          alt="ГОНЩИКИ Hoodie Kreuz"
-        >
-
+        <img src="assets/Hoodie-black-Kreuz.jpg">
       </div>
-
 
       <div class="product-info">
 
-        <div>
-
-          <div class="product-title">
-            ГОНЩИКИ Hoodie Kreuz
-          </div>
-
-          <div class="product-meta">
-            Black / Kreuz
-          </div>
-
+        <div class="product-name">
+          ГОНЩИКИ Hoodie Schwarz – Kreuz
         </div>
 
+        <div class="product-category">
+          Hoodie
+        </div>
 
         <div class="product-price">
-          Coming soon
+          69,90 €
         </div>
 
       </div>
@@ -897,38 +1020,30 @@ footer {
     </article>
 
 
+    <!-- SHIRT E36 -->
 
-    <!-- 6 -->
-
-    <article class="product">
+    <article
+      class="product"
+      data-category="shirts"
+      onclick="openProduct(5)"
+    >
 
       <div class="product-image">
-
-        <img
-          src="assets/Shirt-black-e36.jpg"
-          alt="ГОНЩИКИ T-Shirt E36"
-        >
-
+        <img src="assets/Shirt-black-e36.jpg">
       </div>
-
 
       <div class="product-info">
 
-        <div>
-
-          <div class="product-title">
-            ГОНЩИКИ T-Shirt E36
-          </div>
-
-          <div class="product-meta">
-            Black / E36
-          </div>
-
+        <div class="product-name">
+          ГОНЩИКИ Shirt Schwarz – E36
         </div>
 
+        <div class="product-category">
+          Shirt
+        </div>
 
         <div class="product-price">
-          Coming soon
+          39,90 €
         </div>
 
       </div>
@@ -936,38 +1051,30 @@ footer {
     </article>
 
 
+    <!-- HOODIE RUSSIA -->
 
-    <!-- 7 -->
-
-    <article class="product">
+    <article
+      class="product"
+      data-category="hoodies"
+      onclick="openProduct(6)"
+    >
 
       <div class="product-image">
-
-        <img
-          src="assets/Hoodie-black-Russia.jpg"
-          alt="ГОНЩИКИ Hoodie Russia"
-        >
-
+        <img src="assets/Hoodie-black-Russia.jpg">
       </div>
-
 
       <div class="product-info">
 
-        <div>
-
-          <div class="product-title">
-            ГОНЩИКИ Hoodie Russia
-          </div>
-
-          <div class="product-meta">
-            Black / Russia
-          </div>
-
+        <div class="product-name">
+          ГОНЩИКИ Hoodie Schwarz – Russia
         </div>
 
+        <div class="product-category">
+          Hoodie
+        </div>
 
         <div class="product-price">
-          Coming soon
+          69,90 €
         </div>
 
       </div>
@@ -975,38 +1082,30 @@ footer {
     </article>
 
 
+    <!-- SHIRT E34 -->
 
-    <!-- 8 -->
-
-    <article class="product">
+    <article
+      class="product"
+      data-category="shirts"
+      onclick="openProduct(7)"
+    >
 
       <div class="product-image">
-
-        <img
-          src="assets/Shirt-black-e34.jpg"
-          alt="ГОНЩИКИ T-Shirt E34"
-        >
-
+        <img src="assets/Shirt-black-e34.jpg">
       </div>
-
 
       <div class="product-info">
 
-        <div>
-
-          <div class="product-title">
-            ГОНЩИКИ T-Shirt E34
-          </div>
-
-          <div class="product-meta">
-            Black / E34
-          </div>
-
+        <div class="product-name">
+          ГОНЩИКИ Shirt Schwarz – E34
         </div>
 
+        <div class="product-category">
+          Shirt
+        </div>
 
         <div class="product-price">
-          Coming soon
+          39,90 €
         </div>
 
       </div>
@@ -1014,38 +1113,30 @@ footer {
     </article>
 
 
+    <!-- HOODIE BEIGE -->
 
-    <!-- 9 -->
-
-    <article class="product">
+    <article
+      class="product"
+      data-category="hoodies"
+      onclick="openProduct(8)"
+    >
 
       <div class="product-image">
-
-        <img
-          src="assets/Hoodie-beige-e36.jpg"
-          alt="ГОНЩИКИ Hoodie E36 Beige"
-        >
-
+        <img src="assets/Hoodie-beige-e36.jpg">
       </div>
-
 
       <div class="product-info">
 
-        <div>
-
-          <div class="product-title">
-            ГОНЩИКИ Hoodie E36 Beige
-          </div>
-
-          <div class="product-meta">
-            Beige / E36
-          </div>
-
+        <div class="product-name">
+          ГОНЩИКИ Hoodie Beige – E36
         </div>
 
+        <div class="product-category">
+          Hoodie
+        </div>
 
         <div class="product-price">
-          Coming soon
+          69,90 €
         </div>
 
       </div>
@@ -1053,38 +1144,30 @@ footer {
     </article>
 
 
+    <!-- HOSE -->
 
-    <!-- 10 -->
-
-    <article class="product">
+    <article
+      class="product"
+      data-category="hosen"
+      onclick="openProduct(9)"
+    >
 
       <div class="product-image">
-
-        <img
-          src="assets/Pants-black-gonschiki.jpg"
-          alt="ГОНЩИКИ Pants"
-        >
-
+        <img src="assets/Pants-black-gonschiki.jpg">
       </div>
-
 
       <div class="product-info">
 
-        <div>
-
-          <div class="product-title">
-            ГОНЩИКИ Pants
-          </div>
-
-          <div class="product-meta">
-            Black / ГОНЩИКИ
-          </div>
-
+        <div class="product-name">
+          ГОНЩИКИ Hose Schwarz
         </div>
 
+        <div class="product-category">
+          Hose
+        </div>
 
         <div class="product-price">
-          Coming soon
+          59,90 €
         </div>
 
       </div>
@@ -1099,113 +1182,58 @@ footer {
 
 
 <!-- =========================
-     CARS
+     AUTOS
 ========================= -->
 
-<section
-  class="section"
-  id="cars"
->
+<section class="section" id="cars">
 
   <div class="section-head">
 
     <div>
 
-      <div class="section-number">
-        02 / Car Culture
+      <div class="number">
+        02 / CAR CULTURE
       </div>
 
       <h2>
-        OUR CARS
+        UNSERE AUTOS
       </h2>
 
     </div>
 
-
-    <div class="section-note">
-      Built. Driven. Repeated.
+    <div class="note">
+      Gebaut. Gefahren. Wiederholt.
     </div>
 
   </div>
 
 
-
   <div class="cars">
 
-
     <div class="car">
-
-      <img
-        src="assets/Car-1.JPG"
-        alt="ГОНЩИКИ Car 1"
-      >
-
-      <div class="car-label">
-        Night Shift
-      </div>
-
+      <img src="assets/Car-1.JPG">
+      <div class="car-name">Night Shift</div>
     </div>
 
-
-
     <div class="car">
-
-      <img
-        src="assets/Car-2.JPG"
-        alt="ГОНЩИКИ Car 2"
-      >
-
-      <div class="car-label">
-        The Crew
-      </div>
-
+      <img src="assets/Car-2.JPG">
+      <div class="car-name">The Crew</div>
     </div>
 
-
-
     <div class="car">
-
-      <img
-        src="assets/Car-3.jpg"
-        alt="ГОНЩИКИ Car 3"
-      >
-
-      <div class="car-label">
-        After Hours
-      </div>
-
+      <img src="assets/Car-3.jpg">
+      <div class="car-name">After Hours</div>
     </div>
 
-
-
     <div class="car">
-
-      <img
-        src="assets/Car-4.jpg"
-        alt="ГОНЩИКИ Car 4"
-      >
-
-      <div class="car-label">
-        Street Spec
-      </div>
-
+      <img src="assets/Car-4.jpg">
+      <div class="car-name">Street Spec</div>
     </div>
 
-
-
     <div class="car">
-
-      <img
-        src="assets/Car-5.jpg"
-        alt="ГОНЩИКИ Car 5"
-      >
-
-      <div class="car-label">
-        Built Different
-      </div>
-
+      <img src="assets/Car-5.jpg">
+      <div class="car-name">Built Different</div>
     </div>
-
 
   </div>
 
@@ -1214,30 +1242,26 @@ footer {
 
 
 <!-- =========================
-     ABOUT
+     ÜBER UNS
 ========================= -->
 
-<section
-  class="section manifesto"
-  id="about"
->
+<section class="section manifesto" id="about">
 
   <div>
 
-    <div class="section-number">
-      03 / Manifesto
+    <div class="number">
+      03 / ÜBER UNS
     </div>
-
 
     <div class="manifesto-text">
 
-      BUILT FOR THE NIGHT.<br>
+      GEMACHT FÜR DIE NACHT.<br>
 
-      MADE FOR THE
+      GEMACHT FÜR DEN
       <span>DRIVE.</span><br>
 
-      NO RULES.
-      JUST
+      KEINE REGELN.
+      NUR
       <span>STYLE.</span>
 
     </div>
@@ -1249,40 +1273,33 @@ footer {
 
 
 <!-- =========================
-     CONTACT
+     KONTAKT
 ========================= -->
 
-<section
-  class="section"
-  id="contact"
->
+<section class="section" id="contact">
 
-  <div class="section-number">
-    04 / Stay Connected
+  <div class="number">
+    04 / KONTAKT
   </div>
-
 
   <div class="contact">
 
     <h2>
-      JOIN THE CREW.
+      WERDE TEIL DER CREW.
     </h2>
 
-
-    <div class="contact-right">
+    <div class="contact-info">
 
       Instagram<br>
 
       <a
         href="https://instagram.com/gonschikicrew"
         target="_blank"
-        rel="noopener"
       >
         @gonschikicrew
       </a>
 
-      <br>
-      <br>
+      <br><br>
 
       ГОНЩИКИ — EST. 2025
 
@@ -1310,6 +1327,512 @@ footer {
 
 </footer>
 
+
+
+<!-- =========================
+     PRODUKT FENSTER
+========================= -->
+
+<div class="modal" id="product-modal">
+
+  <div class="modal-box">
+
+    <div class="modal-image">
+      <img id="modal-image">
+    </div>
+
+    <div class="modal-info">
+
+      <button
+        class="close"
+        onclick="closeProduct()"
+      >
+        ×
+      </button>
+
+      <div
+        class="modal-category"
+        id="modal-category"
+      ></div>
+
+      <div
+        class="modal-title"
+        id="modal-title"
+      ></div>
+
+      <div
+        class="modal-price"
+        id="modal-price"
+      ></div>
+
+
+      <div class="size-title">
+        Größe auswählen
+      </div>
+
+
+      <div class="sizes">
+
+        <button class="size" onclick="selectSize(this)">
+          S
+        </button>
+
+        <button class="size" onclick="selectSize(this)">
+          M
+        </button>
+
+        <button class="size" onclick="selectSize(this)">
+          L
+        </button>
+
+        <button class="size" onclick="selectSize(this)">
+          XL
+        </button>
+
+      </div>
+
+
+      <button
+        class="add-cart"
+        onclick="addToCart()"
+      >
+        IN DEN WARENKORB
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================
+     WARENKORB
+========================= -->
+
+<div
+  class="cart-panel"
+  id="cart-panel"
+>
+
+  <div class="cart-header">
+
+    <h3>
+      DEIN WARENKORB
+    </h3>
+
+    <button
+      class="cart-close"
+      onclick="closeCart()"
+    >
+      ×
+    </button>
+
+  </div>
+
+
+  <div
+    class="cart-items"
+    id="cart-items"
+  ></div>
+
+
+  <div class="cart-footer">
+
+    <div class="total">
+
+      <span>
+        GESAMT
+      </span>
+
+      <span id="cart-total">
+        0,00 €
+      </span>
+
+    </div>
+
+
+    <button class="checkout">
+      ZUR KASSE
+    </button>
+
+  </div>
+
+</div>
+
+
+
+<script>
+
+/* =========================
+   PRODUKTDATEN
+========================= */
+
+const products = [
+
+  {
+    image:"assets/Shirt-black-Russia.jpg",
+    name:"ГОНЩИКИ Shirt Schwarz – Russia",
+    category:"Shirt",
+    price:39.90
+  },
+
+  {
+    image:"assets/Zipper-black-Kreuz.jpg",
+    name:"ГОНЩИКИ Zipper Schwarz – Kreuz",
+    category:"Zipper",
+    price:69.90
+  },
+
+  {
+    image:"assets/Hoodie-black-e36.jpg",
+    name:"ГОНЩИКИ Hoodie Schwarz – E36",
+    category:"Hoodie",
+    price:69.90
+  },
+
+  {
+    image:"assets/Hoodie-black-e34.jpg",
+    name:"ГОНЩИКИ Hoodie Schwarz – E34",
+    category:"Hoodie",
+    price:69.90
+  },
+
+  {
+    image:"assets/Hoodie-black-Kreuz.jpg",
+    name:"ГОНЩИКИ Hoodie Schwarz – Kreuz",
+    category:"Hoodie",
+    price:69.90
+  },
+
+  {
+    image:"assets/Shirt-black-e36.jpg",
+    name:"ГОНЩИКИ Shirt Schwarz – E36",
+    category:"Shirt",
+    price:39.90
+  },
+
+  {
+    image:"assets/Hoodie-black-Russia.jpg",
+    name:"ГОНЩИКИ Hoodie Schwarz – Russia",
+    category:"Hoodie",
+    price:69.90
+  },
+
+  {
+    image:"assets/Shirt-black-e34.jpg",
+    name:"ГОНЩИКИ Shirt Schwarz – E34",
+    category:"Shirt",
+    price:39.90
+  },
+
+  {
+    image:"assets/Hoodie-beige-e36.jpg",
+    name:"ГОНЩИКИ Hoodie Beige – E36",
+    category:"Hoodie",
+    price:69.90
+  },
+
+  {
+    image:"assets/Pants-black-gonschiki.jpg",
+    name:"ГОНЩИКИ Hose Schwarz",
+    category:"Hose",
+    price:59.90
+  }
+
+];
+
+
+let currentProduct = null;
+let selectedSize = null;
+
+let cart = JSON.parse(
+  localStorage.getItem("gonschiki-cart") || "[]"
+);
+
+
+/* =========================
+   PRODUKT ÖFFNEN
+========================= */
+
+function openProduct(index){
+
+  currentProduct = index;
+  selectedSize = null;
+
+  const product = products[index];
+
+  document.getElementById("modal-image").src =
+    product.image;
+
+  document.getElementById("modal-title").textContent =
+    product.name;
+
+  document.getElementById("modal-category").textContent =
+    product.category;
+
+  document.getElementById("modal-price").textContent =
+    product.price.toFixed(2).replace(".",",") + " €";
+
+  document
+    .querySelectorAll(".size")
+    .forEach(button => {
+      button.classList.remove("selected");
+    });
+
+  document
+    .getElementById("product-modal")
+    .classList.add("open");
+}
+
+
+/* =========================
+   PRODUKT SCHLIESSEN
+========================= */
+
+function closeProduct(){
+
+  document
+    .getElementById("product-modal")
+    .classList.remove("open");
+
+}
+
+
+/* =========================
+   GRÖSSE
+========================= */
+
+function selectSize(button){
+
+  document
+    .querySelectorAll(".size")
+    .forEach(b => {
+      b.classList.remove("selected");
+    });
+
+  button.classList.add("selected");
+
+  selectedSize = button.textContent;
+
+}
+
+
+/* =========================
+   WARENKORB HINZUFÜGEN
+========================= */
+
+function addToCart(){
+
+  if(selectedSize === null){
+
+    alert("Bitte zuerst eine Größe auswählen.");
+
+    return;
+  }
+
+
+  const product = products[currentProduct];
+
+
+  cart.push({
+
+    image:product.image,
+
+    name:product.name,
+
+    price:product.price,
+
+    size:selectedSize
+
+  });
+
+
+  localStorage.setItem(
+    "gonschiki-cart",
+    JSON.stringify(cart)
+  );
+
+
+  updateCart();
+
+
+  closeProduct();
+
+
+  openCart();
+
+}
+
+
+/* =========================
+   WARENKORB AKTUALISIEREN
+========================= */
+
+function updateCart(){
+
+  const container =
+    document.getElementById("cart-items");
+
+  const count =
+    document.getElementById("cart-count");
+
+  const totalElement =
+    document.getElementById("cart-total");
+
+
+  count.textContent = cart.length;
+
+
+  container.innerHTML = "";
+
+
+  let total = 0;
+
+
+  cart.forEach((item,index)=>{
+
+    total += item.price;
+
+
+    const element =
+      document.createElement("div");
+
+    element.className = "cart-item";
+
+
+    element.innerHTML = `
+
+      <img src="${item.image}">
+
+      <div>
+
+        <div class="cart-item-name">
+          ${item.name}
+        </div>
+
+        <div class="cart-item-meta">
+          Größe: ${item.size}
+        </div>
+
+        <div class="cart-item-meta">
+          ${item.price.toFixed(2).replace(".",",")} €
+        </div>
+
+      </div>
+
+      <button
+        class="remove"
+        onclick="removeFromCart(${index})"
+      >
+        ENTFERNEN
+      </button>
+
+    `;
+
+
+    container.appendChild(element);
+
+  });
+
+
+  totalElement.textContent =
+    total.toFixed(2).replace(".",",") + " €";
+
+}
+
+
+/* =========================
+   ENTFERNEN
+========================= */
+
+function removeFromCart(index){
+
+  cart.splice(index,1);
+
+  localStorage.setItem(
+    "gonschiki-cart",
+    JSON.stringify(cart)
+  );
+
+  updateCart();
+
+}
+
+
+/* =========================
+   WARENKORB ÖFFNEN
+========================= */
+
+function openCart(){
+
+  updateCart();
+
+  document
+    .getElementById("cart-panel")
+    .classList.add("open");
+
+}
+
+
+/* =========================
+   WARENKORB SCHLIESSEN
+========================= */
+
+function closeCart(){
+
+  document
+    .getElementById("cart-panel")
+    .classList.remove("open");
+
+}
+
+
+/* =========================
+   KATEGORIEN
+========================= */
+
+function filterProducts(category,button){
+
+  document
+    .querySelectorAll(".category")
+    .forEach(b=>{
+      b.classList.remove("active");
+    });
+
+  button.classList.add("active");
+
+
+  document
+    .querySelectorAll(".product")
+    .forEach(product=>{
+
+      if(
+        category === "alle" ||
+        product.dataset.category === category
+      ){
+
+        product.style.display = "";
+
+      }else{
+
+        product.style.display = "none";
+
+      }
+
+    });
+
+}
+
+
+/* =========================
+   START
+========================= */
+
+updateCart();
+
+</script>
 
 </body>
 </html>
