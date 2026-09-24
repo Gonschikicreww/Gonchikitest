@@ -7,6 +7,7 @@
 <title>ГОНЩИКИ — Gonschiki Crew</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -18,7 +19,7 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     background:#080808;
     color:#fff;
     overflow-x:hidden;
@@ -42,7 +43,6 @@ button{
     background:#fff;
     color:#000;
     text-align:center;
-
     padding:9px 15px;
 
     font-size:11px;
@@ -60,7 +60,6 @@ nav{
     left:0;
 
     width:100%;
-
     z-index:30;
 
     display:flex;
@@ -89,7 +88,6 @@ nav{
 
     font-size:9px;
     letter-spacing:4px;
-
     opacity:.75;
 }
 
@@ -161,15 +159,10 @@ nav{
     justify-content:center;
 }
 
-/*
-   DAS HAUPTBILD
-
-   Car-1 liegt direkt hinter dem großen Logo.
-*/
+/* CAR-1 DIREKT HINTER DEM GROSSEN LOGO */
 
 .hero-car-background{
     position:absolute;
-
     inset:0;
 
     z-index:0;
@@ -185,15 +178,8 @@ nav{
     filter:brightness(.52);
 }
 
-/*
-   Zusätzlicher Verlauf.
-   Das Auto bleibt sichtbar,
-   aber das Logo bekommt Kontrast.
-*/
-
 .hero-overlay{
     position:absolute;
-
     inset:0;
 
     z-index:1;
@@ -209,15 +195,10 @@ nav{
         );
 }
 
-/*
-   Dezente Vignette
-*/
-
 .hero-overlay::after{
     content:"";
 
     position:absolute;
-
     inset:0;
 
     background:
@@ -227,10 +208,6 @@ nav{
             rgba(0,0,0,.35) 100%
         );
 }
-
-/* ==================================================
-   HERO CONTENT
-================================================== */
 
 .hero-content{
     position:relative;
@@ -253,13 +230,9 @@ nav{
     text-align:center;
 }
 
-/*
-   GROßES LOGO
-*/
+/* GROSSES LOGO */
 
 .hero-logo{
-    position:relative;
-
     font-size:clamp(65px,11vw,155px);
 
     line-height:.82;
@@ -275,9 +248,7 @@ nav{
         0 0 35px rgba(0,0,0,.55);
 }
 
-/*
-   EST. 2025
-*/
+/* EST. 2025 */
 
 .hero-est{
     margin-top:30px;
@@ -294,10 +265,7 @@ nav{
         0 3px 15px rgba(0,0,0,.95);
 }
 
-/*
-   SPRUCH
-   Viel Abstand zum Logo
-*/
+/* SPRUCH */
 
 .hero-slogan{
     margin-top:125px;
@@ -606,16 +574,6 @@ section{
     border:1px solid #1d1d1d;
 
     overflow:hidden;
-}
-
-.car:last-child{
-    grid-column:1/-1;
-
-    max-width:520px;
-
-    width:100%;
-
-    justify-self:center;
 }
 
 .car img{
@@ -1144,10 +1102,6 @@ footer p{
         font-size:10px;
     }
 
-    /* ------------------------------
-       MOBILE HERO
-    ------------------------------ */
-
     .hero{
         height:760px;
 
@@ -1220,8 +1174,6 @@ footer p{
         padding:70px 18px;
     }
 
-    /* SHOP */
-
     .products{
         grid-template-columns:1fr 1fr;
 
@@ -1244,13 +1196,9 @@ footer p{
         font-size:11px;
     }
 
-    /* EVENTS */
-
     .events-grid{
         grid-template-columns:1fr;
     }
-
-    /* CARS */
 
     .cars{
         grid-template-columns:1fr;
@@ -1258,17 +1206,9 @@ footer p{
         gap:14px;
     }
 
-    .car:last-child{
-        grid-column:auto;
-
-        max-width:none;
-    }
-
     .car img{
         height:205px;
     }
-
-    /* MODAL */
 
     .modal-box{
         padding:22px;
@@ -1278,13 +1218,9 @@ footer p{
         height:300px;
     }
 
-    /* ACCOUNT */
-
     .form-grid{
         grid-template-columns:1fr;
     }
-
-    /* FOOTER */
 
     footer{
         flex-direction:column;
@@ -1293,7 +1229,9 @@ footer p{
 
         text-align:center;
     }
+
 }
+
 </style>
 </head>
 
@@ -1306,6 +1244,7 @@ footer p{
 <div class="top-info">
     SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BESTELLUNGEN DERZEIT MÖGLICH!
 </div>
+
 
 <!-- ==================================================
      NAVIGATION
@@ -1325,23 +1264,38 @@ footer p{
 
     </a>
 
+
     <div class="nav-links">
 
-        <a href="#shop">SHOP</a>
+        <a href="#shop">
+            SHOP
+        </a>
 
-        <a href="#events">EVENTS</a>
+        <a href="#events">
+            EVENTS
+        </a>
 
-        <a href="#cars">CARS</a>
+        <a href="#cars">
+            CARS
+        </a>
 
-        <a href="#about">ABOUT</a>
+        <a href="#about">
+            ABOUT
+        </a>
 
-        <a href="#contact">KONTAKT</a>
+        <a href="#contact">
+            KONTAKT
+        </a>
+
 
         <button
             class="nav-button"
             onclick="openAccount()">
+
             ANMELDEN
+
         </button>
+
 
         <button
             class="nav-button cart-button"
@@ -1352,10 +1306,13 @@ footer p{
             <span
                 class="cart-count"
                 id="cartCount">
+
                 0
+
             </span>
 
         </button>
+
 
         <div class="language">
 
@@ -1363,9 +1320,17 @@ footer p{
                 id="languageSelect"
                 onchange="changeLanguage(this.value)">
 
-                <option value="de">DE</option>
-                <option value="en">EN</option>
-                <option value="ru">RU</option>
+                <option value="de">
+                    DE
+                </option>
+
+                <option value="en">
+                    EN
+                </option>
+
+                <option value="ru">
+                    RU
+                </option>
 
             </select>
 
@@ -1375,38 +1340,39 @@ footer p{
 
 </nav>
 
+
 <!-- ==================================================
      HERO
 ================================================== -->
 
-<section class="hero" id="home">
+<section
+    class="hero"
+    id="home">
 
-    <!--
-        CAR-1 ALS GROSSES HAUPTBILD
-        DIREKT HINTER DEM LOGO
-    -->
+
+    <!-- CAR-1 HINTER DEM LOGO -->
 
     <div class="hero-car-background"></div>
 
+
     <div class="hero-overlay"></div>
+
 
     <div class="hero-content">
 
-        <!-- GROSSES LOGO -->
 
         <div class="hero-logo">
             ГОНЩИКИ
         </div>
 
-        <!-- EST -->
 
         <div class="hero-est">
             EST. 2025
         </div>
 
-        <!-- SPRUCH -->
 
         <div class="hero-slogan">
+
 
             <div class="hero-slogan-main">
 
@@ -1420,31 +1386,47 @@ footer p{
 
             </div>
 
+
             <div class="hero-slogan-small">
+
                 KEINE REGEL. NUR STYLE.
+
             </div>
 
+
             <p class="hero-description">
-                Gonschiki steht für Autos, Nächte,
-                Geschwindigkeit und den eigenen Style.
-                Streetwear für alle, die ihre eigene Spur fahren.
+
+                Gonschiki steht für Autos,
+                Nächte, Geschwindigkeit und
+                den eigenen Style.
+                Streetwear für alle,
+                die ihre eigene Spur fahren.
+
             </p>
 
+
         </div>
+
 
     </div>
 
 </section>
 
+
 <!-- ==================================================
      SHOP
 ================================================== -->
 
-<section class="shop" id="shop">
+<section
+    class="shop"
+    id="shop">
+
 
     <div class="section-title">
 
-        <h2>SHOP</h2>
+        <h2>
+            SHOP
+        </h2>
 
         <p>
             Gonschiki Streetwear
@@ -1452,56 +1434,82 @@ footer p{
 
     </div>
 
+
     <div class="categories">
+
 
         <button
             class="category-btn active"
             onclick="filterProducts('Alle',this)">
+
             ALLE
+
         </button>
+
 
         <button
             class="category-btn"
             onclick="filterProducts('Shirts',this)">
+
             SHIRTS
+
         </button>
+
 
         <button
             class="category-btn"
             onclick="filterProducts('Hoodies',this)">
+
             HOODIES
+
         </button>
+
 
         <button
             class="category-btn"
             onclick="filterProducts('Zipper',this)">
+
             ZIPPER
+
         </button>
+
 
         <button
             class="category-btn"
             onclick="filterProducts('Hosen',this)">
+
             HOSEN
+
         </button>
 
+
     </div>
+
 
     <div
         class="products"
         id="products">
+
     </div>
 
+
 </section>
+
 
 <!-- ==================================================
      EVENTS
 ================================================== -->
 
-<section class="events" id="events">
+<section
+    class="events"
+    id="events">
+
 
     <div class="section-title">
 
-        <h2>EVENTS</h2>
+        <h2>
+            EVENTS
+        </h2>
 
         <p>
             Cars. People. Nights.
@@ -1509,7 +1517,9 @@ footer p{
 
     </div>
 
+
     <div class="events-grid">
+
 
         <div class="event">
 
@@ -1530,11 +1540,15 @@ footer p{
                 Musik und die Gonschiki Crew.
             </p>
 
-            <button onclick="previewMessage()">
+            <button
+                onclick="previewMessage()">
+
                 TICKETS – DEMNÄCHST
+
             </button>
 
         </div>
+
 
         <div class="event">
 
@@ -1555,25 +1569,35 @@ footer p{
                 Autos, Freunde und der eigene Style.
             </p>
 
-            <button onclick="previewMessage()">
+            <button
+                onclick="previewMessage()">
+
                 INFOS – DEMNÄCHST
+
             </button>
 
         </div>
+
 
     </div>
 
 </section>
 
+
 <!-- ==================================================
      CARS
 ================================================== -->
 
-<section class="cars-section" id="cars">
+<section
+    class="cars-section"
+    id="cars">
+
 
     <div class="section-title">
 
-        <h2>CARS</h2>
+        <h2>
+            CARS
+        </h2>
 
         <p>
             Die Autos hinter Gonschiki
@@ -1581,7 +1605,11 @@ footer p{
 
     </div>
 
+
     <div class="cars">
+
+
+        <!-- CAR 1 -->
 
         <div class="car">
 
@@ -1590,10 +1618,17 @@ footer p{
                 alt="">
 
             <div class="car-info">
-                <h3>GONSCHIKI #01</h3>
+
+                <h3>
+                    GONSCHIKI #01
+                </h3>
+
             </div>
 
         </div>
+
+
+        <!-- CAR 2 -->
 
         <div class="car">
 
@@ -1602,10 +1637,17 @@ footer p{
                 alt="">
 
             <div class="car-info">
-                <h3>GONSCHIKI #02</h3>
+
+                <h3>
+                    GONSCHIKI #02
+                </h3>
+
             </div>
 
         </div>
+
+
+        <!-- CAR 3 -->
 
         <div class="car">
 
@@ -1614,10 +1656,17 @@ footer p{
                 alt="">
 
             <div class="car-info">
-                <h3>GONSCHIKI #03</h3>
+
+                <h3>
+                    GONSCHIKI #03
+                </h3>
+
             </div>
 
         </div>
+
+
+        <!-- CAR 4 -->
 
         <div class="car">
 
@@ -1626,10 +1675,17 @@ footer p{
                 alt="">
 
             <div class="car-info">
-                <h3>GONSCHIKI #04</h3>
+
+                <h3>
+                    GONSCHIKI #04
+                </h3>
+
             </div>
 
         </div>
+
+
+        <!-- CAR 5 -->
 
         <div class="car">
 
@@ -1638,71 +1694,120 @@ footer p{
                 alt="">
 
             <div class="car-info">
-                <h3>GONSCHIKI #05</h3>
+
+                <h3>
+                    GONSCHIKI #05
+                </h3>
+
             </div>
 
         </div>
 
+
+        <!-- CAR 6 – NEUES BILD -->
+
+        <div class="car">
+
+            <img
+                src="assets/Car-6.heic"
+                alt="">
+
+            <div class="car-info">
+
+                <h3>
+                    GONSCHIKI #06
+                </h3>
+
+            </div>
+
+        </div>
+
+
     </div>
 
 </section>
+
 
 <!-- ==================================================
      ABOUT
 ================================================== -->
 
-<section class="about" id="about">
+<section
+    class="about"
+    id="about">
+
 
     <div class="section-title">
 
-        <h2>ABOUT</h2>
+        <h2>
+            ABOUT
+        </h2>
 
     </div>
+
 
     <div class="about-content">
 
         <p>
+
             Gonschiki ist mehr als nur Streetwear.
             Es geht um Autos, Geschwindigkeit,
             Nächte, Freunde und den eigenen Style.
             Eine Crew für alle, die ihre eigene Spur fahren.
+
         </p>
 
     </div>
 
+
 </section>
+
 
 <!-- ==================================================
      CONTACT
 ================================================== -->
 
-<section class="contact" id="contact">
+<section
+    class="contact"
+    id="contact">
+
 
     <div class="section-title">
 
-        <h2>KONTAKT</h2>
+        <h2>
+            KONTAKT
+        </h2>
 
     </div>
+
 
     <div class="contact-content">
 
         <p>
-            Fragen, Kooperationen oder Interesse an Gonschiki?
+
+            Fragen, Kooperationen oder Interesse
+            an Gonschiki?
+
         </p>
+
 
         <div class="social">
 
             <a
                 href="https://instagram.com/gonschikicrew"
                 target="_blank">
+
                 INSTAGRAM
+
             </a>
 
         </div>
 
+
     </div>
 
 </section>
+
 
 <!-- ==================================================
      FOOTER
@@ -1720,21 +1825,27 @@ footer p{
 
 </footer>
 
+
 <!-- ==================================================
-     PRODUCT MODAL
+     PRODUKT MODAL
 ================================================== -->
 
 <div
     class="modal"
     id="productModal">
 
+
     <div class="modal-box">
+
 
         <button
             class="close"
             onclick="closeModal('productModal')">
+
             ×
+
         </button>
+
 
         <img
             id="modalProductImage"
@@ -1742,62 +1853,87 @@ footer p{
             src=""
             alt="">
 
-        <h2 id="modalProductName"></h2>
+
+        <h2
+            id="modalProductName">
+        </h2>
+
 
         <div
             class="modal-price"
             id="modalProductPrice">
         </div>
 
+
         <div class="size-title">
             GRÖSSE
         </div>
 
+
         <div class="sizes">
 
+
             <button
                 class="size"
                 onclick="selectSize(this)">
+
                 S
+
             </button>
+
 
             <button
                 class="size"
                 onclick="selectSize(this)">
+
                 M
+
             </button>
+
 
             <button
                 class="size"
                 onclick="selectSize(this)">
+
                 L
+
             </button>
+
 
             <button
                 class="size"
                 onclick="selectSize(this)">
+
                 XL
+
             </button>
+
 
         </div>
+
 
         <button
             class="primary-btn"
             onclick="addCurrentProduct()">
+
             IN DEN WARENKORB
+
         </button>
+
 
     </div>
 
 </div>
 
+
 <!-- ==================================================
-     CART
+     WARENKORB
 ================================================== -->
 
 <div
     class="cart-panel"
     id="cartPanel">
+
 
     <div class="cart-head">
 
@@ -1805,15 +1941,21 @@ footer p{
             WARENKORB
         </h2>
 
+
         <button
             class="close"
             onclick="closeCart()">
+
             ×
+
         </button>
 
     </div>
 
-    <div id="cartItems"></div>
+
+    <div id="cartItems">
+    </div>
+
 
     <div class="cart-total">
 
@@ -1827,13 +1969,18 @@ footer p{
 
     </div>
 
+
     <div class="preview-note">
+
         SHOP-VORSCHAU:
         Bestellungen und Bezahlung sind derzeit
         noch nicht möglich.
+
     </div>
 
+
 </div>
+
 
 <!-- ==================================================
      ACCOUNT
@@ -1843,29 +1990,42 @@ footer p{
     class="modal"
     id="accountModal">
 
+
     <div class="modal-box">
+
 
         <button
             class="close"
             onclick="closeModal('accountModal')">
+
             ×
+
         </button>
 
+
         <div class="account-tabs">
+
 
             <button
                 class="account-tab active"
                 onclick="showAccountForm('login',this)">
+
                 ANMELDEN
+
             </button>
+
 
             <button
                 class="account-tab"
                 onclick="showAccountForm('register',this)">
+
                 REGISTRIEREN
+
             </button>
 
+
         </div>
+
 
         <!-- LOGIN -->
 
@@ -1873,6 +2033,7 @@ footer p{
             class="form active"
             id="loginForm"
             onsubmit="login(event)">
+
 
             <div class="form-group">
 
@@ -1887,6 +2048,7 @@ footer p{
 
             </div>
 
+
             <div class="form-group">
 
                 <label>
@@ -1900,20 +2062,27 @@ footer p{
 
             </div>
 
+
             <button class="primary-btn">
+
                 ANMELDEN
+
             </button>
+
 
         </form>
 
-        <!-- REGISTER -->
+
+        <!-- REGISTRIERUNG -->
 
         <form
             class="form"
             id="registerForm"
             onsubmit="register(event)">
 
+
             <div class="form-grid">
+
 
                 <div class="form-group">
 
@@ -1928,6 +2097,7 @@ footer p{
 
                 </div>
 
+
                 <div class="form-group">
 
                     <label>
@@ -1941,7 +2111,9 @@ footer p{
 
                 </div>
 
+
             </div>
+
 
             <div class="form-group">
 
@@ -1956,6 +2128,7 @@ footer p{
 
             </div>
 
+
             <div class="form-group">
 
                 <label>
@@ -1969,7 +2142,9 @@ footer p{
 
             </div>
 
+
             <div class="form-grid">
+
 
                 <div class="form-group">
 
@@ -1984,6 +2159,7 @@ footer p{
 
                 </div>
 
+
                 <div class="form-group">
 
                     <label>
@@ -1997,7 +2173,9 @@ footer p{
 
                 </div>
 
+
             </div>
+
 
             <div class="form-group">
 
@@ -2012,6 +2190,7 @@ footer p{
 
             </div>
 
+
             <div class="form-group">
 
                 <label>
@@ -2025,15 +2204,21 @@ footer p{
 
             </div>
 
+
             <button class="primary-btn">
+
                 KONTO ERSTELLEN
+
             </button>
 
+
         </form>
+
 
     </div>
 
 </div>
+
 
 <script>
 
@@ -2041,7 +2226,7 @@ footer p{
    PRODUKTE
 ================================================== */
 
-const products = [
+const products=[
 
     {
         name:"GONSCHIKI RUSSIA SHIRT",
@@ -2115,12 +2300,15 @@ const products = [
 
 ];
 
+
 let currentProduct=null;
+
 let selectedSize=null;
 
 let cart=JSON.parse(
     localStorage.getItem("gonschikiCart") || "[]"
 );
+
 
 /* ==================================================
    SHOP RENDERN
@@ -2133,19 +2321,26 @@ function renderProducts(list=products){
 
     container.innerHTML="";
 
+
     list.forEach(product=>{
 
         const index=
             products.indexOf(product);
 
+
         const item=
             document.createElement("div");
 
+
         item.className="product";
 
+
         item.onclick=()=>{
+
             openProduct(index);
+
         };
+
 
         item.innerHTML=`
 
@@ -2157,29 +2352,36 @@ function renderProducts(list=products){
 
             </div>
 
+
             <div class="product-info">
 
                 <h3>
                     ${product.name}
                 </h3>
 
+
                 <p>
                     ${product.category}
                 </p>
 
+
                 <div class="product-price">
+
                     ${product.price} €
+
                 </div>
 
             </div>
 
         `;
 
+
         container.appendChild(item);
 
     });
 
 }
+
 
 /* ==================================================
    FILTER
@@ -2190,27 +2392,36 @@ function filterProducts(category,button){
     document
         .querySelectorAll(".category-btn")
         .forEach(btn=>{
+
             btn.classList.remove("active");
+
         });
 
+
     button.classList.add("active");
+
 
     if(category==="Alle"){
 
         renderProducts(products);
 
-    }else{
+    }
+
+    else{
 
         renderProducts(
+
             products.filter(
                 product=>
                     product.category===category
             )
+
         );
 
     }
 
 }
+
 
 /* ==================================================
    PRODUKT MODAL
@@ -2218,27 +2429,37 @@ function filterProducts(category,button){
 
 function openProduct(index){
 
-    currentProduct=products[index];
+    currentProduct=
+        products[index];
+
 
     selectedSize=null;
+
 
     document
         .querySelectorAll(".size")
         .forEach(btn=>{
+
             btn.classList.remove("active");
+
         });
+
 
     document
         .getElementById("modalProductImage")
         .src=currentProduct.image;
 
+
     document
         .getElementById("modalProductName")
         .textContent=currentProduct.name;
 
+
     document
         .getElementById("modalProductPrice")
-        .textContent=currentProduct.price+" €";
+        .textContent=
+            currentProduct.price+" €";
+
 
     document
         .getElementById("productModal")
@@ -2246,25 +2467,35 @@ function openProduct(index){
 
 }
 
+
 function selectSize(button){
 
     document
         .querySelectorAll(".size")
         .forEach(btn=>{
+
             btn.classList.remove("active");
+
         });
+
 
     button.classList.add("active");
 
-    selectedSize=button.textContent;
+
+    selectedSize=
+        button.textContent;
 
 }
+
 
 function addCurrentProduct(){
 
     if(!currentProduct){
+
         return;
+
     }
+
 
     if(!selectedSize){
 
@@ -2273,7 +2504,9 @@ function addCurrentProduct(){
         );
 
         return;
+
     }
+
 
     cart.push({
 
@@ -2287,17 +2520,20 @@ function addCurrentProduct(){
 
     });
 
+
     saveCart();
 
     closeModal("productModal");
 
     updateCart();
 
+
     alert(
         "Produkt wurde dem Warenkorb hinzugefügt."
     );
 
 }
+
 
 /* ==================================================
    WARENKORB
@@ -2312,31 +2548,42 @@ function saveCart(){
 
 }
 
+
 function updateCart(){
 
     const count=
         document.getElementById("cartCount");
 
+
     const items=
         document.getElementById("cartItems");
+
 
     const total=
         document.getElementById("cartTotal");
 
-    count.textContent=cart.length;
+
+    count.textContent=
+        cart.length;
+
 
     items.innerHTML="";
 
+
     let sum=0;
+
 
     cart.forEach((item,index)=>{
 
         sum+=Number(item.price);
 
+
         const div=
             document.createElement("div");
 
+
         div.className="cart-item";
+
 
         div.innerHTML=`
 
@@ -2344,15 +2591,18 @@ function updateCart(){
                 src="${item.image}"
                 alt="">
 
+
             <div class="cart-item-info">
 
                 <h4>
                     ${item.name}
                 </h4>
 
+
                 <p>
                     Größe: ${item.size}
                 </p>
+
 
                 <p>
                     ${item.price} €
@@ -2360,22 +2610,28 @@ function updateCart(){
 
             </div>
 
+
             <button
                 class="remove-item"
                 onclick="removeCartItem(${index})">
+
                 ENTFERNEN
+
             </button>
 
         `;
+
 
         items.appendChild(div);
 
     });
 
+
     total.textContent=
         sum.toFixed(2)+" €";
 
 }
+
 
 function removeCartItem(index){
 
@@ -2387,15 +2643,18 @@ function removeCartItem(index){
 
 }
 
+
 function openCart(){
 
     updateCart();
+
 
     document
         .getElementById("cartPanel")
         .classList.add("active");
 
 }
+
 
 function closeCart(){
 
@@ -2404,6 +2663,7 @@ function closeCart(){
         .classList.remove("active");
 
 }
+
 
 /* ==================================================
    ACCOUNT
@@ -2417,23 +2677,30 @@ function openAccount(){
 
 }
 
+
 function showAccountForm(type,button){
 
     document
         .querySelectorAll(".account-tab")
         .forEach(btn=>{
+
             btn.classList.remove("active");
+
         });
 
+
     button.classList.add("active");
+
 
     document
         .getElementById("loginForm")
         .classList.remove("active");
 
+
     document
         .getElementById("registerForm")
         .classList.remove("active");
+
 
     if(type==="login"){
 
@@ -2441,7 +2708,9 @@ function showAccountForm(type,button){
             .getElementById("loginForm")
             .classList.add("active");
 
-    }else{
+    }
+
+    else{
 
         document
             .getElementById("registerForm")
@@ -2451,19 +2720,23 @@ function showAccountForm(type,button){
 
 }
 
+
 function register(event){
 
     event.preventDefault();
+
 
     const password=
         document
             .getElementById("registerPassword")
             .value;
 
+
     const password2=
         document
             .getElementById("registerPassword2")
             .value;
+
 
     if(password!==password2){
 
@@ -2472,7 +2745,9 @@ function register(event){
         );
 
         return;
+
     }
+
 
     const account={
 
@@ -2508,14 +2783,17 @@ function register(event){
 
     };
 
+
     localStorage.setItem(
         "gonschikiAccount",
         JSON.stringify(account)
     );
 
+
     alert(
         "Konto wurde für diese Website-Vorschau gespeichert."
     );
+
 
     document
         .getElementById("registerForm")
@@ -2523,21 +2801,27 @@ function register(event){
 
 }
 
+
 function login(event){
 
     event.preventDefault();
+
 
     const email=
         document
             .getElementById("loginEmail")
             .value;
 
+
     const account=
         JSON.parse(
+
             localStorage.getItem(
                 "gonschikiAccount"
             ) || "null"
+
         );
+
 
     if(account && account.email===email){
 
@@ -2545,7 +2829,9 @@ function login(event){
             "Anmeldung für diese Website-Vorschau erfolgreich."
         );
 
-    }else{
+    }
+
+    else{
 
         alert(
             "Kein gespeichertes Demo-Konto mit dieser E-Mail gefunden."
@@ -2555,8 +2841,9 @@ function login(event){
 
 }
 
+
 /* ==================================================
-   MODALS SCHLIESSEN
+   MODALS
 ================================================== */
 
 function closeModal(id){
@@ -2567,13 +2854,16 @@ function closeModal(id){
 
 }
 
+
 document
     .querySelectorAll(".modal")
     .forEach(modal=>{
 
+
         modal.addEventListener(
             "click",
             function(event){
+
 
                 if(event.target===modal){
 
@@ -2581,10 +2871,13 @@ document
 
                 }
 
+
             }
         );
 
+
     });
+
 
 /* ==================================================
    EVENTS
@@ -2598,11 +2891,13 @@ function previewMessage(){
 
 }
 
+
 /* ==================================================
    SPRACHEN
 ================================================== */
 
 const translations={
+
 
     de:{
         shop:"SHOP",
@@ -2612,6 +2907,7 @@ const translations={
         contact:"KONTAKT"
     },
 
+
     en:{
         shop:"SHOP",
         events:"EVENTS",
@@ -2619,6 +2915,7 @@ const translations={
         about:"ABOUT",
         contact:"CONTACT"
     },
+
 
     ru:{
         shop:"МАГАЗИН",
@@ -2628,7 +2925,9 @@ const translations={
         contact:"КОНТАКТ"
     }
 
+
 };
+
 
 function changeLanguage(language){
 
@@ -2637,25 +2936,33 @@ function changeLanguage(language){
         language
     );
 
+
     const t=
         translations[language];
+
 
     const links=
         document.querySelectorAll(
             ".nav-links a"
         );
 
+
     if(links.length>=5){
 
         links[0].textContent=t.shop;
+
         links[1].textContent=t.events;
+
         links[2].textContent=t.cars;
+
         links[3].textContent=t.about;
+
         links[4].textContent=t.contact;
 
     }
 
 }
+
 
 function loadLanguage(){
 
@@ -2664,13 +2971,16 @@ function loadLanguage(){
             "gonschikiLanguage"
         ) || "de";
 
+
     document
         .getElementById("languageSelect")
         .value=language;
 
+
     changeLanguage(language);
 
 }
+
 
 /* ==================================================
    START
