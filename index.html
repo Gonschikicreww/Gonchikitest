@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ГОНЩИКИ — Gonschikicrew</title>
+<title>ГОНЩИКИ — Gonchikicrew</title>
 
-<meta name="description" content="ГОНЩИКИ est. 2025 — Streetwear, Cars & Car Culture.">
+<meta name="description" content="ГОНЩИКИ est. 2025 — Streetwear × Car Culture">
 
 <style>
 * {
@@ -33,377 +33,282 @@ a {
 /* NAVIGATION */
 
 nav {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  padding: 22px 6vw;
+  z-index: 1000;
+  background: rgba(8,8,8,.96);
+  border-bottom: 1px solid #292929;
+  padding: 20px 5vw;
+
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background: rgba(8,8,8,.88);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid #222;
+  justify-content: space-between;
 }
 
 .logo {
   font-size: 24px;
   font-weight: 900;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 
-.logo span {
-  display: block;
-  font-size: 10px;
-  letter-spacing: 4px;
-  color: #999;
-  margin-top: 3px;
-}
-
-.navlinks {
+.nav-right {
   display: flex;
-  gap: 30px;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  align-items: center;
+  gap: 25px;
 }
 
-.navlinks a:hover {
-  opacity: .55;
+.nav-item {
+  position: relative;
+}
+
+.nav-button {
+  background: none;
+  border: 0;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 45px;
+  min-width: 190px;
+
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,.5);
+}
+
+.nav-item:hover .dropdown {
+  display: block;
+}
+
+.dropdown a {
+  display: block;
+  padding: 14px 18px;
+  border-bottom: 1px solid #222;
+}
+
+.dropdown a:hover {
+  background: #1d1d1d;
 }
 
 /* HERO */
 
 .hero {
-  min-height: 100vh;
-  position: relative;
+  min-height: 80vh;
   display: flex;
-  align-items: flex-end;
-  padding: 120px 6vw 80px;
-  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+
   background:
-    linear-gradient(to top, #080808 2%, transparent 55%),
-    url("assets/Car-1.JPG") center/cover no-repeat;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,.25);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 750px;
-}
-
-.kicker {
-  color: #aaa;
-  letter-spacing: 5px;
-  font-size: 12px;
-  margin-bottom: 18px;
-  text-transform: uppercase;
+    radial-gradient(circle at center, #242424 0%, #080808 65%);
 }
 
 .hero h1 {
-  font-size: clamp(55px, 11vw, 145px);
-  line-height: .85;
-  letter-spacing: -5px;
+  font-size: clamp(55px, 12vw, 150px);
   font-weight: 900;
-}
-
-.hero h1 span {
-  color: #aaa;
+  letter-spacing: 5px;
 }
 
 .hero p {
-  margin-top: 30px;
-  max-width: 550px;
-  color: #ccc;
+  margin-top: 20px;
+  color: #aaa;
   font-size: 18px;
-  line-height: 1.6;
+  letter-spacing: 3px;
 }
 
-.btn {
+.hero-button {
   display: inline-block;
-  margin-top: 30px;
-  padding: 16px 25px;
-  border: 1px solid #fff;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 2px;
-  transition: .25s;
+  margin-top: 35px;
+  padding: 14px 28px;
+  border: 1px solid white;
+  border-radius: 30px;
+  transition: .2s;
 }
 
-.btn:hover {
-  background: #fff;
-  color: #000;
+.hero-button:hover {
+  background: white;
+  color: black;
 }
 
 /* SECTIONS */
 
 section {
-  padding: 110px 6vw;
+  padding: 90px 6vw;
 }
 
-.section-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
+.section-title {
   margin-bottom: 45px;
 }
 
-.section-head h2 {
-  font-size: clamp(38px, 6vw, 75px);
-  line-height: .9;
-  letter-spacing: -3px;
+.kicker {
+  color: #999;
+  letter-spacing: 4px;
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
-.section-head p {
-  color: #888;
-  max-width: 330px;
-  line-height: 1.5;
+h2 {
+  font-size: clamp(35px, 6vw, 70px);
 }
 
-/* SHOP */
+/* PRODUCTS */
 
 .products {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
 .product {
   background: #111;
-  border: 1px solid #242424;
-  min-height: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  border: 1px solid #292929;
+  border-radius: 12px;
   overflow: hidden;
+  transition: transform .2s, border-color .2s;
 }
 
-.product-image {
-  height: 390px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #151515;
-  position: relative;
+.product:hover {
+  transform: translateY(-5px);
+  border-color: #666;
 }
 
-.shirt {
-  width: 210px;
-  height: 260px;
-  background: #050505;
-  clip-path: polygon(
-    25% 0,
-    0 13%,
-    12% 40%,
-    28% 31%,
-    28% 100%,
-    72% 100%,
-    72% 31%,
-    88% 40%,
-    100% 13%,
-    75% 0
-  );
-  box-shadow: 0 25px 50px rgba(0,0,0,.6);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.shirt-logo {
-  font-size: 19px;
-  font-weight: 900;
-  letter-spacing: 2px;
+.product img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
 }
 
 .product-info {
-  padding: 25px;
+  padding: 18px;
 }
 
 .product-info h3 {
-  font-size: 23px;
+  font-size: 18px;
 }
 
 .product-info p {
   color: #888;
-  margin-top: 8px;
+  margin-top: 7px;
+  font-size: 14px;
 }
 
 /* CARS */
 
 .cars {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 20px;
 }
 
-.car-card {
-  overflow: hidden;
+.car {
   background: #111;
-  border: 1px solid #222;
+  border: 1px solid #292929;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.car-card img {
+.car img {
   width: 100%;
   height: 100%;
-  min-height: 330px;
+  min-height: 300px;
   object-fit: cover;
-  display: block;
-  transition: transform .6s;
-}
-
-.car-card:hover img {
-  transform: scale(1.04);
-}
-
-.car-large {
-  grid-row: span 2;
-}
-
-.car-large img {
-  min-height: 680px;
-}
-
-/* MANIFEST */
-
-.manifest {
-  border-top: 1px solid #222;
-  border-bottom: 1px solid #222;
-  padding: 100px 6vw;
-}
-
-.manifest h2 {
-  font-size: clamp(40px, 7vw, 100px);
-  max-width: 1000px;
-  line-height: .95;
-  letter-spacing: -4px;
-}
-
-.manifest p {
-  margin-top: 35px;
-  max-width: 650px;
-  color: #999;
-  font-size: 18px;
-  line-height: 1.7;
 }
 
 /* ABOUT */
 
 .about {
+  border-top: 1px solid #292929;
+  border-bottom: 1px solid #292929;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
-}
-
-.about h2 {
-  font-size: 60px;
-  line-height: .95;
+  gap: 60px;
 }
 
 .about p {
   color: #aaa;
-  line-height: 1.8;
-  font-size: 17px;
+  font-size: 18px;
+  line-height: 1.7;
 }
 
 /* FOOTER */
 
 footer {
   padding: 60px 6vw;
-  border-top: 1px solid #222;
   display: flex;
   justify-content: space-between;
-  color: #888;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-footer strong {
+.instagram {
   color: #fff;
+}
+
+.instagram:hover {
+  text-decoration: underline;
 }
 
 /* MOBILE */
 
-@media(max-width:700px) {
+@media (max-width: 800px) {
 
   nav {
-    padding: 18px 5vw;
-  }
-
-  .navlinks {
-    gap: 13px;
-    font-size: 10px;
+    padding: 16px 5vw;
   }
 
   .logo {
-    font-size: 17px;
+    font-size: 18px;
   }
 
-  .hero {
-    padding: 110px 5vw 55px;
+  .nav-right {
+    gap: 12px;
   }
 
-  .hero h1 {
-    font-size: 65px;
-    letter-spacing: -3px;
-  }
-
-  section {
-    padding: 75px 5vw;
-  }
-
-  .section-head {
-    display: block;
-  }
-
-  .section-head p {
-    margin-top: 20px;
+  .nav-button {
+    font-size: 13px;
   }
 
   .products {
-    grid-template-columns: 1fr;
-  }
-
-  .product {
-    min-height: 450px;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .cars {
     grid-template-columns: 1fr;
   }
 
-  .car-large {
-    grid-row: auto;
-  }
-
-  .car-large img {
-    min-height: 400px;
-  }
-
-  .car-card img {
-    min-height: 300px;
-  }
-
   .about {
     grid-template-columns: 1fr;
-    gap: 35px;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .products {
+    grid-template-columns: 1fr;
   }
 
-  .about h2 {
-    font-size: 50px;
+  .nav-right {
+    gap: 8px;
   }
 
-  footer {
-    display: block;
+  .instagram {
+    display: none;
   }
 
-  footer div + div {
-    margin-top: 15px;
+  section {
+    padding: 65px 5vw;
   }
 }
 </style>
@@ -411,76 +316,104 @@ footer strong {
 
 <body>
 
-<nav>
-  <a href="#" class="logo">
-    ГОНЩИКИ
-    <span>EST. 2025</span>
-  </a>
+<!-- NAVIGATION -->
 
-  <div class="navlinks">
-    <a href="#shop">Shop</a>
+<nav>
+
+  <a href="#" class="logo">ГОНЩИКИ</a>
+
+  <div class="nav-right">
+
+    <div class="nav-item">
+
+      <button class="nav-button">
+        Klamotten ▾
+      </button>
+
+      <div class="dropdown">
+
+        <a href="#shirts">T-Shirts</a>
+        <a href="#hoodies">Pullis / Hoodies</a>
+        <a href="#zipper">Zipper</a>
+        <a href="#pants">Hosen</a>
+
+      </div>
+
+    </div>
+
+    <a href="#stickers">Sticker</a>
+
     <a href="#cars">Cars</a>
-    <a href="#about">Crew</a>
+
+    <a href="#crew">Crew</a>
+
+    <a
+      class="instagram"
+      href="https://www.instagram.com/gonschikicrew/"
+      target="_blank"
+    >
+      Instagram
+    </a>
+
   </div>
+
 </nav>
+
+
+<!-- HERO -->
 
 <header class="hero">
 
-  <div class="hero-content">
+  <div>
 
-    <div class="kicker">
-      GONSCHIKICREW — EST. 2025
-    </div>
+    <h1>ГОНЩИКИ</h1>
 
-    <h1>
-      ГОНЩИКИ<br>
-      <span>CREW</span>
-    </h1>
+    <p>EST. 2025 · STREETWEAR × CAR CULTURE</p>
 
-    <p>
-      Streetwear, Cars & Car Culture.
-      Gebaut für diejenigen, die Benzin im Blut
-      und ihren eigenen Style haben.
-    </p>
-
-    <a href="#shop" class="btn">
-      Kollektion entdecken
+    <a href="#shop" class="hero-button">
+      SHOP ENTDECKEN
     </a>
 
   </div>
 
 </header>
 
+
+<!-- SHOP -->
+
 <section id="shop">
 
-  <div class="section-head">
-    <div>
-      <div class="kicker">THE COLLECTION</div>
-      <h2>STREET<br>WEAR.</h2>
-    </div>
+  <div class="section-title">
 
-    <p>
-      Schlichte Farben. Klare Schnitte.
-      Unser ГОНЩИКИ Logo.
-      Schwarz, Weiß und Grau.
-    </p>
+    <div class="kicker">GONCHIKICREW</div>
+
+    <h2>SHOP</h2>
+
+  </div>
+
+
+  <!-- T-SHIRTS -->
+
+  <div id="shirts" class="section-title">
+
+    <div class="kicker">01</div>
+
+    <h2>T-Shirts</h2>
+
   </div>
 
   <div class="products">
 
     <article class="product">
 
-      <div class="product-image">
-        <div class="shirt">
-          <div class="shirt-logo">
-            ГОНЩИКИ
-          </div>
-        </div>
-      </div>
+      <img
+        src="assets/Shirt-Beige-e36.jpg"
+        alt="ГОНЩИКИ T-Shirt Beige E36"
+      >
 
       <div class="product-info">
-        <h3>ГОНЩИКИ T-Shirt</h3>
-        <p>EST. 2025 · Black</p>
+        <h3>T-Shirt Beige E36</h3>
+        <p>ГОНЩИКИ · EST. 2025</p>
       </div>
 
     </article>
@@ -488,114 +421,315 @@ footer strong {
 
     <article class="product">
 
-      <div class="product-image">
-        <div class="shirt">
-          <div class="shirt-logo">
-            ГОНЩИКИ
-          </div>
-        </div>
-      </div>
+      <img
+        src="assets/Shirt-black-Russia.jpg"
+        alt="ГОНЩИКИ T-Shirt Russia"
+      >
 
       <div class="product-info">
-        <h3>ГОНЩИКИ Hoodie</h3>
-        <p>EST. 2025 · Black</p>
+        <h3>T-Shirt Black Russia</h3>
+        <p>ГОНЩИКИ · EST. 2025</p>
+      </div>
+
+    </article>
+
+
+    <article class="product">
+
+      <img
+        src="assets/Shirt-black-e34.jpg"
+        alt="ГОНЩИКИ T-Shirt E34"
+      >
+
+      <div class="product-info">
+        <h3>T-Shirt Black E34</h3>
+        <p>ГОНЩИКИ · EST. 2025</p>
+      </div>
+
+    </article>
+
+
+    <article class="product">
+
+      <img
+        src="assets/Shirt-black-e36.jpg"
+        alt="ГОНЩИКИ T-Shirt E36"
+      >
+
+      <div class="product-info">
+        <h3>T-Shirt Black E36</h3>
+        <p>ГОНЩИКИ · EST. 2025</p>
       </div>
 
     </article>
 
   </div>
 
+
+  <!-- HOODIES -->
+
+  <section id="hoodies">
+
+    <div class="section-title">
+
+      <div class="kicker">02</div>
+
+      <h2>Pullis / Hoodies</h2>
+
+    </div>
+
+    <div class="products">
+
+      <article class="product">
+
+        <img
+          src="assets/Hoodie-beige-e36.jpg"
+          alt="Hoodie Beige E36"
+        >
+
+        <div class="product-info">
+          <h3>Hoodie Beige E36</h3>
+          <p>ГОНЩИКИ · EST. 2025</p>
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <img
+          src="assets/Hoodie-black-Kreuz.jpg"
+          alt="Hoodie Black Kreuz"
+        >
+
+        <div class="product-info">
+          <h3>Hoodie Black Kreuz</h3>
+          <p>ГОНЩИКИ · EST. 2025</p>
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <img
+          src="assets/Hoodie-black-Russia.jpg"
+          alt="Hoodie Black Russia"
+        >
+
+        <div class="product-info">
+          <h3>Hoodie Black Russia</h3>
+          <p>ГОНЩИКИ · EST. 2025</p>
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <img
+          src="assets/Hoodie-black-e34.jpg"
+          alt="Hoodie Black E34"
+        >
+
+        <div class="product-info">
+          <h3>Hoodie Black E34</h3>
+          <p>ГОНЩИКИ · EST. 2025</p>
+        </div>
+
+      </article>
+
+
+      <article class="product">
+
+        <img
+          src="assets/Hoodie-black-e36.jpg"
+          alt="Hoodie Black E36"
+        >
+
+        <div class="product-info">
+          <h3>Hoodie Black E36</h3>
+          <p>ГОНЩИКИ · EST. 2025</p>
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- ZIPPER -->
+
+  <section id="zipper">
+
+    <div class="section-title">
+
+      <div class="kicker">03</div>
+
+      <h2>Zipper</h2>
+
+    </div>
+
+    <div class="products">
+
+      <article class="product">
+
+        <img
+          src="assets/Zipper-black-Kreuz.jpg"
+          alt="Zipper Black Kreuz"
+        >
+
+        <div class="product-info">
+          <h3>Zipper Black Kreuz</h3>
+          <p>ГОНЩИКИ · EST. 2025</p>
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- HOSEN -->
+
+  <section id="pants">
+
+    <div class="section-title">
+
+      <div class="kicker">04</div>
+
+      <h2>Hosen</h2>
+
+    </div>
+
+    <div class="products">
+
+      <article class="product">
+
+        <img
+          src="assets/Pants-black-gonschiki.jpg"
+          alt="ГОНЩИКИ Hose"
+        >
+
+        <div class="product-info">
+          <h3>Pants Black ГОНЩИКИ</h3>
+          <p>ГОНЩИКИ · EST. 2025</p>
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
 </section>
 
-<div class="manifest">
 
-  <div class="kicker">THE CREW</div>
+<!-- STICKER -->
 
-  <h2>
-    CARS ARE<br>
-    MORE THAN<br>
-    TRANSPORT.
-  </h2>
+<section id="stickers">
 
-  <p>
-    Sie sind Ausdruck von Persönlichkeit,
-    Style und Leidenschaft.
-    Genau dafür steht ГОНЩИКИ.
+  <div class="section-title">
+
+    <div class="kicker">05</div>
+
+    <h2>Sticker</h2>
+
+  </div>
+
+  <p style="color:#888;">
+    Sticker Collection — bald verfügbar.
   </p>
 
-</div>
+</section>
+
+
+<!-- CARS -->
 
 <section id="cars">
 
-  <div class="section-head">
+  <div class="section-title">
 
-    <div>
-      <div class="kicker">OUR CARS</div>
-      <h2>CAR<br>CULTURE.</h2>
-    </div>
+    <div class="kicker">06</div>
 
-    <p>
-      Unsere Autos. Unsere Crew.
-      Unsere Leidenschaft.
-    </p>
+    <h2>Cars</h2>
 
   </div>
 
   <div class="cars">
 
-    <div class="car-card car-large">
-      <img src="assets/Car-1.JPG" alt="Gonschikicrew Cars">
+    <div class="car">
+      <img
+        src="assets/Car-1.JPG"
+        alt="ГОНЩИКИ Car 1"
+      >
     </div>
 
-    <div class="car-card">
-      <img src="assets/Car-2.JPG" alt="Gonschikicrew Cars">
-    </div>
-
-    <div class="car-card">
-      <img src="assets/Car-1.JPG" alt="Gonschikicrew Cars">
+    <div class="car">
+      <img
+        src="assets/Car-2.JPG"
+        alt="ГОНЩИКИ Car 2"
+      >
     </div>
 
   </div>
 
 </section>
 
-<section id="about" class="about">
+
+<!-- CREW -->
+
+<section id="crew" class="about">
 
   <div>
-    <div class="kicker">ABOUT THE CREW</div>
+
+    <div class="kicker">
+      ABOUT THE CREW
+    </div>
+
     <h2>
-      ГОНЩИКИ<br>
-      EST. 2025
+      STREETWEAR.<br>
+      CARS.<br>
+      CULTURE.
     </h2>
+
   </div>
 
+
   <div>
+
     <p>
-      ГОНЩИКИ steht für eine Community aus
-      Auto-Enthusiasten, Streetwear und echter
-      Car Culture.
+      ГОНЩИКИ steht für Streetwear,
+      Autos und die gemeinsame Leidenschaft
+      für Car Culture.
     </p>
 
-    <p style="margin-top:25px;">
-      Keine Regeln für den Style.
-      Keine langweiligen Standards.
-      Einfach Autos, Kleidung und eine Crew,
-      die zusammengehört.
+    <p style="margin-top:20px;">
+      Est. 2025 — Gonchikicrew.
     </p>
+
   </div>
 
 </section>
+
+
+<!-- FOOTER -->
 
 <footer>
 
   <div>
-    <strong>ГОНЩИКИ</strong><br>
-    EST. 2025
+    ГОНЩИКИ est. 2025
   </div>
 
-  <div>
-    @gonschikicrew
-  </div>
+  <a
+    class="instagram"
+    href="https://www.instagram.com/gonschikicrew/"
+    target="_blank"
+  >
+    Instagram · @gonschikicrew
+  </a>
 
 </footer>
 
