@@ -3,9 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>ГОНЩИКИ — Gonschiki Crew</title>
 
 <style>
+
+/* =========================================================
+   GRUNDLAYOUT
+========================================================= */
+
 *{
     margin:0;
     padding:0;
@@ -23,7 +29,9 @@ body{
     overflow-x:hidden;
 }
 
-button,input,select{
+button,
+input,
+select{
     font:inherit;
 }
 
@@ -31,25 +39,38 @@ button{
     cursor:pointer;
 }
 
-/* ================= INFO ================= */
+
+/* =========================================================
+   INFO BAR
+========================================================= */
 
 .top-info{
     background:#fff;
     color:#000;
+
     text-align:center;
+
     padding:9px 15px;
+
     font-size:11px;
     font-weight:800;
+
     letter-spacing:.8px;
 }
 
-/* ================= NAVIGATION ================= */
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 nav{
     position:absolute;
+
     top:34px;
     left:0;
+
     width:100%;
+
     z-index:30;
 
     display:flex;
@@ -62,39 +83,48 @@ nav{
 .logo{
     color:#fff;
     text-decoration:none;
+
     font-weight:900;
     line-height:.85;
 }
 
 .logo-main{
     display:block;
+
     font-size:25px;
     letter-spacing:1px;
 }
 
 .logo-est{
     display:block;
+
     margin-top:7px;
+
     font-size:9px;
     letter-spacing:4px;
+
     opacity:.75;
 }
 
 .nav-links{
     display:flex;
     align-items:center;
+
     gap:28px;
 }
 
 .nav-links a,
 .nav-button{
     color:#fff;
+
     background:none;
     border:0;
+
     text-decoration:none;
 
     font-size:12px;
     font-weight:700;
+
     letter-spacing:1px;
 }
 
@@ -109,6 +139,7 @@ nav{
 
 .cart-count{
     position:absolute;
+
     top:-10px;
     right:-13px;
 
@@ -116,6 +147,7 @@ nav{
     height:17px;
 
     border-radius:50%;
+
     background:#fff;
     color:#000;
 
@@ -127,10 +159,30 @@ nav{
     font-weight:900;
 }
 
-/* ================= HERO ================= */
+.language select{
+    background:transparent;
+    color:#fff;
+
+    border:1px solid #444;
+
+    padding:7px 8px;
+
+    font-size:10px;
+}
+
+.language option{
+    background:#111;
+    color:#fff;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
     position:relative;
+
     width:100%;
     min-height:100vh;
     height:850px;
@@ -144,21 +196,27 @@ nav{
 
 .hero-car-background{
     position:absolute;
+
     inset:0;
+
     z-index:0;
 
     background-image:url("assets/Car-1.JPG");
+
     background-position:center center;
     background-size:cover;
     background-repeat:no-repeat;
 
     transform:scale(1.02);
+
     filter:brightness(.52);
 }
 
 .hero-overlay{
     position:absolute;
+
     inset:0;
+
     z-index:1;
 
     background:
@@ -174,16 +232,20 @@ nav{
 
 .hero-content{
     position:relative;
+
     z-index:2;
 
     width:100%;
     max-width:1300px;
+
     min-height:850px;
 
     padding:120px 30px 70px;
 
     display:flex;
+
     flex-direction:column;
+
     align-items:center;
     justify-content:center;
 
@@ -194,9 +256,11 @@ nav{
     color:#fff;
 
     font-size:clamp(65px,11vw,155px);
+
     line-height:.82;
 
     font-weight:900;
+
     letter-spacing:clamp(2px,.8vw,10px);
 
     text-shadow:
@@ -208,7 +272,9 @@ nav{
     margin-top:30px;
 
     font-size:clamp(11px,1.2vw,15px);
+
     font-weight:700;
+
     letter-spacing:9px;
 
     text-shadow:0 3px 15px rgba(0,0,0,.95);
@@ -216,14 +282,17 @@ nav{
 
 .hero-slogan{
     margin-top:125px;
+
     max-width:950px;
 }
 
 .hero-slogan-main{
     font-size:clamp(25px,4vw,56px);
+
     line-height:1.08;
 
     font-weight:900;
+
     letter-spacing:1.5px;
 
     text-shadow:0 4px 25px rgba(0,0,0,.95);
@@ -237,7 +306,9 @@ nav{
     margin-top:30px;
 
     font-size:clamp(11px,1.4vw,17px);
+
     font-weight:700;
+
     letter-spacing:7px;
 
     text-shadow:0 3px 15px rgba(0,0,0,.95);
@@ -245,17 +316,22 @@ nav{
 
 .hero-description{
     max-width:650px;
+
     margin:30px auto 0;
 
     color:rgba(255,255,255,.86);
 
     font-size:14px;
+
     line-height:1.7;
 
     text-shadow:0 2px 12px rgba(0,0,0,.95);
 }
 
-/* ================= SECTIONS ================= */
+
+/* =========================================================
+   SECTIONS
+========================================================= */
 
 section{
     padding:100px 5%;
@@ -263,49 +339,64 @@ section{
 
 .section-title{
     text-align:center;
+
     margin-bottom:50px;
 }
 
 .section-title h2{
     font-size:clamp(30px,5vw,55px);
+
     font-weight:900;
+
     letter-spacing:2px;
 }
 
 .section-title p{
     margin-top:12px;
+
     color:#888;
+
     font-size:13px;
 }
 
-/* ================= SHOP ================= */
+
+/* =========================================================
+   SHOP
+========================================================= */
 
 .shop{
     background:#080808;
 }
 
-/* GESCHLECHT */
+
+/* =========================================================
+   MÄNNER / FRAUEN
+========================================================= */
 
 .gender-categories{
     display:flex;
+
     justify-content:center;
+
     gap:12px;
 
-    margin-bottom:25px;
+    margin-bottom:28px;
 }
 
 .gender-btn{
-    min-width:180px;
+    min-width:190px;
 
     background:#111;
     color:#fff;
 
     border:1px solid #333;
 
-    padding:15px 28px;
+    padding:15px 30px;
 
     font-size:12px;
+
     font-weight:900;
+
     letter-spacing:2px;
 
     transition:.25s;
@@ -317,16 +408,24 @@ section{
 
 .gender-btn.active{
     background:#fff;
+
     color:#000;
+
     border-color:#fff;
 }
 
-/* PRODUKT-KATEGORIEN */
+
+/* =========================================================
+   PRODUKT-KATEGORIEN
+========================================================= */
 
 .categories{
     display:flex;
+
     justify-content:center;
+
     flex-wrap:wrap;
+
     gap:10px;
 
     margin-bottom:45px;
@@ -334,6 +433,7 @@ section{
 
 .category-btn{
     background:transparent;
+
     color:#fff;
 
     border:1px solid #333;
@@ -341,43 +441,59 @@ section{
     padding:11px 20px;
 
     font-size:11px;
+
     font-weight:700;
+
     letter-spacing:1px;
 }
 
 .category-btn:hover,
 .category-btn.active{
     background:#fff;
+
     color:#000;
 }
 
+
+/* =========================================================
+   PRODUKTE
+========================================================= */
+
 .products{
     max-width:1200px;
+
     margin:auto;
 
     display:grid;
+
     grid-template-columns:repeat(4,1fr);
+
     gap:22px;
 }
 
 .product{
     background:#111;
+
     border:1px solid #1d1d1d;
 
     cursor:pointer;
+
     transition:.25s;
 }
 
 .product:hover{
     transform:translateY(-5px);
+
     border-color:#444;
 }
 
 .product-image{
     width:100%;
+
     height:340px;
 
     overflow:hidden;
+
     background:#151515;
 }
 
@@ -400,62 +516,28 @@ section{
 
 .product-info h3{
     font-size:13px;
+
     margin-bottom:7px;
 }
 
 .product-info p{
     color:#888;
+
     font-size:12px;
 }
 
 .product-price{
     margin-top:13px;
+
     font-size:13px;
+
     font-weight:800;
 }
 
-/* FRAUEN COMING SOON */
 
-.women-coming{
-    max-width:700px;
-    margin:30px auto 0;
-
-    padding:70px 30px;
-
-    text-align:center;
-
-    background:#101010;
-    border:1px solid #292929;
-}
-
-.women-coming h3{
-    font-size:32px;
-    font-weight:900;
-    letter-spacing:3px;
-}
-
-.women-coming p{
-    margin-top:15px;
-
-    color:#888;
-
-    font-size:13px;
-    line-height:1.7;
-}
-
-.women-coming span{
-    display:block;
-
-    margin-top:25px;
-
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:4px;
-
-    color:#fff;
-}
-
-/* ================= EVENTS ================= */
+/* =========================================================
+   EVENTS
+========================================================= */
 
 .events{
     background:#0c0c0c;
@@ -463,15 +545,19 @@ section{
 
 .events-grid{
     max-width:1050px;
+
     margin:auto;
 
     display:grid;
+
     grid-template-columns:repeat(2,1fr);
+
     gap:22px;
 }
 
 .event{
     background:#101010;
+
     border:1px solid #252525;
 
     padding:30px;
@@ -479,25 +565,33 @@ section{
 
 .event-date{
     color:#888;
+
     font-size:11px;
+
     letter-spacing:2px;
+
     margin-bottom:12px;
 }
 
 .event h3{
     font-size:25px;
+
     margin-bottom:10px;
 }
 
 .event-location{
     color:#aaa;
+
     font-size:12px;
+
     margin-bottom:18px;
 }
 
 .event p{
     color:#999;
+
     font-size:13px;
+
     line-height:1.6;
 }
 
@@ -505,6 +599,7 @@ section{
     margin-top:25px;
 
     background:#fff;
+
     color:#000;
 
     border:0;
@@ -512,11 +607,16 @@ section{
     padding:12px 18px;
 
     font-size:10px;
+
     font-weight:900;
+
     letter-spacing:1px;
 }
 
-/* ================= CARS ================= */
+
+/* =========================================================
+   CARS
+========================================================= */
 
 .cars-section{
     background:#080808;
@@ -524,9 +624,11 @@ section{
 
 .cars{
     max-width:1050px;
+
     margin:auto;
 
     display:grid;
+
     grid-template-columns:repeat(2,minmax(0,1fr));
 
     gap:18px;
@@ -536,6 +638,7 @@ section{
 
 .car{
     background:#111;
+
     border:1px solid #1d1d1d;
 
     overflow:hidden;
@@ -543,55 +646,51 @@ section{
     align-self:start;
 }
 
-.car img{
+.car-image{
+    width:100%;
+
+    height:225px;
+
+    display:block;
+
+    overflow:hidden;
+
+    background:#111;
+}
+
+.car-image img{
     display:block;
 
     width:100%;
-    height:225px;
+    height:100%;
 
     object-fit:cover;
-    object-position:center;
+
+    object-position:center center;
 
     transition:.3s;
 }
 
-.car:hover img{
+.car:hover .car-image img{
     transform:scale(1.025);
-}
-
-/* CAR 6 */
-
-.car-six{
-    align-self:start;
-}
-
-.car-six img{
-    width:100%;
-    height:225px;
-
-    object-fit:contain !important;
-    object-position:center center !important;
-
-    background:#111;
-
-    transform:none !important;
-}
-
-.car-six:hover img{
-    transform:none !important;
 }
 
 .car-info{
     padding:16px;
+
     background:#111;
 }
 
 .car-info h3{
     font-size:14px;
+
     letter-spacing:1px;
 }
 
-/* ================= ABOUT ================= */
+
+/* =========================================================
+   ABOUT
+========================================================= */
 
 .about{
     background:#0c0c0c;
@@ -599,6 +698,7 @@ section{
 
 .about-content{
     max-width:800px;
+
     margin:auto;
 
     text-align:center;
@@ -608,10 +708,14 @@ section{
     color:#aaa;
 
     font-size:15px;
+
     line-height:1.9;
 }
 
-/* ================= CONTACT ================= */
+
+/* =========================================================
+   CONTACT
+========================================================= */
 
 .contact{
     background:#080808;
@@ -619,6 +723,7 @@ section{
 
 .contact-content{
     max-width:650px;
+
     margin:auto;
 
     text-align:center;
@@ -626,6 +731,7 @@ section{
 
 .contact-content p{
     color:#999;
+
     line-height:1.7;
 
     margin-bottom:25px;
@@ -633,12 +739,15 @@ section{
 
 .social{
     display:flex;
+
     justify-content:center;
+
     gap:15px;
 }
 
 .social a{
     color:#fff;
+
     text-decoration:none;
 
     border:1px solid #333;
@@ -646,10 +755,14 @@ section{
     padding:12px 20px;
 
     font-size:11px;
+
     font-weight:700;
 }
 
-/* ================= FOOTER ================= */
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
     padding:35px 5%;
@@ -659,20 +772,28 @@ footer{
     border-top:1px solid #161616;
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 }
 
 footer p{
     color:#666;
+
     font-size:10px;
+
     letter-spacing:1px;
 }
 
-/* ================= MODALS ================= */
+
+/* =========================================================
+   MODAL
+========================================================= */
 
 .modal{
     position:fixed;
+
     inset:0;
 
     background:rgba(0,0,0,.82);
@@ -682,6 +803,7 @@ footer p{
     display:none;
 
     justify-content:center;
+
     align-items:center;
 
     padding:20px;
@@ -695,6 +817,7 @@ footer p{
     position:relative;
 
     width:min(500px,100%);
+
     max-height:90vh;
 
     overflow:auto;
@@ -713,6 +836,7 @@ footer p{
     right:18px;
 
     background:none;
+
     border:0;
 
     color:#fff;
@@ -722,6 +846,7 @@ footer p{
 
 .modal-image{
     width:100%;
+
     height:400px;
 
     object-fit:cover;
@@ -735,6 +860,7 @@ footer p{
 
 .modal-price{
     color:#999;
+
     margin-bottom:20px;
 }
 
@@ -742,12 +868,15 @@ footer p{
     margin-bottom:10px;
 
     font-size:11px;
+
     font-weight:700;
+
     letter-spacing:1px;
 }
 
 .sizes{
     display:flex;
+
     gap:8px;
 
     margin-bottom:20px;
@@ -758,6 +887,7 @@ footer p{
     height:40px;
 
     background:#181818;
+
     color:#fff;
 
     border:1px solid #333;
@@ -765,6 +895,7 @@ footer p{
 
 .size.active{
     background:#fff;
+
     color:#000;
 }
 
@@ -772,6 +903,7 @@ footer p{
     width:100%;
 
     background:#fff;
+
     color:#000;
 
     border:0;
@@ -779,19 +911,26 @@ footer p{
     padding:15px;
 
     font-size:11px;
+
     font-weight:900;
+
     letter-spacing:1px;
 }
 
-/* ================= CART ================= */
+
+/* =========================================================
+   WARENKORB
+========================================================= */
 
 .cart-panel{
     position:fixed;
 
     top:0;
+
     right:-430px;
 
     width:min(430px,100%);
+
     height:100vh;
 
     z-index:110;
@@ -813,7 +952,9 @@ footer p{
 
 .cart-head{
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 
     margin-bottom:30px;
@@ -825,6 +966,7 @@ footer p{
 
 .cart-item{
     display:flex;
+
     gap:14px;
 
     padding:15px 0;
@@ -834,6 +976,7 @@ footer p{
 
 .cart-item img{
     width:70px;
+
     height:80px;
 
     object-fit:cover;
@@ -845,16 +988,19 @@ footer p{
 
 .cart-item-info h4{
     font-size:12px;
+
     margin-bottom:7px;
 }
 
 .cart-item-info p{
     color:#888;
+
     font-size:11px;
 }
 
 .remove-item{
     background:none;
+
     border:0;
 
     color:#888;
@@ -864,16 +1010,19 @@ footer p{
 
 .cart-total{
     display:flex;
+
     justify-content:space-between;
 
     margin-top:25px;
 
     font-size:15px;
+
     font-weight:800;
 }
 
 .preview-note{
     margin-top:18px;
+
     padding:15px;
 
     border:1px solid #333;
@@ -881,13 +1030,18 @@ footer p{
     color:#888;
 
     font-size:11px;
+
     line-height:1.5;
 }
 
-/* ================= ACCOUNT ================= */
+
+/* =========================================================
+   ACCOUNT
+========================================================= */
 
 .account-tabs{
     display:flex;
+
     margin-bottom:25px;
 }
 
@@ -895,6 +1049,7 @@ footer p{
     flex:1;
 
     background:#181818;
+
     color:#888;
 
     border:1px solid #292929;
@@ -902,11 +1057,13 @@ footer p{
     padding:12px;
 
     font-size:11px;
+
     font-weight:700;
 }
 
 .account-tab.active{
     background:#fff;
+
     color:#000;
 }
 
@@ -936,6 +1093,7 @@ footer p{
     width:100%;
 
     background:#181818;
+
     color:#fff;
 
     border:1px solid #333;
@@ -953,25 +1111,10 @@ footer p{
     gap:10px;
 }
 
-/* ================= LANGUAGE ================= */
 
-.language select{
-    background:transparent;
-    color:#fff;
-
-    border:1px solid #444;
-
-    padding:7px 8px;
-
-    font-size:10px;
-}
-
-.language option{
-    background:#111;
-    color:#fff;
-}
-
-/* ================= TABLET ================= */
+/* =========================================================
+   TABLET
+========================================================= */
 
 @media(max-width:900px){
 
@@ -990,20 +1133,27 @@ footer p{
     .product-image{
         height:300px;
     }
+
 }
 
-/* ================= MOBILE ================= */
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media(max-width:600px){
 
     .top-info{
         padding:8px 10px;
+
         font-size:8px;
+
         line-height:1.4;
     }
 
     nav{
         top:30px;
+
         padding:18px 20px;
     }
 
@@ -1013,6 +1163,7 @@ footer p{
 
     .logo-est{
         font-size:7px;
+
         letter-spacing:3px;
     }
 
@@ -1022,12 +1173,15 @@ footer p{
 
     .hero{
         height:760px;
+
         min-height:760px;
     }
 
     .hero-car-background{
         background-position:center center;
+
         background-size:cover;
+
         filter:brightness(.48);
     }
 
@@ -1061,6 +1215,7 @@ footer p{
 
     .hero-slogan-main{
         font-size:26px;
+
         line-height:1.08;
     }
 
@@ -1078,6 +1233,7 @@ footer p{
         margin-top:22px;
 
         font-size:11px;
+
         line-height:1.6;
     }
 
@@ -1085,7 +1241,8 @@ footer p{
         padding:70px 18px;
     }
 
-    /* GENDER MOBILE */
+
+    /* FRAUEN / MÄNNER */
 
     .gender-categories{
         gap:8px;
@@ -1093,13 +1250,18 @@ footer p{
 
     .gender-btn{
         min-width:0;
+
         flex:1;
 
         padding:14px 10px;
 
         font-size:10px;
+
         letter-spacing:1.5px;
     }
+
+
+    /* KATEGORIEN */
 
     .categories{
         gap:7px;
@@ -1107,8 +1269,12 @@ footer p{
 
     .category-btn{
         padding:10px 14px;
+
         font-size:10px;
     }
+
+
+    /* PRODUKTE */
 
     .products{
         grid-template-columns:1fr 1fr;
@@ -1132,44 +1298,51 @@ footer p{
         font-size:11px;
     }
 
-    .women-coming{
-        padding:55px 20px;
-    }
 
-    .women-coming h3{
-        font-size:25px;
-    }
+    /* EVENTS */
 
     .events-grid{
         grid-template-columns:1fr;
     }
 
+
+    /* CARS */
+
     .cars{
         grid-template-columns:1fr;
 
         gap:14px;
-
-        align-items:start;
     }
 
-    .car img{
+    .car-image{
         height:205px;
     }
 
-    .car-six img{
-        height:205px !important;
 
-        object-fit:contain !important;
-        object-position:center center !important;
+    /* CAR 6 */
 
-        background:#111;
-
-        transform:none !important;
+    .car-six .car-image{
+        height:205px;
     }
 
-    .car-six:hover img{
-        transform:none !important;
+    .car-six .car-image img{
+        width:100%;
+
+        height:205px;
+
+        object-fit:cover;
+
+        object-position:center center;
+
+        transform:none;
     }
+
+    .car-six:hover .car-image img{
+        transform:scale(1.025);
+    }
+
+
+    /* MODAL */
 
     .modal-box{
         padding:22px;
@@ -1183,6 +1356,9 @@ footer p{
         grid-template-columns:1fr;
     }
 
+
+    /* FOOTER */
+
     footer{
         flex-direction:column;
 
@@ -1190,22 +1366,30 @@ footer p{
 
         text-align:center;
     }
+
 }
 
 </style>
 </head>
 
+
 <body>
 
 
-<!-- ================= INFO ================= -->
+<!-- =========================================================
+     INFO
+========================================================= -->
 
 <div class="top-info">
+
 SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BESTELLUNGEN DERZEIT MÖGLICH!
+
 </div>
 
 
-<!-- ================= NAVIGATION ================= -->
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
 
 <nav>
 
@@ -1245,7 +1429,8 @@ KONTAKT
 </a>
 
 
-<button class="nav-button"
+<button
+class="nav-button"
 onclick="openAccount()">
 
 ANMELDEN
@@ -1253,14 +1438,18 @@ ANMELDEN
 </button>
 
 
-<button class="nav-button cart-button"
+<button
+class="nav-button cart-button"
 onclick="openCart()">
 
 WARENKORB
 
-<span class="cart-count"
+<span
+class="cart-count"
 id="cartCount">
+
 0
+
 </span>
 
 </button>
@@ -1293,15 +1482,21 @@ RU
 </nav>
 
 
-<!-- ================= HERO ================= -->
+<!-- =========================================================
+     HERO
+========================================================= -->
 
 <section
 class="hero"
 id="home">
 
-<div class="hero-car-background"></div>
 
-<div class="hero-overlay"></div>
+<div class="hero-car-background">
+</div>
+
+
+<div class="hero-overlay">
+</div>
 
 
 <div class="hero-content">
@@ -1318,6 +1513,7 @@ EST. 2025
 
 
 <div class="hero-slogan">
+
 
 <div class="hero-slogan-main">
 
@@ -1352,7 +1548,9 @@ Streetwear für alle, die ihre eigene Spur fahren.
 </section>
 
 
-<!-- ================= SHOP ================= -->
+<!-- =========================================================
+     SHOP
+========================================================= -->
 
 <section
 class="shop"
@@ -1372,13 +1570,13 @@ Gonschiki Streetwear
 </div>
 
 
-<!-- ================= MÄNNER / FRAUEN ================= -->
+<!-- MÄNNER / FRAUEN -->
 
 <div class="gender-categories">
 
+
 <button
 class="gender-btn active"
-id="menButton"
 onclick="selectGender('men',this)">
 
 MÄNNER
@@ -1388,21 +1586,22 @@ MÄNNER
 
 <button
 class="gender-btn"
-id="womenButton"
 onclick="selectGender('women',this)">
 
 FRAUEN
 
 </button>
 
+
 </div>
 
 
-<!-- ================= PRODUKT FILTER ================= -->
+<!-- KATEGORIEN -->
 
 <div
 class="categories"
 id="productCategories">
+
 
 <button
 class="category-btn active"
@@ -1451,42 +1650,25 @@ HOSEN
 </div>
 
 
+<!-- PRODUKTE -->
+
 <div
 class="products"
 id="products">
 
 </div>
 
-
-<div
-class="women-coming"
-id="womenComing"
-style="display:none;">
-
-<h3>
-GONSCHIKI WOMEN
-</h3>
-
-<p>
-Unsere Frauen-Kollektion kommt bald.
-Neue Schnitte, neue Styles und
-Gonschiki DNA – speziell für Frauen.
-</p>
-
-<span>
-COMING SOON
-</span>
-
-</div>
-
 </section>
 
 
-<!-- ================= EVENTS ================= -->
+<!-- =========================================================
+     EVENTS
+========================================================= -->
 
 <section
 class="events"
 id="events">
+
 
 <div class="section-title">
 
@@ -1523,11 +1705,8 @@ Eine Nacht für Autos,
 Musik und die Gonschiki Crew.
 </p>
 
-<button
-onclick="previewMessage()">
-
+<button onclick="previewMessage()">
 TICKETS – DEMNÄCHST
-
 </button>
 
 </div>
@@ -1552,11 +1731,8 @@ Gemeinsam unterwegs.
 Autos, Freunde und der eigene Style.
 </p>
 
-<button
-onclick="previewMessage()">
-
+<button onclick="previewMessage()">
 INFOS – DEMNÄCHST
-
 </button>
 
 </div>
@@ -1566,7 +1742,9 @@ INFOS – DEMNÄCHST
 </section>
 
 
-<!-- ================= CARS ================= -->
+<!-- =========================================================
+     CARS
+========================================================= -->
 
 <section
 class="cars-section"
@@ -1589,11 +1767,17 @@ Die Autos hinter Gonschiki
 <div class="cars">
 
 
+<!-- CAR 1 -->
+
 <div class="car">
+
+<div class="car-image">
 
 <img
 src="assets/Car-1.JPG"
 alt="Gonschiki Car 1">
+
+</div>
 
 <div class="car-info">
 
@@ -1606,11 +1790,17 @@ GONSCHIKI #01
 </div>
 
 
+<!-- CAR 2 -->
+
 <div class="car">
+
+<div class="car-image">
 
 <img
 src="assets/Car-2.JPG"
 alt="Gonschiki Car 2">
+
+</div>
 
 <div class="car-info">
 
@@ -1623,11 +1813,17 @@ GONSCHIKI #02
 </div>
 
 
+<!-- CAR 3 -->
+
 <div class="car">
+
+<div class="car-image">
 
 <img
 src="assets/Car-3.jpg"
 alt="Gonschiki Car 3">
+
+</div>
 
 <div class="car-info">
 
@@ -1640,11 +1836,17 @@ GONSCHIKI #03
 </div>
 
 
+<!-- CAR 4 -->
+
 <div class="car">
+
+<div class="car-image">
 
 <img
 src="assets/Car-4.jpg"
 alt="Gonschiki Car 4">
+
+</div>
 
 <div class="car-info">
 
@@ -1657,11 +1859,17 @@ GONSCHIKI #04
 </div>
 
 
+<!-- CAR 5 -->
+
 <div class="car">
+
+<div class="car-image">
 
 <img
 src="assets/Car-5.jpg"
 alt="Gonschiki Car 5">
+
+</div>
 
 <div class="car-info">
 
@@ -1674,11 +1882,17 @@ GONSCHIKI #05
 </div>
 
 
+<!-- CAR 6 -->
+
 <div class="car car-six">
+
+<div class="car-image">
 
 <img
 src="assets/Car-6.jpg"
 alt="Gonschiki Car 6">
+
+</div>
 
 <div class="car-info">
 
@@ -1696,11 +1910,14 @@ GONSCHIKI #06
 </section>
 
 
-<!-- ================= ABOUT ================= -->
+<!-- =========================================================
+     ABOUT
+========================================================= -->
 
 <section
 class="about"
 id="about">
+
 
 <div class="section-title">
 
@@ -1727,11 +1944,14 @@ Eine Crew für alle, die ihre eigene Spur fahren.
 </section>
 
 
-<!-- ================= CONTACT ================= -->
+<!-- =========================================================
+     KONTAKT
+========================================================= -->
 
 <section
 class="contact"
 id="contact">
+
 
 <div class="section-title">
 
@@ -1766,7 +1986,9 @@ INSTAGRAM
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer>
 
@@ -1781,13 +2003,17 @@ INSTAGRAM
 </footer>
 
 
-<!-- ================= PRODUKT MODAL ================= -->
+<!-- =========================================================
+     PRODUKT MODAL
+========================================================= -->
 
 <div
 class="modal"
 id="productModal">
 
+
 <div class="modal-box">
+
 
 <button
 class="close"
@@ -1823,11 +2049,13 @@ GRÖSSE
 
 <div class="sizes">
 
+
 <button
 class="size"
 onclick="selectSize(this)">
 S
 </button>
+
 
 <button
 class="size"
@@ -1835,17 +2063,20 @@ onclick="selectSize(this)">
 M
 </button>
 
+
 <button
 class="size"
 onclick="selectSize(this)">
 L
 </button>
 
+
 <button
 class="size"
 onclick="selectSize(this)">
 XL
 </button>
+
 
 </div>
 
@@ -1858,22 +2089,27 @@ IN DEN WARENKORB
 
 </button>
 
-</div>
 
 </div>
 
+</div>
 
-<!-- ================= WARENKORB ================= -->
+
+<!-- =========================================================
+     WARENKORB
+========================================================= -->
 
 <div
 class="cart-panel"
 id="cartPanel">
+
 
 <div class="cart-head">
 
 <h2>
 WARENKORB
 </h2>
+
 
 <button
 class="close"
@@ -1916,13 +2152,17 @@ noch nicht möglich.
 </div>
 
 
-<!-- ================= ACCOUNT ================= -->
+<!-- =========================================================
+     ACCOUNT
+========================================================= -->
 
 <div
 class="modal"
 id="accountModal">
 
+
 <div class="modal-box">
+
 
 <button
 class="close"
@@ -1934,6 +2174,7 @@ onclick="closeModal('accountModal')">
 
 
 <div class="account-tabs">
+
 
 <button
 class="account-tab active"
@@ -1952,6 +2193,7 @@ REGISTRIEREN
 
 </button>
 
+
 </div>
 
 
@@ -1959,6 +2201,7 @@ REGISTRIEREN
 class="form active"
 id="loginForm"
 onsubmit="login(event)">
+
 
 <div class="form-group">
 
@@ -2003,7 +2246,9 @@ class="form"
 id="registerForm"
 onsubmit="register(event)">
 
+
 <div class="form-grid">
+
 
 <div class="form-group">
 
@@ -2031,6 +2276,7 @@ id="lastName"
 required>
 
 </div>
+
 
 </div>
 
@@ -2065,6 +2311,7 @@ required>
 
 <div class="form-grid">
 
+
 <div class="form-group">
 
 <label>
@@ -2091,6 +2338,7 @@ id="city"
 required>
 
 </div>
+
 
 </div>
 
@@ -2130,7 +2378,9 @@ KONTO ERSTELLEN
 
 </button>
 
+
 </form>
+
 
 </div>
 
@@ -2139,804 +2389,911 @@ KONTO ERSTELLEN
 
 <script>
 
-/* ================= PRODUKTE ================= */
+/* =========================================================
+   PRODUKTE
+========================================================= */
 
-const products=[
+/*
+   Die Produkte sind bewusst "both".
+   Dadurch erscheinen dieselben Klamotten
+   bei MÄNNER und FRAUEN.
+*/
+
+const products = [
 
 {
-name:"GONSCHIKI RUSSIA SHIRT",
-category:"Shirts",
-gender:"men",
-price:39,
-image:"assets/Shirt-black-Russia.jpg"
+    name:"GONSCHIKI RUSSIA SHIRT",
+    category:"Shirts",
+    price:39,
+    gender:"both",
+    image:"assets/Shirt-black-Russia.jpg"
 },
 
 {
-name:"GONSCHIKI CROSS ZIPPER",
-category:"Zipper",
-gender:"men",
-price:69,
-image:"assets/Zipper-black-Kreuz.jpg"
+    name:"GONSCHIKI CROSS ZIPPER",
+    category:"Zipper",
+    price:69,
+    gender:"both",
+    image:"assets/Zipper-black-Kreuz.jpg"
 },
 
 {
-name:"GONSCHIKI E36 HOODIE",
-category:"Hoodies",
-gender:"men",
-price:79,
-image:"assets/Hoodie-black-e36.jpg"
+    name:"GONSCHIKI E36 HOODIE",
+    category:"Hoodies",
+    price:79,
+    gender:"both",
+    image:"assets/Hoodie-black-e36.jpg"
 },
 
 {
-name:"GONSCHIKI E34 HOODIE",
-category:"Hoodies",
-gender:"men",
-price:79,
-image:"assets/Hoodie-black-e34.jpg"
+    name:"GONSCHIKI E34 HOODIE",
+    category:"Hoodies",
+    price:79,
+    gender:"both",
+    image:"assets/Hoodie-black-e34.jpg"
 },
 
 {
-name:"GONSCHIKI CROSS HOODIE",
-category:"Hoodies",
-gender:"men",
-price:79,
-image:"assets/Hoodie-black-Kreuz.jpg"
+    name:"GONSCHIKI CROSS HOODIE",
+    category:"Hoodies",
+    price:79,
+    gender:"both",
+    image:"assets/Hoodie-black-Kreuz.jpg"
 },
 
 {
-name:"GONSCHIKI E36 SHIRT",
-category:"Shirts",
-gender:"men",
-price:39,
-image:"assets/Shirt-black-e36.jpg"
+    name:"GONSCHIKI E36 SHIRT",
+    category:"Shirts",
+    price:39,
+    gender:"both",
+    image:"assets/Shirt-black-e36.jpg"
 },
 
 {
-name:"GONSCHIKI RUSSIA HOODIE",
-category:"Hoodies",
-gender:"men",
-price:79,
-image:"assets/Hoodie-black-Russia.jpg"
+    name:"GONSCHIKI RUSSIA HOODIE",
+    category:"Hoodies",
+    price:79,
+    gender:"both",
+    image:"assets/Hoodie-black-Russia.jpg"
 },
 
 {
-name:"GONSCHIKI E34 SHIRT",
-category:"Shirts",
-gender:"men",
-price:39,
-image:"assets/Shirt-black-e34.jpg"
+    name:"GONSCHIKI E34 SHIRT",
+    category:"Shirts",
+    price:39,
+    gender:"both",
+    image:"assets/Shirt-black-e34.jpg"
 },
 
 {
-name:"GONSCHIKI E36 BEIGE HOODIE",
-category:"Hoodies",
-gender:"men",
-price:79,
-image:"assets/Hoodie-beige-e36.jpg"
+    name:"GONSCHIKI E36 BEIGE HOODIE",
+    category:"Hoodies",
+    price:79,
+    gender:"both",
+    image:"assets/Hoodie-beige-e36.jpg"
 },
 
 {
-name:"GONSCHIKI PANTS",
-category:"Hosen",
-gender:"men",
-price:69,
-image:"assets/Pants-black-gonschiki.jpg"
+    name:"GONSCHIKI PANTS",
+    category:"Hosen",
+    price:69,
+    gender:"both",
+    image:"assets/Pants-black-gonschiki.jpg"
 }
 
 ];
 
 
-let currentGender="men";
+/* =========================================================
+   SHOP STATUS
+========================================================= */
 
-let currentCategory="Alle";
+let currentGender = "men";
 
-let currentProduct=null;
+let currentCategory = "Alle";
 
-let selectedSize=null;
+let currentProduct = null;
+
+let selectedSize = null;
 
 
-let cart=JSON.parse(
-localStorage.getItem("gonschikiCart") || "[]"
+/* =========================================================
+   WARENKORB LADEN
+========================================================= */
+
+let cart = JSON.parse(
+    localStorage.getItem("gonschikiCart") || "[]"
 );
 
 
-/* ================= SHOP ================= */
+/* =========================================================
+   MÄNNER / FRAUEN
+========================================================= */
 
 function selectGender(gender,button){
 
-currentGender=gender;
+    currentGender = gender;
 
-currentCategory="Alle";
-
-
-document
-.querySelectorAll(".gender-btn")
-.forEach(btn=>{
-btn.classList.remove("active");
-});
+    currentCategory = "Alle";
 
 
-button.classList.add("active");
+    document
+    .querySelectorAll(".gender-btn")
+    .forEach(function(btn){
+
+        btn.classList.remove("active");
+
+    });
 
 
-document
-.querySelectorAll(".category-btn")
-.forEach(btn=>{
-btn.classList.remove("active");
-});
+    button.classList.add("active");
 
 
-document
-.querySelector(".category-btn")
-.classList.add("active");
+    document
+    .querySelectorAll(".category-btn")
+    .forEach(function(btn){
+
+        btn.classList.remove("active");
+
+    });
 
 
-const productsContainer=
-document.getElementById("products");
+    document
+    .querySelector(".category-btn")
+    .classList.add("active");
 
 
-const womenComing=
-document.getElementById("womenComing");
-
-
-const categories=
-document.getElementById("productCategories");
-
-
-if(gender==="women"){
-
-productsContainer.style.display="none";
-
-categories.style.display="none";
-
-womenComing.style.display="block";
-
-}else{
-
-productsContainer.style.display="grid";
-
-categories.style.display="flex";
-
-womenComing.style.display="none";
-
-renderProducts();
-
-}
+    renderProducts();
 
 }
 
 
-/* ================= PRODUKTE ANZEIGEN ================= */
-
-function getFilteredProducts(){
-
-let filtered=
-products.filter(
-product=>product.gender===currentGender
-);
-
-
-if(currentCategory!=="Alle"){
-
-filtered=
-filtered.filter(
-product=>product.category===currentCategory
-);
-
-}
-
-
-return filtered;
-
-}
-
-
-function renderProducts(){
-
-const container=
-document.getElementById("products");
-
-
-container.innerHTML="";
-
-
-const list=
-getFilteredProducts();
-
-
-list.forEach(product=>{
-
-const index=
-products.indexOf(product);
-
-
-const item=
-document.createElement("div");
-
-
-item.className="product";
-
-
-item.onclick=()=>{
-openProduct(index);
-};
-
-
-item.innerHTML=`
-
-<div class="product-image">
-
-<img
-src="${product.image}"
-alt="${product.name}">
-
-</div>
-
-
-<div class="product-info">
-
-<h3>
-${product.name}
-</h3>
-
-<p>
-${product.category}
-</p>
-
-
-<div class="product-price">
-${product.price} €
-</div>
-
-</div>
-
-`;
-
-
-container.appendChild(item);
-
-});
-
-}
-
-
-/* ================= FILTER ================= */
+/* =========================================================
+   KATEGORIE FILTERN
+========================================================= */
 
 function filterProducts(category,button){
 
-currentCategory=category;
+    currentCategory = category;
 
 
-document
-.querySelectorAll(".category-btn")
-.forEach(btn=>{
-btn.classList.remove("active");
-});
+    document
+    .querySelectorAll(".category-btn")
+    .forEach(function(btn){
+
+        btn.classList.remove("active");
+
+    });
 
 
-button.classList.add("active");
+    button.classList.add("active");
 
 
-renderProducts();
+    renderProducts();
 
 }
 
 
-/* ================= PRODUKT MODAL ================= */
+/* =========================================================
+   PRODUKTE FILTERN
+========================================================= */
+
+function getFilteredProducts(){
+
+    let filtered = products.filter(function(product){
+
+        return product.gender === "both";
+
+    });
+
+
+    if(currentCategory !== "Alle"){
+
+        filtered = filtered.filter(function(product){
+
+            return product.category === currentCategory;
+
+        });
+
+    }
+
+
+    return filtered;
+
+}
+
+
+/* =========================================================
+   PRODUKTE RENDERN
+========================================================= */
+
+function renderProducts(){
+
+    const container =
+        document.getElementById("products");
+
+
+    container.innerHTML = "";
+
+
+    const list =
+        getFilteredProducts();
+
+
+    list.forEach(function(product){
+
+        const index =
+            products.indexOf(product);
+
+
+        const item =
+            document.createElement("div");
+
+
+        item.className = "product";
+
+
+        item.onclick = function(){
+
+            openProduct(index);
+
+        };
+
+
+        item.innerHTML = `
+
+            <div class="product-image">
+
+                <img
+                    src="${product.image}"
+                    alt="${product.name}"
+                    loading="lazy">
+
+            </div>
+
+
+            <div class="product-info">
+
+                <h3>
+                    ${product.name}
+                </h3>
+
+
+                <p>
+                    ${product.category}
+                </p>
+
+
+                <div class="product-price">
+                    ${product.price} €
+                </div>
+
+            </div>
+
+        `;
+
+
+        container.appendChild(item);
+
+    });
+
+}
+
+
+/* =========================================================
+   PRODUKT ÖFFNEN
+========================================================= */
 
 function openProduct(index){
 
-currentProduct=
-products[index];
+    currentProduct = products[index];
+
+    selectedSize = null;
 
 
-selectedSize=null;
+    document
+    .querySelectorAll(".size")
+    .forEach(function(btn){
+
+        btn.classList.remove("active");
+
+    });
 
 
-document
-.querySelectorAll(".size")
-.forEach(btn=>{
-btn.classList.remove("active");
-});
+    document
+    .getElementById("modalProductImage")
+    .src =
+        currentProduct.image;
 
 
-document
-.getElementById("modalProductImage")
-.src=
-currentProduct.image;
+    document
+    .getElementById("modalProductName")
+    .textContent =
+        currentProduct.name;
 
 
-document
-.getElementById("modalProductName")
-.textContent=
-currentProduct.name;
+    document
+    .getElementById("modalProductPrice")
+    .textContent =
+        currentProduct.price + " €";
 
 
-document
-.getElementById("modalProductPrice")
-.textContent=
-currentProduct.price+" €";
-
-
-document
-.getElementById("productModal")
-.classList.add("active");
+    document
+    .getElementById("productModal")
+    .classList.add("active");
 
 }
 
+
+/* =========================================================
+   GRÖSSE
+========================================================= */
 
 function selectSize(button){
 
-document
-.querySelectorAll(".size")
-.forEach(btn=>{
-btn.classList.remove("active");
-});
+    document
+    .querySelectorAll(".size")
+    .forEach(function(btn){
+
+        btn.classList.remove("active");
+
+    });
 
 
-button.classList.add("active");
+    button.classList.add("active");
 
 
-selectedSize=
-button.textContent;
+    selectedSize =
+        button.textContent;
 
 }
 
+
+/* =========================================================
+   IN WARENKORB
+========================================================= */
 
 function addCurrentProduct(){
 
-if(!currentProduct){
-return;
+    if(!currentProduct){
+
+        return;
+
+    }
+
+
+    if(!selectedSize){
+
+        alert(
+            "Bitte zuerst eine Größe auswählen."
+        );
+
+        return;
+
+    }
+
+
+    cart.push({
+
+        name:currentProduct.name,
+
+        price:currentProduct.price,
+
+        image:currentProduct.image,
+
+        size:selectedSize,
+
+        gender:currentGender
+
+    });
+
+
+    saveCart();
+
+    updateCart();
+
+    closeModal("productModal");
+
+
+    alert(
+        "Produkt wurde dem Warenkorb hinzugefügt."
+    );
+
 }
 
 
-if(!selectedSize){
-
-alert(
-"Bitte zuerst eine Größe auswählen."
-);
-
-return;
-
-}
-
-
-cart.push({
-
-name:currentProduct.name,
-
-price:currentProduct.price,
-
-image:currentProduct.image,
-
-size:selectedSize
-
-});
-
-
-saveCart();
-
-updateCart();
-
-closeModal("productModal");
-
-
-alert(
-"Produkt wurde dem Warenkorb hinzugefügt."
-);
-
-}
-
-
-/* ================= CART ================= */
+/* =========================================================
+   WARENKORB SPEICHERN
+========================================================= */
 
 function saveCart(){
 
-localStorage.setItem(
-"gonschikiCart",
-JSON.stringify(cart)
-);
+    localStorage.setItem(
+        "gonschikiCart",
+        JSON.stringify(cart)
+    );
 
 }
 
+
+/* =========================================================
+   WARENKORB AKTUALISIEREN
+========================================================= */
 
 function updateCart(){
 
-const count=
-document.getElementById("cartCount");
+    const count =
+        document.getElementById("cartCount");
 
 
-const items=
-document.getElementById("cartItems");
+    const items =
+        document.getElementById("cartItems");
 
 
-const total=
-document.getElementById("cartTotal");
+    const total =
+        document.getElementById("cartTotal");
 
 
-count.textContent=
-cart.length;
+    count.textContent =
+        cart.length;
 
 
-items.innerHTML="";
+    items.innerHTML = "";
 
 
-let sum=0;
+    let sum = 0;
 
 
-cart.forEach((item,index)=>{
+    cart.forEach(function(item,index){
 
-sum+=Number(item.price);
-
-
-const div=
-document.createElement("div");
+        sum += Number(item.price);
 
 
-div.className="cart-item";
+        const div =
+            document.createElement("div");
 
 
-div.innerHTML=`
-
-<img
-src="${item.image}"
-alt="${item.name}">
+        div.className =
+            "cart-item";
 
 
-<div class="cart-item-info">
+        div.innerHTML = `
 
-<h4>
-${item.name}
-</h4>
-
-<p>
-Größe: ${item.size}
-</p>
-
-<p>
-${item.price} €
-</p>
-
-</div>
+            <img
+                src="${item.image}"
+                alt="${item.name}">
 
 
-<button
-class="remove-item"
-onclick="removeCartItem(${index})">
+            <div class="cart-item-info">
 
-ENTFERNEN
-
-</button>
-
-`;
+                <h4>
+                    ${item.name}
+                </h4>
 
 
-items.appendChild(div);
+                <p>
+                    ${item.gender === "women" ? "Frauen" : "Männer"}
+                </p>
 
-});
+
+                <p>
+                    Größe: ${item.size}
+                </p>
 
 
-total.textContent=
-sum.toFixed(2)+" €";
+                <p>
+                    ${item.price} €
+                </p>
+
+            </div>
+
+
+            <button
+                class="remove-item"
+                onclick="removeCartItem(${index})">
+
+                ENTFERNEN
+
+            </button>
+
+        `;
+
+
+        items.appendChild(div);
+
+    });
+
+
+    total.textContent =
+        sum.toFixed(2) + " €";
 
 }
 
+
+/* =========================================================
+   WARENKORB ARTIKEL ENTFERNEN
+========================================================= */
 
 function removeCartItem(index){
 
-cart.splice(index,1);
+    cart.splice(index,1);
 
-saveCart();
+    saveCart();
 
-updateCart();
+    updateCart();
 
 }
 
+
+/* =========================================================
+   WARENKORB ÖFFNEN
+========================================================= */
 
 function openCart(){
 
-updateCart();
+    updateCart();
 
 
-document
-.getElementById("cartPanel")
-.classList.add("active");
+    document
+    .getElementById("cartPanel")
+    .classList.add("active");
 
 }
 
+
+/* =========================================================
+   WARENKORB SCHLIESSEN
+========================================================= */
 
 function closeCart(){
 
-document
-.getElementById("cartPanel")
-.classList.remove("active");
+    document
+    .getElementById("cartPanel")
+    .classList.remove("active");
 
 }
 
 
-/* ================= ACCOUNT ================= */
+/* =========================================================
+   ACCOUNT ÖFFNEN
+========================================================= */
 
 function openAccount(){
 
-document
-.getElementById("accountModal")
-.classList.add("active");
+    document
+    .getElementById("accountModal")
+    .classList.add("active");
 
 }
 
+
+/* =========================================================
+   ACCOUNT TABS
+========================================================= */
 
 function showAccountForm(type,button){
 
-document
-.querySelectorAll(".account-tab")
-.forEach(btn=>{
-btn.classList.remove("active");
-});
+    document
+    .querySelectorAll(".account-tab")
+    .forEach(function(btn){
+
+        btn.classList.remove("active");
+
+    });
 
 
-button.classList.add("active");
+    button.classList.add("active");
 
 
-document
-.getElementById("loginForm")
-.classList.remove("active");
+    document
+    .getElementById("loginForm")
+    .classList.remove("active");
 
 
-document
-.getElementById("registerForm")
-.classList.remove("active");
+    document
+    .getElementById("registerForm")
+    .classList.remove("active");
 
 
-if(type==="login"){
+    if(type === "login"){
 
-document
-.getElementById("loginForm")
-.classList.add("active");
+        document
+        .getElementById("loginForm")
+        .classList.add("active");
 
-}else{
+    }
 
-document
-.getElementById("registerForm")
-.classList.add("active");
+    else{
+
+        document
+        .getElementById("registerForm")
+        .classList.add("active");
+
+    }
 
 }
 
-}
 
+/* =========================================================
+   REGISTRIEREN
+========================================================= */
 
 function register(event){
 
-event.preventDefault();
+    event.preventDefault();
 
 
-const password=
-document
-.getElementById("registerPassword")
-.value;
+    const password =
+        document
+        .getElementById("registerPassword")
+        .value;
 
 
-const password2=
-document
-.getElementById("registerPassword2")
-.value;
+    const password2 =
+        document
+        .getElementById("registerPassword2")
+        .value;
 
 
-if(password!==password2){
+    if(password !== password2){
 
-alert(
-"Die Passwörter stimmen nicht überein."
-);
+        alert(
+            "Die Passwörter stimmen nicht überein."
+        );
 
-return;
+        return;
+
+    }
+
+
+    const account = {
+
+        firstName:
+            document
+            .getElementById("firstName")
+            .value,
+
+        lastName:
+            document
+            .getElementById("lastName")
+            .value,
+
+        email:
+            document
+            .getElementById("registerEmail")
+            .value,
+
+        street:
+            document
+            .getElementById("street")
+            .value,
+
+        postalCode:
+            document
+            .getElementById("postalCode")
+            .value,
+
+        city:
+            document
+            .getElementById("city")
+            .value
+
+    };
+
+
+    localStorage.setItem(
+        "gonschikiAccount",
+        JSON.stringify(account)
+    );
+
+
+    alert(
+        "Konto wurde für diese Website-Vorschau gespeichert."
+    );
+
+
+    document
+    .getElementById("registerForm")
+    .reset();
 
 }
 
 
-const account={
-
-firstName:
-document.getElementById("firstName").value,
-
-lastName:
-document.getElementById("lastName").value,
-
-email:
-document.getElementById("registerEmail").value,
-
-street:
-document.getElementById("street").value,
-
-postalCode:
-document.getElementById("postalCode").value,
-
-city:
-document.getElementById("city").value
-
-};
-
-
-localStorage.setItem(
-"gonschikiAccount",
-JSON.stringify(account)
-);
-
-
-alert(
-"Konto wurde für diese Website-Vorschau gespeichert."
-);
-
-
-document
-.getElementById("registerForm")
-.reset();
-
-}
-
+/* =========================================================
+   LOGIN
+========================================================= */
 
 function login(event){
 
-event.preventDefault();
+    event.preventDefault();
 
 
-const email=
-document
-.getElementById("loginEmail")
-.value;
+    const email =
+        document
+        .getElementById("loginEmail")
+        .value;
 
 
-const account=
-JSON.parse(
-localStorage.getItem(
-"gonschikiAccount"
-) || "null"
-);
+    const account =
+        JSON.parse(
+            localStorage.getItem(
+                "gonschikiAccount"
+            ) || "null"
+        );
 
 
-if(account && account.email===email){
+    if(account && account.email === email){
 
-alert(
-"Anmeldung für diese Website-Vorschau erfolgreich."
-);
+        alert(
+            "Anmeldung für diese Website-Vorschau erfolgreich."
+        );
 
-}else{
+    }
 
-alert(
-"Kein gespeichertes Demo-Konto mit dieser E-Mail gefunden."
-);
+    else{
+
+        alert(
+            "Kein gespeichertes Demo-Konto mit dieser E-Mail gefunden."
+        );
+
+    }
 
 }
 
-}
 
-
-/* ================= MODALS ================= */
+/* =========================================================
+   MODAL SCHLIESSEN
+========================================================= */
 
 function closeModal(id){
 
-document
-.getElementById(id)
-.classList.remove("active");
+    document
+    .getElementById(id)
+    .classList.remove("active");
 
 }
 
+
+/* =========================================================
+   MODAL AUßEN KLICK
+========================================================= */
 
 document
 .querySelectorAll(".modal")
-.forEach(modal=>{
+.forEach(function(modal){
 
-modal.addEventListener(
-"click",
-function(event){
+    modal.addEventListener(
+        "click",
+        function(event){
 
-if(event.target===modal){
+            if(event.target === modal){
 
-modal.classList.remove("active");
+                modal.classList.remove("active");
 
-}
+            }
 
-}
-);
+        }
+    );
 
 });
 
 
-/* ================= EVENTS ================= */
+/* =========================================================
+   EVENTS
+========================================================= */
 
 function previewMessage(){
 
-alert(
-"EVENTS und Tickets sind aktuell noch nicht verfügbar."
-);
+    alert(
+        "EVENTS und Tickets sind aktuell noch nicht verfügbar."
+    );
 
 }
 
 
-/* ================= SPRACHEN ================= */
+/* =========================================================
+   SPRACHEN
+========================================================= */
 
-const translations={
+const translations = {
 
-de:{
-shop:"SHOP",
-events:"EVENTS",
-cars:"CARS",
-about:"ABOUT",
-contact:"KONTAKT"
-},
+    de:{
+        shop:"SHOP",
+        events:"EVENTS",
+        cars:"CARS",
+        about:"ABOUT",
+        contact:"KONTAKT"
+    },
 
-en:{
-shop:"SHOP",
-events:"EVENTS",
-cars:"CARS",
-about:"ABOUT",
-contact:"CONTACT"
-},
+    en:{
+        shop:"SHOP",
+        events:"EVENTS",
+        cars:"CARS",
+        about:"ABOUT",
+        contact:"CONTACT"
+    },
 
-ru:{
-shop:"МАГАЗИН",
-events:"СОБЫТИЯ",
-cars:"МАШИНЫ",
-about:"О НАС",
-contact:"КОНТАКТ"
-}
+    ru:{
+        shop:"МАГАЗИН",
+        events:"СОБЫТИЯ",
+        cars:"МАШИНЫ",
+        about:"О НАС",
+        contact:"КОНТАКТ"
+    }
 
 };
 
 
+/* =========================================================
+   SPRACHE ÄNDERN
+========================================================= */
+
 function changeLanguage(language){
 
-localStorage.setItem(
-"gonschikiLanguage",
-language
-);
+    localStorage.setItem(
+        "gonschikiLanguage",
+        language
+    );
 
 
-const t=
-translations[language];
+    const t =
+        translations[language];
 
 
-const links=
-document.querySelectorAll(
-".nav-links a"
-);
+    const links =
+        document.querySelectorAll(
+            ".nav-links a"
+        );
 
 
-if(links.length>=5){
+    if(links.length >= 5){
 
-links[0].textContent=t.shop;
+        links[0].textContent =
+            t.shop;
 
-links[1].textContent=t.events;
+        links[1].textContent =
+            t.events;
 
-links[2].textContent=t.cars;
+        links[2].textContent =
+            t.cars;
 
-links[3].textContent=t.about;
+        links[3].textContent =
+            t.about;
 
-links[4].textContent=t.contact;
+        links[4].textContent =
+            t.contact;
+
+    }
 
 }
 
-}
 
+/* =========================================================
+   SPRACHE LADEN
+========================================================= */
 
 function loadLanguage(){
 
-const language=
-localStorage.getItem(
-"gonschikiLanguage"
-) || "de";
+    const language =
+        localStorage.getItem(
+            "gonschikiLanguage"
+        ) || "de";
 
 
-document
-.getElementById("languageSelect")
-.value=
-language;
+    document
+    .getElementById("languageSelect")
+    .value =
+        language;
 
 
-changeLanguage(language);
+    changeLanguage(language);
 
 }
 
 
-/* ================= START ================= */
+/* =========================================================
+   START
+========================================================= */
 
 renderProducts();
 
