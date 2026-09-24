@@ -1,609 +1,8 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="ГОНЩИКИ — Streetwear × Car Culture. Est. 2025.">
-<title>ГОНЩИКИ — Streetwear × Car Culture</title>
-
-<style>
-:root{
-  --bg:#050505; --panel:#0d0d0d; --line:#222; --muted:#a5a5a5; --white:#f5f5f5;
-}
-
-*{box-sizing:border-box}
-
-html{scroll-behavior:smooth}
-
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--white);
-  font-family:Arial,Helvetica,sans-serif
-}
-
-a{
-  color:inherit;
-  text-decoration:none
-}
-
-.nav{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  z-index:20;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  padding:18px 5vw;
-
-  background:rgba(5,5,5,.82);
-  backdrop-filter:blur(16px);
-
-  border-bottom:1px solid rgba(255,255,255,.08)
-}
-
-.logo{
-  font-weight:900;
-  letter-spacing:.08em;
-  font-size:18px
-}
-
-.logo small{
-  font-size:9px;
-  letter-spacing:.18em;
-  color:#aaa;
-  margin-left:7px
-}
-
-.navlinks{
-  display:flex;
-  gap:28px;
-  font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:.12em
-}
-
-.hero{
-  min-height:100vh;
-  position:relative;
-  display:flex;
-  align-items:flex-end;
-  overflow:hidden;
-
-  background:
-    linear-gradient(90deg,rgba(0,0,0,.85),rgba(0,0,0,.25)),
-    linear-gradient(0deg,rgba(0,0,0,.9),transparent 55%),
-    url("assets/Car-1.JPG") center/cover no-repeat;
-}
-
-.hero:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(135deg,rgba(0,0,0,.25),transparent 45%)
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  padding:0 6vw 9vh;
-  max-width:800px
-}
-
-.kicker{
-  font-size:11px;
-  letter-spacing:.28em;
-  text-transform:uppercase;
-  color:#ccc;
-  margin-bottom:22px
-}
-
-h1{
-  font-size:clamp(52px,10vw,130px);
-  line-height:.82;
-  margin:0 0 28px;
-  font-weight:900;
-  letter-spacing:-.055em
-}
-
-.hero p{
-  font-size:16px;
-  line-height:1.6;
-  color:#ddd;
-  max-width:520px
-}
-
-.btn{
-  display:inline-block;
-  margin-top:20px;
-  padding:14px 22px;
-  border:1px solid #fff;
-
-  text-transform:uppercase;
-  letter-spacing:.14em;
-  font-size:11px;
-  font-weight:700
-}
-
-section{
-  padding:110px 6vw;
-  border-top:1px solid var(--line)
-}
-
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  gap:30px;
-  margin-bottom:45px
-}
-
-.eyebrow{
-  font-size:10px;
-  letter-spacing:.25em;
-  text-transform:uppercase;
-  color:#999
-}
-
-h2{
-  font-size:clamp(34px,5vw,70px);
-  margin:8px 0 0;
-  letter-spacing:-.04em
-}
-
-.section-head p{
-  color:#999;
-  max-width:380px;
-  line-height:1.6
-}
-
-.products{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px
-}
-
-.product{
-  background:var(--panel);
-  border:1px solid var(--line);
-  padding:18px
-}
-
-.mockup{
-  aspect-ratio:4/5;
-  background:#151515;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  position:relative;
-  overflow:hidden
-}
-
-.mockup:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:radial-gradient(
-    circle at 50% 35%,
-    #303030,
-    transparent 48%
-  )
-}
-
-.garment{
-  position:relative;
-  width:58%;
-  height:65%;
-  background:#050505;
-
-  clip-path:polygon(
-    25% 0,
-    75% 0,
-    100% 18%,
-    86% 31%,
-    79% 100%,
-    21% 100%,
-    14% 31%,
-    0 18%
-  )
-}
-
-.garment:after{
-  content:"ГОНЩИКИ";
-
-  position:absolute;
-  left:50%;
-  top:45%;
-
-  transform:translate(-50%,-50%);
-
-  font-size:13px;
-  font-weight:900;
-  letter-spacing:.12em;
-  white-space:nowrap
-}
-
-.hoodie .garment{
-  width:62%;
-  height:68%;
-  border-radius:8px;
-  clip-path:none
-}
-
-.hoodie .garment:before{
-  content:"";
-
-  position:absolute;
-  left:35%;
-  top:-8%;
-
-  width:30%;
-  height:22%;
-
-  border:8px solid #050505;
-  border-radius:50%
-}
-
-.back .garment:after{
-  content:"ГОНЩИКИ";
-  top:22%;
-  font-size:15px
-}
-
-.product h3{
-  font-size:18px;
-  margin:18px 0 5px
-}
-
-.product .meta{
-  font-size:11px;
-  color:#888;
-  text-transform:uppercase;
-  letter-spacing:.1em
-}
-
-.price{
-  margin-top:14px;
-  font-weight:700
-}
-
-.cars{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px
-}
-
-.car{
-  position:relative;
-  overflow:hidden;
-  background:#111;
-  min-height:360px
-}
-
-.car img{
-  width:100%;
-  height:100%;
-  min-height:360px;
-
-  object-fit:cover;
-  display:block;
-
-  transition:transform .6s
-}
-
-.car:hover img{
-  transform:scale(1.04)
-}
-
-.car-caption{
-  position:absolute;
-  left:0;
-  right:0;
-  bottom:0;
-
-  padding:28px;
-
-  background:
-    linear-gradient(
-      transparent,
-      rgba(0,0,0,.9)
-    )
-}
-
-.car-caption span{
-  font-size:10px;
-  letter-spacing:.2em;
-  text-transform:uppercase;
-  color:#ccc
-}
-
-.car-caption h3{
-  margin:7px 0 0;
-  font-size:25px
-}
-
-.manifesto{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:70px
-}
-
-.manifesto h2{
-  font-size:clamp(38px,6vw,82px)
-}
-
-.manifesto p{
-  color:#aaa;
-  line-height:1.8;
-  font-size:15px
-}
-
-.contact{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px
-}
-
-.contact-box{
-  border:1px solid var(--line);
-  padding:35px;
-  min-height:170px
-}
-
-.contact-box h3{
-  margin-top:0
-}
-
-.contact-box p{
-  color:#999
-}
-
-footer{
-  padding:45px 6vw;
-
-  border-top:1px solid var(--line);
-
-  display:flex;
-  justify-content:space-between;
-
-  color:#777;
-
-  font-size:11px;
-  letter-spacing:.12em;
-  text-transform:uppercase
-}
-
-@media(max-width:800px){
-
-  .nav{
-    padding:15px 5vw
-  }
-
-  .navlinks{
-    gap:13px;
-    font-size:9px
-  }
-
-  .logo small{
-    display:none
-  }
-
-  .hero-content{
-    padding:0 5vw 10vh
-  }
-
-  .hero p{
-    font-size:14px
-  }
-
-  section{
-    padding:80px 5vw
-  }
-
-  .section-head{
-    display:block
-  }
-
-  .section-head p{
-    margin-top:18px
-  }
-
-  .products,
-  .cars,
-  .contact,
-  .manifesto{
-    grid-template-columns:1fr
-  }
-
-  .car,
-  .car img{
-    min-height:280px
-  }
-
-  .products{
-    gap:14px
-  }
-
-  footer{
-    display:block;
-    line-height:2
-  }
-
-}
-</style>
-</head>
-
-<body>
-
-<nav class="nav">
-
-  <a class="logo" href="#">
-    ГОНЩИКИ
-    <small>EST. 2025</small>
-  </a>
-
-  <div class="navlinks">
-
-    <a href="#shop">
-      Shop
-    </a>
-
-    <a href="#cars">
-      Cars
-    </a>
-
-    <a href="#about">
-      About
-    </a>
-
-    <a href="#contact">
-      Contact
-    </a>
-
-  </div>
-
-</nav>
-
-
-<header class="hero">
-
-  <div class="hero-content">
-
-    <div class="kicker">
-      Streetwear × Car Culture × ГОНЩИКИ
-    </div>
-
-    <h1>
-      MORE THAN<br>
-      JUST A CREW.
-    </h1>
-
-    <p>
-      Schwarze Essentials.
-      Klare Designs.
-      Eine Crew.
-      ГОНЩИКИ steht für Streetwear,
-      Autos und den Lifestyle dahinter.
-    </p>
-
-    <a class="btn" href="#shop">
-      Collection entdecken →
-    </a>
-
-  </div>
-
-</header>
-
-
-<section id="shop">
-
-  <div class="section-head">
-
-    <div>
-
-      <div class="eyebrow">
-        01 / Current Drop
-      </div>
-
-      <h2>
-        OUR PIECES
-      </h2>
-
-    </div>
-
-    <p>
-      Die erste Kollektion:
-      clean, schwarz und direkt.
-      Vorne das ГОНЩИКИ Logo mit EST. 2025,
-      hinten der Crew-Schriftzug.
-    </p>
-
-  </div>
-
-
-  <div class="products">
-
-
-    <article class="product">
-
-      <div class="mockup">
-        <div class="garment"></div>
-      </div>
-
-      <h3>
-        ГОНЩИКИ T-Shirt
-      </h3>
-
-      <div class="meta">
-        Black / Front Print
-      </div>
-
-      <div class="price">
-        €39,90
-      </div>
-
-    </article>
-
-
-    <article class="product">
-
-      <div class="mockup hoodie">
-        <div class="garment"></div>
-      </div>
-
-      <h3>
-        ГОНЩИКИ Hoodie
-      </h3>
-
-      <div class="meta">
-        Black / Front + Back Print
-      </div>
-
-      <div class="price">
-        €69,90
-      </div>
-
-    </article>
-
-
-    <article class="product">
-
-      <div class="mockup back">
-        <div class="garment"></div>
-      </div>
-
-      <h3>
-        ГОНЩИКИ Back Print
-      </h3>
-
-      <div class="meta">
-        Crew Logo / EST. 2025
-      </div>
-
-      <div class="price">
-        Coming soon
-      </div>
-
-    </article>
-
-
-  </div>
-
-</section>
-
-
 <section id="cars">
 
   <div class="section-head">
 
     <div>
-
       <div class="eyebrow">
         02 / Car Culture
       </div>
@@ -611,12 +10,10 @@ footer{
       <h2>
         OUR CARS
       </h2>
-
     </div>
 
     <p>
-      Die Autos gehören zur Crew
-      genauso wie die Klamotten.
+      Die Autos gehören zur Crew genauso wie die Klamotten.
     </p>
 
   </div>
@@ -624,188 +21,65 @@ footer{
 
   <div class="cars">
 
-
     <article class="car">
-
       <img
         src="assets/Car-1.JPG"
-        alt="ГОНЩИКИ Car Culture"
+        alt="ГОНЩИКИ Car Culture 01"
       >
-
       <div class="car-caption">
-
-        <span>
-          Car Culture / 01
-        </span>
-
-        <h3>
-          Night Shift
-        </h3>
-
+        <span>Car Culture / 01</span>
+        <h3>Night Shift</h3>
       </div>
-
     </article>
 
 
     <article class="car">
-
       <img
         src="assets/Car-2.JPG"
-        alt="ГОНЩИКИ Crew Cars"
+        alt="ГОНЩИКИ Crew Cars 02"
       >
-
       <div class="car-caption">
-
-        <span>
-          Car Culture / 02
-        </span>
-
-        <h3>
-          The Crew
-        </h3>
-
+        <span>Car Culture / 02</span>
+        <h3>The Crew</h3>
       </div>
-
     </article>
 
 
-  </div>
-
-</section>
-
-
-<section id="about">
-
-  <div class="manifesto">
-
-    <div>
-
-      <div class="eyebrow">
-        03 / Manifesto
+    <article class="car">
+      <img
+        src="assets/Car-3.jpg"
+        alt="ГОНЩИКИ Crew Cars 03"
+      >
+      <div class="car-caption">
+        <span>Car Culture / 03</span>
+        <h3>After Hours</h3>
       </div>
-
-      <h2>
-        BUILT FOR<br>
-        THE NIGHT.
-      </h2>
-
-    </div>
+    </article>
 
 
-    <div>
-
-      <p>
-        ГОНЩИКИ wurde 2025 gegründet.
-        Eine Crew zwischen Streetwear
-        und Car Culture.
-        Keine lauten Farben,
-        keine unnötigen Details —
-        schwarz, clean und mit eigener Identität.
-      </p>
-
-      <p>
-        Unsere Kleidung soll genauso
-        funktionieren wie unsere Autos:
-        auf den ersten Blick clean,
-        beim zweiten Blick voller Details.
-      </p>
-
-      <a
-        class="btn"
-        href="https://instagram.com/gonschikicrew"
-        target="_blank"
+    <article class="car">
+      <img
+        src="assets/Car-4.jpg"
+        alt="ГОНЩИКИ Crew Cars 04"
       >
-        Instagram @gonschikicrew →
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<section id="contact">
-
-  <div class="section-head">
-
-    <div>
-
-      <div class="eyebrow">
-        04 / Stay Connected
+      <div class="car-caption">
+        <span>Car Culture / 04</span>
+        <h3>Street Spec</h3>
       </div>
-
-      <h2>
-        JOIN THE CREW.
-      </h2>
-
-    </div>
-
-  </div>
+    </article>
 
 
-  <div class="contact">
-
-
-    <div class="contact-box">
-
-      <h3>
-        Instagram
-      </h3>
-
-      <p>
-        @gonschikicrew
-      </p>
-
-      <a
-        class="btn"
-        href="https://instagram.com/gonschikicrew"
-        target="_blank"
+    <article class="car">
+      <img
+        src="assets/Car-5.jpg"
+        alt="ГОНЩИКИ Crew Cars 05"
       >
-        Instagram öffnen
-      </a>
-
-    </div>
-
-
-    <div class="contact-box">
-
-      <h3>
-        Drop / Contact
-      </h3>
-
-      <p>
-        Neue Pieces und kommende Drops
-        werden hier angekündigt.
-      </p>
-
-      <a
-        class="btn"
-        href="mailto:gonschikicrew@gmail.com"
-      >
-        Kontakt aufnehmen
-      </a>
-
-    </div>
-
+      <div class="car-caption">
+        <span>Car Culture / 05</span>
+        <h3>Built Different</h3>
+      </div>
+    </article>
 
   </div>
 
 </section>
-
-
-<footer>
-
-  <span>
-    ГОНЩИКИ © 2025–2026
-  </span>
-
-  <span>
-    Streetwear × Car Culture
-  </span>
-
-</footer>
-
-
-</body>
-</html>
