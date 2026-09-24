@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>ГОНЩИКИ — Gonschiki Crew</title>
 
 <style>
@@ -32,7 +31,7 @@ button{
     cursor:pointer;
 }
 
-/* ================= INFO BAR ================= */
+/* ================= INFO ================= */
 
 .top-info{
     background:#fff;
@@ -285,11 +284,51 @@ section{
     background:#080808;
 }
 
+/* GESCHLECHT */
+
+.gender-categories{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+
+    margin-bottom:25px;
+}
+
+.gender-btn{
+    min-width:180px;
+
+    background:#111;
+    color:#fff;
+
+    border:1px solid #333;
+
+    padding:15px 28px;
+
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:2px;
+
+    transition:.25s;
+}
+
+.gender-btn:hover{
+    border-color:#777;
+}
+
+.gender-btn.active{
+    background:#fff;
+    color:#000;
+    border-color:#fff;
+}
+
+/* PRODUKT-KATEGORIEN */
+
 .categories{
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
     gap:10px;
+
     margin-bottom:45px;
 }
 
@@ -337,6 +376,7 @@ section{
 .product-image{
     width:100%;
     height:340px;
+
     overflow:hidden;
     background:#151515;
 }
@@ -344,7 +384,9 @@ section{
 .product-image img{
     width:100%;
     height:100%;
+
     object-fit:cover;
+
     transition:.35s;
 }
 
@@ -372,6 +414,47 @@ section{
     font-weight:800;
 }
 
+/* FRAUEN COMING SOON */
+
+.women-coming{
+    max-width:700px;
+    margin:30px auto 0;
+
+    padding:70px 30px;
+
+    text-align:center;
+
+    background:#101010;
+    border:1px solid #292929;
+}
+
+.women-coming h3{
+    font-size:32px;
+    font-weight:900;
+    letter-spacing:3px;
+}
+
+.women-coming p{
+    margin-top:15px;
+
+    color:#888;
+
+    font-size:13px;
+    line-height:1.7;
+}
+
+.women-coming span{
+    display:block;
+
+    margin-top:25px;
+
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:4px;
+
+    color:#fff;
+}
+
 /* ================= EVENTS ================= */
 
 .events{
@@ -390,6 +473,7 @@ section{
 .event{
     background:#101010;
     border:1px solid #252525;
+
     padding:30px;
 }
 
@@ -422,6 +506,7 @@ section{
 
     background:#fff;
     color:#000;
+
     border:0;
 
     padding:12px 18px;
@@ -443,17 +528,24 @@ section{
 
     display:grid;
     grid-template-columns:repeat(2,minmax(0,1fr));
+
     gap:18px;
+
+    align-items:start;
 }
 
 .car{
     background:#111;
     border:1px solid #1d1d1d;
+
     overflow:hidden;
+
+    align-self:start;
 }
 
 .car img{
     display:block;
+
     width:100%;
     height:225px;
 
@@ -467,15 +559,15 @@ section{
     transform:scale(1.025);
 }
 
-/* ================= CAR 6 ================= */
+/* CAR 6 */
 
 .car-six{
-    background:#111;
+    align-self:start;
 }
 
 .car-six img{
     width:100%;
-    height:400px;
+    height:225px;
 
     object-fit:contain !important;
     object-position:center center !important;
@@ -491,6 +583,7 @@ section{
 
 .car-info{
     padding:16px;
+    background:#111;
 }
 
 .car-info h3{
@@ -507,11 +600,13 @@ section{
 .about-content{
     max-width:800px;
     margin:auto;
+
     text-align:center;
 }
 
 .about-content p{
     color:#aaa;
+
     font-size:15px;
     line-height:1.9;
 }
@@ -525,12 +620,14 @@ section{
 .contact-content{
     max-width:650px;
     margin:auto;
+
     text-align:center;
 }
 
 .contact-content p{
     color:#999;
     line-height:1.7;
+
     margin-bottom:25px;
 }
 
@@ -558,6 +655,7 @@ footer{
     padding:35px 5%;
 
     background:#050505;
+
     border-top:1px solid #161616;
 
     display:flex;
@@ -598,9 +696,11 @@ footer p{
 
     width:min(500px,100%);
     max-height:90vh;
+
     overflow:auto;
 
     background:#111;
+
     border:1px solid #333;
 
     padding:30px;
@@ -608,6 +708,7 @@ footer p{
 
 .close{
     position:absolute;
+
     top:15px;
     right:18px;
 
@@ -615,6 +716,7 @@ footer p{
     border:0;
 
     color:#fff;
+
     font-size:25px;
 }
 
@@ -647,6 +749,7 @@ footer p{
 .sizes{
     display:flex;
     gap:8px;
+
     margin-bottom:20px;
 }
 
@@ -684,6 +787,7 @@ footer p{
 
 .cart-panel{
     position:fixed;
+
     top:0;
     right:-430px;
 
@@ -693,11 +797,13 @@ footer p{
     z-index:110;
 
     background:#0e0e0e;
+
     border-left:1px solid #333;
 
     padding:30px;
 
     overflow:auto;
+
     transition:.3s;
 }
 
@@ -750,7 +856,9 @@ footer p{
 .remove-item{
     background:none;
     border:0;
+
     color:#888;
+
     font-size:11px;
 }
 
@@ -818,6 +926,7 @@ footer p{
     display:block;
 
     color:#888;
+
     font-size:10px;
 
     margin-bottom:6px;
@@ -832,12 +941,15 @@ footer p{
     border:1px solid #333;
 
     padding:12px;
+
     outline:none;
 }
 
 .form-grid{
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     gap:10px;
 }
 
@@ -921,23 +1033,29 @@ footer p{
 
     .hero-content{
         min-height:760px;
+
         padding:120px 20px 50px;
     }
 
     .hero-logo{
         font-size:17vw;
+
         letter-spacing:1px;
+
         white-space:nowrap;
     }
 
     .hero-est{
         margin-top:24px;
+
         font-size:9px;
+
         letter-spacing:6px;
     }
 
     .hero-slogan{
         margin-top:105px;
+
         max-width:350px;
     }
 
@@ -948,12 +1066,15 @@ footer p{
 
     .hero-slogan-small{
         margin-top:23px;
+
         font-size:9px;
+
         letter-spacing:4px;
     }
 
     .hero-description{
         max-width:340px;
+
         margin-top:22px;
 
         font-size:11px;
@@ -964,8 +1085,34 @@ footer p{
         padding:70px 18px;
     }
 
+    /* GENDER MOBILE */
+
+    .gender-categories{
+        gap:8px;
+    }
+
+    .gender-btn{
+        min-width:0;
+        flex:1;
+
+        padding:14px 10px;
+
+        font-size:10px;
+        letter-spacing:1.5px;
+    }
+
+    .categories{
+        gap:7px;
+    }
+
+    .category-btn{
+        padding:10px 14px;
+        font-size:10px;
+    }
+
     .products{
         grid-template-columns:1fr 1fr;
+
         gap:10px;
     }
 
@@ -985,30 +1132,42 @@ footer p{
         font-size:11px;
     }
 
+    .women-coming{
+        padding:55px 20px;
+    }
+
+    .women-coming h3{
+        font-size:25px;
+    }
+
     .events-grid{
         grid-template-columns:1fr;
     }
 
     .cars{
         grid-template-columns:1fr;
+
         gap:14px;
+
+        align-items:start;
     }
 
     .car img{
         height:205px;
     }
 
-    /* CAR 6 AUF HANDY KOMPLETT SICHTBAR */
-
     .car-six img{
-        height:360px !important;
-        width:100%;
+        height:205px !important;
 
         object-fit:contain !important;
         object-position:center center !important;
 
         background:#111;
 
+        transform:none !important;
+    }
+
+    .car-six:hover img{
         transform:none !important;
     }
 
@@ -1026,14 +1185,18 @@ footer p{
 
     footer{
         flex-direction:column;
+
         gap:12px;
+
         text-align:center;
     }
 }
+
 </style>
 </head>
 
 <body>
+
 
 <!-- ================= INFO ================= -->
 
@@ -1047,139 +1210,309 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
 <nav>
 
 <a href="#home" class="logo">
-    <span class="logo-main">ГОНЩИКИ</span>
-    <span class="logo-est">EST. 2025</span>
+
+<span class="logo-main">
+ГОНЩИКИ
+</span>
+
+<span class="logo-est">
+EST. 2025
+</span>
+
 </a>
+
 
 <div class="nav-links">
 
-<a href="#shop">SHOP</a>
-<a href="#events">EVENTS</a>
-<a href="#cars">CARS</a>
-<a href="#about">ABOUT</a>
-<a href="#contact">KONTAKT</a>
+<a href="#shop">
+SHOP
+</a>
 
-<button class="nav-button" onclick="openAccount()">
+<a href="#events">
+EVENTS
+</a>
+
+<a href="#cars">
+CARS
+</a>
+
+<a href="#about">
+ABOUT
+</a>
+
+<a href="#contact">
+KONTAKT
+</a>
+
+
+<button class="nav-button"
+onclick="openAccount()">
+
 ANMELDEN
+
 </button>
 
-<button class="nav-button cart-button" onclick="openCart()">
+
+<button class="nav-button cart-button"
+onclick="openCart()">
+
 WARENKORB
-<span class="cart-count" id="cartCount">0</span>
+
+<span class="cart-count"
+id="cartCount">
+0
+</span>
+
 </button>
+
 
 <div class="language">
-<select id="languageSelect" onchange="changeLanguage(this.value)">
-<option value="de">DE</option>
-<option value="en">EN</option>
-<option value="ru">RU</option>
+
+<select
+id="languageSelect"
+onchange="changeLanguage(this.value)">
+
+<option value="de">
+DE
+</option>
+
+<option value="en">
+EN
+</option>
+
+<option value="ru">
+RU
+</option>
+
 </select>
+
 </div>
 
 </div>
+
 </nav>
 
 
 <!-- ================= HERO ================= -->
 
-<section class="hero" id="home">
+<section
+class="hero"
+id="home">
 
 <div class="hero-car-background"></div>
 
 <div class="hero-overlay"></div>
 
+
 <div class="hero-content">
+
 
 <div class="hero-logo">
 ГОНЩИКИ
 </div>
 
+
 <div class="hero-est">
 EST. 2025
 </div>
 
+
 <div class="hero-slogan">
 
 <div class="hero-slogan-main">
-<span>GEMACHT FÜR DIE NACHT.</span>
-<span>GEMACHT FÜR DEN TAG.</span>
+
+<span>
+GEMACHT FÜR DIE NACHT.
+</span>
+
+<span>
+GEMACHT FÜR DEN TAG.
+</span>
+
 </div>
+
 
 <div class="hero-slogan-small">
 KEINE REGEL. NUR STYLE.
 </div>
 
+
 <p class="hero-description">
+
 Gonschiki steht für Autos, Nächte,
 Geschwindigkeit und den eigenen Style.
 Streetwear für alle, die ihre eigene Spur fahren.
+
 </p>
 
 </div>
 
 </div>
+
 </section>
 
 
 <!-- ================= SHOP ================= -->
 
-<section class="shop" id="shop">
+<section
+class="shop"
+id="shop">
+
 
 <div class="section-title">
-<h2>SHOP</h2>
-<p>Gonschiki Streetwear</p>
+
+<h2>
+SHOP
+</h2>
+
+<p>
+Gonschiki Streetwear
+</p>
+
 </div>
 
-<div class="categories">
 
-<button class="category-btn active"
+<!-- ================= MÄNNER / FRAUEN ================= -->
+
+<div class="gender-categories">
+
+<button
+class="gender-btn active"
+id="menButton"
+onclick="selectGender('men',this)">
+
+MÄNNER
+
+</button>
+
+
+<button
+class="gender-btn"
+id="womenButton"
+onclick="selectGender('women',this)">
+
+FRAUEN
+
+</button>
+
+</div>
+
+
+<!-- ================= PRODUKT FILTER ================= -->
+
+<div
+class="categories"
+id="productCategories">
+
+<button
+class="category-btn active"
 onclick="filterProducts('Alle',this)">
+
 ALLE
+
 </button>
 
-<button class="category-btn"
+
+<button
+class="category-btn"
 onclick="filterProducts('Shirts',this)">
+
 SHIRTS
+
 </button>
 
-<button class="category-btn"
+
+<button
+class="category-btn"
 onclick="filterProducts('Hoodies',this)">
+
 HOODIES
+
 </button>
 
-<button class="category-btn"
+
+<button
+class="category-btn"
 onclick="filterProducts('Zipper',this)">
+
 ZIPPER
+
 </button>
 
-<button class="category-btn"
+
+<button
+class="category-btn"
 onclick="filterProducts('Hosen',this)">
+
 HOSEN
+
 </button>
 
 </div>
 
-<div class="products" id="products"></div>
+
+<div
+class="products"
+id="products">
+
+</div>
+
+
+<div
+class="women-coming"
+id="womenComing"
+style="display:none;">
+
+<h3>
+GONSCHIKI WOMEN
+</h3>
+
+<p>
+Unsere Frauen-Kollektion kommt bald.
+Neue Schnitte, neue Styles und
+Gonschiki DNA – speziell für Frauen.
+</p>
+
+<span>
+COMING SOON
+</span>
+
+</div>
 
 </section>
 
 
 <!-- ================= EVENTS ================= -->
 
-<section class="events" id="events">
+<section
+class="events"
+id="events">
 
 <div class="section-title">
-<h2>EVENTS</h2>
-<p>Cars. People. Nights.</p>
+
+<h2>
+EVENTS
+</h2>
+
+<p>
+Cars. People. Nights.
+</p>
+
 </div>
+
 
 <div class="events-grid">
 
+
 <div class="event">
 
-<div class="event-date">2026</div>
+<div class="event-date">
+2026
+</div>
 
-<h3>GONSCHIKI NIGHT</h3>
+<h3>
+GONSCHIKI NIGHT
+</h3>
 
 <div class="event-location">
 STUTTGART
@@ -1190,8 +1523,11 @@ Eine Nacht für Autos,
 Musik und die Gonschiki Crew.
 </p>
 
-<button onclick="previewMessage()">
+<button
+onclick="previewMessage()">
+
 TICKETS – DEMNÄCHST
+
 </button>
 
 </div>
@@ -1199,9 +1535,13 @@ TICKETS – DEMNÄCHST
 
 <div class="event">
 
-<div class="event-date">2026</div>
+<div class="event-date">
+2026
+</div>
 
-<h3>CREW MEET</h3>
+<h3>
+CREW MEET
+</h3>
 
 <div class="event-location">
 BADEN-WÜRTTEMBERG
@@ -1212,144 +1552,195 @@ Gemeinsam unterwegs.
 Autos, Freunde und der eigene Style.
 </p>
 
-<button onclick="previewMessage()">
+<button
+onclick="previewMessage()">
+
 INFOS – DEMNÄCHST
+
 </button>
 
 </div>
 
 </div>
+
 </section>
 
 
 <!-- ================= CARS ================= -->
 
-<section class="cars-section" id="cars">
+<section
+class="cars-section"
+id="cars">
+
 
 <div class="section-title">
-<h2>CARS</h2>
-<p>Die Autos hinter Gonschiki</p>
+
+<h2>
+CARS
+</h2>
+
+<p>
+Die Autos hinter Gonschiki
+</p>
+
 </div>
+
 
 <div class="cars">
 
 
-<!-- CAR 1 -->
-
 <div class="car">
 
-<img src="assets/Car-1.JPG"
+<img
+src="assets/Car-1.JPG"
 alt="Gonschiki Car 1">
 
 <div class="car-info">
-<h3>GONSCHIKI #01</h3>
-</div>
+
+<h3>
+GONSCHIKI #01
+</h3>
 
 </div>
 
+</div>
 
-<!-- CAR 2 -->
 
 <div class="car">
 
-<img src="assets/Car-2.JPG"
+<img
+src="assets/Car-2.JPG"
 alt="Gonschiki Car 2">
 
 <div class="car-info">
-<h3>GONSCHIKI #02</h3>
-</div>
+
+<h3>
+GONSCHIKI #02
+</h3>
 
 </div>
 
+</div>
 
-<!-- CAR 3 -->
 
 <div class="car">
 
-<img src="assets/Car-3.jpg"
+<img
+src="assets/Car-3.jpg"
 alt="Gonschiki Car 3">
 
 <div class="car-info">
-<h3>GONSCHIKI #03</h3>
-</div>
+
+<h3>
+GONSCHIKI #03
+</h3>
 
 </div>
 
+</div>
 
-<!-- CAR 4 -->
 
 <div class="car">
 
-<img src="assets/Car-4.jpg"
+<img
+src="assets/Car-4.jpg"
 alt="Gonschiki Car 4">
 
 <div class="car-info">
-<h3>GONSCHIKI #04</h3>
-</div>
+
+<h3>
+GONSCHIKI #04
+</h3>
 
 </div>
 
+</div>
 
-<!-- CAR 5 -->
 
 <div class="car">
 
-<img src="assets/Car-5.jpg"
+<img
+src="assets/Car-5.jpg"
 alt="Gonschiki Car 5">
 
 <div class="car-info">
-<h3>GONSCHIKI #05</h3>
-</div>
+
+<h3>
+GONSCHIKI #05
+</h3>
 
 </div>
 
+</div>
 
-<!-- CAR 6 -->
 
 <div class="car car-six">
 
-<img src="assets/Car-6.jpg"
+<img
+src="assets/Car-6.jpg"
 alt="Gonschiki Car 6">
 
 <div class="car-info">
-<h3>GONSCHIKI #06</h3>
-</div>
+
+<h3>
+GONSCHIKI #06
+</h3>
 
 </div>
 
+</div>
+
 
 </div>
+
 </section>
 
 
 <!-- ================= ABOUT ================= -->
 
-<section class="about" id="about">
+<section
+class="about"
+id="about">
 
 <div class="section-title">
-<h2>ABOUT</h2>
+
+<h2>
+ABOUT
+</h2>
+
 </div>
+
 
 <div class="about-content">
 
 <p>
+
 Gonschiki ist mehr als nur Streetwear.
 Es geht um Autos, Geschwindigkeit,
 Nächte, Freunde und den eigenen Style.
 Eine Crew für alle, die ihre eigene Spur fahren.
+
 </p>
 
 </div>
+
 </section>
 
 
 <!-- ================= CONTACT ================= -->
 
-<section class="contact" id="contact">
+<section
+class="contact"
+id="contact">
 
 <div class="section-title">
-<h2>KONTAKT</h2>
+
+<h2>
+KONTAKT
+</h2>
+
 </div>
+
 
 <div class="contact-content">
 
@@ -1357,15 +1748,21 @@ Eine Crew für alle, die ihre eigene Spur fahren.
 Fragen, Kooperationen oder Interesse an Gonschiki?
 </p>
 
+
 <div class="social">
 
-<a href="https://instagram.com/gonschikicrew"
+<a
+href="https://instagram.com/gonschikicrew"
 target="_blank">
+
 INSTAGRAM
+
 </a>
 
 </div>
+
 </div>
+
 </section>
 
 
@@ -1373,94 +1770,147 @@ INSTAGRAM
 
 <footer>
 
-<p>© 2025 GONSCHIKI CREW</p>
-<p>ГОНЩИКИ</p>
+<p>
+© 2025 GONSCHIKI CREW
+</p>
+
+<p>
+ГОНЩИКИ
+</p>
 
 </footer>
 
 
 <!-- ================= PRODUKT MODAL ================= -->
 
-<div class="modal" id="productModal">
+<div
+class="modal"
+id="productModal">
 
 <div class="modal-box">
 
-<button class="close"
+<button
+class="close"
 onclick="closeModal('productModal')">
+
 ×
+
 </button>
 
-<img id="modalProductImage"
+
+<img
+id="modalProductImage"
 class="modal-image"
 src=""
 alt="">
 
-<h2 id="modalProductName"></h2>
 
-<div class="modal-price"
+<h2
+id="modalProductName">
+</h2>
+
+
+<div
+class="modal-price"
 id="modalProductPrice">
 </div>
+
 
 <div class="size-title">
 GRÖSSE
 </div>
 
+
 <div class="sizes">
 
-<button class="size"
-onclick="selectSize(this)">S</button>
+<button
+class="size"
+onclick="selectSize(this)">
+S
+</button>
 
-<button class="size"
-onclick="selectSize(this)">M</button>
+<button
+class="size"
+onclick="selectSize(this)">
+M
+</button>
 
-<button class="size"
-onclick="selectSize(this)">L</button>
+<button
+class="size"
+onclick="selectSize(this)">
+L
+</button>
 
-<button class="size"
-onclick="selectSize(this)">XL</button>
-
-</div>
-
-<button class="primary-btn"
-onclick="addCurrentProduct()">
-IN DEN WARENKORB
+<button
+class="size"
+onclick="selectSize(this)">
+XL
 </button>
 
 </div>
+
+
+<button
+class="primary-btn"
+onclick="addCurrentProduct()">
+
+IN DEN WARENKORB
+
+</button>
+
+</div>
+
 </div>
 
 
 <!-- ================= WARENKORB ================= -->
 
-<div class="cart-panel" id="cartPanel">
+<div
+class="cart-panel"
+id="cartPanel">
 
 <div class="cart-head">
 
-<h2>WARENKORB</h2>
+<h2>
+WARENKORB
+</h2>
 
-<button class="close"
+<button
+class="close"
 onclick="closeCart()">
+
 ×
+
 </button>
 
 </div>
 
-<div id="cartItems"></div>
+
+<div
+id="cartItems">
+</div>
+
 
 <div class="cart-total">
 
-<span>GESAMT</span>
+<span>
+GESAMT
+</span>
 
-<span id="cartTotal">
+<span
+id="cartTotal">
 0 €
 </span>
 
 </div>
 
+
 <div class="preview-note">
+
 SHOP-VORSCHAU:
 Bestellungen und Bezahlung sind derzeit
 noch nicht möglich.
+
 </div>
 
 </div>
@@ -1468,66 +1918,88 @@ noch nicht möglich.
 
 <!-- ================= ACCOUNT ================= -->
 
-<div class="modal" id="accountModal">
+<div
+class="modal"
+id="accountModal">
 
 <div class="modal-box">
 
-<button class="close"
+<button
+class="close"
 onclick="closeModal('accountModal')">
+
 ×
+
 </button>
+
 
 <div class="account-tabs">
 
-<button class="account-tab active"
+<button
+class="account-tab active"
 onclick="showAccountForm('login',this)">
+
 ANMELDEN
+
 </button>
 
-<button class="account-tab"
+
+<button
+class="account-tab"
 onclick="showAccountForm('register',this)">
+
 REGISTRIEREN
+
 </button>
 
 </div>
 
 
-<!-- LOGIN -->
-
-<form class="form active"
+<form
+class="form active"
 id="loginForm"
 onsubmit="login(event)">
 
 <div class="form-group">
 
-<label>E-MAIL</label>
+<label>
+E-MAIL
+</label>
 
-<input type="email"
+<input
+type="email"
 id="loginEmail"
 required>
 
 </div>
 
+
 <div class="form-group">
 
-<label>PASSWORT</label>
+<label>
+PASSWORT
+</label>
 
-<input type="password"
+<input
+type="password"
 id="loginPassword"
 required>
 
 </div>
 
-<button class="primary-btn">
+
+<button
+class="primary-btn">
+
 ANMELDEN
+
 </button>
 
 </form>
 
 
-<!-- REGISTER -->
-
-<form class="form"
+<form
+class="form"
 id="registerForm"
 onsubmit="register(event)">
 
@@ -1535,19 +2007,26 @@ onsubmit="register(event)">
 
 <div class="form-group">
 
-<label>VORNAME</label>
+<label>
+VORNAME
+</label>
 
-<input type="text"
+<input
+type="text"
 id="firstName"
 required>
 
 </div>
 
+
 <div class="form-group">
 
-<label>NACHNAME</label>
+<label>
+NACHNAME
+</label>
 
-<input type="text"
+<input
+type="text"
 id="lastName"
 required>
 
@@ -1555,43 +2034,59 @@ required>
 
 </div>
 
+
 <div class="form-group">
 
-<label>E-MAIL</label>
+<label>
+E-MAIL
+</label>
 
-<input type="email"
+<input
+type="email"
 id="registerEmail"
 required>
 
 </div>
 
+
 <div class="form-group">
 
-<label>STRASSE &amp; HAUSNUMMER</label>
+<label>
+STRASSE &amp; HAUSNUMMER
+</label>
 
-<input type="text"
+<input
+type="text"
 id="street"
 required>
 
 </div>
 
+
 <div class="form-grid">
 
 <div class="form-group">
 
-<label>PLZ</label>
+<label>
+PLZ
+</label>
 
-<input type="text"
+<input
+type="text"
 id="postalCode"
 required>
 
 </div>
 
+
 <div class="form-group">
 
-<label>ORT</label>
+<label>
+ORT
+</label>
 
-<input type="text"
+<input
+type="text"
 id="city"
 required>
 
@@ -1599,33 +2094,46 @@ required>
 
 </div>
 
+
 <div class="form-group">
 
-<label>PASSWORT</label>
+<label>
+PASSWORT
+</label>
 
-<input type="password"
+<input
+type="password"
 id="registerPassword"
 required>
 
 </div>
 
+
 <div class="form-group">
 
-<label>PASSWORT WIEDERHOLEN</label>
+<label>
+PASSWORT WIEDERHOLEN
+</label>
 
-<input type="password"
+<input
+type="password"
 id="registerPassword2"
 required>
 
 </div>
 
-<button class="primary-btn">
+
+<button
+class="primary-btn">
+
 KONTO ERSTELLEN
+
 </button>
 
 </form>
 
 </div>
+
 </div>
 
 
@@ -1638,6 +2146,7 @@ const products=[
 {
 name:"GONSCHIKI RUSSIA SHIRT",
 category:"Shirts",
+gender:"men",
 price:39,
 image:"assets/Shirt-black-Russia.jpg"
 },
@@ -1645,6 +2154,7 @@ image:"assets/Shirt-black-Russia.jpg"
 {
 name:"GONSCHIKI CROSS ZIPPER",
 category:"Zipper",
+gender:"men",
 price:69,
 image:"assets/Zipper-black-Kreuz.jpg"
 },
@@ -1652,6 +2162,7 @@ image:"assets/Zipper-black-Kreuz.jpg"
 {
 name:"GONSCHIKI E36 HOODIE",
 category:"Hoodies",
+gender:"men",
 price:79,
 image:"assets/Hoodie-black-e36.jpg"
 },
@@ -1659,6 +2170,7 @@ image:"assets/Hoodie-black-e36.jpg"
 {
 name:"GONSCHIKI E34 HOODIE",
 category:"Hoodies",
+gender:"men",
 price:79,
 image:"assets/Hoodie-black-e34.jpg"
 },
@@ -1666,6 +2178,7 @@ image:"assets/Hoodie-black-e34.jpg"
 {
 name:"GONSCHIKI CROSS HOODIE",
 category:"Hoodies",
+gender:"men",
 price:79,
 image:"assets/Hoodie-black-Kreuz.jpg"
 },
@@ -1673,6 +2186,7 @@ image:"assets/Hoodie-black-Kreuz.jpg"
 {
 name:"GONSCHIKI E36 SHIRT",
 category:"Shirts",
+gender:"men",
 price:39,
 image:"assets/Shirt-black-e36.jpg"
 },
@@ -1680,6 +2194,7 @@ image:"assets/Shirt-black-e36.jpg"
 {
 name:"GONSCHIKI RUSSIA HOODIE",
 category:"Hoodies",
+gender:"men",
 price:79,
 image:"assets/Hoodie-black-Russia.jpg"
 },
@@ -1687,6 +2202,7 @@ image:"assets/Hoodie-black-Russia.jpg"
 {
 name:"GONSCHIKI E34 SHIRT",
 category:"Shirts",
+gender:"men",
 price:39,
 image:"assets/Shirt-black-e34.jpg"
 },
@@ -1694,6 +2210,7 @@ image:"assets/Shirt-black-e34.jpg"
 {
 name:"GONSCHIKI E36 BEIGE HOODIE",
 category:"Hoodies",
+gender:"men",
 price:79,
 image:"assets/Hoodie-beige-e36.jpg"
 },
@@ -1701,14 +2218,22 @@ image:"assets/Hoodie-beige-e36.jpg"
 {
 name:"GONSCHIKI PANTS",
 category:"Hosen",
+gender:"men",
 price:69,
 image:"assets/Pants-black-gonschiki.jpg"
 }
 
 ];
 
+
+let currentGender="men";
+
+let currentCategory="Alle";
+
 let currentProduct=null;
+
 let selectedSize=null;
+
 
 let cart=JSON.parse(
 localStorage.getItem("gonschikiCart") || "[]"
@@ -1717,38 +2242,147 @@ localStorage.getItem("gonschikiCart") || "[]"
 
 /* ================= SHOP ================= */
 
-function renderProducts(list=products){
+function selectGender(gender,button){
 
-const container=document.getElementById("products");
+currentGender=gender;
+
+currentCategory="Alle";
+
+
+document
+.querySelectorAll(".gender-btn")
+.forEach(btn=>{
+btn.classList.remove("active");
+});
+
+
+button.classList.add("active");
+
+
+document
+.querySelectorAll(".category-btn")
+.forEach(btn=>{
+btn.classList.remove("active");
+});
+
+
+document
+.querySelector(".category-btn")
+.classList.add("active");
+
+
+const productsContainer=
+document.getElementById("products");
+
+
+const womenComing=
+document.getElementById("womenComing");
+
+
+const categories=
+document.getElementById("productCategories");
+
+
+if(gender==="women"){
+
+productsContainer.style.display="none";
+
+categories.style.display="none";
+
+womenComing.style.display="block";
+
+}else{
+
+productsContainer.style.display="grid";
+
+categories.style.display="flex";
+
+womenComing.style.display="none";
+
+renderProducts();
+
+}
+
+}
+
+
+/* ================= PRODUKTE ANZEIGEN ================= */
+
+function getFilteredProducts(){
+
+let filtered=
+products.filter(
+product=>product.gender===currentGender
+);
+
+
+if(currentCategory!=="Alle"){
+
+filtered=
+filtered.filter(
+product=>product.category===currentCategory
+);
+
+}
+
+
+return filtered;
+
+}
+
+
+function renderProducts(){
+
+const container=
+document.getElementById("products");
+
 
 container.innerHTML="";
 
+
+const list=
+getFilteredProducts();
+
+
 list.forEach(product=>{
 
-const index=products.indexOf(product);
+const index=
+products.indexOf(product);
 
-const item=document.createElement("div");
+
+const item=
+document.createElement("div");
+
 
 item.className="product";
+
 
 item.onclick=()=>{
 openProduct(index);
 };
 
+
 item.innerHTML=`
 
 <div class="product-image">
 
-<img src="${product.image}"
+<img
+src="${product.image}"
 alt="${product.name}">
 
 </div>
 
+
 <div class="product-info">
 
-<h3>${product.name}</h3>
+<h3>
+${product.name}
+</h3>
 
-<p>${product.category}</p>
+<p>
+${product.category}
+</p>
+
 
 <div class="product-price">
 ${product.price} €
@@ -1758,6 +2392,7 @@ ${product.price} €
 
 `;
 
+
 container.appendChild(item);
 
 });
@@ -1765,51 +2400,66 @@ container.appendChild(item);
 }
 
 
+/* ================= FILTER ================= */
+
 function filterProducts(category,button){
 
-document.querySelectorAll(".category-btn")
+currentCategory=category;
+
+
+document
+.querySelectorAll(".category-btn")
 .forEach(btn=>{
 btn.classList.remove("active");
 });
+
 
 button.classList.add("active");
 
-if(category==="Alle"){
-renderProducts(products);
-}else{
-renderProducts(
-products.filter(
-product=>product.category===category
-)
-);
-}
+
+renderProducts();
 
 }
 
 
-/* ================= PRODUKT ================= */
+/* ================= PRODUKT MODAL ================= */
 
 function openProduct(index){
 
-currentProduct=products[index];
+currentProduct=
+products[index];
+
 
 selectedSize=null;
 
-document.querySelectorAll(".size")
+
+document
+.querySelectorAll(".size")
 .forEach(btn=>{
 btn.classList.remove("active");
 });
 
-document.getElementById("modalProductImage").src=
+
+document
+.getElementById("modalProductImage")
+.src=
 currentProduct.image;
 
-document.getElementById("modalProductName").textContent=
+
+document
+.getElementById("modalProductName")
+.textContent=
 currentProduct.name;
 
-document.getElementById("modalProductPrice").textContent=
+
+document
+.getElementById("modalProductPrice")
+.textContent=
 currentProduct.price+" €";
 
-document.getElementById("productModal")
+
+document
+.getElementById("productModal")
 .classList.add("active");
 
 }
@@ -1817,14 +2467,18 @@ document.getElementById("productModal")
 
 function selectSize(button){
 
-document.querySelectorAll(".size")
+document
+.querySelectorAll(".size")
 .forEach(btn=>{
 btn.classList.remove("active");
 });
 
+
 button.classList.add("active");
 
-selectedSize=button.textContent;
+
+selectedSize=
+button.textContent;
 
 }
 
@@ -1835,21 +2489,30 @@ if(!currentProduct){
 return;
 }
 
+
 if(!selectedSize){
 
-alert("Bitte zuerst eine Größe auswählen.");
+alert(
+"Bitte zuerst eine Größe auswählen."
+);
 
 return;
+
 }
+
 
 cart.push({
 
 name:currentProduct.name,
+
 price:currentProduct.price,
+
 image:currentProduct.image,
+
 size:selectedSize
 
 });
+
 
 saveCart();
 
@@ -1857,7 +2520,10 @@ updateCart();
 
 closeModal("productModal");
 
-alert("Produkt wurde dem Warenkorb hinzugefügt.");
+
+alert(
+"Produkt wurde dem Warenkorb hinzugefügt."
+);
 
 }
 
@@ -1876,51 +2542,82 @@ JSON.stringify(cart)
 
 function updateCart(){
 
-const count=document.getElementById("cartCount");
-const items=document.getElementById("cartItems");
-const total=document.getElementById("cartTotal");
+const count=
+document.getElementById("cartCount");
 
-count.textContent=cart.length;
+
+const items=
+document.getElementById("cartItems");
+
+
+const total=
+document.getElementById("cartTotal");
+
+
+count.textContent=
+cart.length;
+
 
 items.innerHTML="";
 
+
 let sum=0;
+
 
 cart.forEach((item,index)=>{
 
 sum+=Number(item.price);
 
-const div=document.createElement("div");
+
+const div=
+document.createElement("div");
+
 
 div.className="cart-item";
 
+
 div.innerHTML=`
 
-<img src="${item.image}"
+<img
+src="${item.image}"
 alt="${item.name}">
+
 
 <div class="cart-item-info">
 
-<h4>${item.name}</h4>
+<h4>
+${item.name}
+</h4>
 
-<p>Größe: ${item.size}</p>
+<p>
+Größe: ${item.size}
+</p>
 
-<p>${item.price} €</p>
+<p>
+${item.price} €
+</p>
 
 </div>
 
-<button class="remove-item"
+
+<button
+class="remove-item"
 onclick="removeCartItem(${index})">
+
 ENTFERNEN
+
 </button>
 
 `;
+
 
 items.appendChild(div);
 
 });
 
-total.textContent=sum.toFixed(2)+" €";
+
+total.textContent=
+sum.toFixed(2)+" €";
 
 }
 
@@ -1940,7 +2637,9 @@ function openCart(){
 
 updateCart();
 
-document.getElementById("cartPanel")
+
+document
+.getElementById("cartPanel")
 .classList.add("active");
 
 }
@@ -1948,7 +2647,8 @@ document.getElementById("cartPanel")
 
 function closeCart(){
 
-document.getElementById("cartPanel")
+document
+.getElementById("cartPanel")
 .classList.remove("active");
 
 }
@@ -1958,7 +2658,8 @@ document.getElementById("cartPanel")
 
 function openAccount(){
 
-document.getElementById("accountModal")
+document
+.getElementById("accountModal")
 .classList.add("active");
 
 }
@@ -1966,27 +2667,36 @@ document.getElementById("accountModal")
 
 function showAccountForm(type,button){
 
-document.querySelectorAll(".account-tab")
+document
+.querySelectorAll(".account-tab")
 .forEach(btn=>{
 btn.classList.remove("active");
 });
 
+
 button.classList.add("active");
 
-document.getElementById("loginForm")
+
+document
+.getElementById("loginForm")
 .classList.remove("active");
 
-document.getElementById("registerForm")
+
+document
+.getElementById("registerForm")
 .classList.remove("active");
+
 
 if(type==="login"){
 
-document.getElementById("loginForm")
+document
+.getElementById("loginForm")
 .classList.add("active");
 
 }else{
 
-document.getElementById("registerForm")
+document
+.getElementById("registerForm")
 .classList.add("active");
 
 }
@@ -1998,18 +2708,29 @@ function register(event){
 
 event.preventDefault();
 
+
 const password=
-document.getElementById("registerPassword").value;
+document
+.getElementById("registerPassword")
+.value;
+
 
 const password2=
-document.getElementById("registerPassword2").value;
+document
+.getElementById("registerPassword2")
+.value;
+
 
 if(password!==password2){
 
-alert("Die Passwörter stimmen nicht überein.");
+alert(
+"Die Passwörter stimmen nicht überein."
+);
 
 return;
+
 }
+
 
 const account={
 
@@ -2033,16 +2754,21 @@ document.getElementById("city").value
 
 };
 
+
 localStorage.setItem(
 "gonschikiAccount",
 JSON.stringify(account)
 );
 
+
 alert(
 "Konto wurde für diese Website-Vorschau gespeichert."
 );
 
-document.getElementById("registerForm").reset();
+
+document
+.getElementById("registerForm")
+.reset();
 
 }
 
@@ -2051,12 +2777,20 @@ function login(event){
 
 event.preventDefault();
 
-const email=
-document.getElementById("loginEmail").value;
 
-const account=JSON.parse(
-localStorage.getItem("gonschikiAccount") || "null"
+const email=
+document
+.getElementById("loginEmail")
+.value;
+
+
+const account=
+JSON.parse(
+localStorage.getItem(
+"gonschikiAccount"
+) || "null"
 );
+
 
 if(account && account.email===email){
 
@@ -2075,25 +2809,33 @@ alert(
 }
 
 
-/* ================= MODAL ================= */
+/* ================= MODALS ================= */
 
 function closeModal(id){
 
-document.getElementById(id)
+document
+.getElementById(id)
 .classList.remove("active");
 
 }
 
-document.querySelectorAll(".modal")
+
+document
+.querySelectorAll(".modal")
 .forEach(modal=>{
 
-modal.addEventListener("click",function(event){
+modal.addEventListener(
+"click",
+function(event){
 
 if(event.target===modal){
+
 modal.classList.remove("active");
+
 }
 
-});
+}
+);
 
 });
 
@@ -2147,18 +2889,27 @@ localStorage.setItem(
 language
 );
 
-const t=translations[language];
 
-const links=document.querySelectorAll(
+const t=
+translations[language];
+
+
+const links=
+document.querySelectorAll(
 ".nav-links a"
 );
+
 
 if(links.length>=5){
 
 links[0].textContent=t.shop;
+
 links[1].textContent=t.events;
+
 links[2].textContent=t.cars;
+
 links[3].textContent=t.about;
+
 links[4].textContent=t.contact;
 
 }
@@ -2173,8 +2924,12 @@ localStorage.getItem(
 "gonschikiLanguage"
 ) || "de";
 
-document.getElementById("languageSelect")
-.value=language;
+
+document
+.getElementById("languageSelect")
+.value=
+language;
+
 
 changeLanguage(language);
 
