@@ -3,24 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>ГОНЩИКИ — Gonschiki Crew</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-html{scroll-behavior:smooth}
+html{
+    scroll-behavior:smooth;
+}
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
     background:#080808;
     color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
     overflow-x:hidden;
 }
 
-button,input,select{font:inherit}
-button{cursor:pointer}
+button,input,select{
+    font:inherit;
+}
 
-/* ================= INFO ================= */
+button{
+    cursor:pointer;
+}
+
+/* ================= INFO BAR ================= */
 
 .top-info{
     background:#fff;
@@ -42,8 +54,8 @@ nav{
     z-index:30;
 
     display:flex;
-    align-items:center;
     justify-content:space-between;
+    align-items:center;
 
     padding:22px 5%;
 }
@@ -51,8 +63,8 @@ nav{
 .logo{
     color:#fff;
     text-decoration:none;
-    line-height:.85;
     font-weight:900;
+    line-height:.85;
 }
 
 .logo-main{
@@ -78,9 +90,10 @@ nav{
 .nav-links a,
 .nav-button{
     color:#fff;
-    text-decoration:none;
     background:none;
     border:0;
+    text-decoration:none;
+
     font-size:12px;
     font-weight:700;
     letter-spacing:1px;
@@ -108,8 +121,8 @@ nav{
     color:#000;
 
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
 
     font-size:9px;
     font-weight:900;
@@ -120,14 +133,14 @@ nav{
 .hero{
     position:relative;
     width:100%;
-    height:850px;
     min-height:100vh;
-
-    overflow:hidden;
+    height:850px;
 
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
 }
 
 .hero-car-background{
@@ -136,8 +149,8 @@ nav{
     z-index:0;
 
     background-image:url("assets/Car-1.JPG");
-    background-size:cover;
     background-position:center center;
+    background-size:cover;
     background-repeat:no-repeat;
 
     transform:scale(1.02);
@@ -150,27 +163,14 @@ nav{
     z-index:1;
 
     background:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,.45) 0%,
-            rgba(0,0,0,.08) 32%,
-            rgba(0,0,0,.10) 52%,
-            rgba(0,0,0,.42) 75%,
-            rgba(0,0,0,.92) 100%
-        );
-}
-
-.hero-overlay::after{
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            transparent 25%,
-            rgba(0,0,0,.35) 100%
-        );
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,.48) 0%,
+        rgba(0,0,0,.08) 35%,
+        rgba(0,0,0,.15) 55%,
+        rgba(0,0,0,.45) 75%,
+        rgba(0,0,0,.94) 100%
+    );
 }
 
 .hero-content{
@@ -192,16 +192,17 @@ nav{
 }
 
 .hero-logo{
+    color:#fff;
+
     font-size:clamp(65px,11vw,155px);
     line-height:.82;
+
     font-weight:900;
     letter-spacing:clamp(2px,.8vw,10px);
 
-    color:#fff;
-
     text-shadow:
         0 5px 20px rgba(0,0,0,.95),
-        0 0 35px rgba(0,0,0,.55);
+        0 0 35px rgba(0,0,0,.6);
 }
 
 .hero-est{
@@ -210,7 +211,6 @@ nav{
     font-size:clamp(11px,1.2vw,15px);
     font-weight:700;
     letter-spacing:9px;
-    opacity:.92;
 
     text-shadow:0 3px 15px rgba(0,0,0,.95);
 }
@@ -218,12 +218,12 @@ nav{
 .hero-slogan{
     margin-top:125px;
     max-width:950px;
-    text-align:center;
 }
 
 .hero-slogan-main{
     font-size:clamp(25px,4vw,56px);
     line-height:1.08;
+
     font-weight:900;
     letter-spacing:1.5px;
 
@@ -240,7 +240,6 @@ nav{
     font-size:clamp(11px,1.4vw,17px);
     font-weight:700;
     letter-spacing:7px;
-    opacity:.95;
 
     text-shadow:0 3px 15px rgba(0,0,0,.95);
 }
@@ -249,10 +248,10 @@ nav{
     max-width:650px;
     margin:30px auto 0;
 
+    color:rgba(255,255,255,.86);
+
     font-size:14px;
     line-height:1.7;
-
-    color:rgba(255,255,255,.84);
 
     text-shadow:0 2px 12px rgba(0,0,0,.95);
 }
@@ -295,9 +294,10 @@ section{
 }
 
 .category-btn{
-    border:1px solid #333;
     background:transparent;
     color:#fff;
+
+    border:1px solid #333;
 
     padding:11px 20px;
 
@@ -324,8 +324,9 @@ section{
 .product{
     background:#111;
     border:1px solid #1d1d1d;
-    transition:.25s;
+
     cursor:pointer;
+    transition:.25s;
 }
 
 .product:hover{
@@ -336,14 +337,8 @@ section{
 .product-image{
     width:100%;
     height:340px;
-
-    background:#151515;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
     overflow:hidden;
+    background:#151515;
 }
 
 .product-image img{
@@ -367,8 +362,8 @@ section{
 }
 
 .product-info p{
-    font-size:12px;
     color:#888;
+    font-size:12px;
 }
 
 .product-price{
@@ -393,9 +388,9 @@ section{
 }
 
 .event{
+    background:#101010;
     border:1px solid #252525;
     padding:30px;
-    background:#101010;
 }
 
 .event-date{
@@ -411,15 +406,15 @@ section{
 }
 
 .event-location{
-    font-size:12px;
     color:#aaa;
+    font-size:12px;
     margin-bottom:18px;
 }
 
 .event p{
     color:#999;
-    line-height:1.6;
     font-size:13px;
+    line-height:1.6;
 }
 
 .event button{
@@ -463,12 +458,35 @@ section{
     height:225px;
 
     object-fit:cover;
+    object-position:center;
 
     transition:.3s;
 }
 
 .car:hover img{
     transform:scale(1.025);
+}
+
+/* ================= CAR 6 ================= */
+
+.car-six{
+    background:#111;
+}
+
+.car-six img{
+    width:100%;
+    height:400px;
+
+    object-fit:contain !important;
+    object-position:center center !important;
+
+    background:#111;
+
+    transform:none !important;
+}
+
+.car-six:hover img{
+    transform:none !important;
 }
 
 .car-info{
@@ -494,8 +512,8 @@ section{
 
 .about-content p{
     color:#aaa;
-    line-height:1.9;
     font-size:15px;
+    line-height:1.9;
 }
 
 /* ================= CONTACT ================= */
@@ -524,10 +542,11 @@ section{
 
 .social a{
     color:#fff;
-    border:1px solid #333;
-    padding:12px 20px;
-
     text-decoration:none;
+
+    border:1px solid #333;
+
+    padding:12px 20px;
 
     font-size:11px;
     font-weight:700;
@@ -537,6 +556,7 @@ section{
 
 footer{
     padding:35px 5%;
+
     background:#050505;
     border-top:1px solid #161616;
 
@@ -551,7 +571,7 @@ footer p{
     letter-spacing:1px;
 }
 
-/* ================= MODAL ================= */
+/* ================= MODALS ================= */
 
 .modal{
     position:fixed;
@@ -562,8 +582,9 @@ footer p{
     z-index:100;
 
     display:none;
-    align-items:center;
+
     justify-content:center;
+    align-items:center;
 
     padding:20px;
 }
@@ -573,6 +594,8 @@ footer p{
 }
 
 .modal-box{
+    position:relative;
+
     width:min(500px,100%);
     max-height:90vh;
     overflow:auto;
@@ -581,14 +604,12 @@ footer p{
     border:1px solid #333;
 
     padding:30px;
-
-    position:relative;
 }
 
 .close{
     position:absolute;
-    right:18px;
     top:15px;
+    right:18px;
 
     background:none;
     border:0;
@@ -600,7 +621,9 @@ footer p{
 .modal-image{
     width:100%;
     height:400px;
+
     object-fit:cover;
+
     margin-bottom:20px;
 }
 
@@ -614,10 +637,11 @@ footer p{
 }
 
 .size-title{
+    margin-bottom:10px;
+
     font-size:11px;
     font-weight:700;
     letter-spacing:1px;
-    margin-bottom:10px;
 }
 
 .sizes{
@@ -660,24 +684,21 @@ footer p{
 
 .cart-panel{
     position:fixed;
-
     top:0;
     right:-430px;
 
     width:min(430px,100%);
     height:100vh;
 
-    background:#0e0e0e;
-
     z-index:110;
 
+    background:#0e0e0e;
     border-left:1px solid #333;
 
     padding:30px;
 
-    transition:.3s;
-
     overflow:auto;
+    transition:.3s;
 }
 
 .cart-panel.active{
@@ -700,14 +721,15 @@ footer p{
     display:flex;
     gap:14px;
 
-    border-bottom:1px solid #222;
-
     padding:15px 0;
+
+    border-bottom:1px solid #222;
 }
 
 .cart-item img{
     width:70px;
     height:80px;
+
     object-fit:cover;
 }
 
@@ -721,22 +743,22 @@ footer p{
 }
 
 .cart-item-info p{
-    font-size:11px;
     color:#888;
+    font-size:11px;
 }
 
 .remove-item{
     background:none;
-    color:#888;
     border:0;
+    color:#888;
     font-size:11px;
 }
 
 .cart-total{
-    margin-top:25px;
-
     display:flex;
     justify-content:space-between;
+
+    margin-top:25px;
 
     font-size:15px;
     font-weight:800;
@@ -795,8 +817,8 @@ footer p{
 .form-group label{
     display:block;
 
-    font-size:10px;
     color:#888;
+    font-size:10px;
 
     margin-bottom:6px;
 }
@@ -805,17 +827,12 @@ footer p{
     width:100%;
 
     background:#181818;
-    border:1px solid #333;
-
     color:#fff;
 
+    border:1px solid #333;
+
     padding:12px;
-
     outline:none;
-}
-
-.form-group input:focus{
-    border-color:#777;
 }
 
 .form-grid{
@@ -828,9 +845,9 @@ footer p{
 
 .language select{
     background:transparent;
-    border:1px solid #444;
-
     color:#fff;
+
+    border:1px solid #444;
 
     padding:7px 8px;
 
@@ -868,9 +885,9 @@ footer p{
 @media(max-width:600px){
 
     .top-info{
+        padding:8px 10px;
         font-size:8px;
         line-height:1.4;
-        padding:8px 10px;
     }
 
     nav{
@@ -927,7 +944,6 @@ footer p{
     .hero-slogan-main{
         font-size:26px;
         line-height:1.08;
-        letter-spacing:.5px;
     }
 
     .hero-slogan-small{
@@ -937,10 +953,11 @@ footer p{
     }
 
     .hero-description{
-        font-size:11px;
-        line-height:1.6;
         max-width:340px;
         margin-top:22px;
+
+        font-size:11px;
+        line-height:1.6;
     }
 
     section{
@@ -981,6 +998,20 @@ footer p{
         height:205px;
     }
 
+    /* CAR 6 AUF HANDY KOMPLETT SICHTBAR */
+
+    .car-six img{
+        height:360px !important;
+        width:100%;
+
+        object-fit:contain !important;
+        object-position:center center !important;
+
+        background:#111;
+
+        transform:none !important;
+    }
+
     .modal-box{
         padding:22px;
     }
@@ -1007,7 +1038,7 @@ footer p{
 <!-- ================= INFO ================= -->
 
 <div class="top-info">
-    SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BESTELLUNGEN DERZEIT MÖGLICH!
+SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BESTELLUNGEN DERZEIT MÖGLICH!
 </div>
 
 
@@ -1015,43 +1046,37 @@ footer p{
 
 <nav>
 
-    <a href="#home" class="logo">
-        <span class="logo-main">ГОНЩИКИ</span>
-        <span class="logo-est">EST. 2025</span>
-    </a>
+<a href="#home" class="logo">
+    <span class="logo-main">ГОНЩИКИ</span>
+    <span class="logo-est">EST. 2025</span>
+</a>
 
-    <div class="nav-links">
+<div class="nav-links">
 
-        <a href="#shop">SHOP</a>
-        <a href="#events">EVENTS</a>
-        <a href="#cars">CARS</a>
-        <a href="#about">ABOUT</a>
-        <a href="#contact">KONTAKT</a>
+<a href="#shop">SHOP</a>
+<a href="#events">EVENTS</a>
+<a href="#cars">CARS</a>
+<a href="#about">ABOUT</a>
+<a href="#contact">KONTAKT</a>
 
-        <button class="nav-button" onclick="openAccount()">
-            ANMELDEN
-        </button>
+<button class="nav-button" onclick="openAccount()">
+ANMELDEN
+</button>
 
-        <button class="nav-button cart-button" onclick="openCart()">
-            WARENKORB
-            <span class="cart-count" id="cartCount">0</span>
-        </button>
+<button class="nav-button cart-button" onclick="openCart()">
+WARENKORB
+<span class="cart-count" id="cartCount">0</span>
+</button>
 
-        <div class="language">
+<div class="language">
+<select id="languageSelect" onchange="changeLanguage(this.value)">
+<option value="de">DE</option>
+<option value="en">EN</option>
+<option value="ru">RU</option>
+</select>
+</div>
 
-            <select id="languageSelect"
-                    onchange="changeLanguage(this.value)">
-
-                <option value="de">DE</option>
-                <option value="en">EN</option>
-                <option value="ru">RU</option>
-
-            </select>
-
-        </div>
-
-    </div>
-
+</div>
 </nav>
 
 
@@ -1059,48 +1084,40 @@ footer p{
 
 <section class="hero" id="home">
 
-    <div class="hero-car-background"></div>
+<div class="hero-car-background"></div>
 
-    <div class="hero-overlay"></div>
+<div class="hero-overlay"></div>
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <div class="hero-logo">
-            ГОНЩИКИ
-        </div>
+<div class="hero-logo">
+ГОНЩИКИ
+</div>
 
-        <div class="hero-est">
-            EST. 2025
-        </div>
+<div class="hero-est">
+EST. 2025
+</div>
 
-        <div class="hero-slogan">
+<div class="hero-slogan">
 
-            <div class="hero-slogan-main">
+<div class="hero-slogan-main">
+<span>GEMACHT FÜR DIE NACHT.</span>
+<span>GEMACHT FÜR DEN TAG.</span>
+</div>
 
-                <span>
-                    GEMACHT FÜR DIE NACHT.
-                </span>
+<div class="hero-slogan-small">
+KEINE REGEL. NUR STYLE.
+</div>
 
-                <span>
-                    GEMACHT FÜR DEN TAG.
-                </span>
+<p class="hero-description">
+Gonschiki steht für Autos, Nächte,
+Geschwindigkeit und den eigenen Style.
+Streetwear für alle, die ihre eigene Spur fahren.
+</p>
 
-            </div>
+</div>
 
-            <div class="hero-slogan-small">
-                KEINE REGEL. NUR STYLE.
-            </div>
-
-            <p class="hero-description">
-                Gonschiki steht für Autos, Nächte,
-                Geschwindigkeit und den eigenen Style.
-                Streetwear für alle, die ihre eigene Spur fahren.
-            </p>
-
-        </div>
-
-    </div>
-
+</div>
 </section>
 
 
@@ -1108,46 +1125,41 @@ footer p{
 
 <section class="shop" id="shop">
 
-    <div class="section-title">
+<div class="section-title">
+<h2>SHOP</h2>
+<p>Gonschiki Streetwear</p>
+</div>
 
-        <h2>SHOP</h2>
+<div class="categories">
 
-        <p>
-            Gonschiki Streetwear
-        </p>
+<button class="category-btn active"
+onclick="filterProducts('Alle',this)">
+ALLE
+</button>
 
-    </div>
+<button class="category-btn"
+onclick="filterProducts('Shirts',this)">
+SHIRTS
+</button>
 
-    <div class="categories">
+<button class="category-btn"
+onclick="filterProducts('Hoodies',this)">
+HOODIES
+</button>
 
-        <button class="category-btn active"
-                onclick="filterProducts('Alle',this)">
-            ALLE
-        </button>
+<button class="category-btn"
+onclick="filterProducts('Zipper',this)">
+ZIPPER
+</button>
 
-        <button class="category-btn"
-                onclick="filterProducts('Shirts',this)">
-            SHIRTS
-        </button>
+<button class="category-btn"
+onclick="filterProducts('Hosen',this)">
+HOSEN
+</button>
 
-        <button class="category-btn"
-                onclick="filterProducts('Hoodies',this)">
-            HOODIES
-        </button>
+</div>
 
-        <button class="category-btn"
-                onclick="filterProducts('Zipper',this)">
-            ZIPPER
-        </button>
-
-        <button class="category-btn"
-                onclick="filterProducts('Hosen',this)">
-            HOSEN
-        </button>
-
-    </div>
-
-    <div class="products" id="products"></div>
+<div class="products" id="products"></div>
 
 </section>
 
@@ -1156,70 +1168,57 @@ footer p{
 
 <section class="events" id="events">
 
-    <div class="section-title">
+<div class="section-title">
+<h2>EVENTS</h2>
+<p>Cars. People. Nights.</p>
+</div>
 
-        <h2>EVENTS</h2>
+<div class="events-grid">
 
-        <p>
-            Cars. People. Nights.
-        </p>
+<div class="event">
 
-    </div>
+<div class="event-date">2026</div>
 
-    <div class="events-grid">
+<h3>GONSCHIKI NIGHT</h3>
 
-        <div class="event">
+<div class="event-location">
+STUTTGART
+</div>
 
-            <div class="event-date">
-                2026
-            </div>
+<p>
+Eine Nacht für Autos,
+Musik und die Gonschiki Crew.
+</p>
 
-            <h3>
-                GONSCHIKI NIGHT
-            </h3>
+<button onclick="previewMessage()">
+TICKETS – DEMNÄCHST
+</button>
 
-            <div class="event-location">
-                STUTTGART
-            </div>
+</div>
 
-            <p>
-                Eine Nacht für Autos,
-                Musik und die Gonschiki Crew.
-            </p>
 
-            <button onclick="previewMessage()">
-                TICKETS – DEMNÄCHST
-            </button>
+<div class="event">
 
-        </div>
+<div class="event-date">2026</div>
 
-        <div class="event">
+<h3>CREW MEET</h3>
 
-            <div class="event-date">
-                2026
-            </div>
+<div class="event-location">
+BADEN-WÜRTTEMBERG
+</div>
 
-            <h3>
-                CREW MEET
-            </h3>
+<p>
+Gemeinsam unterwegs.
+Autos, Freunde und der eigene Style.
+</p>
 
-            <div class="event-location">
-                BADEN-WÜRTTEMBERG
-            </div>
+<button onclick="previewMessage()">
+INFOS – DEMNÄCHST
+</button>
 
-            <p>
-                Gemeinsam unterwegs.
-                Autos, Freunde und der eigene Style.
-            </p>
+</div>
 
-            <button onclick="previewMessage()">
-                INFOS – DEMNÄCHST
-            </button>
-
-        </div>
-
-    </div>
-
+</div>
 </section>
 
 
@@ -1227,99 +1226,99 @@ footer p{
 
 <section class="cars-section" id="cars">
 
-    <div class="section-title">
+<div class="section-title">
+<h2>CARS</h2>
+<p>Die Autos hinter Gonschiki</p>
+</div>
 
-        <h2>CARS</h2>
-
-        <p>
-            Die Autos hinter Gonschiki
-        </p>
-
-    </div>
-
-    <div class="cars">
-
-        <div class="car">
-
-            <img
-                src="assets/Car-1.JPG"
-                alt="Gonschiki Car 1">
-
-            <div class="car-info">
-                <h3>GONSCHIKI #01</h3>
-            </div>
-
-        </div>
+<div class="cars">
 
 
-        <div class="car">
+<!-- CAR 1 -->
 
-            <img
-                src="assets/Car-2.JPG"
-                alt="Gonschiki Car 2">
+<div class="car">
 
-            <div class="car-info">
-                <h3>GONSCHIKI #02</h3>
-            </div>
+<img src="assets/Car-1.JPG"
+alt="Gonschiki Car 1">
 
-        </div>
+<div class="car-info">
+<h3>GONSCHIKI #01</h3>
+</div>
 
-
-        <div class="car">
-
-            <img
-                src="assets/Car-3.jpg"
-                alt="Gonschiki Car 3">
-
-            <div class="car-info">
-                <h3>GONSCHIKI #03</h3>
-            </div>
-
-        </div>
+</div>
 
 
-        <div class="car">
+<!-- CAR 2 -->
 
-            <img
-                src="assets/Car-4.jpg"
-                alt="Gonschiki Car 4">
+<div class="car">
 
-            <div class="car-info">
-                <h3>GONSCHIKI #04</h3>
-            </div>
+<img src="assets/Car-2.JPG"
+alt="Gonschiki Car 2">
 
-        </div>
+<div class="car-info">
+<h3>GONSCHIKI #02</h3>
+</div>
 
-
-        <div class="car">
-
-            <img
-                src="assets/Car-5.jpg"
-                alt="Gonschiki Car 5">
-
-            <div class="car-info">
-                <h3>GONSCHIKI #05</h3>
-            </div>
-
-        </div>
+</div>
 
 
-        <!-- NEUES 6. BILD -->
+<!-- CAR 3 -->
 
-        <div class="car">
+<div class="car">
 
-            <img
-                src="assets/Car-6.jpg"
-                alt="Gonschiki Car 6">
+<img src="assets/Car-3.jpg"
+alt="Gonschiki Car 3">
 
-            <div class="car-info">
-                <h3>GONSCHIKI #06</h3>
-            </div>
+<div class="car-info">
+<h3>GONSCHIKI #03</h3>
+</div>
 
-        </div>
+</div>
 
-    </div>
 
+<!-- CAR 4 -->
+
+<div class="car">
+
+<img src="assets/Car-4.jpg"
+alt="Gonschiki Car 4">
+
+<div class="car-info">
+<h3>GONSCHIKI #04</h3>
+</div>
+
+</div>
+
+
+<!-- CAR 5 -->
+
+<div class="car">
+
+<img src="assets/Car-5.jpg"
+alt="Gonschiki Car 5">
+
+<div class="car-info">
+<h3>GONSCHIKI #05</h3>
+</div>
+
+</div>
+
+
+<!-- CAR 6 -->
+
+<div class="car car-six">
+
+<img src="assets/Car-6.jpg"
+alt="Gonschiki Car 6">
+
+<div class="car-info">
+<h3>GONSCHIKI #06</h3>
+</div>
+
+</div>
+
+
+</div>
 </section>
 
 
@@ -1327,21 +1326,20 @@ footer p{
 
 <section class="about" id="about">
 
-    <div class="section-title">
-        <h2>ABOUT</h2>
-    </div>
+<div class="section-title">
+<h2>ABOUT</h2>
+</div>
 
-    <div class="about-content">
+<div class="about-content">
 
-        <p>
-            Gonschiki ist mehr als nur Streetwear.
-            Es geht um Autos, Geschwindigkeit,
-            Nächte, Freunde und den eigenen Style.
-            Eine Crew für alle, die ihre eigene Spur fahren.
-        </p>
+<p>
+Gonschiki ist mehr als nur Streetwear.
+Es geht um Autos, Geschwindigkeit,
+Nächte, Freunde und den eigenen Style.
+Eine Crew für alle, die ihre eigene Spur fahren.
+</p>
 
-    </div>
-
+</div>
 </section>
 
 
@@ -1349,28 +1347,25 @@ footer p{
 
 <section class="contact" id="contact">
 
-    <div class="section-title">
-        <h2>KONTAKT</h2>
-    </div>
+<div class="section-title">
+<h2>KONTAKT</h2>
+</div>
 
-    <div class="contact-content">
+<div class="contact-content">
 
-        <p>
-            Fragen, Kooperationen oder Interesse an Gonschiki?
-        </p>
+<p>
+Fragen, Kooperationen oder Interesse an Gonschiki?
+</p>
 
-        <div class="social">
+<div class="social">
 
-            <a
-                href="https://instagram.com/gonschikicrew"
-                target="_blank">
-                INSTAGRAM
-            </a>
+<a href="https://instagram.com/gonschikicrew"
+target="_blank">
+INSTAGRAM
+</a>
 
-        </div>
-
-    </div>
-
+</div>
+</div>
 </section>
 
 
@@ -1378,13 +1373,8 @@ footer p{
 
 <footer>
 
-    <p>
-        © 2025 GONSCHIKI CREW
-    </p>
-
-    <p>
-        ГОНЩИКИ
-    </p>
+<p>© 2025 GONSCHIKI CREW</p>
+<p>ГОНЩИКИ</p>
 
 </footer>
 
@@ -1393,61 +1383,50 @@ footer p{
 
 <div class="modal" id="productModal">
 
-    <div class="modal-box">
+<div class="modal-box">
 
-        <button class="close"
-                onclick="closeModal('productModal')">
-            ×
-        </button>
+<button class="close"
+onclick="closeModal('productModal')">
+×
+</button>
 
-        <img
-            id="modalProductImage"
-            class="modal-image"
-            src=""
-            alt="">
+<img id="modalProductImage"
+class="modal-image"
+src=""
+alt="">
 
-        <h2 id="modalProductName"></h2>
+<h2 id="modalProductName"></h2>
 
-        <div
-            class="modal-price"
-            id="modalProductPrice">
-        </div>
+<div class="modal-price"
+id="modalProductPrice">
+</div>
 
-        <div class="size-title">
-            GRÖSSE
-        </div>
+<div class="size-title">
+GRÖSSE
+</div>
 
-        <div class="sizes">
+<div class="sizes">
 
-            <button class="size"
-                    onclick="selectSize(this)">
-                S
-            </button>
+<button class="size"
+onclick="selectSize(this)">S</button>
 
-            <button class="size"
-                    onclick="selectSize(this)">
-                M
-            </button>
+<button class="size"
+onclick="selectSize(this)">M</button>
 
-            <button class="size"
-                    onclick="selectSize(this)">
-                L
-            </button>
+<button class="size"
+onclick="selectSize(this)">L</button>
 
-            <button class="size"
-                    onclick="selectSize(this)">
-                XL
-            </button>
+<button class="size"
+onclick="selectSize(this)">XL</button>
 
-        </div>
+</div>
 
-        <button class="primary-btn"
-                onclick="addCurrentProduct()">
-            IN DEN WARENKORB
-        </button>
+<button class="primary-btn"
+onclick="addCurrentProduct()">
+IN DEN WARENKORB
+</button>
 
-    </div>
-
+</div>
 </div>
 
 
@@ -1455,40 +1434,34 @@ footer p{
 
 <div class="cart-panel" id="cartPanel">
 
-    <div class="cart-head">
+<div class="cart-head">
 
-        <h2>
-            WARENKORB
-        </h2>
+<h2>WARENKORB</h2>
 
-        <button class="close"
-                onclick="closeCart()">
-            ×
-        </button>
+<button class="close"
+onclick="closeCart()">
+×
+</button>
 
-    </div>
+</div>
 
-    <div id="cartItems"></div>
+<div id="cartItems"></div>
 
-    <div class="cart-total">
+<div class="cart-total">
 
-        <span>
-            GESAMT
-        </span>
+<span>GESAMT</span>
 
-        <span id="cartTotal">
-            0 €
-        </span>
+<span id="cartTotal">
+0 €
+</span>
 
-    </div>
+</div>
 
-    <div class="preview-note">
-
-        SHOP-VORSCHAU:
-        Bestellungen und Bezahlung sind derzeit
-        noch nicht möglich.
-
-    </div>
+<div class="preview-note">
+SHOP-VORSCHAU:
+Bestellungen und Bezahlung sind derzeit
+noch nicht möglich.
+</div>
 
 </div>
 
@@ -1497,830 +1470,718 @@ footer p{
 
 <div class="modal" id="accountModal">
 
-    <div class="modal-box">
+<div class="modal-box">
 
-        <button class="close"
-                onclick="closeModal('accountModal')">
-            ×
-        </button>
+<button class="close"
+onclick="closeModal('accountModal')">
+×
+</button>
 
-        <div class="account-tabs">
+<div class="account-tabs">
 
-            <button
-                class="account-tab active"
-                onclick="showAccountForm('login',this)">
-                ANMELDEN
-            </button>
+<button class="account-tab active"
+onclick="showAccountForm('login',this)">
+ANMELDEN
+</button>
 
-            <button
-                class="account-tab"
-                onclick="showAccountForm('register',this)">
-                REGISTRIEREN
-            </button>
+<button class="account-tab"
+onclick="showAccountForm('register',this)">
+REGISTRIEREN
+</button>
 
-        </div>
+</div>
 
 
-        <!-- LOGIN -->
+<!-- LOGIN -->
 
-        <form
-            class="form active"
-            id="loginForm"
-            onsubmit="login(event)">
+<form class="form active"
+id="loginForm"
+onsubmit="login(event)">
 
-            <div class="form-group">
+<div class="form-group">
 
-                <label>
-                    E-MAIL
-                </label>
+<label>E-MAIL</label>
 
-                <input
-                    type="email"
-                    id="loginEmail"
-                    required>
+<input type="email"
+id="loginEmail"
+required>
 
-            </div>
+</div>
 
-            <div class="form-group">
+<div class="form-group">
 
-                <label>
-                    PASSWORT
-                </label>
+<label>PASSWORT</label>
 
-                <input
-                    type="password"
-                    id="loginPassword"
-                    required>
+<input type="password"
+id="loginPassword"
+required>
 
-            </div>
+</div>
 
-            <button class="primary-btn">
-                ANMELDEN
-            </button>
+<button class="primary-btn">
+ANMELDEN
+</button>
 
-        </form>
+</form>
 
 
-        <!-- REGISTRIERUNG -->
+<!-- REGISTER -->
 
-        <form
-            class="form"
-            id="registerForm"
-            onsubmit="register(event)">
+<form class="form"
+id="registerForm"
+onsubmit="register(event)">
 
-            <div class="form-grid">
+<div class="form-grid">
 
-                <div class="form-group">
+<div class="form-group">
 
-                    <label>
-                        VORNAME
-                    </label>
+<label>VORNAME</label>
 
-                    <input
-                        type="text"
-                        id="firstName"
-                        required>
+<input type="text"
+id="firstName"
+required>
 
-                </div>
+</div>
 
-                <div class="form-group">
+<div class="form-group">
 
-                    <label>
-                        NACHNAME
-                    </label>
+<label>NACHNAME</label>
 
-                    <input
-                        type="text"
-                        id="lastName"
-                        required>
+<input type="text"
+id="lastName"
+required>
 
-                </div>
+</div>
 
-            </div>
+</div>
 
-            <div class="form-group">
+<div class="form-group">
 
-                <label>
-                    E-MAIL
-                </label>
+<label>E-MAIL</label>
 
-                <input
-                    type="email"
-                    id="registerEmail"
-                    required>
+<input type="email"
+id="registerEmail"
+required>
 
-            </div>
+</div>
 
-            <div class="form-group">
+<div class="form-group">
 
-                <label>
-                    STRASSE &amp; HAUSNUMMER
-                </label>
+<label>STRASSE &amp; HAUSNUMMER</label>
 
-                <input
-                    type="text"
-                    id="street"
-                    required>
+<input type="text"
+id="street"
+required>
 
-            </div>
+</div>
 
-            <div class="form-grid">
+<div class="form-grid">
 
-                <div class="form-group">
+<div class="form-group">
 
-                    <label>
-                        PLZ
-                    </label>
+<label>PLZ</label>
 
-                    <input
-                        type="text"
-                        id="postalCode"
-                        required>
+<input type="text"
+id="postalCode"
+required>
 
-                </div>
+</div>
 
-                <div class="form-group">
+<div class="form-group">
 
-                    <label>
-                        ORT
-                    </label>
+<label>ORT</label>
 
-                    <input
-                        type="text"
-                        id="city"
-                        required>
+<input type="text"
+id="city"
+required>
 
-                </div>
+</div>
 
-            </div>
+</div>
 
-            <div class="form-group">
+<div class="form-group">
 
-                <label>
-                    PASSWORT
-                </label>
+<label>PASSWORT</label>
 
-                <input
-                    type="password"
-                    id="registerPassword"
-                    required>
+<input type="password"
+id="registerPassword"
+required>
 
-            </div>
+</div>
 
-            <div class="form-group">
+<div class="form-group">
 
-                <label>
-                    PASSWORT WIEDERHOLEN
-                </label>
+<label>PASSWORT WIEDERHOLEN</label>
 
-                <input
-                    type="password"
-                    id="registerPassword2"
-                    required>
+<input type="password"
+id="registerPassword2"
+required>
 
-            </div>
+</div>
 
-            <button class="primary-btn">
-                KONTO ERSTELLEN
-            </button>
+<button class="primary-btn">
+KONTO ERSTELLEN
+</button>
 
-        </form>
+</form>
 
-    </div>
-
+</div>
 </div>
 
 
 <script>
 
-/* ==================================================
-   PRODUKTE
-================================================== */
+/* ================= PRODUKTE ================= */
 
 const products=[
 
-    {
-        name:"GONSCHIKI RUSSIA SHIRT",
-        category:"Shirts",
-        price:39,
-        image:"assets/Shirt-black-Russia.jpg"
-    },
+{
+name:"GONSCHIKI RUSSIA SHIRT",
+category:"Shirts",
+price:39,
+image:"assets/Shirt-black-Russia.jpg"
+},
 
-    {
-        name:"GONSCHIKI CROSS ZIPPER",
-        category:"Zipper",
-        price:69,
-        image:"assets/Zipper-black-Kreuz.jpg"
-    },
+{
+name:"GONSCHIKI CROSS ZIPPER",
+category:"Zipper",
+price:69,
+image:"assets/Zipper-black-Kreuz.jpg"
+},
 
-    {
-        name:"GONSCHIKI E36 HOODIE",
-        category:"Hoodies",
-        price:79,
-        image:"assets/Hoodie-black-e36.jpg"
-    },
+{
+name:"GONSCHIKI E36 HOODIE",
+category:"Hoodies",
+price:79,
+image:"assets/Hoodie-black-e36.jpg"
+},
 
-    {
-        name:"GONSCHIKI E34 HOODIE",
-        category:"Hoodies",
-        price:79,
-        image:"assets/Hoodie-black-e34.jpg"
-    },
+{
+name:"GONSCHIKI E34 HOODIE",
+category:"Hoodies",
+price:79,
+image:"assets/Hoodie-black-e34.jpg"
+},
 
-    {
-        name:"GONSCHIKI CROSS HOODIE",
-        category:"Hoodies",
-        price:79,
-        image:"assets/Hoodie-black-Kreuz.jpg"
-    },
+{
+name:"GONSCHIKI CROSS HOODIE",
+category:"Hoodies",
+price:79,
+image:"assets/Hoodie-black-Kreuz.jpg"
+},
 
-    {
-        name:"GONSCHIKI E36 SHIRT",
-        category:"Shirts",
-        price:39,
-        image:"assets/Shirt-black-e36.jpg"
-    },
+{
+name:"GONSCHIKI E36 SHIRT",
+category:"Shirts",
+price:39,
+image:"assets/Shirt-black-e36.jpg"
+},
 
-    {
-        name:"GONSCHIKI RUSSIA HOODIE",
-        category:"Hoodies",
-        price:79,
-        image:"assets/Hoodie-black-Russia.jpg"
-    },
+{
+name:"GONSCHIKI RUSSIA HOODIE",
+category:"Hoodies",
+price:79,
+image:"assets/Hoodie-black-Russia.jpg"
+},
 
-    {
-        name:"GONSCHIKI E34 SHIRT",
-        category:"Shirts",
-        price:39,
-        image:"assets/Shirt-black-e34.jpg"
-    },
+{
+name:"GONSCHIKI E34 SHIRT",
+category:"Shirts",
+price:39,
+image:"assets/Shirt-black-e34.jpg"
+},
 
-    {
-        name:"GONSCHIKI E36 BEIGE HOODIE",
-        category:"Hoodies",
-        price:79,
-        image:"assets/Hoodie-beige-e36.jpg"
-    },
+{
+name:"GONSCHIKI E36 BEIGE HOODIE",
+category:"Hoodies",
+price:79,
+image:"assets/Hoodie-beige-e36.jpg"
+},
 
-    {
-        name:"GONSCHIKI PANTS",
-        category:"Hosen",
-        price:69,
-        image:"assets/Pants-black-gonschiki.jpg"
-    }
+{
+name:"GONSCHIKI PANTS",
+category:"Hosen",
+price:69,
+image:"assets/Pants-black-gonschiki.jpg"
+}
 
 ];
-
 
 let currentProduct=null;
 let selectedSize=null;
 
 let cart=JSON.parse(
-    localStorage.getItem("gonschikiCart") || "[]"
+localStorage.getItem("gonschikiCart") || "[]"
 );
 
 
-/* ==================================================
-   SHOP RENDERN
-================================================== */
+/* ================= SHOP ================= */
 
 function renderProducts(list=products){
 
-    const container=document.getElementById("products");
+const container=document.getElementById("products");
 
-    container.innerHTML="";
+container.innerHTML="";
 
-    list.forEach(product=>{
+list.forEach(product=>{
 
-        const index=products.indexOf(product);
+const index=products.indexOf(product);
 
-        const item=document.createElement("div");
+const item=document.createElement("div");
 
-        item.className="product";
+item.className="product";
 
-        item.onclick=()=>{
-            openProduct(index);
-        };
+item.onclick=()=>{
+openProduct(index);
+};
 
-        item.innerHTML=`
+item.innerHTML=`
 
-            <div class="product-image">
+<div class="product-image">
 
-                <img
-                    src="${product.image}"
-                    alt="${product.name}">
+<img src="${product.image}"
+alt="${product.name}">
 
-            </div>
+</div>
 
-            <div class="product-info">
+<div class="product-info">
 
-                <h3>
-                    ${product.name}
-                </h3>
+<h3>${product.name}</h3>
 
-                <p>
-                    ${product.category}
-                </p>
+<p>${product.category}</p>
 
-                <div class="product-price">
-                    ${product.price} €
-                </div>
+<div class="product-price">
+${product.price} €
+</div>
 
-            </div>
-        `;
+</div>
 
-        container.appendChild(item);
+`;
 
-    });
+container.appendChild(item);
+
+});
 
 }
 
-
-/* ==================================================
-   FILTER
-================================================== */
 
 function filterProducts(category,button){
 
-    document
-        .querySelectorAll(".category-btn")
-        .forEach(btn=>{
-            btn.classList.remove("active");
-        });
+document.querySelectorAll(".category-btn")
+.forEach(btn=>{
+btn.classList.remove("active");
+});
 
-    button.classList.add("active");
+button.classList.add("active");
 
-    if(category==="Alle"){
-
-        renderProducts(products);
-
-    }else{
-
-        renderProducts(
-            products.filter(
-                product=>product.category===category
-            )
-        );
-
-    }
+if(category==="Alle"){
+renderProducts(products);
+}else{
+renderProducts(
+products.filter(
+product=>product.category===category
+)
+);
+}
 
 }
 
 
-/* ==================================================
-   PRODUKT MODAL
-================================================== */
+/* ================= PRODUKT ================= */
 
 function openProduct(index){
 
-    currentProduct=products[index];
+currentProduct=products[index];
 
-    selectedSize=null;
+selectedSize=null;
 
-    document
-        .querySelectorAll(".size")
-        .forEach(btn=>{
-            btn.classList.remove("active");
-        });
+document.querySelectorAll(".size")
+.forEach(btn=>{
+btn.classList.remove("active");
+});
 
-    document
-        .getElementById("modalProductImage")
-        .src=currentProduct.image;
+document.getElementById("modalProductImage").src=
+currentProduct.image;
 
-    document
-        .getElementById("modalProductName")
-        .textContent=currentProduct.name;
+document.getElementById("modalProductName").textContent=
+currentProduct.name;
 
-    document
-        .getElementById("modalProductPrice")
-        .textContent=currentProduct.price+" €";
+document.getElementById("modalProductPrice").textContent=
+currentProduct.price+" €";
 
-    document
-        .getElementById("productModal")
-        .classList.add("active");
+document.getElementById("productModal")
+.classList.add("active");
 
 }
 
 
 function selectSize(button){
 
-    document
-        .querySelectorAll(".size")
-        .forEach(btn=>{
-            btn.classList.remove("active");
-        });
+document.querySelectorAll(".size")
+.forEach(btn=>{
+btn.classList.remove("active");
+});
 
-    button.classList.add("active");
+button.classList.add("active");
 
-    selectedSize=button.textContent;
+selectedSize=button.textContent;
 
 }
 
 
 function addCurrentProduct(){
 
-    if(!currentProduct){
-        return;
-    }
+if(!currentProduct){
+return;
+}
 
-    if(!selectedSize){
+if(!selectedSize){
 
-        alert(
-            "Bitte zuerst eine Größe auswählen."
-        );
+alert("Bitte zuerst eine Größe auswählen.");
 
-        return;
-    }
+return;
+}
 
-    cart.push({
+cart.push({
 
-        name:currentProduct.name,
-        price:currentProduct.price,
-        image:currentProduct.image,
-        size:selectedSize
+name:currentProduct.name,
+price:currentProduct.price,
+image:currentProduct.image,
+size:selectedSize
 
-    });
+});
 
-    saveCart();
+saveCart();
 
-    closeModal("productModal");
+updateCart();
 
-    updateCart();
+closeModal("productModal");
 
-    alert(
-        "Produkt wurde dem Warenkorb hinzugefügt."
-    );
+alert("Produkt wurde dem Warenkorb hinzugefügt.");
 
 }
 
 
-/* ==================================================
-   WARENKORB
-================================================== */
+/* ================= CART ================= */
 
 function saveCart(){
 
-    localStorage.setItem(
-        "gonschikiCart",
-        JSON.stringify(cart)
-    );
+localStorage.setItem(
+"gonschikiCart",
+JSON.stringify(cart)
+);
 
 }
 
 
 function updateCart(){
 
-    const count=document.getElementById("cartCount");
-    const items=document.getElementById("cartItems");
-    const total=document.getElementById("cartTotal");
+const count=document.getElementById("cartCount");
+const items=document.getElementById("cartItems");
+const total=document.getElementById("cartTotal");
 
-    count.textContent=cart.length;
+count.textContent=cart.length;
 
-    items.innerHTML="";
+items.innerHTML="";
 
-    let sum=0;
+let sum=0;
 
-    cart.forEach((item,index)=>{
+cart.forEach((item,index)=>{
 
-        sum+=Number(item.price);
+sum+=Number(item.price);
 
-        const div=document.createElement("div");
+const div=document.createElement("div");
 
-        div.className="cart-item";
+div.className="cart-item";
 
-        div.innerHTML=`
+div.innerHTML=`
 
-            <img
-                src="${item.image}"
-                alt="${item.name}">
+<img src="${item.image}"
+alt="${item.name}">
 
-            <div class="cart-item-info">
+<div class="cart-item-info">
 
-                <h4>
-                    ${item.name}
-                </h4>
+<h4>${item.name}</h4>
 
-                <p>
-                    Größe: ${item.size}
-                </p>
+<p>Größe: ${item.size}</p>
 
-                <p>
-                    ${item.price} €
-                </p>
+<p>${item.price} €</p>
 
-            </div>
+</div>
 
-            <button
-                class="remove-item"
-                onclick="removeCartItem(${index})">
+<button class="remove-item"
+onclick="removeCartItem(${index})">
+ENTFERNEN
+</button>
 
-                ENTFERNEN
+`;
 
-            </button>
+items.appendChild(div);
 
-        `;
+});
 
-        items.appendChild(div);
-
-    });
-
-    total.textContent=sum.toFixed(2)+" €";
+total.textContent=sum.toFixed(2)+" €";
 
 }
 
 
 function removeCartItem(index){
 
-    cart.splice(index,1);
+cart.splice(index,1);
 
-    saveCart();
+saveCart();
 
-    updateCart();
+updateCart();
 
 }
 
 
 function openCart(){
 
-    updateCart();
+updateCart();
 
-    document
-        .getElementById("cartPanel")
-        .classList.add("active");
+document.getElementById("cartPanel")
+.classList.add("active");
 
 }
 
 
 function closeCart(){
 
-    document
-        .getElementById("cartPanel")
-        .classList.remove("active");
+document.getElementById("cartPanel")
+.classList.remove("active");
 
 }
 
 
-/* ==================================================
-   ACCOUNT
-================================================== */
+/* ================= ACCOUNT ================= */
 
 function openAccount(){
 
-    document
-        .getElementById("accountModal")
-        .classList.add("active");
+document.getElementById("accountModal")
+.classList.add("active");
 
 }
 
 
 function showAccountForm(type,button){
 
-    document
-        .querySelectorAll(".account-tab")
-        .forEach(btn=>{
-            btn.classList.remove("active");
-        });
+document.querySelectorAll(".account-tab")
+.forEach(btn=>{
+btn.classList.remove("active");
+});
 
-    button.classList.add("active");
+button.classList.add("active");
 
-    document
-        .getElementById("loginForm")
-        .classList.remove("active");
+document.getElementById("loginForm")
+.classList.remove("active");
 
-    document
-        .getElementById("registerForm")
-        .classList.remove("active");
+document.getElementById("registerForm")
+.classList.remove("active");
 
-    if(type==="login"){
+if(type==="login"){
 
-        document
-            .getElementById("loginForm")
-            .classList.add("active");
+document.getElementById("loginForm")
+.classList.add("active");
 
-    }else{
+}else{
 
-        document
-            .getElementById("registerForm")
-            .classList.add("active");
+document.getElementById("registerForm")
+.classList.add("active");
 
-    }
+}
 
 }
 
 
 function register(event){
 
-    event.preventDefault();
+event.preventDefault();
 
-    const password=
-        document.getElementById("registerPassword").value;
+const password=
+document.getElementById("registerPassword").value;
 
-    const password2=
-        document.getElementById("registerPassword2").value;
+const password2=
+document.getElementById("registerPassword2").value;
 
-    if(password!==password2){
+if(password!==password2){
 
-        alert(
-            "Die Passwörter stimmen nicht überein."
-        );
+alert("Die Passwörter stimmen nicht überein.");
 
-        return;
-    }
+return;
+}
 
-    const account={
+const account={
 
-        firstName:
-            document.getElementById("firstName").value,
+firstName:
+document.getElementById("firstName").value,
 
-        lastName:
-            document.getElementById("lastName").value,
+lastName:
+document.getElementById("lastName").value,
 
-        email:
-            document.getElementById("registerEmail").value,
+email:
+document.getElementById("registerEmail").value,
 
-        street:
-            document.getElementById("street").value,
+street:
+document.getElementById("street").value,
 
-        postalCode:
-            document.getElementById("postalCode").value,
+postalCode:
+document.getElementById("postalCode").value,
 
-        city:
-            document.getElementById("city").value
+city:
+document.getElementById("city").value
 
-    };
+};
 
-    localStorage.setItem(
-        "gonschikiAccount",
-        JSON.stringify(account)
-    );
+localStorage.setItem(
+"gonschikiAccount",
+JSON.stringify(account)
+);
 
-    alert(
-        "Konto wurde für diese Website-Vorschau gespeichert."
-    );
+alert(
+"Konto wurde für diese Website-Vorschau gespeichert."
+);
 
-    document
-        .getElementById("registerForm")
-        .reset();
+document.getElementById("registerForm").reset();
 
 }
 
 
 function login(event){
 
-    event.preventDefault();
+event.preventDefault();
 
-    const email=
-        document.getElementById("loginEmail").value;
+const email=
+document.getElementById("loginEmail").value;
 
-    const account=
-        JSON.parse(
-            localStorage.getItem(
-                "gonschikiAccount"
-            ) || "null"
-        );
+const account=JSON.parse(
+localStorage.getItem("gonschikiAccount") || "null"
+);
 
-    if(account && account.email===email){
+if(account && account.email===email){
 
-        alert(
-            "Anmeldung für diese Website-Vorschau erfolgreich."
-        );
+alert(
+"Anmeldung für diese Website-Vorschau erfolgreich."
+);
 
-    }else{
+}else{
 
-        alert(
-            "Kein gespeichertes Demo-Konto mit dieser E-Mail gefunden."
-        );
+alert(
+"Kein gespeichertes Demo-Konto mit dieser E-Mail gefunden."
+);
 
-    }
+}
 
 }
 
 
-/* ==================================================
-   MODALS
-================================================== */
+/* ================= MODAL ================= */
 
 function closeModal(id){
 
-    document
-        .getElementById(id)
-        .classList.remove("active");
+document.getElementById(id)
+.classList.remove("active");
 
 }
 
+document.querySelectorAll(".modal")
+.forEach(modal=>{
 
-document
-    .querySelectorAll(".modal")
-    .forEach(modal=>{
+modal.addEventListener("click",function(event){
 
-        modal.addEventListener(
-            "click",
-            function(event){
+if(event.target===modal){
+modal.classList.remove("active");
+}
 
-                if(event.target===modal){
+});
 
-                    modal.classList.remove("active");
-
-                }
-
-            }
-        );
-
-    });
+});
 
 
-/* ==================================================
-   EVENTS
-================================================== */
+/* ================= EVENTS ================= */
 
 function previewMessage(){
 
-    alert(
-        "EVENTS und Tickets sind aktuell noch nicht verfügbar."
-    );
+alert(
+"EVENTS und Tickets sind aktuell noch nicht verfügbar."
+);
 
 }
 
 
-/* ==================================================
-   SPRACHEN
-================================================== */
+/* ================= SPRACHEN ================= */
 
 const translations={
 
-    de:{
-        shop:"SHOP",
-        events:"EVENTS",
-        cars:"CARS",
-        about:"ABOUT",
-        contact:"KONTAKT"
-    },
+de:{
+shop:"SHOP",
+events:"EVENTS",
+cars:"CARS",
+about:"ABOUT",
+contact:"KONTAKT"
+},
 
-    en:{
-        shop:"SHOP",
-        events:"EVENTS",
-        cars:"CARS",
-        about:"ABOUT",
-        contact:"CONTACT"
-    },
+en:{
+shop:"SHOP",
+events:"EVENTS",
+cars:"CARS",
+about:"ABOUT",
+contact:"CONTACT"
+},
 
-    ru:{
-        shop:"МАГАЗИН",
-        events:"СОБЫТИЯ",
-        cars:"МАШИНЫ",
-        about:"О НАС",
-        contact:"КОНТАКТ"
-    }
+ru:{
+shop:"МАГАЗИН",
+events:"СОБЫТИЯ",
+cars:"МАШИНЫ",
+about:"О НАС",
+contact:"КОНТАКТ"
+}
 
 };
 
 
 function changeLanguage(language){
 
-    localStorage.setItem(
-        "gonschikiLanguage",
-        language
-    );
+localStorage.setItem(
+"gonschikiLanguage",
+language
+);
 
-    const t=translations[language];
+const t=translations[language];
 
-    const links=
-        document.querySelectorAll(
-            ".nav-links a"
-        );
+const links=document.querySelectorAll(
+".nav-links a"
+);
 
-    if(links.length>=5){
+if(links.length>=5){
 
-        links[0].textContent=t.shop;
-        links[1].textContent=t.events;
-        links[2].textContent=t.cars;
-        links[3].textContent=t.about;
-        links[4].textContent=t.contact;
+links[0].textContent=t.shop;
+links[1].textContent=t.events;
+links[2].textContent=t.cars;
+links[3].textContent=t.about;
+links[4].textContent=t.contact;
 
-    }
+}
 
 }
 
 
 function loadLanguage(){
 
-    const language=
-        localStorage.getItem(
-            "gonschikiLanguage"
-        ) || "de";
+const language=
+localStorage.getItem(
+"gonschikiLanguage"
+) || "de";
 
-    document
-        .getElementById("languageSelect")
-        .value=language;
+document.getElementById("languageSelect")
+.value=language;
 
-    changeLanguage(language);
+changeLanguage(language);
 
 }
 
 
-/* ==================================================
-   START
-================================================== */
+/* ================= START ================= */
 
 renderProducts();
 
