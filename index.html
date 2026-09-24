@@ -3,15 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>ГОНЩИКИ — Gonschiki Crew</title>
 
 <style>
-
-/* =========================================================
-   GRUNDLAYOUT
-========================================================= */
-
 *{
     margin:0;
     padding:0;
@@ -23,9 +17,9 @@ html{
 }
 
 body{
-    background:#080808;
-    color:#fff;
     font-family:Arial,Helvetica,sans-serif;
+    background:#050505;
+    color:#fff;
     overflow-x:hidden;
 }
 
@@ -39,1040 +33,554 @@ button{
     cursor:pointer;
 }
 
+/* =========================
+   TOP INFO BAR
+========================= */
 
-/* =========================================================
-   INFO BAR
-========================================================= */
-
-.top-info{
+.notice{
     background:#fff;
     color:#000;
-
     text-align:center;
-
-    padding:9px 15px;
-
     font-size:11px;
     font-weight:800;
-
-    letter-spacing:.8px;
+    letter-spacing:1px;
+    padding:9px 14px;
+    position:relative;
+    z-index:100;
 }
 
-
-/* =========================================================
+/* =========================
    NAVIGATION
-========================================================= */
+========================= */
 
 nav{
     position:absolute;
-
-    top:34px;
+    top:35px;
     left:0;
-
     width:100%;
-
-    z-index:30;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
+    z-index:50;
     padding:22px 5%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid rgba(255,255,255,.12);
+    background:rgba(0,0,0,.2);
+    backdrop-filter:blur(5px);
 }
 
 .logo{
-    color:#fff;
     text-decoration:none;
-
-    font-weight:900;
+    color:#fff;
     line-height:.85;
+    display:flex;
+    flex-direction:column;
 }
 
 .logo-main{
-    display:block;
-
     font-size:25px;
-    letter-spacing:1px;
+    font-weight:900;
+    letter-spacing:2px;
 }
 
 .logo-est{
-    display:block;
-
-    margin-top:7px;
-
     font-size:9px;
     letter-spacing:4px;
-
+    margin-top:7px;
     opacity:.75;
 }
 
 .nav-links{
     display:flex;
     align-items:center;
-
-    gap:28px;
+    gap:30px;
 }
 
-.nav-links a,
-.nav-button{
+.nav-links a{
     color:#fff;
-
-    background:none;
-    border:0;
-
     text-decoration:none;
-
     font-size:12px;
-    font-weight:700;
-
+    font-weight:800;
     letter-spacing:1px;
+    transition:.25s;
 }
 
-.nav-links a:hover,
-.nav-button:hover{
+.nav-links a:hover{
     opacity:.55;
+}
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.lang{
+    display:flex;
+    gap:7px;
+}
+
+.lang button{
+    border:0;
+    background:transparent;
+    color:#aaa;
+    font-size:10px;
+    font-weight:800;
+}
+
+.lang button.active,
+.lang button:hover{
+    color:#fff;
 }
 
 .cart-button{
     position:relative;
+    border:0;
+    background:transparent;
+    color:#fff;
+    font-size:18px;
 }
 
 .cart-count{
     position:absolute;
-
-    top:-10px;
-    right:-13px;
-
-    width:17px;
-    height:17px;
-
+    right:-9px;
+    top:-8px;
+    width:16px;
+    height:16px;
     border-radius:50%;
-
     background:#fff;
     color:#000;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
     font-size:9px;
     font-weight:900;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.language select{
-    background:transparent;
-    color:#fff;
-
-    border:1px solid #444;
-
-    padding:7px 8px;
-
-    font-size:10px;
-}
-
-.language option{
-    background:#111;
-    color:#fff;
-}
-
-
-/* =========================================================
+/* =========================
    HERO
-========================================================= */
+========================= */
 
 .hero{
     position:relative;
-
-    width:100%;
     min-height:100vh;
-    height:850px;
-
     display:flex;
-    justify-content:center;
     align-items:center;
-
+    justify-content:center;
+    text-align:center;
     overflow:hidden;
 }
 
 .hero-car-background{
     position:absolute;
-
     inset:0;
-
     z-index:0;
-
     background-image:url("assets/Car-1.JPG");
-
     background-position:center center;
     background-size:cover;
     background-repeat:no-repeat;
-
     transform:scale(1.02);
-
     filter:brightness(.52);
 }
 
 .hero-overlay{
     position:absolute;
-
     inset:0;
-
-    z-index:1;
-
     background:
-    linear-gradient(
-        to bottom,
-        rgba(0,0,0,.48) 0%,
-        rgba(0,0,0,.08) 35%,
-        rgba(0,0,0,.15) 55%,
-        rgba(0,0,0,.45) 75%,
-        rgba(0,0,0,.94) 100%
-    );
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.25),
+            rgba(0,0,0,.48) 55%,
+            rgba(0,0,0,.9)
+        );
+    z-index:1;
 }
 
 .hero-content{
     position:relative;
-
     z-index:2;
-
-    width:100%;
-    max-width:1300px;
-
-    min-height:850px;
-
-    padding:120px 30px 70px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
+    width:min(1000px,90%);
+    padding-top:80px;
 }
 
 .hero-logo{
-    color:#fff;
-
-    font-size:clamp(65px,11vw,155px);
-
-    line-height:.82;
-
-    font-weight:900;
-
-    letter-spacing:clamp(2px,.8vw,10px);
-
-    text-shadow:
-        0 5px 20px rgba(0,0,0,.95),
-        0 0 35px rgba(0,0,0,.6);
+    font-size:clamp(65px,12vw,150px);
+    line-height:.78;
+    font-weight:1000;
+    letter-spacing:4px;
+    text-shadow:0 10px 40px rgba(0,0,0,.8);
 }
 
 .hero-est{
-    margin-top:30px;
-
-    font-size:clamp(11px,1.2vw,15px);
-
-    font-weight:700;
-
-    letter-spacing:9px;
-
-    text-shadow:0 3px 15px rgba(0,0,0,.95);
-}
-
-.hero-slogan{
-    margin-top:125px;
-
-    max-width:950px;
-}
-
-.hero-slogan-main{
-    font-size:clamp(25px,4vw,56px);
-
-    line-height:1.08;
-
-    font-weight:900;
-
-    letter-spacing:1.5px;
-
-    text-shadow:0 4px 25px rgba(0,0,0,.95);
-}
-
-.hero-slogan-main span{
-    display:block;
-}
-
-.hero-slogan-small{
-    margin-top:30px;
-
-    font-size:clamp(11px,1.4vw,17px);
-
-    font-weight:700;
-
-    letter-spacing:7px;
-
-    text-shadow:0 3px 15px rgba(0,0,0,.95);
+    margin-top:28px;
+    font-size:clamp(14px,2vw,23px);
+    font-weight:800;
+    letter-spacing:10px;
+    opacity:.9;
 }
 
 .hero-description{
-    max-width:650px;
-
-    margin:30px auto 0;
-
-    color:rgba(255,255,255,.86);
-
-    font-size:14px;
-
-    line-height:1.7;
-
-    text-shadow:0 2px 12px rgba(0,0,0,.95);
+    max-width:680px;
+    margin:70px auto 0;
+    font-size:16px;
+    line-height:1.8;
+    color:#ddd;
 }
 
+.hero-slogan{
+    margin-top:90px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    font-size:clamp(17px,2.2vw,27px);
+    font-weight:900;
+    letter-spacing:4px;
+}
 
-/* =========================================================
-   SECTIONS
-========================================================= */
+.hero-button{
+    display:inline-block;
+    margin-top:45px;
+    padding:16px 30px;
+    border:1px solid #fff;
+    color:#fff;
+    text-decoration:none;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:2px;
+    transition:.3s;
+}
+
+.hero-button:hover{
+    background:#fff;
+    color:#000;
+}
+
+/* =========================
+   GENERAL
+========================= */
 
 section{
-    padding:100px 5%;
+    padding:110px 5%;
 }
 
 .section-title{
-    text-align:center;
-
-    margin-bottom:50px;
-}
-
-.section-title h2{
-    font-size:clamp(30px,5vw,55px);
-
-    font-weight:900;
-
+    font-size:clamp(34px,5vw,65px);
+    font-weight:1000;
     letter-spacing:2px;
-}
-
-.section-title p{
-    margin-top:12px;
-
-    color:#888;
-
-    font-size:13px;
-}
-
-
-/* =========================================================
-   SHOP
-========================================================= */
-
-.shop{
-    background:#080808;
-}
-
-
-/* =========================================================
-   MÄNNER / FRAUEN
-========================================================= */
-
-.gender-categories{
-    display:flex;
-
-    justify-content:center;
-
-    gap:12px;
-
-    margin-bottom:28px;
-}
-
-.gender-btn{
-    min-width:190px;
-
-    background:#111;
-    color:#fff;
-
-    border:1px solid #333;
-
-    padding:15px 30px;
-
-    font-size:12px;
-
-    font-weight:900;
-
-    letter-spacing:2px;
-
-    transition:.25s;
-}
-
-.gender-btn:hover{
-    border-color:#777;
-}
-
-.gender-btn.active{
-    background:#fff;
-
-    color:#000;
-
-    border-color:#fff;
-}
-
-
-/* =========================================================
-   PRODUKT-KATEGORIEN
-========================================================= */
-
-.categories{
-    display:flex;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-    gap:10px;
-
-    margin-bottom:45px;
-}
-
-.category-btn{
-    background:transparent;
-
-    color:#fff;
-
-    border:1px solid #333;
-
-    padding:11px 20px;
-
-    font-size:11px;
-
-    font-weight:700;
-
-    letter-spacing:1px;
-}
-
-.category-btn:hover,
-.category-btn.active{
-    background:#fff;
-
-    color:#000;
-}
-
-
-/* =========================================================
-   PRODUKTE
-========================================================= */
-
-.products{
-    max-width:1200px;
-
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:22px;
-}
-
-.product{
-    background:#111;
-
-    border:1px solid #1d1d1d;
-
-    cursor:pointer;
-
-    transition:.25s;
-}
-
-.product:hover{
-    transform:translateY(-5px);
-
-    border-color:#444;
-}
-
-.product-image{
-    width:100%;
-
-    height:340px;
-
-    overflow:hidden;
-
-    background:#151515;
-}
-
-.product-image img{
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    transition:.35s;
-}
-
-.product:hover .product-image img{
-    transform:scale(1.035);
-}
-
-.product-info{
-    padding:18px;
-}
-
-.product-info h3{
-    font-size:13px;
-
-    margin-bottom:7px;
-}
-
-.product-info p{
-    color:#888;
-
-    font-size:12px;
-}
-
-.product-price{
-    margin-top:13px;
-
-    font-size:13px;
-
-    font-weight:800;
-}
-
-
-/* =========================================================
-   EVENTS
-========================================================= */
-
-.events{
-    background:#0c0c0c;
-}
-
-.events-grid{
-    max-width:1050px;
-
-    margin:auto;
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:22px;
-}
-
-.event{
-    background:#101010;
-
-    border:1px solid #252525;
-
-    padding:30px;
-}
-
-.event-date{
-    color:#888;
-
-    font-size:11px;
-
-    letter-spacing:2px;
-
-    margin-bottom:12px;
-}
-
-.event h3{
-    font-size:25px;
-
-    margin-bottom:10px;
-}
-
-.event-location{
-    color:#aaa;
-
-    font-size:12px;
-
     margin-bottom:18px;
 }
 
-.event p{
+.section-subtitle{
     color:#999;
-
-    font-size:13px;
-
-    line-height:1.6;
+    font-size:14px;
+    line-height:1.7;
+    max-width:650px;
 }
 
-.event button{
-    margin-top:25px;
-
-    background:#fff;
-
-    color:#000;
-
-    border:0;
-
-    padding:12px 18px;
-
-    font-size:10px;
-
-    font-weight:900;
-
-    letter-spacing:1px;
-}
-
-
-/* =========================================================
+/* =========================
    CARS
-========================================================= */
+========================= */
 
 .cars-section{
-    background:#080808;
+    background:#050505;
 }
 
-.cars{
-    max-width:1050px;
-
-    margin:auto;
-
+.cars-grid{
+    margin-top:50px;
     display:grid;
-
-    grid-template-columns:repeat(2,minmax(0,1fr));
-
-    gap:18px;
-
-    align-items:start;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
 }
 
 .car{
-    background:#111;
-
-    border:1px solid #1d1d1d;
-
+    background:#0d0d0d;
+    border:1px solid #202020;
     overflow:hidden;
-
-    align-self:start;
 }
 
 .car-image{
     width:100%;
-
     height:225px;
-
     display:block;
-
     overflow:hidden;
-
     background:#111;
 }
 
 .car-image img{
     display:block;
-
     width:100%;
     height:100%;
-
     object-fit:cover;
-
     object-position:center center;
-
-    transition:.3s;
+    transition:.4s;
 }
 
 .car:hover .car-image img{
     transform:scale(1.025);
 }
 
-.car-info{
-    padding:16px;
+/* =========================
+   CAR 6
+   NUR DAS UNTERE
+   SILBERNE AUTO
+========================= */
 
-    background:#111;
+.car-six .car-image{
+    overflow:hidden;
+}
+
+.car-six .car-image img{
+    object-fit:cover !important;
+    object-position:center bottom !important;
+    transform:scale(1.38) !important;
+    transform-origin:center bottom !important;
+}
+
+.car-six:hover .car-image img{
+    transform:scale(1.43) !important;
+}
+
+.car-info{
+    padding:20px 22px 23px;
 }
 
 .car-info h3{
-    font-size:14px;
+    font-size:15px;
+    letter-spacing:2px;
+}
 
+.car-info p{
+    color:#777;
+    font-size:11px;
+    margin-top:7px;
+}
+
+/* =========================
+   SHOP
+========================= */
+
+.shop-section{
+    background:#0a0a0a;
+}
+
+.shop-header{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:30px;
+    margin-bottom:40px;
+}
+
+.gender-tabs{
+    display:flex;
+    gap:8px;
+}
+
+.gender-tabs button{
+    background:#111;
+    color:#777;
+    border:1px solid #282828;
+    padding:12px 20px;
+    font-size:11px;
+    font-weight:900;
     letter-spacing:1px;
 }
 
+.gender-tabs button.active{
+    background:#fff;
+    color:#000;
+    border-color:#fff;
+}
 
-/* =========================================================
+.category-tabs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:35px;
+}
+
+.category-tabs button{
+    background:transparent;
+    color:#777;
+    border:1px solid #282828;
+    padding:10px 15px;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.category-tabs button.active{
+    background:#fff;
+    color:#000;
+    border-color:#fff;
+}
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.product-card{
+    background:#111;
+    border:1px solid #1f1f1f;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.product-card:hover{
+    transform:translateY(-4px);
+    border-color:#444;
+}
+
+.product-image{
+    height:330px;
+    background:#151515;
+    overflow:hidden;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:.4s;
+}
+
+.product-card:hover .product-image img{
+    transform:scale(1.035);
+}
+
+.product-info{
+    padding:17px;
+}
+
+.product-name{
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.product-category{
+    margin-top:6px;
+    color:#777;
+    font-size:10px;
+    text-transform:uppercase;
+}
+
+.product-price{
+    margin-top:13px;
+    font-size:13px;
+    font-weight:900;
+}
+
+.preview-price{
+    color:#666;
+    font-size:9px;
+    margin-top:4px;
+}
+
+/* =========================
+   EVENTS
+========================= */
+
+.events-section{
+    background:#050505;
+}
+
+.events-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+    margin-top:50px;
+}
+
+.event{
+    border:1px solid #222;
+    padding:30px;
+    background:#0b0b0b;
+}
+
+.event-date{
+    font-size:12px;
+    color:#888;
+    font-weight:800;
+    letter-spacing:2px;
+}
+
+.event h3{
+    margin-top:16px;
+    font-size:27px;
+}
+
+.event p{
+    margin-top:12px;
+    color:#888;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.event button{
+    margin-top:25px;
+    background:#fff;
+    color:#000;
+    border:0;
+    padding:12px 18px;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+/* =========================
    ABOUT
-========================================================= */
+========================= */
 
-.about{
-    background:#0c0c0c;
+.about-section{
+    background:#0a0a0a;
 }
 
-.about-content{
-    max-width:800px;
-
-    margin:auto;
-
-    text-align:center;
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    margin-top:45px;
 }
 
-.about-content p{
+.about-text{
     color:#aaa;
-
-    font-size:15px;
-
+    font-size:14px;
     line-height:1.9;
 }
 
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact{
-    background:#080808;
+.about-big{
+    font-size:clamp(30px,4vw,55px);
+    line-height:1;
+    font-weight:1000;
 }
 
-.contact-content{
-    max-width:650px;
-
-    margin:auto;
-
-    text-align:center;
-}
-
-.contact-content p{
-    color:#999;
-
-    line-height:1.7;
-
-    margin-bottom:25px;
-}
-
-.social{
-    display:flex;
-
-    justify-content:center;
-
-    gap:15px;
-}
-
-.social a{
-    color:#fff;
-
-    text-decoration:none;
-
-    border:1px solid #333;
-
-    padding:12px 20px;
-
-    font-size:11px;
-
-    font-weight:700;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer{
-    padding:35px 5%;
-
-    background:#050505;
-
-    border-top:1px solid #161616;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-}
-
-footer p{
-    color:#666;
-
-    font-size:10px;
-
-    letter-spacing:1px;
-}
-
-
-/* =========================================================
-   MODAL
-========================================================= */
-
-.modal{
-    position:fixed;
-
-    inset:0;
-
-    background:rgba(0,0,0,.82);
-
-    z-index:100;
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-    padding:20px;
-}
-
-.modal.active{
-    display:flex;
-}
-
-.modal-box{
-    position:relative;
-
-    width:min(500px,100%);
-
-    max-height:90vh;
-
-    overflow:auto;
-
-    background:#111;
-
-    border:1px solid #333;
-
-    padding:30px;
-}
-
-.close{
-    position:absolute;
-
-    top:15px;
-    right:18px;
-
-    background:none;
-
-    border:0;
-
-    color:#fff;
-
-    font-size:25px;
-}
-
-.modal-image{
-    width:100%;
-
-    height:400px;
-
-    object-fit:cover;
-
-    margin-bottom:20px;
-}
-
-.modal-box h2{
-    margin-bottom:10px;
-}
-
-.modal-price{
-    color:#999;
-
-    margin-bottom:20px;
-}
-
-.size-title{
-    margin-bottom:10px;
-
-    font-size:11px;
-
-    font-weight:700;
-
-    letter-spacing:1px;
-}
-
-.sizes{
-    display:flex;
-
-    gap:8px;
-
-    margin-bottom:20px;
-}
-
-.size{
-    width:48px;
-    height:40px;
-
-    background:#181818;
-
-    color:#fff;
-
-    border:1px solid #333;
-}
-
-.size.active{
-    background:#fff;
-
-    color:#000;
-}
-
-.primary-btn{
-    width:100%;
-
-    background:#fff;
-
-    color:#000;
-
-    border:0;
-
-    padding:15px;
-
-    font-size:11px;
-
-    font-weight:900;
-
-    letter-spacing:1px;
-}
-
-
-/* =========================================================
-   WARENKORB
-========================================================= */
-
-.cart-panel{
-    position:fixed;
-
-    top:0;
-
-    right:-430px;
-
-    width:min(430px,100%);
-
-    height:100vh;
-
-    z-index:110;
-
-    background:#0e0e0e;
-
-    border-left:1px solid #333;
-
-    padding:30px;
-
-    overflow:auto;
-
-    transition:.3s;
-}
-
-.cart-panel.active{
-    right:0;
-}
-
-.cart-head{
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:30px;
-}
-
-.cart-head h2{
-    font-size:20px;
-}
-
-.cart-item{
-    display:flex;
-
-    gap:14px;
-
-    padding:15px 0;
-
-    border-bottom:1px solid #222;
-}
-
-.cart-item img{
-    width:70px;
-
-    height:80px;
-
-    object-fit:cover;
-}
-
-.cart-item-info{
-    flex:1;
-}
-
-.cart-item-info h4{
-    font-size:12px;
-
-    margin-bottom:7px;
-}
-
-.cart-item-info p{
-    color:#888;
-
-    font-size:11px;
-}
-
-.remove-item{
-    background:none;
-
-    border:0;
-
-    color:#888;
-
-    font-size:11px;
-}
-
-.cart-total{
-    display:flex;
-
-    justify-content:space-between;
-
-    margin-top:25px;
-
-    font-size:15px;
-
-    font-weight:800;
-}
-
-.preview-note{
-    margin-top:18px;
-
-    padding:15px;
-
-    border:1px solid #333;
-
-    color:#888;
-
-    font-size:11px;
-
-    line-height:1.5;
-}
-
-
-/* =========================================================
+/* =========================
    ACCOUNT
-========================================================= */
+========================= */
 
-.account-tabs{
-    display:flex;
+.account-section{
+    background:#050505;
+}
 
+.account-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-top:50px;
+}
+
+.account-box{
+    background:#0c0c0c;
+    border:1px solid #222;
+    padding:30px;
+}
+
+.account-box h3{
+    font-size:22px;
     margin-bottom:25px;
-}
-
-.account-tab{
-    flex:1;
-
-    background:#181818;
-
-    color:#888;
-
-    border:1px solid #292929;
-
-    padding:12px;
-
-    font-size:11px;
-
-    font-weight:700;
-}
-
-.account-tab.active{
-    background:#fff;
-
-    color:#000;
-}
-
-.form{
-    display:none;
-}
-
-.form.active{
-    display:block;
 }
 
 .form-group{
@@ -1081,2225 +589,1604 @@ footer p{
 
 .form-group label{
     display:block;
-
-    color:#888;
-
-    font-size:10px;
-
+    font-size:9px;
+    font-weight:900;
+    color:#777;
+    letter-spacing:1px;
     margin-bottom:6px;
 }
 
 .form-group input{
     width:100%;
-
-    background:#181818;
-
+    background:#111;
+    border:1px solid #292929;
     color:#fff;
-
-    border:1px solid #333;
-
-    padding:12px;
-
+    padding:13px;
     outline:none;
 }
 
-.form-grid{
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:10px;
+.form-group input:focus{
+    border-color:#777;
 }
 
+.form-button{
+    width:100%;
+    margin-top:10px;
+    padding:14px;
+    background:#fff;
+    border:0;
+    color:#000;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:1px;
+}
 
-/* =========================================================
-   TABLET
-========================================================= */
+.account-note{
+    color:#666;
+    font-size:10px;
+    line-height:1.6;
+    margin-top:14px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section{
+    background:#0a0a0a;
+}
+
+.contact-box{
+    margin-top:40px;
+    border:1px solid #222;
+    padding:35px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+}
+
+.contact-box h3{
+    font-size:25px;
+}
+
+.contact-box p{
+    color:#777;
+    font-size:12px;
+    margin-top:9px;
+}
+
+.contact-link{
+    color:#fff;
+    text-decoration:none;
+    border:1px solid #444;
+    padding:14px 22px;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    border-top:1px solid #202020;
+    padding:35px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    background:#050505;
+}
+
+.footer-logo{
+    font-size:18px;
+    font-weight:1000;
+    letter-spacing:2px;
+}
+
+footer p{
+    color:#555;
+    font-size:10px;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.82);
+    z-index:200;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:min(900px,100%);
+    max-height:90vh;
+    overflow:auto;
+    background:#101010;
+    border:1px solid #333;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+.modal-image{
+    min-height:500px;
+    background:#151515;
+}
+
+.modal-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+.modal-content{
+    padding:35px;
+    position:relative;
+}
+
+.modal-close{
+    position:absolute;
+    top:15px;
+    right:18px;
+    background:none;
+    border:0;
+    color:#fff;
+    font-size:24px;
+}
+
+.modal-content h2{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.modal-price{
+    color:#aaa;
+    margin-bottom:25px;
+}
+
+.size-title{
+    color:#777;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:1px;
+    margin-bottom:10px;
+}
+
+.sizes{
+    display:flex;
+    gap:8px;
+    margin-bottom:25px;
+}
+
+.size{
+    width:45px;
+    height:42px;
+    background:#111;
+    color:#fff;
+    border:1px solid #333;
+}
+
+.size.active{
+    background:#fff;
+    color:#000;
+    border-color:#fff;
+}
+
+.add-cart{
+    width:100%;
+    background:#fff;
+    color:#000;
+    border:0;
+    padding:16px;
+    font-size:10px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+/* =========================
+   CART
+========================= */
+
+.cart-panel{
+    position:fixed;
+    right:-430px;
+    top:0;
+    width:min(430px,100%);
+    height:100vh;
+    background:#0d0d0d;
+    border-left:1px solid #333;
+    z-index:300;
+    transition:.35s;
+    padding:30px;
+    overflow:auto;
+}
+
+.cart-panel.open{
+    right:0;
+}
+
+.cart-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-bottom:25px;
+    border-bottom:1px solid #252525;
+}
+
+.cart-head h2{
+    font-size:22px;
+}
+
+.cart-close{
+    background:none;
+    color:#fff;
+    border:0;
+    font-size:25px;
+}
+
+.cart-item{
+    display:grid;
+    grid-template-columns:75px 1fr auto;
+    gap:13px;
+    padding:18px 0;
+    border-bottom:1px solid #202020;
+}
+
+.cart-item img{
+    width:75px;
+    height:75px;
+    object-fit:cover;
+}
+
+.cart-item-name{
+    font-size:11px;
+    font-weight:900;
+}
+
+.cart-item-size{
+    color:#666;
+    font-size:10px;
+    margin-top:5px;
+}
+
+.cart-item-price{
+    font-size:11px;
+    margin-top:9px;
+}
+
+.remove-item{
+    border:0;
+    background:none;
+    color:#666;
+    font-size:10px;
+}
+
+.cart-empty{
+    color:#666;
+    font-size:12px;
+    padding:30px 0;
+}
+
+.cart-footer{
+    border-top:1px solid #252525;
+    margin-top:20px;
+    padding-top:20px;
+}
+
+.cart-total{
+    display:flex;
+    justify-content:space-between;
+    font-size:14px;
+    font-weight:900;
+}
+
+.checkout-button{
+    width:100%;
+    margin-top:18px;
+    padding:15px;
+    border:1px solid #333;
+    background:#222;
+    color:#666;
+    font-size:10px;
+    font-weight:900;
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:900px){
 
-    .nav-links{
-        gap:14px;
-    }
-
-    .nav-links a{
-        display:none;
-    }
-
-    .products{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .product-image{
-        height:300px;
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media(max-width:600px){
-
-    .top-info{
-        padding:8px 10px;
-
-        font-size:8px;
-
-        line-height:1.4;
-    }
-
     nav{
-        top:30px;
+        top:35px;
+        padding:16px 4%;
+    }
 
-        padding:18px 20px;
+    .nav-links{
+        display:none;
     }
 
     .logo-main{
         font-size:20px;
     }
 
-    .logo-est{
-        font-size:7px;
-
-        letter-spacing:3px;
-    }
-
-    .nav-button{
-        font-size:10px;
-    }
-
     .hero{
-        height:760px;
-
-        min-height:760px;
-    }
-
-    .hero-car-background{
-        background-position:center center;
-
-        background-size:cover;
-
-        filter:brightness(.48);
+        min-height:90vh;
     }
 
     .hero-content{
-        min-height:760px;
-
-        padding:120px 20px 50px;
+        padding-top:70px;
     }
 
     .hero-logo{
-        font-size:17vw;
-
-        letter-spacing:1px;
-
-        white-space:nowrap;
+        font-size:18vw;
     }
 
     .hero-est{
         margin-top:24px;
-
-        font-size:9px;
-
+        font-size:12px;
         letter-spacing:6px;
     }
 
-    .hero-slogan{
-        margin-top:105px;
-
-        max-width:350px;
-    }
-
-    .hero-slogan-main{
-        font-size:26px;
-
-        line-height:1.08;
-    }
-
-    .hero-slogan-small{
-        margin-top:23px;
-
-        font-size:9px;
-
-        letter-spacing:4px;
-    }
-
     .hero-description{
-        max-width:340px;
+        margin-top:55px;
+        font-size:13px;
+        line-height:1.7;
+    }
 
-        margin-top:22px;
-
-        font-size:11px;
-
-        line-height:1.6;
+    .hero-slogan{
+        margin-top:65px;
+        font-size:14px;
+        letter-spacing:2px;
     }
 
     section{
-        padding:70px 18px;
+        padding:75px 4%;
     }
 
-
-    /* FRAUEN / MÄNNER */
-
-    .gender-categories{
-        gap:8px;
-    }
-
-    .gender-btn{
-        min-width:0;
-
-        flex:1;
-
-        padding:14px 10px;
-
-        font-size:10px;
-
-        letter-spacing:1.5px;
-    }
-
-
-    /* KATEGORIEN */
-
-    .categories{
-        gap:7px;
-    }
-
-    .category-btn{
-        padding:10px 14px;
-
-        font-size:10px;
-    }
-
-
-    /* PRODUKTE */
-
-    .products{
-        grid-template-columns:1fr 1fr;
-
-        gap:10px;
-    }
-
-    .product-image{
-        height:235px;
-    }
-
-    .product-info{
-        padding:13px;
-    }
-
-    .product-info h3{
-        font-size:11px;
-    }
-
-    .product-price{
-        font-size:11px;
-    }
-
-
-    /* EVENTS */
-
-    .events-grid{
+    .cars-grid{
         grid-template-columns:1fr;
-    }
-
-
-    /* CARS */
-
-    .cars{
-        grid-template-columns:1fr;
-
-        gap:14px;
     }
 
     .car-image{
         height:205px;
     }
 
-
-    /* CAR 6 */
-
-    .car-six .car-image{
-        height:205px;
-    }
-
+    /* CAR 6 MOBILE */
     .car-six .car-image img{
-        width:100%;
-
-        height:205px;
-
-        object-fit:cover;
-
-        object-position:center center;
-
-        transform:none;
+        object-position:center bottom !important;
+        transform:scale(1.38) !important;
+        transform-origin:center bottom !important;
     }
 
-    .car-six:hover .car-image img{
-        transform:scale(1.025);
+    .products-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
     }
 
-
-    /* MODAL */
-
-    .modal-box{
-        padding:22px;
+    .product-image{
+        height:240px;
     }
 
-    .modal-image{
-        height:300px;
+    .shop-header{
+        flex-direction:column;
+        align-items:flex-start;
     }
 
-    .form-grid{
+    .events-grid,
+    .account-grid,
+    .about-grid{
         grid-template-columns:1fr;
     }
 
+    .contact-box{
+        flex-direction:column;
+        align-items:flex-start;
+    }
 
-    /* FOOTER */
+    .modal-box{
+        grid-template-columns:1fr;
+        max-height:94vh;
+    }
+
+    .modal-image{
+        min-height:300px;
+        height:300px;
+    }
+
+    .modal-content{
+        padding:25px;
+    }
 
     footer{
         flex-direction:column;
-
-        gap:12px;
-
-        text-align:center;
+        align-items:flex-start;
     }
-
 }
 
+@media(max-width:500px){
+
+    .notice{
+        font-size:8px;
+        line-height:1.4;
+    }
+
+    nav{
+        top:38px;
+    }
+
+    .hero{
+        min-height:88vh;
+    }
+
+    .hero-logo{
+        font-size:19vw;
+        letter-spacing:1px;
+    }
+
+    .hero-est{
+        font-size:9px;
+        letter-spacing:4px;
+    }
+
+    .hero-description{
+        margin-top:45px;
+        font-size:12px;
+    }
+
+    .hero-slogan{
+        margin-top:55px;
+        font-size:12px;
+    }
+
+    .products-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .product-image{
+        height:210px;
+    }
+
+    .product-info{
+        padding:12px;
+    }
+
+    .product-name{
+        font-size:10px;
+    }
+
+    .product-price{
+        font-size:11px;
+    }
+
+    .gender-tabs{
+        width:100%;
+    }
+
+    .gender-tabs button{
+        flex:1;
+    }
+
+    .category-tabs button{
+        padding:9px 11px;
+        font-size:9px;
+    }
+}
 </style>
 </head>
 
-
 <body>
 
+<!-- =========================
+     INFO BAR
+========================= -->
 
-<!-- =========================================================
-     INFO
-========================================================= -->
-
-<div class="top-info">
-
-SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BESTELLUNGEN DERZEIT MÖGLICH!
-
+<div class="notice">
+    SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BESTELLUNGEN DERZEIT MÖGLICH!
 </div>
 
-
-<!-- =========================================================
-     NAVIGATION
-========================================================= -->
+<!-- =========================
+     NAV
+========================= -->
 
 <nav>
 
-<a href="#home" class="logo">
+    <a href="#home" class="logo">
+        <span class="logo-main">ГОНЩИКИ</span>
+        <span class="logo-est">EST. 2025</span>
+    </a>
 
-<span class="logo-main">
-ГОНЩИКИ
-</span>
+    <div class="nav-links">
+        <a href="#cars">CARS</a>
+        <a href="#shop">SHOP</a>
+        <a href="#events">EVENTS</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">KONTAKT</a>
+        <a href="#account">ANMELDEN</a>
+    </div>
 
-<span class="logo-est">
-EST. 2025
-</span>
+    <div class="nav-right">
 
-</a>
+        <div class="lang">
+            <button class="active">DE</button>
+            <button>EN</button>
+            <button>RU</button>
+        </div>
 
+        <button class="cart-button" onclick="openCart()">
+            🛒
+            <span class="cart-count" id="cartCount">0</span>
+        </button>
 
-<div class="nav-links">
-
-<a href="#shop">
-SHOP
-</a>
-
-<a href="#events">
-EVENTS
-</a>
-
-<a href="#cars">
-CARS
-</a>
-
-<a href="#about">
-ABOUT
-</a>
-
-<a href="#contact">
-KONTAKT
-</a>
-
-
-<button
-class="nav-button"
-onclick="openAccount()">
-
-ANMELDEN
-
-</button>
-
-
-<button
-class="nav-button cart-button"
-onclick="openCart()">
-
-WARENKORB
-
-<span
-class="cart-count"
-id="cartCount">
-
-0
-
-</span>
-
-</button>
-
-
-<div class="language">
-
-<select
-id="languageSelect"
-onchange="changeLanguage(this.value)">
-
-<option value="de">
-DE
-</option>
-
-<option value="en">
-EN
-</option>
-
-<option value="ru">
-RU
-</option>
-
-</select>
-
-</div>
-
-</div>
+    </div>
 
 </nav>
 
-
-<!-- =========================================================
+<!-- =========================
      HERO
-========================================================= -->
+========================= -->
 
-<section
-class="hero"
-id="home">
+<section class="hero" id="home">
 
+    <div class="hero-car-background"></div>
+    <div class="hero-overlay"></div>
 
-<div class="hero-car-background">
-</div>
+    <div class="hero-content">
 
+        <div class="hero-logo">
+            ГОНЩИКИ
+        </div>
 
-<div class="hero-overlay">
-</div>
+        <div class="hero-est">
+            EST. 2025
+        </div>
 
+        <div class="hero-description">
+            Gonschiki steht für Autos, Nächte, Geschwindigkeit und den eigenen Style.
+            Streetwear für alle, die ihre eigene Spur fahren.
+        </div>
 
-<div class="hero-content">
+        <div class="hero-slogan">
+            <span>GEMACHT FÜR DIE NACHT. GEMACHT FÜR DEN TAG.</span>
+            <span>KEINE REGEL. NUR STYLE.</span>
+        </div>
 
+        <a href="#shop" class="hero-button">
+            SHOP ANSEHEN
+        </a>
 
-<div class="hero-logo">
-ГОНЩИКИ
-</div>
-
-
-<div class="hero-est">
-EST. 2025
-</div>
-
-
-<div class="hero-slogan">
-
-
-<div class="hero-slogan-main">
-
-<span>
-GEMACHT FÜR DIE NACHT.
-</span>
-
-<span>
-GEMACHT FÜR DEN TAG.
-</span>
-
-</div>
-
-
-<div class="hero-slogan-small">
-KEINE REGEL. NUR STYLE.
-</div>
-
-
-<p class="hero-description">
-
-Gonschiki steht für Autos, Nächte,
-Geschwindigkeit und den eigenen Style.
-Streetwear für alle, die ihre eigene Spur fahren.
-
-</p>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
-
-<!-- =========================================================
-     SHOP
-========================================================= -->
-
-<section
-class="shop"
-id="shop">
-
-
-<div class="section-title">
-
-<h2>
-SHOP
-</h2>
-
-<p>
-Gonschiki Streetwear
-</p>
-
-</div>
-
-
-<!-- MÄNNER / FRAUEN -->
-
-<div class="gender-categories">
-
-
-<button
-class="gender-btn active"
-onclick="selectGender('men',this)">
-
-MÄNNER
-
-</button>
-
-
-<button
-class="gender-btn"
-onclick="selectGender('women',this)">
-
-FRAUEN
-
-</button>
-
-
-</div>
-
-
-<!-- KATEGORIEN -->
-
-<div
-class="categories"
-id="productCategories">
-
-
-<button
-class="category-btn active"
-onclick="filterProducts('Alle',this)">
-
-ALLE
-
-</button>
-
-
-<button
-class="category-btn"
-onclick="filterProducts('Shirts',this)">
-
-SHIRTS
-
-</button>
-
-
-<button
-class="category-btn"
-onclick="filterProducts('Hoodies',this)">
-
-HOODIES
-
-</button>
-
-
-<button
-class="category-btn"
-onclick="filterProducts('Zipper',this)">
-
-ZIPPER
-
-</button>
-
-
-<button
-class="category-btn"
-onclick="filterProducts('Hosen',this)">
-
-HOSEN
-
-</button>
-
-</div>
-
-
-<!-- PRODUKTE -->
-
-<div
-class="products"
-id="products">
-
-</div>
-
-</section>
-
-
-<!-- =========================================================
-     EVENTS
-========================================================= -->
-
-<section
-class="events"
-id="events">
-
-
-<div class="section-title">
-
-<h2>
-EVENTS
-</h2>
-
-<p>
-Cars. People. Nights.
-</p>
-
-</div>
-
-
-<div class="events-grid">
-
-
-<div class="event">
-
-<div class="event-date">
-2026
-</div>
-
-<h3>
-GONSCHIKI NIGHT
-</h3>
-
-<div class="event-location">
-STUTTGART
-</div>
-
-<p>
-Eine Nacht für Autos,
-Musik und die Gonschiki Crew.
-</p>
-
-<button onclick="previewMessage()">
-TICKETS – DEMNÄCHST
-</button>
-
-</div>
-
-
-<div class="event">
-
-<div class="event-date">
-2026
-</div>
-
-<h3>
-CREW MEET
-</h3>
-
-<div class="event-location">
-BADEN-WÜRTTEMBERG
-</div>
-
-<p>
-Gemeinsam unterwegs.
-Autos, Freunde und der eigene Style.
-</p>
-
-<button onclick="previewMessage()">
-INFOS – DEMNÄCHST
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================================================
+<!-- =========================
      CARS
-========================================================= -->
-
-<section
-class="cars-section"
-id="cars">
-
-
-<div class="section-title">
-
-<h2>
-CARS
-</h2>
-
-<p>
-Die Autos hinter Gonschiki
-</p>
-
-</div>
-
-
-<div class="cars">
-
-
-<!-- CAR 1 -->
-
-<div class="car">
-
-<div class="car-image">
-
-<img
-src="assets/Car-1.JPG"
-alt="Gonschiki Car 1">
-
-</div>
-
-<div class="car-info">
-
-<h3>
-GONSCHIKI #01
-</h3>
-
-</div>
-
-</div>
-
-
-<!-- CAR 2 -->
-
-<div class="car">
-
-<div class="car-image">
-
-<img
-src="assets/Car-2.JPG"
-alt="Gonschiki Car 2">
-
-</div>
-
-<div class="car-info">
-
-<h3>
-GONSCHIKI #02
-</h3>
-
-</div>
-
-</div>
-
-
-<!-- CAR 3 -->
-
-<div class="car">
-
-<div class="car-image">
-
-<img
-src="assets/Car-3.jpg"
-alt="Gonschiki Car 3">
-
-</div>
-
-<div class="car-info">
-
-<h3>
-GONSCHIKI #03
-</h3>
-
-</div>
-
-</div>
-
-
-<!-- CAR 4 -->
-
-<div class="car">
-
-<div class="car-image">
-
-<img
-src="assets/Car-4.jpg"
-alt="Gonschiki Car 4">
-
-</div>
-
-<div class="car-info">
-
-<h3>
-GONSCHIKI #04
-</h3>
-
-</div>
-
-</div>
-
-
-<!-- CAR 5 -->
-
-<div class="car">
-
-<div class="car-image">
-
-<img
-src="assets/Car-5.jpg"
-alt="Gonschiki Car 5">
-
-</div>
-
-<div class="car-info">
-
-<h3>
-GONSCHIKI #05
-</h3>
-
-</div>
-
-</div>
-
-
-<!-- CAR 6 -->
-
-<div class="car car-six">
-
-<div class="car-image">
-
-<img
-src="assets/Car-6.jpg"
-alt="Gonschiki Car 6">
-
-</div>
-
-<div class="car-info">
-
-<h3>
-GONSCHIKI #06
-</h3>
-
-</div>
-
-</div>
-
-
-</div>
+========================= -->
+
+<section class="cars-section" id="cars">
+
+    <h2 class="section-title">CARS</h2>
+
+    <p class="section-subtitle">
+        Autos sind ein Teil unserer Identität. Unterschiedliche Builds,
+        unterschiedliche Styles – aber dieselbe Leidenschaft.
+    </p>
+
+    <div class="cars-grid">
+
+        <div class="car">
+            <div class="car-image">
+                <img src="assets/Car-1.JPG" alt="Gonschiki Car 1">
+            </div>
+            <div class="car-info">
+                <h3>GONSCHIKI #01</h3>
+            </div>
+        </div>
+
+        <div class="car">
+            <div class="car-image">
+                <img src="assets/Car-2.JPG" alt="Gonschiki Car 2">
+            </div>
+            <div class="car-info">
+                <h3>GONSCHIKI #02</h3>
+            </div>
+        </div>
+
+        <div class="car">
+            <div class="car-image">
+                <img src="assets/Car-3.jpg" alt="Gonschiki Car 3">
+            </div>
+            <div class="car-info">
+                <h3>GONSCHIKI #03</h3>
+            </div>
+        </div>
+
+        <div class="car">
+            <div class="car-image">
+                <img src="assets/Car-4.jpg" alt="Gonschiki Car 4">
+            </div>
+            <div class="car-info">
+                <h3>GONSCHIKI #04</h3>
+            </div>
+        </div>
+
+        <div class="car">
+            <div class="car-image">
+                <img src="assets/Car-5.jpg" alt="Gonschiki Car 5">
+            </div>
+            <div class="car-info">
+                <h3>GONSCHIKI #05</h3>
+            </div>
+        </div>
+
+        <!-- CAR 6 -->
+        <div class="car car-six">
+
+            <div class="car-image">
+                <img src="assets/Car-6.jpg" alt="Gonschiki Car 6">
+            </div>
+
+            <div class="car-info">
+                <h3>GONSCHIKI #06</h3>
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
+<!-- =========================
+     SHOP
+========================= -->
 
-<!-- =========================================================
+<section class="shop-section" id="shop">
+
+    <div class="shop-header">
+
+        <div>
+            <h2 class="section-title">SHOP</h2>
+
+            <p class="section-subtitle">
+                Gonschiki Streetwear – aktuell als Shop-Vorschau.
+                Preise, Größen und Versand werden noch final bestätigt.
+            </p>
+        </div>
+
+        <div class="gender-tabs">
+
+            <button class="active" data-gender="men">
+                MÄNNER
+            </button>
+
+            <button data-gender="women">
+                FRAUEN
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="category-tabs">
+
+        <button class="active" data-category="all">
+            ALLE
+        </button>
+
+        <button data-category="Shirts">
+            SHIRTS
+        </button>
+
+        <button data-category="Hoodies">
+            HOODIES
+        </button>
+
+        <button data-category="Zipper">
+            ZIPPER
+        </button>
+
+        <button data-category="Hosen">
+            HOSEN
+        </button>
+
+    </div>
+
+    <div class="products-grid" id="productsGrid"></div>
+
+</section>
+
+<!-- =========================
+     EVENTS
+========================= -->
+
+<section class="events-section" id="events">
+
+    <h2 class="section-title">EVENTS</h2>
+
+    <p class="section-subtitle">
+        Treffen, Autos, Musik und Menschen mit derselben Leidenschaft.
+    </p>
+
+    <div class="events-grid">
+
+        <div class="event">
+
+            <div class="event-date">
+                25.10.2025 · STUTTGART
+            </div>
+
+            <h3>GONSCHIKI NIGHT</h3>
+
+            <p>
+                Cars, Crew und Night Vibes.
+                Ein Abend für alle, die Benzin im Blut haben.
+            </p>
+
+            <button onclick="eventInfo()">
+                INFOS
+            </button>
+
+        </div>
+
+        <div class="event">
+
+            <div class="event-date">
+                15.11.2025 · REGION STUTTGART
+            </div>
+
+            <h3>GONSCHIKI MEET</h3>
+
+            <p>
+                Gemeinsam treffen, Autos anschauen und
+                neue Leute aus der Szene kennenlernen.
+            </p>
+
+            <button onclick="eventInfo()">
+                INFOS
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
      ABOUT
-========================================================= -->
+========================= -->
 
-<section
-class="about"
-id="about">
+<section class="about-section" id="about">
 
+    <h2 class="section-title">ABOUT</h2>
 
-<div class="section-title">
+    <div class="about-grid">
 
-<h2>
-ABOUT
-</h2>
+        <div class="about-big">
+            OWN<br>
+            YOUR<br>
+            LANE.
+        </div>
 
-</div>
+        <div class="about-text">
 
+            <p>
+                Gonschiki Crew entstand aus der Leidenschaft für Autos,
+                Streetwear und die Nächte, in denen die Stadt anders wirkt.
+            </p>
 
-<div class="about-content">
+            <br>
 
-<p>
+            <p>
+                Unser Style ist schlicht, direkt und von der
+                Automotive-Szene inspiriert.
+            </p>
 
-Gonschiki ist mehr als nur Streetwear.
-Es geht um Autos, Geschwindigkeit,
-Nächte, Freunde und den eigenen Style.
-Eine Crew für alle, die ihre eigene Spur fahren.
+            <br>
 
-</p>
+            <p>
+                Schwarz, Weiß, Grau und starke Details.
+                Keine unnötigen Regeln – einfach der eigene Style.
+            </p>
 
-</div>
+        </div>
 
-</section>
-
-
-<!-- =========================================================
-     KONTAKT
-========================================================= -->
-
-<section
-class="contact"
-id="contact">
-
-
-<div class="section-title">
-
-<h2>
-KONTAKT
-</h2>
-
-</div>
-
-
-<div class="contact-content">
-
-<p>
-Fragen, Kooperationen oder Interesse an Gonschiki?
-</p>
-
-
-<div class="social">
-
-<a
-href="https://instagram.com/gonschikicrew"
-target="_blank">
-
-INSTAGRAM
-
-</a>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
+<!-- =========================
+     ACCOUNT
+========================= -->
 
-<!-- =========================================================
+<section class="account-section" id="account">
+
+    <h2 class="section-title">ACCOUNT</h2>
+
+    <p class="section-subtitle">
+        Melde dich an oder erstelle einen Account.
+    </p>
+
+    <div class="account-grid">
+
+        <!-- LOGIN -->
+
+        <div class="account-box">
+
+            <h3>ANMELDEN</h3>
+
+            <form onsubmit="login(event)">
+
+                <div class="form-group">
+                    <label>E-MAIL</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+
+                <div class="form-group">
+                    <label>PASSWORT</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+
+                <button class="form-button">
+                    ANMELDEN
+                </button>
+
+            </form>
+
+        </div>
+
+        <!-- REGISTRIERUNG -->
+
+        <div class="account-box">
+
+            <h3>REGISTRIEREN</h3>
+
+            <form onsubmit="register(event)">
+
+                <div class="form-group">
+                    <label>VORNAME</label>
+                    <input type="text" id="firstName" required>
+                </div>
+
+                <div class="form-group">
+                    <label>NACHNAME</label>
+                    <input type="text" id="lastName" required>
+                </div>
+
+                <div class="form-group">
+                    <label>E-MAIL</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+
+                <div class="form-group">
+                    <label>STRASSE + HAUSNUMMER</label>
+                    <input type="text" id="street" required>
+                </div>
+
+                <div class="form-group">
+                    <label>PLZ</label>
+                    <input type="text" id="zip" required>
+                </div>
+
+                <div class="form-group">
+                    <label>ORT</label>
+                    <input type="text" id="city" required>
+                </div>
+
+                <div class="form-group">
+                    <label>PASSWORT</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+
+                <div class="form-group">
+                    <label>PASSWORT WIEDERHOLEN</label>
+                    <input type="password" id="registerPassword2" required>
+                </div>
+
+                <button class="form-button">
+                    ACCOUNT ERSTELLEN
+                </button>
+
+            </form>
+
+            <p class="account-note">
+                Demo-Funktion für die Website-Vorschau.
+                Für einen echten Shop werden später sichere
+                Server-/Datenbankfunktionen benötigt.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact-section" id="contact">
+
+    <h2 class="section-title">KONTAKT</h2>
+
+    <div class="contact-box">
+
+        <div>
+            <h3>GONSCHIKI CREW</h3>
+
+            <p>
+                Fragen, Kooperationen oder Interesse an der Crew?
+            </p>
+        </div>
+
+        <a
+            class="contact-link"
+            href="mailto:info@gonschiki-crew.de"
+        >
+            E-MAIL
+        </a>
+
+    </div>
+
+</section>
+
+<!-- =========================
      FOOTER
-========================================================= -->
+========================= -->
 
 <footer>
 
-<p>
-© 2025 GONSCHIKI CREW
-</p>
+    <div class="footer-logo">
+        ГОНЩИКИ
+    </div>
 
-<p>
-ГОНЩИКИ
-</p>
+    <p>
+        © 2025 Gonschiki Crew
+    </p>
 
 </footer>
 
+<!-- =========================
+     PRODUCT MODAL
+========================= -->
 
-<!-- =========================================================
-     PRODUKT MODAL
-========================================================= -->
+<div class="modal" id="productModal">
 
-<div
-class="modal"
-id="productModal">
+    <div class="modal-box">
 
+        <div class="modal-image">
+            <img id="modalImage" src="" alt="">
+        </div>
 
-<div class="modal-box">
+        <div class="modal-content">
 
+            <button class="modal-close" onclick="closeModal()">
+                ×
+            </button>
 
-<button
-class="close"
-onclick="closeModal('productModal')">
+            <h2 id="modalName"></h2>
 
-×
+            <div class="modal-price">
+                Preis folgt
+            </div>
 
-</button>
+            <div class="size-title">
+                GRÖSSE
+            </div>
 
+            <div class="sizes">
 
-<img
-id="modalProductImage"
-class="modal-image"
-src=""
-alt="">
+                <button class="size" onclick="selectSize(this)">
+                    S
+                </button>
 
+                <button class="size" onclick="selectSize(this)">
+                    M
+                </button>
 
-<h2
-id="modalProductName">
-</h2>
+                <button class="size" onclick="selectSize(this)">
+                    L
+                </button>
 
+                <button class="size" onclick="selectSize(this)">
+                    XL
+                </button>
 
-<div
-class="modal-price"
-id="modalProductPrice">
-</div>
+            </div>
 
+            <button class="add-cart" onclick="addToCart()">
+                IN DEN WARENKORB
+            </button>
 
-<div class="size-title">
-GRÖSSE
-</div>
+        </div>
 
-
-<div class="sizes">
-
-
-<button
-class="size"
-onclick="selectSize(this)">
-S
-</button>
-
-
-<button
-class="size"
-onclick="selectSize(this)">
-M
-</button>
-
-
-<button
-class="size"
-onclick="selectSize(this)">
-L
-</button>
-
-
-<button
-class="size"
-onclick="selectSize(this)">
-XL
-</button>
-
+    </div>
 
 </div>
 
+<!-- =========================
+     CART
+========================= -->
 
-<button
-class="primary-btn"
-onclick="addCurrentProduct()">
+<div class="cart-panel" id="cartPanel">
 
-IN DEN WARENKORB
+    <div class="cart-head">
 
-</button>
+        <h2>WARENKORB</h2>
 
+        <button class="cart-close" onclick="closeCart()">
+            ×
+        </button>
 
-</div>
+    </div>
 
-</div>
+    <div id="cartItems"></div>
 
+    <div class="cart-footer">
 
-<!-- =========================================================
-     WARENKORB
-========================================================= -->
+        <div class="cart-total">
+            <span>GESAMT</span>
+            <span>PREIS FOLGT</span>
+        </div>
 
-<div
-class="cart-panel"
-id="cartPanel">
+        <button
+            class="checkout-button"
+            onclick="checkoutDisabled()"
+        >
+            CHECKOUT DERZEIT NICHT MÖGLICH
+        </button>
 
-
-<div class="cart-head">
-
-<h2>
-WARENKORB
-</h2>
-
-
-<button
-class="close"
-onclick="closeCart()">
-
-×
-
-</button>
+    </div>
 
 </div>
-
-
-<div
-id="cartItems">
-</div>
-
-
-<div class="cart-total">
-
-<span>
-GESAMT
-</span>
-
-<span
-id="cartTotal">
-0 €
-</span>
-
-</div>
-
-
-<div class="preview-note">
-
-SHOP-VORSCHAU:
-Bestellungen und Bezahlung sind derzeit
-noch nicht möglich.
-
-</div>
-
-</div>
-
-
-<!-- =========================================================
-     ACCOUNT
-========================================================= -->
-
-<div
-class="modal"
-id="accountModal">
-
-
-<div class="modal-box">
-
-
-<button
-class="close"
-onclick="closeModal('accountModal')">
-
-×
-
-</button>
-
-
-<div class="account-tabs">
-
-
-<button
-class="account-tab active"
-onclick="showAccountForm('login',this)">
-
-ANMELDEN
-
-</button>
-
-
-<button
-class="account-tab"
-onclick="showAccountForm('register',this)">
-
-REGISTRIEREN
-
-</button>
-
-
-</div>
-
-
-<form
-class="form active"
-id="loginForm"
-onsubmit="login(event)">
-
-
-<div class="form-group">
-
-<label>
-E-MAIL
-</label>
-
-<input
-type="email"
-id="loginEmail"
-required>
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-PASSWORT
-</label>
-
-<input
-type="password"
-id="loginPassword"
-required>
-
-</div>
-
-
-<button
-class="primary-btn">
-
-ANMELDEN
-
-</button>
-
-</form>
-
-
-<form
-class="form"
-id="registerForm"
-onsubmit="register(event)">
-
-
-<div class="form-grid">
-
-
-<div class="form-group">
-
-<label>
-VORNAME
-</label>
-
-<input
-type="text"
-id="firstName"
-required>
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-NACHNAME
-</label>
-
-<input
-type="text"
-id="lastName"
-required>
-
-</div>
-
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-E-MAIL
-</label>
-
-<input
-type="email"
-id="registerEmail"
-required>
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-STRASSE &amp; HAUSNUMMER
-</label>
-
-<input
-type="text"
-id="street"
-required>
-
-</div>
-
-
-<div class="form-grid">
-
-
-<div class="form-group">
-
-<label>
-PLZ
-</label>
-
-<input
-type="text"
-id="postalCode"
-required>
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-ORT
-</label>
-
-<input
-type="text"
-id="city"
-required>
-
-</div>
-
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-PASSWORT
-</label>
-
-<input
-type="password"
-id="registerPassword"
-required>
-
-</div>
-
-
-<div class="form-group">
-
-<label>
-PASSWORT WIEDERHOLEN
-</label>
-
-<input
-type="password"
-id="registerPassword2"
-required>
-
-</div>
-
-
-<button
-class="primary-btn">
-
-KONTO ERSTELLEN
-
-</button>
-
-
-</form>
-
-
-</div>
-
-</div>
-
 
 <script>
 
-/* =========================================================
-   PRODUKTE
-========================================================= */
-
-/*
-   Die Produkte sind bewusst "both".
-   Dadurch erscheinen dieselben Klamotten
-   bei MÄNNER und FRAUEN.
-*/
+/* =========================
+   PRODUCTS
+========================= */
 
 const products = [
 
-{
-    name:"GONSCHIKI RUSSIA SHIRT",
-    category:"Shirts",
-    price:39,
-    gender:"both",
-    image:"assets/Shirt-black-Russia.jpg"
-},
+    {
+        id:1,
+        name:"Gonschiki Russia Shirt",
+        category:"Shirts",
+        image:"assets/Shirt-black-Russia.jpg"
+    },
 
-{
-    name:"GONSCHIKI CROSS ZIPPER",
-    category:"Zipper",
-    price:69,
-    gender:"both",
-    image:"assets/Zipper-black-Kreuz.jpg"
-},
+    {
+        id:2,
+        name:"Gonschiki Kreuz Zipper",
+        category:"Zipper",
+        image:"assets/Zipper-black-Kreuz.jpg"
+    },
 
-{
-    name:"GONSCHIKI E36 HOODIE",
-    category:"Hoodies",
-    price:79,
-    gender:"both",
-    image:"assets/Hoodie-black-e36.jpg"
-},
+    {
+        id:3,
+        name:"Gonschiki E36 Hoodie",
+        category:"Hoodies",
+        image:"assets/Hoodie-black-e36.jpg"
+    },
 
-{
-    name:"GONSCHIKI E34 HOODIE",
-    category:"Hoodies",
-    price:79,
-    gender:"both",
-    image:"assets/Hoodie-black-e34.jpg"
-},
+    {
+        id:4,
+        name:"Gonschiki E34 Hoodie",
+        category:"Hoodies",
+        image:"assets/Hoodie-black-e34.jpg"
+    },
 
-{
-    name:"GONSCHIKI CROSS HOODIE",
-    category:"Hoodies",
-    price:79,
-    gender:"both",
-    image:"assets/Hoodie-black-Kreuz.jpg"
-},
+    {
+        id:5,
+        name:"Gonschiki Kreuz Hoodie",
+        category:"Hoodies",
+        image:"assets/Hoodie-black-Kreuz.jpg"
+    },
 
-{
-    name:"GONSCHIKI E36 SHIRT",
-    category:"Shirts",
-    price:39,
-    gender:"both",
-    image:"assets/Shirt-black-e36.jpg"
-},
+    {
+        id:6,
+        name:"Gonschiki E36 Shirt",
+        category:"Shirts",
+        image:"assets/Shirt-black-e36.jpg"
+    },
 
-{
-    name:"GONSCHIKI RUSSIA HOODIE",
-    category:"Hoodies",
-    price:79,
-    gender:"both",
-    image:"assets/Hoodie-black-Russia.jpg"
-},
+    {
+        id:7,
+        name:"Gonschiki Russia Hoodie",
+        category:"Hoodies",
+        image:"assets/Hoodie-black-Russia.jpg"
+    },
 
-{
-    name:"GONSCHIKI E34 SHIRT",
-    category:"Shirts",
-    price:39,
-    gender:"both",
-    image:"assets/Shirt-black-e34.jpg"
-},
+    {
+        id:8,
+        name:"Gonschiki E34 Shirt",
+        category:"Shirts",
+        image:"assets/Shirt-black-e34.jpg"
+    },
 
-{
-    name:"GONSCHIKI E36 BEIGE HOODIE",
-    category:"Hoodies",
-    price:79,
-    gender:"both",
-    image:"assets/Hoodie-beige-e36.jpg"
-},
+    {
+        id:9,
+        name:"Gonschiki E36 Beige Hoodie",
+        category:"Hoodies",
+        image:"assets/Hoodie-beige-e36.jpg"
+    },
 
-{
-    name:"GONSCHIKI PANTS",
-    category:"Hosen",
-    price:69,
-    gender:"both",
-    image:"assets/Pants-black-gonschiki.jpg"
-}
+    {
+        id:10,
+        name:"Gonschiki Pants",
+        category:"Hosen",
+        image:"assets/Pants-black-gonschiki.jpg"
+    }
 
 ];
 
+/* =========================
+   STATE
+========================= */
 
-/* =========================================================
-   SHOP STATUS
-========================================================= */
-
-let currentGender = "men";
-
-let currentCategory = "Alle";
-
-let currentProduct = null;
-
+let selectedGender = "men";
+let selectedCategory = "all";
+let selectedProduct = null;
 let selectedSize = null;
-
-
-/* =========================================================
-   WARENKORB LADEN
-========================================================= */
 
 let cart = JSON.parse(
     localStorage.getItem("gonschikiCart") || "[]"
 );
 
-
-/* =========================================================
-   MÄNNER / FRAUEN
-========================================================= */
-
-function selectGender(gender,button){
-
-    currentGender = gender;
-
-    currentCategory = "Alle";
-
-
-    document
-    .querySelectorAll(".gender-btn")
-    .forEach(function(btn){
-
-        btn.classList.remove("active");
-
-    });
-
-
-    button.classList.add("active");
-
-
-    document
-    .querySelectorAll(".category-btn")
-    .forEach(function(btn){
-
-        btn.classList.remove("active");
-
-    });
-
-
-    document
-    .querySelector(".category-btn")
-    .classList.add("active");
-
-
-    renderProducts();
-
-}
-
-
-/* =========================================================
-   KATEGORIE FILTERN
-========================================================= */
-
-function filterProducts(category,button){
-
-    currentCategory = category;
-
-
-    document
-    .querySelectorAll(".category-btn")
-    .forEach(function(btn){
-
-        btn.classList.remove("active");
-
-    });
-
-
-    button.classList.add("active");
-
-
-    renderProducts();
-
-}
-
-
-/* =========================================================
-   PRODUKTE FILTERN
-========================================================= */
-
-function getFilteredProducts(){
-
-    let filtered = products.filter(function(product){
-
-        return product.gender === "both";
-
-    });
-
-
-    if(currentCategory !== "Alle"){
-
-        filtered = filtered.filter(function(product){
-
-            return product.category === currentCategory;
-
-        });
-
-    }
-
-
-    return filtered;
-
-}
-
-
-/* =========================================================
-   PRODUKTE RENDERN
-========================================================= */
+/* =========================
+   PRODUCTS RENDER
+========================= */
 
 function renderProducts(){
 
-    const container =
-        document.getElementById("products");
+    const grid = document.getElementById("productsGrid");
 
+    const filtered = products.filter(product => {
 
-    container.innerHTML = "";
+        const categoryMatch =
+            selectedCategory === "all" ||
+            product.category === selectedCategory;
 
+        return categoryMatch;
 
-    const list =
-        getFilteredProducts();
+    });
 
+    grid.innerHTML = filtered.map(product => `
 
-    list.forEach(function(product){
-
-        const index =
-            products.indexOf(product);
-
-
-        const item =
-            document.createElement("div");
-
-
-        item.className = "product";
-
-
-        item.onclick = function(){
-
-            openProduct(index);
-
-        };
-
-
-        item.innerHTML = `
+        <div
+            class="product-card"
+            onclick="openProduct(${product.id})"
+        >
 
             <div class="product-image">
 
                 <img
                     src="${product.image}"
                     alt="${product.name}"
-                    loading="lazy">
+                >
 
             </div>
 
-
             <div class="product-info">
 
-                <h3>
+                <div class="product-name">
                     ${product.name}
-                </h3>
+                </div>
 
-
-                <p>
+                <div class="product-category">
                     ${product.category}
-                </p>
-
+                </div>
 
                 <div class="product-price">
-                    ${product.price} €
+                    PREIS FOLGT
+                </div>
+
+                <div class="preview-price">
+                    SHOP-VORSCHAU
                 </div>
 
             </div>
 
-        `;
+        </div>
 
-
-        container.appendChild(item);
-
-    });
+    `).join("");
 
 }
 
+/* =========================
+   CATEGORY TABS
+========================= */
 
-/* =========================================================
-   PRODUKT ÖFFNEN
-========================================================= */
+document.querySelectorAll(".category-tabs button")
+.forEach(button => {
 
-function openProduct(index){
+    button.addEventListener("click", () => {
 
-    currentProduct = products[index];
+        document
+            .querySelectorAll(".category-tabs button")
+            .forEach(btn => btn.classList.remove("active"));
 
+        button.classList.add("active");
+
+        selectedCategory =
+            button.dataset.category;
+
+        renderProducts();
+
+    });
+
+});
+
+/* =========================
+   GENDER
+========================= */
+
+document.querySelectorAll(".gender-tabs button")
+.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        document
+            .querySelectorAll(".gender-tabs button")
+            .forEach(btn => btn.classList.remove("active"));
+
+        button.classList.add("active");
+
+        selectedGender =
+            button.dataset.gender;
+
+        renderProducts();
+
+    });
+
+});
+
+/* =========================
+   PRODUCT MODAL
+========================= */
+
+function openProduct(id){
+
+    const product =
+        products.find(p => p.id === id);
+
+    if(!product) return;
+
+    selectedProduct = product;
     selectedSize = null;
 
+    document.getElementById("modalName").textContent =
+        product.name;
+
+    document.getElementById("modalImage").src =
+        product.image;
 
     document
-    .querySelectorAll(".size")
-    .forEach(function(btn){
-
-        btn.classList.remove("active");
-
-    });
-
+        .querySelectorAll(".size")
+        .forEach(button =>
+            button.classList.remove("active")
+        );
 
     document
-    .getElementById("modalProductImage")
-    .src =
-        currentProduct.image;
-
-
-    document
-    .getElementById("modalProductName")
-    .textContent =
-        currentProduct.name;
-
-
-    document
-    .getElementById("modalProductPrice")
-    .textContent =
-        currentProduct.price + " €";
-
-
-    document
-    .getElementById("productModal")
-    .classList.add("active");
+        .getElementById("productModal")
+        .classList.add("show");
 
 }
 
+function closeModal(){
 
-/* =========================================================
-   GRÖSSE
-========================================================= */
+    document
+        .getElementById("productModal")
+        .classList.remove("show");
+
+}
 
 function selectSize(button){
 
     document
-    .querySelectorAll(".size")
-    .forEach(function(btn){
-
-        btn.classList.remove("active");
-
-    });
-
+        .querySelectorAll(".size")
+        .forEach(btn =>
+            btn.classList.remove("active")
+        );
 
     button.classList.add("active");
 
-
     selectedSize =
-        button.textContent;
+        button.textContent.trim();
 
 }
 
+/* =========================
+   ADD CART
+========================= */
 
-/* =========================================================
-   IN WARENKORB
-========================================================= */
+function addToCart(){
 
-function addCurrentProduct(){
-
-    if(!currentProduct){
-
+    if(!selectedProduct){
         return;
-
     }
-
 
     if(!selectedSize){
 
-        alert(
-            "Bitte zuerst eine Größe auswählen."
-        );
+        alert("Bitte zuerst eine Größe auswählen.");
 
         return;
-
     }
-
 
     cart.push({
 
-        name:currentProduct.name,
+        id:Date.now(),
 
-        price:currentProduct.price,
+        productId:selectedProduct.id,
 
-        image:currentProduct.image,
+        name:selectedProduct.name,
 
-        size:selectedSize,
+        image:selectedProduct.image,
 
-        gender:currentGender
+        size:selectedSize
 
     });
-
-
-    saveCart();
-
-    updateCart();
-
-    closeModal("productModal");
-
-
-    alert(
-        "Produkt wurde dem Warenkorb hinzugefügt."
-    );
-
-}
-
-
-/* =========================================================
-   WARENKORB SPEICHERN
-========================================================= */
-
-function saveCart(){
 
     localStorage.setItem(
         "gonschikiCart",
         JSON.stringify(cart)
     );
 
+    updateCartCount();
+
+    closeModal();
+
+    alert("Artikel wurde zum Warenkorb hinzugefügt.");
+
 }
 
+/* =========================
+   CART
+========================= */
 
-/* =========================================================
-   WARENKORB AKTUALISIEREN
-========================================================= */
+function updateCartCount(){
 
-function updateCart(){
-
-    const count =
-        document.getElementById("cartCount");
-
-
-    const items =
-        document.getElementById("cartItems");
-
-
-    const total =
-        document.getElementById("cartTotal");
-
-
-    count.textContent =
+    document.getElementById("cartCount").textContent =
         cart.length;
 
-
-    items.innerHTML = "";
-
-
-    let sum = 0;
-
-
-    cart.forEach(function(item,index){
-
-        sum += Number(item.price);
-
-
-        const div =
-            document.createElement("div");
-
-
-        div.className =
-            "cart-item";
-
-
-        div.innerHTML = `
-
-            <img
-                src="${item.image}"
-                alt="${item.name}">
-
-
-            <div class="cart-item-info">
-
-                <h4>
-                    ${item.name}
-                </h4>
-
-
-                <p>
-                    ${item.gender === "women" ? "Frauen" : "Männer"}
-                </p>
-
-
-                <p>
-                    Größe: ${item.size}
-                </p>
-
-
-                <p>
-                    ${item.price} €
-                </p>
-
-            </div>
-
-
-            <button
-                class="remove-item"
-                onclick="removeCartItem(${index})">
-
-                ENTFERNEN
-
-            </button>
-
-        `;
-
-
-        items.appendChild(div);
-
-    });
-
-
-    total.textContent =
-        sum.toFixed(2) + " €";
-
 }
-
-
-/* =========================================================
-   WARENKORB ARTIKEL ENTFERNEN
-========================================================= */
-
-function removeCartItem(index){
-
-    cart.splice(index,1);
-
-    saveCart();
-
-    updateCart();
-
-}
-
-
-/* =========================================================
-   WARENKORB ÖFFNEN
-========================================================= */
 
 function openCart(){
 
-    updateCart();
-
+    renderCart();
 
     document
-    .getElementById("cartPanel")
-    .classList.add("active");
+        .getElementById("cartPanel")
+        .classList.add("open");
 
 }
-
-
-/* =========================================================
-   WARENKORB SCHLIESSEN
-========================================================= */
 
 function closeCart(){
 
     document
-    .getElementById("cartPanel")
-    .classList.remove("active");
+        .getElementById("cartPanel")
+        .classList.remove("open");
 
 }
 
+function renderCart(){
 
-/* =========================================================
-   ACCOUNT ÖFFNEN
-========================================================= */
+    const container =
+        document.getElementById("cartItems");
 
-function openAccount(){
+    if(cart.length === 0){
 
-    document
-    .getElementById("accountModal")
-    .classList.add("active");
+        container.innerHTML = `
+            <div class="cart-empty">
+                Dein Warenkorb ist leer.
+            </div>
+        `;
 
-}
-
-
-/* =========================================================
-   ACCOUNT TABS
-========================================================= */
-
-function showAccountForm(type,button){
-
-    document
-    .querySelectorAll(".account-tab")
-    .forEach(function(btn){
-
-        btn.classList.remove("active");
-
-    });
-
-
-    button.classList.add("active");
-
-
-    document
-    .getElementById("loginForm")
-    .classList.remove("active");
-
-
-    document
-    .getElementById("registerForm")
-    .classList.remove("active");
-
-
-    if(type === "login"){
-
-        document
-        .getElementById("loginForm")
-        .classList.add("active");
-
+        return;
     }
 
-    else{
+    container.innerHTML = cart.map(item => `
 
-        document
-        .getElementById("registerForm")
-        .classList.add("active");
+        <div class="cart-item">
 
-    }
+            <img
+                src="${item.image}"
+                alt="${item.name}"
+            >
+
+            <div>
+
+                <div class="cart-item-name">
+                    ${item.name}
+                </div>
+
+                <div class="cart-item-size">
+                    Größe ${item.size}
+                </div>
+
+                <div class="cart-item-price">
+                    PREIS FOLGT
+                </div>
+
+            </div>
+
+            <button
+                class="remove-item"
+                onclick="removeFromCart(${item.id})"
+            >
+                ENTFERNEN
+            </button>
+
+        </div>
+
+    `).join("");
 
 }
 
+function removeFromCart(id){
 
-/* =========================================================
-   REGISTRIEREN
-========================================================= */
+    cart =
+        cart.filter(item => item.id !== id);
+
+    localStorage.setItem(
+        "gonschikiCart",
+        JSON.stringify(cart)
+    );
+
+    updateCartCount();
+
+    renderCart();
+
+}
+
+function checkoutDisabled(){
+
+    alert(
+        "Der Shop befindet sich derzeit noch in der Vorschau. Bestellungen sind noch nicht möglich."
+    );
+
+}
+
+/* =========================
+   ACCOUNT
+========================= */
 
 function register(event){
 
     event.preventDefault();
 
-
     const password =
-        document
-        .getElementById("registerPassword")
-        .value;
-
+        document.getElementById("registerPassword").value;
 
     const password2 =
-        document
-        .getElementById("registerPassword2")
-        .value;
-
+        document.getElementById("registerPassword2").value;
 
     if(password !== password2){
 
-        alert(
-            "Die Passwörter stimmen nicht überein."
-        );
+        alert("Die Passwörter stimmen nicht überein.");
 
         return;
 
     }
 
-
-    const account = {
+    const user = {
 
         firstName:
-            document
-            .getElementById("firstName")
-            .value,
+            document.getElementById("firstName").value,
 
         lastName:
-            document
-            .getElementById("lastName")
-            .value,
+            document.getElementById("lastName").value,
 
         email:
-            document
-            .getElementById("registerEmail")
-            .value,
+            document.getElementById("registerEmail").value,
 
         street:
-            document
-            .getElementById("street")
-            .value,
+            document.getElementById("street").value,
 
-        postalCode:
-            document
-            .getElementById("postalCode")
-            .value,
+        zip:
+            document.getElementById("zip").value,
 
         city:
-            document
-            .getElementById("city")
-            .value
+            document.getElementById("city").value
 
     };
 
-
     localStorage.setItem(
-        "gonschikiAccount",
-        JSON.stringify(account)
+        "gonschikiDemoUser",
+        JSON.stringify(user)
     );
-
 
     alert(
-        "Konto wurde für diese Website-Vorschau gespeichert."
+        "Demo-Account wurde gespeichert."
     );
 
-
-    document
-    .getElementById("registerForm")
-    .reset();
-
 }
-
-
-/* =========================================================
-   LOGIN
-========================================================= */
 
 function login(event){
 
     event.preventDefault();
 
-
     const email =
-        document
-        .getElementById("loginEmail")
-        .value;
+        document.getElementById("loginEmail").value;
 
-
-    const account =
+    const user =
         JSON.parse(
-            localStorage.getItem(
-                "gonschikiAccount"
-            ) || "null"
+            localStorage.getItem("gonschikiDemoUser") || "null"
         );
 
-
-    if(account && account.email === email){
+    if(user && user.email === email){
 
         alert(
-            "Anmeldung für diese Website-Vorschau erfolgreich."
+            "Demo-Anmeldung erfolgreich."
         );
 
-    }
-
-    else{
+    }else{
 
         alert(
-            "Kein gespeichertes Demo-Konto mit dieser E-Mail gefunden."
+            "Kein passender Demo-Account gefunden."
         );
 
     }
 
 }
 
+/* =========================
+   EVENTS
+========================= */
 
-/* =========================================================
-   MODAL SCHLIESSEN
-========================================================= */
+function eventInfo(){
 
-function closeModal(id){
-
-    document
-    .getElementById(id)
-    .classList.remove("active");
-
-}
-
-
-/* =========================================================
-   MODAL AUßEN KLICK
-========================================================= */
-
-document
-.querySelectorAll(".modal")
-.forEach(function(modal){
-
-    modal.addEventListener(
-        "click",
-        function(event){
-
-            if(event.target === modal){
-
-                modal.classList.remove("active");
-
-            }
-
-        }
+    alert(
+        "Weitere Informationen werden noch veröffentlicht."
     );
+
+}
+
+/* =========================
+   LANGUAGE
+========================= */
+
+document.querySelectorAll(".lang button")
+.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        document
+            .querySelectorAll(".lang button")
+            .forEach(btn =>
+                btn.classList.remove("active")
+            );
+
+        button.classList.add("active");
+
+        localStorage.setItem(
+            "gonschikiLanguage",
+            button.textContent
+        );
+
+    });
 
 });
 
-
-/* =========================================================
-   EVENTS
-========================================================= */
-
-function previewMessage(){
-
-    alert(
-        "EVENTS und Tickets sind aktuell noch nicht verfügbar."
-    );
-
-}
-
-
-/* =========================================================
-   SPRACHEN
-========================================================= */
-
-const translations = {
-
-    de:{
-        shop:"SHOP",
-        events:"EVENTS",
-        cars:"CARS",
-        about:"ABOUT",
-        contact:"KONTAKT"
-    },
-
-    en:{
-        shop:"SHOP",
-        events:"EVENTS",
-        cars:"CARS",
-        about:"ABOUT",
-        contact:"CONTACT"
-    },
-
-    ru:{
-        shop:"МАГАЗИН",
-        events:"СОБЫТИЯ",
-        cars:"МАШИНЫ",
-        about:"О НАС",
-        contact:"КОНТАКТ"
-    }
-
-};
-
-
-/* =========================================================
-   SPRACHE ÄNDERN
-========================================================= */
-
-function changeLanguage(language){
-
-    localStorage.setItem(
-        "gonschikiLanguage",
-        language
-    );
-
-
-    const t =
-        translations[language];
-
-
-    const links =
-        document.querySelectorAll(
-            ".nav-links a"
-        );
-
-
-    if(links.length >= 5){
-
-        links[0].textContent =
-            t.shop;
-
-        links[1].textContent =
-            t.events;
-
-        links[2].textContent =
-            t.cars;
-
-        links[3].textContent =
-            t.about;
-
-        links[4].textContent =
-            t.contact;
-
-    }
-
-}
-
-
-/* =========================================================
-   SPRACHE LADEN
-========================================================= */
-
-function loadLanguage(){
-
-    const language =
-        localStorage.getItem(
-            "gonschikiLanguage"
-        ) || "de";
-
-
-    document
-    .getElementById("languageSelect")
-    .value =
-        language;
-
-
-    changeLanguage(language);
-
-}
-
-
-/* =========================================================
-   START
-========================================================= */
+/* =========================
+   INIT
+========================= */
 
 renderProducts();
 
-updateCart();
-
-loadLanguage();
+updateCartCount();
 
 </script>
 
