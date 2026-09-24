@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>ГОНЩИКИ — Gonchikicrew</title>
 
-<meta name="description" content="ГОНЩИКИ est. 2025 — Streetwear × Car Culture">
+<meta
+name="description"
+content="ГОНЩИКИ est. 2025 — Streetwear × Car Culture"
+>
+
+
+<!-- =====================================================
+     FELGEN-ICON / FAVICON
+===================================================== -->
+
+<link
+rel="icon"
+type="image/svg+xml"
+href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23080808' stroke='%23ffffff' stroke-width='5'/%3E%3Ccircle cx='50' cy='50' r='14' fill='%23080808' stroke='%23ffffff' stroke-width='4'/%3E%3Cg stroke='%23ffffff' stroke-width='5' stroke-linecap='round'%3E%3Cpath d='M50 36V8'/%3E%3Cpath d='M50 64v28'/%3E%3Cpath d='M36 50H8'/%3E%3Cpath d='M64 50h28'/%3E%3Cpath d='M40 40 20 20'/%3E%3Cpath d='m60 60 20 20'/%3E%3Cpath d='m60 40 20-20'/%3E%3Cpath d='m40 60-20 20'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='6' fill='%23ffffff'/%3E%3C/svg%3E"
+>
+
 
 <style>
 
-/* =========================================================
-   BASIC
-========================================================= */
+/* =====================================================
+   GRUNDSTIL
+===================================================== */
 
 *{
   box-sizing:border-box;
@@ -25,10 +44,30 @@ html{
 }
 
 body{
+
   background:#080808;
+
   color:#fff;
-  font-family:Arial,Helvetica,sans-serif;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
   overflow-x:hidden;
+
+}
+
+button,
+input,
+select,
+textarea{
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
 }
 
 a{
@@ -36,21 +75,53 @@ a{
   text-decoration:none;
 }
 
-button{
-  font-family:inherit;
+
+/* =====================================================
+   SHOP VORSCHAU
+===================================================== */
+
+.preview-bar{
+
+  width:100%;
+
+  background:#050505;
+
+  color:#888;
+
+  border-bottom:1px solid #202020;
+
+  padding:7px 15px;
+
+  text-align:center;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size:12px;
+
+  letter-spacing:.7px;
+
+  line-height:1.3;
+
 }
 
 
-/* =========================================================
+/* =====================================================
    NAVIGATION
-========================================================= */
+===================================================== */
 
 nav{
+
   position:sticky;
+
   top:0;
+
   z-index:1000;
 
-  background:rgba(8,8,8,.96);
+  background:rgba(8,8,8,.97);
+
   backdrop-filter:blur(12px);
 
   border-bottom:1px solid #292929;
@@ -58,40 +129,63 @@ nav{
   padding:18px 5vw;
 
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
+
 }
 
 .logo{
+
   font-size:24px;
+
   font-weight:900;
+
   letter-spacing:2px;
+
 }
 
 .nav-right{
+
   display:flex;
+
   align-items:center;
+
   gap:22px;
+
 }
 
 .nav-item{
+
   position:relative;
+
 }
 
 .nav-button{
+
   background:none;
+
   border:0;
+
   color:#fff;
+
   font-size:15px;
+
   cursor:pointer;
+
   padding:10px 0;
+
 }
 
 .dropdown{
+
   display:none;
 
   position:absolute;
+
   right:0;
+
   top:45px;
 
   min-width:190px;
@@ -99,36 +193,49 @@ nav{
   background:#111;
 
   border:1px solid #333;
+
   border-radius:10px;
 
   overflow:hidden;
 
-  box-shadow:0 15px 40px rgba(0,0,0,.5);
+  box-shadow:
+    0 15px 40px rgba(0,0,0,.5);
+
 }
 
 .nav-item:hover .dropdown{
+
   display:block;
+
 }
 
 .dropdown a{
+
   display:block;
+
   padding:14px 18px;
+
   border-bottom:1px solid #222;
+
 }
 
 .dropdown a:hover{
+
   background:#1d1d1d;
+
 }
 
 
-/* =========================================================
-   CART BUTTON
-========================================================= */
+/* =====================================================
+   WARENKORB BUTTON
+===================================================== */
 
 .cart-button{
+
   position:relative;
 
   background:#fff;
+
   color:#000;
 
   border:0;
@@ -142,41 +249,52 @@ nav{
   cursor:pointer;
 
   transition:.2s;
+
 }
 
 .cart-button:hover{
+
   transform:scale(1.04);
+
 }
 
 .cart-count{
+
   position:absolute;
 
   right:-7px;
+
   top:-7px;
 
   width:21px;
+
   height:21px;
 
   border-radius:50%;
 
   background:#e00000;
+
   color:#fff;
 
   font-size:11px;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   font-weight:800;
+
 }
 
 
-/* =========================================================
+/* =====================================================
    HERO
-========================================================= */
+===================================================== */
 
 .hero{
+
   position:relative;
 
   min-height:100svh;
@@ -184,28 +302,35 @@ nav{
   overflow:hidden;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   text-align:center;
 
   padding:80px 20px;
+
 }
 
 .hero-car{
+
   position:absolute;
 
   inset:0;
 
   width:100%;
+
   height:100%;
 
   object-fit:cover;
 
   z-index:0;
+
 }
 
 .hero::after{
+
   content:"";
 
   position:absolute;
@@ -215,22 +340,27 @@ nav{
   background:
     linear-gradient(
       rgba(0,0,0,.25),
-      rgba(0,0,0,.55)
+      rgba(0,0,0,.60)
     );
 
   z-index:1;
+
 }
 
 .hero-content{
+
   position:relative;
 
   z-index:2;
 
   width:100%;
+
 }
 
 .hero h1{
-  font-size:clamp(55px,12vw,150px);
+
+  font-size:
+    clamp(55px,12vw,150px);
 
   font-weight:900;
 
@@ -238,9 +368,11 @@ nav{
 
   text-shadow:
     0 10px 40px rgba(0,0,0,.7);
+
 }
 
 .hero p{
+
   margin-top:20px;
 
   color:#aaa;
@@ -248,9 +380,11 @@ nav{
   font-size:18px;
 
   letter-spacing:3px;
+
 }
 
 .hero-button{
+
   display:inline-block;
 
   margin-top:35px;
@@ -262,27 +396,36 @@ nav{
   border-radius:30px;
 
   transition:.2s;
+
 }
 
 .hero-button:hover{
+
   background:#fff;
+
   color:#000;
+
 }
 
 
-/* =========================================================
+/* =====================================================
    SECTIONS
-========================================================= */
+===================================================== */
 
 section{
+
   padding:90px 6vw;
+
 }
 
 .section-title{
+
   margin-bottom:45px;
+
 }
 
 .kicker{
+
   color:#999;
 
   letter-spacing:4px;
@@ -292,27 +435,34 @@ section{
   text-transform:uppercase;
 
   margin-bottom:10px;
+
 }
 
 h2{
-  font-size:clamp(35px,6vw,70px);
+
+  font-size:
+    clamp(35px,6vw,70px);
+
 }
 
 
-/* =========================================================
+/* =====================================================
    PRODUCTS
-========================================================= */
+===================================================== */
 
 .products{
+
   display:grid;
 
   grid-template-columns:
     repeat(4,minmax(0,1fr));
 
   gap:20px;
+
 }
 
 .product{
+
   background:#111;
 
   border:1px solid #292929;
@@ -328,26 +478,32 @@ h2{
     border-color .25s ease;
 
   user-select:none;
+
 }
 
 .product:hover{
+
   transform:translateY(-6px);
 
   border-color:#666;
+
 }
 
 .product-image{
+
   position:relative;
 
   overflow:hidden;
 
   background:#0c0c0c;
+
 }
 
 .product img{
+
   width:100%;
 
-  aspect-ratio:1 / 1;
+  aspect-ratio:1/1;
 
   object-fit:cover;
 
@@ -355,42 +511,54 @@ h2{
 
   transition:
     transform .6s ease;
+
 }
 
 .product:hover img{
+
   transform:scale(1.05);
+
 }
 
 .product-info{
+
   padding:18px;
+
 }
 
 .product-info h3{
+
   font-size:18px;
+
 }
 
 .product-info p{
+
   color:#888;
 
   margin-top:7px;
 
   font-size:14px;
+
 }
 
 .product-price{
+
   margin-top:12px;
 
   font-size:16px;
 
   font-weight:800;
+
 }
 
 
-/* =========================================================
-   PRODUCT MODAL
-========================================================= */
+/* =====================================================
+   PRODUKT MODAL
+===================================================== */
 
 .product-modal{
+
   display:none;
 
   position:fixed;
@@ -404,16 +572,21 @@ h2{
   padding:20px;
 
   overflow-y:auto;
+
 }
 
 .product-modal.active{
+
   display:flex;
 
   align-items:center;
+
   justify-content:center;
+
 }
 
 .modal-box{
+
   position:relative;
 
   width:min(1050px,100%);
@@ -428,12 +601,15 @@ h2{
 
   box-shadow:
     0 25px 100px rgba(0,0,0,.8);
+
 }
 
 .close-modal{
+
   position:absolute;
 
   right:18px;
+
   top:10px;
 
   z-index:20;
@@ -447,9 +623,11 @@ h2{
   font-size:32px;
 
   cursor:pointer;
+
 }
 
 .modal-content{
+
   display:grid;
 
   grid-template-columns:
@@ -459,14 +637,16 @@ h2{
   gap:35px;
 
   align-items:center;
+
 }
 
 
-/* =========================================================
-   3D PRODUCT VIEWER
-========================================================= */
+/* =====================================================
+   PRODUKT VIEWER
+===================================================== */
 
 .product-viewer{
+
   position:relative;
 
   background:
@@ -495,18 +675,23 @@ h2{
   align-items:center;
 
   justify-content:center;
+
 }
 
 .product-viewer:active{
+
   cursor:grabbing;
+
 }
 
 .product-viewer::after{
+
   content:"";
 
   position:absolute;
 
   left:50%;
+
   bottom:25px;
 
   width:55%;
@@ -522,9 +707,11 @@ h2{
   border-radius:50%;
 
   pointer-events:none;
+
 }
 
 .product-3d{
+
   width:90%;
 
   height:auto;
@@ -552,9 +739,11 @@ h2{
     drop-shadow(
       0 25px 25px rgba(0,0,0,.65)
     );
+
 }
 
 .viewer-hint{
+
   position:absolute;
 
   bottom:12px;
@@ -574,31 +763,37 @@ h2{
   text-align:center;
 
   width:100%;
+
 }
 
 
-/* =========================================================
-   MODAL INFORMATION
-========================================================= */
+/* =====================================================
+   MODAL INFO
+===================================================== */
 
 .modal-info h2{
+
   font-size:
     clamp(30px,5vw,55px);
 
   line-height:1;
 
   margin-bottom:10px;
+
 }
 
 .modal-price{
+
   font-size:22px;
 
   font-weight:800;
 
   margin:18px 0 28px;
+
 }
 
 .size-title{
+
   color:#999;
 
   font-size:13px;
@@ -606,9 +801,11 @@ h2{
   letter-spacing:2px;
 
   text-transform:uppercase;
+
 }
 
 .sizes{
+
   display:flex;
 
   flex-wrap:wrap;
@@ -616,9 +813,11 @@ h2{
   gap:8px;
 
   margin-top:12px;
+
 }
 
 .size{
+
   background:#181818;
 
   border:1px solid #444;
@@ -632,20 +831,29 @@ h2{
   cursor:pointer;
 
   transition:.2s;
+
 }
 
 .size:hover{
+
   background:#fff;
+
   color:#000;
+
 }
 
 .size.active{
+
   background:#fff;
+
   color:#000;
+
   border-color:#fff;
+
 }
 
 .add-cart{
+
   width:100%;
 
   margin-top:25px;
@@ -667,24 +875,24 @@ h2{
   cursor:pointer;
 
   transition:.2s;
+
 }
 
 .add-cart:hover{
+
   background:#ddd;
 
   transform:translateY(-2px);
-}
 
-.add-cart:active{
-  transform:scale(.98);
 }
 
 
-/* =========================================================
-   CART
-========================================================= */
+/* =====================================================
+   WARENKORB
+===================================================== */
 
 .cart-panel{
+
   position:fixed;
 
   right:-450px;
@@ -708,13 +916,17 @@ h2{
   display:flex;
 
   flex-direction:column;
+
 }
 
 .cart-panel.active{
+
   right:0;
+
 }
 
 .cart-header{
+
   display:flex;
 
   justify-content:space-between;
@@ -724,13 +936,17 @@ h2{
   padding-bottom:20px;
 
   border-bottom:1px solid #292929;
+
 }
 
 .cart-header h2{
+
   font-size:28px;
+
 }
 
 .close-cart{
+
   background:none;
 
   border:0;
@@ -740,60 +956,74 @@ h2{
   font-size:28px;
 
   cursor:pointer;
+
 }
 
 .cart-items{
+
   flex:1;
 
   overflow-y:auto;
 
   padding:15px 0;
+
 }
 
 .cart-empty{
+
   color:#777;
 
   text-align:center;
 
   padding:50px 10px;
+
 }
 
 .cart-item{
+
   display:grid;
 
   grid-template-columns:
-    75px
-    1fr;
+    75px 1fr;
 
   gap:12px;
 
   padding:15px 0;
 
   border-bottom:1px solid #222;
+
 }
 
 .cart-item img{
+
   width:75px;
+
   height:75px;
 
   object-fit:cover;
 
   border-radius:8px;
+
 }
 
 .cart-item h4{
+
   font-size:14px;
+
 }
 
 .cart-item p{
+
   color:#888;
 
   font-size:12px;
 
   margin-top:5px;
+
 }
 
 .cart-controls{
+
   display:flex;
 
   align-items:center;
@@ -801,10 +1031,13 @@ h2{
   gap:7px;
 
   margin-top:8px;
+
 }
 
 .qty-button{
+
   width:27px;
+
   height:27px;
 
   border:1px solid #444;
@@ -816,9 +1049,11 @@ h2{
   border-radius:5px;
 
   cursor:pointer;
+
 }
 
 .remove-item{
+
   background:none;
 
   border:0;
@@ -830,15 +1065,19 @@ h2{
   cursor:pointer;
 
   margin-top:6px;
+
 }
 
 .cart-footer{
+
   border-top:1px solid #292929;
 
   padding-top:20px;
+
 }
 
 .cart-total{
+
   display:flex;
 
   justify-content:space-between;
@@ -846,9 +1085,11 @@ h2{
   font-size:20px;
 
   font-weight:800;
+
 }
 
 .checkout{
+
   width:100%;
 
   margin-top:18px;
@@ -866,14 +1107,16 @@ h2{
   font-weight:900;
 
   cursor:pointer;
+
 }
 
 
-/* =========================================================
+/* =====================================================
    CART OVERLAY
-========================================================= */
+===================================================== */
 
 .cart-overlay{
+
   display:none;
 
   position:fixed;
@@ -883,27 +1126,33 @@ h2{
   z-index:3500;
 
   background:rgba(0,0,0,.65);
+
 }
 
 .cart-overlay.active{
+
   display:block;
+
 }
 
 
-/* =========================================================
+/* =====================================================
    CARS
-========================================================= */
+===================================================== */
 
 .cars{
+
   display:grid;
 
   grid-template-columns:
     2fr 1fr;
 
   gap:20px;
+
 }
 
 .car{
+
   background:#111;
 
   border:1px solid #292929;
@@ -911,9 +1160,11 @@ h2{
   border-radius:12px;
 
   overflow:hidden;
+
 }
 
 .car img{
+
   width:100%;
 
   height:100%;
@@ -921,14 +1172,16 @@ h2{
   min-height:300px;
 
   object-fit:cover;
+
 }
 
 
-/* =========================================================
+/* =====================================================
    ABOUT
-========================================================= */
+===================================================== */
 
 .about{
+
   border-top:1px solid #292929;
 
   border-bottom:1px solid #292929;
@@ -939,22 +1192,26 @@ h2{
     1fr 1fr;
 
   gap:60px;
+
 }
 
 .about p{
+
   color:#aaa;
 
   font-size:18px;
 
   line-height:1.7;
+
 }
 
 
-/* =========================================================
+/* =====================================================
    FOOTER
-========================================================= */
+===================================================== */
 
 footer{
+
   padding:60px 6vw;
 
   display:flex;
@@ -964,118 +1221,190 @@ footer{
   flex-wrap:wrap;
 
   gap:20px;
+
 }
 
 .instagram{
+
   color:#fff;
+
 }
 
 .instagram:hover{
+
   text-decoration:underline;
+
 }
 
 
-/* =========================================================
+/* =====================================================
    MOBILE
-========================================================= */
+===================================================== */
 
 @media(max-width:900px){
 
   nav{
+
     padding:16px 5vw;
+
   }
 
   .logo{
+
     font-size:18px;
+
   }
 
   .nav-right{
+
     gap:12px;
+
   }
 
   .nav-right>a:not(.instagram){
+
     display:none;
+
   }
 
   .nav-button{
+
     font-size:13px;
+
   }
 
   .products{
+
     grid-template-columns:
       repeat(2,minmax(0,1fr));
+
   }
 
   .modal-content{
+
     grid-template-columns:1fr;
+
   }
 
   .product-viewer{
+
     min-height:400px;
+
   }
 
   .about{
+
     grid-template-columns:1fr;
+
   }
 
 }
 
+
 @media(max-width:600px){
 
   section{
+
     padding:65px 5vw;
+
   }
 
   .products{
+
     grid-template-columns:1fr;
+
   }
 
   .instagram{
+
     display:none;
+
   }
 
   .hero h1{
+
     font-size:18vw;
+
     letter-spacing:2px;
+
   }
 
   .hero p{
+
     font-size:12px;
+
     letter-spacing:2px;
+
   }
 
   .modal-box{
+
     padding:15px;
+
   }
 
   .product-viewer{
+
     min-height:330px;
+
   }
 
   .product-3d{
+
     max-height:330px;
+
   }
 
   .product-modal{
+
     padding:10px;
+
   }
 
   .cart-button{
+
     padding:9px 12px;
+
     font-size:12px;
+
   }
 
   .cars{
+
     grid-template-columns:1fr;
+
+  }
+
+  .preview-bar{
+
+    font-size:10px;
+
+    padding:6px 8px;
+
+    letter-spacing:.3px;
+
   }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
+
+
+<!-- =====================================================
+     SHOP VORSCHAU LEISTE
+===================================================== -->
+
+<div class="preview-bar">
+
+Shop Vorschau · Preise, Größen &amp; Versand noch nicht bestätigt · keine Bestellungen!
+
+</div>
+
 
 
 <!-- =====================================================
@@ -1084,17 +1413,26 @@ footer{
 
 <nav>
 
-<a href="#" class="logo">
+<a
+href="#"
+class="logo"
+>
 ГОНЩИКИ
 </a>
 
+
 <div class="nav-right">
+
 
 <div class="nav-item">
 
-<button class="nav-button">
+<button
+class="nav-button"
+type="button"
+>
 Klamotten ▾
 </button>
+
 
 <div class="dropdown">
 
@@ -1123,20 +1461,29 @@ Hosen
 Sticker
 </a>
 
+
 <a href="#cars">
 Cars
 </a>
+
 
 <a href="#crew">
 Crew
 </a>
 
 
-<button class="cart-button" id="openCart">
+<button
+class="cart-button"
+id="openCart"
+type="button"
+>
 
 🛒 Warenkorb
 
-<span class="cart-count" id="cartCount">
+<span
+class="cart-count"
+id="cartCount"
+>
 0
 </span>
 
@@ -1148,7 +1495,9 @@ class="instagram"
 href="https://www.instagram.com/gonschikicrew/"
 target="_blank"
 >
+
 Instagram
+
 </a>
 
 </div>
@@ -1163,28 +1512,36 @@ Instagram
 
 <header class="hero">
 
+
 <img
 src="assets/Car-1.JPG"
 alt="ГОНЩИКИ Cars"
 class="hero-car"
 >
 
+
 <div class="hero-content">
+
 
 <h1>
 ГОНЩИКИ
 </h1>
 
+
 <p>
 EST. 2025 · STREETWEAR × CAR CULTURE
 </p>
+
 
 <a
 href="#shop"
 class="hero-button"
 >
+
 SHOP ENTDECKEN
+
 </a>
+
 
 </div>
 
@@ -1213,11 +1570,12 @@ SHOP
 
 
 
-<!-- =====================================================
-     T-SHIRTS
-===================================================== -->
+<!-- T-SHIRTS -->
 
-<div id="shirts" class="section-title">
+<div
+id="shirts"
+class="section-title"
+>
 
 <div class="kicker">
 01
@@ -1232,8 +1590,6 @@ T-Shirts
 
 <div class="products">
 
-
-<!-- T-SHIRT BEIGE -->
 
 <article
 class="product"
@@ -1250,6 +1606,7 @@ alt="T-Shirt Beige E36"
 >
 
 </div>
+
 
 <div class="product-info">
 
@@ -1271,8 +1628,6 @@ T-Shirt Beige E36
 
 
 
-<!-- T-SHIRT RUSSIA -->
-
 <article
 class="product"
 data-name="T-Shirt Black Russia"
@@ -1288,6 +1643,7 @@ alt="T-Shirt Black Russia"
 >
 
 </div>
+
 
 <div class="product-info">
 
@@ -1309,8 +1665,6 @@ T-Shirt Black Russia
 
 
 
-<!-- T-SHIRT E34 -->
-
 <article
 class="product"
 data-name="T-Shirt Black E34"
@@ -1326,6 +1680,7 @@ alt="T-Shirt Black E34"
 >
 
 </div>
+
 
 <div class="product-info">
 
@@ -1347,8 +1702,6 @@ T-Shirt Black E34
 
 
 
-<!-- T-SHIRT E36 -->
-
 <article
 class="product"
 data-name="T-Shirt Black E36"
@@ -1364,6 +1717,7 @@ alt="T-Shirt Black E36"
 >
 
 </div>
+
 
 <div class="product-info">
 
@@ -1388,11 +1742,10 @@ T-Shirt Black E36
 
 
 
-<!-- =====================================================
-     HOODIES
-===================================================== -->
+<!-- HOODIES -->
 
 <section id="hoodies">
+
 
 <div class="section-title">
 
@@ -1425,6 +1778,7 @@ alt="Hoodie Beige E36"
 >
 
 </div>
+
 
 <div class="product-info">
 
@@ -1462,6 +1816,7 @@ alt="Hoodie Black Kreuz"
 
 </div>
 
+
 <div class="product-info">
 
 <h3>
@@ -1497,6 +1852,7 @@ alt="Hoodie Black Russia"
 >
 
 </div>
+
 
 <div class="product-info">
 
@@ -1534,6 +1890,7 @@ alt="Hoodie Black E34"
 
 </div>
 
+
 <div class="product-info">
 
 <h3>
@@ -1570,6 +1927,7 @@ alt="Hoodie Black E36"
 
 </div>
 
+
 <div class="product-info">
 
 <h3>
@@ -1595,11 +1953,10 @@ Hoodie Black E36
 
 
 
-<!-- =====================================================
-     ZIPPER
-===================================================== -->
+<!-- ZIPPER -->
 
 <section id="zipper">
+
 
 <div class="section-title">
 
@@ -1616,6 +1973,7 @@ Zipper
 
 <div class="products">
 
+
 <article
 class="product"
 data-name="Zipper Black Kreuz"
@@ -1631,6 +1989,7 @@ alt="Zipper Black Kreuz"
 >
 
 </div>
+
 
 <div class="product-info">
 
@@ -1650,17 +2009,17 @@ Zipper Black Kreuz
 
 </article>
 
+
 </div>
 
 </section>
 
 
 
-<!-- =====================================================
-     PANTS
-===================================================== -->
+<!-- HOSEN -->
 
 <section id="pants">
+
 
 <div class="section-title">
 
@@ -1677,6 +2036,7 @@ Hosen
 
 <div class="products">
 
+
 <article
 class="product"
 data-name="Pants Black ГОНЩИКИ"
@@ -1692,6 +2052,7 @@ alt="ГОНЩИКИ Pants"
 >
 
 </div>
+
 
 <div class="product-info">
 
@@ -1710,6 +2071,7 @@ Pants Black ГОНЩИКИ
 </div>
 
 </article>
+
 
 </div>
 
@@ -1743,8 +2105,6 @@ type="button"
 <div class="modal-content">
 
 
-<!-- PRODUCT VIEWER -->
-
 <div
 class="product-viewer"
 id="productViewer"
@@ -1764,17 +2124,16 @@ alt=""
 </div>
 
 
-
-<!-- PRODUCT INFO -->
-
 <div class="modal-info">
 
 <div class="kicker">
 ГОНЩИКИ · EST. 2025
 </div>
 
+
 <h2 id="modalName">
 </h2>
+
 
 <div
 class="modal-price"
@@ -1790,6 +2149,7 @@ Größe
 
 <div class="sizes">
 
+
 <button
 class="size"
 data-size="S"
@@ -1797,6 +2157,7 @@ type="button"
 >
 S
 </button>
+
 
 <button
 class="size active"
@@ -1806,6 +2167,7 @@ type="button"
 M
 </button>
 
+
 <button
 class="size"
 data-size="L"
@@ -1813,6 +2175,7 @@ type="button"
 >
 L
 </button>
+
 
 <button
 class="size"
@@ -1822,6 +2185,7 @@ type="button"
 XL
 </button>
 
+
 <button
 class="size"
 data-size="XXL"
@@ -1829,6 +2193,7 @@ type="button"
 >
 XXL
 </button>
+
 
 </div>
 
@@ -1840,6 +2205,7 @@ type="button"
 >
 IN DEN WARENKORB
 </button>
+
 
 </div>
 
@@ -1878,6 +2244,7 @@ id="cartPanel"
 <h2>
 Warenkorb
 </h2>
+
 
 <button
 class="close-cart"
@@ -1919,8 +2286,8 @@ Gesamt
 
 <button
 class="checkout"
+id="checkoutButton"
 type="button"
-onclick="alert('Checkout wird als nächster Schritt eingerichtet.')"
 >
 ZUR KASSE
 </button>
@@ -1937,6 +2304,7 @@ ZUR KASSE
 
 <section id="stickers">
 
+
 <div class="section-title">
 
 <div class="kicker">
@@ -1949,9 +2317,11 @@ Sticker
 
 </div>
 
+
 <p style="color:#888;">
 Sticker Collection — bald verfügbar.
 </p>
+
 
 </section>
 
@@ -1962,6 +2332,7 @@ Sticker Collection — bald verfügbar.
 ===================================================== -->
 
 <section id="cars">
+
 
 <div class="section-title">
 
@@ -1977,6 +2348,7 @@ Cars
 
 
 <div class="cars">
+
 
 <div class="car">
 
@@ -1997,6 +2369,7 @@ alt="ГОНЩИКИ Car 2"
 
 </div>
 
+
 </div>
 
 </section>
@@ -2012,11 +2385,13 @@ id="crew"
 class="about"
 >
 
+
 <div>
 
 <div class="kicker">
 ABOUT THE CREW
 </div>
+
 
 <h2>
 
@@ -2050,6 +2425,7 @@ Est. 2025 — Gonchikicrew.
 
 </div>
 
+
 </section>
 
 
@@ -2059,6 +2435,7 @@ Est. 2025 — Gonchikicrew.
 ===================================================== -->
 
 <footer>
+
 
 <div>
 ГОНЩИКИ est. 2025
@@ -2075,6 +2452,7 @@ Instagram · @gonschikicrew
 
 </a>
 
+
 </footer>
 
 
@@ -2086,9 +2464,9 @@ Instagram · @gonschikicrew
 <script>
 
 
-/* =========================================================
-   VARIABLES
-========================================================= */
+/* =====================================================
+   VARIABLEN
+===================================================== */
 
 let cart = [];
 
@@ -2098,196 +2476,237 @@ let selectedSize = "M";
 
 
 const modal =
-document.getElementById("productModal");
+document.getElementById(
+  "productModal"
+);
 
 const modalImage =
-document.getElementById("modalImage");
+document.getElementById(
+  "modalImage"
+);
 
 const modalName =
-document.getElementById("modalName");
+document.getElementById(
+  "modalName"
+);
 
 const modalPrice =
-document.getElementById("modalPrice");
+document.getElementById(
+  "modalPrice"
+);
 
 const productViewer =
-document.getElementById("productViewer");
+document.getElementById(
+  "productViewer"
+);
 
 const cartPanel =
-document.getElementById("cartPanel");
+document.getElementById(
+  "cartPanel"
+);
 
 const cartOverlay =
-document.getElementById("cartOverlay");
+document.getElementById(
+  "cartOverlay"
+);
 
 const cartItems =
-document.getElementById("cartItems");
+document.getElementById(
+  "cartItems"
+);
 
 const cartCount =
-document.getElementById("cartCount");
+document.getElementById(
+  "cartCount"
+);
 
 const cartTotal =
-document.getElementById("cartTotal");
+document.getElementById(
+  "cartTotal"
+);
 
 
-/* =========================================================
-   PRODUCT OPEN
-========================================================= */
+/* =====================================================
+   PRODUKT ÖFFNEN
+===================================================== */
 
 document
 .querySelectorAll(".product")
 .forEach(product => {
 
-product.addEventListener(
-"click",
-function(){
+  product.addEventListener(
+    "click",
+    function(){
 
-selectedProduct = {
+      selectedProduct = {
 
-name:this.dataset.name,
+        name:
+          this.dataset.name,
 
-price:Number(this.dataset.price),
+        price:
+          Number(
+            this.dataset.price
+          ),
 
-image:this.dataset.image
+        image:
+          this.dataset.image
 
-};
-
-selectedSize = "M";
+      };
 
 
-/* RESET SIZE */
+      selectedSize = "M";
 
-document
-.querySelectorAll(".size")
-.forEach(button => {
 
-button.classList.remove("active");
+      document
+      .querySelectorAll(".size")
+      .forEach(button => {
 
-if(
-button.dataset.size === "M"
-){
-button.classList.add("active");
-}
+        button.classList.remove(
+          "active"
+        );
+
+        if(
+          button.dataset.size ===
+          "M"
+        ){
+
+          button.classList.add(
+            "active"
+          );
+
+        }
+
+      });
+
+
+      modalImage.src =
+        selectedProduct.image;
+
+      modalImage.alt =
+        selectedProduct.name;
+
+
+      modalName.textContent =
+        selectedProduct.name;
+
+
+      modalPrice.textContent =
+        selectedProduct.price
+        .toLocaleString(
+          "de-DE",
+          {
+            style:"currency",
+            currency:"EUR"
+          }
+        );
+
+
+      rotationX = 0;
+
+      rotationY = 0;
+
+      updateProductRotation();
+
+
+      modal.classList.add(
+        "active"
+      );
+
+
+      document.body.style.overflow =
+        "hidden";
+
+    }
+  );
 
 });
 
 
-/* PRODUCT IMAGE */
-
-modalImage.src =
-selectedProduct.image;
-
-modalImage.alt =
-selectedProduct.name;
-
-
-/* PRODUCT INFO */
-
-modalName.textContent =
-selectedProduct.name;
-
-
-modalPrice.textContent =
-selectedProduct.price.toLocaleString(
-"de-DE",
-{
-style:"currency",
-currency:"EUR"
-}
-);
-
-
-/* RESET ROTATION */
-
-rotationX = 0;
-
-rotationY = 0;
-
-updateProductRotation();
-
-
-/* OPEN */
-
-modal.classList.add("active");
-
-document.body.style.overflow="hidden";
-
-}
-);
-
-});
-
-
-/* =========================================================
-   CLOSE MODAL
-========================================================= */
+/* =====================================================
+   PRODUKT SCHLIESSEN
+===================================================== */
 
 function closeProduct(){
 
-modal.classList.remove("active");
+  modal.classList.remove(
+    "active"
+  );
 
-document.body.style.overflow="";
+  document.body.style.overflow =
+    "";
 
 }
 
+
 document
-.getElementById("closeModal")
+.getElementById(
+  "closeModal"
+)
 .addEventListener(
-"click",
-closeProduct
+  "click",
+  closeProduct
 );
 
 
 modal.addEventListener(
-"click",
-function(event){
+  "click",
+  function(event){
 
-if(
-event.target === modal
-){
+    if(
+      event.target === modal
+    ){
 
-closeProduct();
+      closeProduct();
 
-}
+    }
 
-});
+  }
+);
 
 
-/* =========================================================
-   SIZE SELECTION
-========================================================= */
+/* =====================================================
+   GRÖSSE
+===================================================== */
 
 document
 .querySelectorAll(".size")
 .forEach(button => {
 
-button.addEventListener(
-"click",
-function(event){
+  button.addEventListener(
+    "click",
+    function(event){
 
-event.stopPropagation();
+      event.stopPropagation();
 
-document
-.querySelectorAll(".size")
-.forEach(btn => {
 
-btn.classList.remove("active");
+      document
+      .querySelectorAll(".size")
+      .forEach(btn => {
+
+        btn.classList.remove(
+          "active"
+        );
+
+      });
+
+
+      this.classList.add(
+        "active"
+      );
+
+
+      selectedSize =
+        this.dataset.size;
+
+    }
+  );
 
 });
 
 
-this.classList.add("active");
-
-selectedSize =
-this.dataset.size;
-
-}
-);
-
-});
-
-
-/* =========================================================
-   3D DRAG SYSTEM
-========================================================= */
+/* =====================================================
+   3D / DRAG
+===================================================== */
 
 let dragging = false;
 
@@ -2300,50 +2719,41 @@ let rotationY = 0;
 let rotationX = 0;
 
 
-/* ROTATION */
-
 function updateProductRotation(){
 
-/*
-
-Y = left/right
-
-X = up/down
-
-*/
-
-rotationY =
-Math.max(
--35,
-Math.min(
-35,
-rotationY
-)
-);
-
-rotationX =
-Math.max(
--15,
-Math.min(
-15,
-rotationX
-)
-);
+  rotationY =
+    Math.max(
+      -35,
+      Math.min(
+        35,
+        rotationY
+      )
+    );
 
 
-modalImage.style.transform =
+  rotationX =
+    Math.max(
+      -15,
+      Math.min(
+        15,
+        rotationX
+      )
+    );
 
-"perspective(1000px) " +
 
-"rotateY(" +
-rotationY +
-"deg) " +
+  modalImage.style.transform =
 
-"rotateX(" +
-rotationX +
-"deg) " +
+    "perspective(1000px) " +
 
-"scale(1.03)";
+    "rotateY(" +
+    rotationY +
+    "deg) " +
+
+    "rotateX(" +
+    rotationX +
+    "deg) " +
+
+    "scale(1.03)";
 
 }
 
@@ -2351,501 +2761,599 @@ rotationX +
 /* MOUSE */
 
 productViewer.addEventListener(
-"mousedown",
-function(event){
+  "mousedown",
+  function(event){
 
-dragging = true;
+    dragging = true;
 
-startX = event.clientX;
+    startX =
+      event.clientX;
 
-startY = event.clientY;
+    startY =
+      event.clientY;
 
-productViewer.style.cursor =
-"grabbing";
+    productViewer.style.cursor =
+      "grabbing";
 
-}
+  }
 );
 
 
 window.addEventListener(
-"mousemove",
-function(event){
+  "mousemove",
+  function(event){
 
-if(!dragging) return;
-
-const differenceX =
-event.clientX - startX;
-
-const differenceY =
-event.clientY - startY;
+    if(!dragging) return;
 
 
-rotationY +=
-differenceX * .35;
-
-rotationX -=
-differenceY * .18;
+    const differenceX =
+      event.clientX -
+      startX;
 
 
-startX =
-event.clientX;
-
-startY =
-event.clientY;
+    const differenceY =
+      event.clientY -
+      startY;
 
 
-updateProductRotation();
+    rotationY +=
+      differenceX * .35;
 
-}
+
+    rotationX -=
+      differenceY * .18;
+
+
+    startX =
+      event.clientX;
+
+
+    startY =
+      event.clientY;
+
+
+    updateProductRotation();
+
+  }
 );
 
 
 window.addEventListener(
-"mouseup",
-function(){
+  "mouseup",
+  function(){
 
-dragging = false;
+    dragging = false;
 
-productViewer.style.cursor =
-"grab";
+    productViewer.style.cursor =
+      "grab";
 
-}
+  }
 );
 
 
 /* TOUCH */
 
 productViewer.addEventListener(
-"touchstart",
-function(event){
+  "touchstart",
+  function(event){
 
-if(
-event.touches.length !== 1
-) return;
+    if(
+      event.touches.length !== 1
+    ){
 
-dragging = true;
+      return;
 
-startX =
-event.touches[0].clientX;
+    }
 
-startY =
-event.touches[0].clientY;
 
-},
-{
-passive:true
-}
+    dragging = true;
+
+
+    startX =
+      event.touches[0].clientX;
+
+
+    startY =
+      event.touches[0].clientY;
+
+  },
+  {
+    passive:true
+  }
 );
 
 
 productViewer.addEventListener(
-"touchmove",
-function(event){
+  "touchmove",
+  function(event){
 
-if(!dragging) return;
-
-if(
-event.touches.length !== 1
-) return;
-
-const differenceX =
-event.touches[0].clientX -
-startX;
-
-const differenceY =
-event.touches[0].clientY -
-startY;
+    if(!dragging) return;
 
 
-rotationY +=
-differenceX * .45;
+    if(
+      event.touches.length !== 1
+    ){
 
-rotationX -=
-differenceY * .22;
+      return;
 
-
-startX =
-event.touches[0].clientX;
-
-startY =
-event.touches[0].clientY;
+    }
 
 
-updateProductRotation();
+    const differenceX =
+      event.touches[0].clientX -
+      startX;
 
-},
-{
-passive:true
-}
+
+    const differenceY =
+      event.touches[0].clientY -
+      startY;
+
+
+    rotationY +=
+      differenceX * .45;
+
+
+    rotationX -=
+      differenceY * .22;
+
+
+    startX =
+      event.touches[0].clientX;
+
+
+    startY =
+      event.touches[0].clientY;
+
+
+    updateProductRotation();
+
+  },
+  {
+    passive:true
+  }
 );
 
 
 productViewer.addEventListener(
-"touchend",
-function(){
+  "touchend",
+  function(){
 
-dragging = false;
+    dragging = false;
 
-}
+  }
 );
 
 
-/* DOUBLE CLICK / DOUBLE TAP RESET */
+/* DOPPELKLICK = RESET */
 
 productViewer.addEventListener(
-"dblclick",
-function(){
+  "dblclick",
+  function(){
 
-rotationX = 0;
+    rotationX = 0;
 
-rotationY = 0;
+    rotationY = 0;
 
-updateProductRotation();
+    updateProductRotation();
 
-}
+  }
 );
 
 
-/* =========================================================
-   ADD TO CART
-========================================================= */
+/* =====================================================
+   IN WARENKORB
+===================================================== */
 
 document
-.getElementById("addToCart")
+.getElementById(
+  "addToCart"
+)
 .addEventListener(
-"click",
-function(){
+  "click",
+  function(){
 
-if(!selectedProduct){
-return;
-}
+    if(
+      !selectedProduct
+    ){
+
+      return;
+
+    }
 
 
-const existing =
-cart.find(item =>
+    const existing =
+      cart.find(item =>
 
-item.name ===
-selectedProduct.name &&
+        item.name ===
+        selectedProduct.name &&
 
-item.size ===
-selectedSize
+        item.size ===
+        selectedSize
 
+      );
+
+
+    if(existing){
+
+      existing.quantity++;
+
+    }
+
+    else{
+
+      cart.push({
+
+        name:
+          selectedProduct.name,
+
+        price:
+          selectedProduct.price,
+
+        image:
+          selectedProduct.image,
+
+        size:
+          selectedSize,
+
+        quantity:1
+
+      });
+
+    }
+
+
+    updateCart();
+
+    closeProduct();
+
+    openCart();
+
+  }
 );
 
 
-if(existing){
-
-existing.quantity++;
-
-}else{
-
-cart.push({
-
-name:selectedProduct.name,
-
-price:selectedProduct.price,
-
-image:selectedProduct.image,
-
-size:selectedSize,
-
-quantity:1
-
-});
-
-}
-
-
-updateCart();
-
-closeProduct();
-
-
-/* OPEN CART */
-
-openCart();
-
-}
-);
-
-
-/* =========================================================
-   UPDATE CART
-========================================================= */
+/* =====================================================
+   WARENKORB AKTUALISIEREN
+===================================================== */
 
 function updateCart(){
 
-cartItems.innerHTML="";
+  cartItems.innerHTML = "";
 
-let total = 0;
+  let total = 0;
 
-let count = 0;
-
-
-if(cart.length === 0){
-
-cartItems.innerHTML =
-`
-<div class="cart-empty">
-Dein Warenkorb ist noch leer.
-</div>
-`;
-
-}else{
+  let count = 0;
 
 
-cart.forEach(
-(item,index) => {
+  if(
+    cart.length === 0
+  ){
 
-total +=
-item.price *
-item.quantity;
+    cartItems.innerHTML =
 
-count +=
-item.quantity;
+      '<div class="cart-empty">' +
+      'Dein Warenkorb ist noch leer.' +
+      '</div>';
 
+  }
 
-const row =
-document.createElement("div");
-
-row.className =
-"cart-item";
+  else{
 
 
-row.innerHTML = `
+    cart.forEach(
+      (item,index) => {
 
-<img
-src="${item.image}"
-alt="${item.name}"
->
+        total +=
+          item.price *
+          item.quantity;
 
-<div>
 
-<h4>
-${item.name}
-</h4>
+        count +=
+          item.quantity;
 
-<p>
-Größe: ${item.size}
-</p>
 
-<p>
-${item.price.toLocaleString(
-"de-DE",
-{
-style:"currency",
-currency:"EUR"
+        const row =
+          document.createElement(
+            "div"
+          );
+
+
+        row.className =
+          "cart-item";
+
+
+        row.innerHTML = `
+
+          <img
+            src="${item.image}"
+            alt="${item.name}"
+          >
+
+          <div>
+
+            <h4>
+              ${item.name}
+            </h4>
+
+            <p>
+              Größe: ${item.size}
+            </p>
+
+            <p>
+              ${item.price.toLocaleString(
+                "de-DE",
+                {
+                  style:"currency",
+                  currency:"EUR"
+                }
+              )}
+            </p>
+
+
+            <div class="cart-controls">
+
+              <button
+                class="qty-button"
+                data-index="${index}"
+                data-action="minus"
+                type="button"
+              >
+                −
+              </button>
+
+
+              <span>
+                ${item.quantity}
+              </span>
+
+
+              <button
+                class="qty-button"
+                data-index="${index}"
+                data-action="plus"
+                type="button"
+              >
+                +
+              </button>
+
+            </div>
+
+
+            <button
+              class="remove-item"
+              data-index="${index}"
+              type="button"
+            >
+              Entfernen
+            </button>
+
+          </div>
+
+        `;
+
+
+        cartItems.appendChild(
+          row
+        );
+
+      }
+    );
+
+  }
+
+
+  cartCount.textContent =
+    count;
+
+
+  cartTotal.textContent =
+    total.toLocaleString(
+      "de-DE",
+      {
+        style:"currency",
+        currency:"EUR"
+      }
+    );
+
 }
-)}
-</p>
-
-<div class="cart-controls">
-
-<button
-class="qty-button"
-data-index="${index}"
-data-action="minus"
-type="button"
->
-−
-</button>
-
-<span>
-${item.quantity}
-</span>
-
-<button
-class="qty-button"
-data-index="${index}"
-data-action="plus"
-type="button"
->
-+
-</button>
-
-</div>
-
-<button
-class="remove-item"
-data-index="${index}"
-type="button"
->
-Entfernen
-</button>
-
-</div>
-
-`;
 
 
-cartItems.appendChild(row);
-
-});
-
-}
-
-
-cartCount.textContent =
-count;
-
-
-cartTotal.textContent =
-total.toLocaleString(
-"de-DE",
-{
-style:"currency",
-currency:"EUR"
-}
-);
-
-}
-
-
-/* =========================================================
-   CART BUTTON ACTIONS
-========================================================= */
+/* =====================================================
+   MENGE ÄNDERN
+===================================================== */
 
 cartItems.addEventListener(
-"click",
-function(event){
+  "click",
+  function(event){
 
-const quantityButton =
-event.target.closest(
-".qty-button"
+    const quantityButton =
+      event.target.closest(
+        ".qty-button"
+      );
+
+
+    const removeButton =
+      event.target.closest(
+        ".remove-item"
+      );
+
+
+    if(quantityButton){
+
+      const index =
+        Number(
+          quantityButton.dataset.index
+        );
+
+
+      const action =
+        quantityButton.dataset.action;
+
+
+      if(
+        action === "plus"
+      ){
+
+        cart[index].quantity++;
+
+      }
+
+      else{
+
+        cart[index].quantity--;
+
+        if(
+          cart[index].quantity <= 0
+        ){
+
+          cart.splice(
+            index,
+            1
+          );
+
+        }
+
+      }
+
+
+      updateCart();
+
+    }
+
+
+    if(removeButton){
+
+      const index =
+        Number(
+          removeButton.dataset.index
+        );
+
+
+      cart.splice(
+        index,
+        1
+      );
+
+
+      updateCart();
+
+    }
+
+  }
 );
 
-const removeButton =
-event.target.closest(
-".remove-item"
-);
 
-
-if(quantityButton){
-
-const index =
-Number(
-quantityButton.dataset.index
-);
-
-const action =
-quantityButton.dataset.action;
-
-
-if(action === "plus"){
-
-cart[index].quantity++;
-
-}else{
-
-cart[index].quantity--;
-
-if(
-cart[index].quantity <= 0
-){
-
-cart.splice(index,1);
-
-}
-
-}
-
-
-updateCart();
-
-}
-
-
-if(removeButton){
-
-const index =
-Number(
-removeButton.dataset.index
-);
-
-cart.splice(index,1);
-
-updateCart();
-
-}
-
-}
-);
-
-
-/* =========================================================
-   OPEN CART
-========================================================= */
+/* =====================================================
+   WARENKORB ÖFFNEN
+===================================================== */
 
 function openCart(){
 
-cartPanel.classList.add("active");
+  cartPanel.classList.add(
+    "active"
+  );
 
-cartOverlay.classList.add("active");
+  cartOverlay.classList.add(
+    "active"
+  );
 
 }
 
+
 document
-.getElementById("openCart")
+.getElementById(
+  "openCart"
+)
 .addEventListener(
-"click",
-openCart
+  "click",
+  openCart
 );
 
 
-/* =========================================================
-   CLOSE CART
-========================================================= */
+/* =====================================================
+   WARENKORB SCHLIESSEN
+===================================================== */
 
 function closeCart(){
 
-cartPanel.classList.remove("active");
+  cartPanel.classList.remove(
+    "active"
+  );
 
-cartOverlay.classList.remove("active");
+  cartOverlay.classList.remove(
+    "active"
+  );
 
 }
 
+
 document
-.getElementById("closeCart")
+.getElementById(
+  "closeCart"
+)
 .addEventListener(
-"click",
-closeCart
+  "click",
+  closeCart
 );
 
 
 cartOverlay.addEventListener(
-"click",
-closeCart
+  "click",
+  closeCart
 );
 
 
-/* =========================================================
+/* =====================================================
+   CHECKOUT
+===================================================== */
+
+document
+.getElementById(
+  "checkoutButton"
+)
+.addEventListener(
+  "click",
+  function(){
+
+    alert(
+      "Shop Vorschau: Noch keine Bestellungen möglich. Preise, Größen und Versand werden noch bestätigt."
+    );
+
+  }
+);
+
+
+/* =====================================================
    ESCAPE
-========================================================= */
+===================================================== */
 
 document.addEventListener(
-"keydown",
-function(event){
+  "keydown",
+  function(event){
 
-if(
-event.key === "Escape"
-){
+    if(
+      event.key === "Escape"
+    ){
 
-closeProduct();
+      closeProduct();
 
-closeCart();
+      closeCart();
 
-}
+    }
 
-});
+  }
+);
 
 
-/* =========================================================
-   INITIAL
-========================================================= */
+/* =====================================================
+   START
+===================================================== */
 
 updateCart();
 
 </script>
 
+
 </body>
+
 </html>
