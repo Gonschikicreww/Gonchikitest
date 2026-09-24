@@ -3,20 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>ГОНЩИКИ — Gonschiki Crew</title>
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box}
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
     font-family:Arial,Helvetica,sans-serif;
@@ -25,40 +17,27 @@ body{
     overflow-x:hidden;
 }
 
-button,
-input,
-select{
-    font:inherit;
-}
+button,input,select{font:inherit}
+button{cursor:pointer}
 
-button{
-    cursor:pointer;
-}
-
-/* ==================================================
-   INFO BAR
-================================================== */
+/* ================= INFO ================= */
 
 .top-info{
     background:#fff;
     color:#000;
     text-align:center;
     padding:9px 15px;
-
     font-size:11px;
     font-weight:800;
     letter-spacing:.8px;
 }
 
-/* ==================================================
-   NAVIGATION
-================================================== */
+/* ================= NAVIGATION ================= */
 
 nav{
     position:absolute;
     top:34px;
     left:0;
-
     width:100%;
     z-index:30;
 
@@ -85,7 +64,6 @@ nav{
 .logo-est{
     display:block;
     margin-top:7px;
-
     font-size:9px;
     letter-spacing:4px;
     opacity:.75;
@@ -101,10 +79,8 @@ nav{
 .nav-button{
     color:#fff;
     text-decoration:none;
-
     background:none;
     border:0;
-
     font-size:12px;
     font-weight:700;
     letter-spacing:1px;
@@ -121,7 +97,6 @@ nav{
 
 .cart-count{
     position:absolute;
-
     top:-10px;
     right:-13px;
 
@@ -129,7 +104,6 @@ nav{
     height:17px;
 
     border-radius:50%;
-
     background:#fff;
     color:#000;
 
@@ -141,13 +115,10 @@ nav{
     font-weight:900;
 }
 
-/* ==================================================
-   HERO
-================================================== */
+/* ================= HERO ================= */
 
 .hero{
     position:relative;
-
     width:100%;
     height:850px;
     min-height:100vh;
@@ -159,29 +130,23 @@ nav{
     justify-content:center;
 }
 
-/* CAR-1 DIREKT HINTER DEM GROSSEN LOGO */
-
 .hero-car-background{
     position:absolute;
     inset:0;
-
     z-index:0;
 
     background-image:url("assets/Car-1.JPG");
-
     background-size:cover;
     background-position:center center;
     background-repeat:no-repeat;
 
     transform:scale(1.02);
-
     filter:brightness(.52);
 }
 
 .hero-overlay{
     position:absolute;
     inset:0;
-
     z-index:1;
 
     background:
@@ -197,7 +162,6 @@ nav{
 
 .hero-overlay::after{
     content:"";
-
     position:absolute;
     inset:0;
 
@@ -211,34 +175,26 @@ nav{
 
 .hero-content{
     position:relative;
-
     z-index:2;
 
     width:100%;
     max-width:1300px;
-
     min-height:850px;
 
     padding:120px 30px 70px;
 
     display:flex;
     flex-direction:column;
-
     align-items:center;
     justify-content:center;
 
     text-align:center;
 }
 
-/* GROSSES LOGO */
-
 .hero-logo{
     font-size:clamp(65px,11vw,155px);
-
     line-height:.82;
-
     font-weight:900;
-
     letter-spacing:clamp(2px,.8vw,10px);
 
     color:#fff;
@@ -248,44 +204,30 @@ nav{
         0 0 35px rgba(0,0,0,.55);
 }
 
-/* EST. 2025 */
-
 .hero-est{
     margin-top:30px;
 
     font-size:clamp(11px,1.2vw,15px);
-
     font-weight:700;
-
     letter-spacing:9px;
-
     opacity:.92;
 
-    text-shadow:
-        0 3px 15px rgba(0,0,0,.95);
+    text-shadow:0 3px 15px rgba(0,0,0,.95);
 }
-
-/* SPRUCH */
 
 .hero-slogan{
     margin-top:125px;
-
     max-width:950px;
-
     text-align:center;
 }
 
 .hero-slogan-main{
     font-size:clamp(25px,4vw,56px);
-
     line-height:1.08;
-
     font-weight:900;
-
     letter-spacing:1.5px;
 
-    text-shadow:
-        0 4px 25px rgba(0,0,0,.95);
+    text-shadow:0 4px 25px rgba(0,0,0,.95);
 }
 
 .hero-slogan-main span{
@@ -296,35 +238,26 @@ nav{
     margin-top:30px;
 
     font-size:clamp(11px,1.4vw,17px);
-
     font-weight:700;
-
     letter-spacing:7px;
-
     opacity:.95;
 
-    text-shadow:
-        0 3px 15px rgba(0,0,0,.95);
+    text-shadow:0 3px 15px rgba(0,0,0,.95);
 }
 
 .hero-description{
     max-width:650px;
-
     margin:30px auto 0;
 
     font-size:14px;
-
     line-height:1.7;
 
     color:rgba(255,255,255,.84);
 
-    text-shadow:
-        0 2px 12px rgba(0,0,0,.95);
+    text-shadow:0 2px 12px rgba(0,0,0,.95);
 }
 
-/* ==================================================
-   SECTIONS
-================================================== */
+/* ================= SECTIONS ================= */
 
 section{
     padding:100px 5%;
@@ -337,23 +270,17 @@ section{
 
 .section-title h2{
     font-size:clamp(30px,5vw,55px);
-
     font-weight:900;
-
     letter-spacing:2px;
 }
 
 .section-title p{
     margin-top:12px;
-
     color:#888;
-
     font-size:13px;
 }
 
-/* ==================================================
-   SHOP
-================================================== */
+/* ================= SHOP ================= */
 
 .shop{
     background:#080808;
@@ -361,27 +288,21 @@ section{
 
 .categories{
     display:flex;
-
     justify-content:center;
     flex-wrap:wrap;
-
     gap:10px;
-
     margin-bottom:45px;
 }
 
 .category-btn{
     border:1px solid #333;
-
     background:transparent;
     color:#fff;
 
     padding:11px 20px;
 
     font-size:11px;
-
     font-weight:700;
-
     letter-spacing:1px;
 }
 
@@ -393,41 +314,32 @@ section{
 
 .products{
     max-width:1200px;
-
     margin:auto;
 
     display:grid;
-
     grid-template-columns:repeat(4,1fr);
-
     gap:22px;
 }
 
 .product{
     background:#111;
-
     border:1px solid #1d1d1d;
-
     transition:.25s;
-
     cursor:pointer;
 }
 
 .product:hover{
     transform:translateY(-5px);
-
     border-color:#444;
 }
 
 .product-image{
     width:100%;
-
     height:340px;
 
     background:#151515;
 
     display:flex;
-
     align-items:center;
     justify-content:center;
 
@@ -437,9 +349,7 @@ section{
 .product-image img{
     width:100%;
     height:100%;
-
     object-fit:cover;
-
     transition:.35s;
 }
 
@@ -453,27 +363,21 @@ section{
 
 .product-info h3{
     font-size:13px;
-
     margin-bottom:7px;
 }
 
 .product-info p{
     font-size:12px;
-
     color:#888;
 }
 
 .product-price{
     margin-top:13px;
-
     font-size:13px;
-
     font-weight:800;
 }
 
-/* ==================================================
-   EVENTS
-================================================== */
+/* ================= EVENTS ================= */
 
 .events{
     background:#0c0c0c;
@@ -481,53 +385,40 @@ section{
 
 .events-grid{
     max-width:1050px;
-
     margin:auto;
 
     display:grid;
-
     grid-template-columns:repeat(2,1fr);
-
     gap:22px;
 }
 
 .event{
     border:1px solid #252525;
-
     padding:30px;
-
     background:#101010;
 }
 
 .event-date{
     color:#888;
-
     font-size:11px;
-
     letter-spacing:2px;
-
     margin-bottom:12px;
 }
 
 .event h3{
     font-size:25px;
-
     margin-bottom:10px;
 }
 
 .event-location{
     font-size:12px;
-
     color:#aaa;
-
     margin-bottom:18px;
 }
 
 .event p{
     color:#999;
-
     line-height:1.6;
-
     font-size:13px;
 }
 
@@ -536,21 +427,16 @@ section{
 
     background:#fff;
     color:#000;
-
     border:0;
 
     padding:12px 18px;
 
     font-size:10px;
-
     font-weight:900;
-
     letter-spacing:1px;
 }
 
-/* ==================================================
-   CARS
-================================================== */
+/* ================= CARS ================= */
 
 .cars-section{
     background:#080808;
@@ -558,29 +444,22 @@ section{
 
 .cars{
     max-width:1050px;
-
     margin:auto;
 
     display:grid;
-
     grid-template-columns:repeat(2,minmax(0,1fr));
-
     gap:18px;
 }
 
 .car{
     background:#111;
-
     border:1px solid #1d1d1d;
-
     overflow:hidden;
 }
 
 .car img{
     display:block;
-
     width:100%;
-
     height:225px;
 
     object-fit:cover;
@@ -598,13 +477,10 @@ section{
 
 .car-info h3{
     font-size:14px;
-
     letter-spacing:1px;
 }
 
-/* ==================================================
-   ABOUT
-================================================== */
+/* ================= ABOUT ================= */
 
 .about{
     background:#0c0c0c;
@@ -612,23 +488,17 @@ section{
 
 .about-content{
     max-width:800px;
-
     margin:auto;
-
     text-align:center;
 }
 
 .about-content p{
     color:#aaa;
-
     line-height:1.9;
-
     font-size:15px;
 }
 
-/* ==================================================
-   CONTACT
-================================================== */
+/* ================= CONTACT ================= */
 
 .contact{
     background:#080808;
@@ -636,75 +506,55 @@ section{
 
 .contact-content{
     max-width:650px;
-
     margin:auto;
-
     text-align:center;
 }
 
 .contact-content p{
     color:#999;
-
     line-height:1.7;
-
     margin-bottom:25px;
 }
 
 .social{
     display:flex;
-
     justify-content:center;
-
     gap:15px;
 }
 
 .social a{
     color:#fff;
-
     border:1px solid #333;
-
     padding:12px 20px;
 
     text-decoration:none;
 
     font-size:11px;
-
     font-weight:700;
 }
 
-/* ==================================================
-   FOOTER
-================================================== */
+/* ================= FOOTER ================= */
 
 footer{
     padding:35px 5%;
-
     background:#050505;
-
     border-top:1px solid #161616;
 
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
 }
 
 footer p{
     color:#666;
-
     font-size:10px;
-
     letter-spacing:1px;
 }
 
-/* ==================================================
-   MODAL
-================================================== */
+/* ================= MODAL ================= */
 
 .modal{
     position:fixed;
-
     inset:0;
 
     background:rgba(0,0,0,.82);
@@ -712,7 +562,6 @@ footer p{
     z-index:100;
 
     display:none;
-
     align-items:center;
     justify-content:center;
 
@@ -725,13 +574,10 @@ footer p{
 
 .modal-box{
     width:min(500px,100%);
-
     max-height:90vh;
-
     overflow:auto;
 
     background:#111;
-
     border:1px solid #333;
 
     padding:30px;
@@ -741,26 +587,20 @@ footer p{
 
 .close{
     position:absolute;
-
     right:18px;
     top:15px;
 
     background:none;
-
     border:0;
 
     color:#fff;
-
     font-size:25px;
 }
 
 .modal-image{
     width:100%;
-
     height:400px;
-
     object-fit:cover;
-
     margin-bottom:20px;
 }
 
@@ -770,25 +610,19 @@ footer p{
 
 .modal-price{
     color:#999;
-
     margin-bottom:20px;
 }
 
 .size-title{
     font-size:11px;
-
     font-weight:700;
-
     letter-spacing:1px;
-
     margin-bottom:10px;
 }
 
 .sizes{
     display:flex;
-
     gap:8px;
-
     margin-bottom:20px;
 }
 
@@ -797,7 +631,6 @@ footer p{
     height:40px;
 
     background:#181818;
-
     color:#fff;
 
     border:1px solid #333;
@@ -805,7 +638,6 @@ footer p{
 
 .size.active{
     background:#fff;
-
     color:#000;
 }
 
@@ -813,7 +645,6 @@ footer p{
     width:100%;
 
     background:#fff;
-
     color:#000;
 
     border:0;
@@ -821,25 +652,19 @@ footer p{
     padding:15px;
 
     font-size:11px;
-
     font-weight:900;
-
     letter-spacing:1px;
 }
 
-/* ==================================================
-   CART
-================================================== */
+/* ================= CART ================= */
 
 .cart-panel{
     position:fixed;
 
     top:0;
-
     right:-430px;
 
     width:min(430px,100%);
-
     height:100vh;
 
     background:#0e0e0e;
@@ -861,9 +686,7 @@ footer p{
 
 .cart-head{
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
 
     margin-bottom:30px;
@@ -875,7 +698,6 @@ footer p{
 
 .cart-item{
     display:flex;
-
     gap:14px;
 
     border-bottom:1px solid #222;
@@ -885,9 +707,7 @@ footer p{
 
 .cart-item img{
     width:70px;
-
     height:80px;
-
     object-fit:cover;
 }
 
@@ -897,23 +717,18 @@ footer p{
 
 .cart-item-info h4{
     font-size:12px;
-
     margin-bottom:7px;
 }
 
 .cart-item-info p{
     font-size:11px;
-
     color:#888;
 }
 
 .remove-item{
     background:none;
-
     color:#888;
-
     border:0;
-
     font-size:11px;
 }
 
@@ -921,17 +736,14 @@ footer p{
     margin-top:25px;
 
     display:flex;
-
     justify-content:space-between;
 
     font-size:15px;
-
     font-weight:800;
 }
 
 .preview-note{
     margin-top:18px;
-
     padding:15px;
 
     border:1px solid #333;
@@ -939,17 +751,13 @@ footer p{
     color:#888;
 
     font-size:11px;
-
     line-height:1.5;
 }
 
-/* ==================================================
-   ACCOUNT
-================================================== */
+/* ================= ACCOUNT ================= */
 
 .account-tabs{
     display:flex;
-
     margin-bottom:25px;
 }
 
@@ -957,7 +765,6 @@ footer p{
     flex:1;
 
     background:#181818;
-
     color:#888;
 
     border:1px solid #292929;
@@ -965,13 +772,11 @@ footer p{
     padding:12px;
 
     font-size:11px;
-
     font-weight:700;
 }
 
 .account-tab.active{
     background:#fff;
-
     color:#000;
 }
 
@@ -991,7 +796,6 @@ footer p{
     display:block;
 
     font-size:10px;
-
     color:#888;
 
     margin-bottom:6px;
@@ -1001,7 +805,6 @@ footer p{
     width:100%;
 
     background:#181818;
-
     border:1px solid #333;
 
     color:#fff;
@@ -1017,19 +820,14 @@ footer p{
 
 .form-grid{
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
     gap:10px;
 }
 
-/* ==================================================
-   LANGUAGE
-================================================== */
+/* ================= LANGUAGE ================= */
 
 .language select{
     background:transparent;
-
     border:1px solid #444;
 
     color:#fff;
@@ -1041,13 +839,10 @@ footer p{
 
 .language option{
     background:#111;
-
     color:#fff;
 }
 
-/* ==================================================
-   TABLET
-================================================== */
+/* ================= TABLET ================= */
 
 @media(max-width:900px){
 
@@ -1068,23 +863,18 @@ footer p{
     }
 }
 
-/* ==================================================
-   MOBILE
-================================================== */
+/* ================= MOBILE ================= */
 
 @media(max-width:600px){
 
     .top-info{
         font-size:8px;
-
         line-height:1.4;
-
         padding:8px 10px;
     }
 
     nav{
         top:30px;
-
         padding:18px 20px;
     }
 
@@ -1094,7 +884,6 @@ footer p{
 
     .logo-est{
         font-size:7px;
-
         letter-spacing:3px;
     }
 
@@ -1104,69 +893,53 @@ footer p{
 
     .hero{
         height:760px;
-
         min-height:760px;
     }
 
     .hero-car-background{
         background-position:center center;
-
         background-size:cover;
-
         filter:brightness(.48);
     }
 
     .hero-content{
         min-height:760px;
-
         padding:120px 20px 50px;
     }
 
     .hero-logo{
         font-size:17vw;
-
         letter-spacing:1px;
-
         white-space:nowrap;
     }
 
     .hero-est{
         margin-top:24px;
-
         font-size:9px;
-
         letter-spacing:6px;
     }
 
     .hero-slogan{
         margin-top:105px;
-
         max-width:350px;
     }
 
     .hero-slogan-main{
         font-size:26px;
-
         line-height:1.08;
-
         letter-spacing:.5px;
     }
 
     .hero-slogan-small{
         margin-top:23px;
-
         font-size:9px;
-
         letter-spacing:4px;
     }
 
     .hero-description{
         font-size:11px;
-
         line-height:1.6;
-
         max-width:340px;
-
         margin-top:22px;
     }
 
@@ -1176,7 +949,6 @@ footer p{
 
     .products{
         grid-template-columns:1fr 1fr;
-
         gap:10px;
     }
 
@@ -1202,7 +974,6 @@ footer p{
 
     .cars{
         grid-template-columns:1fr;
-
         gap:14px;
     }
 
@@ -1224,113 +995,56 @@ footer p{
 
     footer{
         flex-direction:column;
-
         gap:12px;
-
         text-align:center;
     }
-
 }
-
 </style>
 </head>
 
 <body>
 
-<!-- ==================================================
-     INFO BAR
-================================================== -->
+<!-- ================= INFO ================= -->
 
 <div class="top-info">
     SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BESTELLUNGEN DERZEIT MÖGLICH!
 </div>
 
 
-<!-- ==================================================
-     NAVIGATION
-================================================== -->
+<!-- ================= NAVIGATION ================= -->
 
 <nav>
 
     <a href="#home" class="logo">
-
-        <span class="logo-main">
-            ГОНЩИКИ
-        </span>
-
-        <span class="logo-est">
-            EST. 2025
-        </span>
-
+        <span class="logo-main">ГОНЩИКИ</span>
+        <span class="logo-est">EST. 2025</span>
     </a>
-
 
     <div class="nav-links">
 
-        <a href="#shop">
-            SHOP
-        </a>
+        <a href="#shop">SHOP</a>
+        <a href="#events">EVENTS</a>
+        <a href="#cars">CARS</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">KONTAKT</a>
 
-        <a href="#events">
-            EVENTS
-        </a>
-
-        <a href="#cars">
-            CARS
-        </a>
-
-        <a href="#about">
-            ABOUT
-        </a>
-
-        <a href="#contact">
-            KONTAKT
-        </a>
-
-
-        <button
-            class="nav-button"
-            onclick="openAccount()">
-
+        <button class="nav-button" onclick="openAccount()">
             ANMELDEN
-
         </button>
 
-
-        <button
-            class="nav-button cart-button"
-            onclick="openCart()">
-
+        <button class="nav-button cart-button" onclick="openCart()">
             WARENKORB
-
-            <span
-                class="cart-count"
-                id="cartCount">
-
-                0
-
-            </span>
-
+            <span class="cart-count" id="cartCount">0</span>
         </button>
-
 
         <div class="language">
 
-            <select
-                id="languageSelect"
-                onchange="changeLanguage(this.value)">
+            <select id="languageSelect"
+                    onchange="changeLanguage(this.value)">
 
-                <option value="de">
-                    DE
-                </option>
-
-                <option value="en">
-                    EN
-                </option>
-
-                <option value="ru">
-                    RU
-                </option>
+                <option value="de">DE</option>
+                <option value="en">EN</option>
+                <option value="ru">RU</option>
 
             </select>
 
@@ -1341,38 +1055,25 @@ footer p{
 </nav>
 
 
-<!-- ==================================================
-     HERO
-================================================== -->
+<!-- ================= HERO ================= -->
 
-<section
-    class="hero"
-    id="home">
-
-
-    <!-- CAR-1 HINTER DEM LOGO -->
+<section class="hero" id="home">
 
     <div class="hero-car-background"></div>
 
-
     <div class="hero-overlay"></div>
 
-
     <div class="hero-content">
-
 
         <div class="hero-logo">
             ГОНЩИКИ
         </div>
 
-
         <div class="hero-est">
             EST. 2025
         </div>
 
-
         <div class="hero-slogan">
-
 
             <div class="hero-slogan-main">
 
@@ -1386,47 +1087,30 @@ footer p{
 
             </div>
 
-
             <div class="hero-slogan-small">
-
                 KEINE REGEL. NUR STYLE.
-
             </div>
 
-
             <p class="hero-description">
-
-                Gonschiki steht für Autos,
-                Nächte, Geschwindigkeit und
-                den eigenen Style.
-                Streetwear für alle,
-                die ihre eigene Spur fahren.
-
+                Gonschiki steht für Autos, Nächte,
+                Geschwindigkeit und den eigenen Style.
+                Streetwear für alle, die ihre eigene Spur fahren.
             </p>
 
-
         </div>
-
 
     </div>
 
 </section>
 
 
-<!-- ==================================================
-     SHOP
-================================================== -->
+<!-- ================= SHOP ================= -->
 
-<section
-    class="shop"
-    id="shop">
-
+<section class="shop" id="shop">
 
     <div class="section-title">
 
-        <h2>
-            SHOP
-        </h2>
+        <h2>SHOP</h2>
 
         <p>
             Gonschiki Streetwear
@@ -1434,82 +1118,47 @@ footer p{
 
     </div>
 
-
     <div class="categories">
 
-
-        <button
-            class="category-btn active"
-            onclick="filterProducts('Alle',this)">
-
+        <button class="category-btn active"
+                onclick="filterProducts('Alle',this)">
             ALLE
-
         </button>
 
-
-        <button
-            class="category-btn"
-            onclick="filterProducts('Shirts',this)">
-
+        <button class="category-btn"
+                onclick="filterProducts('Shirts',this)">
             SHIRTS
-
         </button>
 
-
-        <button
-            class="category-btn"
-            onclick="filterProducts('Hoodies',this)">
-
+        <button class="category-btn"
+                onclick="filterProducts('Hoodies',this)">
             HOODIES
-
         </button>
 
-
-        <button
-            class="category-btn"
-            onclick="filterProducts('Zipper',this)">
-
+        <button class="category-btn"
+                onclick="filterProducts('Zipper',this)">
             ZIPPER
-
         </button>
 
-
-        <button
-            class="category-btn"
-            onclick="filterProducts('Hosen',this)">
-
+        <button class="category-btn"
+                onclick="filterProducts('Hosen',this)">
             HOSEN
-
         </button>
 
-
     </div>
 
-
-    <div
-        class="products"
-        id="products">
-
-    </div>
-
+    <div class="products" id="products"></div>
 
 </section>
 
 
-<!-- ==================================================
-     EVENTS
-================================================== -->
+<!-- ================= EVENTS ================= -->
 
-<section
-    class="events"
-    id="events">
-
+<section class="events" id="events">
 
     <div class="section-title">
 
-        <h2>
-            EVENTS
-        </h2>
+        <h2>EVENTS</h2>
 
         <p>
             Cars. People. Nights.
@@ -1517,9 +1166,7 @@ footer p{
 
     </div>
 
-
     <div class="events-grid">
-
 
         <div class="event">
 
@@ -1540,15 +1187,11 @@ footer p{
                 Musik und die Gonschiki Crew.
             </p>
 
-            <button
-                onclick="previewMessage()">
-
+            <button onclick="previewMessage()">
                 TICKETS – DEMNÄCHST
-
             </button>
 
         </div>
-
 
         <div class="event">
 
@@ -1569,35 +1212,24 @@ footer p{
                 Autos, Freunde und der eigene Style.
             </p>
 
-            <button
-                onclick="previewMessage()">
-
+            <button onclick="previewMessage()">
                 INFOS – DEMNÄCHST
-
             </button>
 
         </div>
-
 
     </div>
 
 </section>
 
 
-<!-- ==================================================
-     CARS
-================================================== -->
+<!-- ================= CARS ================= -->
 
-<section
-    class="cars-section"
-    id="cars">
-
+<section class="cars-section" id="cars">
 
     <div class="section-title">
 
-        <h2>
-            CARS
-        </h2>
+        <h2>CARS</h2>
 
         <p>
             Die Autos hinter Gonschiki
@@ -1605,213 +1237,144 @@ footer p{
 
     </div>
 
-
     <div class="cars">
-
-
-        <!-- CAR 1 -->
 
         <div class="car">
 
             <img
                 src="assets/Car-1.JPG"
-                alt="">
+                alt="Gonschiki Car 1">
 
             <div class="car-info">
-
-                <h3>
-                    GONSCHIKI #01
-                </h3>
-
+                <h3>GONSCHIKI #01</h3>
             </div>
 
         </div>
 
-
-        <!-- CAR 2 -->
 
         <div class="car">
 
             <img
                 src="assets/Car-2.JPG"
-                alt="">
+                alt="Gonschiki Car 2">
 
             <div class="car-info">
-
-                <h3>
-                    GONSCHIKI #02
-                </h3>
-
+                <h3>GONSCHIKI #02</h3>
             </div>
 
         </div>
 
-
-        <!-- CAR 3 -->
 
         <div class="car">
 
             <img
                 src="assets/Car-3.jpg"
-                alt="">
+                alt="Gonschiki Car 3">
 
             <div class="car-info">
-
-                <h3>
-                    GONSCHIKI #03
-                </h3>
-
+                <h3>GONSCHIKI #03</h3>
             </div>
 
         </div>
 
-
-        <!-- CAR 4 -->
 
         <div class="car">
 
             <img
                 src="assets/Car-4.jpg"
-                alt="">
+                alt="Gonschiki Car 4">
 
             <div class="car-info">
-
-                <h3>
-                    GONSCHIKI #04
-                </h3>
-
+                <h3>GONSCHIKI #04</h3>
             </div>
 
         </div>
 
-
-        <!-- CAR 5 -->
 
         <div class="car">
 
             <img
                 src="assets/Car-5.jpg"
-                alt="">
+                alt="Gonschiki Car 5">
 
             <div class="car-info">
-
-                <h3>
-                    GONSCHIKI #05
-                </h3>
-
+                <h3>GONSCHIKI #05</h3>
             </div>
 
         </div>
 
 
-        <!-- CAR 6 – NEUES BILD -->
+        <!-- NEUES 6. BILD -->
 
         <div class="car">
 
             <img
-                src="assets/Car-6.heic"
-                alt="">
+                src="assets/Car-6.jpg"
+                alt="Gonschiki Car 6">
 
             <div class="car-info">
-
-                <h3>
-                    GONSCHIKI #06
-                </h3>
-
+                <h3>GONSCHIKI #06</h3>
             </div>
 
         </div>
 
-
     </div>
 
 </section>
 
 
-<!-- ==================================================
-     ABOUT
-================================================== -->
+<!-- ================= ABOUT ================= -->
 
-<section
-    class="about"
-    id="about">
-
+<section class="about" id="about">
 
     <div class="section-title">
-
-        <h2>
-            ABOUT
-        </h2>
-
+        <h2>ABOUT</h2>
     </div>
-
 
     <div class="about-content">
 
         <p>
-
             Gonschiki ist mehr als nur Streetwear.
             Es geht um Autos, Geschwindigkeit,
             Nächte, Freunde und den eigenen Style.
             Eine Crew für alle, die ihre eigene Spur fahren.
-
         </p>
 
     </div>
-
 
 </section>
 
 
-<!-- ==================================================
-     CONTACT
-================================================== -->
+<!-- ================= CONTACT ================= -->
 
-<section
-    class="contact"
-    id="contact">
-
+<section class="contact" id="contact">
 
     <div class="section-title">
-
-        <h2>
-            KONTAKT
-        </h2>
-
+        <h2>KONTAKT</h2>
     </div>
-
 
     <div class="contact-content">
 
         <p>
-
-            Fragen, Kooperationen oder Interesse
-            an Gonschiki?
-
+            Fragen, Kooperationen oder Interesse an Gonschiki?
         </p>
-
 
         <div class="social">
 
             <a
                 href="https://instagram.com/gonschikicrew"
                 target="_blank">
-
                 INSTAGRAM
-
             </a>
 
         </div>
-
 
     </div>
 
 </section>
 
 
-<!-- ==================================================
-     FOOTER
-================================================== -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -1826,26 +1389,16 @@ footer p{
 </footer>
 
 
-<!-- ==================================================
-     PRODUKT MODAL
-================================================== -->
+<!-- ================= PRODUKT MODAL ================= -->
 
-<div
-    class="modal"
-    id="productModal">
-
+<div class="modal" id="productModal">
 
     <div class="modal-box">
 
-
-        <button
-            class="close"
-            onclick="closeModal('productModal')">
-
+        <button class="close"
+                onclick="closeModal('productModal')">
             ×
-
         </button>
-
 
         <img
             id="modalProductImage"
@@ -1853,87 +1406,54 @@ footer p{
             src=""
             alt="">
 
-
-        <h2
-            id="modalProductName">
-        </h2>
-
+        <h2 id="modalProductName"></h2>
 
         <div
             class="modal-price"
             id="modalProductPrice">
         </div>
 
-
         <div class="size-title">
             GRÖSSE
         </div>
 
-
         <div class="sizes">
 
-
-            <button
-                class="size"
-                onclick="selectSize(this)">
-
+            <button class="size"
+                    onclick="selectSize(this)">
                 S
-
             </button>
 
-
-            <button
-                class="size"
-                onclick="selectSize(this)">
-
+            <button class="size"
+                    onclick="selectSize(this)">
                 M
-
             </button>
 
-
-            <button
-                class="size"
-                onclick="selectSize(this)">
-
+            <button class="size"
+                    onclick="selectSize(this)">
                 L
-
             </button>
 
-
-            <button
-                class="size"
-                onclick="selectSize(this)">
-
+            <button class="size"
+                    onclick="selectSize(this)">
                 XL
-
             </button>
-
 
         </div>
 
-
-        <button
-            class="primary-btn"
-            onclick="addCurrentProduct()">
-
+        <button class="primary-btn"
+                onclick="addCurrentProduct()">
             IN DEN WARENKORB
-
         </button>
-
 
     </div>
 
 </div>
 
 
-<!-- ==================================================
-     WARENKORB
-================================================== -->
+<!-- ================= WARENKORB ================= -->
 
-<div
-    class="cart-panel"
-    id="cartPanel">
-
+<div class="cart-panel" id="cartPanel">
 
     <div class="cart-head">
 
@@ -1941,21 +1461,14 @@ footer p{
             WARENKORB
         </h2>
 
-
-        <button
-            class="close"
-            onclick="closeCart()">
-
+        <button class="close"
+                onclick="closeCart()">
             ×
-
         </button>
 
     </div>
 
-
-    <div id="cartItems">
-    </div>
-
+    <div id="cartItems"></div>
 
     <div class="cart-total">
 
@@ -1969,7 +1482,6 @@ footer p{
 
     </div>
 
-
     <div class="preview-note">
 
         SHOP-VORSCHAU:
@@ -1978,51 +1490,33 @@ footer p{
 
     </div>
 
-
 </div>
 
 
-<!-- ==================================================
-     ACCOUNT
-================================================== -->
+<!-- ================= ACCOUNT ================= -->
 
-<div
-    class="modal"
-    id="accountModal">
-
+<div class="modal" id="accountModal">
 
     <div class="modal-box">
 
-
-        <button
-            class="close"
-            onclick="closeModal('accountModal')">
-
+        <button class="close"
+                onclick="closeModal('accountModal')">
             ×
-
         </button>
 
-
         <div class="account-tabs">
-
 
             <button
                 class="account-tab active"
                 onclick="showAccountForm('login',this)">
-
                 ANMELDEN
-
             </button>
-
 
             <button
                 class="account-tab"
                 onclick="showAccountForm('register',this)">
-
                 REGISTRIEREN
-
             </button>
-
 
         </div>
 
@@ -2033,7 +1527,6 @@ footer p{
             class="form active"
             id="loginForm"
             onsubmit="login(event)">
-
 
             <div class="form-group">
 
@@ -2048,7 +1541,6 @@ footer p{
 
             </div>
 
-
             <div class="form-group">
 
                 <label>
@@ -2062,13 +1554,9 @@ footer p{
 
             </div>
 
-
             <button class="primary-btn">
-
                 ANMELDEN
-
             </button>
-
 
         </form>
 
@@ -2080,9 +1568,7 @@ footer p{
             id="registerForm"
             onsubmit="register(event)">
 
-
             <div class="form-grid">
-
 
                 <div class="form-group">
 
@@ -2097,7 +1583,6 @@ footer p{
 
                 </div>
 
-
                 <div class="form-group">
 
                     <label>
@@ -2111,9 +1596,7 @@ footer p{
 
                 </div>
 
-
             </div>
-
 
             <div class="form-group">
 
@@ -2128,7 +1611,6 @@ footer p{
 
             </div>
 
-
             <div class="form-group">
 
                 <label>
@@ -2142,9 +1624,7 @@ footer p{
 
             </div>
 
-
             <div class="form-grid">
-
 
                 <div class="form-group">
 
@@ -2159,7 +1639,6 @@ footer p{
 
                 </div>
 
-
                 <div class="form-group">
 
                     <label>
@@ -2173,9 +1652,7 @@ footer p{
 
                 </div>
 
-
             </div>
-
 
             <div class="form-group">
 
@@ -2190,7 +1667,6 @@ footer p{
 
             </div>
 
-
             <div class="form-group">
 
                 <label>
@@ -2204,16 +1680,11 @@ footer p{
 
             </div>
 
-
             <button class="primary-btn">
-
                 KONTO ERSTELLEN
-
             </button>
 
-
         </form>
-
 
     </div>
 
@@ -2302,7 +1773,6 @@ const products=[
 
 
 let currentProduct=null;
-
 let selectedSize=null;
 
 let cart=JSON.parse(
@@ -2316,31 +1786,21 @@ let cart=JSON.parse(
 
 function renderProducts(list=products){
 
-    const container=
-        document.getElementById("products");
+    const container=document.getElementById("products");
 
     container.innerHTML="";
 
-
     list.forEach(product=>{
 
-        const index=
-            products.indexOf(product);
+        const index=products.indexOf(product);
 
-
-        const item=
-            document.createElement("div");
-
+        const item=document.createElement("div");
 
         item.className="product";
 
-
         item.onclick=()=>{
-
             openProduct(index);
-
         };
-
 
         item.innerHTML=`
 
@@ -2348,10 +1808,9 @@ function renderProducts(list=products){
 
                 <img
                     src="${product.image}"
-                    alt="">
+                    alt="${product.name}">
 
             </div>
-
 
             <div class="product-info">
 
@@ -2359,22 +1818,16 @@ function renderProducts(list=products){
                     ${product.name}
                 </h3>
 
-
                 <p>
                     ${product.category}
                 </p>
 
-
                 <div class="product-price">
-
                     ${product.price} €
-
                 </div>
 
             </div>
-
         `;
-
 
         container.appendChild(item);
 
@@ -2392,30 +1845,21 @@ function filterProducts(category,button){
     document
         .querySelectorAll(".category-btn")
         .forEach(btn=>{
-
             btn.classList.remove("active");
-
         });
 
-
     button.classList.add("active");
-
 
     if(category==="Alle"){
 
         renderProducts(products);
 
-    }
-
-    else{
+    }else{
 
         renderProducts(
-
             products.filter(
-                product=>
-                    product.category===category
+                product=>product.category===category
             )
-
         );
 
     }
@@ -2429,37 +1873,27 @@ function filterProducts(category,button){
 
 function openProduct(index){
 
-    currentProduct=
-        products[index];
-
+    currentProduct=products[index];
 
     selectedSize=null;
-
 
     document
         .querySelectorAll(".size")
         .forEach(btn=>{
-
             btn.classList.remove("active");
-
         });
-
 
     document
         .getElementById("modalProductImage")
         .src=currentProduct.image;
 
-
     document
         .getElementById("modalProductName")
         .textContent=currentProduct.name;
 
-
     document
         .getElementById("modalProductPrice")
-        .textContent=
-            currentProduct.price+" €";
-
+        .textContent=currentProduct.price+" €";
 
     document
         .getElementById("productModal")
@@ -2473,17 +1907,12 @@ function selectSize(button){
     document
         .querySelectorAll(".size")
         .forEach(btn=>{
-
             btn.classList.remove("active");
-
         });
-
 
     button.classList.add("active");
 
-
-    selectedSize=
-        button.textContent;
+    selectedSize=button.textContent;
 
 }
 
@@ -2491,11 +1920,8 @@ function selectSize(button){
 function addCurrentProduct(){
 
     if(!currentProduct){
-
         return;
-
     }
-
 
     if(!selectedSize){
 
@@ -2504,29 +1930,22 @@ function addCurrentProduct(){
         );
 
         return;
-
     }
-
 
     cart.push({
 
         name:currentProduct.name,
-
         price:currentProduct.price,
-
         image:currentProduct.image,
-
         size:selectedSize
 
     });
-
 
     saveCart();
 
     closeModal("productModal");
 
     updateCart();
-
 
     alert(
         "Produkt wurde dem Warenkorb hinzugefügt."
@@ -2551,46 +1970,29 @@ function saveCart(){
 
 function updateCart(){
 
-    const count=
-        document.getElementById("cartCount");
+    const count=document.getElementById("cartCount");
+    const items=document.getElementById("cartItems");
+    const total=document.getElementById("cartTotal");
 
-
-    const items=
-        document.getElementById("cartItems");
-
-
-    const total=
-        document.getElementById("cartTotal");
-
-
-    count.textContent=
-        cart.length;
-
+    count.textContent=cart.length;
 
     items.innerHTML="";
 
-
     let sum=0;
-
 
     cart.forEach((item,index)=>{
 
         sum+=Number(item.price);
 
-
-        const div=
-            document.createElement("div");
-
+        const div=document.createElement("div");
 
         div.className="cart-item";
-
 
         div.innerHTML=`
 
             <img
                 src="${item.image}"
-                alt="">
-
+                alt="${item.name}">
 
             <div class="cart-item-info">
 
@@ -2598,18 +2000,15 @@ function updateCart(){
                     ${item.name}
                 </h4>
 
-
                 <p>
                     Größe: ${item.size}
                 </p>
-
 
                 <p>
                     ${item.price} €
                 </p>
 
             </div>
-
 
             <button
                 class="remove-item"
@@ -2621,14 +2020,11 @@ function updateCart(){
 
         `;
 
-
         items.appendChild(div);
 
     });
 
-
-    total.textContent=
-        sum.toFixed(2)+" €";
+    total.textContent=sum.toFixed(2)+" €";
 
 }
 
@@ -2647,7 +2043,6 @@ function removeCartItem(index){
 function openCart(){
 
     updateCart();
-
 
     document
         .getElementById("cartPanel")
@@ -2683,24 +2078,18 @@ function showAccountForm(type,button){
     document
         .querySelectorAll(".account-tab")
         .forEach(btn=>{
-
             btn.classList.remove("active");
-
         });
 
-
     button.classList.add("active");
-
 
     document
         .getElementById("loginForm")
         .classList.remove("active");
 
-
     document
         .getElementById("registerForm")
         .classList.remove("active");
-
 
     if(type==="login"){
 
@@ -2708,9 +2097,7 @@ function showAccountForm(type,button){
             .getElementById("loginForm")
             .classList.add("active");
 
-    }
-
-    else{
+    }else{
 
         document
             .getElementById("registerForm")
@@ -2725,18 +2112,11 @@ function register(event){
 
     event.preventDefault();
 
-
     const password=
-        document
-            .getElementById("registerPassword")
-            .value;
-
+        document.getElementById("registerPassword").value;
 
     const password2=
-        document
-            .getElementById("registerPassword2")
-            .value;
-
+        document.getElementById("registerPassword2").value;
 
     if(password!==password2){
 
@@ -2745,55 +2125,38 @@ function register(event){
         );
 
         return;
-
     }
-
 
     const account={
 
         firstName:
-            document
-                .getElementById("firstName")
-                .value,
+            document.getElementById("firstName").value,
 
         lastName:
-            document
-                .getElementById("lastName")
-                .value,
+            document.getElementById("lastName").value,
 
         email:
-            document
-                .getElementById("registerEmail")
-                .value,
+            document.getElementById("registerEmail").value,
 
         street:
-            document
-                .getElementById("street")
-                .value,
+            document.getElementById("street").value,
 
         postalCode:
-            document
-                .getElementById("postalCode")
-                .value,
+            document.getElementById("postalCode").value,
 
         city:
-            document
-                .getElementById("city")
-                .value
+            document.getElementById("city").value
 
     };
-
 
     localStorage.setItem(
         "gonschikiAccount",
         JSON.stringify(account)
     );
 
-
     alert(
         "Konto wurde für diese Website-Vorschau gespeichert."
     );
-
 
     document
         .getElementById("registerForm")
@@ -2806,22 +2169,15 @@ function login(event){
 
     event.preventDefault();
 
-
     const email=
-        document
-            .getElementById("loginEmail")
-            .value;
-
+        document.getElementById("loginEmail").value;
 
     const account=
         JSON.parse(
-
             localStorage.getItem(
                 "gonschikiAccount"
             ) || "null"
-
         );
-
 
     if(account && account.email===email){
 
@@ -2829,9 +2185,7 @@ function login(event){
             "Anmeldung für diese Website-Vorschau erfolgreich."
         );
 
-    }
-
-    else{
+    }else{
 
         alert(
             "Kein gespeichertes Demo-Konto mit dieser E-Mail gefunden."
@@ -2859,11 +2213,9 @@ document
     .querySelectorAll(".modal")
     .forEach(modal=>{
 
-
         modal.addEventListener(
             "click",
             function(event){
-
 
                 if(event.target===modal){
 
@@ -2871,10 +2223,8 @@ document
 
                 }
 
-
             }
         );
-
 
     });
 
@@ -2898,7 +2248,6 @@ function previewMessage(){
 
 const translations={
 
-
     de:{
         shop:"SHOP",
         events:"EVENTS",
@@ -2906,7 +2255,6 @@ const translations={
         about:"ABOUT",
         contact:"KONTAKT"
     },
-
 
     en:{
         shop:"SHOP",
@@ -2916,7 +2264,6 @@ const translations={
         contact:"CONTACT"
     },
 
-
     ru:{
         shop:"МАГАЗИН",
         events:"СОБЫТИЯ",
@@ -2924,7 +2271,6 @@ const translations={
         about:"О НАС",
         contact:"КОНТАКТ"
     }
-
 
 };
 
@@ -2936,27 +2282,19 @@ function changeLanguage(language){
         language
     );
 
-
-    const t=
-        translations[language];
-
+    const t=translations[language];
 
     const links=
         document.querySelectorAll(
             ".nav-links a"
         );
 
-
     if(links.length>=5){
 
         links[0].textContent=t.shop;
-
         links[1].textContent=t.events;
-
         links[2].textContent=t.cars;
-
         links[3].textContent=t.about;
-
         links[4].textContent=t.contact;
 
     }
@@ -2971,11 +2309,9 @@ function loadLanguage(){
             "gonschikiLanguage"
         ) || "de";
 
-
     document
         .getElementById("languageSelect")
         .value=language;
-
 
     changeLanguage(language);
 
