@@ -18,15 +18,13 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     background:#080808;
     color:#fff;
     overflow-x:hidden;
 }
 
-button,
-input,
-select{
+button,input,select{
     font:inherit;
 }
 
@@ -35,7 +33,7 @@ button{
 }
 
 /* =========================
-   INFO BAR
+   INFO
 ========================= */
 
 .top-info{
@@ -71,12 +69,12 @@ nav{
     text-decoration:none;
     line-height:.85;
     font-weight:900;
-    letter-spacing:1px;
 }
 
 .logo-main{
     display:block;
     font-size:25px;
+    letter-spacing:1px;
 }
 
 .logo-est{
@@ -139,8 +137,11 @@ nav{
 
 .hero{
     position:relative;
-    min-height:100vh;
+
+    width:100%;
     height:850px;
+    min-height:100vh;
+
     overflow:hidden;
 
     display:flex;
@@ -148,7 +149,13 @@ nav{
     justify-content:center;
 }
 
-/* DAS IST DAS HAUPTBANNER-BILD */
+/*
+   HAUPTBANNER
+
+   Das Bild liegt direkt als Hintergrund
+   hinter dem kompletten Hero.
+*/
+
 .hero-image{
     position:absolute;
     inset:0;
@@ -156,44 +163,60 @@ nav{
     width:100%;
     height:100%;
 
-    object-fit:cover;
-    object-position:center center;
-
     z-index:0;
+
+    background-image:url("assets/Car-1(2).JPG");
+    background-repeat:no-repeat;
+
+    /*
+       Das Bild bleibt groß und füllt
+       den kompletten Banner.
+    */
+    background-size:cover;
+
+    /*
+       IMMER MITTIG
+    */
+    background-position:center center;
 }
 
-/* dunkler Verlauf über dem Bild */
+/* dunkler Verlauf */
+
 .hero-overlay{
     position:absolute;
     inset:0;
+
     z-index:1;
 
     background:
         linear-gradient(
             to bottom,
             rgba(0,0,0,.50) 0%,
-            rgba(0,0,0,.15) 35%,
+            rgba(0,0,0,.12) 35%,
             rgba(0,0,0,.18) 55%,
-            rgba(0,0,0,.82) 100%
+            rgba(0,0,0,.86) 100%
         );
 }
 
-/* leichter zusätzlicher Verlauf */
+/* zusätzlicher dezenter Verlauf */
+
 .hero-overlay::after{
     content:"";
+
     position:absolute;
     inset:0;
 
     background:
         radial-gradient(
             circle at center,
-            transparent 20%,
+            transparent 15%,
             rgba(0,0,0,.18) 100%
         );
 }
 
 .hero-content{
     position:relative;
+
     z-index:2;
 
     width:100%;
@@ -205,6 +228,7 @@ nav{
 
     display:flex;
     flex-direction:column;
+
     align-items:center;
     justify-content:center;
 
@@ -214,50 +238,58 @@ nav{
 /* großes Logo */
 
 .hero-logo{
-    font-size:clamp(65px, 11vw, 155px);
+    font-size:clamp(65px,11vw,155px);
+
     line-height:.82;
 
     font-weight:900;
-    letter-spacing:clamp(2px, .8vw, 10px);
+
+    letter-spacing:clamp(2px,.8vw,10px);
 
     text-shadow:
-        0 5px 30px rgba(0,0,0,.7);
+        0 5px 30px rgba(0,0,0,.8);
 }
 
-/* EST weiter vom Logo entfernt */
+/* EST */
 
 .hero-est{
-    margin-top:28px;
+    margin-top:30px;
 
     font-size:clamp(11px,1.2vw,15px);
+
     font-weight:700;
 
     letter-spacing:9px;
 
-    opacity:.85;
+    opacity:.9;
 
-    text-shadow:0 3px 15px rgba(0,0,0,.8);
+    text-shadow:
+        0 3px 15px rgba(0,0,0,.9);
 }
 
-/* SPRUCH */
+/* =========================
+   SLOGAN
+========================= */
 
 .hero-slogan{
-    margin-top:130px;
+    margin-top:135px;
 
-    max-width:850px;
+    max-width:900px;
 
     text-align:center;
 }
 
 .hero-slogan-main{
-    font-size:clamp(24px,4vw,55px);
+    font-size:clamp(25px,4vw,56px);
+
     line-height:1.05;
 
     font-weight:900;
+
     letter-spacing:2px;
 
     text-shadow:
-        0 4px 25px rgba(0,0,0,.8);
+        0 4px 25px rgba(0,0,0,.9);
 }
 
 .hero-slogan-main span{
@@ -265,31 +297,33 @@ nav{
 }
 
 .hero-slogan-small{
-    margin-top:28px;
+    margin-top:30px;
 
-    font-size:clamp(12px,1.5vw,17px);
+    font-size:clamp(11px,1.5vw,17px);
 
     font-weight:700;
+
     letter-spacing:7px;
 
-    opacity:.9;
+    opacity:.95;
 
     text-shadow:
-        0 3px 15px rgba(0,0,0,.8);
+        0 3px 15px rgba(0,0,0,.9);
 }
 
 .hero-description{
     max-width:650px;
 
-    margin-top:30px;
+    margin:30px auto 0;
 
     font-size:14px;
+
     line-height:1.7;
 
-    color:rgba(255,255,255,.82);
+    color:rgba(255,255,255,.84);
 
     text-shadow:
-        0 2px 12px rgba(0,0,0,.9);
+        0 2px 12px rgba(0,0,0,.95);
 }
 
 /* =========================
@@ -330,7 +364,6 @@ section{
     justify-content:center;
     flex-wrap:wrap;
     gap:10px;
-
     margin-bottom:45px;
 }
 
@@ -358,11 +391,13 @@ section{
 
     display:grid;
     grid-template-columns:repeat(4,1fr);
+
     gap:22px;
 }
 
 .product{
     background:#111;
+
     border:1px solid #1d1d1d;
 
     transition:.25s;
@@ -389,6 +424,7 @@ section{
 .product-image img{
     width:100%;
     height:100%;
+
     object-fit:cover;
 
     transition:.35s;
@@ -414,6 +450,7 @@ section{
 
 .product-price{
     margin-top:13px;
+
     font-size:13px;
     font-weight:800;
 }
@@ -432,19 +469,25 @@ section{
 
     display:grid;
     grid-template-columns:repeat(2,1fr);
+
     gap:22px;
 }
 
 .event{
     border:1px solid #252525;
+
     padding:30px;
+
     background:#101010;
 }
 
 .event-date{
     color:#888;
+
     font-size:11px;
+
     letter-spacing:2px;
+
     margin-bottom:12px;
 }
 
@@ -461,7 +504,9 @@ section{
 
 .event p{
     color:#999;
+
     line-height:1.6;
+
     font-size:13px;
 }
 
@@ -493,20 +538,28 @@ section{
     margin:auto;
 
     display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
     gap:18px;
 }
 
 .car{
     background:#111;
+
     border:1px solid #1d1d1d;
+
     overflow:hidden;
 }
 
 .car:last-child{
-    grid-column:1 / -1;
+    grid-column:1/-1;
+
     max-width:520px;
+
     width:100%;
+
     justify-self:center;
 }
 
@@ -544,6 +597,7 @@ section{
 
 .about-content{
     max-width:800px;
+
     margin:auto;
 
     text-align:center;
@@ -551,7 +605,9 @@ section{
 
 .about-content p{
     color:#aaa;
+
     line-height:1.9;
+
     font-size:15px;
 }
 
@@ -565,24 +621,31 @@ section{
 
 .contact-content{
     max-width:650px;
+
     margin:auto;
+
     text-align:center;
 }
 
 .contact-content p{
     color:#999;
+
     line-height:1.7;
+
     margin-bottom:25px;
 }
 
 .social{
     display:flex;
+
     justify-content:center;
+
     gap:15px;
 }
 
 .social a{
     color:#fff;
+
     border:1px solid #333;
 
     padding:12px 20px;
@@ -590,6 +653,7 @@ section{
     text-decoration:none;
 
     font-size:11px;
+
     font-weight:700;
 }
 
@@ -599,17 +663,23 @@ section{
 
 footer{
     padding:35px 5%;
+
     background:#050505;
+
     border-top:1px solid #161616;
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 }
 
 footer p{
     color:#666;
+
     font-size:10px;
+
     letter-spacing:1px;
 }
 
@@ -619,6 +689,7 @@ footer p{
 
 .modal{
     position:fixed;
+
     inset:0;
 
     background:rgba(0,0,0,.82);
@@ -626,7 +697,9 @@ footer p{
     z-index:100;
 
     display:none;
+
     align-items:center;
+
     justify-content:center;
 
     padding:20px;
@@ -638,10 +711,13 @@ footer p{
 
 .modal-box{
     width:min(500px,100%);
+
     max-height:90vh;
+
     overflow:auto;
 
     background:#111;
+
     border:1px solid #333;
 
     padding:30px;
@@ -651,10 +727,12 @@ footer p{
 
 .close{
     position:absolute;
+
     right:18px;
     top:15px;
 
     background:none;
+
     border:0;
 
     color:#fff;
@@ -664,7 +742,9 @@ footer p{
 
 .modal-image{
     width:100%;
+
     height:400px;
+
     object-fit:cover;
 
     margin-bottom:20px;
@@ -676,27 +756,35 @@ footer p{
 
 .modal-price{
     color:#999;
+
     margin-bottom:20px;
 }
 
 .size-title{
     font-size:11px;
+
     font-weight:700;
+
     letter-spacing:1px;
+
     margin-bottom:10px;
 }
 
 .sizes{
     display:flex;
+
     gap:8px;
+
     margin-bottom:20px;
 }
 
 .size{
     width:48px;
+
     height:40px;
 
     background:#181818;
+
     color:#fff;
 
     border:1px solid #333;
@@ -711,6 +799,7 @@ footer p{
     width:100%;
 
     background:#fff;
+
     color:#000;
 
     border:0;
@@ -718,7 +807,9 @@ footer p{
     padding:15px;
 
     font-size:11px;
+
     font-weight:900;
+
     letter-spacing:1px;
 }
 
@@ -728,10 +819,13 @@ footer p{
 
 .cart-panel{
     position:fixed;
+
     top:0;
+
     right:-430px;
 
     width:min(430px,100%);
+
     height:100vh;
 
     background:#0e0e0e;
@@ -753,7 +847,9 @@ footer p{
 
 .cart-head{
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 
     margin-bottom:30px;
@@ -765,6 +861,7 @@ footer p{
 
 .cart-item{
     display:flex;
+
     gap:14px;
 
     border-bottom:1px solid #222;
@@ -774,7 +871,9 @@ footer p{
 
 .cart-item img{
     width:70px;
+
     height:80px;
+
     object-fit:cover;
 }
 
@@ -784,18 +883,23 @@ footer p{
 
 .cart-item-info h4{
     font-size:12px;
+
     margin-bottom:7px;
 }
 
 .cart-item-info p{
     font-size:11px;
+
     color:#888;
 }
 
 .remove-item{
     background:none;
+
     color:#888;
+
     border:0;
+
     font-size:11px;
 }
 
@@ -803,9 +907,11 @@ footer p{
     margin-top:25px;
 
     display:flex;
+
     justify-content:space-between;
 
     font-size:15px;
+
     font-weight:800;
 }
 
@@ -819,6 +925,7 @@ footer p{
     color:#888;
 
     font-size:11px;
+
     line-height:1.5;
 }
 
@@ -828,6 +935,7 @@ footer p{
 
 .account-tabs{
     display:flex;
+
     margin-bottom:25px;
 }
 
@@ -835,6 +943,7 @@ footer p{
     flex:1;
 
     background:#181818;
+
     color:#888;
 
     border:1px solid #292929;
@@ -842,11 +951,13 @@ footer p{
     padding:12px;
 
     font-size:11px;
+
     font-weight:700;
 }
 
 .account-tab.active{
     background:#fff;
+
     color:#000;
 }
 
@@ -866,6 +977,7 @@ footer p{
     display:block;
 
     font-size:10px;
+
     color:#888;
 
     margin-bottom:6px;
@@ -875,11 +987,13 @@ footer p{
     width:100%;
 
     background:#181818;
+
     border:1px solid #333;
 
     color:#fff;
 
     padding:12px;
+
     outline:none;
 }
 
@@ -889,7 +1003,9 @@ footer p{
 
 .form-grid{
     display:grid;
+
     grid-template-columns:1fr 1fr;
+
     gap:10px;
 }
 
@@ -897,12 +1013,9 @@ footer p{
    LANGUAGE
 ========================= */
 
-.language{
-    position:relative;
-}
-
 .language select{
     background:transparent;
+
     border:1px solid #444;
 
     color:#fff;
@@ -914,11 +1027,12 @@ footer p{
 
 .language option{
     background:#111;
+
     color:#fff;
 }
 
 /* =========================
-   MOBILE
+   TABLET
 ========================= */
 
 @media(max-width:900px){
@@ -940,16 +1054,23 @@ footer p{
     }
 }
 
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width:600px){
 
     .top-info{
         font-size:8px;
+
         line-height:1.4;
+
         padding:8px 10px;
     }
 
     nav{
         top:30px;
+
         padding:18px 20px;
     }
 
@@ -959,6 +1080,7 @@ footer p{
 
     .logo-est{
         font-size:7px;
+
         letter-spacing:3px;
     }
 
@@ -966,56 +1088,82 @@ footer p{
         font-size:10px;
     }
 
+    /* MOBILE HERO */
+
     .hero{
         height:760px;
+
         min-height:760px;
     }
 
     .hero-image{
         /*
-          Auf dem Handy wird das Banner etwas höher
-          angesetzt, damit das Auto möglichst gut sichtbar bleibt.
+          Das Bild bleibt auch auf dem Handy
+          exakt mittig.
         */
-        object-position:center center;
+        background-position:center center;
+
+        /*
+          Das Bild füllt den Banner,
+          ohne sich zu wiederholen.
+        */
+        background-size:cover;
     }
 
     .hero-content{
         min-height:760px;
+
         padding:125px 20px 55px;
     }
 
     .hero-logo{
         font-size:18vw;
+
         letter-spacing:2px;
     }
 
     .hero-est{
         margin-top:22px;
+
         font-size:9px;
+
         letter-spacing:6px;
     }
 
+    /*
+       Der Spruch ist bewusst weit
+       vom Logo entfernt.
+    */
+
     .hero-slogan{
         margin-top:105px;
+
         max-width:350px;
     }
 
     .hero-slogan-main{
         font-size:27px;
+
         line-height:1.08;
+
         letter-spacing:1px;
     }
 
     .hero-slogan-small{
         margin-top:22px;
+
         font-size:9px;
+
         letter-spacing:4px;
     }
 
     .hero-description{
         font-size:11px;
+
         line-height:1.6;
+
         max-width:340px;
+
         margin-top:22px;
     }
 
@@ -1025,6 +1173,7 @@ footer p{
 
     .products{
         grid-template-columns:1fr 1fr;
+
         gap:10px;
     }
 
@@ -1050,11 +1199,13 @@ footer p{
 
     .cars{
         grid-template-columns:1fr;
+
         gap:14px;
     }
 
     .car:last-child{
         grid-column:auto;
+
         max-width:none;
     }
 
@@ -1076,7 +1227,9 @@ footer p{
 
     footer{
         flex-direction:column;
+
         gap:12px;
+
         text-align:center;
     }
 }
@@ -1094,39 +1247,67 @@ footer p{
 </div>
 
 <!-- =========================
-     NAV
+     NAVIGATION
 ========================= -->
 
 <nav>
 
     <a href="#home" class="logo">
-        <span class="logo-main">ГОНЩИКИ</span>
-        <span class="logo-est">EST. 2025</span>
+
+        <span class="logo-main">
+            ГОНЩИКИ
+        </span>
+
+        <span class="logo-est">
+            EST. 2025
+        </span>
+
     </a>
 
     <div class="nav-links">
 
         <a href="#shop">SHOP</a>
+
         <a href="#events">EVENTS</a>
+
         <a href="#cars">CARS</a>
+
         <a href="#about">ABOUT</a>
+
         <a href="#contact">KONTAKT</a>
 
-        <button class="nav-button" onclick="openAccount()">
+        <button
+            class="nav-button"
+            onclick="openAccount()">
             ANMELDEN
         </button>
 
-        <button class="nav-button cart-button" onclick="openCart()">
+        <button
+            class="nav-button cart-button"
+            onclick="openCart()">
+
             WARENKORB
-            <span class="cart-count" id="cartCount">0</span>
+
+            <span
+                class="cart-count"
+                id="cartCount">
+                0
+            </span>
+
         </button>
 
         <div class="language">
-            <select id="languageSelect" onchange="changeLanguage(this.value)">
+
+            <select
+                id="languageSelect"
+                onchange="changeLanguage(this.value)">
+
                 <option value="de">DE</option>
                 <option value="en">EN</option>
                 <option value="ru">RU</option>
+
             </select>
+
         </div>
 
     </div>
@@ -1139,17 +1320,8 @@ footer p{
 
 <section class="hero" id="home">
 
-    <!--
-        WICHTIG:
-        Dein Hauptbanner liegt hier:
-        assets/Car-1(2).JPG
-    -->
-
-    <img
-        src="assets/Car-1(2).JPG"
-        class="hero-image"
-        alt="Gonschiki Hauptbanner"
-    >
+    <!-- DEIN HAUPTBANNER -->
+    <div class="hero-image"></div>
 
     <div class="hero-overlay"></div>
 
@@ -1166,8 +1338,15 @@ footer p{
         <div class="hero-slogan">
 
             <div class="hero-slogan-main">
-                <span>GEMACHT FÜR DIE NACHT.</span>
-                <span>GEMACHT FÜR DEN TAG.</span>
+
+                <span>
+                    GEMACHT FÜR DIE NACHT.
+                </span>
+
+                <span>
+                    GEMACHT FÜR DEN TAG.
+                </span>
+
             </div>
 
             <div class="hero-slogan-small">
@@ -1175,7 +1354,8 @@ footer p{
             </div>
 
             <p class="hero-description">
-                Gonschiki steht für Autos, Nächte, Geschwindigkeit und den eigenen Style.
+                Gonschiki steht für Autos, Nächte,
+                Geschwindigkeit und den eigenen Style.
                 Streetwear für alle, die ihre eigene Spur fahren.
             </p>
 
@@ -1192,35 +1372,53 @@ footer p{
 <section class="shop" id="shop">
 
     <div class="section-title">
+
         <h2>SHOP</h2>
-        <p>Gonschiki Streetwear</p>
+
+        <p>
+            Gonschiki Streetwear
+        </p>
+
     </div>
 
     <div class="categories">
 
-        <button class="category-btn active" onclick="filterProducts('Alle',this)">
+        <button
+            class="category-btn active"
+            onclick="filterProducts('Alle',this)">
             ALLE
         </button>
 
-        <button class="category-btn" onclick="filterProducts('Shirts',this)">
+        <button
+            class="category-btn"
+            onclick="filterProducts('Shirts',this)">
             SHIRTS
         </button>
 
-        <button class="category-btn" onclick="filterProducts('Hoodies',this)">
+        <button
+            class="category-btn"
+            onclick="filterProducts('Hoodies',this)">
             HOODIES
         </button>
 
-        <button class="category-btn" onclick="filterProducts('Zipper',this)">
+        <button
+            class="category-btn"
+            onclick="filterProducts('Zipper',this)">
             ZIPPER
         </button>
 
-        <button class="category-btn" onclick="filterProducts('Hosen',this)">
+        <button
+            class="category-btn"
+            onclick="filterProducts('Hosen',this)">
             HOSEN
         </button>
 
     </div>
 
-    <div class="products" id="products"></div>
+    <div
+        class="products"
+        id="products">
+    </div>
 
 </section>
 
@@ -1231,8 +1429,13 @@ footer p{
 <section class="events" id="events">
 
     <div class="section-title">
+
         <h2>EVENTS</h2>
-        <p>Cars. People. Nights.</p>
+
+        <p>
+            Cars. People. Nights.
+        </p>
+
     </div>
 
     <div class="events-grid">
@@ -1243,14 +1446,17 @@ footer p{
                 2026
             </div>
 
-            <h3>GONSCHIKI NIGHT</h3>
+            <h3>
+                GONSCHIKI NIGHT
+            </h3>
 
             <div class="event-location">
                 STUTTGART
             </div>
 
             <p>
-                Eine Nacht für Autos, Musik und die Gonschiki Crew.
+                Eine Nacht für Autos,
+                Musik und die Gonschiki Crew.
             </p>
 
             <button onclick="previewMessage()">
@@ -1265,14 +1471,17 @@ footer p{
                 2026
             </div>
 
-            <h3>CREW MEET</h3>
+            <h3>
+                CREW MEET
+            </h3>
 
             <div class="event-location">
                 BADEN-WÜRTTEMBERG
             </div>
 
             <p>
-                Gemeinsam unterwegs. Autos, Freunde und der eigene Style.
+                Gemeinsam unterwegs.
+                Autos, Freunde und der eigene Style.
             </p>
 
             <button onclick="previewMessage()">
@@ -1289,48 +1498,80 @@ footer p{
      CARS
 ========================= -->
 
-<section class="cars-section" id="cars">
+<section
+    class="cars-section"
+    id="cars">
 
     <div class="section-title">
+
         <h2>CARS</h2>
-        <p>Die Autos hinter Gonschiki</p>
+
+        <p>
+            Die Autos hinter Gonschiki
+        </p>
+
     </div>
 
     <div class="cars">
 
         <div class="car">
-            <img src="assets/Car-1.JPG" alt="Gonschiki Car 1">
+
+            <img
+                src="assets/Car-1.JPG"
+                alt="Gonschiki">
+
             <div class="car-info">
                 <h3>GONSCHIKI #01</h3>
             </div>
+
         </div>
 
         <div class="car">
-            <img src="assets/Car-2.JPG" alt="Gonschiki Car 2">
+
+            <img
+                src="assets/Car-2.JPG"
+                alt="Gonschiki">
+
             <div class="car-info">
                 <h3>GONSCHIKI #02</h3>
             </div>
+
         </div>
 
         <div class="car">
-            <img src="assets/Car-3.jpg" alt="Gonschiki Car 3">
+
+            <img
+                src="assets/Car-3.jpg"
+                alt="Gonschiki">
+
             <div class="car-info">
                 <h3>GONSCHIKI #03</h3>
             </div>
+
         </div>
 
         <div class="car">
-            <img src="assets/Car-4.jpg" alt="Gonschiki Car 4">
+
+            <img
+                src="assets/Car-4.jpg"
+                alt="Gonschiki">
+
             <div class="car-info">
                 <h3>GONSCHIKI #04</h3>
             </div>
+
         </div>
 
         <div class="car">
-            <img src="assets/Car-5.jpg" alt="Gonschiki Car 5">
+
+            <img
+                src="assets/Car-5.jpg"
+                alt="Gonschiki">
+
             <div class="car-info">
                 <h3>GONSCHIKI #05</h3>
             </div>
+
         </div>
 
     </div>
@@ -1341,18 +1582,22 @@ footer p{
      ABOUT
 ========================= -->
 
-<section class="about" id="about">
+<section
+    class="about"
+    id="about">
 
     <div class="section-title">
+
         <h2>ABOUT</h2>
+
     </div>
 
     <div class="about-content">
 
         <p>
             Gonschiki ist mehr als nur Streetwear.
-            Es geht um Autos, Geschwindigkeit, Nächte,
-            Freunde und den eigenen Style.
+            Es geht um Autos, Geschwindigkeit,
+            Nächte, Freunde und den eigenen Style.
             Eine Crew für alle, die ihre eigene Spur fahren.
         </p>
 
@@ -1364,10 +1609,14 @@ footer p{
      CONTACT
 ========================= -->
 
-<section class="contact" id="contact">
+<section
+    class="contact"
+    id="contact">
 
     <div class="section-title">
+
         <h2>KONTAKT</h2>
+
     </div>
 
     <div class="contact-content">
@@ -1377,9 +1626,13 @@ footer p{
         </p>
 
         <div class="social">
-            <a href="https://instagram.com/gonschikicrew" target="_blank">
+
+            <a
+                href="https://instagram.com/gonschikicrew"
+                target="_blank">
                 INSTAGRAM
             </a>
+
         </div>
 
     </div>
@@ -1406,11 +1659,15 @@ footer p{
      PRODUCT MODAL
 ========================= -->
 
-<div class="modal" id="productModal">
+<div
+    class="modal"
+    id="productModal">
 
     <div class="modal-box">
 
-        <button class="close" onclick="closeModal('productModal')">
+        <button
+            class="close"
+            onclick="closeModal('productModal')">
             ×
         </button>
 
@@ -1418,12 +1675,14 @@ footer p{
             id="modalProductImage"
             class="modal-image"
             src=""
-            alt=""
-        >
+            alt="">
 
         <h2 id="modalProductName"></h2>
 
-        <div class="modal-price" id="modalProductPrice"></div>
+        <div
+            class="modal-price"
+            id="modalProductPrice">
+        </div>
 
         <div class="size-title">
             GRÖSSE
@@ -1431,25 +1690,35 @@ footer p{
 
         <div class="sizes">
 
-            <button class="size" onclick="selectSize(this)">
+            <button
+                class="size"
+                onclick="selectSize(this)">
                 S
             </button>
 
-            <button class="size" onclick="selectSize(this)">
+            <button
+                class="size"
+                onclick="selectSize(this)">
                 M
             </button>
 
-            <button class="size" onclick="selectSize(this)">
+            <button
+                class="size"
+                onclick="selectSize(this)">
                 L
             </button>
 
-            <button class="size" onclick="selectSize(this)">
+            <button
+                class="size"
+                onclick="selectSize(this)">
                 XL
             </button>
 
         </div>
 
-        <button class="primary-btn" onclick="addCurrentProduct()">
+        <button
+            class="primary-btn"
+            onclick="addCurrentProduct()">
             IN DEN WARENKORB
         </button>
 
@@ -1461,13 +1730,19 @@ footer p{
      CART
 ========================= -->
 
-<div class="cart-panel" id="cartPanel">
+<div
+    class="cart-panel"
+    id="cartPanel">
 
     <div class="cart-head">
 
-        <h2>WARENKORB</h2>
+        <h2>
+            WARENKORB
+        </h2>
 
-        <button class="close" onclick="closeCart()">
+        <button
+            class="close"
+            onclick="closeCart()">
             ×
         </button>
 
@@ -1477,26 +1752,37 @@ footer p{
 
     <div class="cart-total">
 
-        <span>GESAMT</span>
-        <span id="cartTotal">0 €</span>
+        <span>
+            GESAMT
+        </span>
+
+        <span id="cartTotal">
+            0 €
+        </span>
 
     </div>
 
     <div class="preview-note">
-        SHOP-VORSCHAU: Bestellungen und Bezahlung sind derzeit noch nicht möglich.
+        SHOP-VORSCHAU:
+        Bestellungen und Bezahlung sind derzeit
+        noch nicht möglich.
     </div>
 
 </div>
 
 <!-- =========================
-     ACCOUNT MODAL
+     ACCOUNT
 ========================= -->
 
-<div class="modal" id="accountModal">
+<div
+    class="modal"
+    id="accountModal">
 
     <div class="modal-box">
 
-        <button class="close" onclick="closeModal('accountModal')">
+        <button
+            class="close"
+            onclick="closeModal('accountModal')">
             ×
         </button>
 
@@ -1516,31 +1802,34 @@ footer p{
 
         </div>
 
-        <!-- LOGIN -->
-
-        <form class="form active" id="loginForm" onsubmit="login(event)">
+        <form
+            class="form active"
+            id="loginForm"
+            onsubmit="login(event)">
 
             <div class="form-group">
 
-                <label>E-MAIL</label>
+                <label>
+                    E-MAIL
+                </label>
 
                 <input
                     type="email"
                     id="loginEmail"
-                    required
-                >
+                    required>
 
             </div>
 
             <div class="form-group">
 
-                <label>PASSWORT</label>
+                <label>
+                    PASSWORT
+                </label>
 
                 <input
                     type="password"
                     id="loginPassword"
-                    required
-                >
+                    required>
 
             </div>
 
@@ -1550,33 +1839,36 @@ footer p{
 
         </form>
 
-        <!-- REGISTER -->
-
-        <form class="form" id="registerForm" onsubmit="register(event)">
+        <form
+            class="form"
+            id="registerForm"
+            onsubmit="register(event)">
 
             <div class="form-grid">
 
                 <div class="form-group">
 
-                    <label>VORNAME</label>
+                    <label>
+                        VORNAME
+                    </label>
 
                     <input
                         type="text"
                         id="firstName"
-                        required
-                    >
+                        required>
 
                 </div>
 
                 <div class="form-group">
 
-                    <label>NACHNAME</label>
+                    <label>
+                        NACHNAME
+                    </label>
 
                     <input
                         type="text"
                         id="lastName"
-                        required
-                    >
+                        required>
 
                 </div>
 
@@ -1584,25 +1876,27 @@ footer p{
 
             <div class="form-group">
 
-                <label>E-MAIL</label>
+                <label>
+                    E-MAIL
+                </label>
 
                 <input
                     type="email"
                     id="registerEmail"
-                    required
-                >
+                    required>
 
             </div>
 
             <div class="form-group">
 
-                <label>STRASSE &amp; HAUSNUMMER</label>
+                <label>
+                    STRASSE &amp; HAUSNUMMER
+                </label>
 
                 <input
                     type="text"
                     id="street"
-                    required
-                >
+                    required>
 
             </div>
 
@@ -1610,25 +1904,27 @@ footer p{
 
                 <div class="form-group">
 
-                    <label>PLZ</label>
+                    <label>
+                        PLZ
+                    </label>
 
                     <input
                         type="text"
                         id="postalCode"
-                        required
-                    >
+                        required>
 
                 </div>
 
                 <div class="form-group">
 
-                    <label>ORT</label>
+                    <label>
+                        ORT
+                    </label>
 
                     <input
                         type="text"
                         id="city"
-                        required
-                    >
+                        required>
 
                 </div>
 
@@ -1636,25 +1932,27 @@ footer p{
 
             <div class="form-group">
 
-                <label>PASSWORT</label>
+                <label>
+                    PASSWORT
+                </label>
 
                 <input
                     type="password"
                     id="registerPassword"
-                    required
-                >
+                    required>
 
             </div>
 
             <div class="form-group">
 
-                <label>PASSWORT WIEDERHOLEN</label>
+                <label>
+                    PASSWORT WIEDERHOLEN
+                </label>
 
                 <input
                     type="password"
                     id="registerPassword2"
-                    required
-                >
+                    required>
 
             </div>
 
@@ -1671,7 +1969,7 @@ footer p{
 <script>
 
 /* =========================
-   PRODUCTS
+   PRODUKTE
 ========================= */
 
 const products = [
@@ -1748,54 +2046,65 @@ const products = [
 
 ];
 
-let currentProduct = null;
-let selectedSize = null;
+let currentProduct=null;
 
-let cart = JSON.parse(
-    localStorage.getItem("gonschikiCart") || "[]"
+let selectedSize=null;
+
+let cart=JSON.parse(
+    localStorage.getItem("gonschikiCart")||"[]"
 );
 
 /* =========================
-   PRODUCTS RENDER
+   SHOP
 ========================= */
 
-function renderProducts(list = products){
+function renderProducts(list=products){
 
-    const container =
+    const container=
         document.getElementById("products");
 
-    container.innerHTML = "";
+    container.innerHTML="";
 
-    list.forEach((product,index)=>{
+    list.forEach(product=>{
 
-        const item = document.createElement("div");
+        const index=
+            products.indexOf(product);
 
-        item.className = "product";
+        const item=
+            document.createElement("div");
 
-        item.onclick = () => openProduct(index);
+        item.className="product";
 
-        item.innerHTML = `
+        item.onclick=()=>{
+            openProduct(index);
+        };
+
+        item.innerHTML=`
 
             <div class="product-image">
 
                 <img
                     src="${product.image}"
-                    alt="${product.name}"
-                >
+                    alt="">
 
             </div>
 
             <div class="product-info">
 
-                <h3>${product.name}</h3>
+                <h3>
+                    ${product.name}
+                </h3>
 
-                <p>${product.category}</p>
+                <p>
+                    ${product.category}
+                </p>
 
                 <div class="product-price">
                     ${product.price} €
                 </div>
 
             </div>
+
         `;
 
         container.appendChild(item);
@@ -1804,19 +2113,17 @@ function renderProducts(list = products){
 
 }
 
-/* =========================
-   FILTER
-========================= */
-
 function filterProducts(category,button){
 
     document
         .querySelectorAll(".category-btn")
-        .forEach(btn => btn.classList.remove("active"));
+        .forEach(btn=>{
+            btn.classList.remove("active");
+        });
 
     button.classList.add("active");
 
-    if(category === "Alle"){
+    if(category==="Alle"){
 
         renderProducts(products);
 
@@ -1824,7 +2131,8 @@ function filterProducts(category,button){
 
         renderProducts(
             products.filter(
-                product => product.category === category
+                product=>
+                    product.category===category
             )
         );
 
@@ -1833,27 +2141,32 @@ function filterProducts(category,button){
 }
 
 /* =========================
-   PRODUCT MODAL
+   PRODUKT MODAL
 ========================= */
 
 function openProduct(index){
 
-    currentProduct = products[index];
+    currentProduct=products[index];
 
-    selectedSize = null;
+    selectedSize=null;
 
     document
         .querySelectorAll(".size")
-        .forEach(btn => btn.classList.remove("active"));
+        .forEach(btn=>{
+            btn.classList.remove("active");
+        });
 
-    document.getElementById("modalProductImage").src =
-        currentProduct.image;
+    document
+        .getElementById("modalProductImage")
+        .src=currentProduct.image;
 
-    document.getElementById("modalProductName").textContent =
-        currentProduct.name;
+    document
+        .getElementById("modalProductName")
+        .textContent=currentProduct.name;
 
-    document.getElementById("modalProductPrice").textContent =
-        currentProduct.price + " €";
+    document
+        .getElementById("modalProductPrice")
+        .textContent=currentProduct.price+" €";
 
     document
         .getElementById("productModal")
@@ -1865,35 +2178,39 @@ function selectSize(button){
 
     document
         .querySelectorAll(".size")
-        .forEach(btn => btn.classList.remove("active"));
+        .forEach(btn=>{
+            btn.classList.remove("active");
+        });
 
     button.classList.add("active");
 
-    selectedSize = button.textContent;
+    selectedSize=button.textContent;
 
 }
 
 function addCurrentProduct(){
 
     if(!currentProduct){
-
         return;
-
     }
 
     if(!selectedSize){
 
-        alert("Bitte zuerst eine Größe auswählen.");
+        alert(
+            "Bitte zuerst eine Größe auswählen."
+        );
 
         return;
-
     }
 
     cart.push({
 
         name:currentProduct.name,
+
         price:currentProduct.price,
+
         image:currentProduct.image,
+
         size:selectedSize
 
     });
@@ -1904,12 +2221,14 @@ function addCurrentProduct(){
 
     updateCart();
 
-    alert("Produkt wurde dem Warenkorb hinzugefügt.");
+    alert(
+        "Produkt wurde dem Warenkorb hinzugefügt."
+    );
 
 }
 
 /* =========================
-   CART
+   WARENKORB
 ========================= */
 
 function saveCart(){
@@ -1923,44 +2242,49 @@ function saveCart(){
 
 function updateCart(){
 
-    const count =
+    const count=
         document.getElementById("cartCount");
 
-    const items =
+    const items=
         document.getElementById("cartItems");
 
-    const total =
+    const total=
         document.getElementById("cartTotal");
 
-    count.textContent = cart.length;
+    count.textContent=cart.length;
 
-    items.innerHTML = "";
+    items.innerHTML="";
 
-    let sum = 0;
+    let sum=0;
 
     cart.forEach((item,index)=>{
 
-        sum += Number(item.price);
+        sum+=Number(item.price);
 
-        const div =
+        const div=
             document.createElement("div");
 
-        div.className = "cart-item";
+        div.className="cart-item";
 
-        div.innerHTML = `
+        div.innerHTML=`
 
             <img
                 src="${item.image}"
-                alt="${item.name}"
-            >
+                alt="">
 
             <div class="cart-item-info">
 
-                <h4>${item.name}</h4>
+                <h4>
+                    ${item.name}
+                </h4>
 
-                <p>Größe: ${item.size}</p>
+                <p>
+                    Größe: ${item.size}
+                </p>
 
-                <p>${item.price} €</p>
+                <p>
+                    ${item.price} €
+                </p>
 
             </div>
 
@@ -1976,8 +2300,8 @@ function updateCart(){
 
     });
 
-    total.textContent =
-        sum.toFixed(2) + " €";
+    total.textContent=
+        sum.toFixed(2)+" €";
 
 }
 
@@ -2025,9 +2349,9 @@ function showAccountForm(type,button){
 
     document
         .querySelectorAll(".account-tab")
-        .forEach(btn =>
-            btn.classList.remove("active")
-        );
+        .forEach(btn=>{
+            btn.classList.remove("active");
+        });
 
     button.classList.add("active");
 
@@ -2039,7 +2363,7 @@ function showAccountForm(type,button){
         .getElementById("registerForm")
         .classList.remove("active");
 
-    if(type === "login"){
+    if(type==="login"){
 
         document
             .getElementById("loginForm")
@@ -2059,39 +2383,56 @@ function register(event){
 
     event.preventDefault();
 
-    const password =
-        document.getElementById("registerPassword").value;
+    const password=
+        document
+            .getElementById("registerPassword")
+            .value;
 
-    const password2 =
-        document.getElementById("registerPassword2").value;
+    const password2=
+        document
+            .getElementById("registerPassword2")
+            .value;
 
-    if(password !== password2){
+    if(password!==password2){
 
-        alert("Die Passwörter stimmen nicht überein.");
+        alert(
+            "Die Passwörter stimmen nicht überein."
+        );
 
         return;
-
     }
 
-    const account = {
+    const account={
 
         firstName:
-            document.getElementById("firstName").value,
+            document
+                .getElementById("firstName")
+                .value,
 
         lastName:
-            document.getElementById("lastName").value,
+            document
+                .getElementById("lastName")
+                .value,
 
         email:
-            document.getElementById("registerEmail").value,
+            document
+                .getElementById("registerEmail")
+                .value,
 
         street:
-            document.getElementById("street").value,
+            document
+                .getElementById("street")
+                .value,
 
         postalCode:
-            document.getElementById("postalCode").value,
+            document
+                .getElementById("postalCode")
+                .value,
 
         city:
-            document.getElementById("city").value
+            document
+                .getElementById("city")
+                .value
 
     };
 
@@ -2104,7 +2445,9 @@ function register(event){
         "Konto wurde für diese Website-Vorschau gespeichert."
     );
 
-    document.getElementById("registerForm").reset();
+    document
+        .getElementById("registerForm")
+        .reset();
 
 }
 
@@ -2112,15 +2455,19 @@ function login(event){
 
     event.preventDefault();
 
-    const email =
-        document.getElementById("loginEmail").value;
+    const email=
+        document
+            .getElementById("loginEmail")
+            .value;
 
-    const account =
+    const account=
         JSON.parse(
-            localStorage.getItem("gonschikiAccount") || "null"
+            localStorage.getItem(
+                "gonschikiAccount"
+            )||"null"
         );
 
-    if(account && account.email === email){
+    if(account && account.email===email){
 
         alert(
             "Anmeldung für diese Website-Vorschau erfolgreich."
@@ -2148,19 +2495,24 @@ function closeModal(id){
 
 }
 
-document.querySelectorAll(".modal").forEach(modal => {
+document
+    .querySelectorAll(".modal")
+    .forEach(modal=>{
 
-    modal.addEventListener("click",function(event){
+        modal.addEventListener(
+            "click",
+            function(event){
 
-        if(event.target === modal){
+                if(event.target===modal){
 
-            modal.classList.remove("active");
+                    modal.classList.remove("active");
 
-        }
+                }
+
+            }
+        );
 
     });
-
-});
 
 /* =========================
    EVENTS
@@ -2175,10 +2527,10 @@ function previewMessage(){
 }
 
 /* =========================
-   LANGUAGE
+   SPRACHE
 ========================= */
 
-const translations = {
+const translations={
 
     de:{
         shop:"SHOP",
@@ -2213,19 +2565,21 @@ function changeLanguage(language){
         language
     );
 
-    const t =
+    const t=
         translations[language];
 
-    const links =
-        document.querySelectorAll(".nav-links a");
+    const links=
+        document.querySelectorAll(
+            ".nav-links a"
+        );
 
-    if(links.length >= 5){
+    if(links.length>=5){
 
-        links[0].textContent = t.shop;
-        links[1].textContent = t.events;
-        links[2].textContent = t.cars;
-        links[3].textContent = t.about;
-        links[4].textContent = t.contact;
+        links[0].textContent=t.shop;
+        links[1].textContent=t.events;
+        links[2].textContent=t.cars;
+        links[3].textContent=t.about;
+        links[4].textContent=t.contact;
 
     }
 
@@ -2233,11 +2587,14 @@ function changeLanguage(language){
 
 function loadLanguage(){
 
-    const language =
-        localStorage.getItem("gonschikiLanguage") || "de";
+    const language=
+        localStorage.getItem(
+            "gonschikiLanguage"
+        )||"de";
 
-    document.getElementById("languageSelect").value =
-        language;
+    document
+        .getElementById("languageSelect")
+        .value=language;
 
     changeLanguage(language);
 
