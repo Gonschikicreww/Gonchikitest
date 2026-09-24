@@ -1,3359 +1,1682 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+<title>ГОНЩИКИ — EST. 2025</title>
 
-<title>ГОНЩИКИ — Gonchikicrew</title>
-
-<meta
-name="description"
-content="ГОНЩИКИ est. 2025 — Streetwear × Car Culture"
->
-
-
-<!-- =====================================================
-     FELGEN-ICON / FAVICON
-===================================================== -->
-
-<link
-rel="icon"
-type="image/svg+xml"
-href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23080808' stroke='%23ffffff' stroke-width='5'/%3E%3Ccircle cx='50' cy='50' r='14' fill='%23080808' stroke='%23ffffff' stroke-width='4'/%3E%3Cg stroke='%23ffffff' stroke-width='5' stroke-linecap='round'%3E%3Cpath d='M50 36V8'/%3E%3Cpath d='M50 64v28'/%3E%3Cpath d='M36 50H8'/%3E%3Cpath d='M64 50h28'/%3E%3Cpath d='M40 40 20 20'/%3E%3Cpath d='m60 60 20 20'/%3E%3Cpath d='m60 40 20-20'/%3E%3Cpath d='m40 60-20 20'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='6' fill='%23ffffff'/%3E%3C/svg%3E"
->
-
+<!-- Rim / Felgen Favicon -->
+<link rel="icon" type="image/svg+xml"
+href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='black'/%3E%3Ccircle cx='50' cy='50' r='32' fill='none' stroke='white' stroke-width='6'/%3E%3Ccircle cx='50' cy='50' r='9' fill='none' stroke='white' stroke-width='4'/%3E%3Cpath d='M50 18v23M50 59v23M18 50h23M59 50h23M27 27l16 16M57 57l16 16M73 27L57 43M43 57L27 73' stroke='white' stroke-width='4'/%3E%3C/svg%3E">
 
 <style>
 
-/* =====================================================
-   GRUNDSTIL
-===================================================== */
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+* {
+  box-sizing: border-box;
 }
 
-html{
-  scroll-behavior:smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-
-  background:#080808;
-
-  color:#fff;
-
-  font-family:
-    "Times New Roman",
-    Times,
-    serif;
-
-  overflow-x:hidden;
-
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: "Times New Roman", Times, serif;
 }
 
-button,
-input,
-select,
-textarea{
+/* =========================
+   PREVIEW BALKEN
+========================= */
 
-  font-family:
-    "Times New Roman",
-    Times,
-    serif;
-
+.preview-bar {
+  background: #fff;
+  color: #000;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 14px;
+  letter-spacing: 0.3px;
+  border-bottom: 1px solid #000;
 }
 
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-
-/* =====================================================
-   SHOP VORSCHAU
-===================================================== */
-
-.preview-bar{
-
-  width:100%;
-
-  background:#050505;
-
-  color:#888;
-
-  border-bottom:1px solid #202020;
-
-  padding:7px 15px;
-
-  text-align:center;
-
-  font-family:
-    "Times New Roman",
-    Times,
-    serif;
-
-  font-size:12px;
-
-  letter-spacing:.7px;
-
-  line-height:1.3;
-
-}
-
-
-/* =====================================================
+/* =========================
    NAVIGATION
-===================================================== */
+========================= */
 
-nav{
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
-  position:sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  top:0;
+  padding: 18px 40px;
 
-  z-index:1000;
+  background: rgba(0,0,0,0.92);
+  backdrop-filter: blur(10px);
 
-  background:rgba(8,8,8,.97);
-
-  backdrop-filter:blur(12px);
-
-  border-bottom:1px solid #292929;
-
-  padding:18px 5vw;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
+  border-bottom: 1px solid #222;
 }
 
-.logo{
-
-  font-size:24px;
-
-  font-weight:900;
-
-  letter-spacing:2px;
-
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 2px;
 }
 
-.nav-right{
-
-  display:flex;
-
-  align-items:center;
-
-  gap:22px;
-
+.logo span {
+  font-size: 13px;
+  letter-spacing: 3px;
+  margin-left: 6px;
 }
 
-.nav-item{
-
-  position:relative;
-
+.nav-links {
+  display: flex;
+  gap: 28px;
+  align-items: center;
 }
 
-.nav-button{
-
-  background:none;
-
-  border:0;
-
-  color:#fff;
-
-  font-size:15px;
-
-  cursor:pointer;
-
-  padding:10px 0;
-
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
 }
 
-.dropdown{
-
-  display:none;
-
-  position:absolute;
-
-  right:0;
-
-  top:45px;
-
-  min-width:190px;
-
-  background:#111;
-
-  border:1px solid #333;
-
-  border-radius:10px;
-
-  overflow:hidden;
-
-  box-shadow:
-    0 15px 40px rgba(0,0,0,.5);
-
+.nav-links a:hover {
+  opacity: 0.6;
 }
 
-.nav-item:hover .dropdown{
-
-  display:block;
-
+.cart-button {
+  cursor: pointer;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  padding: 8px 14px;
+  font-family: inherit;
 }
 
-.dropdown a{
-
-  display:block;
-
-  padding:14px 18px;
-
-  border-bottom:1px solid #222;
-
+.cart-button:hover {
+  background: #fff;
+  color: #000;
 }
 
-.dropdown a:hover{
-
-  background:#1d1d1d;
-
-}
-
-
-/* =====================================================
-   WARENKORB BUTTON
-===================================================== */
-
-.cart-button{
-
-  position:relative;
-
-  background:#fff;
-
-  color:#000;
-
-  border:0;
-
-  border-radius:30px;
-
-  padding:10px 16px;
-
-  font-weight:800;
-
-  cursor:pointer;
-
-  transition:.2s;
-
-}
-
-.cart-button:hover{
-
-  transform:scale(1.04);
-
-}
-
-.cart-count{
-
-  position:absolute;
-
-  right:-7px;
-
-  top:-7px;
-
-  width:21px;
-
-  height:21px;
-
-  border-radius:50%;
-
-  background:#e00000;
-
-  color:#fff;
-
-  font-size:11px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  font-weight:800;
-
-}
-
-
-/* =====================================================
+/* =========================
    HERO
-===================================================== */
+========================= */
 
-.hero{
-
-  position:relative;
-
-  min-height:100svh;
-
-  overflow:hidden;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-  text-align:center;
-
-  padding:80px 20px;
-
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.hero-car{
-
-  position:absolute;
-
-  inset:0;
-
-  width:100%;
-
-  height:100%;
-
-  object-fit:cover;
-
-  z-index:0;
-
+.hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.55);
 }
 
-.hero::after{
-
-  content:"";
-
-  position:absolute;
-
-  inset:0;
-
-  background:
-    linear-gradient(
-      rgba(0,0,0,.25),
-      rgba(0,0,0,.60)
-    );
-
-  z-index:1;
-
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
 }
 
-.hero-content{
-
-  position:relative;
-
-  z-index:2;
-
-  width:100%;
-
+.hero-title {
+  font-size: clamp(55px, 11vw, 150px);
+  line-height: 0.9;
+  margin: 0;
+  letter-spacing: 4px;
 }
 
-.hero h1{
-
-  font-size:
-    clamp(55px,12vw,150px);
-
-  font-weight:900;
-
-  letter-spacing:5px;
-
-  text-shadow:
-    0 10px 40px rgba(0,0,0,.7);
-
+.hero-subtitle {
+  margin-top: 20px;
+  font-size: clamp(15px, 2vw, 24px);
+  letter-spacing: 7px;
 }
 
-.hero p{
-
-  margin-top:20px;
-
-  color:#aaa;
-
-  font-size:18px;
-
-  letter-spacing:3px;
-
+.est {
+  margin-top: 10px;
+  font-size: 15px;
+  letter-spacing: 5px;
 }
 
-.hero-button{
-
-  display:inline-block;
-
-  margin-top:35px;
-
-  padding:14px 28px;
-
-  border:1px solid #fff;
-
-  border-radius:30px;
-
-  transition:.2s;
-
-}
-
-.hero-button:hover{
-
-  background:#fff;
-
-  color:#000;
-
-}
-
-
-/* =====================================================
+/* =========================
    SECTIONS
-===================================================== */
+========================= */
 
-section{
-
-  padding:90px 6vw;
-
+section {
+  padding: 90px 40px;
+  max-width: 1500px;
+  margin: auto;
 }
 
-.section-title{
-
-  margin-bottom:45px;
-
+.section-title {
+  font-size: 42px;
+  margin-bottom: 45px;
+  letter-spacing: 2px;
 }
 
-.kicker{
-
-  color:#999;
-
-  letter-spacing:4px;
-
-  font-size:13px;
-
-  text-transform:uppercase;
-
-  margin-bottom:10px;
-
-}
-
-h2{
-
-  font-size:
-    clamp(35px,6vw,70px);
-
-}
-
-
-/* =====================================================
+/* =========================
    PRODUCTS
-===================================================== */
+========================= */
 
-.products{
-
-  display:grid;
-
-  grid-template-columns:
-    repeat(4,minmax(0,1fr));
-
-  gap:20px;
-
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
 }
 
-.product{
-
-  background:#111;
-
-  border:1px solid #292929;
-
-  border-radius:12px;
-
-  overflow:hidden;
-
-  cursor:pointer;
-
-  transition:
-    transform .25s ease,
-    border-color .25s ease;
-
-  user-select:none;
-
+.product {
+  cursor: pointer;
 }
 
-.product:hover{
-
-  transform:translateY(-6px);
-
-  border-color:#666;
-
+.product-image {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #111;
 }
 
-.product-image{
-
-  position:relative;
-
-  overflow:hidden;
-
-  background:#0c0c0c;
-
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.product img{
-
-  width:100%;
-
-  aspect-ratio:1/1;
-
-  object-fit:cover;
-
-  display:block;
-
-  transition:
-    transform .6s ease;
-
+.product:hover .product-image img {
+  transform: scale(1.05);
 }
 
-.product:hover img{
-
-  transform:scale(1.05);
-
+.product-info {
+  padding-top: 12px;
 }
 
-.product-info{
-
-  padding:18px;
-
+.product-name {
+  font-size: 18px;
 }
 
-.product-info h3{
-
-  font-size:18px;
-
+.product-price {
+  margin-top: 5px;
+  font-size: 16px;
+  opacity: 0.7;
 }
 
-.product-info p{
-
-  color:#888;
-
-  margin-top:7px;
-
-  font-size:14px;
-
-}
-
-.product-price{
-
-  margin-top:12px;
-
-  font-size:16px;
-
-  font-weight:800;
-
-}
-
-
-/* =====================================================
-   PRODUKT MODAL
-===================================================== */
-
-.product-modal{
-
-  display:none;
-
-  position:fixed;
-
-  inset:0;
-
-  z-index:3000;
-
-  background:rgba(0,0,0,.9);
-
-  padding:20px;
-
-  overflow-y:auto;
-
-}
-
-.product-modal.active{
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-}
-
-.modal-box{
-
-  position:relative;
-
-  width:min(1050px,100%);
-
-  background:#111;
-
-  border:1px solid #333;
-
-  border-radius:20px;
-
-  padding:25px;
-
-  box-shadow:
-    0 25px 100px rgba(0,0,0,.8);
-
-}
-
-.close-modal{
-
-  position:absolute;
-
-  right:18px;
-
-  top:10px;
-
-  z-index:20;
-
-  background:none;
-
-  border:0;
-
-  color:#fff;
-
-  font-size:32px;
-
-  cursor:pointer;
-
-}
-
-.modal-content{
-
-  display:grid;
-
-  grid-template-columns:
-    minmax(0,1.2fr)
-    minmax(280px,1fr);
-
-  gap:35px;
-
-  align-items:center;
-
-}
-
-
-/* =====================================================
-   PRODUKT VIEWER
-===================================================== */
-
-.product-viewer{
-
-  position:relative;
-
-  background:
-    radial-gradient(
-      circle,
-      #222 0%,
-      #0c0c0c 65%
-    );
-
-  border-radius:16px;
-
-  overflow:hidden;
-
-  perspective:1200px;
-
-  cursor:grab;
-
-  touch-action:none;
-
-  user-select:none;
-
-  min-height:500px;
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:center;
-
-}
-
-.product-viewer:active{
-
-  cursor:grabbing;
-
-}
-
-.product-viewer::after{
-
-  content:"";
-
-  position:absolute;
-
-  left:50%;
-
-  bottom:25px;
-
-  width:55%;
-
-  height:25px;
-
-  transform:translateX(-50%);
-
-  background:rgba(0,0,0,.6);
-
-  filter:blur(14px);
-
-  border-radius:50%;
-
-  pointer-events:none;
-
-}
-
-.product-3d{
-
-  width:90%;
-
-  height:auto;
-
-  max-height:520px;
-
-  object-fit:contain;
-
-  display:block;
-
-  transform:
-    perspective(1000px)
-    rotateY(0deg)
-    rotateX(0deg)
-    scale(1);
-
-  transition:
-    transform .12s ease-out;
-
-  will-change:transform;
-
-  pointer-events:none;
-
-  filter:
-    drop-shadow(
-      0 25px 25px rgba(0,0,0,.65)
-    );
-
-}
-
-.viewer-hint{
-
-  position:absolute;
-
-  bottom:12px;
-
-  left:50%;
-
-  transform:translateX(-50%);
-
-  color:#777;
-
-  font-size:11px;
-
-  letter-spacing:1px;
-
-  pointer-events:none;
-
-  text-align:center;
-
-  width:100%;
-
-}
-
-
-/* =====================================================
-   MODAL INFO
-===================================================== */
-
-.modal-info h2{
-
-  font-size:
-    clamp(30px,5vw,55px);
-
-  line-height:1;
-
-  margin-bottom:10px;
-
-}
-
-.modal-price{
-
-  font-size:22px;
-
-  font-weight:800;
-
-  margin:18px 0 28px;
-
-}
-
-.size-title{
-
-  color:#999;
-
-  font-size:13px;
-
-  letter-spacing:2px;
-
-  text-transform:uppercase;
-
-}
-
-.sizes{
-
-  display:flex;
-
-  flex-wrap:wrap;
-
-  gap:8px;
-
-  margin-top:12px;
-
-}
-
-.size{
-
-  background:#181818;
-
-  border:1px solid #444;
-
-  color:#fff;
-
-  padding:12px 18px;
-
-  border-radius:8px;
-
-  cursor:pointer;
-
-  transition:.2s;
-
-}
-
-.size:hover{
-
-  background:#fff;
-
-  color:#000;
-
-}
-
-.size.active{
-
-  background:#fff;
-
-  color:#000;
-
-  border-color:#fff;
-
-}
-
-.add-cart{
-
-  width:100%;
-
-  margin-top:25px;
-
-  padding:17px;
-
-  border:0;
-
-  border-radius:30px;
-
-  background:#fff;
-
-  color:#000;
-
-  font-weight:900;
-
-  font-size:15px;
-
-  cursor:pointer;
-
-  transition:.2s;
-
-}
-
-.add-cart:hover{
-
-  background:#ddd;
-
-  transform:translateY(-2px);
-
-}
-
-
-/* =====================================================
-   WARENKORB
-===================================================== */
-
-.cart-panel{
-
-  position:fixed;
-
-  right:-450px;
-
-  top:0;
-
-  width:min(430px,100%);
-
-  height:100%;
-
-  background:#0d0d0d;
-
-  border-left:1px solid #333;
-
-  z-index:4000;
-
-  transition:right .3s ease;
-
-  padding:25px;
-
-  display:flex;
-
-  flex-direction:column;
-
-}
-
-.cart-panel.active{
-
-  right:0;
-
-}
-
-.cart-header{
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-
-  padding-bottom:20px;
-
-  border-bottom:1px solid #292929;
-
-}
-
-.cart-header h2{
-
-  font-size:28px;
-
-}
-
-.close-cart{
-
-  background:none;
-
-  border:0;
-
-  color:#fff;
-
-  font-size:28px;
-
-  cursor:pointer;
-
-}
-
-.cart-items{
-
-  flex:1;
-
-  overflow-y:auto;
-
-  padding:15px 0;
-
-}
-
-.cart-empty{
-
-  color:#777;
-
-  text-align:center;
-
-  padding:50px 10px;
-
-}
-
-.cart-item{
-
-  display:grid;
-
-  grid-template-columns:
-    75px 1fr;
-
-  gap:12px;
-
-  padding:15px 0;
-
-  border-bottom:1px solid #222;
-
-}
-
-.cart-item img{
-
-  width:75px;
-
-  height:75px;
-
-  object-fit:cover;
-
-  border-radius:8px;
-
-}
-
-.cart-item h4{
-
-  font-size:14px;
-
-}
-
-.cart-item p{
-
-  color:#888;
-
-  font-size:12px;
-
-  margin-top:5px;
-
-}
-
-.cart-controls{
-
-  display:flex;
-
-  align-items:center;
-
-  gap:7px;
-
-  margin-top:8px;
-
-}
-
-.qty-button{
-
-  width:27px;
-
-  height:27px;
-
-  border:1px solid #444;
-
-  background:#181818;
-
-  color:#fff;
-
-  border-radius:5px;
-
-  cursor:pointer;
-
-}
-
-.remove-item{
-
-  background:none;
-
-  border:0;
-
-  color:#777;
-
-  font-size:12px;
-
-  cursor:pointer;
-
-  margin-top:6px;
-
-}
-
-.cart-footer{
-
-  border-top:1px solid #292929;
-
-  padding-top:20px;
-
-}
-
-.cart-total{
-
-  display:flex;
-
-  justify-content:space-between;
-
-  font-size:20px;
-
-  font-weight:800;
-
-}
-
-.checkout{
-
-  width:100%;
-
-  margin-top:18px;
-
-  padding:15px;
-
-  border:0;
-
-  border-radius:30px;
-
-  background:#fff;
-
-  color:#000;
-
-  font-weight:900;
-
-  cursor:pointer;
-
-}
-
-
-/* =====================================================
-   CART OVERLAY
-===================================================== */
-
-.cart-overlay{
-
-  display:none;
-
-  position:fixed;
-
-  inset:0;
-
-  z-index:3500;
-
-  background:rgba(0,0,0,.65);
-
-}
-
-.cart-overlay.active{
-
-  display:block;
-
-}
-
-
-/* =====================================================
+/* =========================
    CARS
-===================================================== */
+========================= */
 
-.cars{
-
-  display:grid;
-
-  grid-template-columns:
-    2fr 1fr;
-
-  gap:20px;
-
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
-.car{
-
-  background:#111;
-
-  border:1px solid #292929;
-
-  border-radius:12px;
-
-  overflow:hidden;
-
+.car-image {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
 }
 
-.car img{
+/* =========================
+   CREW
+========================= */
 
-  width:100%;
-
-  height:100%;
-
-  min-height:300px;
-
-  object-fit:cover;
-
+.crew {
+  text-align: center;
+  max-width: 900px;
 }
 
-
-/* =====================================================
-   ABOUT
-===================================================== */
-
-.about{
-
-  border-top:1px solid #292929;
-
-  border-bottom:1px solid #292929;
-
-  display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap:60px;
-
+.crew-title {
+  font-size: 60px;
+  margin-bottom: 25px;
 }
 
-.about p{
-
-  color:#aaa;
-
-  font-size:18px;
-
-  line-height:1.7;
-
+.crew-text {
+  font-size: 20px;
+  line-height: 1.6;
 }
 
-
-/* =====================================================
+/* =========================
    FOOTER
-===================================================== */
+========================= */
 
-footer{
-
-  padding:60px 6vw;
-
-  display:flex;
-
-  justify-content:space-between;
-
-  flex-wrap:wrap;
-
-  gap:20px;
-
+footer {
+  border-top: 1px solid #222;
+  padding: 40px;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.6;
 }
 
-.instagram{
+/* =========================
+   PRODUCT MODAL
+========================= */
 
-  color:#fff;
+.modal {
+  display: none;
 
+  position: fixed;
+  inset: 0;
+
+  z-index: 3000;
+
+  background: rgba(0,0,0,0.92);
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
 }
 
-.instagram:hover{
-
-  text-decoration:underline;
-
+.modal.active {
+  display: flex;
 }
 
+.modal-content {
+  width: min(1100px, 100%);
+  max-height: 90vh;
 
-/* =====================================================
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+
+  gap: 40px;
+
+  background: #090909;
+  border: 1px solid #333;
+
+  padding: 30px;
+
+  overflow: auto;
+}
+
+.modal-image-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  perspective: 1000px;
+
+  min-height: 500px;
+}
+
+.modal-image {
+  max-width: 100%;
+  max-height: 70vh;
+
+  object-fit: contain;
+
+  user-select: none;
+  cursor: grab;
+
+  transition: transform 0.15s ease-out;
+}
+
+.modal-image:active {
+  cursor: grabbing;
+}
+
+.modal-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.modal-title {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.modal-price {
+  font-size: 22px;
+  margin-bottom: 30px;
+}
+
+.size-title {
+  margin-bottom: 12px;
+}
+
+.sizes {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.size {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #555;
+
+  padding: 12px 18px;
+
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.size:hover,
+.size.selected {
+  background: #fff;
+  color: #000;
+}
+
+.add-cart {
+  margin-top: 30px;
+
+  background: #fff;
+  color: #000;
+
+  border: none;
+
+  padding: 15px;
+
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.add-cart:hover {
+  background: #ccc;
+}
+
+.close-modal {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+
+  font-size: 35px;
+
+  cursor: pointer;
+}
+
+/* =========================
+   CART
+========================= */
+
+.cart-overlay {
+  display: none;
+
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.65);
+
+  z-index: 3999;
+}
+
+.cart-overlay.active {
+  display: block;
+}
+
+.cart {
+  position: fixed;
+
+  top: 0;
+  right: -450px;
+
+  width: min(450px, 100%);
+  height: 100vh;
+
+  background: #0a0a0a;
+
+  border-left: 1px solid #333;
+
+  z-index: 4000;
+
+  padding: 30px;
+
+  transition: right 0.3s ease;
+
+  overflow-y: auto;
+}
+
+.cart.active {
+  right: 0;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid #333;
+
+  padding-bottom: 20px;
+}
+
+.cart-title {
+  font-size: 30px;
+}
+
+.close-cart {
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 15px;
+
+  padding: 20px 0;
+
+  border-bottom: 1px solid #222;
+}
+
+.cart-item img {
+  width: 80px;
+  height: 100px;
+
+  object-fit: cover;
+}
+
+.cart-item-name {
+  font-size: 17px;
+}
+
+.cart-item-size {
+  opacity: 0.6;
+  margin-top: 5px;
+}
+
+.quantity {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  margin-top: 12px;
+}
+
+.quantity button {
+  width: 28px;
+  height: 28px;
+
+  background: transparent;
+  color: white;
+
+  border: 1px solid #555;
+
+  cursor: pointer;
+}
+
+.remove {
+  margin-top: 10px;
+
+  background: none;
+  color: #888;
+
+  border: none;
+
+  cursor: pointer;
+
+  font-family: inherit;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: 20px;
+
+  margin-top: 30px;
+}
+
+.checkout {
+  width: 100%;
+
+  margin-top: 20px;
+
+  padding: 15px;
+
+  background: white;
+  color: black;
+
+  border: none;
+
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: 16px;
+}
+
+/* =========================
    MOBILE
-===================================================== */
+========================= */
 
-@media(max-width:900px){
+@media (max-width: 900px) {
 
-  nav{
-
-    padding:16px 5vw;
-
+  nav {
+    padding: 15px 20px;
   }
 
-  .logo{
-
-    font-size:18px;
-
+  .nav-links {
+    gap: 15px;
   }
 
-  .nav-right{
-
-    gap:12px;
-
+  .nav-links a {
+    font-size: 14px;
   }
 
-  .nav-right>a:not(.instagram){
-
-    display:none;
-
+  section {
+    padding: 65px 20px;
   }
 
-  .nav-button{
-
-    font-size:13px;
-
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
   }
 
-  .products{
-
-    grid-template-columns:
-      repeat(2,minmax(0,1fr));
-
+  .cars-grid {
+    grid-template-columns: 1fr;
   }
 
-  .modal-content{
-
-    grid-template-columns:1fr;
-
+  .car-image {
+    height: 400px;
   }
 
-  .product-viewer{
-
-    min-height:400px;
-
+  .modal-content {
+    grid-template-columns: 1fr;
+    padding: 20px;
   }
 
-  .about{
+  .modal-image-area {
+    min-height: 350px;
+  }
 
-    grid-template-columns:1fr;
-
+  .modal-title {
+    font-size: 30px;
   }
 
 }
 
+@media (max-width: 600px) {
 
-@media(max-width:600px){
-
-  section{
-
-    padding:65px 5vw;
-
+  .preview-bar {
+    font-size: 14px;
+    padding: 9px 10px;
   }
 
-  .products{
-
-    grid-template-columns:1fr;
-
+  nav {
+    flex-wrap: wrap;
+    gap: 12px;
   }
 
-  .instagram{
-
-    display:none;
-
+  .logo {
+    font-size: 22px;
   }
 
-  .hero h1{
-
-    font-size:18vw;
-
-    letter-spacing:2px;
-
+  .nav-links {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px;
   }
 
-  .hero p{
-
-    font-size:12px;
-
-    letter-spacing:2px;
-
+  .hero {
+    min-height: 85svh;
   }
 
-  .modal-box{
-
-    padding:15px;
-
+  .hero img {
+    object-position: 60% center;
   }
 
-  .product-viewer{
-
-    min-height:330px;
-
+  .hero-title {
+    font-size: 55px;
   }
 
-  .product-3d{
-
-    max-height:330px;
-
+  .hero-subtitle {
+    font-size: 13px;
+    letter-spacing: 4px;
   }
 
-  .product-modal{
-
-    padding:10px;
-
+  .section-title {
+    font-size: 34px;
   }
 
-  .cart-button{
-
-    padding:9px 12px;
-
-    font-size:12px;
-
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .cars{
-
-    grid-template-columns:1fr;
-
+  .product-name {
+    font-size: 15px;
   }
 
-  .preview-bar{
+  .product-price {
+    font-size: 14px;
+  }
 
-    font-size:10px;
+  .crew-title {
+    font-size: 42px;
+  }
 
-    padding:6px 8px;
-
-    letter-spacing:.3px;
-
+  .crew-text {
+    font-size: 17px;
   }
 
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =====================================================
-     SHOP VORSCHAU LEISTE
-===================================================== -->
+<!-- =========================
+     PREVIEW NOTICE
+========================= -->
 
 <div class="preview-bar">
-
-Shop Vorschau · Preise, Größen &amp; Versand noch nicht bestätigt · keine Bestellungen!
-
+  Shop Vorschau · Preise, Größen &amp; Versand noch nicht bestätigt · keine Bestellungen!
 </div>
 
 
-
-<!-- =====================================================
+<!-- =========================
      NAVIGATION
-===================================================== -->
+========================= -->
 
 <nav>
 
-<a
-href="#"
-class="logo"
->
-ГОНЩИКИ
-</a>
+  <div class="logo">
+    ГОНЩИКИ
+    <span>EST. 2025</span>
+  </div>
 
+  <div class="nav-links">
+    <a href="#shop">Klamotten</a>
+    <a href="#cars">Cars</a>
+    <a href="#crew">Crew</a>
+    <a href="https://instagram.com/gonschikicrew" target="_blank">Instagram</a>
 
-<div class="nav-right">
-
-
-<div class="nav-item">
-
-<button
-class="nav-button"
-type="button"
->
-Klamotten ▾
-</button>
-
-
-<div class="dropdown">
-
-<a href="#shirts">
-T-Shirts
-</a>
-
-<a href="#hoodies">
-Pullis / Hoodies
-</a>
-
-<a href="#zipper">
-Zipper
-</a>
-
-<a href="#pants">
-Hosen
-</a>
-
-</div>
-
-</div>
-
-
-<a href="#stickers">
-Sticker
-</a>
-
-
-<a href="#cars">
-Cars
-</a>
-
-
-<a href="#crew">
-Crew
-</a>
-
-
-<button
-class="cart-button"
-id="openCart"
-type="button"
->
-
-🛒 Warenkorb
-
-<span
-class="cart-count"
-id="cartCount"
->
-0
-</span>
-
-</button>
-
-
-<a
-class="instagram"
-href="https://www.instagram.com/gonschikicrew/"
-target="_blank"
->
-
-Instagram
-
-</a>
-
-</div>
+    <button class="cart-button" onclick="openCart()">
+      Warenkorb (<span id="cartCount">0</span>)
+    </button>
+  </div>
 
 </nav>
 
 
-
-<!-- =====================================================
+<!-- =========================
      HERO
-===================================================== -->
+========================= -->
 
 <header class="hero">
 
+  <img src="assets/Car-1.JPG" alt="ГОНЩИКИ Car">
 
-<img
-src="assets/Car-1.JPG"
-alt="ГОНЩИКИ Cars"
-class="hero-car"
->
+  <div class="hero-overlay">
 
+    <h1 class="hero-title">
+      ГОНЩИКИ
+    </h1>
 
-<div class="hero-content">
+    <div class="hero-subtitle">
+      STREETWEAR
+    </div>
 
+    <div class="est">
+      EST. 2025
+    </div>
 
-<h1>
-ГОНЩИКИ
-</h1>
-
-
-<p>
-EST. 2025 · STREETWEAR × CAR CULTURE
-</p>
-
-
-<a
-href="#shop"
-class="hero-button"
->
-
-SHOP ENTDECKEN
-
-</a>
-
-
-</div>
+  </div>
 
 </header>
 
 
-
-<!-- =====================================================
+<!-- =========================
      SHOP
-===================================================== -->
+========================= -->
 
 <section id="shop">
 
+  <h2 class="section-title">
+    Klamotten
+  </h2>
 
-<div class="section-title">
 
-<div class="kicker">
-GONCHIKICREW
-</div>
+  <!-- T-SHIRTS -->
 
-<h2>
-SHOP
-</h2>
+  <h3> T-Shirts </h3>
 
-</div>
+  <div class="product-grid">
 
+    <div class="product"
+      onclick="openProduct(
+        'T-Shirt Beige E36',
+        39.90,
+        'assets/Shirt-Beige-e36.jpg'
+      )">
 
+      <div class="product-image">
+        <img src="assets/Shirt-Beige-e36.jpg" alt="T-Shirt Beige E36">
+      </div>
 
-<!-- T-SHIRTS -->
+      <div class="product-info">
+        <div class="product-name">
+          T-Shirt Beige E36
+        </div>
 
-<div
-id="shirts"
-class="section-title"
->
+        <div class="product-price">
+          39,90 €
+        </div>
+      </div>
 
-<div class="kicker">
-01
-</div>
+    </div>
 
-<h2>
-T-Shirts
-</h2>
 
-</div>
+    <div class="product"
+      onclick="openProduct(
+        'T-Shirt Black Russia',
+        39.90,
+        'assets/Shirt-black-Russia.jpg'
+      )">
 
+      <div class="product-image">
+        <img src="assets/Shirt-black-Russia.jpg" alt="T-Shirt Black Russia">
+      </div>
 
-<div class="products">
+      <div class="product-info">
+        <div class="product-name">
+          T-Shirt Black Russia
+        </div>
 
+        <div class="product-price">
+          39,90 €
+        </div>
+      </div>
 
-<article
-class="product"
-data-name="T-Shirt Beige E36"
-data-price="39.90"
-data-image="assets/Shirt-Beige-e36.jpg"
->
+    </div>
 
-<div class="product-image">
 
-<img
-src="assets/Shirt-Beige-e36.jpg"
-alt="T-Shirt Beige E36"
->
+    <div class="product"
+      onclick="openProduct(
+        'T-Shirt Black E34',
+        39.90,
+        'assets/Shirt-black-e34.jpg'
+      )">
 
-</div>
+      <div class="product-image">
+        <img src="assets/Shirt-black-e34.jpg" alt="T-Shirt Black E34">
+      </div>
 
+      <div class="product-info">
+        <div class="product-name">
+          T-Shirt Black E34
+        </div>
 
-<div class="product-info">
+        <div class="product-price">
+          39,90 €
+        </div>
+      </div>
 
-<h3>
-T-Shirt Beige E36
-</h3>
+    </div>
 
-<p>
-ГОНЩИКИ · EST. 2025
-</p>
 
-<div class="product-price">
-39,90 €
-</div>
+    <div class="product"
+      onclick="openProduct(
+        'T-Shirt Black E36',
+        39.90,
+        'assets/Shirt-black-e36.jpg'
+      )">
 
-</div>
+      <div class="product-image">
+        <img src="assets/Shirt-black-e36.jpg" alt="T-Shirt Black E36">
+      </div>
 
-</article>
+      <div class="product-info">
+        <div class="product-name">
+          T-Shirt Black E36
+        </div>
 
+        <div class="product-price">
+          39,90 €
+        </div>
+      </div>
 
+    </div>
 
-<article
-class="product"
-data-name="T-Shirt Black Russia"
-data-price="39.90"
-data-image="assets/Shirt-black-Russia.jpg"
->
+  </div>
 
-<div class="product-image">
 
-<img
-src="assets/Shirt-black-Russia.jpg"
-alt="T-Shirt Black Russia"
->
+  <!-- HOODIES -->
 
-</div>
+  <h3 style="margin-top:70px;">
+    Hoodies
+  </h3>
 
+  <div class="product-grid">
 
-<div class="product-info">
+    <div class="product"
+      onclick="openProduct(
+        'Hoodie Beige E36',
+        69.90,
+        'assets/Hoodie-beige-e36.jpg'
+      )">
 
-<h3>
-T-Shirt Black Russia
-</h3>
+      <div class="product-image">
+        <img src="assets/Hoodie-beige-e36.jpg" alt="Hoodie Beige E36">
+      </div>
 
-<p>
-ГОНЩИКИ · EST. 2025
-</p>
+      <div class="product-info">
+        <div class="product-name">
+          Hoodie Beige E36
+        </div>
 
-<div class="product-price">
-39,90 €
-</div>
+        <div class="product-price">
+          69,90 €
+        </div>
+      </div>
 
-</div>
+    </div>
 
-</article>
 
+    <div class="product"
+      onclick="openProduct(
+        'Hoodie Black Kreuz',
+        69.90,
+        'assets/Hoodie-black-Kreuz.jpg'
+      )">
 
+      <div class="product-image">
+        <img src="assets/Hoodie-black-Kreuz.jpg" alt="Hoodie Black Kreuz">
+      </div>
 
-<article
-class="product"
-data-name="T-Shirt Black E34"
-data-price="39.90"
-data-image="assets/Shirt-black-e34.jpg"
->
+      <div class="product-info">
+        <div class="product-name">
+          Hoodie Black Kreuz
+        </div>
 
-<div class="product-image">
+        <div class="product-price">
+          69,90 €
+        </div>
+      </div>
 
-<img
-src="assets/Shirt-black-e34.jpg"
-alt="T-Shirt Black E34"
->
+    </div>
 
-</div>
 
+    <div class="product"
+      onclick="openProduct(
+        'Hoodie Black Russia',
+        69.90,
+        'assets/Hoodie-black-Russia.jpg'
+      )">
 
-<div class="product-info">
+      <div class="product-image">
+        <img src="assets/Hoodie-black-Russia.jpg" alt="Hoodie Black Russia">
+      </div>
 
-<h3>
-T-Shirt Black E34
-</h3>
+      <div class="product-info">
+        <div class="product-name">
+          Hoodie Black Russia
+        </div>
 
-<p>
-ГОНЩИКИ · EST. 2025
-</p>
+        <div class="product-price">
+          69,90 €
+        </div>
+      </div>
 
-<div class="product-price">
-39,90 €
-</div>
+    </div>
 
-</div>
 
-</article>
+    <div class="product"
+      onclick="openProduct(
+        'Hoodie Black E34',
+        69.90,
+        'assets/Hoodie-black-e34.jpg'
+      )">
 
+      <div class="product-image">
+        <img src="assets/Hoodie-black-e34.jpg" alt="Hoodie Black E34">
+      </div>
 
+      <div class="product-info">
+        <div class="product-name">
+          Hoodie Black E34
+        </div>
 
-<article
-class="product"
-data-name="T-Shirt Black E36"
-data-price="39.90"
-data-image="assets/Shirt-black-e36.jpg"
->
+        <div class="product-price">
+          69,90 €
+        </div>
+      </div>
 
-<div class="product-image">
+    </div>
 
-<img
-src="assets/Shirt-black-e36.jpg"
-alt="T-Shirt Black E36"
->
 
-</div>
+    <div class="product"
+      onclick="openProduct(
+        'Hoodie Black E36',
+        69.90,
+        'assets/Hoodie-black-e36.jpg'
+      )">
 
+      <div class="product-image">
+        <img src="assets/Hoodie-black-e36.jpg" alt="Hoodie Black E36">
+      </div>
 
-<div class="product-info">
+      <div class="product-info">
+        <div class="product-name">
+          Hoodie Black E36
+        </div>
 
-<h3>
-T-Shirt Black E36
-</h3>
+        <div class="product-price">
+          69,90 €
+        </div>
+      </div>
 
-<p>
-ГОНЩИКИ · EST. 2025
-</p>
+    </div>
 
-<div class="product-price">
-39,90 €
-</div>
+  </div>
 
-</div>
 
-</article>
+  <!-- ZIPPER -->
 
+  <h3 style="margin-top:70px;">
+    Zipper
+  </h3>
 
-</div>
+  <div class="product-grid">
 
+    <div class="product"
+      onclick="openProduct(
+        'Zipper Black Kreuz',
+        74.90,
+        'assets/Zipper-black-Kreuz.jpg'
+      )">
 
+      <div class="product-image">
+        <img src="assets/Zipper-black-Kreuz.jpg" alt="Zipper Black Kreuz">
+      </div>
 
-<!-- HOODIES -->
+      <div class="product-info">
 
-<section id="hoodies">
+        <div class="product-name">
+          Zipper Black Kreuz
+        </div>
 
+        <div class="product-price">
+          74,90 €
+        </div>
 
-<div class="section-title">
+      </div>
 
-<div class="kicker">
-02
-</div>
+    </div>
 
-<h2>
-Pullis / Hoodies
-</h2>
+  </div>
 
-</div>
 
+  <!-- PANTS -->
 
-<div class="products">
+  <h3 style="margin-top:70px;">
+    Pants
+  </h3>
 
+  <div class="product-grid">
 
-<article
-class="product"
-data-name="Hoodie Beige E36"
-data-price="69.90"
-data-image="assets/Hoodie-beige-e36.jpg"
->
+    <div class="product"
+      onclick="openProduct(
+        'Pants Black ГОНЩИКИ',
+        59.90,
+        'assets/Pants-black-gonschiki.jpg'
+      )">
 
-<div class="product-image">
+      <div class="product-image">
+        <img src="assets/Pants-black-gonschiki.jpg" alt="Pants Black ГОНЩИКИ">
+      </div>
 
-<img
-src="assets/Hoodie-beige-e36.jpg"
-alt="Hoodie Beige E36"
->
+      <div class="product-info">
 
-</div>
+        <div class="product-name">
+          Pants Black ГОНЩИКИ
+        </div>
 
+        <div class="product-price">
+          59,90 €
+        </div>
 
-<div class="product-info">
+      </div>
 
-<h3>
-Hoodie Beige E36
-</h3>
+    </div>
 
-<p>
-ГОНЩИКИ · EST. 2025
-</p>
-
-<div class="product-price">
-69,90 €
-</div>
-
-</div>
-
-</article>
-
-
-
-<article
-class="product"
-data-name="Hoodie Black Kreuz"
-data-price="69.90"
-data-image="assets/Hoodie-black-Kreuz.jpg"
->
-
-<div class="product-image">
-
-<img
-src="assets/Hoodie-black-Kreuz.jpg"
-alt="Hoodie Black Kreuz"
->
-
-</div>
-
-
-<div class="product-info">
-
-<h3>
-Hoodie Black Kreuz
-</h3>
-
-<p>
-ГОНЩИКИ · EST. 2025
-</p>
-
-<div class="product-price">
-69,90 €
-</div>
-
-</div>
-
-</article>
-
-
-
-<article
-class="product"
-data-name="Hoodie Black Russia"
-data-price="69.90"
-data-image="assets/Hoodie-black-Russia.jpg"
->
-
-<div class="product-image">
-
-<img
-src="assets/Hoodie-black-Russia.jpg"
-alt="Hoodie Black Russia"
->
-
-</div>
-
-
-<div class="product-info">
-
-<h3>
-Hoodie Black Russia
-</h3>
-
-<p>
-ГОНЩИКИ · EST. 2025
-</p>
-
-<div class="product-price">
-69,90 €
-</div>
-
-</div>
-
-</article>
-
-
-
-<article
-class="product"
-data-name="Hoodie Black E34"
-data-price="69.90"
-data-image="assets/Hoodie-black-e34.jpg"
->
-
-<div class="product-image">
-
-<img
-src="assets/Hoodie-black-e34.jpg"
-alt="Hoodie Black E34"
->
-
-</div>
-
-
-<div class="product-info">
-
-<h3>
-Hoodie Black E34
-</h3>
-
-<p>
-ГОНЩИКИ · EST. 2025
-</p>
-
-<div class="product-price">
-69,90 €
-</div>
-
-</div>
-
-</article>
-
-
-
-<article
-class="product"
-data-name="Hoodie Black E36"
-data-price="69.90"
-data-image="assets/Hoodie-black-e36.jpg"
->
-
-<div class="product-image">
-
-<img
-src="assets/Hoodie-black-e36.jpg"
-alt="Hoodie Black E36"
->
-
-</div>
-
-
-<div class="product-info">
-
-<h3>
-Hoodie Black E36
-</h3>
-
-<p>
-ГОНЩИКИ · EST. 2025
-</p>
-
-<div class="product-price">
-69,90 €
-</div>
-
-</div>
-
-</article>
-
-
-</div>
+  </div>
 
 </section>
 
 
-
-<!-- ZIPPER -->
-
-<section id="zipper">
-
-
-<div class="section-title">
-
-<div class="kicker">
-03
-</div>
-
-<h2>
-Zipper
-</h2>
-
-</div>
-
-
-<div class="products">
-
-
-<article
-class="product"
-data-name="Zipper Black Kreuz"
-data-price="74.90"
-data-image="assets/Zipper-black-Kreuz.jpg"
->
-
-<div class="product-image">
-
-<img
-src="assets/Zipper-black-Kreuz.jpg"
-alt="Zipper Black Kreuz"
->
-
-</div>
-
-
-<div class="product-info">
-
-<h3>
-Zipper Black Kreuz
-</h3>
-
-<p>
-ГОНЩИКИ · EST. 2025
-</p>
-
-<div class="product-price">
-74,90 €
-</div>
-
-</div>
-
-</article>
-
-
-</div>
-
-</section>
-
-
-
-<!-- HOSEN -->
-
-<section id="pants">
-
-
-<div class="section-title">
-
-<div class="kicker">
-04
-</div>
-
-<h2>
-Hosen
-</h2>
-
-</div>
-
-
-<div class="products">
-
-
-<article
-class="product"
-data-name="Pants Black ГОНЩИКИ"
-data-price="59.90"
-data-image="assets/Pants-black-gonschiki.jpg"
->
-
-<div class="product-image">
-
-<img
-src="assets/Pants-black-gonschiki.jpg"
-alt="ГОНЩИКИ Pants"
->
-
-</div>
-
-
-<div class="product-info">
-
-<h3>
-Pants Black ГОНЩИКИ
-</h3>
-
-<p>
-ГОНЩИКИ · EST. 2025
-</p>
-
-<div class="product-price">
-59,90 €
-</div>
-
-</div>
-
-</article>
-
-
-</div>
-
-</section>
-
-</section>
-
-
-
-<!-- =====================================================
-     PRODUCT MODAL
-===================================================== -->
-
-<div
-class="product-modal"
-id="productModal"
->
-
-<div class="modal-box">
-
-
-<button
-class="close-modal"
-id="closeModal"
-type="button"
->
-×
-</button>
-
-
-<div class="modal-content">
-
-
-<div
-class="product-viewer"
-id="productViewer"
->
-
-<img
-id="modalImage"
-class="product-3d"
-src=""
-alt=""
->
-
-<div class="viewer-hint">
-← MIT FINGER / MAUS ZIEHEN →
-</div>
-
-</div>
-
-
-<div class="modal-info">
-
-<div class="kicker">
-ГОНЩИКИ · EST. 2025
-</div>
-
-
-<h2 id="modalName">
-</h2>
-
-
-<div
-class="modal-price"
-id="modalPrice"
->
-</div>
-
-
-<div class="size-title">
-Größe
-</div>
-
-
-<div class="sizes">
-
-
-<button
-class="size"
-data-size="S"
-type="button"
->
-S
-</button>
-
-
-<button
-class="size active"
-data-size="M"
-type="button"
->
-M
-</button>
-
-
-<button
-class="size"
-data-size="L"
-type="button"
->
-L
-</button>
-
-
-<button
-class="size"
-data-size="XL"
-type="button"
->
-XL
-</button>
-
-
-<button
-class="size"
-data-size="XXL"
-type="button"
->
-XXL
-</button>
-
-
-</div>
-
-
-<button
-class="add-cart"
-id="addToCart"
-type="button"
->
-IN DEN WARENKORB
-</button>
-
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<!-- =====================================================
-     CART OVERLAY
-===================================================== -->
-
-<div
-class="cart-overlay"
-id="cartOverlay"
->
-</div>
-
-
-
-<!-- =====================================================
-     CART
-===================================================== -->
-
-<div
-class="cart-panel"
-id="cartPanel"
->
-
-
-<div class="cart-header">
-
-<h2>
-Warenkorb
-</h2>
-
-
-<button
-class="close-cart"
-id="closeCart"
-type="button"
->
-×
-</button>
-
-</div>
-
-
-<div
-class="cart-items"
-id="cartItems"
->
-
-<div class="cart-empty">
-Dein Warenkorb ist noch leer.
-</div>
-
-</div>
-
-
-<div class="cart-footer">
-
-<div class="cart-total">
-
-<span>
-Gesamt
-</span>
-
-<span id="cartTotal">
-0,00 €
-</span>
-
-</div>
-
-
-<button
-class="checkout"
-id="checkoutButton"
-type="button"
->
-ZUR KASSE
-</button>
-
-</div>
-
-</div>
-
-
-
-<!-- =====================================================
-     STICKER
-===================================================== -->
-
-<section id="stickers">
-
-
-<div class="section-title">
-
-<div class="kicker">
-05
-</div>
-
-<h2>
-Sticker
-</h2>
-
-</div>
-
-
-<p style="color:#888;">
-Sticker Collection — bald verfügbar.
-</p>
-
-
-</section>
-
-
-
-<!-- =====================================================
+<!-- =========================
      CARS
-===================================================== -->
+========================= -->
 
 <section id="cars">
 
+  <h2 class="section-title">
+    Cars
+  </h2>
 
-<div class="section-title">
+  <div class="cars-grid">
 
-<div class="kicker">
-06
-</div>
+    <img
+      class="car-image"
+      src="assets/Car-1.JPG"
+      alt="ГОНЩИКИ Car">
 
-<h2>
-Cars
-</h2>
+    <img
+      class="car-image"
+      src="assets/Car-2.JPG"
+      alt="ГОНЩИКИ Car">
 
-</div>
-
-
-<div class="cars">
-
-
-<div class="car">
-
-<img
-src="assets/Car-1.JPG"
-alt="ГОНЩИКИ Car 1"
->
-
-</div>
-
-
-<div class="car">
-
-<img
-src="assets/Car-2.JPG"
-alt="ГОНЩИКИ Car 2"
->
-
-</div>
-
-
-</div>
+  </div>
 
 </section>
 
 
-
-<!-- =====================================================
+<!-- =========================
      CREW
-===================================================== -->
+========================= -->
 
-<section
-id="crew"
-class="about"
->
+<section id="crew" class="crew">
 
+  <div class="crew-title">
+    ГОНЩИКИ
+  </div>
 
-<div>
+  <p class="crew-text">
 
-<div class="kicker">
-ABOUT THE CREW
-</div>
+    Cars. Streetwear. Culture.
 
+    <br><br>
 
-<h2>
+    Eine Crew für alle, die Autos nicht nur fahren,
+    sondern leben.
 
-STREETWEAR.<br>
+    <br><br>
 
-CARS.<br>
+    EST. 2025
 
-CULTURE.
-
-</h2>
-
-</div>
-
-
-<div>
-
-<p>
-
-ГОНЩИКИ steht für Streetwear,
-Autos und die gemeinsame Leidenschaft
-für Car Culture.
-
-</p>
-
-
-<p style="margin-top:20px;">
-
-Est. 2025 — Gonchikicrew.
-
-</p>
-
-</div>
-
+  </p>
 
 </section>
 
 
-
-<!-- =====================================================
+<!-- =========================
      FOOTER
-===================================================== -->
+========================= -->
 
 <footer>
 
-
-<div>
-ГОНЩИКИ est. 2025
-</div>
-
-
-<a
-class="instagram"
-href="https://www.instagram.com/gonschikicrew/"
-target="_blank"
->
-
-Instagram · @gonschikicrew
-
-</a>
-
+  © 2025 ГОНЩИКИ / GONSCHIKI CREW
 
 </footer>
 
 
+<!-- =========================
+     PRODUCT MODAL
+========================= -->
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
+<div class="modal" id="productModal">
+
+  <div class="close-modal" onclick="closeProduct()">
+    ×
+  </div>
+
+  <div class="modal-content">
+
+    <div class="modal-image-area">
+
+      <img
+        id="modalImage"
+        class="modal-image"
+        src=""
+        alt=""
+      >
+
+    </div>
+
+
+    <div class="modal-info">
+
+      <div
+        id="modalTitle"
+        class="modal-title">
+      </div>
+
+      <div
+        id="modalPrice"
+        class="modal-price">
+      </div>
+
+
+      <div class="size-title">
+        Größe
+      </div>
+
+      <div class="sizes">
+
+        <button class="size" onclick="selectSize(this)">
+          S
+        </button>
+
+        <button class="size" onclick="selectSize(this)">
+          M
+        </button>
+
+        <button class="size" onclick="selectSize(this)">
+          L
+        </button>
+
+        <button class="size" onclick="selectSize(this)">
+          XL
+        </button>
+
+        <button class="size" onclick="selectSize(this)">
+          XXL
+        </button>
+
+      </div>
+
+
+      <button class="add-cart" onclick="addToCart()">
+        IN DEN WARENKORB
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     CART
+========================= -->
+
+<div
+  class="cart-overlay"
+  id="cartOverlay"
+  onclick="closeCart()">
+</div>
+
+
+<div class="cart" id="cart">
+
+  <div class="cart-header">
+
+    <div class="cart-title">
+      Warenkorb
+    </div>
+
+    <div
+      class="close-cart"
+      onclick="closeCart()">
+      ×
+    </div>
+
+  </div>
+
+
+  <div id="cartItems"></div>
+
+
+  <div class="cart-total">
+
+    <span>
+      Gesamt
+    </span>
+
+    <span id="cartTotal">
+      0,00 €
+    </span>
+
+  </div>
+
+
+  <button
+    class="checkout"
+    onclick="checkout()">
+
+    BESTELLUNG AUFGEBEN
+
+  </button>
+
+</div>
+
 
 <script>
 
+/* =========================
+   PRODUCT DATA
+========================= */
 
-/* =====================================================
-   VARIABLEN
-===================================================== */
+let currentProduct = null;
+let selectedSize = null;
 
 let cart = [];
 
-let selectedProduct = null;
 
-let selectedSize = "M";
+/* =========================
+   OPEN PRODUCT
+========================= */
 
+function openProduct(name, price, image) {
 
-const modal =
-document.getElementById(
-  "productModal"
-);
+  currentProduct = {
+    name: name,
+    price: price,
+    image: image
+  };
 
-const modalImage =
-document.getElementById(
-  "modalImage"
-);
+  selectedSize = null;
 
-const modalName =
-document.getElementById(
-  "modalName"
-);
+  document.getElementById("modalTitle").textContent = name;
 
-const modalPrice =
-document.getElementById(
-  "modalPrice"
-);
+  document.getElementById("modalPrice").textContent =
+    price.toFixed(2).replace(".", ",") + " €";
 
-const productViewer =
-document.getElementById(
-  "productViewer"
-);
+  document.getElementById("modalImage").src = image;
 
-const cartPanel =
-document.getElementById(
-  "cartPanel"
-);
+  document
+    .querySelectorAll(".size")
+    .forEach(button => {
+      button.classList.remove("selected");
+    });
 
-const cartOverlay =
-document.getElementById(
-  "cartOverlay"
-);
-
-const cartItems =
-document.getElementById(
-  "cartItems"
-);
-
-const cartCount =
-document.getElementById(
-  "cartCount"
-);
-
-const cartTotal =
-document.getElementById(
-  "cartTotal"
-);
-
-
-/* =====================================================
-   PRODUKT ÖFFNEN
-===================================================== */
-
-document
-.querySelectorAll(".product")
-.forEach(product => {
-
-  product.addEventListener(
-    "click",
-    function(){
-
-      selectedProduct = {
-
-        name:
-          this.dataset.name,
-
-        price:
-          Number(
-            this.dataset.price
-          ),
-
-        image:
-          this.dataset.image
-
-      };
-
-
-      selectedSize = "M";
-
-
-      document
-      .querySelectorAll(".size")
-      .forEach(button => {
-
-        button.classList.remove(
-          "active"
-        );
-
-        if(
-          button.dataset.size ===
-          "M"
-        ){
-
-          button.classList.add(
-            "active"
-          );
-
-        }
-
-      });
-
-
-      modalImage.src =
-        selectedProduct.image;
-
-      modalImage.alt =
-        selectedProduct.name;
-
-
-      modalName.textContent =
-        selectedProduct.name;
-
-
-      modalPrice.textContent =
-        selectedProduct.price
-        .toLocaleString(
-          "de-DE",
-          {
-            style:"currency",
-            currency:"EUR"
-          }
-        );
-
-
-      rotationX = 0;
-
-      rotationY = 0;
-
-      updateProductRotation();
-
-
-      modal.classList.add(
-        "active"
-      );
-
-
-      document.body.style.overflow =
-        "hidden";
-
-    }
-  );
-
-});
-
-
-/* =====================================================
-   PRODUKT SCHLIESSEN
-===================================================== */
-
-function closeProduct(){
-
-  modal.classList.remove(
-    "active"
-  );
-
-  document.body.style.overflow =
-    "";
+  document
+    .getElementById("productModal")
+    .classList.add("active");
 
 }
 
 
-document
-.getElementById(
-  "closeModal"
-)
-.addEventListener(
-  "click",
-  closeProduct
-);
+/* =========================
+   CLOSE PRODUCT
+========================= */
 
+function closeProduct() {
 
-modal.addEventListener(
-  "click",
-  function(event){
-
-    if(
-      event.target === modal
-    ){
-
-      closeProduct();
-
-    }
-
-  }
-);
-
-
-/* =====================================================
-   GRÖSSE
-===================================================== */
-
-document
-.querySelectorAll(".size")
-.forEach(button => {
-
-  button.addEventListener(
-    "click",
-    function(event){
-
-      event.stopPropagation();
-
-
-      document
-      .querySelectorAll(".size")
-      .forEach(btn => {
-
-        btn.classList.remove(
-          "active"
-        );
-
-      });
-
-
-      this.classList.add(
-        "active"
-      );
-
-
-      selectedSize =
-        this.dataset.size;
-
-    }
-  );
-
-});
-
-
-/* =====================================================
-   3D / DRAG
-===================================================== */
-
-let dragging = false;
-
-let startX = 0;
-
-let startY = 0;
-
-let rotationY = 0;
-
-let rotationX = 0;
-
-
-function updateProductRotation(){
-
-  rotationY =
-    Math.max(
-      -35,
-      Math.min(
-        35,
-        rotationY
-      )
-    );
-
-
-  rotationX =
-    Math.max(
-      -15,
-      Math.min(
-        15,
-        rotationX
-      )
-    );
-
-
-  modalImage.style.transform =
-
-    "perspective(1000px) " +
-
-    "rotateY(" +
-    rotationY +
-    "deg) " +
-
-    "rotateX(" +
-    rotationX +
-    "deg) " +
-
-    "scale(1.03)";
+  document
+    .getElementById("productModal")
+    .classList.remove("active");
 
 }
 
 
-/* MOUSE */
+/* =========================
+   SIZE
+========================= */
 
-productViewer.addEventListener(
-  "mousedown",
-  function(event){
+function selectSize(button) {
 
-    dragging = true;
+  document
+    .querySelectorAll(".size")
+    .forEach(btn => {
+      btn.classList.remove("selected");
+    });
 
-    startX =
-      event.clientX;
+  button.classList.add("selected");
 
-    startY =
-      event.clientY;
+  selectedSize = button.textContent;
 
-    productViewer.style.cursor =
-      "grabbing";
-
-  }
-);
+}
 
 
-window.addEventListener(
-  "mousemove",
-  function(event){
+/* =========================
+   ADD CART
+========================= */
 
-    if(!dragging) return;
+function addToCart() {
 
+  if (!selectedSize) {
 
-    const differenceX =
-      event.clientX -
-      startX;
+    alert("Bitte zuerst eine Größe auswählen.");
 
-
-    const differenceY =
-      event.clientY -
-      startY;
-
-
-    rotationY +=
-      differenceX * .35;
-
-
-    rotationX -=
-      differenceY * .18;
-
-
-    startX =
-      event.clientX;
-
-
-    startY =
-      event.clientY;
-
-
-    updateProductRotation();
+    return;
 
   }
-);
 
+  cart.push({
 
-window.addEventListener(
-  "mouseup",
-  function(){
+    name: currentProduct.name,
 
-    dragging = false;
+    price: currentProduct.price,
 
-    productViewer.style.cursor =
-      "grab";
+    image: currentProduct.image,
 
-  }
-);
+    size: selectedSize,
 
+    quantity: 1
 
-/* TOUCH */
+  });
 
-productViewer.addEventListener(
-  "touchstart",
-  function(event){
+  updateCart();
 
-    if(
-      event.touches.length !== 1
-    ){
+  closeProduct();
 
-      return;
+  openCart();
 
-    }
+}
 
 
-    dragging = true;
+/* =========================
+   UPDATE CART
+========================= */
 
+function updateCart() {
 
-    startX =
-      event.touches[0].clientX;
-
-
-    startY =
-      event.touches[0].clientY;
-
-  },
-  {
-    passive:true
-  }
-);
-
-
-productViewer.addEventListener(
-  "touchmove",
-  function(event){
-
-    if(!dragging) return;
-
-
-    if(
-      event.touches.length !== 1
-    ){
-
-      return;
-
-    }
-
-
-    const differenceX =
-      event.touches[0].clientX -
-      startX;
-
-
-    const differenceY =
-      event.touches[0].clientY -
-      startY;
-
-
-    rotationY +=
-      differenceX * .45;
-
-
-    rotationX -=
-      differenceY * .22;
-
-
-    startX =
-      event.touches[0].clientX;
-
-
-    startY =
-      event.touches[0].clientY;
-
-
-    updateProductRotation();
-
-  },
-  {
-    passive:true
-  }
-);
-
-
-productViewer.addEventListener(
-  "touchend",
-  function(){
-
-    dragging = false;
-
-  }
-);
-
-
-/* DOPPELKLICK = RESET */
-
-productViewer.addEventListener(
-  "dblclick",
-  function(){
-
-    rotationX = 0;
-
-    rotationY = 0;
-
-    updateProductRotation();
-
-  }
-);
-
-
-/* =====================================================
-   IN WARENKORB
-===================================================== */
-
-document
-.getElementById(
-  "addToCart"
-)
-.addEventListener(
-  "click",
-  function(){
-
-    if(
-      !selectedProduct
-    ){
-
-      return;
-
-    }
-
-
-    const existing =
-      cart.find(item =>
-
-        item.name ===
-        selectedProduct.name &&
-
-        item.size ===
-        selectedSize
-
-      );
-
-
-    if(existing){
-
-      existing.quantity++;
-
-    }
-
-    else{
-
-      cart.push({
-
-        name:
-          selectedProduct.name,
-
-        price:
-          selectedProduct.price,
-
-        image:
-          selectedProduct.image,
-
-        size:
-          selectedSize,
-
-        quantity:1
-
-      });
-
-    }
-
-
-    updateCart();
-
-    closeProduct();
-
-    openCart();
-
-  }
-);
-
-
-/* =====================================================
-   WARENKORB AKTUALISIEREN
-===================================================== */
-
-function updateCart(){
+  const cartItems =
+    document.getElementById("cartItems");
 
   cartItems.innerHTML = "";
 
   let total = 0;
-
   let count = 0;
 
 
-  if(
-    cart.length === 0
-  ){
+  cart.forEach((item, index) => {
 
-    cartItems.innerHTML =
+    total += item.price * item.quantity;
 
-      '<div class="cart-empty">' +
-      'Dein Warenkorb ist noch leer.' +
-      '</div>';
-
-  }
-
-  else{
+    count += item.quantity;
 
 
-    cart.forEach(
-      (item,index) => {
+    const div =
+      document.createElement("div");
 
-        total +=
-          item.price *
-          item.quantity;
+    div.className = "cart-item";
 
 
-        count +=
-          item.quantity;
+    div.innerHTML = `
+
+      <img
+        src="${item.image}"
+        alt="${item.name}"
+      >
+
+      <div>
+
+        <div class="cart-item-name">
+          ${item.name}
+        </div>
+
+        <div class="cart-item-size">
+          Größe: ${item.size}
+        </div>
+
+        <div>
+          ${item.price.toFixed(2).replace(".", ",")} €
+        </div>
+
+        <div class="quantity">
+
+          <button onclick="changeQuantity(${index}, -1)">
+            −
+          </button>
+
+          <span>
+            ${item.quantity}
+          </span>
+
+          <button onclick="changeQuantity(${index}, 1)">
+            +
+          </button>
+
+        </div>
+
+        <button
+          class="remove"
+          onclick="removeItem(${index})">
+
+          Entfernen
+
+        </button>
+
+      </div>
+
+    `;
+
+    cartItems.appendChild(div);
+
+  });
 
 
-        const row =
-          document.createElement(
-            "div"
-          );
+  document.getElementById("cartCount")
+    .textContent = count;
 
-
-        row.className =
-          "cart-item";
-
-
-        row.innerHTML = `
-
-          <img
-            src="${item.image}"
-            alt="${item.name}"
-          >
-
-          <div>
-
-            <h4>
-              ${item.name}
-            </h4>
-
-            <p>
-              Größe: ${item.size}
-            </p>
-
-            <p>
-              ${item.price.toLocaleString(
-                "de-DE",
-                {
-                  style:"currency",
-                  currency:"EUR"
-                }
-              )}
-            </p>
-
-
-            <div class="cart-controls">
-
-              <button
-                class="qty-button"
-                data-index="${index}"
-                data-action="minus"
-                type="button"
-              >
-                −
-              </button>
-
-
-              <span>
-                ${item.quantity}
-              </span>
-
-
-              <button
-                class="qty-button"
-                data-index="${index}"
-                data-action="plus"
-                type="button"
-              >
-                +
-              </button>
-
-            </div>
-
-
-            <button
-              class="remove-item"
-              data-index="${index}"
-              type="button"
-            >
-              Entfernen
-            </button>
-
-          </div>
-
-        `;
-
-
-        cartItems.appendChild(
-          row
-        );
-
-      }
-    );
-
-  }
-
-
-  cartCount.textContent =
-    count;
-
-
-  cartTotal.textContent =
-    total.toLocaleString(
-      "de-DE",
-      {
-        style:"currency",
-        currency:"EUR"
-      }
-    );
+  document.getElementById("cartTotal")
+    .textContent =
+      total.toFixed(2).replace(".", ",") + " €";
 
 }
 
 
-/* =====================================================
-   MENGE ÄNDERN
-===================================================== */
+/* =========================
+   QUANTITY
+========================= */
 
-cartItems.addEventListener(
-  "click",
-  function(event){
+function changeQuantity(index, amount) {
 
-    const quantityButton =
-      event.target.closest(
-        ".qty-button"
-      );
+  cart[index].quantity += amount;
 
+  if (cart[index].quantity <= 0) {
 
-    const removeButton =
-      event.target.closest(
-        ".remove-item"
-      );
-
-
-    if(quantityButton){
-
-      const index =
-        Number(
-          quantityButton.dataset.index
-        );
-
-
-      const action =
-        quantityButton.dataset.action;
-
-
-      if(
-        action === "plus"
-      ){
-
-        cart[index].quantity++;
-
-      }
-
-      else{
-
-        cart[index].quantity--;
-
-        if(
-          cart[index].quantity <= 0
-        ){
-
-          cart.splice(
-            index,
-            1
-          );
-
-        }
-
-      }
-
-
-      updateCart();
-
-    }
-
-
-    if(removeButton){
-
-      const index =
-        Number(
-          removeButton.dataset.index
-        );
-
-
-      cart.splice(
-        index,
-        1
-      );
-
-
-      updateCart();
-
-    }
+    cart.splice(index, 1);
 
   }
-);
 
-
-/* =====================================================
-   WARENKORB ÖFFNEN
-===================================================== */
-
-function openCart(){
-
-  cartPanel.classList.add(
-    "active"
-  );
-
-  cartOverlay.classList.add(
-    "active"
-  );
+  updateCart();
 
 }
 
 
-document
-.getElementById(
-  "openCart"
-)
-.addEventListener(
-  "click",
-  openCart
-);
+/* =========================
+   REMOVE
+========================= */
 
+function removeItem(index) {
 
-/* =====================================================
-   WARENKORB SCHLIESSEN
-===================================================== */
+  cart.splice(index, 1);
 
-function closeCart(){
-
-  cartPanel.classList.remove(
-    "active"
-  );
-
-  cartOverlay.classList.remove(
-    "active"
-  );
+  updateCart();
 
 }
 
 
-document
-.getElementById(
-  "closeCart"
-)
-.addEventListener(
-  "click",
-  closeCart
-);
+/* =========================
+   OPEN CART
+========================= */
+
+function openCart() {
+
+  document
+    .getElementById("cart")
+    .classList.add("active");
+
+  document
+    .getElementById("cartOverlay")
+    .classList.add("active");
+
+}
 
 
-cartOverlay.addEventListener(
-  "click",
-  closeCart
-);
+/* =========================
+   CLOSE CART
+========================= */
+
+function closeCart() {
+
+  document
+    .getElementById("cart")
+    .classList.remove("active");
+
+  document
+    .getElementById("cartOverlay")
+    .classList.remove("active");
+
+}
 
 
-/* =====================================================
+/* =========================
    CHECKOUT
-===================================================== */
+========================= */
 
-document
-.getElementById(
-  "checkoutButton"
-)
-.addEventListener(
-  "click",
-  function(){
+function checkout() {
 
-    alert(
-      "Shop Vorschau: Noch keine Bestellungen möglich. Preise, Größen und Versand werden noch bestätigt."
-    );
+  alert(
+    "Shop-Vorschau: Bestellungen sind derzeit noch nicht möglich."
+  );
 
-  }
+}
+
+
+/* =========================
+   PSEUDO 3D PRODUCT DRAG
+========================= */
+
+const modalImage =
+  document.getElementById("modalImage");
+
+let dragging = false;
+
+let startX = 0;
+let startY = 0;
+
+let rotateX = 0;
+let rotateY = 0;
+
+
+modalImage.addEventListener(
+  "mousedown",
+  startDrag
 );
-
-
-/* =====================================================
-   ESCAPE
-===================================================== */
 
 document.addEventListener(
-  "keydown",
-  function(event){
+  "mousemove",
+  drag
+);
 
-    if(
-      event.key === "Escape"
-    ){
-
-      closeProduct();
-
-      closeCart();
-
-    }
-
-  }
+document.addEventListener(
+  "mouseup",
+  endDrag
 );
 
 
-/* =====================================================
-   START
-===================================================== */
+modalImage.addEventListener(
+  "touchstart",
+  startTouch,
+  {passive:false}
+);
 
-updateCart();
+document.addEventListener(
+  "touchmove",
+  moveTouch,
+  {passive:false}
+);
+
+document.addEventListener(
+  "touchend",
+  endDrag
+);
+
+
+function startDrag(e) {
+
+  dragging = true;
+
+  startX = e.clientX;
+  startY = e.clientY;
+
+}
+
+
+function drag(e) {
+
+  if (!dragging) return;
+
+  const dx = e.clientX - startX;
+  const dy = e.clientY - startY;
+
+  rotateY += dx * 0.5;
+  rotateX -= dy * 0.3;
+
+  modalImage.style.transform =
+    `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+
+  startX = e.clientX;
+  startY = e.clientY;
+
+}
+
+
+function startTouch(e) {
+
+  e.preventDefault();
+
+  const touch = e.touches[0];
+
+  dragging = true;
+
+  startX = touch.clientX;
+  startY = touch.clientY;
+
+}
+
+
+function moveTouch(e) {
+
+  if (!dragging) return;
+
+  e.preventDefault();
+
+  const touch = e.touches[0];
+
+  const dx = touch.clientX - startX;
+  const dy = touch.clientY - startY;
+
+  rotateY += dx * 0.5;
+  rotateX -= dy * 0.3;
+
+  modalImage.style.transform =
+    `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+
+  startX = touch.clientX;
+  startY = touch.clientY;
+
+}
+
+
+function endDrag() {
+
+  dragging = false;
+
+}
+
+
+/* =========================
+   DOUBLE CLICK RESET
+========================= */
+
+modalImage.addEventListener(
+  "dblclick",
+  () => {
+
+    rotateX = 0;
+    rotateY = 0;
+
+    modalImage.style.transform =
+      "rotateY(0deg) rotateX(0deg)";
+
+  }
+);
 
 </script>
 
-
 </body>
-
 </html>
