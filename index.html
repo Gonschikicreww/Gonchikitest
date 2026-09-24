@@ -7,54 +7,80 @@
 <title>ГОНЩИКИ — Gonschiki Crew</title>
 
 <style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-html{scroll-behavior:smooth}
+html{
+    scroll-behavior:smooth;
+}
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
     background:#080808;
     color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
     overflow-x:hidden;
 }
 
-button,input{font-family:inherit}
+button,
+input,
+select{
+    font-family:inherit;
+}
+
+
+/* =====================================================
+   INFO BAR
+===================================================== */
 
 .info-bar{
+    width:100%;
     background:#fff;
     color:#000;
     text-align:center;
-    padding:10px 14px;
+    padding:10px 15px;
     font-size:10px;
     font-weight:900;
-    letter-spacing:.8px;
-    line-height:1.4;
+    letter-spacing:.7px;
+    line-height:1.5;
 }
 
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
 nav{
+    width:100%;
     height:76px;
-    position:sticky;
-    top:0;
-    z-index:1000;
+    padding:0 5%;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:0 5%;
-    background:rgba(8,8,8,.96);
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(7,7,7,.96);
     backdrop-filter:blur(15px);
+
     border-bottom:1px solid #222;
 }
 
 .logo{
     color:#fff;
     text-decoration:none;
+
     display:flex;
     flex-direction:column;
-    line-height:.8;
 }
 
 .logo-main{
@@ -64,16 +90,16 @@ nav{
 }
 
 .logo-est{
+    margin-top:9px;
     font-size:8px;
     letter-spacing:4px;
-    margin-top:9px;
     opacity:.65;
 }
 
 .nav-links{
     display:flex;
     align-items:center;
-    gap:23px;
+    gap:22px;
 }
 
 .nav-links a{
@@ -82,9 +108,12 @@ nav{
     font-size:10px;
     font-weight:900;
     letter-spacing:.8px;
+    transition:.2s;
 }
 
-.nav-links a:hover{opacity:.5}
+.nav-links a:hover{
+    opacity:.5;
+}
 
 .nav-actions{
     display:flex;
@@ -97,9 +126,13 @@ nav{
     color:#fff;
     border:1px solid #333;
     padding:10px 12px;
+    cursor:pointer;
+
     font-size:9px;
     font-weight:900;
-    cursor:pointer;
+    letter-spacing:.5px;
+
+    transition:.2s;
 }
 
 .nav-btn:hover{
@@ -111,9 +144,12 @@ nav{
     background:#111;
     color:#fff;
     border:1px solid #333;
+
     padding:9px 8px;
+
     font-size:9px;
     font-weight:900;
+
     cursor:pointer;
     outline:none;
 }
@@ -122,66 +158,167 @@ nav{
     display:inline-flex;
     align-items:center;
     justify-content:center;
+
     min-width:17px;
     height:17px;
+
     padding:0 4px;
     margin-left:3px;
+
     background:#fff;
     color:#000;
+
     border-radius:20px;
+
+    font-size:9px;
 }
 
-/* HERO */
+
+/* =====================================================
+   HERO / HAUPTBANNER
+===================================================== */
 
 .hero{
+    position:relative;
+    width:100%;
     min-height:calc(100vh - 106px);
+
     display:flex;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
+
     text-align:center;
-    padding:80px 20px;
+
+    overflow:hidden;
+
+    background:#000;
+}
+
+/*
+   DAS HAUPTBILD
+   Datei:
+   assets/Car-1(2).JPG
+*/
+
+.hero-image{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    object-position:center center;
+
+    z-index:0;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+
+    z-index:1;
+
     background:
-        radial-gradient(circle at center,rgba(255,255,255,.055),transparent 43%),
-        #090909;
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.18) 0%,
+            rgba(0,0,0,.28) 30%,
+            rgba(0,0,0,.55) 65%,
+            rgba(0,0,0,.94) 100%
+        );
 }
 
 .hero-content{
-    max-width:1000px;
+    position:relative;
+    z-index:2;
+
+    width:100%;
+    max-width:1150px;
+
+    padding:110px 25px 90px;
 }
 
 .hero-logo{
-    font-size:clamp(55px,12vw,150px);
+    font-size:clamp(55px,12vw,155px);
+
     font-weight:900;
-    letter-spacing:7px;
+    letter-spacing:8px;
     line-height:.8;
+
+    text-shadow:
+        0 5px 30px rgba(0,0,0,.85);
 }
 
-.hero-logo span{
+.hero-est{
+    margin-top:60px;
+
+    font-size:clamp(14px,2vw,25px);
+    font-weight:700;
+
+    letter-spacing:10px;
+
+    text-shadow:
+        0 3px 20px rgba(0,0,0,.9);
+}
+
+.hero-slogan{
+    margin-top:70px;
+
+    font-size:clamp(20px,3.2vw,40px);
+    line-height:1.25;
+
+    font-weight:900;
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    text-shadow:
+        0 4px 25px rgba(0,0,0,.95);
+}
+
+.hero-slogan span{
     display:block;
-    margin-top:58px;
-    font-size:clamp(14px,2vw,24px);
-    letter-spacing:9px;
-    opacity:.65;
+}
+
+.hero-slogan span:last-child{
+    margin-top:9px;
+    color:#ddd;
 }
 
 .hero-description{
-    max-width:720px;
-    margin:65px auto 0;
-    color:#aaa;
-    font-size:16px;
+    max-width:760px;
+
+    margin:35px auto 0;
+
+    color:#eee;
+
+    font-size:15px;
     line-height:1.8;
+
+    text-shadow:
+        0 3px 15px rgba(0,0,0,.95);
 }
 
 .hero-btn{
     display:inline-block;
+
     margin-top:35px;
+
     padding:15px 30px;
-    border:1px solid #fff;
+
     color:#fff;
+    background:rgba(0,0,0,.25);
+
+    border:1px solid #fff;
+
     text-decoration:none;
+
     font-size:10px;
     font-weight:900;
     letter-spacing:1.5px;
+
+    transition:.25s;
 }
 
 .hero-btn:hover{
@@ -189,60 +326,78 @@ nav{
     color:#000;
 }
 
-/* SECTIONS */
+
+/* =====================================================
+   GENERAL SECTIONS
+===================================================== */
 
 section{
     padding:95px 5%;
 }
 
-.shop-section{background:#0d0d0d}
-.events-section{background:#090909}
-.cars-section{background:#080808}
-.about-section{background:#0d0d0d}
-.contact-section{background:#080808}
-
 .section-head{
     display:flex;
-    justify-content:space-between;
     align-items:end;
-    gap:20px;
+    justify-content:space-between;
+
+    gap:25px;
+
     margin-bottom:40px;
 }
 
 .section-title{
     font-size:clamp(35px,5vw,60px);
+
     font-weight:900;
+
     letter-spacing:-2px;
 }
 
 .section-subtitle{
     max-width:430px;
+
     color:#666;
+
     font-size:11px;
     line-height:1.7;
 }
 
-/* SHOP */
+
+/* =====================================================
+   SHOP
+===================================================== */
+
+.shop-section{
+    background:#0d0d0d;
+}
 
 .categories{
     display:flex;
     flex-wrap:wrap;
+
     gap:8px;
+
     margin-bottom:30px;
 }
 
 .category-btn{
+    padding:11px 16px;
+
     background:#111;
     color:#888;
+
     border:1px solid #292929;
-    padding:11px 16px;
+
     cursor:pointer;
+
     font-size:10px;
     font-weight:900;
+
+    transition:.2s;
 }
 
-.category-btn.active,
-.category-btn:hover{
+.category-btn:hover,
+.category-btn.active{
     background:#fff;
     color:#000;
     border-color:#fff;
@@ -250,15 +405,22 @@ section{
 
 .products{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
     gap:18px;
 }
 
 .product{
     background:#111;
+
     border:1px solid #1d1d1d;
+
     cursor:pointer;
+
     overflow:hidden;
+
     transition:.25s;
 }
 
@@ -268,22 +430,33 @@ section{
 }
 
 .product-image{
+    width:100%;
+
     aspect-ratio:1/1;
+
     background:#151515;
+
     overflow:hidden;
 }
 
 .product-image img{
     width:100%;
     height:100%;
-    display:block;
+
     object-fit:cover;
+
+    display:block;
+
     transition:.4s;
 }
 
-.product:hover img{transform:scale(1.03)}
+.product:hover .product-image img{
+    transform:scale(1.03);
+}
 
-.product-info{padding:15px}
+.product-info{
+    padding:15px;
+}
 
 .product-name{
     font-size:12px;
@@ -292,48 +465,75 @@ section{
 
 .product-category{
     margin-top:5px;
+
     color:#666;
+
     font-size:9px;
+
     text-transform:uppercase;
 }
 
 .product-price{
     margin-top:12px;
+
     color:#aaa;
+
     font-size:10px;
     font-weight:900;
 }
 
-/* EVENTS */
+
+/* =====================================================
+   EVENTS
+===================================================== */
+
+.events-section{
+    background:#090909;
+}
 
 .events{
-    max-width:1150px;
+    max-width:1100px;
+
     margin:auto;
+
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
     gap:20px;
 }
 
 .event{
-    border:1px solid #252525;
     background:#101010;
+
+    border:1px solid #252525;
+
     overflow:hidden;
 }
 
 .event-image{
-    height:260px;
-    background:
-        linear-gradient(135deg,#151515,#080808);
+    height:240px;
+
     display:flex;
     align-items:center;
     justify-content:center;
-    position:relative;
+
+    background:
+        radial-gradient(
+            circle,
+            #222,
+            #090909 70%
+        );
 }
 
 .event-image span{
-    font-size:50px;
+    font-size:48px;
+
     font-weight:900;
+
     letter-spacing:4px;
+
     opacity:.12;
 }
 
@@ -343,190 +543,311 @@ section{
 
 .event-tag{
     color:#777;
+
     font-size:9px;
+
     font-weight:900;
+
     letter-spacing:1.5px;
+
     margin-bottom:10px;
 }
 
 .event h3{
     font-size:24px;
+
     margin-bottom:12px;
 }
 
 .event-details{
     color:#888;
+
     font-size:11px;
+
     line-height:1.8;
 }
 
 .ticket-btn{
-    margin-top:20px;
     width:100%;
+
+    margin-top:20px;
+
     padding:13px;
+
     background:#171717;
+
     border:1px solid #333;
+
     color:#666;
+
     font-size:10px;
+
     font-weight:900;
+
     cursor:not-allowed;
 }
 
-/* CARS */
+
+/* =====================================================
+   CARS
+===================================================== */
+
+.cars-section{
+    background:#080808;
+}
 
 .cars{
-    max-width:1100px;
+    max-width:1050px;
+
     margin:auto;
+
     display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
     gap:18px;
 }
 
 .car{
     background:#101010;
+
     border:1px solid #1d1d1d;
+
     overflow:hidden;
 }
 
 .car img{
-    display:block;
     width:100%;
-    height:245px;
+
+    height:225px;
+
+    display:block;
+
     object-fit:cover;
+
     transition:.4s;
 }
 
-.car:hover img{transform:scale(1.025)}
+.car:hover img{
+    transform:scale(1.025);
+}
 
-.car-info{padding:14px 16px}
+.car-info{
+    padding:14px 16px;
+}
 
 .car-title{
     font-size:11px;
+
     font-weight:900;
+
     letter-spacing:1px;
 }
 
 .car-number{
-    color:#666;
     margin-top:5px;
+
+    color:#666;
+
     font-size:9px;
 }
 
-/* ABOUT */
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about-section{
+    background:#0d0d0d;
+}
 
 .about-grid{
     max-width:1100px;
+
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
     gap:70px;
 }
 
 .about-text{
     color:#aaa;
+
     font-size:14px;
+
     line-height:1.9;
 }
 
-.about-text strong{color:#fff}
+.about-text strong{
+    color:#fff;
+}
 
-/* CONTACT */
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact-section{
+    background:#080808;
+}
 
 .contact-box{
     max-width:850px;
-    border:1px solid #222;
+
     background:#101010;
+
+    border:1px solid #222;
+
     padding:30px;
 }
 
 .contact-row{
     display:flex;
+
+    align-items:center;
+
     justify-content:space-between;
+
     gap:20px;
+
     padding:17px 0;
+
     border-bottom:1px solid #222;
 }
 
-.contact-row:last-child{border-bottom:0}
+.contact-row:last-child{
+    border-bottom:0;
+}
 
 .contact-label{
     color:#666;
+
     font-size:9px;
+
     letter-spacing:1px;
 }
 
 .contact-value{
     color:#fff;
+
     font-size:12px;
 }
 
-/* FOOTER */
+
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer{
-    border-top:1px solid #1e1e1e;
-    background:#050505;
     padding:32px 5%;
+
     display:flex;
+
     justify-content:space-between;
+
+    gap:20px;
+
+    background:#050505;
+
+    border-top:1px solid #1e1e1e;
+
     color:#555;
+
     font-size:9px;
+
     letter-spacing:1px;
 }
 
-/* MODALS */
+
+/* =====================================================
+   MODALS
+===================================================== */
 
 .modal{
     position:fixed;
     inset:0;
+
     z-index:3000;
+
     display:none;
+
     align-items:center;
     justify-content:center;
+
     padding:20px;
-    background:rgba(0,0,0,.84);
+
+    background:rgba(0,0,0,.85);
+
     backdrop-filter:blur(8px);
 }
 
-.modal.show{display:flex}
+.modal.show{
+    display:flex;
+}
 
 .modal-box{
     width:min(900px,100%);
+
     max-height:90vh;
+
     overflow:auto;
-    background:#101010;
-    border:1px solid #333;
+
     position:relative;
+
+    background:#101010;
+
+    border:1px solid #333;
 }
 
 .close-modal{
     position:absolute;
-    right:14px;
+
     top:14px;
+    right:14px;
+
+    z-index:10;
+
     width:34px;
     height:34px;
+
     background:#171717;
-    border:1px solid #333;
+
     color:#fff;
+
+    border:1px solid #333;
+
     cursor:pointer;
-    z-index:5;
+
     font-size:19px;
 }
 
-/* PRODUCT MODAL */
+
+/* =====================================================
+   PRODUCT MODAL
+===================================================== */
 
 .product-modal-content{
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
 }
 
 .modal-product-image{
     min-height:470px;
+
     background:#151515;
 }
 
 .modal-product-image img{
     width:100%;
     height:100%;
+
     min-height:470px;
+
     object-fit:cover;
 }
 
@@ -536,45 +857,64 @@ footer{
 
 .modal-product-info h2{
     font-size:29px;
+
     margin-bottom:8px;
 }
 
 .modal-category{
     color:#666;
+
     font-size:9px;
+
     text-transform:uppercase;
 }
 
 .modal-price{
-    color:#aaa;
     margin:25px 0;
+
+    color:#aaa;
+
     font-size:11px;
+
     font-weight:900;
 }
 
 .size-label{
-    color:#777;
     display:block;
+
     margin-bottom:9px;
+
+    color:#777;
+
     font-size:9px;
+
     font-weight:900;
+
     letter-spacing:1px;
 }
 
 .sizes{
     display:flex;
+
     gap:7px;
+
     margin-bottom:22px;
 }
 
 .size-btn{
     width:47px;
     height:41px;
+
     background:#111;
-    border:1px solid #333;
+
     color:#fff;
+
+    border:1px solid #333;
+
     cursor:pointer;
+
     font-size:10px;
+
     font-weight:900;
 }
 
@@ -585,138 +925,213 @@ footer{
 
 .primary-btn{
     width:100%;
+
     padding:15px;
-    border:0;
+
     background:#fff;
+
     color:#000;
-    font-size:10px;
-    font-weight:900;
-    letter-spacing:1px;
+
+    border:0;
+
     cursor:pointer;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:1px;
 }
 
-/* CART */
+
+/* =====================================================
+   CART
+===================================================== */
 
 .cart-panel{
     position:fixed;
+
     top:0;
     right:-430px;
+
     width:min(430px,100%);
+
     height:100vh;
-    background:#0d0d0d;
-    border-left:1px solid #333;
+
     z-index:4000;
-    transition:.3s;
+
     display:flex;
+
     flex-direction:column;
+
+    background:#0d0d0d;
+
+    border-left:1px solid #333;
+
+    transition:.3s;
 }
 
-.cart-panel.open{right:0}
+.cart-panel.open{
+    right:0;
+}
 
 .cart-head{
-    padding:22px;
-    border-bottom:1px solid #222;
     display:flex;
+
     justify-content:space-between;
+
+    padding:22px;
+
+    border-bottom:1px solid #222;
 }
 
-.cart-head h2{font-size:17px}
+.cart-head h2{
+    font-size:17px;
+}
 
 .cart-close{
     background:none;
+
     border:0;
+
     color:#fff;
+
     font-size:22px;
+
     cursor:pointer;
 }
 
 .cart-items{
     flex:1;
+
     overflow:auto;
+
     padding:15px;
 }
 
 .cart-item{
     display:grid;
-    grid-template-columns:70px 1fr auto;
+
+    grid-template-columns:
+        70px 1fr auto;
+
     gap:12px;
+
     padding:12px 0;
+
     border-bottom:1px solid #222;
 }
 
 .cart-item img{
     width:70px;
     height:70px;
+
     object-fit:cover;
 }
 
 .cart-item-name{
     font-size:11px;
+
     font-weight:900;
 }
 
 .cart-item-size{
-    color:#666;
-    font-size:9px;
     margin-top:6px;
+
+    color:#666;
+
+    font-size:9px;
 }
 
 .cart-remove{
     background:none;
+
     border:0;
+
     color:#777;
+
     cursor:pointer;
+
     font-size:9px;
 }
 
 .cart-bottom{
     padding:20px;
+
     border-top:1px solid #222;
 }
 
 .cart-notice{
-    color:#777;
-    font-size:9px;
-    line-height:1.6;
     margin-bottom:14px;
+
+    color:#777;
+
+    font-size:9px;
+
+    line-height:1.6;
 }
 
 .checkout-disabled{
     width:100%;
+
     padding:14px;
+
     background:#151515;
-    border:1px solid #333;
+
     color:#666;
+
+    border:1px solid #333;
+
     font-size:9px;
+
     font-weight:900;
+
     cursor:not-allowed;
 }
 
-/* ACCOUNT */
+
+/* =====================================================
+   ACCOUNT
+===================================================== */
 
 .account-box{
     width:min(570px,100%);
+
     max-height:90vh;
+
     overflow:auto;
-    background:#101010;
-    border:1px solid #333;
-    padding:35px;
+
     position:relative;
+
+    padding:35px;
+
+    background:#101010;
+
+    border:1px solid #333;
 }
 
 .account-tabs{
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
     margin-bottom:25px;
 }
 
 .account-tab{
-    background:#151515;
-    color:#777;
-    border:1px solid #292929;
     padding:13px;
+
+    background:#151515;
+
+    color:#777;
+
+    border:1px solid #292929;
+
     cursor:pointer;
+
     font-size:9px;
+
     font-weight:900;
 }
 
@@ -725,82 +1140,130 @@ footer{
     color:#000;
 }
 
-.account-form{display:none}
-.account-form.active{display:block}
+.account-form{
+    display:none;
+}
+
+.account-form.active{
+    display:block;
+}
 
 .form-title{
-    font-size:24px;
-    font-weight:900;
     margin-bottom:7px;
+
+    font-size:24px;
+
+    font-weight:900;
 }
 
 .form-subtitle{
-    color:#666;
-    font-size:9px;
-    line-height:1.6;
     margin-bottom:20px;
+
+    color:#666;
+
+    font-size:9px;
+
+    line-height:1.6;
 }
 
 .form-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
     gap:12px;
 }
 
-.form-group{margin-bottom:12px}
-.form-group.full{grid-column:1/-1}
+.form-group{
+    margin-bottom:12px;
+}
+
+.form-group.full{
+    grid-column:1/-1;
+}
 
 .form-group label{
     display:block;
-    color:#777;
-    font-size:8px;
-    font-weight:900;
-    letter-spacing:1px;
+
     margin-bottom:6px;
+
+    color:#777;
+
+    font-size:8px;
+
+    font-weight:900;
+
+    letter-spacing:1px;
 }
 
 .form-group input{
     width:100%;
-    background:#080808;
-    color:#fff;
-    border:1px solid #292929;
+
     padding:12px;
+
+    background:#080808;
+
+    color:#fff;
+
+    border:1px solid #292929;
+
     outline:none;
 }
 
-.form-group input:focus{border-color:#fff}
+.form-group input:focus{
+    border-color:#fff;
+}
 
 .account-message{
     margin-top:13px;
+
     color:#aaa;
+
     font-size:9px;
+
     line-height:1.5;
 }
 
-/* MOBILE */
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:1050px){
+
     .products{
-        grid-template-columns:repeat(3,1fr);
+        grid-template-columns:
+            repeat(3,minmax(0,1fr));
     }
 
-    .nav-links{gap:13px}
+    .nav-links{
+        gap:13px;
+    }
 }
+
 
 @media(max-width:780px){
 
     nav{
-        height:auto;
         min-height:70px;
+
+        height:auto;
+
         padding:12px 4%;
     }
 
-    .nav-links{display:none}
+    .nav-links{
+        display:none;
+    }
 
-    .nav-actions{margin-left:auto}
+    .nav-actions{
+        margin-left:auto;
+    }
 
     .nav-btn{
-        padding:9px 8px;
+        padding:9px 7px;
+
         font-size:8px;
     }
 
@@ -810,33 +1273,65 @@ footer{
 
     .logo-main{
         font-size:18px;
+
         letter-spacing:2px;
     }
 
     .logo-est{
         font-size:7px;
+
         letter-spacing:3px;
     }
+
 
     .hero{
         min-height:calc(100vh - 120px);
-        padding:70px 18px;
+    }
+
+    .hero-image{
+        object-position:center center;
+    }
+
+    .hero-overlay{
+        background:
+            linear-gradient(
+                to bottom,
+                rgba(0,0,0,.25),
+                rgba(0,0,0,.48) 55%,
+                rgba(0,0,0,.94)
+            );
+    }
+
+    .hero-content{
+        padding:80px 18px 70px;
     }
 
     .hero-logo{
-        font-size:clamp(44px,14vw,78px);
+        font-size:clamp(43px,14vw,80px);
+
         letter-spacing:3px;
     }
 
-    .hero-logo span{
-        margin-top:43px;
-        letter-spacing:5px;
+    .hero-est{
+        margin-top:40px;
+
+        font-size:12px;
+
+        letter-spacing:6px;
+    }
+
+    .hero-slogan{
+        margin-top:50px;
+
+        font-size:19px;
     }
 
     .hero-description{
-        margin-top:45px;
-        font-size:13px;
+        margin-top:28px;
+
+        font-size:12px;
     }
+
 
     section{
         padding:70px 5%;
@@ -850,8 +1345,11 @@ footer{
         margin-top:13px;
     }
 
+
     .products{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
         gap:12px;
     }
 
@@ -863,32 +1361,34 @@ footer{
         font-size:10px;
     }
 
-    .product-category{
+    .product-category,
+    .product-price{
         font-size:8px;
     }
 
-    .product-price{
-        font-size:9px;
-    }
 
     .cars,
     .events{
         grid-template-columns:1fr;
+
         max-width:650px;
     }
 
     .car img{
-        height:210px;
+        height:205px;
     }
 
     .event-image{
-        height:210px;
+        height:205px;
     }
+
 
     .about-grid{
         grid-template-columns:1fr;
+
         gap:35px;
     }
+
 
     .product-modal-content{
         grid-template-columns:1fr;
@@ -896,17 +1396,20 @@ footer{
 
     .modal-product-image{
         min-height:300px;
+
         max-height:360px;
     }
 
     .modal-product-image img{
         min-height:300px;
+
         max-height:360px;
     }
 
     .modal-product-info{
         padding:28px 22px;
     }
+
 
     .form-grid{
         grid-template-columns:1fr;
@@ -916,10 +1419,12 @@ footer{
         grid-column:auto;
     }
 
+
     footer{
         flex-direction:column;
     }
 }
+
 
 @media(max-width:430px){
 
@@ -927,528 +1432,1336 @@ footer{
         font-size:8px;
     }
 
-    .nav-btn{
-        padding:8px 6px;
+    .hero-logo{
+        font-size:39px;
+    }
+
+    .hero-est{
+        margin-top:34px;
+
+        font-size:11px;
+    }
+
+    .hero-slogan{
+        margin-top:42px;
+
+        font-size:17px;
+    }
+
+    .hero-description{
+        font-size:11px;
     }
 
     .products{
         gap:9px;
     }
 
-    .hero-logo{
-        font-size:40px;
-    }
-
-    .hero-logo span{
-        font-size:12px;
-        margin-top:35px;
-    }
-
-    .hero-description{
-        font-size:12px;
-    }
-
     .car img{
-        height:190px;
+        height:185px;
     }
 
     .account-box{
         padding:25px 18px;
     }
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- INFO BAR -->
-<div class="info-bar" id="infoBar">
+
+<!-- =====================================================
+     INFO BAR
+===================================================== -->
+
+<div class="info-bar">
+
 SHOP-VORSCHAU – PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT, KEINE BESTELLUNGEN DERZEIT MÖGLICH!
+
 </div>
 
-<!-- NAV -->
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
 <nav>
 
 <a href="#home" class="logo">
-    <span class="logo-main">ГОНЩИКИ</span>
-    <span class="logo-est">EST. 2025</span>
+
+    <span class="logo-main">
+        ГОНЩИКИ
+    </span>
+
+    <span class="logo-est">
+        EST. 2025
+    </span>
+
 </a>
 
+
 <div class="nav-links">
-    <a href="#shop" data-i18n="shop">SHOP</a>
-    <a href="#cars" data-i18n="cars">CARS</a>
-    <a href="#events" data-i18n="events">EVENTS</a>
-    <a href="#about" data-i18n="about">ÜBER UNS</a>
-    <a href="#contact" data-i18n="contact">KONTAKT</a>
+
+    <a href="#shop" data-i18n="shop">
+        SHOP
+    </a>
+
+    <a href="#cars" data-i18n="cars">
+        CARS
+    </a>
+
+    <a href="#events" data-i18n="events">
+        EVENTS
+    </a>
+
+    <a href="#about" data-i18n="about">
+        ÜBER UNS
+    </a>
+
+    <a href="#contact" data-i18n="contact">
+        KONTAKT
+    </a>
+
 </div>
+
 
 <div class="nav-actions">
 
-<select class="lang-select" id="languageSelect" onchange="changeLanguage(this.value)">
-    <option value="de">DE</option>
-    <option value="en">EN</option>
-    <option value="ru">RU</option>
+<select
+    class="lang-select"
+    id="languageSelect"
+    onchange="changeLanguage(this.value)"
+>
+
+    <option value="de">
+        DE
+    </option>
+
+    <option value="en">
+        EN
+    </option>
+
+    <option value="ru">
+        RU
+    </option>
+
 </select>
 
-<button class="nav-btn" onclick="openAccount()" data-i18n="login">
+
+<button
+    class="nav-btn"
+    onclick="openAccount()"
+    data-i18n="login"
+>
     ANMELDEN
 </button>
 
-<button class="nav-btn" onclick="openCart()">
-    <span data-i18n="cart">WARENKORB</span>
-    <span class="cart-count" id="cartCount">0</span>
+
+<button
+    class="nav-btn"
+    onclick="openCart()"
+>
+
+    <span data-i18n="cart">
+        WARENKORB
+    </span>
+
+    <span
+        class="cart-count"
+        id="cartCount"
+    >
+        0
+    </span>
+
 </button>
 
 </div>
+
 </nav>
 
-<!-- HERO -->
-<section class="hero" id="home">
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section
+    class="hero"
+    id="home"
+>
+
+
+<!--
+    WICHTIG:
+
+    Dieses Bild ist das große Hauptbild.
+    In GitHub:
+
+    assets/Car-1(2).JPG
+-->
+
+<img
+    src="assets/Car-1(2).JPG"
+    class="hero-image"
+    alt="Gonschiki Hauptbanner"
+>
+
+
+<div class="hero-overlay"></div>
+
 
 <div class="hero-content">
 
+
 <div class="hero-logo">
+
     ГОНЩИКИ
-    <span>EST. 2025</span>
+
 </div>
 
-<p class="hero-description" data-i18n="heroText">
-Gonschiki steht für Autos, Nächte, Geschwindigkeit und den eigenen Style.
-Streetwear für alle, die ihre eigene Spur fahren.
+
+<div class="hero-est">
+
+    EST. 2025
+
+</div>
+
+
+<div class="hero-slogan">
+
+    <span data-i18n="sloganNight">
+
+        GEMACHT FÜR DIE NACHT.
+        GEMACHT FÜR DEN TAG.
+
+    </span>
+
+
+    <span data-i18n="sloganStyle">
+
+        KEINE REGEL. NUR STYLE.
+
+    </span>
+
+</div>
+
+
+<p
+    class="hero-description"
+    data-i18n="heroText"
+>
+
+Gonschiki steht für Autos, Nächte, Geschwindigkeit
+und den eigenen Style. Streetwear für alle,
+die ihre eigene Spur fahren.
+
 </p>
 
-<a href="#shop" class="hero-btn" data-i18n="discover">
-    SHOP ENTDECKEN
+
+<a
+    href="#shop"
+    class="hero-btn"
+    data-i18n="discover"
+>
+
+SHOP ENTDECKEN
+
 </a>
 
+
 </div>
+
 </section>
 
-<!-- SHOP -->
-<section class="shop-section" id="shop">
+
+<!-- =====================================================
+     SHOP
+===================================================== -->
+
+<section
+    class="shop-section"
+    id="shop"
+>
+
 
 <div class="section-head">
-    <div class="section-title" data-i18n="shopTitle">SHOP</div>
-    <div class="section-subtitle" data-i18n="shopSubtitle">
-        Unsere aktuelle Kollektion. Der Shop befindet sich momentan noch in der Vorschau.
-    </div>
+
+<div
+    class="section-title"
+    data-i18n="shopTitle"
+>
+    SHOP
 </div>
+
+
+<div
+    class="section-subtitle"
+    data-i18n="shopSubtitle"
+>
+
+Unsere aktuelle Kollektion.
+Der Shop befindet sich momentan noch in der Vorschau.
+
+</div>
+
+</div>
+
 
 <div class="categories">
 
-<button class="category-btn active" onclick="filterProducts('all',this)" data-i18n="all">
+
+<button
+    class="category-btn active"
+    onclick="filterProducts('all',this)"
+    data-i18n="all"
+>
+
 ALLE
+
 </button>
 
-<button class="category-btn" onclick="filterProducts('shirt',this)" data-i18n="shirts">
+
+<button
+    class="category-btn"
+    onclick="filterProducts('shirt',this)"
+    data-i18n="shirts"
+>
+
 SHIRTS
+
 </button>
 
-<button class="category-btn" onclick="filterProducts('hoodie',this)" data-i18n="hoodies">
+
+<button
+    class="category-btn"
+    onclick="filterProducts('hoodie',this)"
+    data-i18n="hoodies"
+>
+
 HOODIES
+
 </button>
 
-<button class="category-btn" onclick="filterProducts('zipper',this)" data-i18n="zipper">
+
+<button
+    class="category-btn"
+    onclick="filterProducts('zipper',this)"
+    data-i18n="zipper"
+>
+
 ZIPPER
+
 </button>
 
-<button class="category-btn" onclick="filterProducts('pants',this)" data-i18n="pants">
+
+<button
+    class="category-btn"
+    onclick="filterProducts('pants',this)"
+    data-i18n="pants"
+>
+
 HOSEN
+
 </button>
+
 
 </div>
 
-<div class="products" id="products"></div>
+
+<div
+    class="products"
+    id="products"
+></div>
+
 
 </section>
 
-<!-- EVENTS -->
-<section class="events-section" id="events">
+
+<!-- =====================================================
+     EVENTS
+===================================================== -->
+
+<section
+    class="events-section"
+    id="events"
+>
+
 
 <div class="section-head">
-    <div class="section-title" data-i18n="eventsTitle">EVENTS</div>
 
-    <div class="section-subtitle" data-i18n="eventsSubtitle">
-        Treffen, Ausfahrten und Gonschiki Events. Weitere Termine folgen.
-    </div>
+
+<div
+    class="section-title"
+    data-i18n="eventsTitle"
+>
+
+EVENTS
+
 </div>
+
+
+<div
+    class="section-subtitle"
+    data-i18n="eventsSubtitle"
+>
+
+Treffen, Ausfahrten und Gonschiki Events.
+Weitere Termine folgen.
+
+</div>
+
+
+</div>
+
 
 <div class="events">
 
+
 <div class="event">
 
+
 <div class="event-image">
-    <span>ГОНЩИКИ</span>
+
+    <span>
+        ГОНЩИКИ
+    </span>
+
 </div>
+
 
 <div class="event-info">
 
-<div class="event-tag" data-i18n="comingSoon">
-    COMING SOON
+
+<div
+    class="event-tag"
+    data-i18n="comingSoon"
+>
+
+COMING SOON
+
 </div>
 
-<h3>GONSCHIKI NIGHT</h3>
+
+<h3>
+    GONSCHIKI NIGHT
+</h3>
+
 
 <div class="event-details">
-    📍 Stuttgart / Region<br>
-    📅 <span data-i18n="dateComing">Termin folgt</span><br>
+
+    📍 Stuttgart / Region
+    <br>
+
+    📅
+    <span data-i18n="dateComing">
+        Termin folgt
+    </span>
+
+    <br>
+
     🚗 Cars • Crew • Music • Streetwear
+
 </div>
 
-<button class="ticket-btn" data-i18n="ticketsUnavailable">
-    TICKETS NOCH NICHT VERFÜGBAR
+
+<button
+    class="ticket-btn"
+    data-i18n="ticketsUnavailable"
+>
+
+TICKETS NOCH NICHT VERFÜGBAR
+
 </button>
 
+
 </div>
+
 </div>
 
 
 <div class="event">
 
+
 <div class="event-image">
-    <span>2026</span>
+
+    <span>
+        2026
+    </span>
+
 </div>
+
 
 <div class="event-info">
 
-<div class="event-tag" data-i18n="comingSoon">
-    COMING SOON
+
+<div
+    class="event-tag"
+    data-i18n="comingSoon"
+>
+
+COMING SOON
+
 </div>
 
-<h3>GONSCHIKI MEET</h3>
+
+<h3>
+    GONSCHIKI MEET
+</h3>
+
 
 <div class="event-details">
-    📍 Deutschland<br>
-    📅 <span data-i18n="dateComing">Termin folgt</span><br>
+
+    📍 Deutschland
+    <br>
+
+    📅
+    <span data-i18n="dateComing">
+        Termin folgt
+    </span>
+
+    <br>
+
     🔥 Cars • Community • Crew
+
 </div>
 
-<button class="ticket-btn" data-i18n="ticketsUnavailable">
-    TICKETS NOCH NICHT VERFÜGBAR
+
+<button
+    class="ticket-btn"
+    data-i18n="ticketsUnavailable"
+>
+
+TICKETS NOCH NICHT VERFÜGBAR
+
 </button>
 
-</div>
+
 </div>
 
 </div>
+
+
+</div>
+
 </section>
 
-<!-- CARS -->
-<section class="cars-section" id="cars">
+
+<!-- =====================================================
+     CARS
+===================================================== -->
+
+<section
+    class="cars-section"
+    id="cars"
+>
+
 
 <div class="section-head">
-    <div class="section-title" data-i18n="carsTitle">CARS</div>
 
-    <div class="section-subtitle" data-i18n="carsSubtitle">
-        Die Autos hinter Gonschiki.
-    </div>
+
+<div
+    class="section-title"
+    data-i18n="carsTitle"
+>
+
+CARS
+
 </div>
+
+
+<div
+    class="section-subtitle"
+    data-i18n="carsSubtitle"
+>
+
+Die Autos hinter Gonschiki.
+
+</div>
+
+
+</div>
+
 
 <div class="cars">
 
-<div class="car">
-    <img src="assets/Car-1.JPG" alt="Gonschiki Car 1">
-    <div class="car-info">
-        <div class="car-title">GONSCHIKI CAR #01</div>
-        <div class="car-number">01 / 05</div>
-    </div>
-</div>
 
 <div class="car">
-    <img src="assets/Car-2.JPG" alt="Gonschiki Car 2">
-    <div class="car-info">
-        <div class="car-title">GONSCHIKI CAR #02</div>
-        <div class="car-number">02 / 05</div>
-    </div>
+
+<img
+    src="assets/Car-1.JPG"
+    alt="Gonschiki Car 1"
+>
+
+<div class="car-info">
+
+<div class="car-title">
+    GONSCHIKI CAR #01
 </div>
 
-<div class="car">
-    <img src="assets/Car-3.jpg" alt="Gonschiki Car 3">
-    <div class="car-info">
-        <div class="car-title">GONSCHIKI CAR #03</div>
-        <div class="car-number">03 / 05</div>
-    </div>
-</div>
-
-<div class="car">
-    <img src="assets/Car-4.jpg" alt="Gonschiki Car 4">
-    <div class="car-info">
-        <div class="car-title">GONSCHIKI CAR #04</div>
-        <div class="car-number">04 / 05</div>
-    </div>
-</div>
-
-<div class="car">
-    <img src="assets/Car-5.jpg" alt="Gonschiki Car 5">
-    <div class="car-info">
-        <div class="car-title">GONSCHIKI CAR #05</div>
-        <div class="car-number">05 / 05</div>
-    </div>
+<div class="car-number">
+    01 / 05
 </div>
 
 </div>
+
+</div>
+
+
+<div class="car">
+
+<img
+    src="assets/Car-2.JPG"
+    alt="Gonschiki Car 2"
+>
+
+<div class="car-info">
+
+<div class="car-title">
+    GONSCHIKI CAR #02
+</div>
+
+<div class="car-number">
+    02 / 05
+</div>
+
+</div>
+
+</div>
+
+
+<div class="car">
+
+<img
+    src="assets/Car-3.jpg"
+    alt="Gonschiki Car 3"
+>
+
+<div class="car-info">
+
+<div class="car-title">
+    GONSCHIKI CAR #03
+</div>
+
+<div class="car-number">
+    03 / 05
+</div>
+
+</div>
+
+</div>
+
+
+<div class="car">
+
+<img
+    src="assets/Car-4.jpg"
+    alt="Gonschiki Car 4"
+>
+
+<div class="car-info">
+
+<div class="car-title">
+    GONSCHIKI CAR #04
+</div>
+
+<div class="car-number">
+    04 / 05
+</div>
+
+</div>
+
+</div>
+
+
+<div class="car">
+
+<img
+    src="assets/Car-5.jpg"
+    alt="Gonschiki Car 5"
+>
+
+<div class="car-info">
+
+<div class="car-title">
+    GONSCHIKI CAR #05
+</div>
+
+<div class="car-number">
+    05 / 05
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
 </section>
 
-<!-- ABOUT -->
-<section class="about-section" id="about">
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+    class="about-section"
+    id="about"
+>
+
 
 <div class="section-head">
-    <div class="section-title" data-i18n="aboutTitle">GONSCHIKI</div>
+
+<div
+    class="section-title"
+    data-i18n="aboutTitle"
+>
+
+GONSCHIKI
+
 </div>
+
+</div>
+
 
 <div class="about-grid">
 
-<div class="about-text" data-i18n="aboutText1">
-<strong>Gonschiki</strong> steht für Autos, Style und eine Community,
-die ihren eigenen Weg geht.
+
+<div
+    class="about-text"
+    data-i18n="aboutText1"
+>
+
+<strong>Gonschiki</strong> steht für Autos,
+Style und eine Community, die ihren eigenen Weg geht.
+
 <br><br>
-Wir verbinden Streetwear mit der Leidenschaft für Autos,
-Nächte und Geschwindigkeit.
+
+Wir verbinden Streetwear mit der Leidenschaft
+für Autos, Nächte und Geschwindigkeit.
+
 </div>
 
-<div class="about-text" data-i18n="aboutText2">
+
+<div
+    class="about-text"
+    data-i18n="aboutText2"
+>
+
 Keine Regeln für den eigenen Style.
 Keine bestimmte Marke.
 Keine bestimmte Szene.
+
 <br><br>
+
 <strong>Einfach Gonschiki.</strong>
-</div>
 
 </div>
+
+
+</div>
+
 </section>
 
-<!-- CONTACT -->
-<section class="contact-section" id="contact">
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+    class="contact-section"
+    id="contact"
+>
+
 
 <div class="section-head">
-    <div class="section-title" data-i18n="contactTitle">KONTAKT</div>
+
+<div
+    class="section-title"
+    data-i18n="contactTitle"
+>
+
+KONTAKT
+
 </div>
+
+</div>
+
 
 <div class="contact-box">
 
-<div class="contact-row">
-    <div class="contact-label">INSTAGRAM</div>
-    <div class="contact-value">@gonschikicrew</div>
-</div>
 
 <div class="contact-row">
-    <div class="contact-label">BRAND</div>
-    <div class="contact-value">ГОНЩИКИ / GONSCHIKI</div>
+
+<div class="contact-label">
+    INSTAGRAM
 </div>
 
-<div class="contact-row">
-    <div class="contact-label" data-i18n="location">LOCATION</div>
-    <div class="contact-value">Germany</div>
+<div class="contact-value">
+    @gonschikicrew
 </div>
 
 </div>
+
+
+<div class="contact-row">
+
+<div class="contact-label">
+    BRAND
+</div>
+
+<div class="contact-value">
+    ГОНЩИКИ / GONSCHIKI
+</div>
+
+</div>
+
+
+<div class="contact-row">
+
+<div
+    class="contact-label"
+    data-i18n="location"
+>
+
+LOCATION
+
+</div>
+
+<div class="contact-value">
+    Germany
+</div>
+
+</div>
+
+
+</div>
+
 </section>
 
-<!-- FOOTER -->
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
-<div>ГОНЩИКИ — EST. 2025</div>
-<div>GONSCHIKI CREW</div>
+
+<div>
+    ГОНЩИКИ — EST. 2025
+</div>
+
+<div>
+    GONSCHIKI CREW
+</div>
+
 </footer>
 
 
-<!-- PRODUCT MODAL -->
-<div class="modal" id="productModal">
+<!-- =====================================================
+     PRODUCT MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="productModal"
+>
+
 
 <div class="modal-box">
 
-<button class="close-modal" onclick="closeProduct()">×</button>
+
+<button
+    class="close-modal"
+    onclick="closeProduct()"
+>
+    ×
+</button>
+
 
 <div class="product-modal-content">
 
+
 <div class="modal-product-image">
-    <img id="modalImage" src="" alt="">
+
+<img
+    id="modalImage"
+    src=""
+    alt=""
+>
+
 </div>
+
 
 <div class="modal-product-info">
 
+
 <h2 id="modalName"></h2>
 
-<div class="modal-category" id="modalCategory"></div>
 
-<div class="modal-price" data-i18n="priceNotConfirmed">
-    PREIS NOCH NICHT BESTÄTIGT
+<div
+    class="modal-category"
+    id="modalCategory"
+></div>
+
+
+<div
+    class="modal-price"
+    data-i18n="priceNotConfirmed"
+>
+
+PREIS NOCH NICHT BESTÄTIGT
+
 </div>
 
-<label class="size-label" data-i18n="chooseSize">
-    GRÖSSE AUSWÄHLEN
+
+<label
+    class="size-label"
+    data-i18n="chooseSize"
+>
+
+GRÖSSE AUSWÄHLEN
+
 </label>
 
+
 <div class="sizes">
-    <button class="size-btn" onclick="selectSize(this)">S</button>
-    <button class="size-btn" onclick="selectSize(this)">M</button>
-    <button class="size-btn" onclick="selectSize(this)">L</button>
-    <button class="size-btn" onclick="selectSize(this)">XL</button>
+
+
+<button
+    class="size-btn"
+    onclick="selectSize(this)"
+>
+S
+</button>
+
+
+<button
+    class="size-btn"
+    onclick="selectSize(this)"
+>
+M
+</button>
+
+
+<button
+    class="size-btn"
+    onclick="selectSize(this)"
+>
+L
+</button>
+
+
+<button
+    class="size-btn"
+    onclick="selectSize(this)"
+>
+XL
+</button>
+
+
 </div>
 
-<button class="primary-btn" onclick="addToCart()" data-i18n="addCart">
-    IN DEN WARENKORB
+
+<button
+    class="primary-btn"
+    onclick="addToCart()"
+    data-i18n="addCart"
+>
+
+IN DEN WARENKORB
+
+</button>
+
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     CART
+===================================================== -->
+
+<div
+    class="cart-panel"
+    id="cartPanel"
+>
+
+
+<div class="cart-head">
+
+<h2 data-i18n="cartTitle">
+    WARENKORB
+</h2>
+
+
+<button
+    class="cart-close"
+    onclick="closeCart()"
+>
+    ×
 </button>
 
 </div>
-</div>
-</div>
-</div>
 
 
-<!-- CART -->
-<div class="cart-panel" id="cartPanel">
+<div
+    class="cart-items"
+    id="cartItems"
+></div>
 
-<div class="cart-head">
-    <h2 data-i18n="cartTitle">WARENKORB</h2>
-    <button class="cart-close" onclick="closeCart()">×</button>
-</div>
-
-<div class="cart-items" id="cartItems"></div>
 
 <div class="cart-bottom">
 
-<div class="cart-notice" data-i18n="cartNotice">
+
+<div
+    class="cart-notice"
+    data-i18n="cartNotice"
+>
+
 Der Shop befindet sich derzeit nur in der Vorschau.
 Bestellungen und Zahlungen sind momentan nicht möglich.
+
 </div>
 
-<button class="checkout-disabled" disabled data-i18n="checkoutDisabled">
+
+<button
+    class="checkout-disabled"
+    disabled
+    data-i18n="checkoutDisabled"
+>
+
 CHECKOUT DERZEIT NICHT VERFÜGBAR
+
 </button>
 
+
 </div>
+
 </div>
 
 
-<!-- ACCOUNT -->
-<div class="modal" id="accountModal">
+<!-- =====================================================
+     ACCOUNT
+===================================================== -->
+
+<div
+    class="modal"
+    id="accountModal"
+>
+
 
 <div class="account-box">
 
-<button class="close-modal" onclick="closeAccount()">×</button>
+
+<button
+    class="close-modal"
+    onclick="closeAccount()"
+>
+    ×
+</button>
+
 
 <div class="account-tabs">
 
-<button class="account-tab active" onclick="showAccountTab('login',this)" data-i18n="loginTab">
+
+<button
+    class="account-tab active"
+    onclick="showAccountTab('login',this)"
+    data-i18n="loginTab"
+>
+
 ANMELDEN
+
 </button>
 
-<button class="account-tab" onclick="showAccountTab('register',this)" data-i18n="registerTab">
+
+<button
+    class="account-tab"
+    onclick="showAccountTab('register',this)"
+    data-i18n="registerTab"
+>
+
 REGISTRIEREN
+
 </button>
+
 
 </div>
 
 
 <!-- LOGIN -->
-<div class="account-form active" id="loginForm">
 
-<div class="form-title" data-i18n="loginTitle">
+<div
+    class="account-form active"
+    id="loginForm"
+>
+
+
+<div
+    class="form-title"
+    data-i18n="loginTitle"
+>
+
 ANMELDEN
+
 </div>
 
-<div class="form-subtitle" data-i18n="loginSubtitle">
+
+<div
+    class="form-subtitle"
+    data-i18n="loginSubtitle"
+>
+
 Melde dich mit deinem Konto an.
+
 </div>
+
 
 <div class="form-group">
-<label>E-MAIL</label>
-<input type="email" id="loginEmail">
+
+<label>
+    E-MAIL
+</label>
+
+<input
+    type="email"
+    id="loginEmail"
+>
+
 </div>
+
 
 <div class="form-group">
-<label data-i18n="password">PASSWORT</label>
-<input type="password" id="loginPassword">
+
+<label data-i18n="password">
+    PASSWORT
+</label>
+
+<input
+    type="password"
+    id="loginPassword"
+>
+
 </div>
 
-<button class="primary-btn" onclick="loginUser()" data-i18n="loginButton">
+
+<button
+    class="primary-btn"
+    onclick="loginUser()"
+    data-i18n="loginButton"
+>
+
 ANMELDEN
+
 </button>
 
-<div class="account-message" id="loginMessage"></div>
+
+<div
+    class="account-message"
+    id="loginMessage"
+></div>
+
 
 </div>
 
 
 <!-- REGISTER -->
-<div class="account-form" id="registerForm">
 
-<div class="form-title" data-i18n="registerTitle">
+<div
+    class="account-form"
+    id="registerForm"
+>
+
+
+<div
+    class="form-title"
+    data-i18n="registerTitle"
+>
+
 KONTO ERSTELLEN
+
 </div>
 
-<div class="form-subtitle" data-i18n="registerSubtitle">
+
+<div
+    class="form-subtitle"
+    data-i18n="registerSubtitle"
+>
+
 Erstelle dein Gonschiki Konto.
+
 </div>
+
 
 <div class="form-grid">
 
-<div class="form-group">
-<label data-i18n="firstName">VORNAME</label>
-<input type="text" id="firstName">
-</div>
 
 <div class="form-group">
-<label data-i18n="lastName">NACHNAME</label>
-<input type="text" id="lastName">
+
+<label data-i18n="firstName">
+    VORNAME
+</label>
+
+<input
+    type="text"
+    id="firstName"
+>
+
 </div>
+
+
+<div class="form-group">
+
+<label data-i18n="lastName">
+    NACHNAME
+</label>
+
+<input
+    type="text"
+    id="lastName"
+>
+
+</div>
+
 
 <div class="form-group full">
-<label>E-MAIL</label>
-<input type="email" id="registerEmail">
+
+<label>
+    E-MAIL
+</label>
+
+<input
+    type="email"
+    id="registerEmail"
+>
+
 </div>
+
 
 <div class="form-group">
-<label data-i18n="street">STRASSE</label>
-<input type="text" id="street">
+
+<label data-i18n="street">
+    STRASSE
+</label>
+
+<input
+    type="text"
+    id="street"
+>
+
 </div>
+
 
 <div class="form-group">
-<label data-i18n="houseNumber">HAUSNUMMER</label>
-<input type="text" id="houseNumber">
+
+<label data-i18n="houseNumber">
+    HAUSNUMMER
+</label>
+
+<input
+    type="text"
+    id="houseNumber"
+>
+
 </div>
+
 
 <div class="form-group">
-<label data-i18n="postalCode">PLZ</label>
-<input type="text" id="postalCode">
+
+<label data-i18n="postalCode">
+    PLZ
+</label>
+
+<input
+    type="text"
+    id="postalCode"
+>
+
 </div>
+
 
 <div class="form-group">
-<label data-i18n="city">ORT</label>
-<input type="text" id="city">
+
+<label data-i18n="city">
+    ORT
+</label>
+
+<input
+    type="text"
+    id="city"
+>
+
 </div>
+
 
 <div class="form-group">
-<label data-i18n="password">PASSWORT</label>
-<input type="password" id="registerPassword">
+
+<label data-i18n="password">
+    PASSWORT
+</label>
+
+<input
+    type="password"
+    id="registerPassword"
+>
+
 </div>
+
 
 <div class="form-group">
-<label data-i18n="repeatPassword">PASSWORT WIEDERHOLEN</label>
-<input type="password" id="registerPassword2">
-</div>
+
+<label data-i18n="repeatPassword">
+    PASSWORT WIEDERHOLEN
+</label>
+
+<input
+    type="password"
+    id="registerPassword2"
+>
 
 </div>
 
-<button class="primary-btn" onclick="registerUser()" data-i18n="registerButton">
+
+</div>
+
+
+<button
+    class="primary-btn"
+    onclick="registerUser()"
+    data-i18n="registerButton"
+>
+
 KONTO ERSTELLEN
+
 </button>
 
-<div class="account-message" id="registerMessage"></div>
+
+<div
+    class="account-message"
+    id="registerMessage"
+></div>
+
 
 </div>
 
 </div>
+
 </div>
 
 
 <script>
 
-/* =========================
+/* =====================================================
    PRODUCTS
-========================= */
+===================================================== */
 
-const products = [
+const products=[
 
 {
     name:"Gonschiki Russia Shirt",
@@ -1523,11 +2836,11 @@ const products = [
 ];
 
 
-/* =========================
+/* =====================================================
    TRANSLATIONS
-========================= */
+===================================================== */
 
-const translations = {
+const translations={
 
 de:{
 
@@ -1539,11 +2852,21 @@ contact:"KONTAKT",
 login:"ANMELDEN",
 cart:"WARENKORB",
 
-heroText:"Gonschiki steht für Autos, Nächte, Geschwindigkeit und den eigenen Style. Streetwear für alle, die ihre eigene Spur fahren.",
+heroText:
+"Gonschiki steht für Autos, Nächte, Geschwindigkeit und den eigenen Style. Streetwear für alle, die ihre eigene Spur fahren.",
+
+sloganNight:
+"GEMACHT FÜR DIE NACHT. GEMACHT FÜR DEN TAG.",
+
+sloganStyle:
+"KEINE REGEL. NUR STYLE.",
+
 discover:"SHOP ENTDECKEN",
 
 shopTitle:"SHOP",
-shopSubtitle:"Unsere aktuelle Kollektion. Der Shop befindet sich momentan noch in der Vorschau.",
+
+shopSubtitle:
+"Unsere aktuelle Kollektion. Der Shop befindet sich momentan noch in der Vorschau.",
 
 all:"ALLE",
 shirts:"SHIRTS",
@@ -1552,38 +2875,71 @@ zipper:"ZIPPER",
 pants:"HOSEN",
 
 eventsTitle:"EVENTS",
-eventsSubtitle:"Treffen, Ausfahrten und Gonschiki Events. Weitere Termine folgen.",
+
+eventsSubtitle:
+"Treffen, Ausfahrten und Gonschiki Events. Weitere Termine folgen.",
+
 comingSoon:"COMING SOON",
+
 dateComing:"Termin folgt",
-ticketsUnavailable:"TICKETS NOCH NICHT VERFÜGBAR",
+
+ticketsUnavailable:
+"TICKETS NOCH NICHT VERFÜGBAR",
 
 carsTitle:"CARS",
-carsSubtitle:"Die Autos hinter Gonschiki.",
+
+carsSubtitle:
+"Die Autos hinter Gonschiki.",
 
 aboutTitle:"GONSCHIKI",
-aboutText1:"Gonschiki steht für Autos, Style und eine Community, die ihren eigenen Weg geht. Wir verbinden Streetwear mit der Leidenschaft für Autos, Nächte und Geschwindigkeit.",
-aboutText2:"Keine Regeln für den eigenen Style. Keine bestimmte Marke. Keine bestimmte Szene. Einfach Gonschiki.",
+
+aboutText1:
+"Gonschiki steht für Autos, Style und eine Community, die ihren eigenen Weg geht. Wir verbinden Streetwear mit der Leidenschaft für Autos, Nächte und Geschwindigkeit.",
+
+aboutText2:
+"Keine Regeln für den eigenen Style. Keine bestimmte Marke. Keine bestimmte Szene. Einfach Gonschiki.",
 
 contactTitle:"KONTAKT",
+
 location:"LOCATION",
 
-priceNotConfirmed:"PREIS NOCH NICHT BESTÄTIGT",
-chooseSize:"GRÖSSE AUSWÄHLEN",
-addCart:"IN DEN WARENKORB",
+priceNotConfirmed:
+"PREIS NOCH NICHT BESTÄTIGT",
 
-cartTitle:"WARENKORB",
-cartNotice:"Der Shop befindet sich derzeit nur in der Vorschau. Bestellungen und Zahlungen sind momentan nicht möglich.",
-checkoutDisabled:"CHECKOUT DERZEIT NICHT VERFÜGBAR",
+chooseSize:
+"GRÖSSE AUSWÄHLEN",
+
+addCart:
+"IN DEN WARENKORB",
+
+cartTitle:
+"WARENKORB",
+
+cartNotice:
+"Der Shop befindet sich derzeit nur in der Vorschau. Bestellungen und Zahlungen sind momentan nicht möglich.",
+
+checkoutDisabled:
+"CHECKOUT DERZEIT NICHT VERFÜGBAR",
 
 loginTab:"ANMELDEN",
+
 registerTab:"REGISTRIEREN",
+
 loginTitle:"ANMELDEN",
-loginSubtitle:"Melde dich mit deinem Konto an.",
+
+loginSubtitle:
+"Melde dich mit deinem Konto an.",
+
 password:"PASSWORT",
+
 loginButton:"ANMELDEN",
 
-registerTitle:"KONTO ERSTELLEN",
-registerSubtitle:"Erstelle dein Gonschiki Konto.",
+registerTitle:
+"KONTO ERSTELLEN",
+
+registerSubtitle:
+"Erstelle dein Gonschiki Konto.",
+
 firstName:"VORNAME",
 lastName:"NACHNAME",
 street:"STRASSE",
@@ -1605,11 +2961,21 @@ contact:"CONTACT",
 login:"LOGIN",
 cart:"CART",
 
-heroText:"Gonschiki stands for cars, nights, speed and your own style. Streetwear for everyone who drives their own line.",
+heroText:
+"Gonschiki stands for cars, nights, speed and your own style. Streetwear for everyone who drives their own line.",
+
+sloganNight:
+"MADE FOR THE NIGHT. MADE FOR THE DAY.",
+
+sloganStyle:
+"NO RULES. JUST STYLE.",
+
 discover:"DISCOVER SHOP",
 
 shopTitle:"SHOP",
-shopSubtitle:"Our current collection. The shop is currently in preview mode.",
+
+shopSubtitle:
+"Our current collection. The shop is currently in preview mode.",
 
 all:"ALL",
 shirts:"SHIRTS",
@@ -1618,38 +2984,71 @@ zipper:"ZIPPER",
 pants:"PANTS",
 
 eventsTitle:"EVENTS",
-eventsSubtitle:"Meetups, drives and Gonschiki events. More dates coming soon.",
+
+eventsSubtitle:
+"Meetups, drives and Gonschiki events. More dates coming soon.",
+
 comingSoon:"COMING SOON",
-dateComing:"Date coming soon",
-ticketsUnavailable:"TICKETS NOT AVAILABLE YET",
+
+dateComing:"DATE COMING SOON",
+
+ticketsUnavailable:
+"TICKETS NOT AVAILABLE YET",
 
 carsTitle:"CARS",
-carsSubtitle:"The cars behind Gonschiki.",
+
+carsSubtitle:
+"The cars behind Gonschiki.",
 
 aboutTitle:"GONSCHIKI",
-aboutText1:"Gonschiki stands for cars, style and a community that follows its own path. We combine streetwear with a passion for cars, nights and speed.",
-aboutText2:"No rules for your own style. No specific brand. No specific scene. Just Gonschiki.",
+
+aboutText1:
+"Gonschiki stands for cars, style and a community that follows its own path. We combine streetwear with a passion for cars, nights and speed.",
+
+aboutText2:
+"No rules for your own style. No specific brand. No specific scene. Just Gonschiki.",
 
 contactTitle:"CONTACT",
+
 location:"LOCATION",
 
-priceNotConfirmed:"PRICE NOT CONFIRMED YET",
-chooseSize:"SELECT SIZE",
-addCart:"ADD TO CART",
+priceNotConfirmed:
+"PRICE NOT CONFIRMED YET",
 
-cartTitle:"CART",
-cartNotice:"The shop is currently only a preview. Orders and payments are not available yet.",
-checkoutDisabled:"CHECKOUT NOT AVAILABLE",
+chooseSize:
+"SELECT SIZE",
+
+addCart:
+"ADD TO CART",
+
+cartTitle:
+"CART",
+
+cartNotice:
+"The shop is currently only a preview. Orders and payments are not available yet.",
+
+checkoutDisabled:
+"CHECKOUT NOT AVAILABLE",
 
 loginTab:"LOGIN",
+
 registerTab:"REGISTER",
+
 loginTitle:"LOGIN",
-loginSubtitle:"Log in to your account.",
+
+loginSubtitle:
+"Log in to your account.",
+
 password:"PASSWORD",
+
 loginButton:"LOGIN",
 
-registerTitle:"CREATE ACCOUNT",
-registerSubtitle:"Create your Gonschiki account.",
+registerTitle:
+"CREATE ACCOUNT",
+
+registerSubtitle:
+"Create your Gonschiki account.",
+
 firstName:"FIRST NAME",
 lastName:"LAST NAME",
 street:"STREET",
@@ -1671,11 +3070,21 @@ contact:"КОНТАКТ",
 login:"ВОЙТИ",
 cart:"КОРЗИНА",
 
-heroText:"Gonschiki — это автомобили, ночи, скорость и собственный стиль. Streetwear для тех, кто едет своей дорогой.",
+heroText:
+"Gonschiki — это автомобили, ночи, скорость и собственный стиль. Streetwear для тех, кто едет своей дорогой.",
+
+sloganNight:
+"СОЗДАНО ДЛЯ НОЧИ. СОЗДАНО ДЛЯ ДНЯ.",
+
+sloganStyle:
+"НИКАКИХ ПРАВИЛ. ТОЛЬКО СТИЛЬ.",
+
 discover:"ОТКРЫТЬ МАГАЗИН",
 
 shopTitle:"МАГАЗИН",
-shopSubtitle:"Наша текущая коллекция. Магазин пока находится в режиме предварительного просмотра.",
+
+shopSubtitle:
+"Наша текущая коллекция. Магазин пока находится в режиме предварительного просмотра.",
 
 all:"ВСЕ",
 shirts:"ФУТБОЛКИ",
@@ -1684,38 +3093,71 @@ zipper:"ЗИПЕРЫ",
 pants:"ШТАНЫ",
 
 eventsTitle:"СОБЫТИЯ",
-eventsSubtitle:"Встречи, заезды и мероприятия Gonschiki. Новые даты скоро.",
+
+eventsSubtitle:
+"Встречи, заезды и мероприятия Gonschiki. Новые даты скоро.",
+
 comingSoon:"СКОРО",
-dateComing:"Дата скоро",
-ticketsUnavailable:"БИЛЕТЫ ПОКА НЕДОСТУПНЫ",
+
+dateComing:"ДАТА СКОРО",
+
+ticketsUnavailable:
+"БИЛЕТЫ ПОКА НЕДОСТУПНЫ",
 
 carsTitle:"АВТО",
-carsSubtitle:"Автомобили Gonschiki.",
+
+carsSubtitle:
+"Автомобили Gonschiki.",
 
 aboutTitle:"GONSCHIKI",
-aboutText1:"Gonschiki — это автомобили, стиль и сообщество, которое идёт своим путём. Мы объединяем streetwear с любовью к автомобилям, ночам и скорости.",
-aboutText2:"Никаких правил для собственного стиля. Никакого определённого бренда. Никакой определённой сцены. Просто Gonschiki.",
+
+aboutText1:
+"Gonschiki — это автомобили, стиль и сообщество, которое идёт своим путём. Мы объединяем streetwear с любовью к автомобилям, ночам и скорости.",
+
+aboutText2:
+"Никаких правил для собственного стиля. Никакого определённого бренда. Никакой определённой сцены. Просто Gonschiki.",
 
 contactTitle:"КОНТАКТ",
+
 location:"МЕСТОПОЛОЖЕНИЕ",
 
-priceNotConfirmed:"ЦЕНА ПОКА НЕ ПОДТВЕРЖДЕНА",
-chooseSize:"ВЫБЕРИТЕ РАЗМЕР",
-addCart:"ДОБАВИТЬ В КОРЗИНУ",
+priceNotConfirmed:
+"ЦЕНА ПОКА НЕ ПОДТВЕРЖДЕНА",
 
-cartTitle:"КОРЗИНА",
-cartNotice:"Магазин пока находится в режиме предварительного просмотра. Заказы и оплата пока недоступны.",
-checkoutDisabled:"ОПЛАТА ПОКА НЕДОСТУПНА",
+chooseSize:
+"ВЫБЕРИТЕ РАЗМЕР",
+
+addCart:
+"ДОБАВИТЬ В КОРЗИНУ",
+
+cartTitle:
+"КОРЗИНА",
+
+cartNotice:
+"Магазин пока находится в режиме предварительного просмотра. Заказы и оплата пока недоступны.",
+
+checkoutDisabled:
+"ОПЛАТА ПОКА НЕДОСТУПНА",
 
 loginTab:"ВОЙТИ",
+
 registerTab:"РЕГИСТРАЦИЯ",
+
 loginTitle:"ВОЙТИ",
-loginSubtitle:"Войдите в свой аккаунт.",
+
+loginSubtitle:
+"Войдите в свой аккаунт.",
+
 password:"ПАРОЛЬ",
+
 loginButton:"ВОЙТИ",
 
-registerTitle:"СОЗДАТЬ АККАУНТ",
-registerSubtitle:"Создайте аккаунт Gonschiki.",
+registerTitle:
+"СОЗДАТЬ АККАУНТ",
+
+registerSubtitle:
+"Создайте аккаунт Gonschiki.",
+
 firstName:"ИМЯ",
 lastName:"ФАМИЛИЯ",
 street:"УЛИЦА",
@@ -1730,12 +3172,13 @@ registerButton:"СОЗДАТЬ АККАУНТ"
 };
 
 
-/* =========================
+/* =====================================================
    LANGUAGE
-========================= */
+===================================================== */
 
-let currentLanguage =
+let currentLanguage=
 localStorage.getItem("gonschikiLanguage") || "de";
+
 
 function changeLanguage(lang){
 
@@ -1754,28 +3197,33 @@ function changeLanguage(lang){
 
         const key=element.dataset.i18n;
 
-        if(translations[lang][key]){
-            element.textContent=translations[lang][key];
+        if(
+            translations[lang] &&
+            translations[lang][key]
+        ){
+
+            element.textContent=
+                translations[lang][key];
+
         }
 
     });
 
-    document.getElementById("languageSelect").value=lang;
+    document.getElementById(
+        "languageSelect"
+    ).value=lang;
 
     renderProducts();
 }
 
-document.addEventListener("DOMContentLoaded",()=>{
-    changeLanguage(currentLanguage);
-});
 
-
-/* =========================
-   PRODUCTS
-========================= */
+/* =====================================================
+   PRODUCT RENDER
+===================================================== */
 
 let selectedProduct=null;
 let selectedSize=null;
+
 
 function renderProducts(category="all"){
 
@@ -1784,6 +3232,7 @@ function renderProducts(category="all"){
 
     container.innerHTML="";
 
+
     products
     .filter(product=>
         category==="all" ||
@@ -1791,18 +3240,23 @@ function renderProducts(category="all"){
     )
     .forEach((product,index)=>{
 
-        const div=document.createElement("div");
+        const element=
+            document.createElement("div");
 
-        div.className="product";
+        element.className="product";
 
-        div.innerHTML=`
+
+        element.innerHTML=`
 
             <div class="product-image">
+
                 <img
                     src="${product.image}"
                     alt="${product.name}"
                 >
+
             </div>
+
 
             <div class="product-info">
 
@@ -1822,56 +3276,72 @@ function renderProducts(category="all"){
 
         `;
 
-        div.onclick=()=>{
+
+        element.onclick=()=>{
             openProduct(index);
         };
 
-        container.appendChild(div);
+
+        container.appendChild(element);
+
     });
 }
+
 
 function filterProducts(category,button){
 
     document
     .querySelectorAll(".category-btn")
-    .forEach(btn=>
-        btn.classList.remove("active")
-    );
+    .forEach(btn=>{
+        btn.classList.remove("active");
+    });
+
 
     button.classList.add("active");
+
 
     renderProducts(category);
 }
 
 
-/* =========================
+/* =====================================================
    PRODUCT MODAL
-========================= */
+===================================================== */
 
 function openProduct(index){
 
     selectedProduct=products[index];
+
     selectedSize=null;
 
-    document.getElementById("modalImage").src=
-        selectedProduct.image;
 
-    document.getElementById("modalName").textContent=
-        selectedProduct.name;
+    document.getElementById(
+        "modalImage"
+    ).src=selectedProduct.image;
 
-    document.getElementById("modalCategory").textContent=
-        selectedProduct.categoryName;
+
+    document.getElementById(
+        "modalName"
+    ).textContent=selectedProduct.name;
+
+
+    document.getElementById(
+        "modalCategory"
+    ).textContent=selectedProduct.categoryName;
+
 
     document
     .querySelectorAll(".size-btn")
-    .forEach(btn=>
-        btn.classList.remove("active")
-    );
+    .forEach(btn=>{
+        btn.classList.remove("active");
+    });
+
 
     document
     .getElementById("productModal")
     .classList.add("show");
 }
+
 
 function closeProduct(){
 
@@ -1880,28 +3350,34 @@ function closeProduct(){
     .classList.remove("show");
 }
 
+
 function selectSize(button){
 
     document
     .querySelectorAll(".size-btn")
-    .forEach(btn=>
-        btn.classList.remove("active")
-    );
+    .forEach(btn=>{
+        btn.classList.remove("active");
+    });
+
 
     button.classList.add("active");
+
 
     selectedSize=button.textContent;
 }
 
 
-/* =========================
+/* =====================================================
    CART
-========================= */
+===================================================== */
 
 let cart=
 JSON.parse(
-    localStorage.getItem("gonschikiCart") || "[]"
+    localStorage.getItem(
+        "gonschikiCart"
+    ) || "[]"
 );
+
 
 function saveCart(){
 
@@ -1913,32 +3389,46 @@ function saveCart(){
     updateCart();
 }
 
+
 function addToCart(){
 
     if(!selectedProduct){
         return;
     }
 
+
     if(!selectedSize){
 
         alert(
+
             currentLanguage==="de"
-            ?"Bitte zuerst eine Größe auswählen."
+            ? "Bitte zuerst eine Größe auswählen."
+
             :
+
             currentLanguage==="en"
-            ?"Please select a size first."
+            ? "Please select a size first."
+
             :
+
             "Сначала выберите размер."
+
         );
 
         return;
     }
 
+
     cart.push({
+
         name:selectedProduct.name,
+
         image:selectedProduct.image,
+
         size:selectedSize
+
     });
+
 
     saveCart();
 
@@ -1947,15 +3437,22 @@ function addToCart(){
     openCart();
 }
 
+
 function updateCart(){
 
-    document.getElementById("cartCount")
-        .textContent=cart.length;
+    document.getElementById(
+        "cartCount"
+    ).textContent=cart.length;
+
 
     const container=
-        document.getElementById("cartItems");
+        document.getElementById(
+            "cartItems"
+        );
+
 
     container.innerHTML="";
+
 
     if(cart.length===0){
 
@@ -1964,18 +3461,24 @@ function updateCart(){
             <div style="
                 color:#666;
                 padding:30px 5px;
-                font-size:10px;
                 text-align:center;
+                font-size:10px;
             ">
+
                 ${
                     currentLanguage==="de"
-                    ?"DEIN WARENKORB IST LEER"
+                    ? "DEIN WARENKORB IST LEER"
+
                     :
+
                     currentLanguage==="en"
-                    ?"YOUR CART IS EMPTY"
+                    ? "YOUR CART IS EMPTY"
+
                     :
+
                     "ВАША КОРЗИНА ПУСТА"
                 }
+
             </div>
 
         `;
@@ -1983,15 +3486,23 @@ function updateCart(){
         return;
     }
 
+
     cart.forEach((item,index)=>{
 
-        const div=document.createElement("div");
+        const element=
+            document.createElement("div");
 
-        div.className="cart-item";
 
-        div.innerHTML=`
+        element.className="cart-item";
 
-            <img src="${item.image}" alt="">
+
+        element.innerHTML=`
+
+            <img
+                src="${item.image}"
+                alt=""
+            >
+
 
             <div>
 
@@ -1999,26 +3510,47 @@ function updateCart(){
                     ${item.name}
                 </div>
 
+
                 <div class="cart-item-size">
-                    ${currentLanguage==="de" ? "Größe" :
-                      currentLanguage==="en" ? "Size" : "Размер"}
+
+                    ${
+                        currentLanguage==="de"
+                        ? "Größe"
+
+                        :
+
+                        currentLanguage==="en"
+                        ? "Size"
+
+                        :
+
+                        "Размер"
+                    }
+
                     ${item.size}
+
                 </div>
 
             </div>
+
 
             <button
                 class="cart-remove"
                 onclick="removeCartItem(${index})"
             >
+
                 ×
+
             </button>
 
         `;
 
-        container.appendChild(div);
+
+        container.appendChild(element);
+
     });
 }
+
 
 function removeCartItem(index){
 
@@ -2026,6 +3558,7 @@ function removeCartItem(index){
 
     saveCart();
 }
+
 
 function openCart(){
 
@@ -2036,6 +3569,7 @@ function openCart(){
     .classList.add("open");
 }
 
+
 function closeCart(){
 
     document
@@ -2044,9 +3578,9 @@ function closeCart(){
 }
 
 
-/* =========================
+/* =====================================================
    ACCOUNT
-========================= */
+===================================================== */
 
 function openAccount(){
 
@@ -2055,6 +3589,7 @@ function openAccount(){
     .classList.add("show");
 }
 
+
 function closeAccount(){
 
     document
@@ -2062,67 +3597,101 @@ function closeAccount(){
     .classList.remove("show");
 }
 
+
 function showAccountTab(tab,button){
 
     document
     .querySelectorAll(".account-tab")
-    .forEach(btn=>
-        btn.classList.remove("active")
-    );
+    .forEach(btn=>{
+        btn.classList.remove("active");
+    });
+
 
     button.classList.add("active");
 
+
     document
     .querySelectorAll(".account-form")
-    .forEach(form=>
-        form.classList.remove("active")
-    );
+    .forEach(form=>{
+        form.classList.remove("active");
+    });
+
 
     document
     .getElementById(
         tab==="login"
-        ?"loginForm"
-        :"registerForm"
+        ? "loginForm"
+        : "registerForm"
     )
     .classList.add("active");
 }
 
 
-/* =========================
+/* =====================================================
    REGISTER
-========================= */
+===================================================== */
 
 function registerUser(){
 
     const firstName=
-        document.getElementById("firstName").value.trim();
+        document.getElementById(
+            "firstName"
+        ).value.trim();
+
 
     const lastName=
-        document.getElementById("lastName").value.trim();
+        document.getElementById(
+            "lastName"
+        ).value.trim();
+
 
     const email=
-        document.getElementById("registerEmail").value.trim();
+        document.getElementById(
+            "registerEmail"
+        ).value.trim();
+
 
     const street=
-        document.getElementById("street").value.trim();
+        document.getElementById(
+            "street"
+        ).value.trim();
+
 
     const houseNumber=
-        document.getElementById("houseNumber").value.trim();
+        document.getElementById(
+            "houseNumber"
+        ).value.trim();
+
 
     const postalCode=
-        document.getElementById("postalCode").value.trim();
+        document.getElementById(
+            "postalCode"
+        ).value.trim();
+
 
     const city=
-        document.getElementById("city").value.trim();
+        document.getElementById(
+            "city"
+        ).value.trim();
+
 
     const password=
-        document.getElementById("registerPassword").value;
+        document.getElementById(
+            "registerPassword"
+        ).value;
+
 
     const password2=
-        document.getElementById("registerPassword2").value;
+        document.getElementById(
+            "registerPassword2"
+        ).value;
+
 
     const message=
-        document.getElementById("registerMessage");
+        document.getElementById(
+            "registerMessage"
+        );
+
 
     if(
         !firstName ||
@@ -2137,30 +3706,42 @@ function registerUser(){
     ){
 
         message.textContent=
+
             currentLanguage==="de"
-            ?"Bitte alle Felder ausfüllen."
+            ? "Bitte alle Felder ausfüllen."
+
             :
+
             currentLanguage==="en"
-            ?"Please fill in all fields."
+            ? "Please fill in all fields."
+
             :
+
             "Пожалуйста, заполните все поля.";
 
         return;
     }
 
+
     if(password!==password2){
 
         message.textContent=
+
             currentLanguage==="de"
-            ?"Die Passwörter stimmen nicht überein."
+            ? "Die Passwörter stimmen nicht überein."
+
             :
+
             currentLanguage==="en"
-            ?"The passwords do not match."
+            ? "The passwords do not match."
+
             :
+
             "Пароли не совпадают.";
 
         return;
     }
+
 
     const user={
 
@@ -2175,42 +3756,60 @@ function registerUser(){
 
     };
 
+
     localStorage.setItem(
         "gonschikiUser",
         JSON.stringify(user)
     );
 
-    message.textContent=
-        currentLanguage==="de"
-        ?"Konto wurde erstellt."
-        :
-        currentLanguage==="en"
-        ?"Account created."
-        :
-        "Аккаунт создан.";
 
+    message.textContent=
+
+        currentLanguage==="de"
+        ? "Konto wurde erstellt."
+
+        :
+
+        currentLanguage==="en"
+        ? "Account created."
+
+        :
+
+        "Аккаунт создан.";
 }
 
 
-/* =========================
+/* =====================================================
    LOGIN
-========================= */
+===================================================== */
 
 function loginUser(){
 
     const email=
-        document.getElementById("loginEmail").value.trim();
+        document.getElementById(
+            "loginEmail"
+        ).value.trim();
+
 
     const password=
-        document.getElementById("loginPassword").value;
+        document.getElementById(
+            "loginPassword"
+        ).value;
+
 
     const message=
-        document.getElementById("loginMessage");
+        document.getElementById(
+            "loginMessage"
+        );
+
 
     const user=
         JSON.parse(
-            localStorage.getItem("gonschikiUser") || "null"
+            localStorage.getItem(
+                "gonschikiUser"
+            ) || "null"
         );
+
 
     if(
         !user ||
@@ -2219,57 +3818,87 @@ function loginUser(){
     ){
 
         message.textContent=
+
             currentLanguage==="de"
-            ?"E-Mail oder Passwort ist falsch."
+            ? "E-Mail oder Passwort ist falsch."
+
             :
+
             currentLanguage==="en"
-            ?"Email or password is incorrect."
+            ? "Email or password is incorrect."
+
             :
+
             "Неверный e-mail или пароль.";
 
         return;
     }
 
-    message.textContent=
-        currentLanguage==="de"
-        ?"Erfolgreich angemeldet."
-        :
-        currentLanguage==="en"
-        ?"Successfully logged in."
-        :
-        "Вы успешно вошли.";
 
+    message.textContent=
+
+        currentLanguage==="de"
+        ? "Erfolgreich angemeldet."
+
+        :
+
+        currentLanguage==="en"
+        ? "Successfully logged in."
+
+        :
+
+        "Вы успешно вошли.";
 }
 
 
-/* =========================
-   CLOSE MODALS
-========================= */
+/* =====================================================
+   CLOSE MODALS WHEN CLICKING OUTSIDE
+===================================================== */
 
 document
 .getElementById("productModal")
-.addEventListener("click",function(e){
+.addEventListener(
+    "click",
+    function(event){
 
-    if(e.target===this){
-        closeProduct();
+        if(event.target===this){
+            closeProduct();
+        }
+
     }
+);
 
-});
 
 document
 .getElementById("accountModal")
-.addEventListener("click",function(e){
+.addEventListener(
+    "click",
+    function(event){
 
-    if(e.target===this){
-        closeAccount();
+        if(event.target===this){
+            closeAccount();
+        }
+
     }
+);
 
-});
 
+/* =====================================================
+   INITIAL LOAD
+===================================================== */
 
-/* INITIAL */
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
 
-updateCart();
+        changeLanguage(
+            currentLanguage
+        );
+
+        updateCart();
+
+    }
+);
 
 </script>
 
