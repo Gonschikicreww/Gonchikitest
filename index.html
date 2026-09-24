@@ -1,1682 +1,2383 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ГОНЩИКИ — EST. 2025</title>
 
-<!-- Rim / Felgen Favicon -->
+<!-- FELGEN FAVICON -->
 <link rel="icon" type="image/svg+xml"
-href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='black'/%3E%3Ccircle cx='50' cy='50' r='32' fill='none' stroke='white' stroke-width='6'/%3E%3Ccircle cx='50' cy='50' r='9' fill='none' stroke='white' stroke-width='4'/%3E%3Cpath d='M50 18v23M50 59v23M18 50h23M59 50h23M27 27l16 16M57 57l16 16M73 27L57 43M43 57L27 73' stroke='white' stroke-width='4'/%3E%3C/svg%3E">
+href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='black'/%3E%3Ccircle cx='50' cy='50' r='34' fill='none' stroke='white' stroke-width='6'/%3E%3Ccircle cx='50' cy='50' r='9' fill='none' stroke='white' stroke-width='4'/%3E%3Cpath d='M50 16v25M50 59v25M16 50h25M59 50h25M26 26l18 18M56 56l18 18M74 26L56 44M44 56L26 74' stroke='white' stroke-width='4'/%3E%3C/svg%3E">
 
 <style>
 
+/* =====================================================
+   GRUNDLAYOUT
+===================================================== */
+
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  background: #000;
-  color: #fff;
-  font-family: "Times New Roman", Times, serif;
+    margin: 0;
+    background: #000;
+    color: #fff;
+    font-family: "Times New Roman", Times, serif;
 }
 
-/* =========================
+button,
+input,
+select {
+    font-family: inherit;
+}
+
+
+/* =====================================================
    PREVIEW BALKEN
-========================= */
+===================================================== */
 
 .preview-bar {
-  background: #fff;
-  color: #000;
-  text-align: center;
-  font-size: 15px;
-  font-weight: 600;
-  padding: 10px 14px;
-  letter-spacing: 0.3px;
-  border-bottom: 1px solid #000;
+    width: 100%;
+    background: #fff;
+    color: #000;
+
+    text-align: center;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    letter-spacing: .3px;
+
+    padding: 11px 15px;
+
+    border-bottom: 1px solid #000;
 }
 
-/* =========================
+
+/* =====================================================
    NAVIGATION
-========================= */
+===================================================== */
 
 nav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+    position: sticky;
+    top: 0;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    z-index: 1000;
 
-  padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  background: rgba(0,0,0,0.92);
-  backdrop-filter: blur(10px);
+    padding: 18px 40px;
 
-  border-bottom: 1px solid #222;
+    background: rgba(0,0,0,.94);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid #222;
 }
 
 .logo {
-  font-size: 28px;
-  font-weight: bold;
-  letter-spacing: 2px;
+    font-size: 29px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    white-space: nowrap;
 }
 
-.logo span {
-  font-size: 13px;
-  letter-spacing: 3px;
-  margin-left: 6px;
+.logo-est {
+    font-size: 12px;
+    letter-spacing: 3px;
+
+    margin-left: 7px;
 }
 
 .nav-links {
-  display: flex;
-  gap: 28px;
-  align-items: center;
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
 
 .nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    transition: opacity .2s;
 }
 
 .nav-links a:hover {
-  opacity: 0.6;
+    opacity: .55;
 }
 
 .cart-button {
-  cursor: pointer;
-  border: 1px solid #fff;
-  background: transparent;
-  color: #fff;
-  padding: 8px 14px;
-  font-family: inherit;
+    background: transparent;
+    color: #fff;
+
+    border: 1px solid #fff;
+
+    padding: 9px 14px;
+
+    cursor: pointer;
+
+    font-size: 15px;
 }
 
 .cart-button:hover {
-  background: #fff;
-  color: #000;
+    background: #fff;
+    color: #000;
 }
 
-/* =========================
+
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
 .hero {
-  position: relative;
-  min-height: 100svh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+    position: relative;
+
+    width: 100%;
+    height: calc(100svh - 61px);
+
+    min-height: 600px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.hero img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  filter: brightness(0.55);
+.hero-picture {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+.hero-picture img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    filter: brightness(.55);
 }
 
 .hero-overlay {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 20px;
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    padding: 20px;
+
+    text-shadow:
+        0 2px 15px rgba(0,0,0,.8);
 }
 
 .hero-title {
-  font-size: clamp(55px, 11vw, 150px);
-  line-height: 0.9;
-  margin: 0;
-  letter-spacing: 4px;
+    margin: 0;
+
+    font-size: clamp(60px, 11vw, 155px);
+
+    line-height: .85;
+
+    letter-spacing: 5px;
 }
 
 .hero-subtitle {
-  margin-top: 20px;
-  font-size: clamp(15px, 2vw, 24px);
-  letter-spacing: 7px;
+    margin-top: 24px;
+
+    font-size: clamp(16px, 2vw, 26px);
+
+    letter-spacing: 8px;
 }
 
-.est {
-  margin-top: 10px;
-  font-size: 15px;
-  letter-spacing: 5px;
+.hero-est {
+    margin-top: 12px;
+
+    font-size: 15px;
+
+    letter-spacing: 5px;
 }
 
-/* =========================
-   SECTIONS
-========================= */
+
+/* =====================================================
+   ALLGEMEINE SECTIONS
+===================================================== */
 
 section {
-  padding: 90px 40px;
-  max-width: 1500px;
-  margin: auto;
+    max-width: 1500px;
+
+    margin: auto;
+
+    padding: 100px 40px;
 }
 
 .section-title {
-  font-size: 42px;
-  margin-bottom: 45px;
-  letter-spacing: 2px;
+    margin: 0 0 45px;
+
+    font-size: 44px;
+
+    letter-spacing: 2px;
 }
 
-/* =========================
-   PRODUCTS
-========================= */
+.category-title {
+    margin: 65px 0 25px;
+
+    font-size: 25px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   PRODUKTE
+===================================================== */
 
 .product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 25px;
 }
 
 .product {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .product-image {
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  background: #111;
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    overflow: hidden;
+
+    background: #111;
 }
 
 .product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform .5s ease,
+        opacity .3s ease;
 }
 
 .product:hover .product-image img {
-  transform: scale(1.05);
+    transform: scale(1.04);
 }
 
 .product-info {
-  padding-top: 12px;
+    padding-top: 12px;
 }
 
 .product-name {
-  font-size: 18px;
+    font-size: 18px;
 }
 
 .product-price {
-  margin-top: 5px;
-  font-size: 16px;
-  opacity: 0.7;
+    margin-top: 5px;
+
+    font-size: 16px;
+
+    opacity: .65;
 }
 
-/* =========================
-   CARS
-========================= */
+
+/* =====================================================
+   CARS GALERIE
+===================================================== */
+
+.cars-section {
+    max-width: 1700px;
+}
+
+.cars-intro {
+    max-width: 650px;
+
+    margin-top: -20px;
+    margin-bottom: 45px;
+
+    font-size: 18px;
+
+    line-height: 1.5;
+
+    opacity: .7;
+}
 
 .cars-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
 }
 
-.car-image {
-  width: 100%;
-  height: 600px;
-  object-fit: cover;
+.car-card {
+    position: relative;
+
+    overflow: hidden;
+
+    background: #111;
+
+    cursor: pointer;
 }
 
-/* =========================
+.car-card:first-child {
+    grid-column: span 2;
+}
+
+.car-card img {
+    display: block;
+
+    width: 100%;
+    height: 580px;
+
+    object-fit: cover;
+
+    transition:
+        transform .6s ease,
+        filter .4s ease;
+}
+
+.car-card:first-child img {
+    height: 720px;
+}
+
+.car-card:hover img {
+    transform: scale(1.035);
+
+    filter: brightness(.8);
+}
+
+.car-number {
+    position: absolute;
+
+    left: 20px;
+    bottom: 15px;
+
+    font-size: 15px;
+
+    letter-spacing: 2px;
+
+    background: rgba(0,0,0,.7);
+
+    padding: 7px 11px;
+}
+
+
+/* =====================================================
    CREW
-========================= */
+===================================================== */
 
 .crew {
-  text-align: center;
-  max-width: 900px;
+    text-align: center;
+
+    max-width: 950px;
 }
 
 .crew-title {
-  font-size: 60px;
-  margin-bottom: 25px;
+    font-size: clamp(50px, 8vw, 90px);
+
+    letter-spacing: 3px;
 }
 
 .crew-text {
-  font-size: 20px;
-  line-height: 1.6;
+    max-width: 650px;
+
+    margin: 30px auto 0;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+    opacity: .8;
 }
 
-/* =========================
+.instagram-button {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 13px 24px;
+
+    color: #fff;
+
+    border: 1px solid #fff;
+
+    text-decoration: none;
+
+    transition: .2s;
+}
+
+.instagram-button:hover {
+    background: #fff;
+
+    color: #000;
+}
+
+
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 footer {
-  border-top: 1px solid #222;
-  padding: 40px;
-  text-align: center;
-  font-size: 14px;
-  opacity: 0.6;
+    border-top: 1px solid #222;
+
+    padding: 40px 20px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    opacity: .55;
 }
 
-/* =========================
-   PRODUCT MODAL
-========================= */
+
+/* =====================================================
+   PRODUKT MODAL
+===================================================== */
 
 .modal {
-  display: none;
+    display: none;
 
-  position: fixed;
-  inset: 0;
+    position: fixed;
 
-  z-index: 3000;
+    inset: 0;
 
-  background: rgba(0,0,0,0.92);
+    z-index: 3000;
 
-  align-items: center;
-  justify-content: center;
+    background: rgba(0,0,0,.94);
 
-  padding: 30px;
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
 }
 
 .modal.active {
-  display: flex;
+    display: flex;
 }
 
 .modal-content {
-  width: min(1100px, 100%);
-  max-height: 90vh;
+    width: min(1150px,100%);
 
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+    max-height: 92vh;
 
-  gap: 40px;
+    display: grid;
 
-  background: #090909;
-  border: 1px solid #333;
+    grid-template-columns: 1.2fr .8fr;
 
-  padding: 30px;
+    gap: 45px;
 
-  overflow: auto;
+    background: #080808;
+
+    border: 1px solid #333;
+
+    padding: 30px;
+
+    overflow-y: auto;
 }
 
 .modal-image-area {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    min-height: 500px;
 
-  perspective: 1000px;
+    display: flex;
 
-  min-height: 500px;
+    align-items: center;
+
+    justify-content: center;
+
+    perspective: 1000px;
 }
 
 .modal-image {
-  max-width: 100%;
-  max-height: 70vh;
+    max-width: 100%;
 
-  object-fit: contain;
+    max-height: 72vh;
 
-  user-select: none;
-  cursor: grab;
+    object-fit: contain;
 
-  transition: transform 0.15s ease-out;
+    cursor: grab;
+
+    user-select: none;
+
+    transition: transform .12s ease-out;
 }
 
 .modal-image:active {
-  cursor: grabbing;
+    cursor: grabbing;
 }
 
 .modal-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
 }
 
 .modal-title {
-  font-size: 38px;
-  margin-bottom: 10px;
+    font-size: 40px;
 }
 
 .modal-price {
-  font-size: 22px;
-  margin-bottom: 30px;
+    margin-top: 10px;
+
+    margin-bottom: 35px;
+
+    font-size: 23px;
+
+    opacity: .8;
 }
 
 .size-title {
-  margin-bottom: 12px;
+    margin-bottom: 12px;
+
+    font-size: 17px;
 }
 
 .sizes {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
 }
 
 .size {
-  background: transparent;
-  color: #fff;
-  border: 1px solid #555;
+    background: transparent;
 
-  padding: 12px 18px;
+    color: #fff;
 
-  cursor: pointer;
-  font-family: inherit;
+    border: 1px solid #555;
+
+    padding: 12px 18px;
+
+    cursor: pointer;
 }
 
 .size:hover,
 .size.selected {
-  background: #fff;
-  color: #000;
+    background: #fff;
+
+    color: #000;
 }
 
 .add-cart {
-  margin-top: 30px;
+    margin-top: 30px;
 
-  background: #fff;
-  color: #000;
+    padding: 16px;
 
-  border: none;
+    background: #fff;
 
-  padding: 15px;
+    color: #000;
 
-  cursor: pointer;
+    border: none;
 
-  font-family: inherit;
-  font-size: 16px;
+    cursor: pointer;
+
+    font-size: 16px;
 }
 
 .add-cart:hover {
-  background: #ccc;
+    background: #ccc;
 }
 
 .close-modal {
-  position: absolute;
-  top: 20px;
-  right: 30px;
+    position: fixed;
 
-  font-size: 35px;
+    z-index: 3100;
 
-  cursor: pointer;
+    top: 18px;
+    right: 28px;
+
+    font-size: 38px;
+
+    cursor: pointer;
 }
 
-/* =========================
-   CART
-========================= */
+
+/* =====================================================
+   WARENKORB
+===================================================== */
 
 .cart-overlay {
-  display: none;
+    display: none;
 
-  position: fixed;
-  inset: 0;
+    position: fixed;
 
-  background: rgba(0,0,0,0.65);
+    inset: 0;
 
-  z-index: 3999;
+    z-index: 3999;
+
+    background: rgba(0,0,0,.7);
 }
 
 .cart-overlay.active {
-  display: block;
+    display: block;
 }
 
 .cart {
-  position: fixed;
+    position: fixed;
 
-  top: 0;
-  right: -450px;
+    z-index: 4000;
 
-  width: min(450px, 100%);
-  height: 100vh;
+    top: 0;
+    right: -460px;
 
-  background: #0a0a0a;
+    width: min(460px,100%);
 
-  border-left: 1px solid #333;
+    height: 100vh;
 
-  z-index: 4000;
+    background: #090909;
 
-  padding: 30px;
+    border-left: 1px solid #333;
 
-  transition: right 0.3s ease;
+    padding: 30px;
 
-  overflow-y: auto;
+    overflow-y: auto;
+
+    transition: right .3s ease;
 }
 
 .cart.active {
-  right: 0;
+    right: 0;
 }
 
 .cart-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
 
-  border-bottom: 1px solid #333;
+    align-items: center;
 
-  padding-bottom: 20px;
+    justify-content: space-between;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #333;
 }
 
 .cart-title {
-  font-size: 30px;
+    font-size: 30px;
 }
 
 .close-cart {
-  font-size: 28px;
-  cursor: pointer;
+    font-size: 30px;
+
+    cursor: pointer;
 }
 
 .cart-item {
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 15px;
+    display: grid;
 
-  padding: 20px 0;
+    grid-template-columns: 80px 1fr;
 
-  border-bottom: 1px solid #222;
+    gap: 15px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #222;
 }
 
 .cart-item img {
-  width: 80px;
-  height: 100px;
+    width: 80px;
+    height: 100px;
 
-  object-fit: cover;
+    object-fit: cover;
 }
 
 .cart-item-name {
-  font-size: 17px;
+    font-size: 17px;
 }
 
 .cart-item-size {
-  opacity: 0.6;
-  margin-top: 5px;
+    margin: 5px 0;
+
+    opacity: .6;
 }
 
 .quantity {
-  display: flex;
-  gap: 10px;
-  align-items: center;
+    display: flex;
 
-  margin-top: 12px;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 10px;
 }
 
 .quantity button {
-  width: 28px;
-  height: 28px;
+    width: 28px;
+    height: 28px;
 
-  background: transparent;
-  color: white;
+    color: #fff;
 
-  border: 1px solid #555;
+    background: transparent;
 
-  cursor: pointer;
+    border: 1px solid #555;
+
+    cursor: pointer;
 }
 
 .remove {
-  margin-top: 10px;
+    margin-top: 10px;
 
-  background: none;
-  color: #888;
+    color: #888;
 
-  border: none;
+    background: none;
 
-  cursor: pointer;
+    border: none;
 
-  font-family: inherit;
+    cursor: pointer;
 }
 
 .cart-total {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
 
-  font-size: 20px;
+    justify-content: space-between;
 
-  margin-top: 30px;
+    margin-top: 30px;
+
+    font-size: 20px;
 }
 
 .checkout {
-  width: 100%;
+    width: 100%;
 
-  margin-top: 20px;
+    margin-top: 20px;
 
-  padding: 15px;
+    padding: 16px;
 
-  background: white;
-  color: black;
+    background: #fff;
 
-  border: none;
+    color: #000;
 
-  cursor: pointer;
+    border: none;
 
-  font-family: inherit;
-  font-size: 16px;
+    cursor: pointer;
+
+    font-size: 16px;
 }
 
-/* =========================
+
+/* =====================================================
    MOBILE
-========================= */
+===================================================== */
 
 @media (max-width: 900px) {
 
-  nav {
-    padding: 15px 20px;
-  }
+    nav {
+        padding: 15px 20px;
+    }
 
-  .nav-links {
-    gap: 15px;
-  }
+    .nav-links {
+        gap: 14px;
+    }
 
-  .nav-links a {
-    font-size: 14px;
-  }
+    .nav-links a {
+        font-size: 14px;
+    }
 
-  section {
-    padding: 65px 20px;
-  }
+    section {
+        padding: 70px 20px;
+    }
 
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-  }
+    .product-grid {
+        grid-template-columns: repeat(2,1fr);
 
-  .cars-grid {
-    grid-template-columns: 1fr;
-  }
+        gap: 15px;
+    }
 
-  .car-image {
-    height: 400px;
-  }
+    .cars-grid {
+        grid-template-columns: 1fr;
+    }
 
-  .modal-content {
-    grid-template-columns: 1fr;
-    padding: 20px;
-  }
+    .car-card:first-child {
+        grid-column: span 1;
+    }
 
-  .modal-image-area {
-    min-height: 350px;
-  }
+    .car-card img,
+    .car-card:first-child img {
+        height: 480px;
+    }
 
-  .modal-title {
-    font-size: 30px;
-  }
+    .modal-content {
+        grid-template-columns: 1fr;
 
+        gap: 20px;
+
+        padding: 20px;
+    }
+
+    .modal-image-area {
+        min-height: 350px;
+    }
 }
+
+
+/* =====================================================
+   HANDY
+===================================================== */
 
 @media (max-width: 600px) {
 
-  .preview-bar {
-    font-size: 14px;
-    padding: 9px 10px;
-  }
+    .preview-bar {
+        font-size: 14px;
 
-  nav {
-    flex-wrap: wrap;
-    gap: 12px;
-  }
+        line-height: 1.25;
 
-  .logo {
-    font-size: 22px;
-  }
+        padding: 9px 10px;
+    }
 
-  .nav-links {
-    width: 100%;
-    overflow-x: auto;
-    padding-bottom: 4px;
-  }
+    nav {
+        flex-wrap: wrap;
 
-  .hero {
-    min-height: 85svh;
-  }
+        gap: 12px;
 
-  .hero img {
-    object-position: 60% center;
-  }
+        padding: 13px 15px;
+    }
 
-  .hero-title {
-    font-size: 55px;
-  }
+    .logo {
+        font-size: 22px;
+    }
 
-  .hero-subtitle {
-    font-size: 13px;
-    letter-spacing: 4px;
-  }
+    .logo-est {
+        font-size: 10px;
+    }
 
-  .section-title {
-    font-size: 34px;
-  }
+    .nav-links {
+        width: 100%;
 
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+        overflow-x: auto;
 
-  .product-name {
-    font-size: 15px;
-  }
+        padding-bottom: 3px;
 
-  .product-price {
-    font-size: 14px;
-  }
+        gap: 18px;
+    }
 
-  .crew-title {
-    font-size: 42px;
-  }
+    .nav-links a {
+        white-space: nowrap;
+    }
 
-  .crew-text {
-    font-size: 17px;
-  }
+    .cart-button {
+        white-space: nowrap;
+    }
+
+
+    /* MOBILE HERO */
+
+    .hero {
+        height: calc(100svh - 105px);
+
+        min-height: 620px;
+    }
+
+    .hero-picture img {
+        object-position: center center;
+
+        filter: brightness(.58);
+    }
+
+    .hero-title {
+        font-size: 58px;
+
+        letter-spacing: 2px;
+    }
+
+    .hero-subtitle {
+        margin-top: 18px;
+
+        font-size: 13px;
+
+        letter-spacing: 5px;
+    }
+
+    .hero-est {
+        font-size: 13px;
+
+        letter-spacing: 4px;
+    }
+
+
+    /* PRODUKTE */
+
+    .section-title {
+        font-size: 35px;
+
+        margin-bottom: 35px;
+    }
+
+    .category-title {
+        font-size: 23px;
+
+        margin-top: 50px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2,1fr);
+
+        gap: 12px;
+    }
+
+    .product-name {
+        font-size: 15px;
+    }
+
+    .product-price {
+        font-size: 14px;
+    }
+
+
+    /* CARS */
+
+    .cars-grid {
+        gap: 12px;
+    }
+
+    .car-card img,
+    .car-card:first-child img {
+        height: 430px;
+    }
+
+    .cars-intro {
+        font-size: 16px;
+    }
+
+
+    /* CREW */
+
+    .crew-title {
+        font-size: 45px;
+    }
+
+    .crew-text {
+        font-size: 17px;
+    }
+
+
+    /* MODAL */
+
+    .modal {
+        padding: 15px;
+    }
+
+    .modal-content {
+        padding: 15px;
+    }
+
+    .modal-image-area {
+        min-height: 300px;
+    }
+
+    .modal-title {
+        font-size: 30px;
+    }
+
+    .close-modal {
+        top: 10px;
+
+        right: 17px;
+
+        font-size: 32px;
+    }
+
+}
+
+
+/* =====================================================
+   SEHR KLEINE HANDYS
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .hero-title {
+        font-size: 48px;
+    }
+
+    .product-grid {
+        gap: 9px;
+    }
+
+    .nav-links {
+        gap: 13px;
+    }
 
 }
 
 </style>
 </head>
 
+
 <body>
 
-<!-- =========================
-     PREVIEW NOTICE
-========================= -->
+
+<!-- =====================================================
+     PREVIEW
+===================================================== -->
 
 <div class="preview-bar">
-  Shop Vorschau · Preise, Größen &amp; Versand noch nicht bestätigt · keine Bestellungen!
+
+    Shop Vorschau · Preise, Größen &amp; Versand noch nicht bestätigt · keine Bestellungen!
+
 </div>
 
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+
+<!-- =====================================================
+     NAV
+===================================================== -->
 
 <nav>
 
-  <div class="logo">
-    ГОНЩИКИ
-    <span>EST. 2025</span>
-  </div>
+    <div class="logo">
 
-  <div class="nav-links">
-    <a href="#shop">Klamotten</a>
-    <a href="#cars">Cars</a>
-    <a href="#crew">Crew</a>
-    <a href="https://instagram.com/gonschikicrew" target="_blank">Instagram</a>
+        ГОНЩИКИ
 
-    <button class="cart-button" onclick="openCart()">
-      Warenkorb (<span id="cartCount">0</span>)
-    </button>
-  </div>
+        <span class="logo-est">
+            EST. 2025
+        </span>
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="#shop">
+            Klamotten
+        </a>
+
+        <a href="#cars">
+            Cars
+        </a>
+
+        <a href="#crew">
+            Crew
+        </a>
+
+        <a
+            href="https://instagram.com/gonschikicrew"
+            target="_blank">
+
+            Instagram
+
+        </a>
+
+        <button
+            class="cart-button"
+            onclick="openCart()">
+
+            Warenkorb
+            (<span id="cartCount">0</span>)
+
+        </button>
+
+    </div>
 
 </nav>
 
 
-<!-- =========================
+
+<!-- =====================================================
      HERO
-========================= -->
+===================================================== -->
 
 <header class="hero">
 
-  <img src="assets/Car-1.JPG" alt="ГОНЩИКИ Car">
+    <picture class="hero-picture">
 
-  <div class="hero-overlay">
+        <!-- Handy: dein Hochformat-Bild -->
+        <source
+            media="(max-width: 600px)"
+            srcset="assets/Car-1.jpeg">
 
-    <h1 class="hero-title">
-      ГОНЩИКИ
-    </h1>
+        <!-- PC -->
+        <img
+            src="assets/Car-1.jpeg"
+            alt="ГОНЩИКИ Cars">
 
-    <div class="hero-subtitle">
-      STREETWEAR
+    </picture>
+
+
+    <div class="hero-overlay">
+
+        <h1 class="hero-title">
+            ГОНЩИКИ
+        </h1>
+
+        <div class="hero-subtitle">
+            STREETWEAR
+        </div>
+
+        <div class="hero-est">
+            EST. 2025
+        </div>
+
     </div>
-
-    <div class="est">
-      EST. 2025
-    </div>
-
-  </div>
 
 </header>
 
 
-<!-- =========================
+
+<!-- =====================================================
      SHOP
-========================= -->
+===================================================== -->
 
 <section id="shop">
 
-  <h2 class="section-title">
-    Klamotten
-  </h2>
+    <h2 class="section-title">
+        Klamotten
+    </h2>
 
 
-  <!-- T-SHIRTS -->
+    <!-- T-SHIRTS -->
 
-  <h3> T-Shirts </h3>
+    <h3 class="category-title">
+        T-Shirts
+    </h3>
 
-  <div class="product-grid">
 
-    <div class="product"
-      onclick="openProduct(
-        'T-Shirt Beige E36',
-        39.90,
-        'assets/Shirt-Beige-e36.jpg'
-      )">
+    <div class="product-grid">
 
-      <div class="product-image">
-        <img src="assets/Shirt-Beige-e36.jpg" alt="T-Shirt Beige E36">
-      </div>
 
-      <div class="product-info">
-        <div class="product-name">
-          T-Shirt Beige E36
+        <div
+            class="product"
+            onclick="openProduct(
+                'T-Shirt Beige E36',
+                39.90,
+                'assets/Shirt-Beige-e36.jpg'
+            )">
+
+            <div class="product-image">
+
+                <img
+                    src="assets/Shirt-Beige-e36.jpg"
+                    alt="T-Shirt Beige E36">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    T-Shirt Beige E36
+                </div>
+
+                <div class="product-price">
+                    39,90 €
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="product-price">
-          39,90 €
+
+
+        <div
+            class="product"
+            onclick="openProduct(
+                'T-Shirt Black Russia',
+                39.90,
+                'assets/Shirt-black-Russia.jpg'
+            )">
+
+            <div class="product-image">
+
+                <img
+                    src="assets/Shirt-black-Russia.jpg"
+                    alt="T-Shirt Black Russia">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    T-Shirt Black Russia
+                </div>
+
+                <div class="product-price">
+                    39,90 €
+                </div>
+
+            </div>
+
         </div>
-      </div>
+
+
+
+        <div
+            class="product"
+            onclick="openProduct(
+                'T-Shirt Black E34',
+                39.90,
+                'assets/Shirt-black-e34.jpg'
+            )">
+
+            <div class="product-image">
+
+                <img
+                    src="assets/Shirt-black-e34.jpg"
+                    alt="T-Shirt Black E34">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    T-Shirt Black E34
+                </div>
+
+                <div class="product-price">
+                    39,90 €
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="product"
+            onclick="openProduct(
+                'T-Shirt Black E36',
+                39.90,
+                'assets/Shirt-black-e36.jpg'
+            )">
+
+            <div class="product-image">
+
+                <img
+                    src="assets/Shirt-black-e36.jpg"
+                    alt="T-Shirt Black E36">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    T-Shirt Black E36
+                </div>
+
+                <div class="product-price">
+                    39,90 €
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
 
-    <div class="product"
-      onclick="openProduct(
-        'T-Shirt Black Russia',
-        39.90,
-        'assets/Shirt-black-Russia.jpg'
-      )">
 
-      <div class="product-image">
-        <img src="assets/Shirt-black-Russia.jpg" alt="T-Shirt Black Russia">
-      </div>
+    <!-- HOODIES -->
 
-      <div class="product-info">
-        <div class="product-name">
-          T-Shirt Black Russia
+    <h3 class="category-title">
+        Hoodies
+    </h3>
+
+
+    <div class="product-grid">
+
+
+        <div
+            class="product"
+            onclick="openProduct(
+                'Hoodie Beige E36',
+                69.90,
+                'assets/Hoodie-beige-e36.jpg'
+            )">
+
+            <div class="product-image">
+
+                <img
+                    src="assets/Hoodie-beige-e36.jpg"
+                    alt="Hoodie Beige E36">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Hoodie Beige E36
+                </div>
+
+                <div class="product-price">
+                    69,90 €
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="product-price">
-          39,90 €
+
+
+        <div
+            class="product"
+            onclick="openProduct(
+                'Hoodie Black Kreuz',
+                69.90,
+                'assets/Hoodie-black-Kreuz.jpg'
+            )">
+
+            <div class="product-image">
+
+                <img
+                    src="assets/Hoodie-black-Kreuz.jpg"
+                    alt="Hoodie Black Kreuz">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Hoodie Black Kreuz
+                </div>
+
+                <div class="product-price">
+                    69,90 €
+                </div>
+
+            </div>
+
         </div>
-      </div>
+
+
+
+        <div
+            class="product"
+            onclick="openProduct(
+                'Hoodie Black Russia',
+                69.90,
+                'assets/Hoodie-black-Russia.jpg'
+            )">
+
+            <div class="product-image">
+
+                <img
+                    src="assets/Hoodie-black-Russia.jpg"
+                    alt="Hoodie Black Russia">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Hoodie Black Russia
+                </div>
+
+                <div class="product-price">
+                    69,90 €
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="product"
+            onclick="openProduct(
+                'Hoodie Black E34',
+                69.90,
+                'assets/Hoodie-black-e34.jpg'
+            )">
+
+            <div class="product-image">
+
+                <img
+                    src="assets/Hoodie-black-e34.jpg"
+                    alt="Hoodie Black E34">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Hoodie Black E34
+                </div>
+
+                <div class="product-price">
+                    69,90 €
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="product"
+            onclick="openProduct(
+                'Hoodie Black E36',
+                69.90,
+                'assets/Hoodie-black-e36.jpg'
+            )">
+
+            <div class="product-image">
+
+                <img
+                    src="assets/Hoodie-black-e36.jpg"
+                    alt="Hoodie Black E36">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Hoodie Black E36
+                </div>
+
+                <div class="product-price">
+                    69,90 €
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
 
-    <div class="product"
-      onclick="openProduct(
-        'T-Shirt Black E34',
-        39.90,
-        'assets/Shirt-black-e34.jpg'
-      )">
 
-      <div class="product-image">
-        <img src="assets/Shirt-black-e34.jpg" alt="T-Shirt Black E34">
-      </div>
+    <!-- ZIPPER -->
 
-      <div class="product-info">
-        <div class="product-name">
-          T-Shirt Black E34
+    <h3 class="category-title">
+        Zipper
+    </h3>
+
+
+    <div class="product-grid">
+
+
+        <div
+            class="product"
+            onclick="openProduct(
+                'Zipper Black Kreuz',
+                74.90,
+                'assets/Zipper-black-Kreuz.jpg'
+            )">
+
+            <div class="product-image">
+
+                <img
+                    src="assets/Zipper-black-Kreuz.jpg"
+                    alt="Zipper Black Kreuz">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Zipper Black Kreuz
+                </div>
+
+                <div class="product-price">
+                    74,90 €
+                </div>
+
+            </div>
+
         </div>
-
-        <div class="product-price">
-          39,90 €
-        </div>
-      </div>
 
     </div>
 
 
-    <div class="product"
-      onclick="openProduct(
-        'T-Shirt Black E36',
-        39.90,
-        'assets/Shirt-black-e36.jpg'
-      )">
 
-      <div class="product-image">
-        <img src="assets/Shirt-black-e36.jpg" alt="T-Shirt Black E36">
-      </div>
+    <!-- PANTS -->
 
-      <div class="product-info">
-        <div class="product-name">
-          T-Shirt Black E36
+    <h3 class="category-title">
+        Pants
+    </h3>
+
+
+    <div class="product-grid">
+
+
+        <div
+            class="product"
+            onclick="openProduct(
+                'Pants Black ГОНЩИКИ',
+                59.90,
+                'assets/Pants-black-gonschiki.jpg'
+            )">
+
+            <div class="product-image">
+
+                <img
+                    src="assets/Pants-black-gonschiki.jpg"
+                    alt="Pants Black ГОНЩИКИ">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Pants Black ГОНЩИКИ
+                </div>
+
+                <div class="product-price">
+                    59,90 €
+                </div>
+
+            </div>
+
         </div>
-
-        <div class="product-price">
-          39,90 €
-        </div>
-      </div>
 
     </div>
-
-  </div>
-
-
-  <!-- HOODIES -->
-
-  <h3 style="margin-top:70px;">
-    Hoodies
-  </h3>
-
-  <div class="product-grid">
-
-    <div class="product"
-      onclick="openProduct(
-        'Hoodie Beige E36',
-        69.90,
-        'assets/Hoodie-beige-e36.jpg'
-      )">
-
-      <div class="product-image">
-        <img src="assets/Hoodie-beige-e36.jpg" alt="Hoodie Beige E36">
-      </div>
-
-      <div class="product-info">
-        <div class="product-name">
-          Hoodie Beige E36
-        </div>
-
-        <div class="product-price">
-          69,90 €
-        </div>
-      </div>
-
-    </div>
-
-
-    <div class="product"
-      onclick="openProduct(
-        'Hoodie Black Kreuz',
-        69.90,
-        'assets/Hoodie-black-Kreuz.jpg'
-      )">
-
-      <div class="product-image">
-        <img src="assets/Hoodie-black-Kreuz.jpg" alt="Hoodie Black Kreuz">
-      </div>
-
-      <div class="product-info">
-        <div class="product-name">
-          Hoodie Black Kreuz
-        </div>
-
-        <div class="product-price">
-          69,90 €
-        </div>
-      </div>
-
-    </div>
-
-
-    <div class="product"
-      onclick="openProduct(
-        'Hoodie Black Russia',
-        69.90,
-        'assets/Hoodie-black-Russia.jpg'
-      )">
-
-      <div class="product-image">
-        <img src="assets/Hoodie-black-Russia.jpg" alt="Hoodie Black Russia">
-      </div>
-
-      <div class="product-info">
-        <div class="product-name">
-          Hoodie Black Russia
-        </div>
-
-        <div class="product-price">
-          69,90 €
-        </div>
-      </div>
-
-    </div>
-
-
-    <div class="product"
-      onclick="openProduct(
-        'Hoodie Black E34',
-        69.90,
-        'assets/Hoodie-black-e34.jpg'
-      )">
-
-      <div class="product-image">
-        <img src="assets/Hoodie-black-e34.jpg" alt="Hoodie Black E34">
-      </div>
-
-      <div class="product-info">
-        <div class="product-name">
-          Hoodie Black E34
-        </div>
-
-        <div class="product-price">
-          69,90 €
-        </div>
-      </div>
-
-    </div>
-
-
-    <div class="product"
-      onclick="openProduct(
-        'Hoodie Black E36',
-        69.90,
-        'assets/Hoodie-black-e36.jpg'
-      )">
-
-      <div class="product-image">
-        <img src="assets/Hoodie-black-e36.jpg" alt="Hoodie Black E36">
-      </div>
-
-      <div class="product-info">
-        <div class="product-name">
-          Hoodie Black E36
-        </div>
-
-        <div class="product-price">
-          69,90 €
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- ZIPPER -->
-
-  <h3 style="margin-top:70px;">
-    Zipper
-  </h3>
-
-  <div class="product-grid">
-
-    <div class="product"
-      onclick="openProduct(
-        'Zipper Black Kreuz',
-        74.90,
-        'assets/Zipper-black-Kreuz.jpg'
-      )">
-
-      <div class="product-image">
-        <img src="assets/Zipper-black-Kreuz.jpg" alt="Zipper Black Kreuz">
-      </div>
-
-      <div class="product-info">
-
-        <div class="product-name">
-          Zipper Black Kreuz
-        </div>
-
-        <div class="product-price">
-          74,90 €
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- PANTS -->
-
-  <h3 style="margin-top:70px;">
-    Pants
-  </h3>
-
-  <div class="product-grid">
-
-    <div class="product"
-      onclick="openProduct(
-        'Pants Black ГОНЩИКИ',
-        59.90,
-        'assets/Pants-black-gonschiki.jpg'
-      )">
-
-      <div class="product-image">
-        <img src="assets/Pants-black-gonschiki.jpg" alt="Pants Black ГОНЩИКИ">
-      </div>
-
-      <div class="product-info">
-
-        <div class="product-name">
-          Pants Black ГОНЩИКИ
-        </div>
-
-        <div class="product-price">
-          59,90 €
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
 
 </section>
 
 
-<!-- =========================
+
+<!-- =====================================================
      CARS
-========================= -->
+===================================================== -->
 
-<section id="cars">
+<section
+    id="cars"
+    class="cars-section">
 
-  <h2 class="section-title">
-    Cars
-  </h2>
+    <h2 class="section-title">
+        Cars
+    </h2>
 
-  <div class="cars-grid">
 
-    <img
-      class="car-image"
-      src="assets/Car-1.JPG"
-      alt="ГОНЩИКИ Car">
+    <p class="cars-intro">
 
-    <img
-      class="car-image"
-      src="assets/Car-2.JPG"
-      alt="ГОНЩИКИ Car">
+        Cars are more than just machines.
+        They are part of our culture, our style
+        and what ГОНЩИКИ represents.
 
-  </div>
+    </p>
+
+
+    <div class="cars-grid">
+
+
+        <!-- CAR 1 -->
+
+        <div class="car-card">
+
+            <img
+                src="assets/Car-1.jpeg"
+                alt="ГОНЩИКИ Car 1">
+
+            <div class="car-number">
+                01 / ГОНЩИКИ
+            </div>
+
+        </div>
+
+
+        <!-- CAR 2 -->
+
+        <div class="car-card">
+
+            <img
+                src="assets/Car-2.JPG"
+                alt="ГОНЩИКИ Car 2">
+
+            <div class="car-number">
+                02 / ГОНЩИКИ
+            </div>
+
+        </div>
+
+
+        <!-- CAR 3 -->
+
+        <div class="car-card">
+
+            <img
+                src="assets/Car-3.jpg"
+                alt="ГОНЩИКИ Car 3">
+
+            <div class="car-number">
+                03 / ГОНЩИКИ
+            </div>
+
+        </div>
+
+
+        <!-- CAR 4 -->
+
+        <div class="car-card">
+
+            <img
+                src="assets/Car-4.jpg"
+                alt="ГОНЩИКИ Car 4">
+
+            <div class="car-number">
+                04 / ГОНЩИКИ
+            </div>
+
+        </div>
+
+
+        <!-- CAR 5 -->
+
+        <div class="car-card">
+
+            <img
+                src="assets/Car-5.jpg"
+                alt="ГОНЩИКИ Car 5">
+
+            <div class="car-number">
+                05 / ГОНЩИКИ
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- =========================
+
+<!-- =====================================================
      CREW
-========================= -->
+===================================================== -->
 
-<section id="crew" class="crew">
+<section
+    id="crew"
+    class="crew">
 
-  <div class="crew-title">
-    ГОНЩИКИ
-  </div>
+    <div class="crew-title">
+        ГОНЩИКИ
+    </div>
 
-  <p class="crew-text">
 
-    Cars. Streetwear. Culture.
+    <div class="crew-text">
 
-    <br><br>
+        Cars. Streetwear. Culture.
 
-    Eine Crew für alle, die Autos nicht nur fahren,
-    sondern leben.
+        <br><br>
 
-    <br><br>
+        Eine Crew für alle,
+        die Autos nicht nur fahren,
+        sondern leben.
 
-    EST. 2025
+        <br><br>
 
-  </p>
+        EST. 2025
+
+    </div>
+
+
+    <a
+        class="instagram-button"
+        href="https://instagram.com/gonschikicrew"
+        target="_blank">
+
+        @GONSCHIKICREW
+
+    </a>
 
 </section>
 
 
-<!-- =========================
+
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
 
-  © 2025 ГОНЩИКИ / GONSCHIKI CREW
+    © 2025 ГОНЩИКИ / GONSCHIKI CREW
 
 </footer>
 
 
-<!-- =========================
-     PRODUCT MODAL
-========================= -->
 
-<div class="modal" id="productModal">
-
-  <div class="close-modal" onclick="closeProduct()">
-    ×
-  </div>
-
-  <div class="modal-content">
-
-    <div class="modal-image-area">
-
-      <img
-        id="modalImage"
-        class="modal-image"
-        src=""
-        alt=""
-      >
-
-    </div>
-
-
-    <div class="modal-info">
-
-      <div
-        id="modalTitle"
-        class="modal-title">
-      </div>
-
-      <div
-        id="modalPrice"
-        class="modal-price">
-      </div>
-
-
-      <div class="size-title">
-        Größe
-      </div>
-
-      <div class="sizes">
-
-        <button class="size" onclick="selectSize(this)">
-          S
-        </button>
-
-        <button class="size" onclick="selectSize(this)">
-          M
-        </button>
-
-        <button class="size" onclick="selectSize(this)">
-          L
-        </button>
-
-        <button class="size" onclick="selectSize(this)">
-          XL
-        </button>
-
-        <button class="size" onclick="selectSize(this)">
-          XXL
-        </button>
-
-      </div>
-
-
-      <button class="add-cart" onclick="addToCart()">
-        IN DEN WARENKORB
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- =========================
-     CART
-========================= -->
+<!-- =====================================================
+     PRODUKT MODAL
+===================================================== -->
 
 <div
-  class="cart-overlay"
-  id="cartOverlay"
-  onclick="closeCart()">
-</div>
-
-
-<div class="cart" id="cart">
-
-  <div class="cart-header">
-
-    <div class="cart-title">
-      Warenkorb
-    </div>
+    class="modal"
+    id="productModal">
 
     <div
-      class="close-cart"
-      onclick="closeCart()">
-      ×
+        class="close-modal"
+        onclick="closeProduct()">
+
+        ×
+
     </div>
 
-  </div>
+
+    <div class="modal-content">
 
 
-  <div id="cartItems"></div>
+        <div class="modal-image-area">
+
+            <img
+                id="modalImage"
+                class="modal-image"
+                src=""
+                alt="Produkt">
+
+        </div>
 
 
-  <div class="cart-total">
+        <div class="modal-info">
 
-    <span>
-      Gesamt
-    </span>
-
-    <span id="cartTotal">
-      0,00 €
-    </span>
-
-  </div>
+            <div
+                id="modalTitle"
+                class="modal-title">
+            </div>
 
 
-  <button
-    class="checkout"
-    onclick="checkout()">
+            <div
+                id="modalPrice"
+                class="modal-price">
+            </div>
 
-    BESTELLUNG AUFGEBEN
 
-  </button>
+            <div class="size-title">
+                Größe
+            </div>
+
+
+            <div class="sizes">
+
+                <button
+                    class="size"
+                    onclick="selectSize(this)">
+                    S
+                </button>
+
+                <button
+                    class="size"
+                    onclick="selectSize(this)">
+                    M
+                </button>
+
+                <button
+                    class="size"
+                    onclick="selectSize(this)">
+                    L
+                </button>
+
+                <button
+                    class="size"
+                    onclick="selectSize(this)">
+                    XL
+                </button>
+
+                <button
+                    class="size"
+                    onclick="selectSize(this)">
+                    XXL
+                </button>
+
+            </div>
+
+
+            <button
+                class="add-cart"
+                onclick="addToCart()">
+
+                IN DEN WARENKORB
+
+            </button>
+
+        </div>
+
+    </div>
 
 </div>
+
+
+
+<!-- =====================================================
+     CART
+===================================================== -->
+
+<div
+    class="cart-overlay"
+    id="cartOverlay"
+    onclick="closeCart()">
+</div>
+
+
+<div
+    class="cart"
+    id="cart">
+
+
+    <div class="cart-header">
+
+        <div class="cart-title">
+            Warenkorb
+        </div>
+
+        <div
+            class="close-cart"
+            onclick="closeCart()">
+
+            ×
+
+        </div>
+
+    </div>
+
+
+    <div id="cartItems"></div>
+
+
+    <div class="cart-total">
+
+        <span>
+            Gesamt
+        </span>
+
+        <span id="cartTotal">
+            0,00 €
+        </span>
+
+    </div>
+
+
+    <button
+        class="checkout"
+        onclick="checkout()">
+
+        BESTELLUNG AUFGEBEN
+
+    </button>
+
+</div>
+
 
 
 <script>
 
-/* =========================
-   PRODUCT DATA
-========================= */
+/* =====================================================
+   PRODUKT SYSTEM
+===================================================== */
 
 let currentProduct = null;
+
 let selectedSize = null;
 
 let cart = [];
 
 
-/* =========================
-   OPEN PRODUCT
-========================= */
+/* =====================================================
+   PRODUKT ÖFFNEN
+===================================================== */
 
 function openProduct(name, price, image) {
 
-  currentProduct = {
-    name: name,
-    price: price,
-    image: image
-  };
+    currentProduct = {
+        name,
+        price,
+        image
+    };
 
-  selectedSize = null;
+    selectedSize = null;
 
-  document.getElementById("modalTitle").textContent = name;
+    document.getElementById("modalTitle")
+        .textContent = name;
 
-  document.getElementById("modalPrice").textContent =
-    price.toFixed(2).replace(".", ",") + " €";
+    document.getElementById("modalPrice")
+        .textContent =
+        price.toFixed(2)
+        .replace(".", ",") + " €";
 
-  document.getElementById("modalImage").src = image;
+    document.getElementById("modalImage")
+        .src = image;
 
-  document
-    .querySelectorAll(".size")
-    .forEach(button => {
-      button.classList.remove("selected");
-    });
 
-  document
-    .getElementById("productModal")
-    .classList.add("active");
+    document
+        .querySelectorAll(".size")
+        .forEach(button => {
+
+            button.classList.remove("selected");
+
+        });
+
+
+    document
+        .getElementById("productModal")
+        .classList.add("active");
 
 }
 
 
-/* =========================
-   CLOSE PRODUCT
-========================= */
+/* =====================================================
+   PRODUKT SCHLIESSEN
+===================================================== */
 
 function closeProduct() {
 
-  document
-    .getElementById("productModal")
-    .classList.remove("active");
+    document
+        .getElementById("productModal")
+        .classList.remove("active");
 
 }
 
 
-/* =========================
-   SIZE
-========================= */
+/* =====================================================
+   GRÖSSE AUSWÄHLEN
+===================================================== */
 
 function selectSize(button) {
 
-  document
-    .querySelectorAll(".size")
-    .forEach(btn => {
-      btn.classList.remove("selected");
-    });
+    document
+        .querySelectorAll(".size")
+        .forEach(btn => {
 
-  button.classList.add("selected");
+            btn.classList.remove("selected");
 
-  selectedSize = button.textContent;
+        });
+
+
+    button.classList.add("selected");
+
+    selectedSize = button.textContent;
 
 }
 
 
-/* =========================
-   ADD CART
-========================= */
+/* =====================================================
+   IN WARENKORB
+===================================================== */
 
 function addToCart() {
 
-  if (!selectedSize) {
+    if (!selectedSize) {
 
-    alert("Bitte zuerst eine Größe auswählen.");
+        alert(
+            "Bitte zuerst eine Größe auswählen."
+        );
 
-    return;
+        return;
 
-  }
+    }
 
-  cart.push({
 
-    name: currentProduct.name,
+    cart.push({
 
-    price: currentProduct.price,
+        name: currentProduct.name,
 
-    image: currentProduct.image,
+        price: currentProduct.price,
 
-    size: selectedSize,
+        image: currentProduct.image,
 
-    quantity: 1
+        size: selectedSize,
 
-  });
+        quantity: 1
 
-  updateCart();
+    });
 
-  closeProduct();
 
-  openCart();
+    updateCart();
+
+    closeProduct();
+
+    openCart();
 
 }
 
 
-/* =========================
-   UPDATE CART
-========================= */
+/* =====================================================
+   WARENKORB AKTUALISIEREN
+===================================================== */
 
 function updateCart() {
 
-  const cartItems =
-    document.getElementById("cartItems");
+    const container =
+        document.getElementById("cartItems");
 
-  cartItems.innerHTML = "";
-
-  let total = 0;
-  let count = 0;
+    container.innerHTML = "";
 
 
-  cart.forEach((item, index) => {
+    let total = 0;
 
-    total += item.price * item.quantity;
-
-    count += item.quantity;
+    let count = 0;
 
 
-    const div =
-      document.createElement("div");
+    cart.forEach((item, index) => {
 
-    div.className = "cart-item";
+        total +=
+            item.price *
+            item.quantity;
 
-
-    div.innerHTML = `
-
-      <img
-        src="${item.image}"
-        alt="${item.name}"
-      >
-
-      <div>
-
-        <div class="cart-item-name">
-          ${item.name}
-        </div>
-
-        <div class="cart-item-size">
-          Größe: ${item.size}
-        </div>
-
-        <div>
-          ${item.price.toFixed(2).replace(".", ",")} €
-        </div>
-
-        <div class="quantity">
-
-          <button onclick="changeQuantity(${index}, -1)">
-            −
-          </button>
-
-          <span>
-            ${item.quantity}
-          </span>
-
-          <button onclick="changeQuantity(${index}, 1)">
-            +
-          </button>
-
-        </div>
-
-        <button
-          class="remove"
-          onclick="removeItem(${index})">
-
-          Entfernen
-
-        </button>
-
-      </div>
-
-    `;
-
-    cartItems.appendChild(div);
-
-  });
+        count += item.quantity;
 
 
-  document.getElementById("cartCount")
-    .textContent = count;
+        const div =
+            document.createElement("div");
 
-  document.getElementById("cartTotal")
-    .textContent =
-      total.toFixed(2).replace(".", ",") + " €";
+        div.className =
+            "cart-item";
+
+
+        div.innerHTML = `
+
+            <img
+                src="${item.image}"
+                alt="${item.name}">
+
+            <div>
+
+                <div class="cart-item-name">
+                    ${item.name}
+                </div>
+
+                <div class="cart-item-size">
+                    Größe: ${item.size}
+                </div>
+
+                <div>
+                    ${item.price
+                        .toFixed(2)
+                        .replace(".", ",")} €
+                </div>
+
+                <div class="quantity">
+
+                    <button
+                        onclick="changeQuantity(${index},-1)">
+                        −
+                    </button>
+
+                    <span>
+                        ${item.quantity}
+                    </span>
+
+                    <button
+                        onclick="changeQuantity(${index},1)">
+                        +
+                    </button>
+
+                </div>
+
+                <button
+                    class="remove"
+                    onclick="removeItem(${index})">
+
+                    Entfernen
+
+                </button>
+
+            </div>
+
+        `;
+
+
+        container.appendChild(div);
+
+    });
+
+
+    document.getElementById("cartCount")
+        .textContent = count;
+
+
+    document.getElementById("cartTotal")
+        .textContent =
+        total.toFixed(2)
+        .replace(".", ",") + " €";
 
 }
 
 
-/* =========================
-   QUANTITY
-========================= */
+/* =====================================================
+   MENGE ÄNDERN
+===================================================== */
 
 function changeQuantity(index, amount) {
 
-  cart[index].quantity += amount;
+    cart[index].quantity += amount;
 
-  if (cart[index].quantity <= 0) {
 
-    cart.splice(index, 1);
+    if (cart[index].quantity <= 0) {
 
-  }
+        cart.splice(index, 1);
 
-  updateCart();
+    }
+
+
+    updateCart();
 
 }
 
 
-/* =========================
-   REMOVE
-========================= */
+/* =====================================================
+   PRODUKT ENTFERNEN
+===================================================== */
 
 function removeItem(index) {
 
-  cart.splice(index, 1);
+    cart.splice(index, 1);
 
-  updateCart();
+    updateCart();
 
 }
 
 
-/* =========================
-   OPEN CART
-========================= */
+/* =====================================================
+   WARENKORB ÖFFNEN
+===================================================== */
 
 function openCart() {
 
-  document
-    .getElementById("cart")
-    .classList.add("active");
+    document
+        .getElementById("cart")
+        .classList.add("active");
 
-  document
-    .getElementById("cartOverlay")
-    .classList.add("active");
+    document
+        .getElementById("cartOverlay")
+        .classList.add("active");
 
 }
 
 
-/* =========================
-   CLOSE CART
-========================= */
+/* =====================================================
+   WARENKORB SCHLIESSEN
+===================================================== */
 
 function closeCart() {
 
-  document
-    .getElementById("cart")
-    .classList.remove("active");
+    document
+        .getElementById("cart")
+        .classList.remove("active");
 
-  document
-    .getElementById("cartOverlay")
-    .classList.remove("active");
+    document
+        .getElementById("cartOverlay")
+        .classList.remove("active");
 
 }
 
 
-/* =========================
+/* =====================================================
    CHECKOUT
-========================= */
+===================================================== */
 
 function checkout() {
 
-  alert(
-    "Shop-Vorschau: Bestellungen sind derzeit noch nicht möglich."
-  );
+    alert(
+        "Shop-Vorschau: Bestellungen sind derzeit noch nicht möglich."
+    );
 
 }
 
 
-/* =========================
-   PSEUDO 3D PRODUCT DRAG
-========================= */
+/* =====================================================
+   PSEUDO 3D PRODUKTBILD
+===================================================== */
 
 const modalImage =
-  document.getElementById("modalImage");
+    document.getElementById("modalImage");
 
 let dragging = false;
 
 let startX = 0;
+
 let startY = 0;
 
 let rotateX = 0;
+
 let rotateY = 0;
 
 
-modalImage.addEventListener(
-  "mousedown",
-  startDrag
-);
-
-document.addEventListener(
-  "mousemove",
-  drag
-);
-
-document.addEventListener(
-  "mouseup",
-  endDrag
-);
-
+/* MOUSE */
 
 modalImage.addEventListener(
-  "touchstart",
-  startTouch,
-  {passive:false}
+    "mousedown",
+    startDrag
 );
 
 document.addEventListener(
-  "touchmove",
-  moveTouch,
-  {passive:false}
+    "mousemove",
+    drag
 );
 
 document.addEventListener(
-  "touchend",
-  endDrag
+    "mouseup",
+    endDrag
 );
 
 
-function startDrag(e) {
+function startDrag(event) {
 
-  dragging = true;
+    dragging = true;
 
-  startX = e.clientX;
-  startY = e.clientY;
+    startX = event.clientX;
 
-}
-
-
-function drag(e) {
-
-  if (!dragging) return;
-
-  const dx = e.clientX - startX;
-  const dy = e.clientY - startY;
-
-  rotateY += dx * 0.5;
-  rotateX -= dy * 0.3;
-
-  modalImage.style.transform =
-    `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
-
-  startX = e.clientX;
-  startY = e.clientY;
+    startY = event.clientY;
 
 }
 
 
-function startTouch(e) {
+function drag(event) {
 
-  e.preventDefault();
-
-  const touch = e.touches[0];
-
-  dragging = true;
-
-  startX = touch.clientX;
-  startY = touch.clientY;
-
-}
+    if (!dragging) return;
 
 
-function moveTouch(e) {
+    const dx =
+        event.clientX - startX;
 
-  if (!dragging) return;
+    const dy =
+        event.clientY - startY;
 
-  e.preventDefault();
 
-  const touch = e.touches[0];
+    rotateY += dx * .5;
 
-  const dx = touch.clientX - startX;
-  const dy = touch.clientY - startY;
+    rotateX -= dy * .3;
 
-  rotateY += dx * 0.5;
-  rotateX -= dy * 0.3;
 
-  modalImage.style.transform =
-    `rotateY(${rotateY}deg) rotateX(${rotateX}deg)`;
+    modalImage.style.transform =
+        `rotateY(${rotateY}deg)
+         rotateX(${rotateX}deg)`;
 
-  startX = touch.clientX;
-  startY = touch.clientY;
+
+    startX = event.clientX;
+
+    startY = event.clientY;
 
 }
 
 
 function endDrag() {
 
-  dragging = false;
+    dragging = false;
 
 }
 
 
-/* =========================
-   DOUBLE CLICK RESET
-========================= */
+/* =====================================================
+   TOUCH
+===================================================== */
 
 modalImage.addEventListener(
-  "dblclick",
-  () => {
+    "touchstart",
+    startTouch,
+    { passive:false }
+);
+
+document.addEventListener(
+    "touchmove",
+    moveTouch,
+    { passive:false }
+);
+
+document.addEventListener(
+    "touchend",
+    endDrag
+);
+
+
+function startTouch(event) {
+
+    event.preventDefault();
+
+
+    const touch =
+        event.touches[0];
+
+
+    dragging = true;
+
+
+    startX =
+        touch.clientX;
+
+    startY =
+        touch.clientY;
+
+}
+
+
+function moveTouch(event) {
+
+    if (!dragging) return;
+
+
+    event.preventDefault();
+
+
+    const touch =
+        event.touches[0];
+
+
+    const dx =
+        touch.clientX - startX;
+
+    const dy =
+        touch.clientY - startY;
+
+
+    rotateY += dx * .5;
+
+    rotateX -= dy * .3;
+
+
+    modalImage.style.transform =
+        `rotateY(${rotateY}deg)
+         rotateX(${rotateX}deg)`;
+
+
+    startX =
+        touch.clientX;
+
+    startY =
+        touch.clientY;
+
+}
+
+
+/* =====================================================
+   DOPPELKLICK = RESET
+===================================================== */
+
+modalImage.addEventListener(
+    "dblclick",
+    resetRotation
+);
+
+
+function resetRotation() {
 
     rotateX = 0;
+
     rotateY = 0;
 
     modalImage.style.transform =
-      "rotateY(0deg) rotateX(0deg)";
+        "rotateY(0deg) rotateX(0deg)";
 
-  }
-);
+}
 
 </script>
+
 
 </body>
 </html>
