@@ -23,9 +23,7 @@ body{
   overflow-x:hidden;
 }
 
-button,
-input,
-select{
+button,input,select{
   font:inherit;
 }
 
@@ -92,18 +90,13 @@ header{
   gap:25px;
 }
 
-.nav a,
-.nav button{
-  background:none;
-  border:0;
-  color:#fff;
+.nav a{
   font-size:12px;
   font-weight:800;
   letter-spacing:1px;
 }
 
-.nav a:hover,
-.nav button:hover{
+.nav a:hover{
   opacity:.55;
 }
 
@@ -1032,7 +1025,6 @@ footer{
 .order-number{
   font-size:12px;
   font-weight:1000;
-  letter-spacing:.5px;
 }
 
 .order-date{
@@ -1082,7 +1074,6 @@ footer{
   width:55px;
   height:55px;
   object-fit:cover;
-  background:#181818;
 }
 
 .order-item-name{
@@ -1141,10 +1132,280 @@ footer{
 }
 
 /* =========================
+   ADMIN
+========================= */
+
+.admin-login-box{
+  width:min(450px,100%);
+  padding:40px;
+}
+
+.admin-login-title{
+  font-size:32px;
+  font-weight:1000;
+  margin-bottom:8px;
+}
+
+.admin-login-subtitle{
+  color:#777;
+  font-size:10px;
+  line-height:1.7;
+  margin-bottom:30px;
+}
+
+.admin-box{
+  width:min(1200px,100%);
+  max-height:94vh;
+  padding:35px;
+}
+
+.admin-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding-bottom:25px;
+  border-bottom:1px solid #252525;
+  margin-bottom:25px;
+}
+
+.admin-title{
+  font-size:32px;
+  font-weight:1000;
+}
+
+.admin-subtitle{
+  color:#777;
+  font-size:9px;
+  margin-top:6px;
+}
+
+.admin-logout{
+  background:transparent;
+  border:1px solid #333;
+  color:#fff;
+  padding:11px 16px;
+  font-size:9px;
+  font-weight:900;
+}
+
+.admin-tabs{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+  margin-bottom:25px;
+}
+
+.admin-tab{
+  background:#111;
+  border:1px solid #292929;
+  color:#fff;
+  padding:11px 17px;
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.admin-tab.active{
+  background:#fff;
+  color:#000;
+}
+
+.admin-section{
+  display:none;
+}
+
+.admin-section.active{
+  display:block;
+}
+
+.admin-stat-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-bottom:25px;
+}
+
+.admin-stat{
+  background:#111;
+  border:1px solid #222;
+  padding:20px;
+}
+
+.admin-stat span{
+  color:#777;
+  display:block;
+  font-size:8px;
+  letter-spacing:1px;
+  margin-bottom:10px;
+}
+
+.admin-stat strong{
+  font-size:25px;
+}
+
+.admin-products{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.admin-product{
+  display:grid;
+  grid-template-columns:70px 1.5fr 110px 160px 100px;
+  gap:15px;
+  align-items:center;
+  background:#111;
+  border:1px solid #222;
+  padding:12px;
+}
+
+.admin-product img{
+  width:70px;
+  height:70px;
+  object-fit:cover;
+}
+
+.admin-product-name{
+  font-size:11px;
+  font-weight:900;
+}
+
+.admin-product-meta{
+  color:#777;
+  font-size:8px;
+  margin-top:5px;
+}
+
+.admin-input{
+  width:100%;
+  background:#090909;
+  color:#fff;
+  border:1px solid #333;
+  padding:9px;
+  outline:none;
+  font-size:10px;
+}
+
+.admin-stock-box{
+  display:flex;
+  gap:5px;
+  flex-wrap:wrap;
+}
+
+.admin-stock-input{
+  width:43px;
+  background:#090909;
+  color:#fff;
+  border:1px solid #333;
+  padding:8px 3px;
+  text-align:center;
+  font-size:9px;
+}
+
+.admin-action{
+  display:flex;
+  gap:5px;
+  flex-wrap:wrap;
+}
+
+.admin-small-button{
+  padding:8px 9px;
+  border:1px solid #333;
+  background:#181818;
+  color:#fff;
+  font-size:8px;
+  font-weight:900;
+}
+
+.admin-small-button:hover{
+  background:#fff;
+  color:#000;
+}
+
+.admin-small-button.danger{
+  color:#aaa;
+}
+
+.admin-orders{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.admin-order{
+  background:#111;
+  border:1px solid #222;
+  padding:18px;
+}
+
+.admin-order-top{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+  margin-bottom:15px;
+}
+
+.admin-order-number{
+  font-size:12px;
+  font-weight:1000;
+}
+
+.admin-order-customer{
+  color:#777;
+  font-size:9px;
+  line-height:1.6;
+}
+
+.admin-order-items{
+  border-top:1px solid #222;
+  padding-top:12px;
+}
+
+.admin-order-item{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  color:#aaa;
+  font-size:9px;
+  padding:5px 0;
+}
+
+.admin-order-total{
+  border-top:1px solid #222;
+  margin-top:10px;
+  padding-top:12px;
+  display:flex;
+  justify-content:space-between;
+  font-weight:1000;
+  font-size:12px;
+}
+
+.admin-empty{
+  color:#777;
+  padding:40px;
+  text-align:center;
+  border:1px solid #222;
+  background:#0c0c0c;
+}
+
+.admin-demo-warning{
+  padding:13px;
+  margin-bottom:20px;
+  background:#151515;
+  border:1px solid #292929;
+  color:#777;
+  font-size:9px;
+  line-height:1.7;
+}
+
+/* =========================
    RESPONSIVE
 ========================= */
 
 @media(max-width:1000px){
+
   .product-grid{
     grid-template-columns:repeat(3,1fr);
   }
@@ -1152,9 +1413,27 @@ footer{
   .nav{
     display:none;
   }
+
+  .admin-product{
+    grid-template-columns:60px 1fr;
+  }
+
+  .admin-product img{
+    width:60px;
+    height:60px;
+  }
+
+  .admin-product > *:not(img):not(.admin-product-name){
+    grid-column:2;
+  }
+
+  .admin-stat-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
 }
 
 @media(max-width:700px){
+
   header{
     top:34px;
     padding:15px 4%;
@@ -1176,7 +1455,6 @@ footer{
   .hero{
     min-height:100svh;
     padding:140px 18px 80px;
-    background-position:center;
   }
 
   .hero-logo{
@@ -1264,7 +1542,9 @@ footer{
 
   .cart-box,
   .account-box,
-  .form-box{
+  .form-box,
+  .admin-box,
+  .admin-login-box{
     padding:25px 18px;
   }
 
@@ -1305,6 +1585,24 @@ footer{
     grid-column:2;
     grid-row:1 / span 2;
   }
+
+  .admin-header{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .admin-stat-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .admin-product{
+    grid-template-columns:55px 1fr;
+  }
+
+  .admin-product img{
+    width:55px;
+    height:55px;
+  }
 }
 </style>
 </head>
@@ -1316,6 +1614,7 @@ footer{
 </div>
 
 <header>
+
   <a href="#home">
     <div class="logo">
       ГОНЩИКИ
@@ -1332,25 +1631,44 @@ footer{
   </nav>
 
   <div class="header-actions">
-    <button class="header-icon" onclick="openAccount()" aria-label="Account">♙</button>
 
-    <button class="header-icon" onclick="openCart()" aria-label="Warenkorb">
+    <button
+      class="header-icon"
+      onclick="openAccount()"
+      aria-label="Account"
+    >
+      ♙
+    </button>
+
+    <button
+      class="header-icon"
+      onclick="openCart()"
+      aria-label="Warenkorb"
+    >
       🛒
       <span class="cart-count" id="cartCount">0</span>
     </button>
+
   </div>
+
 </header>
+
 
 <!-- =========================
      HERO
 ========================= -->
 
 <section class="hero" id="home">
+
   <div class="hero-content">
 
-    <div class="hero-logo">ГОНЩИКИ</div>
+    <div class="hero-logo">
+      ГОНЩИКИ
+    </div>
 
-    <div class="hero-est">EST. 2025</div>
+    <div class="hero-est">
+      EST. 2025
+    </div>
 
     <p class="hero-text">
       Gonschiki steht für Autos, Nächte, Geschwindigkeit und den eigenen Style.
@@ -1364,10 +1682,14 @@ footer{
       <span>KEINE REGEL. NUR STYLE.</span>
     </div>
 
-    <a class="hero-button" href="#shop">SHOP ENTDECKEN</a>
+    <a class="hero-button" href="#shop">
+      SHOP ENTDECKEN
+    </a>
 
   </div>
+
 </section>
+
 
 <!-- =========================
      SHOP
@@ -1375,13 +1697,16 @@ footer{
 
 <section class="shop-section" id="shop">
 
-  <h2 class="section-title">SHOP</h2>
+  <h2 class="section-title">
+    SHOP
+  </h2>
 
   <p class="section-subtitle">
     GONSHIKI STREETWEAR — BLACK COLLECTION
   </p>
 
   <div class="gender-tabs">
+
     <button
       class="gender-tab active"
       id="genderMale"
@@ -1397,37 +1722,62 @@ footer{
     >
       FRAUEN
     </button>
+
   </div>
 
   <div class="categories">
-    <button class="category-btn active" onclick="filterProducts('Alle',this)">
+
+    <button
+      class="category-btn active"
+      onclick="filterProducts('Alle',this)"
+    >
       ALLE
     </button>
 
-    <button class="category-btn" onclick="filterProducts('Shirts',this)">
+    <button
+      class="category-btn"
+      onclick="filterProducts('Shirts',this)"
+    >
       SHIRTS
     </button>
 
-    <button class="category-btn" onclick="filterProducts('Hoodies',this)">
+    <button
+      class="category-btn"
+      onclick="filterProducts('Hoodies',this)"
+    >
       HOODIES
     </button>
 
-    <button class="category-btn" onclick="filterProducts('Zipper',this)">
+    <button
+      class="category-btn"
+      onclick="filterProducts('Zipper',this)"
+    >
       ZIPPER
     </button>
 
-    <button class="category-btn" onclick="filterProducts('Hosen',this)">
+    <button
+      class="category-btn"
+      onclick="filterProducts('Hosen',this)"
+    >
       HOSEN
     </button>
 
-    <button class="category-btn" onclick="filterProducts('Sticker',this)">
+    <button
+      class="category-btn"
+      onclick="filterProducts('Sticker',this)"
+    >
       STICKER
     </button>
+
   </div>
 
-  <div class="product-grid" id="productGrid"></div>
+  <div
+    class="product-grid"
+    id="productGrid"
+  ></div>
 
 </section>
+
 
 <!-- =========================
      CARS
@@ -1435,7 +1785,9 @@ footer{
 
 <section class="cars-section" id="cars">
 
-  <h2 class="section-title">CARS</h2>
+  <h2 class="section-title">
+    CARS
+  </h2>
 
   <p class="section-subtitle">
     UNSERE WELT. UNSERE AUTOS. UNSERE SPUR.
@@ -1444,57 +1796,89 @@ footer{
   <div class="cars-grid">
 
     <div class="car">
+
       <div class="car-image">
-        <img src="assets/Car-1.JPG" alt="Gonschiki Car 1">
+        <img
+          src="assets/Car-1.JPG"
+          alt="Gonschiki Car 1"
+        >
       </div>
+
       <div class="car-info">
         <h3>GONSHIKI — 01</h3>
         <p>Built for the night.</p>
       </div>
+
     </div>
 
     <div class="car">
+
       <div class="car-image">
-        <img src="assets/Car-2.JPG" alt="Gonschiki Car 2">
+        <img
+          src="assets/Car-2.JPG"
+          alt="Gonschiki Car 2"
+        >
       </div>
+
       <div class="car-info">
         <h3>GONSHIKI — 02</h3>
         <p>Street culture meets machines.</p>
       </div>
+
     </div>
 
     <div class="car">
+
       <div class="car-image">
-        <img src="assets/Car-3.jpg" alt="Gonschiki Car 3">
+        <img
+          src="assets/Car-3.jpg"
+          alt="Gonschiki Car 3"
+        >
       </div>
+
       <div class="car-info">
         <h3>GONSHIKI — 03</h3>
         <p>No limits. No shortcuts.</p>
       </div>
+
     </div>
 
     <div class="car">
+
       <div class="car-image">
-        <img src="assets/Car-4.jpg" alt="Gonschiki Car 4">
+        <img
+          src="assets/Car-4.jpg"
+          alt="Gonschiki Car 4"
+        >
       </div>
+
       <div class="car-info">
         <h3>GONSHIKI — 04</h3>
         <p>Own your lane.</p>
       </div>
+
     </div>
 
     <div class="car">
+
       <div class="car-image">
-        <img src="assets/Car-5.jpg" alt="Gonschiki Car 5">
+        <img
+          src="assets/Car-5.jpg"
+          alt="Gonschiki Car 5"
+        >
       </div>
+
       <div class="car-info">
         <h3>GONSHIKI — 05</h3>
         <p>Drive your own style.</p>
       </div>
+
     </div>
 
   </div>
+
 </section>
+
 
 <!-- =========================
      EVENTS
@@ -1502,23 +1886,30 @@ footer{
 
 <section class="events-section" id="events">
 
-  <h2 class="section-title">EVENTS</h2>
+  <h2 class="section-title">
+    EVENTS
+  </h2>
 
   <p class="section-subtitle">
     MEHR ALS NUR CLOTHING.
   </p>
 
   <div class="events-box">
-    <h3>GONSHIKI CREW</h3>
+
+    <h3>
+      GONSHIKI CREW
+    </h3>
 
     <p>
       Treffen, Autos, Nächte und gemeinsame Projekte.
       Hier werden zukünftig unsere Events, Car Meets und Crew-Aktionen
       veröffentlicht.
     </p>
+
   </div>
 
 </section>
+
 
 <!-- =========================
      ABOUT
@@ -1529,7 +1920,10 @@ footer{
   <div class="about-grid">
 
     <div>
-      <h2 class="section-title">ABOUT</h2>
+
+      <h2 class="section-title">
+        ABOUT
+      </h2>
 
       <p class="section-subtitle">
         EST. 2025
@@ -1540,6 +1934,7 @@ footer{
         Wir verbinden Streetwear mit der Welt der Automobilkultur und bauen
         eine Crew für Menschen, die ihren eigenen Weg gehen.
       </p>
+
     </div>
 
     <div class="about-highlight">
@@ -1552,13 +1947,16 @@ footer{
 
 </section>
 
+
 <!-- =========================
      CONTACT
 ========================= -->
 
 <section class="contact-section" id="contact">
 
-  <h2 class="section-title">KONTAKT</h2>
+  <h2 class="section-title">
+    KONTAKT
+  </h2>
 
   <p class="section-subtitle">
     GONSHIKI CREW
@@ -1590,6 +1988,7 @@ footer{
 
 </section>
 
+
 <!-- =========================
      FOOTER
 ========================= -->
@@ -1620,46 +2019,89 @@ footer{
 
 </footer>
 
+
 <!-- =========================
      PRODUCT MODAL
 ========================= -->
 
-<div class="modal" id="productModal">
+<div
+  class="modal"
+  id="productModal"
+>
 
   <div class="modal-box">
 
-    <button class="modal-close" onclick="closeProduct()">×</button>
+    <button
+      class="modal-close"
+      onclick="closeProduct()"
+    >
+      ×
+    </button>
 
     <div class="product-modal-content">
 
       <div class="modal-product-image">
-        <img id="modalImage" src="" alt="">
+        <img
+          id="modalImage"
+          src=""
+          alt=""
+        >
       </div>
 
       <div class="modal-product-info">
 
-        <span class="small-label" id="modalCategory"></span>
+        <span
+          class="small-label"
+          id="modalCategory"
+        ></span>
 
         <h2 id="modalName"></h2>
 
-        <div class="modal-price" id="modalPrice"></div>
+        <div
+          class="modal-price"
+          id="modalPrice"
+        ></div>
 
-        <p class="modal-description" id="modalDescription"></p>
+        <p
+          class="modal-description"
+          id="modalDescription"
+        ></p>
 
         <div id="sizeArea">
-          <span class="option-label" id="sizeLabel">
+
+          <span
+            class="option-label"
+            id="sizeLabel"
+          >
             GRÖSSE
           </span>
 
-          <div class="size-options" id="sizeOptions"></div>
+          <div
+            class="size-options"
+            id="sizeOptions"
+          ></div>
+
         </div>
 
-        <div class="modal-stock" id="modalStock"></div>
+        <div
+          class="modal-stock"
+          id="modalStock"
+        ></div>
 
         <div class="quantity-box">
-          <button onclick="changeModalQuantity(-1)">−</button>
-          <strong id="modalQuantity">1</strong>
-          <button onclick="changeModalQuantity(1)">+</button>
+
+          <button onclick="changeModalQuantity(-1)">
+            −
+          </button>
+
+          <strong id="modalQuantity">
+            1
+          </strong>
+
+          <button onclick="changeModalQuantity(1)">
+            +
+          </button>
+
         </div>
 
         <button
@@ -1678,17 +2120,28 @@ footer{
 
 </div>
 
+
 <!-- =========================
      CART MODAL
 ========================= -->
 
-<div class="modal" id="cartModal">
+<div
+  class="modal"
+  id="cartModal"
+>
 
   <div class="modal-box cart-box">
 
-    <button class="modal-close" onclick="closeCart()">×</button>
+    <button
+      class="modal-close"
+      onclick="closeCart()"
+    >
+      ×
+    </button>
 
-    <div class="modal-title">WARENKORB</div>
+    <div class="modal-title">
+      WARENKORB
+    </div>
 
     <div id="cartItems"></div>
 
@@ -1696,17 +2149,28 @@ footer{
 
 </div>
 
+
 <!-- =========================
-     CHECKOUT MODAL
+     CHECKOUT
 ========================= -->
 
-<div class="modal" id="checkoutModal">
+<div
+  class="modal"
+  id="checkoutModal"
+>
 
   <div class="modal-box form-box">
 
-    <button class="modal-close" onclick="closeCheckout()">×</button>
+    <button
+      class="modal-close"
+      onclick="closeCheckout()"
+    >
+      ×
+    </button>
 
-    <div class="modal-title">CHECKOUT</div>
+    <div class="modal-title">
+      CHECKOUT
+    </div>
 
     <div class="demo-note">
       SHOP-VORSCHAU: Dies ist derzeit nur ein Demo-Checkout.
@@ -1714,45 +2178,70 @@ footer{
       Bestellung an ein Shopsystem übertragen.
     </div>
 
-    <form id="checkoutForm" onsubmit="placeOrder(event)">
+    <form
+      id="checkoutForm"
+      onsubmit="placeOrder(event)"
+    >
 
       <div class="form-grid">
 
         <div class="form-group">
           <label>VORNAME</label>
-          <input id="checkoutFirstName" required>
+          <input
+            id="checkoutFirstName"
+            required
+          >
         </div>
 
         <div class="form-group">
           <label>NACHNAME</label>
-          <input id="checkoutLastName" required>
+          <input
+            id="checkoutLastName"
+            required
+          >
         </div>
 
         <div class="form-group full">
           <label>E-MAIL</label>
-          <input id="checkoutEmail" type="email" required>
+          <input
+            id="checkoutEmail"
+            type="email"
+            required
+          >
         </div>
 
         <div class="form-group full">
           <label>STRASSE &amp; HAUSNUMMER</label>
-          <input id="checkoutStreet" required>
+          <input
+            id="checkoutStreet"
+            required
+          >
         </div>
 
         <div class="form-group">
           <label>PLZ</label>
-          <input id="checkoutPostal" required>
+          <input
+            id="checkoutPostal"
+            required
+          >
         </div>
 
         <div class="form-group">
           <label>ORT</label>
-          <input id="checkoutCity" required>
+          <input
+            id="checkoutCity"
+            required
+          >
         </div>
 
       </div>
 
       <div id="checkoutSummary"></div>
 
-      <button class="light-button" type="submit">
+      <button
+        class="light-button"
+        type="submit"
+      >
         BESTELLUNG AUFGEBEN
       </button>
 
@@ -1762,17 +2251,28 @@ footer{
 
 </div>
 
+
 <!-- =========================
-     ACCOUNT MODAL
+     ACCOUNT
 ========================= -->
 
-<div class="modal" id="accountModal">
+<div
+  class="modal"
+  id="accountModal"
+>
 
   <div class="modal-box account-box">
 
-    <button class="modal-close" onclick="closeAccount()">×</button>
+    <button
+      class="modal-close"
+      onclick="closeAccount()"
+    >
+      ×
+    </button>
 
-    <div class="modal-title">ACCOUNT</div>
+    <div class="modal-title">
+      ACCOUNT
+    </div>
 
     <div class="demo-note">
       DEMO-ACCOUNT: Die Account-Funktion läuft derzeit nur lokal im Browser.
@@ -1785,17 +2285,29 @@ footer{
 
 </div>
 
+
 <!-- =========================
-     ACCOUNT AUTH MODAL
+     AUTH
 ========================= -->
 
-<div class="modal" id="authModal">
+<div
+  class="modal"
+  id="authModal"
+>
 
   <div class="modal-box form-box">
 
-    <button class="modal-close" onclick="closeAuth()">×</button>
+    <button
+      class="modal-close"
+      onclick="closeAuth()"
+    >
+      ×
+    </button>
 
-    <div class="modal-title" id="authTitle">
+    <div
+      class="modal-title"
+      id="authTitle"
+    >
       ACCOUNT ERSTELLEN
     </div>
 
@@ -1803,24 +2315,41 @@ footer{
       DEMO-FUNKTION FÜR DIE SHOP-VORSCHAU.
     </div>
 
-    <form id="authForm" onsubmit="handleAuth(event)">
+    <form
+      id="authForm"
+      onsubmit="handleAuth(event)"
+    >
 
       <div class="form-group">
         <label>NAME</label>
-        <input id="authName" required>
+        <input
+          id="authName"
+          required
+        >
       </div>
 
       <div class="form-group">
         <label>E-MAIL</label>
-        <input id="authEmail" type="email" required>
+        <input
+          id="authEmail"
+          type="email"
+          required
+        >
       </div>
 
       <div class="form-group">
         <label>PASSWORT</label>
-        <input id="authPassword" type="password" required>
+        <input
+          id="authPassword"
+          type="password"
+          required
+        >
       </div>
 
-      <button class="light-button" type="submit">
+      <button
+        class="light-button"
+        type="submit"
+      >
         ACCOUNT ERSTELLEN
       </button>
 
@@ -1829,6 +2358,213 @@ footer{
   </div>
 
 </div>
+
+
+<!-- =========================
+     ADMIN LOGIN
+========================= -->
+
+<div
+  class="modal"
+  id="adminLoginModal"
+>
+
+  <div class="modal-box admin-login-box">
+
+    <button
+      class="modal-close"
+      onclick="closeAdminLogin()"
+    >
+      ×
+    </button>
+
+    <div class="admin-login-title">
+      ADMIN
+    </div>
+
+    <div class="admin-login-subtitle">
+      GONSHIKI CREW SHOP-VERWALTUNG
+    </div>
+
+    <div class="demo-note">
+      DEMO-ADMIN: Dieser Zugang ist nur für die aktuelle
+      GitHub-Pages-Vorschau gedacht und bietet noch keine echte
+      sichere Authentifizierung.
+    </div>
+
+    <form onsubmit="adminLogin(event)">
+
+      <div class="form-group">
+
+        <label>
+          BENUTZERNAME
+        </label>
+
+        <input
+          id="adminUsername"
+          autocomplete="username"
+          required
+        >
+
+      </div>
+
+      <div class="form-group">
+
+        <label>
+          PASSWORT
+        </label>
+
+        <input
+          id="adminPassword"
+          type="password"
+          autocomplete="current-password"
+          required
+        >
+
+      </div>
+
+      <button
+        class="light-button"
+        type="submit"
+      >
+        ADMIN ANMELDEN
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
+     ADMIN DASHBOARD
+========================= -->
+
+<div
+  class="modal"
+  id="adminModal"
+>
+
+  <div class="modal-box admin-box">
+
+    <div class="admin-header">
+
+      <div>
+
+        <div class="admin-title">
+          GONSHIKI ADMIN
+        </div>
+
+        <div class="admin-subtitle">
+          SHOP-VERWALTUNG · DEMO
+        </div>
+
+      </div>
+
+      <button
+        class="admin-logout"
+        onclick="adminLogout()"
+      >
+        ABMELDEN
+      </button>
+
+    </div>
+
+    <div class="admin-demo-warning">
+      DEMO-SYSTEM: Änderungen werden aktuell nur lokal in deinem Browser
+      gespeichert. Für einen echten Shop werden wir später ein echtes
+      Backend mit Datenbank, sicherem Login und echter Bestellverwaltung
+      anschließen.
+    </div>
+
+    <div class="admin-tabs">
+
+      <button
+        class="admin-tab active"
+        onclick="showAdminTab('dashboard',this)"
+      >
+        ÜBERSICHT
+      </button>
+
+      <button
+        class="admin-tab"
+        onclick="showAdminTab('products',this)"
+      >
+        PRODUKTE
+      </button>
+
+      <button
+        class="admin-tab"
+        onclick="showAdminTab('orders',this)"
+      >
+        BESTELLUNGEN
+      </button>
+
+    </div>
+
+
+    <!-- DASHBOARD -->
+
+    <div
+      class="admin-section active"
+      id="adminDashboard"
+    >
+
+      <div
+        class="admin-stat-grid"
+        id="adminStats"
+      ></div>
+
+      <div class="admin-empty">
+
+        <strong>
+          GONSHIKI SHOP ADMIN
+        </strong>
+
+        <br><br>
+
+        Hier kannst du Produkte, Preise, Lagerbestand und
+        Demo-Bestellungen verwalten.
+
+      </div>
+
+    </div>
+
+
+    <!-- PRODUCTS -->
+
+    <div
+      class="admin-section"
+      id="adminProducts"
+    >
+
+      <div
+        class="admin-products"
+        id="adminProductsList"
+      ></div>
+
+    </div>
+
+
+    <!-- ORDERS -->
+
+    <div
+      class="admin-section"
+      id="adminOrders"
+    >
+
+      <div
+        class="admin-orders"
+        id="adminOrdersList"
+      ></div>
+
+    </div>
+
+  </div>
+
+</div>
+
 
 <script>
 
@@ -2099,6 +2835,9 @@ let account = JSON.parse(
   localStorage.getItem("gonschikiAccount") || "null"
 );
 
+let adminLoggedIn =
+  sessionStorage.getItem("gonschikiAdmin") === "true";
+
 
 /* =========================
    STORAGE
@@ -2131,13 +2870,18 @@ function saveAccount(){
 ========================= */
 
 function formatPrice(price){
-  return price.toLocaleString("de-DE",{
-    style:"currency",
-    currency:"EUR"
-  });
+
+  return price.toLocaleString(
+    "de-DE",
+    {
+      style:"currency",
+      currency:"EUR"
+    }
+  );
 }
 
 function escapeHtml(value){
+
   return String(value ?? "")
     .replace(/&/g,"&amp;")
     .replace(/</g,"&lt;")
@@ -2147,8 +2891,10 @@ function escapeHtml(value){
 }
 
 function getProduct(id){
+
   return products.find(
-    product => product.id === Number(id)
+    product =>
+      product.id === Number(id)
   );
 }
 
@@ -2177,22 +2923,34 @@ function getTotalProductStock(product){
     return Number(product.stock || 0);
   }
 
-  return Object.values(product.stock || {})
-    .reduce((sum,value)=>sum + Number(value || 0),0);
+  return Object.values(
+    product.stock || {}
+  ).reduce(
+    (sum,value)=>
+      sum + Number(value || 0),
+    0
+  );
 }
 
 function isProductAvailable(product){
+
   return getTotalProductStock(product) > 0;
 }
 
-function getCartQuantityForProduct(productId,size){
+function getCartQuantityForProduct(
+  productId,
+  size
+){
 
   const item = cart.find(item =>
-    Number(item.productId) === Number(productId) &&
+    Number(item.productId) ===
+      Number(productId) &&
     item.size === size
   );
 
-  return item ? Number(item.quantity) : 0;
+  return item
+    ? Number(item.quantity)
+    : 0;
 }
 
 
@@ -2202,29 +2960,35 @@ function getCartQuantityForProduct(productId,size){
 
 function renderProducts(){
 
-  const grid = document.getElementById("productGrid");
+  const grid =
+    document.getElementById(
+      "productGrid"
+    );
 
-  const filtered = products.filter(product => {
+  const filtered =
+    products.filter(product => {
 
-    if(!product.active){
-      return false;
-    }
+      if(!product.active){
+        return false;
+      }
 
-    if(
-      !product.gender.includes(currentGender)
-    ){
-      return false;
-    }
+      if(
+        !product.gender.includes(
+          currentGender
+        )
+      ){
+        return false;
+      }
 
-    if(
-      currentCategory !== "Alle" &&
-      product.category !== currentCategory
-    ){
-      return false;
-    }
+      if(
+        currentCategory !== "Alle" &&
+        product.category !== currentCategory
+      ){
+        return false;
+      }
 
-    return true;
-  });
+      return true;
+    });
 
   if(!filtered.length){
 
@@ -2242,68 +3006,92 @@ function renderProducts(){
     return;
   }
 
-  grid.innerHTML = filtered.map(product => {
+  grid.innerHTML =
+    filtered.map(product => {
 
-    const stock = getTotalProductStock(product);
-    const soldOut = stock <= 0;
+      const stock =
+        getTotalProductStock(product);
 
-    return `
-      <article class="product-card">
+      const soldOut =
+        stock <= 0;
 
-        <div class="product-image">
+      return `
+        <article class="product-card">
 
-          <img
-            src="${product.image}"
-            alt="${escapeHtml(product.name)}"
-          >
+          <div class="product-image">
 
-          <div class="product-stock ${soldOut ? "soldout" : ""}">
-            ${
-              soldOut
-                ? "AUSVERKAUFT"
-                : `${stock} VERFÜGBAR`
-            }
+            <img
+              src="${product.image}"
+              alt="${escapeHtml(
+                product.name
+              )}"
+            >
+
+            <div
+              class="product-stock
+              ${soldOut ? "soldout" : ""}"
+            >
+              ${
+                soldOut
+                  ? "AUSVERKAUFT"
+                  : `${stock} VERFÜGBAR`
+              }
+            </div>
+
           </div>
 
-        </div>
+          <div class="product-info">
 
-        <div class="product-info">
+            <div class="product-category">
+              ${escapeHtml(
+                product.category
+              )}
+            </div>
 
-          <div class="product-category">
-            ${escapeHtml(product.category)}
+            <h3>
+              ${escapeHtml(
+                product.name
+              )}
+            </h3>
+
+            <div class="product-price">
+              ${formatPrice(
+                product.price
+              )}
+            </div>
+
+            <button
+              class="product-open"
+              onclick="openProduct(${product.id})"
+              ${soldOut ? "disabled" : ""}
+            >
+              ${
+                soldOut
+                  ? "AUSVERKAUFT"
+                  : "ANSCHAUEN"
+              }
+            </button>
+
           </div>
 
-          <h3>
-            ${escapeHtml(product.name)}
-          </h3>
+        </article>
+      `;
 
-          <div class="product-price">
-            ${formatPrice(product.price)}
-          </div>
-
-          <button
-            class="product-open"
-            onclick="openProduct(${product.id})"
-            ${soldOut ? "disabled" : ""}
-          >
-            ${soldOut ? "AUSVERKAUFT" : "ANSCHAUEN"}
-          </button>
-
-        </div>
-
-      </article>
-    `;
-
-  }).join("");
+    }).join("");
 }
 
-function filterProducts(category,button){
+function filterProducts(
+  category,
+  button
+){
 
   currentCategory = category;
 
   document
     .querySelectorAll(".category-btn")
-    .forEach(btn => btn.classList.remove("active"));
+    .forEach(btn =>
+      btn.classList.remove("active")
+    );
 
   button.classList.add("active");
 
@@ -2338,9 +3126,13 @@ function switchGender(gender){
 
 function openProduct(id){
 
-  const product = getProduct(id);
+  const product =
+    getProduct(id);
 
-  if(!product || !isProductAvailable(product)){
+  if(
+    !product ||
+    !isProductAvailable(product)
+  ){
     return;
   }
 
@@ -2353,44 +3145,67 @@ function openProduct(id){
 
   }else{
 
-    selectedSize = product.sizes.find(
-      size => getStockForSize(product,size) > 0
-    ) || product.sizes[0];
-
+    selectedSize =
+      product.sizes.find(
+        size =>
+          getStockForSize(
+            product,
+            size
+          ) > 0
+      ) || product.sizes[0];
   }
 
-  document.getElementById("modalImage").src =
-    product.image;
+  document.getElementById(
+    "modalImage"
+  ).src = product.image;
 
-  document.getElementById("modalImage").alt =
-    product.name;
+  document.getElementById(
+    "modalImage"
+  ).alt = product.name;
 
-  document.getElementById("modalCategory").textContent =
+  document.getElementById(
+    "modalCategory"
+  ).textContent =
     product.category;
 
-  document.getElementById("modalName").textContent =
+  document.getElementById(
+    "modalName"
+  ).textContent =
     product.name;
 
-  document.getElementById("modalPrice").textContent =
+  document.getElementById(
+    "modalPrice"
+  ).textContent =
     formatPrice(product.price);
 
-  document.getElementById("modalDescription").textContent =
+  document.getElementById(
+    "modalDescription"
+  ).textContent =
     product.description;
 
-  document.getElementById("modalQuantity").textContent =
+  document.getElementById(
+    "modalQuantity"
+  ).textContent =
     modalQuantity;
 
   const sizeArea =
-    document.getElementById("sizeArea");
+    document.getElementById(
+      "sizeArea"
+    );
 
   const sizeOptions =
-    document.getElementById("sizeOptions");
+    document.getElementById(
+      "sizeOptions"
+    );
 
   if(product.sticker){
 
-    sizeArea.style.display = "block";
+    sizeArea.style.display =
+      "block";
 
-    document.getElementById("sizeLabel").textContent =
+    document.getElementById(
+      "sizeLabel"
+    ).textContent =
       "FORMAT";
 
     sizeOptions.innerHTML = `
@@ -2398,29 +3213,38 @@ function openProduct(id){
         class="size-option active"
         disabled
       >
-        ${escapeHtml(product.size)}
+        ${escapeHtml(
+          product.size
+        )}
       </button>
     `;
 
   }else{
 
-    sizeArea.style.display = "block";
+    sizeArea.style.display =
+      "block";
 
-    document.getElementById("sizeLabel").textContent =
+    document.getElementById(
+      "sizeLabel"
+    ).textContent =
       "GRÖSSE";
 
     sizeOptions.innerHTML =
       product.sizes.map(size => {
 
         const stock =
-          getStockForSize(product,size);
+          getStockForSize(
+            product,
+            size
+          );
 
         const active =
           selectedSize === size;
 
         return `
           <button
-            class="size-option ${active ? "active" : ""}"
+            class="size-option
+            ${active ? "active" : ""}"
             onclick="selectSize('${size}')"
             ${stock <= 0 ? "disabled" : ""}
           >
@@ -2434,14 +3258,18 @@ function openProduct(id){
   updateModalStock();
 
   document
-    .getElementById("productModal")
+    .getElementById(
+      "productModal"
+    )
     .classList.add("active");
 }
 
 function closeProduct(){
 
   document
-    .getElementById("productModal")
+    .getElementById(
+      "productModal"
+    )
     .classList.remove("active");
 
   selectedProduct = null;
@@ -2465,7 +3293,9 @@ function selectSize(size){
   selectedSize = size;
 
   document
-    .querySelectorAll("#sizeOptions .size-option")
+    .querySelectorAll(
+      "#sizeOptions .size-option"
+    )
     .forEach(button => {
 
       button.classList.toggle(
@@ -2477,7 +3307,9 @@ function selectSize(size){
 
   modalQuantity = 1;
 
-  document.getElementById("modalQuantity").textContent =
+  document.getElementById(
+    "modalQuantity"
+  ).textContent =
     modalQuantity;
 
   updateModalStock();
@@ -2502,25 +3334,31 @@ function updateModalStock(){
     );
 
   const remaining =
-    Math.max(0,stock - cartQuantity);
+    Math.max(
+      0,
+      stock - cartQuantity
+    );
 
-  document.getElementById("modalStock").textContent =
+  document.getElementById(
+    "modalStock"
+  ).textContent =
     remaining > 0
       ? `${remaining} NOCH VERFÜGBAR`
       : "AUSVERKAUFT";
 
   const button =
-    document.getElementById("modalAddButton");
+    document.getElementById(
+      "modalAddButton"
+    );
 
   button.disabled =
     remaining <= 0 ||
     modalQuantity > remaining;
 
-  if(remaining <= 0){
-    button.textContent = "AUSVERKAUFT";
-  }else{
-    button.textContent = "IN DEN WARENKORB";
-  }
+  button.textContent =
+    remaining <= 0
+      ? "AUSVERKAUFT"
+      : "IN DEN WARENKORB";
 }
 
 function changeModalQuantity(change){
@@ -2542,7 +3380,10 @@ function changeModalQuantity(change){
     );
 
   const available =
-    Math.max(0,stock - alreadyInCart);
+    Math.max(
+      0,
+      stock - alreadyInCart
+    );
 
   modalQuantity += change;
 
@@ -2550,11 +3391,15 @@ function changeModalQuantity(change){
     modalQuantity = 1;
   }
 
-  if(modalQuantity > available){
+  if(
+    modalQuantity > available
+  ){
     modalQuantity = available;
   }
 
-  document.getElementById("modalQuantity").textContent =
+  document.getElementById(
+    "modalQuantity"
+  ).textContent =
     modalQuantity;
 
   updateModalStock();
@@ -2585,20 +3430,27 @@ function addToCart(){
     );
 
   const currentQuantity =
-    existing ? existing.quantity : 0;
+    existing
+      ? existing.quantity
+      : 0;
 
   if(
-    currentQuantity + modalQuantity >
+    currentQuantity +
+    modalQuantity >
     stock
   ){
 
-    alert("Diese Menge ist nicht mehr verfügbar.");
+    alert(
+      "Diese Menge ist nicht mehr verfügbar."
+    );
+
     return;
   }
 
   if(existing){
 
-    existing.quantity += modalQuantity;
+    existing.quantity +=
+      modalQuantity;
 
   }else{
 
@@ -2621,16 +3473,22 @@ function addToCart(){
   openCart();
 }
 
-function changeQuantity(index,change){
+function changeQuantity(
+  index,
+  change
+){
 
-  const item = cart[index];
+  const item =
+    cart[index];
 
   if(!item){
     return;
   }
 
   const product =
-    getProduct(item.productId);
+    getProduct(
+      item.productId
+    );
 
   if(!product){
     return;
@@ -2649,13 +3507,19 @@ function changeQuantity(index,change){
 
     cart.splice(index,1);
 
-  }else if(newQuantity <= stock){
+  }else if(
+    newQuantity <= stock
+  ){
 
-    item.quantity = newQuantity;
+    item.quantity =
+      newQuantity;
 
   }else{
 
-    alert("Maximaler Lagerbestand erreicht.");
+    alert(
+      "Maximaler Lagerbestand erreicht."
+    );
+
     return;
   }
 
@@ -2694,19 +3558,25 @@ function clearCart(){
 
 function getCartSubtotal(){
 
-  return cart.reduce((sum,item)=>{
+  return cart.reduce(
+    (sum,item) => {
 
-    const product =
-      getProduct(item.productId);
+      const product =
+        getProduct(
+          item.productId
+        );
 
-    if(!product){
-      return sum;
-    }
+      if(!product){
+        return sum;
+      }
 
-    return sum +
-      product.price * item.quantity;
+      return sum +
+        product.price *
+        item.quantity;
 
-  },0);
+    },
+    0
+  );
 }
 
 function getShipping(){
@@ -2734,18 +3604,23 @@ function updateCartCount(){
   const count =
     cart.reduce(
       (sum,item) =>
-        sum + Number(item.quantity),
+        sum +
+        Number(item.quantity),
       0
     );
 
-  document.getElementById("cartCount").textContent =
+  document.getElementById(
+    "cartCount"
+  ).textContent =
     count;
 }
 
 function renderCart(){
 
   const container =
-    document.getElementById("cartItems");
+    document.getElementById(
+      "cartItems"
+    );
 
   if(!cart.length){
 
@@ -2759,73 +3634,93 @@ function renderCart(){
   }
 
   const itemsHtml =
-    cart.map((item,index)=>{
+    cart.map(
+      (item,index) => {
 
-      const product =
-        getProduct(item.productId);
+        const product =
+          getProduct(
+            item.productId
+          );
 
-      if(!product){
-        return "";
-      }
+        if(!product){
+          return "";
+        }
 
-      const itemTotal =
-        product.price * item.quantity;
+        const itemTotal =
+          product.price *
+          item.quantity;
 
-      return `
-        <div class="cart-item">
+        return `
+          <div class="cart-item">
 
-          <img
-            src="${product.image}"
-            alt="${escapeHtml(product.name)}"
-          >
-
-          <div>
-
-            <div class="cart-item-name">
-              ${escapeHtml(product.name)}
-            </div>
-
-            <div class="cart-item-meta">
-              ${escapeHtml(item.size)}
-            </div>
-
-            <div class="cart-item-price">
-              ${formatPrice(itemTotal)}
-            </div>
-
-            <div class="cart-quantity">
-
-              <button
-                onclick="changeQuantity(${index},-1)"
-              >
-                −
-              </button>
-
-              <strong>
-                ${item.quantity}
-              </strong>
-
-              <button
-                onclick="changeQuantity(${index},1)"
-              >
-                +
-              </button>
-
-            </div>
-
-            <button
-              class="cart-remove"
-              onclick="removeCartItem(${index})"
+            <img
+              src="${product.image}"
+              alt="${escapeHtml(
+                product.name
+              )}"
             >
-              ENTFERNEN
-            </button>
+
+            <div>
+
+              <div class="cart-item-name">
+                ${escapeHtml(
+                  product.name
+                )}
+              </div>
+
+              <div class="cart-item-meta">
+                ${escapeHtml(
+                  item.size
+                )}
+              </div>
+
+              <div class="cart-item-price">
+                ${formatPrice(
+                  itemTotal
+                )}
+              </div>
+
+              <div class="cart-quantity">
+
+                <button
+                  onclick="changeQuantity(
+                    ${index},
+                    -1
+                  )"
+                >
+                  −
+                </button>
+
+                <strong>
+                  ${item.quantity}
+                </strong>
+
+                <button
+                  onclick="changeQuantity(
+                    ${index},
+                    1
+                  )"
+                >
+                  +
+                </button>
+
+              </div>
+
+              <button
+                class="cart-remove"
+                onclick="removeCartItem(
+                  ${index}
+                )"
+              >
+                ENTFERNEN
+              </button>
+
+            </div>
 
           </div>
-
-        </div>
-      `;
-
-    }).join("");
+        `;
+      }
+    ).join("");
 
   const subtotal =
     getCartSubtotal();
@@ -2846,7 +3741,9 @@ function renderCart(){
 
       <div class="summary-row">
         <span>ZWISCHENSUMME</span>
-        <strong>${formatPrice(subtotal)}</strong>
+        <strong>
+          ${formatPrice(subtotal)}
+        </strong>
       </div>
 
       <div class="summary-row">
@@ -2862,22 +3759,27 @@ function renderCart(){
 
       <div class="summary-row summary-total">
         <span>GESAMT</span>
-        <strong>${formatPrice(total)}</strong>
+        <strong>
+          ${formatPrice(total)}
+        </strong>
       </div>
 
       ${
         subtotal < 100
-        ? `
-          <div style="
-            color:#666;
-            font-size:9px;
-            margin-top:12px;
-          ">
-            NOCH ${formatPrice(100-subtotal)}
-            BIS ZUM KOSTENLOSEN VERSAND.
-          </div>
-        `
-        : ""
+          ? `
+            <div style="
+              color:#666;
+              font-size:9px;
+              margin-top:12px;
+            ">
+              NOCH
+              ${formatPrice(
+                100 - subtotal
+              )}
+              BIS ZUM KOSTENLOSEN VERSAND.
+            </div>
+          `
+          : ""
       }
 
       <div class="cart-actions">
@@ -2912,14 +3814,18 @@ function openCart(){
   renderCart();
 
   document
-    .getElementById("cartModal")
+    .getElementById(
+      "cartModal"
+    )
     .classList.add("active");
 }
 
 function closeCart(){
 
   document
-    .getElementById("cartModal")
+    .getElementById(
+      "cartModal"
+    )
     .classList.remove("active");
 }
 
@@ -2932,7 +3838,10 @@ function openCheckout(){
 
   if(!cart.length){
 
-    alert("Dein Warenkorb ist leer.");
+    alert(
+      "Dein Warenkorb ist leer."
+    );
+
     return;
   }
 
@@ -2941,21 +3850,27 @@ function openCheckout(){
   renderCheckoutSummary();
 
   document
-    .getElementById("checkoutModal")
+    .getElementById(
+      "checkoutModal"
+    )
     .classList.add("active");
 }
 
 function closeCheckout(){
 
   document
-    .getElementById("checkoutModal")
+    .getElementById(
+      "checkoutModal"
+    )
     .classList.remove("active");
 }
 
 function renderCheckoutSummary(){
 
   const container =
-    document.getElementById("checkoutSummary");
+    document.getElementById(
+      "checkoutSummary"
+    );
 
   const subtotal =
     getCartSubtotal();
@@ -2968,12 +3883,16 @@ function renderCheckoutSummary(){
 
   container.innerHTML = `
 
-    <div class="cart-summary"
-      style="margin-bottom:25px;">
+    <div
+      class="cart-summary"
+      style="margin-bottom:25px;"
+    >
 
       <div class="summary-row">
         <span>ZWISCHENSUMME</span>
-        <strong>${formatPrice(subtotal)}</strong>
+        <strong>
+          ${formatPrice(subtotal)}
+        </strong>
       </div>
 
       <div class="summary-row">
@@ -2989,7 +3908,9 @@ function renderCheckoutSummary(){
 
       <div class="summary-row summary-total">
         <span>GESAMT</span>
-        <strong>${formatPrice(total)}</strong>
+        <strong>
+          ${formatPrice(total)}
+        </strong>
       </div>
 
     </div>
@@ -2998,21 +3919,28 @@ function renderCheckoutSummary(){
 
 
 /* =========================
-   ORDER HISTORY
+   ORDERS
 ========================= */
 
 function createOrderNumber(){
 
-  const now = new Date();
+  const now =
+    new Date();
 
   const date =
-    now.getFullYear().toString() +
-    String(now.getMonth()+1).padStart(2,"0") +
-    String(now.getDate()).padStart(2,"0");
+    now.getFullYear()
+      .toString() +
+    String(
+      now.getMonth()+1
+    ).padStart(2,"0") +
+    String(
+      now.getDate()
+    ).padStart(2,"0");
 
   const random =
     Math.floor(
-      1000 + Math.random() * 9000
+      1000 +
+      Math.random()*9000
     );
 
   return `GON-${date}-${random}`;
@@ -3024,51 +3952,50 @@ function placeOrder(event){
 
   if(!cart.length){
 
-    alert("Dein Warenkorb ist leer.");
+    alert(
+      "Dein Warenkorb ist leer."
+    );
+
     return;
   }
 
   const firstName =
-    document
-      .getElementById("checkoutFirstName")
-      .value
-      .trim();
+    document.getElementById(
+      "checkoutFirstName"
+    ).value.trim();
 
   const lastName =
-    document
-      .getElementById("checkoutLastName")
-      .value
-      .trim();
+    document.getElementById(
+      "checkoutLastName"
+    ).value.trim();
 
   const email =
-    document
-      .getElementById("checkoutEmail")
-      .value
-      .trim();
+    document.getElementById(
+      "checkoutEmail"
+    ).value.trim();
 
   const street =
-    document
-      .getElementById("checkoutStreet")
-      .value
-      .trim();
+    document.getElementById(
+      "checkoutStreet"
+    ).value.trim();
 
   const postal =
-    document
-      .getElementById("checkoutPostal")
-      .value
-      .trim();
+    document.getElementById(
+      "checkoutPostal"
+    ).value.trim();
 
   const city =
-    document
-      .getElementById("checkoutCity")
-      .value
-      .trim();
+    document.getElementById(
+      "checkoutCity"
+    ).value.trim();
 
   const orderItems =
     cart.map(item => {
 
       const product =
-        getProduct(item.productId);
+        getProduct(
+          item.productId
+        );
 
       return {
         productId:item.productId,
@@ -3085,9 +4012,11 @@ function placeOrder(event){
 
     id:Date.now(),
 
-    orderNumber:createOrderNumber(),
+    orderNumber:
+      createOrderNumber(),
 
-    date:new Date().toISOString(),
+    date:
+      new Date().toISOString(),
 
     status:"Vorschau",
 
@@ -3102,11 +4031,14 @@ function placeOrder(event){
 
     items:orderItems,
 
-    subtotal:getCartSubtotal(),
+    subtotal:
+      getCartSubtotal(),
 
-    shipping:getShipping(),
+    shipping:
+      getShipping(),
 
-    total:getCartTotal()
+    total:
+      getCartTotal()
 
   };
 
@@ -3126,17 +4058,26 @@ function placeOrder(event){
 
   renderAccount();
 
+  renderAdminOrders();
+  renderAdminStats();
+
   document
-    .getElementById("checkoutForm")
+    .getElementById(
+      "checkoutForm"
+    )
     .reset();
 
   alert(
-    `Demo-Bestellung ${order.orderNumber} wurde erstellt.\n\n` +
+    `Demo-Bestellung ${
+      order.orderNumber
+    } wurde erstellt.\n\n` +
     `Die Bestellung wurde nur lokal als Vorschau gespeichert.`
   );
 }
 
-function formatOrderDate(dateString){
+function formatOrderDate(
+  dateString
+){
 
   const date =
     new Date(dateString);
@@ -3182,27 +4123,38 @@ function renderOrderHistory(){
             <div class="order-item">
 
               <img
-                src="${escapeHtml(item.image)}"
-                alt="${escapeHtml(item.name)}"
+                src="${escapeHtml(
+                  item.image
+                )}"
+                alt="${escapeHtml(
+                  item.name
+                )}"
               >
 
               <div>
 
                 <div class="order-item-name">
-                  ${escapeHtml(item.name)}
+                  ${escapeHtml(
+                    item.name
+                  )}
                 </div>
 
                 <div class="order-item-meta">
-                  ${escapeHtml(item.size)}
+                  ${escapeHtml(
+                    item.size
+                  )}
                   · ${item.quantity} ×
-                  ${formatPrice(item.price)}
+                  ${formatPrice(
+                    item.price
+                  )}
                 </div>
 
               </div>
 
               <div class="order-item-price">
                 ${formatPrice(
-                  item.price * item.quantity
+                  item.price *
+                  item.quantity
                 )}
               </div>
 
@@ -3212,31 +4164,44 @@ function renderOrderHistory(){
         }).join("");
 
       return `
-        <div class="order-card" id="order-${order.id}">
+        <div
+          class="order-card"
+          id="order-${order.id}"
+        >
 
           <div
             class="order-header"
-            onclick="toggleOrder(${order.id})"
+            onclick="toggleOrder(
+              ${order.id}
+            )"
           >
 
             <div>
 
               <div class="order-number">
-                ${escapeHtml(order.orderNumber)}
+                ${escapeHtml(
+                  order.orderNumber
+                )}
               </div>
 
               <div class="order-date">
-                ${formatOrderDate(order.date)}
+                ${formatOrderDate(
+                  order.date
+                )}
               </div>
 
             </div>
 
             <div class="order-status">
-              ${escapeHtml(order.status)}
+              ${escapeHtml(
+                order.status
+              )}
             </div>
 
             <div class="order-header-total">
-              ${formatPrice(order.total)}
+              ${formatPrice(
+                order.total
+              )}
             </div>
 
           </div>
@@ -3250,21 +4215,36 @@ function renderOrderHistory(){
               <strong style="color:#fff;">
                 LIEFERADRESSE
               </strong>
+
               <br>
 
-              ${escapeHtml(order.customer.firstName)}
-              ${escapeHtml(order.customer.lastName)}
+              ${escapeHtml(
+                order.customer.firstName
+              )}
+              ${escapeHtml(
+                order.customer.lastName
+              )}
+
               <br>
 
-              ${escapeHtml(order.customer.street)}
+              ${escapeHtml(
+                order.customer.street
+              )}
+
               <br>
 
-              ${escapeHtml(order.customer.postal)}
-              ${escapeHtml(order.customer.city)}
+              ${escapeHtml(
+                order.customer.postal
+              )}
+              ${escapeHtml(
+                order.customer.city
+              )}
 
               <br><br>
 
-              ${escapeHtml(order.customer.email)}
+              ${escapeHtml(
+                order.customer.email
+              )}
 
             </div>
 
@@ -3273,7 +4253,9 @@ function renderOrderHistory(){
               <div class="order-summary-row">
                 <span>ZWISCHENSUMME</span>
                 <strong>
-                  ${formatPrice(order.subtotal)}
+                  ${formatPrice(
+                    order.subtotal
+                  )}
                 </strong>
               </div>
 
@@ -3283,15 +4265,21 @@ function renderOrderHistory(){
                   ${
                     order.shipping === 0
                       ? "KOSTENLOS"
-                      : formatPrice(order.shipping)
+                      : formatPrice(
+                          order.shipping
+                        )
                   }
                 </strong>
               </div>
 
-              <div class="order-summary-row total">
+              <div
+                class="order-summary-row total"
+              >
                 <span>GESAMT</span>
                 <strong>
-                  ${formatPrice(order.total)}
+                  ${formatPrice(
+                    order.total
+                  )}
                 </strong>
               </div>
 
@@ -3318,8 +4306,7 @@ function renderOrderHistory(){
 
       <div class="history-demo-note">
         DEMO: Bestellungen werden derzeit nur lokal in diesem Browser
-        gespeichert. Es findet noch keine echte Übertragung an ein
-        Shopsystem statt.
+        gespeichert.
       </div>
 
     </div>
@@ -3334,7 +4321,9 @@ function toggleOrder(id){
     );
 
   if(card){
-    card.classList.toggle("open");
+    card.classList.toggle(
+      "open"
+    );
   }
 }
 
@@ -3348,21 +4337,27 @@ function openAccount(){
   renderAccount();
 
   document
-    .getElementById("accountModal")
+    .getElementById(
+      "accountModal"
+    )
     .classList.add("active");
 }
 
 function closeAccount(){
 
   document
-    .getElementById("accountModal")
+    .getElementById(
+      "accountModal"
+    )
     .classList.remove("active");
 }
 
 function renderAccount(){
 
   const container =
-    document.getElementById("accountContent");
+    document.getElementById(
+      "accountContent"
+    );
 
   if(!account){
 
@@ -3383,11 +4378,15 @@ function renderAccount(){
 
       <div class="account-buttons">
 
-        <button onclick="openAuth('register')">
+        <button
+          onclick="openAuth('register')"
+        >
           ACCOUNT ERSTELLEN
         </button>
 
-        <button onclick="openAuth('login')">
+        <button
+          onclick="openAuth('login')"
+        >
           ANMELDEN
         </button>
 
@@ -3403,11 +4402,16 @@ function renderAccount(){
     <div class="account-status">
 
       <strong>
-        WILLKOMMEN, ${escapeHtml(account.name)}
+        WILLKOMMEN,
+        ${escapeHtml(
+          account.name
+        )}
       </strong>
 
       <span>
-        ${escapeHtml(account.email)}
+        ${escapeHtml(
+          account.email
+        )}
       </span>
 
     </div>
@@ -3430,13 +4434,16 @@ function renderAccount(){
    AUTH
 ========================= */
 
-let authMode = "register";
+let authMode =
+  "register";
 
 function openAuth(mode){
 
   authMode = mode;
 
-  document.getElementById("authTitle").textContent =
+  document.getElementById(
+    "authTitle"
+  ).textContent =
     mode === "register"
       ? "ACCOUNT ERSTELLEN"
       : "ANMELDEN";
@@ -3449,14 +4456,18 @@ function openAuth(mode){
       : "ANMELDEN";
 
   document
-    .getElementById("authModal")
+    .getElementById(
+      "authModal"
+    )
     .classList.add("active");
 }
 
 function closeAuth(){
 
   document
-    .getElementById("authModal")
+    .getElementById(
+      "authModal"
+    )
     .classList.remove("active");
 }
 
@@ -3465,23 +4476,25 @@ function handleAuth(event){
   event.preventDefault();
 
   const name =
-    document
-      .getElementById("authName")
-      .value
-      .trim();
+    document.getElementById(
+      "authName"
+    ).value.trim();
 
   const email =
-    document
-      .getElementById("authEmail")
-      .value
-      .trim();
+    document.getElementById(
+      "authEmail"
+    ).value.trim();
 
   const password =
-    document
-      .getElementById("authPassword")
-      .value;
+    document.getElementById(
+      "authPassword"
+    ).value;
 
-  if(!name || !email || !password){
+  if(
+    !name ||
+    !email ||
+    !password
+  ){
     return;
   }
 
@@ -3503,7 +4516,9 @@ function handleAuth(event){
   );
 
   document
-    .getElementById("authForm")
+    .getElementById(
+      "authForm"
+    )
     .reset();
 }
 
@@ -3517,8 +4532,711 @@ function logout(){
 }
 
 
+/* =========================================================
+   ADMIN
+========================================================= */
+
+/*
+  DEMO-ZUGANG:
+
+  Benutzer:
+  admin
+
+  Passwort:
+  gonschiki2025
+*/
+
+const ADMIN_USERNAME =
+  "admin";
+
+const ADMIN_PASSWORD =
+  "gonschiki2025";
+
+
+function openAdmin(){
+
+  if(adminLoggedIn){
+
+    renderAdmin();
+
+    document
+      .getElementById(
+        "adminModal"
+      )
+      .classList.add("active");
+
+  }else{
+
+    document
+      .getElementById(
+        "adminLoginModal"
+      )
+      .classList.add("active");
+
+  }
+}
+
+function closeAdminLogin(){
+
+  document
+    .getElementById(
+      "adminLoginModal"
+    )
+    .classList.remove("active");
+}
+
+function adminLogin(event){
+
+  event.preventDefault();
+
+  const username =
+    document.getElementById(
+      "adminUsername"
+    ).value.trim();
+
+  const password =
+    document.getElementById(
+      "adminPassword"
+    ).value;
+
+  if(
+    username === ADMIN_USERNAME &&
+    password === ADMIN_PASSWORD
+  ){
+
+    adminLoggedIn = true;
+
+    sessionStorage.setItem(
+      "gonschikiAdmin",
+      "true"
+    );
+
+    document
+      .getElementById(
+        "adminUsername"
+      ).value = "";
+
+    document
+      .getElementById(
+        "adminPassword"
+      ).value = "";
+
+    closeAdminLogin();
+
+    renderAdmin();
+
+    document
+      .getElementById(
+        "adminModal"
+      )
+      .classList.add("active");
+
+  }else{
+
+    alert(
+      "Benutzername oder Passwort falsch."
+    );
+
+  }
+}
+
+function adminLogout(){
+
+  adminLoggedIn = false;
+
+  sessionStorage.removeItem(
+    "gonschikiAdmin"
+  );
+
+  document
+    .getElementById(
+      "adminModal"
+    )
+    .classList.remove("active");
+}
+
+function renderAdmin(){
+
+  renderAdminStats();
+
+  renderAdminProducts();
+
+  renderAdminOrders();
+}
+
+function showAdminTab(
+  tab,
+  button
+){
+
+  document
+    .querySelectorAll(
+      ".admin-tab"
+    )
+    .forEach(btn =>
+      btn.classList.remove(
+        "active"
+      )
+    );
+
+  button.classList.add(
+    "active"
+  );
+
+  document
+    .querySelectorAll(
+      ".admin-section"
+    )
+    .forEach(section =>
+      section.classList.remove(
+        "active"
+      )
+    );
+
+  if(tab === "dashboard"){
+
+    document
+      .getElementById(
+        "adminDashboard"
+      )
+      .classList.add("active");
+
+  }
+
+  if(tab === "products"){
+
+    document
+      .getElementById(
+        "adminProducts"
+      )
+      .classList.add("active");
+
+  }
+
+  if(tab === "orders"){
+
+    document
+      .getElementById(
+        "adminOrders"
+      )
+      .classList.add("active");
+
+  }
+}
+
+function renderAdminStats(){
+
+  const container =
+    document.getElementById(
+      "adminStats"
+    );
+
+  if(!container){
+    return;
+  }
+
+  const activeProducts =
+    products.filter(
+      product => product.active
+    ).length;
+
+  const totalProducts =
+    products.length;
+
+  const totalStock =
+    products.reduce(
+      (sum,product) =>
+        sum +
+        getTotalProductStock(
+          product
+        ),
+      0
+    );
+
+  const totalOrders =
+    orders.length;
+
+  const demoRevenue =
+    orders.reduce(
+      (sum,order) =>
+        sum +
+        Number(order.total || 0),
+      0
+    );
+
+  container.innerHTML = `
+
+    <div class="admin-stat">
+
+      <span>PRODUKTE</span>
+
+      <strong>
+        ${totalProducts}
+      </strong>
+
+    </div>
+
+    <div class="admin-stat">
+
+      <span>AKTIV</span>
+
+      <strong>
+        ${activeProducts}
+      </strong>
+
+    </div>
+
+    <div class="admin-stat">
+
+      <span>LAGERBESTAND</span>
+
+      <strong>
+        ${totalStock}
+      </strong>
+
+    </div>
+
+    <div class="admin-stat">
+
+      <span>BESTELLUNGEN</span>
+
+      <strong>
+        ${totalOrders}
+      </strong>
+
+    </div>
+
+    <div
+      class="admin-stat"
+      style="grid-column:1/-1;"
+    >
+
+      <span>
+        DEMO-BESTELLUMSATZ
+      </span>
+
+      <strong>
+        ${formatPrice(
+          demoRevenue
+        )}
+      </strong>
+
+    </div>
+
+  `;
+}
+
+function renderAdminProducts(){
+
+  const container =
+    document.getElementById(
+      "adminProductsList"
+    );
+
+  if(!container){
+    return;
+  }
+
+  container.innerHTML =
+    products.map(product => {
+
+      let stockHtml = "";
+
+      if(product.sticker){
+
+        stockHtml = `
+          <input
+            class="admin-input"
+            type="number"
+            min="0"
+            value="${product.stock}"
+            onchange="updateStickerStock(
+              ${product.id},
+              this.value
+            )"
+          >
+        `;
+
+      }else{
+
+        stockHtml = `
+          <div class="admin-stock-box">
+
+            ${product.sizes.map(size => `
+
+              <label style="
+                font-size:7px;
+                color:#777;
+                text-align:center;
+              ">
+
+                ${size}
+
+                <input
+                  class="admin-stock-input"
+                  type="number"
+                  min="0"
+                  value="${
+                    product.stock[size]
+                  }"
+                  onchange="updateProductStock(
+                    ${product.id},
+                    '${size}',
+                    this.value
+                  )"
+                >
+
+              </label>
+
+            `).join("")}
+
+          </div>
+        `;
+      }
+
+      return `
+        <div class="admin-product">
+
+          <img
+            src="${product.image}"
+            alt="${escapeHtml(
+              product.name
+            )}"
+          >
+
+          <div>
+
+            <div class="admin-product-name">
+              ${escapeHtml(
+                product.name
+              )}
+            </div>
+
+            <div class="admin-product-meta">
+              ${escapeHtml(
+                product.category
+              )}
+              ·
+              ${
+                product.active
+                  ? "AKTIV"
+                  : "DEAKTIVIERT"
+              }
+            </div>
+
+          </div>
+
+          <div>
+
+            <label style="
+              display:block;
+              color:#777;
+              font-size:7px;
+              margin-bottom:5px;
+            ">
+              PREIS
+            </label>
+
+            <input
+              class="admin-input"
+              type="number"
+              min="0"
+              step="0.01"
+              value="${product.price}"
+              onchange="updateProductPrice(
+                ${product.id},
+                this.value
+              )"
+            >
+
+          </div>
+
+          <div>
+
+            <label style="
+              display:block;
+              color:#777;
+              font-size:7px;
+              margin-bottom:5px;
+            ">
+              LAGER
+            </label>
+
+            ${stockHtml}
+
+          </div>
+
+          <div class="admin-action">
+
+            <button
+              class="admin-small-button"
+              onclick="toggleProduct(
+                ${product.id}
+              )"
+            >
+              ${
+                product.active
+                  ? "DEAKTIVIEREN"
+                  : "AKTIVIEREN"
+              }
+            </button>
+
+          </div>
+
+        </div>
+      `;
+
+    }).join("");
+}
+
+function updateProductPrice(
+  id,
+  value
+){
+
+  const product =
+    getProduct(id);
+
+  if(!product){
+    return;
+  }
+
+  const price =
+    Number(value);
+
+  if(
+    !Number.isFinite(price) ||
+    price < 0
+  ){
+    return;
+  }
+
+  product.price =
+    Math.round(
+      price * 100
+    ) / 100;
+
+  renderProducts();
+
+  renderAdminProducts();
+}
+
+function updateProductStock(
+  id,
+  size,
+  value
+){
+
+  const product =
+    getProduct(id);
+
+  if(!product){
+    return;
+  }
+
+  let stock =
+    parseInt(value,10);
+
+  if(
+    !Number.isFinite(stock) ||
+    stock < 0
+  ){
+    stock = 0;
+  }
+
+  product.stock[size] =
+    stock;
+
+  renderProducts();
+
+  renderAdminStats();
+
+  renderAdminProducts();
+}
+
+function updateStickerStock(
+  id,
+  value
+){
+
+  const product =
+    getProduct(id);
+
+  if(!product){
+    return;
+  }
+
+  let stock =
+    parseInt(value,10);
+
+  if(
+    !Number.isFinite(stock) ||
+    stock < 0
+  ){
+    stock = 0;
+  }
+
+  product.stock =
+    stock;
+
+  renderProducts();
+
+  renderAdminStats();
+
+  renderAdminProducts();
+}
+
+function toggleProduct(id){
+
+  const product =
+    getProduct(id);
+
+  if(!product){
+    return;
+  }
+
+  product.active =
+    !product.active;
+
+  renderProducts();
+
+  renderAdminStats();
+
+  renderAdminProducts();
+}
+
+function renderAdminOrders(){
+
+  const container =
+    document.getElementById(
+      "adminOrdersList"
+    );
+
+  if(!container){
+    return;
+  }
+
+  if(!orders.length){
+
+    container.innerHTML = `
+      <div class="admin-empty">
+        NOCH KEINE BESTELLUNGEN VORHANDEN.
+      </div>
+    `;
+
+    return;
+  }
+
+  container.innerHTML =
+    orders.map(order => {
+
+      const items =
+        order.items.map(item => {
+
+          return `
+            <div class="admin-order-item">
+
+              <span>
+                ${escapeHtml(
+                  item.name
+                )}
+                ·
+                ${escapeHtml(
+                  item.size
+                )}
+                ×
+                ${item.quantity}
+              </span>
+
+              <strong>
+                ${formatPrice(
+                  item.price *
+                  item.quantity
+                )}
+              </strong>
+
+            </div>
+          `;
+
+        }).join("");
+
+      return `
+        <div class="admin-order">
+
+          <div class="admin-order-top">
+
+            <div>
+
+              <div class="admin-order-number">
+                ${escapeHtml(
+                  order.orderNumber
+                )}
+              </div>
+
+              <div class="admin-order-customer">
+                ${formatOrderDate(
+                  order.date
+                )}
+                <br>
+                ${escapeHtml(
+                  order.customer.firstName
+                )}
+                ${escapeHtml(
+                  order.customer.lastName
+                )}
+                ·
+                ${escapeHtml(
+                  order.customer.email
+                )}
+                <br>
+                ${escapeHtml(
+                  order.customer.street
+                )},
+                ${escapeHtml(
+                  order.customer.postal
+                )}
+                ${escapeHtml(
+                  order.customer.city
+                )}
+              </div>
+
+            </div>
+
+            <div class="order-status">
+              ${escapeHtml(
+                order.status
+              )}
+            </div>
+
+          </div>
+
+          <div class="admin-order-items">
+            ${items}
+          </div>
+
+          <div class="admin-order-total">
+
+            <span>
+              GESAMT
+            </span>
+
+            <strong>
+              ${formatPrice(
+                order.total
+              )}
+            </strong>
+
+          </div>
+
+        </div>
+      `;
+
+    }).join("");
+}
+
+
 /* =========================
-   CLICK OUTSIDE MODALS
+   MODAL CLICK OUTSIDE
 ========================= */
 
 document
@@ -3529,9 +5247,13 @@ document
       "click",
       function(event){
 
-        if(event.target === modal){
+        if(
+          event.target === modal
+        ){
 
-          modal.classList.remove("active");
+          modal.classList.remove(
+            "active"
+          );
 
         }
 
@@ -3539,6 +5261,29 @@ document
     );
 
   });
+
+
+/* =========================
+   SECRET ADMIN URL
+========================= */
+
+function checkAdminUrl(){
+
+  const path =
+    window.location.pathname
+      .toLowerCase()
+      .replace(/\/+$/,"");
+
+  if(
+    path === "/admin" ||
+    path.endsWith("/admin")
+  ){
+
+    openAdmin();
+
+  }
+
+}
 
 
 /* =========================
@@ -3550,6 +5295,14 @@ renderProducts();
 renderCart();
 
 updateCartCount();
+
+renderAccount();
+
+if(adminLoggedIn){
+  renderAdmin();
+}
+
+checkAdminUrl();
 
 </script>
 
