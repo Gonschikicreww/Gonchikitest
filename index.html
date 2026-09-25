@@ -571,6 +571,11 @@ footer{
 .footer-links a{
   font-size:10px;
   color:#888;
+  cursor:pointer;
+}
+
+.footer-links a:hover{
+  color:#fff;
 }
 
 .footer-bottom{
@@ -622,6 +627,101 @@ footer{
   font-weight:1000;
   z-index:2;
 }
+
+/* =========================
+   LEGAL PAGES
+========================= */
+
+.legal-box{
+  width:min(1000px,100%);
+  max-height:92vh;
+  padding:55px 45px 45px;
+}
+
+.legal-content{
+  color:#aaa;
+  font-size:12px;
+  line-height:1.8;
+}
+
+.legal-content h1{
+  color:#fff;
+  font-size:34px;
+  line-height:1.1;
+  margin-bottom:12px;
+}
+
+.legal-content h2{
+  color:#fff;
+  font-size:18px;
+  margin:30px 0 10px;
+}
+
+.legal-content h3{
+  color:#fff;
+  font-size:14px;
+  margin:20px 0 8px;
+}
+
+.legal-content p{
+  margin-bottom:12px;
+}
+
+.legal-content ul{
+  margin:10px 0 15px 20px;
+}
+
+.legal-content li{
+  margin-bottom:5px;
+}
+
+.legal-content strong{
+  color:#fff;
+}
+
+.legal-note{
+  padding:15px;
+  margin-bottom:25px;
+  border:1px solid #393939;
+  background:#151515;
+  color:#aaa;
+  font-size:10px;
+  line-height:1.7;
+}
+
+.legal-placeholder{
+  color:#fff;
+  background:#222;
+  border:1px dashed #555;
+  padding:2px 5px;
+}
+
+.legal-nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-bottom:25px;
+  padding-bottom:20px;
+  border-bottom:1px solid #222;
+}
+
+.legal-nav button{
+  background:#111;
+  border:1px solid #333;
+  color:#fff;
+  padding:9px 12px;
+  font-size:9px;
+  font-weight:900;
+}
+
+.legal-nav button.active{
+  background:#fff;
+  color:#000;
+}
+
+/* =========================
+   PRODUCT MODAL
+========================= */
 
 .product-modal-content{
   display:grid;
@@ -1323,10 +1423,6 @@ footer{
   color:#000;
 }
 
-.admin-small-button.danger{
-  color:#aaa;
-}
-
 .admin-orders{
   display:flex;
   flex-direction:column;
@@ -1544,8 +1640,13 @@ footer{
   .account-box,
   .form-box,
   .admin-box,
-  .admin-login-box{
+  .admin-login-box,
+  .legal-box{
     padding:25px 18px;
+  }
+
+  .legal-content h1{
+    font-size:27px;
   }
 
   .cart-item{
@@ -1654,10 +1755,6 @@ footer{
 </header>
 
 
-<!-- =========================
-     HERO
-========================= -->
-
 <section class="hero" id="home">
 
   <div class="hero-content">
@@ -1690,10 +1787,6 @@ footer{
 
 </section>
 
-
-<!-- =========================
-     SHOP
-========================= -->
 
 <section class="shop-section" id="shop">
 
@@ -1779,10 +1872,6 @@ footer{
 </section>
 
 
-<!-- =========================
-     CARS
-========================= -->
-
 <section class="cars-section" id="cars">
 
   <h2 class="section-title">
@@ -1796,93 +1885,59 @@ footer{
   <div class="cars-grid">
 
     <div class="car">
-
       <div class="car-image">
-        <img
-          src="assets/Car-1.JPG"
-          alt="Gonschiki Car 1"
-        >
+        <img src="assets/Car-1.JPG" alt="Gonschiki Car 1">
       </div>
-
       <div class="car-info">
         <h3>GONSHIKI — 01</h3>
         <p>Built for the night.</p>
       </div>
-
     </div>
 
     <div class="car">
-
       <div class="car-image">
-        <img
-          src="assets/Car-2.JPG"
-          alt="Gonschiki Car 2"
-        >
+        <img src="assets/Car-2.JPG" alt="Gonschiki Car 2">
       </div>
-
       <div class="car-info">
         <h3>GONSHIKI — 02</h3>
         <p>Street culture meets machines.</p>
       </div>
-
     </div>
 
     <div class="car">
-
       <div class="car-image">
-        <img
-          src="assets/Car-3.jpg"
-          alt="Gonschiki Car 3"
-        >
+        <img src="assets/Car-3.jpg" alt="Gonschiki Car 3">
       </div>
-
       <div class="car-info">
         <h3>GONSHIKI — 03</h3>
         <p>No limits. No shortcuts.</p>
       </div>
-
     </div>
 
     <div class="car">
-
       <div class="car-image">
-        <img
-          src="assets/Car-4.jpg"
-          alt="Gonschiki Car 4"
-        >
+        <img src="assets/Car-4.jpg" alt="Gonschiki Car 4">
       </div>
-
       <div class="car-info">
         <h3>GONSHIKI — 04</h3>
         <p>Own your lane.</p>
       </div>
-
     </div>
 
     <div class="car">
-
       <div class="car-image">
-        <img
-          src="assets/Car-5.jpg"
-          alt="Gonschiki Car 5"
-        >
+        <img src="assets/Car-5.jpg" alt="Gonschiki Car 5">
       </div>
-
       <div class="car-info">
         <h3>GONSHIKI — 05</h3>
         <p>Drive your own style.</p>
       </div>
-
     </div>
 
   </div>
 
 </section>
 
-
-<!-- =========================
-     EVENTS
-========================= -->
 
 <section class="events-section" id="events">
 
@@ -1910,10 +1965,6 @@ footer{
 
 </section>
 
-
-<!-- =========================
-     ABOUT
-========================= -->
 
 <section class="about-section" id="about">
 
@@ -1947,10 +1998,6 @@ footer{
 
 </section>
 
-
-<!-- =========================
-     CONTACT
-========================= -->
 
 <section class="contact-section" id="contact">
 
@@ -1989,10 +2036,6 @@ footer{
 </section>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
   <div class="footer-top">
@@ -2007,8 +2050,22 @@ footer{
       <a href="#events">EVENTS</a>
       <a href="#about">ABOUT</a>
       <a href="#contact">KONTAKT</a>
-      <a href="#">IMPRESSUM</a>
-      <a href="#">DATENSCHUTZ</a>
+
+      <a href="#" onclick="openLegal('impressum');return false;">
+        IMPRESSUM
+      </a>
+
+      <a href="#" onclick="openLegal('datenschutz');return false;">
+        DATENSCHUTZ
+      </a>
+
+      <a href="#" onclick="openLegal('widerruf');return false;">
+        WIDERRUF
+      </a>
+
+      <a href="#" onclick="openLegal('agb');return false;">
+        AGB
+      </a>
     </div>
 
   </div>
@@ -2024,69 +2081,41 @@ footer{
      PRODUCT MODAL
 ========================= -->
 
-<div
-  class="modal"
-  id="productModal"
->
+<div class="modal" id="productModal">
 
   <div class="modal-box">
 
-    <button
-      class="modal-close"
-      onclick="closeProduct()"
-    >
+    <button class="modal-close" onclick="closeProduct()">
       ×
     </button>
 
     <div class="product-modal-content">
 
       <div class="modal-product-image">
-        <img
-          id="modalImage"
-          src=""
-          alt=""
-        >
+        <img id="modalImage" src="" alt="">
       </div>
 
       <div class="modal-product-info">
 
-        <span
-          class="small-label"
-          id="modalCategory"
-        ></span>
+        <span class="small-label" id="modalCategory"></span>
 
         <h2 id="modalName"></h2>
 
-        <div
-          class="modal-price"
-          id="modalPrice"
-        ></div>
+        <div class="modal-price" id="modalPrice"></div>
 
-        <p
-          class="modal-description"
-          id="modalDescription"
-        ></p>
+        <p class="modal-description" id="modalDescription"></p>
 
         <div id="sizeArea">
 
-          <span
-            class="option-label"
-            id="sizeLabel"
-          >
+          <span class="option-label" id="sizeLabel">
             GRÖSSE
           </span>
 
-          <div
-            class="size-options"
-            id="sizeOptions"
-          ></div>
+          <div class="size-options" id="sizeOptions"></div>
 
         </div>
 
-        <div
-          class="modal-stock"
-          id="modalStock"
-        ></div>
+        <div class="modal-stock" id="modalStock"></div>
 
         <div class="quantity-box">
 
@@ -2125,17 +2154,11 @@ footer{
      CART MODAL
 ========================= -->
 
-<div
-  class="modal"
-  id="cartModal"
->
+<div class="modal" id="cartModal">
 
   <div class="modal-box cart-box">
 
-    <button
-      class="modal-close"
-      onclick="closeCart()"
-    >
+    <button class="modal-close" onclick="closeCart()">
       ×
     </button>
 
@@ -2154,17 +2177,11 @@ footer{
      CHECKOUT
 ========================= -->
 
-<div
-  class="modal"
-  id="checkoutModal"
->
+<div class="modal" id="checkoutModal">
 
   <div class="modal-box form-box">
 
-    <button
-      class="modal-close"
-      onclick="closeCheckout()"
-    >
+    <button class="modal-close" onclick="closeCheckout()">
       ×
     </button>
 
@@ -2178,70 +2195,45 @@ footer{
       Bestellung an ein Shopsystem übertragen.
     </div>
 
-    <form
-      id="checkoutForm"
-      onsubmit="placeOrder(event)"
-    >
+    <form id="checkoutForm" onsubmit="placeOrder(event)">
 
       <div class="form-grid">
 
         <div class="form-group">
           <label>VORNAME</label>
-          <input
-            id="checkoutFirstName"
-            required
-          >
+          <input id="checkoutFirstName" required>
         </div>
 
         <div class="form-group">
           <label>NACHNAME</label>
-          <input
-            id="checkoutLastName"
-            required
-          >
+          <input id="checkoutLastName" required>
         </div>
 
         <div class="form-group full">
           <label>E-MAIL</label>
-          <input
-            id="checkoutEmail"
-            type="email"
-            required
-          >
+          <input id="checkoutEmail" type="email" required>
         </div>
 
         <div class="form-group full">
           <label>STRASSE &amp; HAUSNUMMER</label>
-          <input
-            id="checkoutStreet"
-            required
-          >
+          <input id="checkoutStreet" required>
         </div>
 
         <div class="form-group">
           <label>PLZ</label>
-          <input
-            id="checkoutPostal"
-            required
-          >
+          <input id="checkoutPostal" required>
         </div>
 
         <div class="form-group">
           <label>ORT</label>
-          <input
-            id="checkoutCity"
-            required
-          >
+          <input id="checkoutCity" required>
         </div>
 
       </div>
 
       <div id="checkoutSummary"></div>
 
-      <button
-        class="light-button"
-        type="submit"
-      >
+      <button class="light-button" type="submit">
         BESTELLUNG AUFGEBEN
       </button>
 
@@ -2256,17 +2248,11 @@ footer{
      ACCOUNT
 ========================= -->
 
-<div
-  class="modal"
-  id="accountModal"
->
+<div class="modal" id="accountModal">
 
   <div class="modal-box account-box">
 
-    <button
-      class="modal-close"
-      onclick="closeAccount()"
-    >
+    <button class="modal-close" onclick="closeAccount()">
       ×
     </button>
 
@@ -2290,24 +2276,15 @@ footer{
      AUTH
 ========================= -->
 
-<div
-  class="modal"
-  id="authModal"
->
+<div class="modal" id="authModal">
 
   <div class="modal-box form-box">
 
-    <button
-      class="modal-close"
-      onclick="closeAuth()"
-    >
+    <button class="modal-close" onclick="closeAuth()">
       ×
     </button>
 
-    <div
-      class="modal-title"
-      id="authTitle"
-    >
+    <div class="modal-title" id="authTitle">
       ACCOUNT ERSTELLEN
     </div>
 
@@ -2315,41 +2292,24 @@ footer{
       DEMO-FUNKTION FÜR DIE SHOP-VORSCHAU.
     </div>
 
-    <form
-      id="authForm"
-      onsubmit="handleAuth(event)"
-    >
+    <form id="authForm" onsubmit="handleAuth(event)">
 
       <div class="form-group">
         <label>NAME</label>
-        <input
-          id="authName"
-          required
-        >
+        <input id="authName" required>
       </div>
 
       <div class="form-group">
         <label>E-MAIL</label>
-        <input
-          id="authEmail"
-          type="email"
-          required
-        >
+        <input id="authEmail" type="email" required>
       </div>
 
       <div class="form-group">
         <label>PASSWORT</label>
-        <input
-          id="authPassword"
-          type="password"
-          required
-        >
+        <input id="authPassword" type="password" required>
       </div>
 
-      <button
-        class="light-button"
-        type="submit"
-      >
+      <button class="light-button" type="submit">
         ACCOUNT ERSTELLEN
       </button>
 
@@ -2361,20 +2321,60 @@ footer{
 
 
 <!-- =========================
+     LEGAL MODAL
+========================= -->
+
+<div class="modal" id="legalModal">
+
+  <div class="modal-box legal-box">
+
+    <button class="modal-close" onclick="closeLegal()">
+      ×
+    </button>
+
+    <div class="legal-nav">
+
+      <button id="legalTabImpressum"
+        onclick="openLegal('impressum')">
+        IMPRESSUM
+      </button>
+
+      <button id="legalTabDatenschutz"
+        onclick="openLegal('datenschutz')">
+        DATENSCHUTZ
+      </button>
+
+      <button id="legalTabWiderruf"
+        onclick="openLegal('widerruf')">
+        WIDERRUF
+      </button>
+
+      <button id="legalTabAgb"
+        onclick="openLegal('agb')">
+        AGB
+      </button>
+
+    </div>
+
+    <div
+      class="legal-content"
+      id="legalContent"
+    ></div>
+
+  </div>
+
+</div>
+
+
+<!-- =========================
      ADMIN LOGIN
 ========================= -->
 
-<div
-  class="modal"
-  id="adminLoginModal"
->
+<div class="modal" id="adminLoginModal">
 
   <div class="modal-box admin-login-box">
 
-    <button
-      class="modal-close"
-      onclick="closeAdminLogin()"
-    >
+    <button class="modal-close" onclick="closeAdminLogin()">
       ×
     </button>
 
@@ -2423,10 +2423,7 @@ footer{
 
       </div>
 
-      <button
-        class="light-button"
-        type="submit"
-      >
+      <button class="light-button" type="submit">
         ADMIN ANMELDEN
       </button>
 
@@ -2441,10 +2438,7 @@ footer{
      ADMIN DASHBOARD
 ========================= -->
 
-<div
-  class="modal"
-  id="adminModal"
->
+<div class="modal" id="adminModal">
 
   <div class="modal-box admin-box">
 
@@ -2462,10 +2456,7 @@ footer{
 
       </div>
 
-      <button
-        class="admin-logout"
-        onclick="adminLogout()"
-      >
+      <button class="admin-logout" onclick="adminLogout()">
         ABMELDEN
       </button>
 
@@ -2503,18 +2494,9 @@ footer{
 
     </div>
 
+    <div class="admin-section active" id="adminDashboard">
 
-    <!-- DASHBOARD -->
-
-    <div
-      class="admin-section active"
-      id="adminDashboard"
-    >
-
-      <div
-        class="admin-stat-grid"
-        id="adminStats"
-      ></div>
+      <div class="admin-stat-grid" id="adminStats"></div>
 
       <div class="admin-empty">
 
@@ -2531,13 +2513,7 @@ footer{
 
     </div>
 
-
-    <!-- PRODUCTS -->
-
-    <div
-      class="admin-section"
-      id="adminProducts"
-    >
+    <div class="admin-section" id="adminProducts">
 
       <div
         class="admin-products"
@@ -2546,13 +2522,7 @@ footer{
 
     </div>
 
-
-    <!-- ORDERS -->
-
-    <div
-      class="admin-section"
-      id="adminOrders"
-    >
+    <div class="admin-section" id="adminOrders">
 
       <div
         class="admin-orders"
@@ -2583,12 +2553,7 @@ const products = [
     description:"Schwarzes Gonschiki Shirt mit dem charakteristischen Russia-Motiv.",
     gender:["Männer","Frauen"],
     sizes:["S","M","L","XL"],
-    stock:{
-      S:10,
-      M:10,
-      L:10,
-      XL:10
-    },
+    stock:{S:10,M:10,L:10,XL:10},
     sticker:false,
     active:true
   },
@@ -2602,12 +2567,7 @@ const products = [
     description:"Schwarzer Gonschiki Zipper mit Kreuz-Motiv.",
     gender:["Männer","Frauen"],
     sizes:["S","M","L","XL"],
-    stock:{
-      S:10,
-      M:10,
-      L:10,
-      XL:10
-    },
+    stock:{S:10,M:10,L:10,XL:10},
     sticker:false,
     active:true
   },
@@ -2621,12 +2581,7 @@ const products = [
     description:"Schwarzer Hoodie mit E36-Motiv für die Gonschiki Crew.",
     gender:["Männer","Frauen"],
     sizes:["S","M","L","XL"],
-    stock:{
-      S:10,
-      M:10,
-      L:10,
-      XL:10
-    },
+    stock:{S:10,M:10,L:10,XL:10},
     sticker:false,
     active:true
   },
@@ -2640,12 +2595,7 @@ const products = [
     description:"Schwarzer Hoodie mit E34-Motiv.",
     gender:["Männer","Frauen"],
     sizes:["S","M","L","XL"],
-    stock:{
-      S:10,
-      M:10,
-      L:10,
-      XL:10
-    },
+    stock:{S:10,M:10,L:10,XL:10},
     sticker:false,
     active:true
   },
@@ -2659,12 +2609,7 @@ const products = [
     description:"Schwarzer Gonschiki Hoodie mit Kreuz-Motiv.",
     gender:["Männer","Frauen"],
     sizes:["S","M","L","XL"],
-    stock:{
-      S:10,
-      M:10,
-      L:10,
-      XL:10
-    },
+    stock:{S:10,M:10,L:10,XL:10},
     sticker:false,
     active:true
   },
@@ -2678,12 +2623,7 @@ const products = [
     description:"Schwarzes Gonschiki Shirt mit E36-Motiv.",
     gender:["Männer","Frauen"],
     sizes:["S","M","L","XL"],
-    stock:{
-      S:10,
-      M:10,
-      L:10,
-      XL:10
-    },
+    stock:{S:10,M:10,L:10,XL:10},
     sticker:false,
     active:true
   },
@@ -2697,12 +2637,7 @@ const products = [
     description:"Schwarzer Hoodie mit Gonschiki Russia-Motiv.",
     gender:["Männer","Frauen"],
     sizes:["S","M","L","XL"],
-    stock:{
-      S:10,
-      M:10,
-      L:10,
-      XL:10
-    },
+    stock:{S:10,M:10,L:10,XL:10},
     sticker:false,
     active:true
   },
@@ -2716,12 +2651,7 @@ const products = [
     description:"Schwarzes Gonschiki Shirt mit E34-Motiv.",
     gender:["Männer","Frauen"],
     sizes:["S","M","L","XL"],
-    stock:{
-      S:10,
-      M:10,
-      L:10,
-      XL:10
-    },
+    stock:{S:10,M:10,L:10,XL:10},
     sticker:false,
     active:true
   },
@@ -2735,12 +2665,7 @@ const products = [
     description:"Beiger Hoodie mit E36-Motiv.",
     gender:["Männer","Frauen"],
     sizes:["S","M","L","XL"],
-    stock:{
-      S:10,
-      M:10,
-      L:10,
-      XL:10
-    },
+    stock:{S:10,M:10,L:10,XL:10},
     sticker:false,
     active:true
   },
@@ -2754,12 +2679,7 @@ const products = [
     description:"Schwarze Gonschiki Pants.",
     gender:["Männer","Frauen"],
     sizes:["S","M","L","XL"],
-    stock:{
-      S:10,
-      M:10,
-      L:10,
-      XL:10
-    },
+    stock:{S:10,M:10,L:10,XL:10},
     sticker:false,
     active:true
   },
@@ -2870,7 +2790,6 @@ function saveAccount(){
 ========================= */
 
 function formatPrice(price){
-
   return price.toLocaleString(
     "de-DE",
     {
@@ -2881,7 +2800,6 @@ function formatPrice(price){
 }
 
 function escapeHtml(value){
-
   return String(value ?? "")
     .replace(/&/g,"&amp;")
     .replace(/</g,"&lt;")
@@ -2891,7 +2809,6 @@ function escapeHtml(value){
 }
 
 function getProduct(id){
-
   return products.find(
     product =>
       product.id === Number(id)
@@ -2933,7 +2850,6 @@ function getTotalProductStock(product){
 }
 
 function isProductAvailable(product){
-
   return getTotalProductStock(product) > 0;
 }
 
@@ -2972,11 +2888,7 @@ function renderProducts(){
         return false;
       }
 
-      if(
-        !product.gender.includes(
-          currentGender
-        )
-      ){
+      if(!product.gender.includes(currentGender)){
         return false;
       }
 
@@ -3022,15 +2934,10 @@ function renderProducts(){
 
             <img
               src="${product.image}"
-              alt="${escapeHtml(
-                product.name
-              )}"
+              alt="${escapeHtml(product.name)}"
             >
 
-            <div
-              class="product-stock
-              ${soldOut ? "soldout" : ""}"
-            >
+            <div class="product-stock ${soldOut ? "soldout" : ""}">
               ${
                 soldOut
                   ? "AUSVERKAUFT"
@@ -3043,21 +2950,15 @@ function renderProducts(){
           <div class="product-info">
 
             <div class="product-category">
-              ${escapeHtml(
-                product.category
-              )}
+              ${escapeHtml(product.category)}
             </div>
 
             <h3>
-              ${escapeHtml(
-                product.name
-              )}
+              ${escapeHtml(product.name)}
             </h3>
 
             <div class="product-price">
-              ${formatPrice(
-                product.price
-              )}
+              ${formatPrice(product.price)}
             </div>
 
             <button
@@ -3065,11 +2966,7 @@ function renderProducts(){
               onclick="openProduct(${product.id})"
               ${soldOut ? "disabled" : ""}
             >
-              ${
-                soldOut
-                  ? "AUSVERKAUFT"
-                  : "ANSCHAUEN"
-              }
+              ${soldOut ? "AUSVERKAUFT" : "ANSCHAUEN"}
             </button>
 
           </div>
@@ -3080,10 +2977,7 @@ function renderProducts(){
     }).join("");
 }
 
-function filterProducts(
-  category,
-  button
-){
+function filterProducts(category,button){
 
   currentCategory = category;
 
@@ -3104,17 +2998,11 @@ function switchGender(gender){
 
   document
     .getElementById("genderMale")
-    .classList.toggle(
-      "active",
-      gender === "Männer"
-    );
+    .classList.toggle("active",gender === "Männer");
 
   document
     .getElementById("genderFemale")
-    .classList.toggle(
-      "active",
-      gender === "Frauen"
-    );
+    .classList.toggle("active",gender === "Frauen");
 
   renderProducts();
 }
@@ -3126,13 +3014,9 @@ function switchGender(gender){
 
 function openProduct(id){
 
-  const product =
-    getProduct(id);
+  const product = getProduct(id);
 
-  if(
-    !product ||
-    !isProductAvailable(product)
-  ){
+  if(!product || !isProductAvailable(product)){
     return;
   }
 
@@ -3140,111 +3024,53 @@ function openProduct(id){
   modalQuantity = 1;
 
   if(product.sticker){
-
     selectedSize = product.size;
-
   }else{
-
     selectedSize =
       product.sizes.find(
         size =>
-          getStockForSize(
-            product,
-            size
-          ) > 0
+          getStockForSize(product,size) > 0
       ) || product.sizes[0];
   }
 
-  document.getElementById(
-    "modalImage"
-  ).src = product.image;
+  document.getElementById("modalImage").src = product.image;
+  document.getElementById("modalImage").alt = product.name;
+  document.getElementById("modalCategory").textContent = product.category;
+  document.getElementById("modalName").textContent = product.name;
+  document.getElementById("modalPrice").textContent = formatPrice(product.price);
+  document.getElementById("modalDescription").textContent = product.description;
+  document.getElementById("modalQuantity").textContent = modalQuantity;
 
-  document.getElementById(
-    "modalImage"
-  ).alt = product.name;
-
-  document.getElementById(
-    "modalCategory"
-  ).textContent =
-    product.category;
-
-  document.getElementById(
-    "modalName"
-  ).textContent =
-    product.name;
-
-  document.getElementById(
-    "modalPrice"
-  ).textContent =
-    formatPrice(product.price);
-
-  document.getElementById(
-    "modalDescription"
-  ).textContent =
-    product.description;
-
-  document.getElementById(
-    "modalQuantity"
-  ).textContent =
-    modalQuantity;
-
-  const sizeArea =
-    document.getElementById(
-      "sizeArea"
-    );
-
-  const sizeOptions =
-    document.getElementById(
-      "sizeOptions"
-    );
+  const sizeArea = document.getElementById("sizeArea");
+  const sizeOptions = document.getElementById("sizeOptions");
 
   if(product.sticker){
 
-    sizeArea.style.display =
-      "block";
+    sizeArea.style.display = "block";
 
-    document.getElementById(
-      "sizeLabel"
-    ).textContent =
-      "FORMAT";
+    document.getElementById("sizeLabel").textContent = "FORMAT";
 
     sizeOptions.innerHTML = `
-      <button
-        class="size-option active"
-        disabled
-      >
-        ${escapeHtml(
-          product.size
-        )}
+      <button class="size-option active" disabled>
+        ${escapeHtml(product.size)}
       </button>
     `;
 
   }else{
 
-    sizeArea.style.display =
-      "block";
+    sizeArea.style.display = "block";
 
-    document.getElementById(
-      "sizeLabel"
-    ).textContent =
-      "GRÖSSE";
+    document.getElementById("sizeLabel").textContent = "GRÖSSE";
 
     sizeOptions.innerHTML =
       product.sizes.map(size => {
 
-        const stock =
-          getStockForSize(
-            product,
-            size
-          );
-
-        const active =
-          selectedSize === size;
+        const stock = getStockForSize(product,size);
+        const active = selectedSize === size;
 
         return `
           <button
-            class="size-option
-            ${active ? "active" : ""}"
+            class="size-option ${active ? "active" : ""}"
             onclick="selectSize('${size}')"
             ${stock <= 0 ? "disabled" : ""}
           >
@@ -3258,18 +3084,14 @@ function openProduct(id){
   updateModalStock();
 
   document
-    .getElementById(
-      "productModal"
-    )
+    .getElementById("productModal")
     .classList.add("active");
 }
 
 function closeProduct(){
 
   document
-    .getElementById(
-      "productModal"
-    )
+    .getElementById("productModal")
     .classList.remove("active");
 
   selectedProduct = null;
@@ -3281,21 +3103,14 @@ function selectSize(size){
     return;
   }
 
-  if(
-    getStockForSize(
-      selectedProduct,
-      size
-    ) <= 0
-  ){
+  if(getStockForSize(selectedProduct,size) <= 0){
     return;
   }
 
   selectedSize = size;
 
   document
-    .querySelectorAll(
-      "#sizeOptions .size-option"
-    )
+    .querySelectorAll("#sizeOptions .size-option")
     .forEach(button => {
 
       button.classList.toggle(
@@ -3307,10 +3122,7 @@ function selectSize(size){
 
   modalQuantity = 1;
 
-  document.getElementById(
-    "modalQuantity"
-  ).textContent =
-    modalQuantity;
+  document.getElementById("modalQuantity").textContent = modalQuantity;
 
   updateModalStock();
 }
@@ -3334,22 +3146,15 @@ function updateModalStock(){
     );
 
   const remaining =
-    Math.max(
-      0,
-      stock - cartQuantity
-    );
+    Math.max(0,stock-cartQuantity);
 
-  document.getElementById(
-    "modalStock"
-  ).textContent =
+  document.getElementById("modalStock").textContent =
     remaining > 0
       ? `${remaining} NOCH VERFÜGBAR`
       : "AUSVERKAUFT";
 
   const button =
-    document.getElementById(
-      "modalAddButton"
-    );
+    document.getElementById("modalAddButton");
 
   button.disabled =
     remaining <= 0 ||
@@ -3380,10 +3185,7 @@ function changeModalQuantity(change){
     );
 
   const available =
-    Math.max(
-      0,
-      stock - alreadyInCart
-    );
+    Math.max(0,stock-alreadyInCart);
 
   modalQuantity += change;
 
@@ -3391,16 +3193,11 @@ function changeModalQuantity(change){
     modalQuantity = 1;
   }
 
-  if(
-    modalQuantity > available
-  ){
+  if(modalQuantity > available){
     modalQuantity = available;
   }
 
-  document.getElementById(
-    "modalQuantity"
-  ).textContent =
-    modalQuantity;
+  document.getElementById("modalQuantity").textContent = modalQuantity;
 
   updateModalStock();
 }
@@ -3424,109 +3221,69 @@ function addToCart(){
 
   const existing =
     cart.find(item =>
-      Number(item.productId) ===
-        Number(selectedProduct.id) &&
+      Number(item.productId) === Number(selectedProduct.id) &&
       item.size === selectedSize
     );
 
   const currentQuantity =
-    existing
-      ? existing.quantity
-      : 0;
+    existing ? existing.quantity : 0;
 
-  if(
-    currentQuantity +
-    modalQuantity >
-    stock
-  ){
+  if(currentQuantity + modalQuantity > stock){
 
-    alert(
-      "Diese Menge ist nicht mehr verfügbar."
-    );
+    alert("Diese Menge ist nicht mehr verfügbar.");
 
     return;
   }
 
   if(existing){
-
-    existing.quantity +=
-      modalQuantity;
-
+    existing.quantity += modalQuantity;
   }else{
-
     cart.push({
       productId:selectedProduct.id,
       size:selectedSize,
       quantity:modalQuantity
     });
-
   }
 
   saveCart();
-
   updateCartCount();
-
   closeProduct();
-
   renderCart();
-
   openCart();
 }
 
-function changeQuantity(
-  index,
-  change
-){
+function changeQuantity(index,change){
 
-  const item =
-    cart[index];
+  const item = cart[index];
 
   if(!item){
     return;
   }
 
   const product =
-    getProduct(
-      item.productId
-    );
+    getProduct(item.productId);
 
   if(!product){
     return;
   }
 
   const stock =
-    getStockForSize(
-      product,
-      item.size
-    );
+    getStockForSize(product,item.size);
 
   const newQuantity =
     item.quantity + change;
 
   if(newQuantity <= 0){
-
     cart.splice(index,1);
-
-  }else if(
-    newQuantity <= stock
-  ){
-
-    item.quantity =
-      newQuantity;
-
+  }else if(newQuantity <= stock){
+    item.quantity = newQuantity;
   }else{
-
-    alert(
-      "Maximaler Lagerbestand erreicht."
-    );
-
+    alert("Maximaler Lagerbestand erreicht.");
     return;
   }
 
   saveCart();
-
   renderCart();
-
   updateCartCount();
 }
 
@@ -3535,9 +3292,7 @@ function removeCartItem(index){
   cart.splice(index,1);
 
   saveCart();
-
   renderCart();
-
   updateCartCount();
 }
 
@@ -3550,53 +3305,42 @@ function clearCart(){
   cart = [];
 
   saveCart();
-
   renderCart();
-
   updateCartCount();
 }
 
 function getCartSubtotal(){
 
-  return cart.reduce(
-    (sum,item) => {
+  return cart.reduce((sum,item) => {
 
-      const product =
-        getProduct(
-          item.productId
-        );
+    const product =
+      getProduct(item.productId);
 
-      if(!product){
-        return sum;
-      }
+    if(!product){
+      return sum;
+    }
 
-      return sum +
-        product.price *
-        item.quantity;
+    return sum +
+      product.price *
+      item.quantity;
 
-    },
-    0
-  );
+  },0);
 }
 
 function getShipping(){
 
-  const subtotal =
-    getCartSubtotal();
+  const subtotal = getCartSubtotal();
 
   if(subtotal <= 0){
     return 0;
   }
 
-  return subtotal >= 100
-    ? 0
-    : 5.99;
+  return subtotal >= 100 ? 0 : 5.99;
 }
 
 function getCartTotal(){
 
-  return getCartSubtotal() +
-    getShipping();
+  return getCartSubtotal() + getShipping();
 }
 
 function updateCartCount(){
@@ -3604,23 +3348,17 @@ function updateCartCount(){
   const count =
     cart.reduce(
       (sum,item) =>
-        sum +
-        Number(item.quantity),
+        sum + Number(item.quantity),
       0
     );
 
-  document.getElementById(
-    "cartCount"
-  ).textContent =
-    count;
+  document.getElementById("cartCount").textContent = count;
 }
 
 function renderCart(){
 
   const container =
-    document.getElementById(
-      "cartItems"
-    );
+    document.getElementById("cartItems");
 
   if(!cart.length){
 
@@ -3634,102 +3372,73 @@ function renderCart(){
   }
 
   const itemsHtml =
-    cart.map(
-      (item,index) => {
+    cart.map((item,index) => {
 
-        const product =
-          getProduct(
-            item.productId
-          );
+      const product =
+        getProduct(item.productId);
 
-        if(!product){
-          return "";
-        }
+      if(!product){
+        return "";
+      }
 
-        const itemTotal =
-          product.price *
-          item.quantity;
+      const itemTotal =
+        product.price * item.quantity;
 
-        return `
-          <div class="cart-item">
+      return `
+        <div class="cart-item">
 
-            <img
-              src="${product.image}"
-              alt="${escapeHtml(
-                product.name
-              )}"
-            >
+          <img
+            src="${product.image}"
+            alt="${escapeHtml(product.name)}"
+          >
 
-            <div>
+          <div>
 
-              <div class="cart-item-name">
-                ${escapeHtml(
-                  product.name
-                )}
-              </div>
+            <div class="cart-item-name">
+              ${escapeHtml(product.name)}
+            </div>
 
-              <div class="cart-item-meta">
-                ${escapeHtml(
-                  item.size
-                )}
-              </div>
+            <div class="cart-item-meta">
+              ${escapeHtml(item.size)}
+            </div>
 
-              <div class="cart-item-price">
-                ${formatPrice(
-                  itemTotal
-                )}
-              </div>
+            <div class="cart-item-price">
+              ${formatPrice(itemTotal)}
+            </div>
 
-              <div class="cart-quantity">
+            <div class="cart-quantity">
 
-                <button
-                  onclick="changeQuantity(
-                    ${index},
-                    -1
-                  )"
-                >
-                  −
-                </button>
+              <button onclick="changeQuantity(${index},-1)">
+                −
+              </button>
 
-                <strong>
-                  ${item.quantity}
-                </strong>
+              <strong>
+                ${item.quantity}
+              </strong>
 
-                <button
-                  onclick="changeQuantity(
-                    ${index},
-                    1
-                  )"
-                >
-                  +
-                </button>
-
-              </div>
-
-              <button
-                class="cart-remove"
-                onclick="removeCartItem(
-                  ${index}
-                )"
-              >
-                ENTFERNEN
+              <button onclick="changeQuantity(${index},1)">
+                +
               </button>
 
             </div>
 
+            <button
+              class="cart-remove"
+              onclick="removeCartItem(${index})"
+            >
+              ENTFERNEN
+            </button>
+
           </div>
-        `;
-      }
-    ).join("");
 
-  const subtotal =
-    getCartSubtotal();
+        </div>
+      `;
 
-  const shipping =
-    getShipping();
+    }).join("");
 
-  const total =
-    getCartTotal();
+  const subtotal = getCartSubtotal();
+  const shipping = getShipping();
+  const total = getCartTotal();
 
   container.innerHTML = `
 
@@ -3741,41 +3450,26 @@ function renderCart(){
 
       <div class="summary-row">
         <span>ZWISCHENSUMME</span>
-        <strong>
-          ${formatPrice(subtotal)}
-        </strong>
+        <strong>${formatPrice(subtotal)}</strong>
       </div>
 
       <div class="summary-row">
         <span>VERSAND</span>
         <strong>
-          ${
-            shipping === 0
-              ? "KOSTENLOS"
-              : formatPrice(shipping)
-          }
+          ${shipping === 0 ? "KOSTENLOS" : formatPrice(shipping)}
         </strong>
       </div>
 
       <div class="summary-row summary-total">
         <span>GESAMT</span>
-        <strong>
-          ${formatPrice(total)}
-        </strong>
+        <strong>${formatPrice(total)}</strong>
       </div>
 
       ${
         subtotal < 100
           ? `
-            <div style="
-              color:#666;
-              font-size:9px;
-              margin-top:12px;
-            ">
-              NOCH
-              ${formatPrice(
-                100 - subtotal
-              )}
+            <div style="color:#666;font-size:9px;margin-top:12px;">
+              NOCH ${formatPrice(100-subtotal)}
               BIS ZUM KOSTENLOSEN VERSAND.
             </div>
           `
@@ -3804,28 +3498,19 @@ function renderCart(){
   `;
 }
 
-
-/* =========================
-   CART MODAL
-========================= */
-
 function openCart(){
 
   renderCart();
 
   document
-    .getElementById(
-      "cartModal"
-    )
+    .getElementById("cartModal")
     .classList.add("active");
 }
 
 function closeCart(){
 
   document
-    .getElementById(
-      "cartModal"
-    )
+    .getElementById("cartModal")
     .classList.remove("active");
 }
 
@@ -3838,9 +3523,7 @@ function openCheckout(){
 
   if(!cart.length){
 
-    alert(
-      "Dein Warenkorb ist leer."
-    );
+    alert("Dein Warenkorb ist leer.");
 
     return;
   }
@@ -3850,36 +3533,25 @@ function openCheckout(){
   renderCheckoutSummary();
 
   document
-    .getElementById(
-      "checkoutModal"
-    )
+    .getElementById("checkoutModal")
     .classList.add("active");
 }
 
 function closeCheckout(){
 
   document
-    .getElementById(
-      "checkoutModal"
-    )
+    .getElementById("checkoutModal")
     .classList.remove("active");
 }
 
 function renderCheckoutSummary(){
 
   const container =
-    document.getElementById(
-      "checkoutSummary"
-    );
+    document.getElementById("checkoutSummary");
 
-  const subtotal =
-    getCartSubtotal();
-
-  const shipping =
-    getShipping();
-
-  const total =
-    getCartTotal();
+  const subtotal = getCartSubtotal();
+  const shipping = getShipping();
+  const total = getCartTotal();
 
   container.innerHTML = `
 
@@ -3890,27 +3562,19 @@ function renderCheckoutSummary(){
 
       <div class="summary-row">
         <span>ZWISCHENSUMME</span>
-        <strong>
-          ${formatPrice(subtotal)}
-        </strong>
+        <strong>${formatPrice(subtotal)}</strong>
       </div>
 
       <div class="summary-row">
         <span>VERSAND</span>
         <strong>
-          ${
-            shipping === 0
-              ? "KOSTENLOS"
-              : formatPrice(shipping)
-          }
+          ${shipping === 0 ? "KOSTENLOS" : formatPrice(shipping)}
         </strong>
       </div>
 
       <div class="summary-row summary-total">
         <span>GESAMT</span>
-        <strong>
-          ${formatPrice(total)}
-        </strong>
+        <strong>${formatPrice(total)}</strong>
       </div>
 
     </div>
@@ -3924,24 +3588,15 @@ function renderCheckoutSummary(){
 
 function createOrderNumber(){
 
-  const now =
-    new Date();
+  const now = new Date();
 
   const date =
-    now.getFullYear()
-      .toString() +
-    String(
-      now.getMonth()+1
-    ).padStart(2,"0") +
-    String(
-      now.getDate()
-    ).padStart(2,"0");
+    now.getFullYear().toString() +
+    String(now.getMonth()+1).padStart(2,"0") +
+    String(now.getDate()).padStart(2,"0");
 
   const random =
-    Math.floor(
-      1000 +
-      Math.random()*9000
-    );
+    Math.floor(1000 + Math.random()*9000);
 
   return `GON-${date}-${random}`;
 }
@@ -3952,50 +3607,34 @@ function placeOrder(event){
 
   if(!cart.length){
 
-    alert(
-      "Dein Warenkorb ist leer."
-    );
+    alert("Dein Warenkorb ist leer.");
 
     return;
   }
 
   const firstName =
-    document.getElementById(
-      "checkoutFirstName"
-    ).value.trim();
+    document.getElementById("checkoutFirstName").value.trim();
 
   const lastName =
-    document.getElementById(
-      "checkoutLastName"
-    ).value.trim();
+    document.getElementById("checkoutLastName").value.trim();
 
   const email =
-    document.getElementById(
-      "checkoutEmail"
-    ).value.trim();
+    document.getElementById("checkoutEmail").value.trim();
 
   const street =
-    document.getElementById(
-      "checkoutStreet"
-    ).value.trim();
+    document.getElementById("checkoutStreet").value.trim();
 
   const postal =
-    document.getElementById(
-      "checkoutPostal"
-    ).value.trim();
+    document.getElementById("checkoutPostal").value.trim();
 
   const city =
-    document.getElementById(
-      "checkoutCity"
-    ).value.trim();
+    document.getElementById("checkoutCity").value.trim();
 
   const orderItems =
     cart.map(item => {
 
       const product =
-        getProduct(
-          item.productId
-        );
+        getProduct(item.productId);
 
       return {
         productId:item.productId,
@@ -4012,11 +3651,9 @@ function placeOrder(event){
 
     id:Date.now(),
 
-    orderNumber:
-      createOrderNumber(),
+    orderNumber:createOrderNumber(),
 
-    date:
-      new Date().toISOString(),
+    date:new Date().toISOString(),
 
     status:"Vorschau",
 
@@ -4031,14 +3668,11 @@ function placeOrder(event){
 
     items:orderItems,
 
-    subtotal:
-      getCartSubtotal(),
+    subtotal:getCartSubtotal(),
 
-    shipping:
-      getShipping(),
+    shipping:getShipping(),
 
-    total:
-      getCartTotal()
+    total:getCartTotal()
 
   };
 
@@ -4059,28 +3693,22 @@ function placeOrder(event){
   renderAccount();
 
   renderAdminOrders();
+
   renderAdminStats();
 
   document
-    .getElementById(
-      "checkoutForm"
-    )
+    .getElementById("checkoutForm")
     .reset();
 
   alert(
-    `Demo-Bestellung ${
-      order.orderNumber
-    } wurde erstellt.\n\n` +
+    `Demo-Bestellung ${order.orderNumber} wurde erstellt.\n\n` +
     `Die Bestellung wurde nur lokal als Vorschau gespeichert.`
   );
 }
 
-function formatOrderDate(
-  dateString
-){
+function formatOrderDate(dateString){
 
-  const date =
-    new Date(dateString);
+  const date = new Date(dateString);
 
   return date.toLocaleString(
     "de-DE",
@@ -4123,39 +3751,26 @@ function renderOrderHistory(){
             <div class="order-item">
 
               <img
-                src="${escapeHtml(
-                  item.image
-                )}"
-                alt="${escapeHtml(
-                  item.name
-                )}"
+                src="${escapeHtml(item.image)}"
+                alt="${escapeHtml(item.name)}"
               >
 
               <div>
 
                 <div class="order-item-name">
-                  ${escapeHtml(
-                    item.name
-                  )}
+                  ${escapeHtml(item.name)}
                 </div>
 
                 <div class="order-item-meta">
-                  ${escapeHtml(
-                    item.size
-                  )}
+                  ${escapeHtml(item.size)}
                   · ${item.quantity} ×
-                  ${formatPrice(
-                    item.price
-                  )}
+                  ${formatPrice(item.price)}
                 </div>
 
               </div>
 
               <div class="order-item-price">
-                ${formatPrice(
-                  item.price *
-                  item.quantity
-                )}
+                ${formatPrice(item.price * item.quantity)}
               </div>
 
             </div>
@@ -4164,44 +3779,31 @@ function renderOrderHistory(){
         }).join("");
 
       return `
-        <div
-          class="order-card"
-          id="order-${order.id}"
-        >
+        <div class="order-card" id="order-${order.id}">
 
           <div
             class="order-header"
-            onclick="toggleOrder(
-              ${order.id}
-            )"
+            onclick="toggleOrder(${order.id})"
           >
 
             <div>
 
               <div class="order-number">
-                ${escapeHtml(
-                  order.orderNumber
-                )}
+                ${escapeHtml(order.orderNumber)}
               </div>
 
               <div class="order-date">
-                ${formatOrderDate(
-                  order.date
-                )}
+                ${formatOrderDate(order.date)}
               </div>
 
             </div>
 
             <div class="order-status">
-              ${escapeHtml(
-                order.status
-              )}
+              ${escapeHtml(order.status)}
             </div>
 
             <div class="order-header-total">
-              ${formatPrice(
-                order.total
-              )}
+              ${formatPrice(order.total)}
             </div>
 
           </div>
@@ -4218,33 +3820,21 @@ function renderOrderHistory(){
 
               <br>
 
-              ${escapeHtml(
-                order.customer.firstName
-              )}
-              ${escapeHtml(
-                order.customer.lastName
-              )}
+              ${escapeHtml(order.customer.firstName)}
+              ${escapeHtml(order.customer.lastName)}
 
               <br>
 
-              ${escapeHtml(
-                order.customer.street
-              )}
+              ${escapeHtml(order.customer.street)}
 
               <br>
 
-              ${escapeHtml(
-                order.customer.postal
-              )}
-              ${escapeHtml(
-                order.customer.city
-              )}
+              ${escapeHtml(order.customer.postal)}
+              ${escapeHtml(order.customer.city)}
 
               <br><br>
 
-              ${escapeHtml(
-                order.customer.email
-              )}
+              ${escapeHtml(order.customer.email)}
 
             </div>
 
@@ -4252,35 +3842,19 @@ function renderOrderHistory(){
 
               <div class="order-summary-row">
                 <span>ZWISCHENSUMME</span>
-                <strong>
-                  ${formatPrice(
-                    order.subtotal
-                  )}
-                </strong>
+                <strong>${formatPrice(order.subtotal)}</strong>
               </div>
 
               <div class="order-summary-row">
                 <span>VERSAND</span>
                 <strong>
-                  ${
-                    order.shipping === 0
-                      ? "KOSTENLOS"
-                      : formatPrice(
-                          order.shipping
-                        )
-                  }
+                  ${order.shipping === 0 ? "KOSTENLOS" : formatPrice(order.shipping)}
                 </strong>
               </div>
 
-              <div
-                class="order-summary-row total"
-              >
+              <div class="order-summary-row total">
                 <span>GESAMT</span>
-                <strong>
-                  ${formatPrice(
-                    order.total
-                  )}
-                </strong>
+                <strong>${formatPrice(order.total)}</strong>
               </div>
 
             </div>
@@ -4316,14 +3890,10 @@ function renderOrderHistory(){
 function toggleOrder(id){
 
   const card =
-    document.getElementById(
-      `order-${id}`
-    );
+    document.getElementById(`order-${id}`);
 
   if(card){
-    card.classList.toggle(
-      "open"
-    );
+    card.classList.toggle("open");
   }
 }
 
@@ -4337,27 +3907,21 @@ function openAccount(){
   renderAccount();
 
   document
-    .getElementById(
-      "accountModal"
-    )
+    .getElementById("accountModal")
     .classList.add("active");
 }
 
 function closeAccount(){
 
   document
-    .getElementById(
-      "accountModal"
-    )
+    .getElementById("accountModal")
     .classList.remove("active");
 }
 
 function renderAccount(){
 
   const container =
-    document.getElementById(
-      "accountContent"
-    );
+    document.getElementById("accountContent");
 
   if(!account){
 
@@ -4378,15 +3942,11 @@ function renderAccount(){
 
       <div class="account-buttons">
 
-        <button
-          onclick="openAuth('register')"
-        >
+        <button onclick="openAuth('register')">
           ACCOUNT ERSTELLEN
         </button>
 
-        <button
-          onclick="openAuth('login')"
-        >
+        <button onclick="openAuth('login')">
           ANMELDEN
         </button>
 
@@ -4402,16 +3962,11 @@ function renderAccount(){
     <div class="account-status">
 
       <strong>
-        WILLKOMMEN,
-        ${escapeHtml(
-          account.name
-        )}
+        WILLKOMMEN, ${escapeHtml(account.name)}
       </strong>
 
       <span>
-        ${escapeHtml(
-          account.email
-        )}
+        ${escapeHtml(account.email)}
       </span>
 
     </div>
@@ -4429,45 +3984,31 @@ function renderAccount(){
   `;
 }
 
-
-/* =========================
-   AUTH
-========================= */
-
-let authMode =
-  "register";
+let authMode = "register";
 
 function openAuth(mode){
 
   authMode = mode;
 
-  document.getElementById(
-    "authTitle"
-  ).textContent =
+  document.getElementById("authTitle").textContent =
     mode === "register"
       ? "ACCOUNT ERSTELLEN"
       : "ANMELDEN";
 
-  document.querySelector(
-    "#authForm button"
-  ).textContent =
+  document.querySelector("#authForm button").textContent =
     mode === "register"
       ? "ACCOUNT ERSTELLEN"
       : "ANMELDEN";
 
   document
-    .getElementById(
-      "authModal"
-    )
+    .getElementById("authModal")
     .classList.add("active");
 }
 
 function closeAuth(){
 
   document
-    .getElementById(
-      "authModal"
-    )
+    .getElementById("authModal")
     .classList.remove("active");
 }
 
@@ -4476,25 +4017,15 @@ function handleAuth(event){
   event.preventDefault();
 
   const name =
-    document.getElementById(
-      "authName"
-    ).value.trim();
+    document.getElementById("authName").value.trim();
 
   const email =
-    document.getElementById(
-      "authEmail"
-    ).value.trim();
+    document.getElementById("authEmail").value.trim();
 
   const password =
-    document.getElementById(
-      "authPassword"
-    ).value;
+    document.getElementById("authPassword").value;
 
-  if(
-    !name ||
-    !email ||
-    !password
-  ){
+  if(!name || !email || !password){
     return;
   }
 
@@ -4516,9 +4047,7 @@ function handleAuth(event){
   );
 
   document
-    .getElementById(
-      "authForm"
-    )
+    .getElementById("authForm")
     .reset();
 }
 
@@ -4533,25 +4062,529 @@ function logout(){
 
 
 /* =========================================================
+   RECHTLICHE SEITEN
+========================================================= */
+
+const legalPages = {
+
+  impressum: {
+
+    title:"IMPRESSUM",
+
+    content:`
+
+      <div class="legal-note">
+        <strong>MUSTER / PLATZHALTER</strong><br>
+        Diese Seite ist aktuell nur eine Vorlage für den späteren echten
+        Shop. Die markierten Angaben müssen vor einer Veröffentlichung
+        bzw. vor dem echten Verkauf vollständig ergänzt und rechtlich
+        geprüft werden.
+      </div>
+
+      <h2>Angaben zum Anbieter</h2>
+
+      <p>
+        <strong>
+          <span class="legal-placeholder">[NAME / FIRMA]</span>
+        </strong>
+      </p>
+
+      <p>
+        <span class="legal-placeholder">[STRAßE &amp; HAUSNUMMER]</span><br>
+        <span class="legal-placeholder">[PLZ &amp; ORT]</span><br>
+        Deutschland
+      </p>
+
+      <h2>Kontakt</h2>
+
+      <p>
+        E-Mail:
+        <span class="legal-placeholder">[E-MAIL-ADRESSE]</span>
+        <br>
+        Telefon:
+        <span class="legal-placeholder">[TELEFONNUMMER]</span>
+      </p>
+
+      <h2>Vertretungsberechtigte Person</h2>
+
+      <p>
+        <span class="legal-placeholder">
+          [VOR- UND NACHNAME DER VERTRETUNGSBERECHTIGTEN PERSON]
+        </span>
+      </p>
+
+      <h2>Registerangaben</h2>
+
+      <p>
+        Falls vorhanden:
+        <br>
+        Registergericht:
+        <span class="legal-placeholder">[REGISTERGERICHT]</span>
+        <br>
+        Registernummer:
+        <span class="legal-placeholder">[REGISTERNUMMER]</span>
+      </p>
+
+      <h2>Umsatzsteuer</h2>
+
+      <p>
+        Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:
+        <br>
+        <span class="legal-placeholder">[UST-IDNR., FALLS VORHANDEN]</span>
+      </p>
+
+      <h2>Hinweis</h2>
+
+      <p>
+        Die vorstehenden Angaben sind für die aktuelle Shop-Vorschau
+        Platzhalter. Vor dem echten Betrieb des Onlineshops müssen die
+        tatsächlichen Anbieter- und Kontaktdaten eingesetzt werden.
+      </p>
+
+    `
+  },
+
+
+  datenschutz: {
+
+    title:"DATENSCHUTZERKLÄRUNG",
+
+    content:`
+
+      <div class="legal-note">
+        <strong>MUSTER / PLATZHALTER</strong><br>
+        Die folgende Datenschutzerklärung ist eine technische Vorlage.
+        Welche Angaben tatsächlich erforderlich sind, hängt unter anderem
+        von Hosting, Zahlungsanbietern, Analyse-Tools, Cookies,
+        Kontaktmöglichkeiten und weiteren Diensten ab, die später
+        tatsächlich eingesetzt werden.
+      </div>
+
+      <h2>1. Verantwortlicher</h2>
+
+      <p>
+        Verantwortlich für die Verarbeitung personenbezogener Daten ist:
+      </p>
+
+      <p>
+        <strong>
+          <span class="legal-placeholder">[NAME / FIRMA]</span>
+        </strong>
+        <br>
+        <span class="legal-placeholder">[ANSCHRIFT]</span>
+        <br>
+        E-Mail:
+        <span class="legal-placeholder">[E-MAIL-ADRESSE]</span>
+      </p>
+
+      <h2>2. Besuch der Website</h2>
+
+      <p>
+        Beim Aufrufen einer Website können technisch erforderliche Daten
+        verarbeitet werden. Dazu können insbesondere IP-Adresse,
+        Datum und Uhrzeit des Zugriffs, angeforderte Dateien,
+        Browserinformationen und technische Zugriffsdaten gehören.
+      </p>
+
+      <p>
+        Welche Daten beim Hosting konkret verarbeitet und wie lange sie
+        gespeichert werden, hängt vom tatsächlich verwendeten Hosting-
+        Anbieter und dessen technischen Einstellungen ab.
+      </p>
+
+      <h2>3. GitHub Pages</h2>
+
+      <p>
+        Diese Website kann über GitHub Pages bereitgestellt werden.
+        Wenn GitHub Pages tatsächlich für die Veröffentlichung verwendet
+        wird, müssen die aktuellen Datenschutzinformationen des
+        eingesetzten Dienstes bei der finalen Datenschutzerklärung
+        berücksichtigt werden.
+      </p>
+
+      <h2>4. Warenkorb und Shop-Vorschau</h2>
+
+      <p>
+        Die aktuelle Website verwendet den lokalen Browser-Speicher
+        (localStorage), um beispielsweise Warenkorb-, Demo-Account-
+        und Demo-Bestelldaten im Browser zu speichern.
+      </p>
+
+      <p>
+        Diese Funktionen sind derzeit Teil einer technischen Shop-
+        Vorschau. Es besteht aktuell keine echte Zahlungsabwicklung
+        über die Website.
+      </p>
+
+      <h2>5. Demo-Account</h2>
+
+      <p>
+        Die derzeitige Account-Funktion ist lediglich eine lokale
+        Demo-Funktion. Die eingegebenen Daten werden aktuell im
+        Browser gespeichert und nicht an ein echtes Kundenkonto-
+        System übertragen.
+      </p>
+
+      <h2>6. Demo-Bestellungen</h2>
+
+      <p>
+        Im aktuellen Vorschau-System können Testbestellungen erzeugt
+        werden. Diese werden lediglich lokal im Browser gespeichert.
+        Es erfolgt derzeit keine Übertragung an ein echtes
+        Warenwirtschafts-, Zahlungs- oder Versand-System.
+      </p>
+
+      <h2>7. Kontaktaufnahme</h2>
+
+      <p>
+        Wenn später eine Kontaktmöglichkeit per E-Mail oder Formular
+        angeboten wird, können die dabei übermittelten Daten zur
+        Bearbeitung der Anfrage verarbeitet werden.
+      </p>
+
+      <h2>8. Cookies und Tracking</h2>
+
+      <p>
+        Die aktuelle Website verwendet keine bewusst eingerichteten
+        Analyse- oder Marketing-Tracking-Dienste. Falls später Dienste
+        wie Analyse-, Werbe-, Social-Media- oder Conversion-Tracking
+        eingebunden werden, muss diese Datenschutzerklärung entsprechend
+        angepasst werden.
+      </p>
+
+      <h2>9. Deine Rechte</h2>
+
+      <p>
+        Betroffene Personen haben nach den gesetzlichen Voraussetzungen
+        insbesondere Rechte auf Auskunft, Berichtigung, Löschung,
+        Einschränkung der Verarbeitung, Datenübertragbarkeit sowie
+        Widerspruch gegen bestimmte Verarbeitungen.
+      </p>
+
+      <p>
+        Außerdem besteht grundsätzlich ein Beschwerderecht bei einer
+        zuständigen Datenschutzaufsichtsbehörde.
+      </p>
+
+      <h2>10. Aktualisierung</h2>
+
+      <p>
+        Diese Datenschutzerklärung muss angepasst werden, sobald sich
+        die technischen Funktionen, Anbieter oder Verarbeitungen dieser
+        Website ändern.
+      </p>
+
+    `
+  },
+
+
+  widerruf: {
+
+    title:"WIDERRUFSBELEHRUNG",
+
+    content:`
+
+      <div class="legal-note">
+        <strong>MUSTER / PLATZHALTER</strong><br>
+        Die folgende Widerrufsbelehrung ist eine Vorlage für einen späteren
+        B2C-Onlineshop. Vor dem echten Verkauf muss geprüft werden, welche
+        Widerrufsrechte und Ausnahmen für die konkret angebotenen Produkte
+        gelten.
+      </div>
+
+      <h2>Widerrufsrecht</h2>
+
+      <p>
+        Verbrauchern steht grundsätzlich ein gesetzliches Widerrufsrecht
+        zu. Die Widerrufsfrist beträgt grundsätzlich 14 Tage, sofern keine
+        gesetzliche Ausnahme greift.
+      </p>
+
+      <h2>Widerrufsfrist</h2>
+
+      <p>
+        Die Widerrufsfrist beträgt 14 Tage ab dem Tag, an dem der
+        Verbraucher oder ein von ihm benannter Dritter, der nicht der
+        Beförderer ist, die Ware erhalten hat.
+      </p>
+
+      <h2>Ausübung des Widerrufs</h2>
+
+      <p>
+        Um das Widerrufsrecht auszuüben, muss der Verbraucher den Anbieter
+        mittels einer eindeutigen Erklärung über seinen Entschluss,
+        den Vertrag zu widerrufen, informieren.
+      </p>
+
+      <p>
+        Die Erklärung kann beispielsweise per E-Mail oder postalisch an
+        folgende Kontaktdaten gesendet werden:
+      </p>
+
+      <p>
+        <strong>
+          <span class="legal-placeholder">[NAME / FIRMA]</span>
+        </strong>
+        <br>
+        <span class="legal-placeholder">[ANSCHRIFT]</span>
+        <br>
+        E-Mail:
+        <span class="legal-placeholder">[E-MAIL-ADRESSE]</span>
+      </p>
+
+      <h2>Folgen des Widerrufs</h2>
+
+      <p>
+        Wenn der Verbraucher den Vertrag widerruft, sind die erhaltenen
+        Zahlungen grundsätzlich nach Maßgabe der gesetzlichen Vorschriften
+        zurückzugewähren.
+      </p>
+
+      <p>
+        Für die Rückzahlung kann grundsätzlich dasselbe Zahlungsmittel
+        verwendet werden, das bei der ursprünglichen Transaktion eingesetzt
+        wurde, sofern nichts anderes vereinbart wurde.
+      </p>
+
+      <h2>Rücksendung der Ware</h2>
+
+      <p>
+        Die Ware ist grundsätzlich nach Maßgabe der gesetzlichen
+        Bestimmungen zurückzusenden. Die konkreten Rücksendekosten und
+        deren Tragung müssen für den späteren Shop entsprechend der
+        tatsächlichen Versand- und Widerrufsbedingungen festgelegt werden.
+      </p>
+
+      <h2>Ausschluss bzw. Erlöschen des Widerrufsrechts</h2>
+
+      <p>
+        Für bestimmte Waren und Dienstleistungen können gesetzliche
+        Ausnahmen vom Widerrufsrecht bestehen. Dies kann beispielsweise
+        bei Waren relevant sein, die nach Kundenspezifikation angefertigt
+        oder eindeutig auf persönliche Bedürfnisse zugeschnitten wurden.
+      </p>
+
+      <p>
+        Ob eine konkrete Ausnahme auf ein später angebotenes Gonschiki-
+        Produkt zutrifft, muss anhand des jeweiligen Produkts geprüft
+        werden.
+      </p>
+
+      <h2>Wichtiger Hinweis für die aktuelle Vorschau</h2>
+
+      <p>
+        Der aktuelle Gonschiki-Shop ist eine technische Vorschau.
+        Es werden derzeit keine echten Zahlungen verarbeitet und keine
+        echten Bestellungen an ein Shopsystem übermittelt.
+      </p>
+
+    `
+  },
+
+
+  agb: {
+
+    title:"ALLGEMEINE GESCHÄFTSBEDINGUNGEN",
+
+    content:`
+
+      <div class="legal-note">
+        <strong>MUSTER / PLATZHALTER</strong><br>
+        Diese AGB sind eine technische Vorlage und keine abschließende
+        Rechtsberatung. Vor dem echten Verkauf müssen sie an das konkrete
+        Geschäftsmodell, die Zahlungsarten, Versandbedingungen,
+        Produktarten und die tatsächlichen Anbieterangaben angepasst
+        und rechtlich geprüft werden.
+      </div>
+
+      <h2>§ 1 Geltungsbereich</h2>
+
+      <p>
+        Diese Allgemeinen Geschäftsbedingungen sollen für Verträge über
+        Waren gelten, die über den späteren Gonschiki-Onlineshop zwischen
+        dem Anbieter und Verbrauchern bzw. Kunden geschlossen werden.
+      </p>
+
+      <h2>§ 2 Vertragspartner</h2>
+
+      <p>
+        Vertragspartner ist:
+      </p>
+
+      <p>
+        <strong>
+          <span class="legal-placeholder">[NAME / FIRMA]</span>
+        </strong>
+        <br>
+        <span class="legal-placeholder">[ANSCHRIFT]</span>
+        <br>
+        E-Mail:
+        <span class="legal-placeholder">[E-MAIL-ADRESSE]</span>
+      </p>
+
+      <h2>§ 3 Vertragsschluss</h2>
+
+      <p>
+        Die Darstellung der Produkte im Onlineshop stellt grundsätzlich
+        noch kein verbindliches Vertragsangebot dar, sofern die konkrete
+        Shopgestaltung nichts anderes bestimmt.
+      </p>
+
+      <p>
+        Ein Vertrag kommt durch die jeweils im späteren Shop vorgesehenen
+        Bestell- und Bestätigungsschritte zustande.
+      </p>
+
+      <h2>§ 4 Preise</h2>
+
+      <p>
+        Die jeweils gültigen Preise werden im späteren Onlineshop
+        angegeben. Ob Preise inklusive gesetzlicher Umsatzsteuer oder
+        aufgrund einer steuerlichen Sonderregelung dargestellt werden,
+        muss für das tatsächliche Geschäftsmodell festgelegt werden.
+      </p>
+
+      <h2>§ 5 Zahlung</h2>
+
+      <p>
+        Die verfügbaren Zahlungsmethoden werden im späteren Onlineshop
+        angegeben. Derzeit ist keine echte Zahlungsabwicklung aktiviert.
+      </p>
+
+      <h2>§ 6 Lieferung</h2>
+
+      <p>
+        Liefergebiet, Lieferzeit, Versanddienstleister und Versandkosten
+        werden im späteren Onlineshop vor dem echten Verkaufsstart
+        verbindlich festgelegt und angegeben.
+      </p>
+
+      <h2>§ 7 Eigentumsvorbehalt</h2>
+
+      <p>
+        Bei einem späteren echten Verkauf kann die Ware bis zur
+        vollständigen Zahlung im Eigentum des Anbieters bleiben, soweit
+        dies gesetzlich zulässig ist.
+      </p>
+
+      <h2>§ 8 Gewährleistung</h2>
+
+      <p>
+        Es gelten die gesetzlichen Mängelhaftungsrechte, soweit keine
+        wirksame gesetzliche oder vertragliche Regelung etwas anderes
+        bestimmt.
+      </p>
+
+      <h2>§ 9 Haftung</h2>
+
+      <p>
+        Die Haftung richtet sich nach den gesetzlichen Vorschriften.
+        Haftungsbeschränkungen müssen im späteren endgültigen AGB-Text
+        rechtlich wirksam formuliert werden.
+      </p>
+
+      <h2>§ 10 Widerrufsrecht</h2>
+
+      <p>
+        Soweit der Kunde Verbraucher ist und ein gesetzliches
+        Widerrufsrecht besteht, gelten die hierfür vorgesehenen
+        gesetzlichen Bestimmungen und die entsprechende
+        Widerrufsbelehrung.
+      </p>
+
+      <h2>§ 11 Verbraucherstreitbeilegung</h2>
+
+      <p>
+        Die Angaben zur Teilnahme oder Nichtteilnahme an einem
+        Verbraucherschlichtungsverfahren müssen vor dem echten
+        Verkaufsstart anhand der tatsächlichen rechtlichen Situation
+        des Unternehmens ergänzt werden.
+      </p>
+
+      <p>
+        <span class="legal-placeholder">
+          [ANGABE ZUR TEILNAHME AN VERBRAUCHERSTREITBEILEGUNG ERGÄNZEN]
+        </span>
+      </p>
+
+      <h2>§ 12 Schlussbestimmungen</h2>
+
+      <p>
+        Es gelten die gesetzlichen Vorschriften. Soweit zulässig, können
+        für das Vertragsverhältnis ergänzende Regelungen zum anwendbaren
+        Recht und Gerichtsstand getroffen werden.
+      </p>
+
+      <h2>Hinweis zur aktuellen Shop-Vorschau</h2>
+
+      <p>
+        Die aktuelle Website befindet sich noch im Aufbau. Die im
+        Warenkorb und Checkout angezeigten Bestellungen sind derzeit
+        ausschließlich Demo-Daten und stellen keine echte Bestellung
+        bzw. keinen echten Vertragsschluss dar.
+      </p>
+
+    `
+  }
+
+};
+
+
+function openLegal(page){
+
+  const legalPage =
+    legalPages[page];
+
+  if(!legalPage){
+    return;
+  }
+
+  document.getElementById("legalContent").innerHTML = `
+
+    <h1>
+      ${legalPage.title}
+    </h1>
+
+    ${legalPage.content}
+
+  `;
+
+  document
+    .querySelectorAll(".legal-nav button")
+    .forEach(button =>
+      button.classList.remove("active")
+    );
+
+  const activeButton =
+    document.getElementById(
+      "legalTab" +
+      page.charAt(0).toUpperCase() +
+      page.slice(1)
+    );
+
+  if(activeButton){
+    activeButton.classList.add("active");
+  }
+
+  document
+    .getElementById("legalModal")
+    .classList.add("active");
+}
+
+function closeLegal(){
+
+  document
+    .getElementById("legalModal")
+    .classList.remove("active");
+}
+
+
+/* =========================================================
    ADMIN
 ========================================================= */
 
-/*
-  DEMO-ZUGANG:
-
-  Benutzer:
-  admin
-
-  Passwort:
-  gonschiki2025
-*/
-
-const ADMIN_USERNAME =
-  "admin";
-
-const ADMIN_PASSWORD =
-  "gonschiki2025";
-
+const ADMIN_USERNAME = "admin";
+const ADMIN_PASSWORD = "gonschiki2025";
 
 function openAdmin(){
 
@@ -4560,17 +4593,13 @@ function openAdmin(){
     renderAdmin();
 
     document
-      .getElementById(
-        "adminModal"
-      )
+      .getElementById("adminModal")
       .classList.add("active");
 
   }else{
 
     document
-      .getElementById(
-        "adminLoginModal"
-      )
+      .getElementById("adminLoginModal")
       .classList.add("active");
 
   }
@@ -4579,9 +4608,7 @@ function openAdmin(){
 function closeAdminLogin(){
 
   document
-    .getElementById(
-      "adminLoginModal"
-    )
+    .getElementById("adminLoginModal")
     .classList.remove("active");
 }
 
@@ -4590,14 +4617,10 @@ function adminLogin(event){
   event.preventDefault();
 
   const username =
-    document.getElementById(
-      "adminUsername"
-    ).value.trim();
+    document.getElementById("adminUsername").value.trim();
 
   const password =
-    document.getElementById(
-      "adminPassword"
-    ).value;
+    document.getElementById("adminPassword").value;
 
   if(
     username === ADMIN_USERNAME &&
@@ -4611,24 +4634,15 @@ function adminLogin(event){
       "true"
     );
 
-    document
-      .getElementById(
-        "adminUsername"
-      ).value = "";
-
-    document
-      .getElementById(
-        "adminPassword"
-      ).value = "";
+    document.getElementById("adminUsername").value = "";
+    document.getElementById("adminPassword").value = "";
 
     closeAdminLogin();
 
     renderAdmin();
 
     document
-      .getElementById(
-        "adminModal"
-      )
+      .getElementById("adminModal")
       .classList.add("active");
 
   }else{
@@ -4649,87 +4663,56 @@ function adminLogout(){
   );
 
   document
-    .getElementById(
-      "adminModal"
-    )
+    .getElementById("adminModal")
     .classList.remove("active");
 }
 
 function renderAdmin(){
 
   renderAdminStats();
-
   renderAdminProducts();
-
   renderAdminOrders();
 }
 
-function showAdminTab(
-  tab,
-  button
-){
+function showAdminTab(tab,button){
 
   document
-    .querySelectorAll(
-      ".admin-tab"
-    )
+    .querySelectorAll(".admin-tab")
     .forEach(btn =>
-      btn.classList.remove(
-        "active"
-      )
+      btn.classList.remove("active")
     );
 
-  button.classList.add(
-    "active"
-  );
+  button.classList.add("active");
 
   document
-    .querySelectorAll(
-      ".admin-section"
-    )
+    .querySelectorAll(".admin-section")
     .forEach(section =>
-      section.classList.remove(
-        "active"
-      )
+      section.classList.remove("active")
     );
 
   if(tab === "dashboard"){
-
     document
-      .getElementById(
-        "adminDashboard"
-      )
+      .getElementById("adminDashboard")
       .classList.add("active");
-
   }
 
   if(tab === "products"){
-
     document
-      .getElementById(
-        "adminProducts"
-      )
+      .getElementById("adminProducts")
       .classList.add("active");
-
   }
 
   if(tab === "orders"){
-
     document
-      .getElementById(
-        "adminOrders"
-      )
+      .getElementById("adminOrders")
       .classList.add("active");
-
   }
 }
 
 function renderAdminStats(){
 
   const container =
-    document.getElementById(
-      "adminStats"
-    );
+    document.getElementById("adminStats");
 
   if(!container){
     return;
@@ -4746,10 +4729,7 @@ function renderAdminStats(){
   const totalStock =
     products.reduce(
       (sum,product) =>
-        sum +
-        getTotalProductStock(
-          product
-        ),
+        sum + getTotalProductStock(product),
       0
     );
 
@@ -4759,68 +4739,38 @@ function renderAdminStats(){
   const demoRevenue =
     orders.reduce(
       (sum,order) =>
-        sum +
-        Number(order.total || 0),
+        sum + Number(order.total || 0),
       0
     );
 
   container.innerHTML = `
 
     <div class="admin-stat">
-
       <span>PRODUKTE</span>
-
-      <strong>
-        ${totalProducts}
-      </strong>
-
+      <strong>${totalProducts}</strong>
     </div>
 
     <div class="admin-stat">
-
       <span>AKTIV</span>
-
-      <strong>
-        ${activeProducts}
-      </strong>
-
+      <strong>${activeProducts}</strong>
     </div>
 
     <div class="admin-stat">
-
       <span>LAGERBESTAND</span>
-
-      <strong>
-        ${totalStock}
-      </strong>
-
+      <strong>${totalStock}</strong>
     </div>
 
     <div class="admin-stat">
-
       <span>BESTELLUNGEN</span>
-
-      <strong>
-        ${totalOrders}
-      </strong>
-
+      <strong>${totalOrders}</strong>
     </div>
 
     <div
       class="admin-stat"
       style="grid-column:1/-1;"
     >
-
-      <span>
-        DEMO-BESTELLUMSATZ
-      </span>
-
-      <strong>
-        ${formatPrice(
-          demoRevenue
-        )}
-      </strong>
-
+      <span>DEMO-BESTELLUMSATZ</span>
+      <strong>${formatPrice(demoRevenue)}</strong>
     </div>
 
   `;
@@ -4829,9 +4779,7 @@ function renderAdminStats(){
 function renderAdminProducts(){
 
   const container =
-    document.getElementById(
-      "adminProductsList"
-    );
+    document.getElementById("adminProductsList");
 
   if(!container){
     return;
@@ -4876,9 +4824,7 @@ function renderAdminProducts(){
                   class="admin-stock-input"
                   type="number"
                   min="0"
-                  value="${
-                    product.stock[size]
-                  }"
+                  value="${product.stock[size]}"
                   onchange="updateProductStock(
                     ${product.id},
                     '${size}',
@@ -4899,29 +4845,19 @@ function renderAdminProducts(){
 
           <img
             src="${product.image}"
-            alt="${escapeHtml(
-              product.name
-            )}"
+            alt="${escapeHtml(product.name)}"
           >
 
           <div>
 
             <div class="admin-product-name">
-              ${escapeHtml(
-                product.name
-              )}
+              ${escapeHtml(product.name)}
             </div>
 
             <div class="admin-product-meta">
-              ${escapeHtml(
-                product.category
-              )}
+              ${escapeHtml(product.category)}
               ·
-              ${
-                product.active
-                  ? "AKTIV"
-                  : "DEAKTIVIERT"
-              }
+              ${product.active ? "AKTIV" : "DEAKTIVIERT"}
             </div>
 
           </div>
@@ -4970,15 +4906,9 @@ function renderAdminProducts(){
 
             <button
               class="admin-small-button"
-              onclick="toggleProduct(
-                ${product.id}
-              )"
+              onclick="toggleProduct(${product.id})"
             >
-              ${
-                product.active
-                  ? "DEAKTIVIEREN"
-                  : "AKTIVIEREN"
-              }
+              ${product.active ? "DEAKTIVIEREN" : "AKTIVIEREN"}
             </button>
 
           </div>
@@ -4989,10 +4919,7 @@ function renderAdminProducts(){
     }).join("");
 }
 
-function updateProductPrice(
-  id,
-  value
-){
+function updateProductPrice(id,value){
 
   const product =
     getProduct(id);
@@ -5001,8 +4928,7 @@ function updateProductPrice(
     return;
   }
 
-  const price =
-    Number(value);
+  const price = Number(value);
 
   if(
     !Number.isFinite(price) ||
@@ -5012,20 +4938,13 @@ function updateProductPrice(
   }
 
   product.price =
-    Math.round(
-      price * 100
-    ) / 100;
+    Math.round(price * 100) / 100;
 
   renderProducts();
-
   renderAdminProducts();
 }
 
-function updateProductStock(
-  id,
-  size,
-  value
-){
+function updateProductStock(id,size,value){
 
   const product =
     getProduct(id);
@@ -5044,20 +4963,14 @@ function updateProductStock(
     stock = 0;
   }
 
-  product.stock[size] =
-    stock;
+  product.stock[size] = stock;
 
   renderProducts();
-
   renderAdminStats();
-
   renderAdminProducts();
 }
 
-function updateStickerStock(
-  id,
-  value
-){
+function updateStickerStock(id,value){
 
   const product =
     getProduct(id);
@@ -5076,13 +4989,10 @@ function updateStickerStock(
     stock = 0;
   }
 
-  product.stock =
-    stock;
+  product.stock = stock;
 
   renderProducts();
-
   renderAdminStats();
-
   renderAdminProducts();
 }
 
@@ -5099,18 +5009,14 @@ function toggleProduct(id){
     !product.active;
 
   renderProducts();
-
   renderAdminStats();
-
   renderAdminProducts();
 }
 
 function renderAdminOrders(){
 
   const container =
-    document.getElementById(
-      "adminOrdersList"
-    );
+    document.getElementById("adminOrdersList");
 
   if(!container){
     return;
@@ -5137,21 +5043,16 @@ function renderAdminOrders(){
             <div class="admin-order-item">
 
               <span>
-                ${escapeHtml(
-                  item.name
-                )}
+                ${escapeHtml(item.name)}
                 ·
-                ${escapeHtml(
-                  item.size
-                )}
+                ${escapeHtml(item.size)}
                 ×
                 ${item.quantity}
               </span>
 
               <strong>
                 ${formatPrice(
-                  item.price *
-                  item.quantity
+                  item.price * item.quantity
                 )}
               </strong>
 
@@ -5168,44 +5069,26 @@ function renderAdminOrders(){
             <div>
 
               <div class="admin-order-number">
-                ${escapeHtml(
-                  order.orderNumber
-                )}
+                ${escapeHtml(order.orderNumber)}
               </div>
 
               <div class="admin-order-customer">
-                ${formatOrderDate(
-                  order.date
-                )}
+                ${formatOrderDate(order.date)}
                 <br>
-                ${escapeHtml(
-                  order.customer.firstName
-                )}
-                ${escapeHtml(
-                  order.customer.lastName
-                )}
+                ${escapeHtml(order.customer.firstName)}
+                ${escapeHtml(order.customer.lastName)}
                 ·
-                ${escapeHtml(
-                  order.customer.email
-                )}
+                ${escapeHtml(order.customer.email)}
                 <br>
-                ${escapeHtml(
-                  order.customer.street
-                )},
-                ${escapeHtml(
-                  order.customer.postal
-                )}
-                ${escapeHtml(
-                  order.customer.city
-                )}
+                ${escapeHtml(order.customer.street)},
+                ${escapeHtml(order.customer.postal)}
+                ${escapeHtml(order.customer.city)}
               </div>
 
             </div>
 
             <div class="order-status">
-              ${escapeHtml(
-                order.status
-              )}
+              ${escapeHtml(order.status)}
             </div>
 
           </div>
@@ -5221,9 +5104,7 @@ function renderAdminOrders(){
             </span>
 
             <strong>
-              ${formatPrice(
-                order.total
-              )}
+              ${formatPrice(order.total)}
             </strong>
 
           </div>
@@ -5247,13 +5128,9 @@ document
       "click",
       function(event){
 
-        if(
-          event.target === modal
-        ){
+        if(event.target === modal){
 
-          modal.classList.remove(
-            "active"
-          );
+          modal.classList.remove("active");
 
         }
 
