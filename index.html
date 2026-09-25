@@ -123,10 +123,10 @@ header{
 }
 
 .wheel-icon svg{
-  width:24px;
-  height:24px;
+  width:27px;
+  height:27px;
   display:block;
-  transition:.3s ease;
+  transition:.35s ease;
 }
 
 .wheel-icon:hover svg{
@@ -1729,8 +1729,8 @@ footer{
   }
 
   .wheel-icon svg{
-    width:23px;
-    height:23px;
+    width:25px;
+    height:25px;
   }
 
   section{
@@ -1954,6 +1954,7 @@ footer{
 
   <div class="header-actions">
 
+    <!-- FELGEN-SYMBOL -->
     <button
       class="header-icon wheel-icon"
       onclick="openAccount()"
@@ -1965,24 +1966,72 @@ footer{
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
       >
-        <circle
-          cx="32"
-          cy="32"
-          r="27"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="4"
-        />
 
+        <!-- äußerer Felgenring -->
         <circle
           cx="32"
           cy="32"
-          r="11"
+          r="28"
           fill="none"
           stroke="currentColor"
           stroke-width="3"
         />
 
+        <!-- innere Felge -->
+        <circle
+          cx="32"
+          cy="32"
+          r="23"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          opacity=".75"
+        />
+
+        <!-- 10 sportliche Speichen -->
+        <g
+          fill="none"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+
+          <path d="M32 9 L28.5 25"/>
+          <path d="M45.5 13.8 L36.5 27"/>
+          <path d="M53 25 L39 29"/>
+          <path d="M53 39 L39 35"/>
+          <path d="M45.5 50.2 L36.5 37"/>
+          <path d="M32 55 L28.5 39"/>
+          <path d="M18.5 50.2 L27.5 37"/>
+          <path d="M11 39 L25 35"/>
+          <path d="M11 25 L25 29"/>
+          <path d="M18.5 13.8 L27.5 27"/>
+
+        </g>
+
+        <!-- Nabenzentrum -->
+        <circle
+          cx="32"
+          cy="32"
+          r="10"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="3"
+        />
+
+        <!-- Radschrauben -->
+        <g fill="currentColor">
+
+          <circle cx="32" cy="24.5" r="1.5"/>
+          <circle cx="39.1" cy="29.2" r="1.5"/>
+          <circle cx="36.4" cy="37.2" r="1.5"/>
+          <circle cx="27.6" cy="37.2" r="1.5"/>
+          <circle cx="24.9" cy="29.2" r="1.5"/>
+
+        </g>
+
+        <!-- Nabenkappe -->
         <circle
           cx="32"
           cy="32"
@@ -1990,13 +2039,6 @@ footer{
           fill="currentColor"
         />
 
-        <path
-          d="M32 5v16M32 43v16M5 32h16M43 32h16M12.9 12.9l12.7 12.7M38.4 38.4l12.7 12.7M51.1 12.9L38.4 25.6M25.6 38.4L12.9 51.1"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="3"
-          stroke-linecap="round"
-        />
       </svg>
     </button>
 
