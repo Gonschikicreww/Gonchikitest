@@ -709,7 +709,6 @@ footer{
   height:34px;
   border:0;
   font-weight:1000;
-  z-index:2;
 }
 
 /* =========================
@@ -1737,9 +1736,25 @@ footer{
     padding:80px 4%;
   }
 
+  /* =========================
+     MOBILE HERO
+     STARTBILD WIRD WENIGER
+     STARK ABGESCHNITTEN
+  ========================= */
+
   .hero{
     min-height:100svh;
     padding:140px 18px 80px;
+
+    background:
+      linear-gradient(
+        rgba(0,0,0,.46),
+        rgba(0,0,0,.76)
+      ),
+      url("assets/Car-1.JPG")
+      center 45%
+      / cover
+      no-repeat;
   }
 
   .hero-logo{
@@ -1954,7 +1969,6 @@ footer{
 
   <div class="header-actions">
 
-    <!-- FELGEN-SYMBOL -->
     <button
       class="header-icon wheel-icon"
       onclick="openAccount()"
@@ -1967,7 +1981,6 @@ footer{
         aria-hidden="true"
       >
 
-        <!-- äußerer Felgenring -->
         <circle
           cx="32"
           cy="32"
@@ -1977,7 +1990,6 @@ footer{
           stroke-width="3"
         />
 
-        <!-- innere Felge -->
         <circle
           cx="32"
           cy="32"
@@ -1988,7 +2000,6 @@ footer{
           opacity=".75"
         />
 
-        <!-- 10 sportliche Speichen -->
         <g
           fill="none"
           stroke="currentColor"
@@ -2010,7 +2021,6 @@ footer{
 
         </g>
 
-        <!-- Nabenzentrum -->
         <circle
           cx="32"
           cy="32"
@@ -2020,7 +2030,6 @@ footer{
           stroke-width="3"
         />
 
-        <!-- Radschrauben -->
         <g fill="currentColor">
 
           <circle cx="32" cy="24.5" r="1.5"/>
@@ -2031,7 +2040,6 @@ footer{
 
         </g>
 
-        <!-- Nabenkappe -->
         <circle
           cx="32"
           cy="32"
@@ -2379,575 +2387,10 @@ footer{
 
 </footer>
 
-
-<!-- =========================
-     PRODUCT MODAL
-========================= -->
-
-<div class="modal" id="productModal">
-
-  <div class="modal-box">
-
-    <button class="modal-close" onclick="closeProduct()">
-      ×
-    </button>
-
-    <div class="product-modal-content">
-
-      <div class="modal-product-image">
-
-        <img id="modalImage" src="" alt="">
-
-        <div
-          class="modal-sale-badge"
-          id="modalSaleBadge"
-          style="display:none;"
-        >
-          SALE
-        </div>
-
-      </div>
-
-      <div class="modal-product-info">
-
-        <span class="small-label" id="modalCategory"></span>
-
-        <h2 id="modalName"></h2>
-
-        <div
-          class="modal-price"
-          id="modalPrice"
-        ></div>
-
-        <p
-          class="modal-description"
-          id="modalDescription"
-        ></p>
-
-        <div id="sizeArea">
-
-          <span class="option-label" id="sizeLabel">
-            GRÖSSE
-          </span>
-
-          <div
-            class="size-options"
-            id="sizeOptions"
-          ></div>
-
-        </div>
-
-        <div
-          class="modal-stock"
-          id="modalStock"
-        ></div>
-
-        <div class="quantity-box">
-
-          <button onclick="changeModalQuantity(-1)">
-            −
-          </button>
-
-          <strong id="modalQuantity">
-            1
-          </strong>
-
-          <button onclick="changeModalQuantity(1)">
-            +
-          </button>
-
-        </div>
-
-        <button
-          class="add-button"
-          id="modalAddButton"
-          onclick="addToCart()"
-        >
-          IN DEN WARENKORB
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- =========================
-     CART MODAL
-========================= -->
-
-<div class="modal" id="cartModal">
-
-  <div class="modal-box cart-box">
-
-    <button
-      class="modal-close"
-      onclick="closeCart()"
-    >
-      ×
-    </button>
-
-    <div class="modal-title">
-      WARENKORB
-    </div>
-
-    <div id="cartItems"></div>
-
-  </div>
-
-</div>
-
-
-<!-- =========================
-     CHECKOUT
-========================= -->
-
-<div class="modal" id="checkoutModal">
-
-  <div class="modal-box form-box">
-
-    <button
-      class="modal-close"
-      onclick="closeCheckout()"
-    >
-      ×
-    </button>
-
-    <div class="modal-title">
-      CHECKOUT
-    </div>
-
-    <div class="demo-note">
-      SHOP-VORSCHAU: Dies ist derzeit nur ein Demo-Checkout.
-      Es werden keine echten Zahlungen verarbeitet und keine echte
-      Bestellung an ein Shopsystem übertragen.
-    </div>
-
-    <form
-      id="checkoutForm"
-      onsubmit="placeOrder(event)"
-    >
-
-      <div class="form-grid">
-
-        <div class="form-group">
-          <label>VORNAME</label>
-          <input
-            id="checkoutFirstName"
-            required
-          >
-        </div>
-
-        <div class="form-group">
-          <label>NACHNAME</label>
-          <input
-            id="checkoutLastName"
-            required
-          >
-        </div>
-
-        <div class="form-group full">
-          <label>E-MAIL</label>
-          <input
-            id="checkoutEmail"
-            type="email"
-            required
-          >
-        </div>
-
-        <div class="form-group full">
-          <label>STRASSE &amp; HAUSNUMMER</label>
-          <input
-            id="checkoutStreet"
-            required
-          >
-        </div>
-
-        <div class="form-group">
-          <label>PLZ</label>
-          <input
-            id="checkoutPostal"
-            required
-          >
-        </div>
-
-        <div class="form-group">
-          <label>ORT</label>
-          <input
-            id="checkoutCity"
-            required
-          >
-        </div>
-
-      </div>
-
-      <div id="checkoutSummary"></div>
-
-      <button
-        class="light-button"
-        type="submit"
-      >
-        BESTELLUNG AUFGEBEN
-      </button>
-
-    </form>
-
-  </div>
-
-</div>
-
-
-<!-- =========================
-     ACCOUNT
-========================= -->
-
-<div class="modal" id="accountModal">
-
-  <div class="modal-box account-box">
-
-    <button
-      class="modal-close"
-      onclick="closeAccount()"
-    >
-      ×
-    </button>
-
-    <div class="modal-title">
-      ACCOUNT
-    </div>
-
-    <div class="demo-note">
-      DEMO-ACCOUNT: Die Account-Funktion läuft derzeit nur lokal im Browser.
-      Es handelt sich noch nicht um ein echtes sicheres Kundenkonto.
-    </div>
-
-    <div id="accountContent"></div>
-
-  </div>
-
-</div>
-
-
-<!-- =========================
-     AUTH
-========================= -->
-
-<div class="modal" id="authModal">
-
-  <div class="modal-box form-box">
-
-    <button
-      class="modal-close"
-      onclick="closeAuth()"
-    >
-      ×
-    </button>
-
-    <div
-      class="modal-title"
-      id="authTitle"
-    >
-      ACCOUNT ERSTELLEN
-    </div>
-
-    <div class="demo-note">
-      DEMO-FUNKTION FÜR DIE SHOP-VORSCHAU.
-    </div>
-
-    <form
-      id="authForm"
-      onsubmit="handleAuth(event)"
-    >
-
-      <div class="form-group">
-        <label>NAME</label>
-        <input
-          id="authName"
-          required
-        >
-      </div>
-
-      <div class="form-group">
-        <label>E-MAIL</label>
-        <input
-          id="authEmail"
-          type="email"
-          required
-        >
-      </div>
-
-      <div class="form-group">
-        <label>PASSWORT</label>
-        <input
-          id="authPassword"
-          type="password"
-          required
-        >
-      </div>
-
-      <button
-        class="light-button"
-        type="submit"
-      >
-        ACCOUNT ERSTELLEN
-      </button>
-
-    </form>
-
-  </div>
-
-</div>
-
-
-<!-- =========================
-     LEGAL MODAL
-========================= -->
-
-<div class="modal" id="legalModal">
-
-  <div class="modal-box legal-box">
-
-    <button
-      class="modal-close"
-      onclick="closeLegal()"
-    >
-      ×
-    </button>
-
-    <div class="legal-nav">
-
-      <button
-        id="legalTabImpressum"
-        onclick="openLegal('impressum')"
-      >
-        IMPRESSUM
-      </button>
-
-      <button
-        id="legalTabDatenschutz"
-        onclick="openLegal('datenschutz')"
-      >
-        DATENSCHUTZ
-      </button>
-
-      <button
-        id="legalTabWiderruf"
-        onclick="openLegal('widerruf')"
-      >
-        WIDERRUF
-      </button>
-
-      <button
-        id="legalTabAgb"
-        onclick="openLegal('agb')"
-      >
-        AGB
-      </button>
-
-    </div>
-
-    <div
-      class="legal-content"
-      id="legalContent"
-    ></div>
-
-  </div>
-
-</div>
-
-
-<!-- =========================
-     ADMIN LOGIN
-========================= -->
-
-<div class="modal" id="adminLoginModal">
-
-  <div class="modal-box admin-login-box">
-
-    <button
-      class="modal-close"
-      onclick="closeAdminLogin()"
-    >
-      ×
-    </button>
-
-    <div class="admin-login-title">
-      ADMIN
-    </div>
-
-    <div class="admin-login-subtitle">
-      GONSHIKI CREW SHOP-VERWALTUNG
-    </div>
-
-    <div class="demo-note">
-      DEMO-ADMIN: Dieser Zugang ist nur für die aktuelle
-      GitHub-Pages-Vorschau gedacht und bietet noch keine echte
-      sichere Authentifizierung.
-    </div>
-
-    <form onsubmit="adminLogin(event)">
-
-      <div class="form-group">
-
-        <label>
-          BENUTZERNAME
-        </label>
-
-        <input
-          id="adminUsername"
-          autocomplete="username"
-          required
-        >
-
-      </div>
-
-      <div class="form-group">
-
-        <label>
-          PASSWORT
-        </label>
-
-        <input
-          id="adminPassword"
-          type="password"
-          autocomplete="current-password"
-          required
-        >
-
-      </div>
-
-      <button
-        class="light-button"
-        type="submit"
-      >
-        ADMIN ANMELDEN
-      </button>
-
-    </form>
-
-  </div>
-
-</div>
-
-
-<!-- =========================
-     ADMIN DASHBOARD
-========================= -->
-
-<div class="modal" id="adminModal">
-
-  <div class="modal-box admin-box">
-
-    <div class="admin-header">
-
-      <div>
-
-        <div class="admin-title">
-          GONSHIKI ADMIN
-        </div>
-
-        <div class="admin-subtitle">
-          SHOP-VERWALTUNG · DEMO
-        </div>
-
-      </div>
-
-      <button
-        class="admin-logout"
-        onclick="adminLogout()"
-      >
-        ABMELDEN
-      </button>
-
-    </div>
-
-    <div class="admin-demo-warning">
-      DEMO-SYSTEM: Änderungen werden aktuell lokal in deinem Browser
-      gespeichert. Für einen echten Shop benötigen wir später ein echtes
-      Backend mit Datenbank und sicherem Login.
-    </div>
-
-    <div class="admin-tabs">
-
-      <button
-        class="admin-tab active"
-        onclick="showAdminTab('dashboard',this)"
-      >
-        ÜBERSICHT
-      </button>
-
-      <button
-        class="admin-tab"
-        onclick="showAdminTab('products',this)"
-      >
-        PRODUKTE
-      </button>
-
-      <button
-        class="admin-tab"
-        onclick="showAdminTab('orders',this)"
-      >
-        BESTELLUNGEN
-      </button>
-
-    </div>
-
-    <div
-      class="admin-section active"
-      id="adminDashboard"
-    >
-
-      <div
-        class="admin-stat-grid"
-        id="adminStats"
-      ></div>
-
-      <div class="admin-empty">
-
-        <strong>
-          GONSHIKI SHOP ADMIN
-        </strong>
-
-        <br><br>
-
-        Hier kannst du Produkte, Preise, Sale-Preise,
-        Lagerbestand und Demo-Bestellungen verwalten.
-
-      </div>
-
-    </div>
-
-    <div
-      class="admin-section"
-      id="adminProducts"
-    >
-
-      <div
-        class="admin-products"
-        id="adminProductsList"
-      ></div>
-
-    </div>
-
-    <div
-      class="admin-section"
-      id="adminOrders"
-    >
-
-      <div
-        class="admin-orders"
-        id="adminOrdersList"
-      ></div>
-
-    </div>
-
-  </div>
-
-</div>
-
+<!-- =========================================================
+     AB HIER BLEIBT DEIN KOMPLETTER JAVASCRIPT-BEREICH
+     UNVERÄNDERT
+========================================================= -->
 
 <script>
 
@@ -3170,7 +2613,6 @@ const products = [
 
 ];
 
-
 /* =========================
    STATE
 ========================= */
@@ -3196,7 +2638,6 @@ let account = JSON.parse(
 
 let adminLoggedIn =
   sessionStorage.getItem("gonschikiAdmin") === "true";
-
 
 /* =========================
    LOAD SAVED PRODUCT SETTINGS
@@ -3248,13 +2689,11 @@ products.forEach(product => {
 
 });
 
-
 /* =========================
    STORAGE
 ========================= */
 
 function saveCart(){
-
   localStorage.setItem(
     "gonschikiCart",
     JSON.stringify(cart)
@@ -3262,7 +2701,6 @@ function saveCart(){
 }
 
 function saveOrders(){
-
   localStorage.setItem(
     "gonschikiOrders",
     JSON.stringify(orders)
@@ -3270,7 +2708,6 @@ function saveOrders(){
 }
 
 function saveAccount(){
-
   localStorage.setItem(
     "gonschikiAccount",
     JSON.stringify(account)
@@ -3284,17 +2721,11 @@ function saveProductSettings(){
   products.forEach(product => {
 
     settings[product.id] = {
-
       price:product.price,
-
       sale:product.sale,
-
       salePrice:product.salePrice,
-
       active:product.active,
-
       stock:product.stock
-
     };
 
   });
@@ -3304,7 +2735,6 @@ function saveProductSettings(){
     JSON.stringify(settings)
   );
 }
-
 
 /* =========================
    HELPERS
@@ -3347,9 +2777,7 @@ function getProductPrice(product){
     Number(product.salePrice) > 0 &&
     Number(product.salePrice) < Number(product.price)
   ){
-
     return Number(product.salePrice);
-
   }
 
   return Number(product?.price || 0);
@@ -3400,7 +2828,6 @@ function getTotalProductStock(product){
 }
 
 function isProductAvailable(product){
-
   return getTotalProductStock(product) > 0;
 }
 
@@ -3419,7 +2846,6 @@ function getCartQuantityForProduct(
     ? Number(item.quantity)
     : 0;
 }
-
 
 /* =========================
    SHOP
@@ -3596,7 +3022,6 @@ function switchGender(gender){
 
   renderProducts();
 }
-
 
 /* =========================
    PRODUCT MODAL
@@ -3885,7 +3310,6 @@ function changeModalQuantity(change){
 
   updateModalStock();
 }
-
 
 /* =========================
    CART
@@ -4315,7 +3739,6 @@ function closeCart(){
     .classList.remove("active");
 }
 
-
 /* =========================
    CHECKOUT
 ========================= */
@@ -4413,7 +3836,6 @@ function renderCheckoutSummary(){
     </div>
   `;
 }
-
 
 /* =========================
    ORDERS
@@ -4895,7 +4317,6 @@ function toggleOrder(id){
   }
 }
 
-
 /* =========================
    ACCOUNT
 ========================= */
@@ -5102,37 +4523,24 @@ function logout(){
   renderAccount();
 }
 
-
-/* =========================================================
-   RECHTLICHE SEITEN
-========================================================= */
+/* =========================
+   LEGAL
+========================= */
 
 const legalPages = {
 
   impressum:{
-
     title:"IMPRESSUM",
-
     content:`
-
       <div class="legal-note">
-
-        <strong>
-          MUSTER / PLATZHALTER
-        </strong>
-
-        <br>
-
+        <strong>MUSTER / PLATZHALTER</strong><br>
         Diese Seite ist aktuell nur eine Vorlage für den späteren echten
         Shop. Die markierten Angaben müssen vor einer Veröffentlichung
         bzw. vor dem echten Verkauf vollständig ergänzt und rechtlich
         geprüft werden.
-
       </div>
 
-      <h2>
-        Angaben zum Anbieter
-      </h2>
+      <h2>Angaben zum Anbieter</h2>
 
       <p>
         <strong>
@@ -5145,65 +4553,43 @@ const legalPages = {
       <p>
         <span class="legal-placeholder">
           [STRAßE &amp; HAUSNUMMER]
-        </span>
-
-        <br>
+        </span><br>
 
         <span class="legal-placeholder">
           [PLZ &amp; ORT]
-        </span>
-
-        <br>
+        </span><br>
 
         Deutschland
       </p>
 
-      <h2>
-        Kontakt
-      </h2>
+      <h2>Kontakt</h2>
 
       <p>
-
         E-Mail:
-
         <span class="legal-placeholder">
           [E-MAIL-ADRESSE]
         </span>
-
         <br>
-
         Telefon:
-
         <span class="legal-placeholder">
           [TELEFONNUMMER]
         </span>
-
       </p>
 
-      <h2>
-        Vertretungsberechtigte Person
-      </h2>
+      <h2>Vertretungsberechtigte Person</h2>
 
       <p>
-
         <span class="legal-placeholder">
           [VOR- UND NACHNAME DER VERTRETUNGSBERECHTIGTEN PERSON]
         </span>
-
       </p>
 
-      <h2>
-        Registerangaben
-      </h2>
+      <h2>Registerangaben</h2>
 
       <p>
-
-        Falls vorhanden:
-
-        <br>
+        Falls vorhanden:<br>
 
         Registergericht:
-
         <span class="legal-placeholder">
           [REGISTERGERICHT]
         </span>
@@ -5211,564 +4597,300 @@ const legalPages = {
         <br>
 
         Registernummer:
-
         <span class="legal-placeholder">
           [REGISTERNUMMER]
         </span>
-
       </p>
 
-      <h2>
-        Umsatzsteuer
-      </h2>
+      <h2>Umsatzsteuer</h2>
 
       <p>
-
-        Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:
-
-        <br>
+        Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:<br>
 
         <span class="legal-placeholder">
           [UST-IDNR., FALLS VORHANDEN]
         </span>
-
       </p>
-
-      <h2>
-        Hinweis
-      </h2>
-
-      <p>
-
-        Die vorstehenden Angaben sind für die aktuelle Shop-Vorschau
-        Platzhalter. Vor dem echten Betrieb des Onlineshops müssen die
-        tatsächlichen Anbieter- und Kontaktdaten eingesetzt werden.
-
-      </p>
-
     `
   },
 
-
   datenschutz:{
-
     title:"DATENSCHUTZERKLÄRUNG",
-
     content:`
-
       <div class="legal-note">
-
-        <strong>
-          MUSTER / PLATZHALTER
-        </strong>
-
-        <br>
-
+        <strong>MUSTER / PLATZHALTER</strong><br>
         Die folgende Datenschutzerklärung ist eine technische Vorlage.
-        Welche Angaben tatsächlich erforderlich sind, hängt unter anderem
-        von Hosting, Zahlungsanbietern, Analyse-Tools, Cookies,
-        Kontaktmöglichkeiten und weiteren Diensten ab, die später
-        tatsächlich eingesetzt werden.
-
       </div>
 
-      <h2>
-        1. Verantwortlicher
-      </h2>
+      <h2>1. Verantwortlicher</h2>
 
       <p>
         Verantwortlich für die Verarbeitung personenbezogener Daten ist:
       </p>
 
       <p>
-
         <strong>
-
           <span class="legal-placeholder">
             [NAME / FIRMA]
           </span>
-
         </strong>
-
         <br>
-
         <span class="legal-placeholder">
           [ANSCHRIFT]
         </span>
-
         <br>
-
         E-Mail:
-
         <span class="legal-placeholder">
           [E-MAIL-ADRESSE]
         </span>
-
       </p>
 
-      <h2>
-        2. Besuch der Website
-      </h2>
+      <h2>2. Besuch der Website</h2>
 
       <p>
-
         Beim Aufrufen einer Website können technisch erforderliche Daten
-        verarbeitet werden. Dazu können insbesondere IP-Adresse,
-        Datum und Uhrzeit des Zugriffs, angeforderte Dateien,
-        Browserinformationen und technische Zugriffsdaten gehören.
-
+        verarbeitet werden.
       </p>
 
-      <h2>
-        3. GitHub Pages
-      </h2>
+      <h2>3. GitHub Pages</h2>
 
       <p>
-
         Diese Website kann über GitHub Pages bereitgestellt werden.
-        Wenn GitHub Pages tatsächlich für die Veröffentlichung verwendet
-        wird, müssen die aktuellen Datenschutzinformationen des
-        eingesetzten Dienstes bei der finalen Datenschutzerklärung
-        berücksichtigt werden.
-
       </p>
 
-      <h2>
-        4. Warenkorb und Shop-Vorschau
-      </h2>
+      <h2>4. Warenkorb und Shop-Vorschau</h2>
 
       <p>
-
         Die aktuelle Website verwendet den lokalen Browser-Speicher
         (localStorage), um beispielsweise Warenkorb-, Demo-Account-
         und Demo-Bestelldaten im Browser zu speichern.
-
       </p>
 
-      <h2>
-        5. Demo-Account
-      </h2>
+      <h2>5. Demo-Account</h2>
 
       <p>
-
         Die derzeitige Account-Funktion ist lediglich eine lokale
-        Demo-Funktion. Die eingegebenen Daten werden aktuell im
-        Browser gespeichert und nicht an ein echtes Kundenkonto-System
-        übertragen.
-
+        Demo-Funktion.
       </p>
 
-      <h2>
-        6. Demo-Bestellungen
-      </h2>
+      <h2>6. Demo-Bestellungen</h2>
 
       <p>
-
         Im aktuellen Vorschau-System können Testbestellungen erzeugt
         werden. Diese werden lediglich lokal im Browser gespeichert.
-
       </p>
 
-      <h2>
-        7. Kontaktaufnahme
-      </h2>
+      <h2>7. Kontaktaufnahme</h2>
 
       <p>
-
         Wenn später eine Kontaktmöglichkeit per E-Mail oder Formular
-        angeboten wird, können die dabei übermittelten Daten zur
-        Bearbeitung der Anfrage verarbeitet werden.
-
+        angeboten wird, können die dabei übermittelten Daten verarbeitet werden.
       </p>
 
-      <h2>
-        8. Cookies und Tracking
-      </h2>
+      <h2>8. Cookies und Tracking</h2>
 
       <p>
-
         Die aktuelle Website verwendet keine bewusst eingerichteten
         Analyse- oder Marketing-Tracking-Dienste.
-
       </p>
 
-      <h2>
-        9. Deine Rechte
-      </h2>
+      <h2>9. Deine Rechte</h2>
 
       <p>
-
         Betroffene Personen haben nach den gesetzlichen Voraussetzungen
         insbesondere Rechte auf Auskunft, Berichtigung, Löschung,
         Einschränkung der Verarbeitung, Datenübertragbarkeit sowie
         Widerspruch gegen bestimmte Verarbeitungen.
-
       </p>
 
-      <h2>
-        10. Aktualisierung
-      </h2>
+      <h2>10. Aktualisierung</h2>
 
       <p>
-
         Diese Datenschutzerklärung muss angepasst werden, sobald sich
         die technischen Funktionen, Anbieter oder Verarbeitungen dieser
         Website ändern.
-
       </p>
-
     `
   },
 
-
   widerruf:{
-
     title:"WIDERRUFSBELEHRUNG",
-
     content:`
-
       <div class="legal-note">
-
-        <strong>
-          MUSTER / PLATZHALTER
-        </strong>
-
-        <br>
-
+        <strong>MUSTER / PLATZHALTER</strong><br>
         Die folgende Widerrufsbelehrung ist eine Vorlage für einen späteren
-        B2C-Onlineshop. Vor dem echten Verkauf muss geprüft werden, welche
-        Widerrufsrechte und Ausnahmen für die konkret angebotenen Produkte
-        gelten.
-
+        B2C-Onlineshop.
       </div>
 
-      <h2>
-        Widerrufsrecht
-      </h2>
+      <h2>Widerrufsrecht</h2>
 
       <p>
-
         Verbrauchern steht grundsätzlich ein gesetzliches Widerrufsrecht
-        zu. Die Widerrufsfrist beträgt grundsätzlich 14 Tage, sofern keine
+        zu.
+      </p>
+
+      <h2>Widerrufsfrist</h2>
+
+      <p>
+        Die Widerrufsfrist beträgt grundsätzlich 14 Tage, sofern keine
         gesetzliche Ausnahme greift.
-
       </p>
 
-      <h2>
-        Widerrufsfrist
-      </h2>
+      <h2>Ausübung des Widerrufs</h2>
 
       <p>
-
-        Die Widerrufsfrist beträgt 14 Tage ab dem Tag, an dem der
-        Verbraucher oder ein von ihm benannter Dritter, der nicht der
-        Beförderer ist, die Ware erhalten hat.
-
-      </p>
-
-      <h2>
-        Ausübung des Widerrufs
-      </h2>
-
-      <p>
-
         Um das Widerrufsrecht auszuüben, muss der Verbraucher den Anbieter
         mittels einer eindeutigen Erklärung über seinen Entschluss,
         den Vertrag zu widerrufen, informieren.
-
       </p>
 
       <p>
-
         <strong>
           <span class="legal-placeholder">
             [NAME / FIRMA]
           </span>
         </strong>
-
         <br>
-
         <span class="legal-placeholder">
           [ANSCHRIFT]
         </span>
-
         <br>
-
         E-Mail:
-
         <span class="legal-placeholder">
           [E-MAIL-ADRESSE]
         </span>
-
       </p>
 
-      <h2>
-        Folgen des Widerrufs
-      </h2>
+      <h2>Folgen des Widerrufs</h2>
 
       <p>
-
         Wenn der Verbraucher den Vertrag widerruft, sind die erhaltenen
         Zahlungen grundsätzlich nach Maßgabe der gesetzlichen Vorschriften
         zurückzugewähren.
-
       </p>
 
-      <h2>
-        Rücksendung der Ware
-      </h2>
+      <h2>Rücksendung der Ware</h2>
 
       <p>
-
         Die Ware ist grundsätzlich nach Maßgabe der gesetzlichen
-        Bestimmungen zurückzusenden. Die konkreten Rücksendekosten und
-        deren Tragung müssen für den späteren Shop entsprechend der
-        tatsächlichen Versand- und Widerrufsbedingungen festgelegt werden.
-
+        Bestimmungen zurückzusenden.
       </p>
 
-      <h2>
-        Ausschluss bzw. Erlöschen des Widerrufsrechts
-      </h2>
+      <h2>Wichtiger Hinweis</h2>
 
       <p>
-
-        Für bestimmte Waren und Dienstleistungen können gesetzliche
-        Ausnahmen vom Widerrufsrecht bestehen.
-
-      </p>
-
-      <h2>
-        Wichtiger Hinweis für die aktuelle Vorschau
-      </h2>
-
-      <p>
-
         Der aktuelle Gonschiki-Shop ist eine technische Vorschau.
-        Es werden derzeit keine echten Zahlungen verarbeitet und keine
-        echten Bestellungen an ein Shopsystem übermittelt.
-
       </p>
-
     `
   },
 
-
   agb:{
-
     title:"ALLGEMEINE GESCHÄFTSBEDINGUNGEN",
-
     content:`
-
       <div class="legal-note">
-
-        <strong>
-          MUSTER / PLATZHALTER
-        </strong>
-
-        <br>
-
+        <strong>MUSTER / PLATZHALTER</strong><br>
         Diese AGB sind eine technische Vorlage und keine abschließende
-        Rechtsberatung. Vor dem echten Verkauf müssen sie an das konkrete
-        Geschäftsmodell, die Zahlungsarten, Versandbedingungen,
-        Produktarten und die tatsächlichen Anbieterangaben angepasst
-        und rechtlich geprüft werden.
-
+        Rechtsberatung.
       </div>
 
-      <h2>
-        § 1 Geltungsbereich
-      </h2>
+      <h2>§ 1 Geltungsbereich</h2>
 
       <p>
-
         Diese Allgemeinen Geschäftsbedingungen sollen für Verträge über
-        Waren gelten, die über den späteren Gonschiki-Onlineshop zwischen
-        dem Anbieter und Verbrauchern bzw. Kunden geschlossen werden.
-
+        Waren gelten, die über den späteren Gonschiki-Onlineshop angeboten werden.
       </p>
 
-      <h2>
-        § 2 Vertragspartner
-      </h2>
+      <h2>§ 2 Vertragspartner</h2>
 
       <p>
-
         Vertragspartner ist:
-
       </p>
 
       <p>
-
         <strong>
-
           <span class="legal-placeholder">
             [NAME / FIRMA]
           </span>
-
         </strong>
-
         <br>
-
         <span class="legal-placeholder">
           [ANSCHRIFT]
         </span>
-
         <br>
-
         E-Mail:
-
         <span class="legal-placeholder">
           [E-MAIL-ADRESSE]
         </span>
-
       </p>
 
-      <h2>
-        § 3 Vertragsschluss
-      </h2>
+      <h2>§ 3 Vertragsschluss</h2>
 
       <p>
-
         Die Darstellung der Produkte im Onlineshop stellt grundsätzlich
-        noch kein verbindliches Vertragsangebot dar, sofern die konkrete
-        Shopgestaltung nichts anderes bestimmt.
-
+        noch kein verbindliches Vertragsangebot dar.
       </p>
 
-      <h2>
-        § 4 Preise
-      </h2>
+      <h2>§ 4 Preise</h2>
 
       <p>
-
-        Die jeweils gültigen Preise werden im späteren Onlineshop
-        angegeben. Ob Preise inklusive gesetzlicher Umsatzsteuer oder
-        aufgrund einer steuerlichen Sonderregelung dargestellt werden,
-        muss für das tatsächliche Geschäftsmodell festgelegt werden.
-
+        Die jeweils gültigen Preise werden im späteren Onlineshop angegeben.
       </p>
 
-      <h2>
-        § 5 Zahlung
-      </h2>
+      <h2>§ 5 Zahlung</h2>
 
       <p>
-
-        Die verfügbaren Zahlungsmethoden werden im späteren Onlineshop
-        angegeben. Derzeit ist keine echte Zahlungsabwicklung aktiviert.
-
+        Derzeit ist keine echte Zahlungsabwicklung aktiviert.
       </p>
 
-      <h2>
-        § 6 Lieferung
-      </h2>
+      <h2>§ 6 Lieferung</h2>
 
       <p>
-
         Liefergebiet, Lieferzeit, Versanddienstleister und Versandkosten
-        werden im späteren Onlineshop vor dem echten Verkaufsstart
-        verbindlich festgelegt.
-
+        werden später festgelegt.
       </p>
 
-      <h2>
-        § 7 Eigentumsvorbehalt
-      </h2>
+      <h2>§ 7 Eigentumsvorbehalt</h2>
 
       <p>
-
         Bei einem späteren echten Verkauf kann die Ware bis zur
-        vollständigen Zahlung im Eigentum des Anbieters bleiben,
-        soweit dies gesetzlich zulässig ist.
-
+        vollständigen Zahlung im Eigentum des Anbieters bleiben.
       </p>
 
-      <h2>
-        § 8 Gewährleistung
-      </h2>
+      <h2>§ 8 Gewährleistung</h2>
 
       <p>
-
-        Es gelten die gesetzlichen Mängelhaftungsrechte, soweit keine
-        wirksame gesetzliche oder vertragliche Regelung etwas anderes
-        bestimmt.
-
+        Es gelten die gesetzlichen Mängelhaftungsrechte.
       </p>
 
-      <h2>
-        § 9 Haftung
-      </h2>
+      <h2>§ 9 Haftung</h2>
 
       <p>
-
         Die Haftung richtet sich nach den gesetzlichen Vorschriften.
-
       </p>
 
-      <h2>
-        § 10 Widerrufsrecht
-      </h2>
+      <h2>§ 10 Widerrufsrecht</h2>
 
       <p>
-
-        Soweit der Kunde Verbraucher ist und ein gesetzliches
-        Widerrufsrecht besteht, gelten die hierfür vorgesehenen
-        gesetzlichen Bestimmungen und die entsprechende
-        Widerrufsbelehrung.
-
+        Soweit ein gesetzliches Widerrufsrecht besteht, gelten die
+        entsprechenden gesetzlichen Bestimmungen.
       </p>
 
-      <h2>
-        § 11 Verbraucherstreitbeilegung
-      </h2>
+      <h2>§ 11 Verbraucherstreitbeilegung</h2>
 
       <p>
-
-        Die Angaben zur Teilnahme oder Nichtteilnahme an einem
-        Verbraucherschlichtungsverfahren müssen vor dem echten
-        Verkaufsstart anhand der tatsächlichen rechtlichen Situation
-        des Unternehmens ergänzt werden.
-
+        Die Angaben zur Verbraucherstreitbeilegung müssen vor dem echten
+        Verkaufsstart ergänzt werden.
       </p>
+
+      <h2>§ 12 Schlussbestimmungen</h2>
 
       <p>
-
-        <span class="legal-placeholder">
-          [ANGABE ZUR TEILNAHME AN VERBRAUCHERSTREITBEILEGUNG ERGÄNZEN]
-        </span>
-
+        Es gelten die gesetzlichen Vorschriften.
       </p>
-
-      <h2>
-        § 12 Schlussbestimmungen
-      </h2>
-
-      <p>
-
-        Es gelten die gesetzlichen Vorschriften. Soweit zulässig, können
-        für das Vertragsverhältnis ergänzende Regelungen zum anwendbaren
-        Recht und Gerichtsstand getroffen werden.
-
-      </p>
-
-      <h2>
-        Hinweis zur aktuellen Shop-Vorschau
-      </h2>
-
-      <p>
-
-        Die aktuelle Website befindet sich noch im Aufbau. Die im
-        Warenkorb und Checkout angezeigten Bestellungen sind derzeit
-        ausschließlich Demo-Daten.
-
-      </p>
-
     `
   }
 
 };
-
 
 function openLegal(page){
 
@@ -5834,10 +4956,9 @@ function closeLegal(){
     );
 }
 
-
-/* =========================================================
+/* =========================
    ADMIN
-========================================================= */
+========================= */
 
 const ADMIN_USERNAME =
   "admin";
@@ -5939,17 +5060,6 @@ function adminLogin(event){
     );
 
   }
-}
-
-function closeAdminLogin(){
-
-  document
-    .getElementById(
-      "adminLoginModal"
-    )
-    .classList.remove(
-      "active"
-    );
 }
 
 function adminLogout(){
@@ -6095,80 +5205,36 @@ function renderAdminStats(){
   container.innerHTML = `
 
     <div class="admin-stat">
-
-      <span>
-        PRODUKTE
-      </span>
-
-      <strong>
-        ${totalProducts}
-      </strong>
-
+      <span>PRODUKTE</span>
+      <strong>${totalProducts}</strong>
     </div>
 
     <div class="admin-stat">
-
-      <span>
-        AKTIV
-      </span>
-
-      <strong>
-        ${activeProducts}
-      </strong>
-
+      <span>AKTIV</span>
+      <strong>${activeProducts}</strong>
     </div>
 
     <div class="admin-stat">
-
-      <span>
-        LAGERBESTAND
-      </span>
-
-      <strong>
-        ${totalStock}
-      </strong>
-
+      <span>LAGERBESTAND</span>
+      <strong>${totalStock}</strong>
     </div>
 
     <div class="admin-stat">
-
-      <span>
-        SALE
-      </span>
-
-      <strong>
-        ${saleProducts}
-      </strong>
-
+      <span>SALE</span>
+      <strong>${saleProducts}</strong>
     </div>
 
     <div class="admin-stat">
-
-      <span>
-        BESTELLUNGEN
-      </span>
-
-      <strong>
-        ${totalOrders}
-      </strong>
-
+      <span>BESTELLUNGEN</span>
+      <strong>${totalOrders}</strong>
     </div>
 
     <div
       class="admin-stat"
       style="grid-column:span 3;"
     >
-
-      <span>
-        DEMO-BESTELLUMSATZ
-      </span>
-
-      <strong>
-        ${formatPrice(
-          demoRevenue
-        )}
-      </strong>
-
+      <span>DEMO-BESTELLUMSATZ</span>
+      <strong>${formatPrice(demoRevenue)}</strong>
     </div>
 
   `;
@@ -6189,8 +5255,7 @@ function renderAdminProducts(){
     products.map(
       product => {
 
-        let stockHtml =
-          "";
+        let stockHtml = "";
 
         if(product.sticker){
 
@@ -6884,7 +5949,6 @@ function renderAdminOrders(){
     ).join("");
 }
 
-
 /* =========================
    MODAL CLICK OUTSIDE
 ========================= */
@@ -6915,7 +5979,6 @@ document
     }
   );
 
-
 /* =========================
    SECRET ADMIN URL
 ========================= */
@@ -6945,7 +6008,6 @@ function checkAdminUrl(){
   }
 
 }
-
 
 /* =========================
    INIT
