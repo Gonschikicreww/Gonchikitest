@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>ГОНЩИКИ — Gonschiki Crew</title>
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -25,8 +23,7 @@ body{
     overflow-x:hidden;
 }
 
-button,
-input{
+button,input{
     font:inherit;
 }
 
@@ -34,9 +31,7 @@ button{
     cursor:pointer;
 }
 
-/* =========================
-   INFO BAR
-========================= */
+/* INFO BAR */
 
 .notice{
     position:relative;
@@ -50,9 +45,7 @@ button{
     letter-spacing:1px;
 }
 
-/* =========================
-   NAVIGATION
-========================= */
+/* NAV */
 
 nav{
     position:absolute;
@@ -79,7 +72,6 @@ nav{
 
     display:flex;
     flex-direction:column;
-
     line-height:.85;
 }
 
@@ -91,10 +83,8 @@ nav{
 
 .logo-est{
     margin-top:7px;
-
     font-size:9px;
     letter-spacing:4px;
-
     opacity:.75;
 }
 
@@ -107,11 +97,9 @@ nav{
 .nav-links a{
     color:#fff;
     text-decoration:none;
-
     font-size:12px;
     font-weight:800;
     letter-spacing:1px;
-
     transition:.25s;
 }
 
@@ -134,7 +122,6 @@ nav{
     border:0;
     background:none;
     color:#777;
-
     font-size:10px;
     font-weight:800;
 }
@@ -146,11 +133,9 @@ nav{
 
 .cart-button{
     position:relative;
-
     border:0;
     background:none;
     color:#fff;
-
     font-size:18px;
 }
 
@@ -175,13 +160,10 @@ nav{
     font-weight:900;
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
     position:relative;
-
     min-height:100vh;
 
     display:flex;
@@ -189,7 +171,6 @@ nav{
     justify-content:center;
 
     text-align:center;
-
     overflow:hidden;
 }
 
@@ -204,14 +185,12 @@ nav{
     background-repeat:no-repeat;
 
     transform:scale(1.02);
-
     filter:brightness(.52);
 }
 
 .hero-overlay{
     position:absolute;
     inset:0;
-
     z-index:1;
 
     background:
@@ -226,46 +205,33 @@ nav{
 .hero-content{
     position:relative;
     z-index:2;
-
     width:min(1000px,90%);
-
     padding-top:80px;
 }
 
 .hero-logo{
     font-size:clamp(65px,12vw,150px);
-
     line-height:.78;
-
     font-weight:1000;
-
     letter-spacing:4px;
 
-    text-shadow:
-        0 10px 40px rgba(0,0,0,.8);
+    text-shadow:0 10px 40px rgba(0,0,0,.8);
 }
 
 .hero-est{
     margin-top:28px;
-
     font-size:clamp(14px,2vw,23px);
-
     font-weight:800;
-
     letter-spacing:10px;
-
     opacity:.9;
 }
 
 .hero-description{
     max-width:680px;
-
     margin:70px auto 0;
 
     color:#ddd;
-
     font-size:16px;
-
     line-height:1.8;
 }
 
@@ -274,19 +240,15 @@ nav{
 
     display:flex;
     flex-direction:column;
-
     gap:14px;
 
     font-size:clamp(17px,2.2vw,27px);
-
     font-weight:900;
-
     letter-spacing:4px;
 }
 
 .hero-button{
     display:inline-block;
-
     margin-top:45px;
 
     padding:16px 30px;
@@ -298,7 +260,6 @@ nav{
 
     font-size:11px;
     font-weight:900;
-
     letter-spacing:2px;
 
     transition:.3s;
@@ -309,9 +270,7 @@ nav{
     color:#000;
 }
 
-/* =========================
-   GENERAL
-========================= */
+/* GENERAL */
 
 section{
     padding:110px 5%;
@@ -319,27 +278,19 @@ section{
 
 .section-title{
     font-size:clamp(34px,5vw,65px);
-
     font-weight:1000;
-
     letter-spacing:2px;
-
     margin-bottom:18px;
 }
 
 .section-subtitle{
     max-width:650px;
-
     color:#999;
-
     font-size:14px;
-
     line-height:1.7;
 }
 
-/* =========================
-   SHOP
-========================= */
+/* SHOP */
 
 .shop-section{
     background:#0a0a0a;
@@ -347,13 +298,9 @@ section{
 
 .shop-header{
     display:flex;
-
     align-items:flex-end;
-
     justify-content:space-between;
-
     gap:30px;
-
     margin-bottom:40px;
 }
 
@@ -364,92 +311,73 @@ section{
 
 .gender-tabs button{
     background:#111;
-
     color:#777;
-
     border:1px solid #282828;
 
     padding:12px 20px;
 
     font-size:11px;
-
     font-weight:900;
-
     letter-spacing:1px;
 }
 
 .gender-tabs button.active{
     background:#fff;
-
     color:#000;
-
     border-color:#fff;
 }
 
 .category-tabs{
     display:flex;
-
     flex-wrap:wrap;
-
     gap:8px;
-
     margin-bottom:35px;
 }
 
 .category-tabs button{
     background:transparent;
-
     color:#777;
-
     border:1px solid #282828;
 
     padding:10px 15px;
 
     font-size:10px;
-
     font-weight:800;
-
     letter-spacing:1px;
+
+    transition:.25s;
 }
 
-.category-tabs button.active{
+.category-tabs button.active,
+.category-tabs button:hover{
     background:#fff;
-
     color:#000;
-
     border-color:#fff;
 }
 
 .products-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
+    grid-template-columns:repeat(4,1fr);
     gap:18px;
 }
 
 .product-card{
     background:#111;
-
     border:1px solid #1f1f1f;
 
     transition:.3s;
-
     cursor:pointer;
+    overflow:hidden;
 }
 
 .product-card:hover{
     transform:translateY(-4px);
-
     border-color:#444;
 }
 
 .product-image{
     height:330px;
-
     background:#151515;
-
     overflow:hidden;
 }
 
@@ -464,9 +392,19 @@ section{
     transition:.4s;
 }
 
-.product-card:hover
-.product-image img{
+.product-card:hover .product-image img{
     transform:scale(1.035);
+}
+
+/* Sticker-Bilder */
+
+.product-card.sticker-product .product-image{
+    background:#080808;
+}
+
+.product-card.sticker-product .product-image img{
+    object-fit:contain;
+    padding:12px;
 }
 
 .product-info{
@@ -475,41 +413,37 @@ section{
 
 .product-name{
     font-size:12px;
-
     font-weight:900;
-
     letter-spacing:1px;
 }
 
 .product-category{
     margin-top:6px;
-
     color:#777;
-
     font-size:10px;
-
     text-transform:uppercase;
+}
+
+.product-size{
+    margin-top:8px;
+    color:#aaa;
+    font-size:10px;
+    line-height:1.5;
 }
 
 .product-price{
     margin-top:13px;
-
     font-size:13px;
-
     font-weight:900;
 }
 
 .preview-price{
     margin-top:4px;
-
     color:#666;
-
     font-size:9px;
 }
 
-/* =========================
-   CARS
-========================= */
+/* CARS */
 
 .cars-section{
     background:#050505;
@@ -517,50 +451,35 @@ section{
 
 .cars-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
+    grid-template-columns:repeat(2,1fr);
     gap:22px;
-
     margin-top:50px;
 }
 
 .car{
     background:#0d0d0d;
-
     border:1px solid #202020;
-
     overflow:hidden;
 }
 
 .car-image{
     width:100%;
-
     height:225px;
-
     display:block;
-
     overflow:hidden;
-
     background:#111;
 }
 
 .car-image img{
     width:100%;
     height:100%;
-
     display:block;
-
     object-fit:cover;
-
     object-position:center center;
-
     transition:.4s;
 }
 
-.car:hover
-.car-image img{
+.car:hover .car-image img{
     transform:scale(1.025);
 }
 
@@ -570,13 +489,10 @@ section{
 
 .car-info h3{
     font-size:15px;
-
     letter-spacing:2px;
 }
 
-/* =========================
-   EVENTS
-========================= */
+/* EVENTS */
 
 .events-section{
     background:#050505;
@@ -584,70 +500,50 @@ section{
 
 .events-grid{
     display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
+    grid-template-columns:repeat(2,1fr);
     gap:20px;
-
     margin-top:50px;
 }
 
 .event{
     padding:30px;
-
     background:#0b0b0b;
-
     border:1px solid #222;
 }
 
 .event-date{
     color:#888;
-
     font-size:12px;
-
     font-weight:800;
-
     letter-spacing:2px;
 }
 
 .event h3{
     margin-top:16px;
-
     font-size:27px;
 }
 
 .event p{
     margin-top:12px;
-
     color:#888;
-
     font-size:13px;
-
     line-height:1.7;
 }
 
 .event button{
     margin-top:25px;
-
     padding:12px 18px;
 
     background:#fff;
-
     color:#000;
-
     border:0;
 
     font-size:10px;
-
     font-weight:900;
-
     letter-spacing:1px;
 }
 
-/* =========================
-   ABOUT
-========================= */
+/* ABOUT */
 
 .about-section{
     background:#0a0a0a;
@@ -655,34 +551,24 @@ section{
 
 .about-grid{
     display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
+    grid-template-columns:1fr 1fr;
     gap:70px;
-
     margin-top:45px;
 }
 
 .about-big{
     font-size:clamp(30px,4vw,55px);
-
     line-height:1;
-
     font-weight:1000;
 }
 
 .about-text{
     color:#aaa;
-
     font-size:14px;
-
     line-height:1.9;
 }
 
-/* =========================
-   ACCOUNT
-========================= */
+/* ACCOUNT */
 
 .account-section{
     background:#050505;
@@ -690,26 +576,19 @@ section{
 
 .account-grid{
     display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
+    grid-template-columns:1fr 1fr;
     gap:20px;
-
     margin-top:50px;
 }
 
 .account-box{
     padding:30px;
-
     background:#0c0c0c;
-
     border:1px solid #222;
 }
 
 .account-box h3{
     margin-bottom:25px;
-
     font-size:22px;
 }
 
@@ -719,29 +598,20 @@ section{
 
 .form-group label{
     display:block;
-
     margin-bottom:6px;
-
     color:#777;
-
     font-size:9px;
-
     font-weight:900;
-
     letter-spacing:1px;
 }
 
 .form-group input{
     width:100%;
-
     padding:13px;
 
     background:#111;
-
     color:#fff;
-
     border:1px solid #292929;
-
     outline:none;
 }
 
@@ -751,37 +621,26 @@ section{
 
 .form-button{
     width:100%;
-
     margin-top:10px;
-
     padding:14px;
 
     background:#fff;
-
     color:#000;
-
     border:0;
 
     font-size:10px;
-
     font-weight:900;
-
     letter-spacing:1px;
 }
 
 .account-note{
     margin-top:14px;
-
     color:#666;
-
     font-size:10px;
-
     line-height:1.6;
 }
 
-/* =========================
-   CONTACT
-========================= */
+/* CONTACT */
 
 .contact-section{
     background:#0a0a0a;
@@ -789,15 +648,11 @@ section{
 
 .contact-box{
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     gap:30px;
 
     margin-top:40px;
-
     padding:35px;
 
     border:1px solid #222;
@@ -809,9 +664,7 @@ section{
 
 .contact-box p{
     margin-top:9px;
-
     color:#777;
-
     font-size:12px;
 }
 
@@ -819,67 +672,49 @@ section{
     padding:14px 22px;
 
     color:#fff;
-
     text-decoration:none;
 
     border:1px solid #444;
 
     font-size:10px;
-
     font-weight:900;
-
     letter-spacing:1px;
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     gap:20px;
 
     padding:35px 5%;
 
     background:#050505;
-
     border-top:1px solid #202020;
 }
 
 .footer-logo{
     font-size:18px;
-
     font-weight:1000;
-
     letter-spacing:2px;
 }
 
 footer p{
     color:#555;
-
     font-size:10px;
 }
 
-/* =========================
-   PRODUCT MODAL
-========================= */
+/* MODAL */
 
 .modal{
     position:fixed;
-
     inset:0;
-
     z-index:200;
 
     display:none;
-
     align-items:center;
-
     justify-content:center;
 
     padding:20px;
@@ -893,23 +728,18 @@ footer p{
 
 .modal-box{
     width:min(900px,100%);
-
     max-height:90vh;
-
     overflow:auto;
 
     display:grid;
-
     grid-template-columns:1fr 1fr;
 
     background:#101010;
-
     border:1px solid #333;
 }
 
 .modal-image{
     min-height:500px;
-
     background:#151515;
 }
 
@@ -919,59 +749,68 @@ footer p{
 
     display:block;
 
-    object-fit:cover;
+    object-fit:contain;
 }
 
 .modal-content{
     position:relative;
-
     padding:35px;
 }
 
 .modal-close{
     position:absolute;
-
     top:15px;
     right:18px;
 
     background:none;
-
     border:0;
-
     color:#fff;
-
     font-size:24px;
 }
 
 .modal-content h2{
     margin-bottom:10px;
-
     font-size:28px;
 }
 
 .modal-price{
     margin-bottom:25px;
-
     color:#aaa;
+}
+
+.modal-size{
+    margin-bottom:25px;
+    padding:15px;
+
+    background:#151515;
+    border:1px solid #282828;
+}
+
+.modal-size-label{
+    color:#777;
+    font-size:9px;
+    font-weight:900;
+    letter-spacing:1px;
+    margin-bottom:6px;
+}
+
+.modal-size-value{
+    color:#fff;
+    font-size:14px;
+    font-weight:800;
 }
 
 .size-title{
     margin-bottom:10px;
-
     color:#777;
-
     font-size:10px;
-
     font-weight:900;
-
     letter-spacing:1px;
 }
 
 .sizes{
     display:flex;
-
     gap:8px;
-
     margin-bottom:25px;
 }
 
@@ -980,7 +819,6 @@ footer p{
     height:42px;
 
     background:#111;
-
     color:#fff;
 
     border:1px solid #333;
@@ -988,52 +826,38 @@ footer p{
 
 .size.active{
     background:#fff;
-
     color:#000;
-
     border-color:#fff;
 }
 
 .add-cart{
     width:100%;
-
     padding:16px;
 
     background:#fff;
-
     color:#000;
-
     border:0;
 
     font-size:10px;
-
     font-weight:900;
-
     letter-spacing:1px;
 }
 
-/* =========================
-   CART
-========================= */
+/* CART */
 
 .cart-panel{
     position:fixed;
-
     top:0;
     right:-430px;
-
     z-index:300;
 
     width:min(430px,100%);
-
     height:100vh;
 
     padding:30px;
-
     overflow:auto;
 
     background:#0d0d0d;
-
     border-left:1px solid #333;
 
     transition:.35s;
@@ -1045,9 +869,7 @@ footer p{
 
 .cart-head{
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
 
     padding-bottom:25px;
@@ -1061,19 +883,14 @@ footer p{
 
 .cart-close{
     background:none;
-
     border:0;
-
     color:#fff;
-
     font-size:25px;
 }
 
 .cart-item{
     display:grid;
-
-    grid-template-columns:
-        75px 1fr auto;
+    grid-template-columns:75px 1fr auto;
 
     gap:13px;
 
@@ -1085,93 +902,72 @@ footer p{
 .cart-item img{
     width:75px;
     height:75px;
-
     object-fit:cover;
 }
 
 .cart-item-name{
     font-size:11px;
-
     font-weight:900;
 }
 
 .cart-item-size{
     margin-top:5px;
-
     color:#666;
-
     font-size:10px;
 }
 
 .cart-item-price{
     margin-top:9px;
-
     font-size:11px;
 }
 
 .remove-item{
     background:none;
-
     border:0;
-
     color:#666;
-
     font-size:10px;
 }
 
 .cart-empty{
     padding:30px 0;
-
     color:#666;
-
     font-size:12px;
 }
 
 .cart-footer{
     margin-top:20px;
-
     padding-top:20px;
-
     border-top:1px solid #252525;
 }
 
 .cart-total{
     display:flex;
-
     justify-content:space-between;
 
     font-size:14px;
-
     font-weight:900;
 }
 
 .checkout-button{
     width:100%;
-
     margin-top:18px;
-
     padding:15px;
 
     background:#222;
-
     color:#666;
 
     border:1px solid #333;
 
     font-size:10px;
-
     font-weight:900;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:900px){
 
     nav{
         top:35px;
-
         padding:16px 4%;
     }
 
@@ -1197,25 +993,19 @@ footer p{
 
     .hero-est{
         margin-top:24px;
-
         font-size:12px;
-
         letter-spacing:6px;
     }
 
     .hero-description{
         margin-top:55px;
-
         font-size:13px;
-
         line-height:1.7;
     }
 
     .hero-slogan{
         margin-top:65px;
-
         font-size:14px;
-
         letter-spacing:2px;
     }
 
@@ -1225,7 +1015,6 @@ footer p{
 
     .shop-header{
         flex-direction:column;
-
         align-items:flex-start;
     }
 
@@ -1238,9 +1027,7 @@ footer p{
     }
 
     .products-grid{
-        grid-template-columns:
-            repeat(2,1fr);
-
+        grid-template-columns:repeat(2,1fr);
         gap:10px;
     }
 
@@ -1270,19 +1057,16 @@ footer p{
 
     .contact-box{
         flex-direction:column;
-
         align-items:flex-start;
     }
 
     .modal-box{
         grid-template-columns:1fr;
-
         max-height:94vh;
     }
 
     .modal-image{
         min-height:300px;
-
         height:300px;
     }
 
@@ -1292,7 +1076,6 @@ footer p{
 
     footer{
         flex-direction:column;
-
         align-items:flex-start;
     }
 }
@@ -1301,7 +1084,6 @@ footer p{
 
     .notice{
         font-size:8px;
-
         line-height:1.4;
     }
 
@@ -1315,31 +1097,26 @@ footer p{
 
     .hero-logo{
         font-size:19vw;
-
         letter-spacing:1px;
     }
 
     .hero-est{
         font-size:9px;
-
         letter-spacing:4px;
     }
 
     .hero-description{
         margin-top:45px;
-
         font-size:12px;
     }
 
     .hero-slogan{
         margin-top:55px;
-
         font-size:12px;
     }
 
     .products-grid{
-        grid-template-columns:
-            repeat(2,1fr);
+        grid-template-columns:repeat(2,1fr);
     }
 
     .product-image{
@@ -1354,13 +1131,16 @@ footer p{
         font-size:10px;
     }
 
+    .product-size{
+        font-size:9px;
+    }
+
     .product-price{
         font-size:11px;
     }
 
     .category-tabs button{
         padding:9px 11px;
-
         font-size:9px;
     }
 }
@@ -1370,17 +1150,9 @@ footer p{
 
 <body>
 
-<!-- =========================
-     INFO
-========================= -->
-
 <div class="notice">
     SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BESTELLUNGEN DERZEIT MÖGLICH!
 </div>
-
-<!-- =========================
-     NAV
-========================= -->
 
 <nav>
 
@@ -1398,29 +1170,12 @@ footer p{
 
     <div class="nav-links">
 
-        <a href="#shop">
-            SHOP
-        </a>
-
-        <a href="#cars">
-            CARS
-        </a>
-
-        <a href="#events">
-            EVENTS
-        </a>
-
-        <a href="#about">
-            ABOUT
-        </a>
-
-        <a href="#contact">
-            KONTAKT
-        </a>
-
-        <a href="#account">
-            ANMELDEN
-        </a>
+        <a href="#shop">SHOP</a>
+        <a href="#cars">CARS</a>
+        <a href="#events">EVENTS</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">KONTAKT</a>
+        <a href="#account">ANMELDEN</a>
 
     </div>
 
@@ -1428,17 +1183,9 @@ footer p{
 
         <div class="lang">
 
-            <button class="active">
-                DE
-            </button>
-
-            <button>
-                EN
-            </button>
-
-            <button>
-                RU
-            </button>
+            <button class="active">DE</button>
+            <button>EN</button>
+            <button>RU</button>
 
         </div>
 
@@ -1461,14 +1208,9 @@ footer p{
 
 </nav>
 
-<!-- =========================
-     START
-========================= -->
+<!-- START -->
 
-<section
-    class="hero"
-    id="home"
->
+<section class="hero" id="home">
 
     <div class="hero-car-background"></div>
 
@@ -1516,14 +1258,9 @@ footer p{
 
 </section>
 
-<!-- =========================
-     SHOP
-========================= -->
+<!-- SHOP -->
 
-<section
-    class="shop-section"
-    id="shop"
->
+<section class="shop-section" id="shop">
 
     <div class="shop-header">
 
@@ -1535,10 +1272,10 @@ footer p{
 
             <p class="section-subtitle">
 
-                Gonschiki Streetwear –
+                Gonschiki Streetwear und Sticker –
                 aktuell als Shop-Vorschau.
-                Preise, Größen und Versand werden
-                noch final bestätigt.
+                Preise, Versand und Verfügbarkeit
+                werden noch final bestätigt.
 
             </p>
 
@@ -1596,6 +1333,12 @@ footer p{
             HOSEN
         </button>
 
+        <button
+            data-category="Sticker"
+        >
+            STICKER
+        </button>
+
     </div>
 
     <div
@@ -1605,14 +1348,9 @@ footer p{
 
 </section>
 
-<!-- =========================
-     CARS
-========================= -->
+<!-- CARS -->
 
-<section
-    class="cars-section"
-    id="cars"
->
+<section class="cars-section" id="cars">
 
     <h2 class="section-title">
         CARS
@@ -1641,15 +1379,10 @@ footer p{
             </div>
 
             <div class="car-info">
-
-                <h3>
-                    GONSCHIKI #01
-                </h3>
-
+                <h3>GONSCHIKI #01</h3>
             </div>
 
         </div>
-
 
         <div class="car">
 
@@ -1663,15 +1396,10 @@ footer p{
             </div>
 
             <div class="car-info">
-
-                <h3>
-                    GONSCHIKI #02
-                </h3>
-
+                <h3>GONSCHIKI #02</h3>
             </div>
 
         </div>
-
 
         <div class="car">
 
@@ -1685,15 +1413,10 @@ footer p{
             </div>
 
             <div class="car-info">
-
-                <h3>
-                    GONSCHIKI #03
-                </h3>
-
+                <h3>GONSCHIKI #03</h3>
             </div>
 
         </div>
-
 
         <div class="car">
 
@@ -1707,15 +1430,10 @@ footer p{
             </div>
 
             <div class="car-info">
-
-                <h3>
-                    GONSCHIKI #04
-                </h3>
-
+                <h3>GONSCHIKI #04</h3>
             </div>
 
         </div>
-
 
         <div class="car">
 
@@ -1729,11 +1447,7 @@ footer p{
             </div>
 
             <div class="car-info">
-
-                <h3>
-                    GONSCHIKI #05
-                </h3>
-
+                <h3>GONSCHIKI #05</h3>
             </div>
 
         </div>
@@ -1742,24 +1456,17 @@ footer p{
 
 </section>
 
-<!-- =========================
-     EVENTS
-========================= -->
+<!-- EVENTS -->
 
-<section
-    class="events-section"
-    id="events"
->
+<section class="events-section" id="events">
 
     <h2 class="section-title">
         EVENTS
     </h2>
 
     <p class="section-subtitle">
-
         Treffen, Autos, Musik und Menschen
         mit derselben Leidenschaft.
-
     </p>
 
     <div class="events-grid">
@@ -1775,11 +1482,9 @@ footer p{
             </h3>
 
             <p>
-
                 Cars, Crew und Night Vibes.
                 Ein Abend für alle,
                 die Benzin im Blut haben.
-
             </p>
 
             <button onclick="eventInfo()">
@@ -1787,7 +1492,6 @@ footer p{
             </button>
 
         </div>
-
 
         <div class="event">
 
@@ -1800,11 +1504,9 @@ footer p{
             </h3>
 
             <p>
-
                 Gemeinsam treffen,
                 Autos anschauen und
                 neue Leute aus der Szene kennenlernen.
-
             </p>
 
             <button onclick="eventInfo()">
@@ -1817,14 +1519,9 @@ footer p{
 
 </section>
 
-<!-- =========================
-     ABOUT
-========================= -->
+<!-- ABOUT -->
 
-<section
-    class="about-section"
-    id="about"
->
+<section class="about-section" id="about">
 
     <h2 class="section-title">
         ABOUT
@@ -1843,31 +1540,25 @@ footer p{
         <div class="about-text">
 
             <p>
-
                 Gonschiki Crew entstand aus der
                 Leidenschaft für Autos, Streetwear
                 und die Nächte, in denen die Stadt
                 anders wirkt.
-
             </p>
 
             <br>
 
             <p>
-
                 Unser Style ist schlicht, direkt und
                 von der Automotive-Szene inspiriert.
-
             </p>
 
             <br>
 
             <p>
-
                 Schwarz, Weiß, Grau und starke Details.
                 Keine unnötigen Regeln –
                 einfach der eigene Style.
-
             </p>
 
         </div>
@@ -1876,23 +1567,16 @@ footer p{
 
 </section>
 
-<!-- =========================
-     ACCOUNT
-========================= -->
+<!-- ACCOUNT -->
 
-<section
-    class="account-section"
-    id="account"
->
+<section class="account-section" id="account">
 
     <h2 class="section-title">
         ACCOUNT
     </h2>
 
     <p class="section-subtitle">
-
         Melde dich an oder erstelle einen Account.
-
     </p>
 
     <div class="account-grid">
@@ -1941,7 +1625,6 @@ footer p{
 
         </div>
 
-
         <div class="account-box">
 
             <h3>
@@ -1951,115 +1634,43 @@ footer p{
             <form onsubmit="register(event)">
 
                 <div class="form-group">
-
-                    <label>
-                        VORNAME
-                    </label>
-
-                    <input
-                        type="text"
-                        id="firstName"
-                        required
-                    >
-
+                    <label>VORNAME</label>
+                    <input type="text" id="firstName" required>
                 </div>
 
                 <div class="form-group">
-
-                    <label>
-                        NACHNAME
-                    </label>
-
-                    <input
-                        type="text"
-                        id="lastName"
-                        required
-                    >
-
+                    <label>NACHNAME</label>
+                    <input type="text" id="lastName" required>
                 </div>
 
                 <div class="form-group">
-
-                    <label>
-                        E-MAIL
-                    </label>
-
-                    <input
-                        type="email"
-                        id="registerEmail"
-                        required
-                    >
-
+                    <label>E-MAIL</label>
+                    <input type="email" id="registerEmail" required>
                 </div>
 
                 <div class="form-group">
-
-                    <label>
-                        STRASSE + HAUSNUMMER
-                    </label>
-
-                    <input
-                        type="text"
-                        id="street"
-                        required
-                    >
-
+                    <label>STRASSE + HAUSNUMMER</label>
+                    <input type="text" id="street" required>
                 </div>
 
                 <div class="form-group">
-
-                    <label>
-                        PLZ
-                    </label>
-
-                    <input
-                        type="text"
-                        id="zip"
-                        required
-                    >
-
+                    <label>PLZ</label>
+                    <input type="text" id="zip" required>
                 </div>
 
                 <div class="form-group">
-
-                    <label>
-                        ORT
-                    </label>
-
-                    <input
-                        type="text"
-                        id="city"
-                        required
-                    >
-
+                    <label>ORT</label>
+                    <input type="text" id="city" required>
                 </div>
 
                 <div class="form-group">
-
-                    <label>
-                        PASSWORT
-                    </label>
-
-                    <input
-                        type="password"
-                        id="registerPassword"
-                        required
-                    >
-
+                    <label>PASSWORT</label>
+                    <input type="password" id="registerPassword" required>
                 </div>
 
                 <div class="form-group">
-
-                    <label>
-                        PASSWORT WIEDERHOLEN
-                    </label>
-
-                    <input
-                        type="password"
-                        id="registerPassword2"
-                        required
-                    >
-
+                    <label>PASSWORT WIEDERHOLEN</label>
+                    <input type="password" id="registerPassword2" required>
                 </div>
 
                 <button class="form-button">
@@ -2069,11 +1680,9 @@ footer p{
             </form>
 
             <p class="account-note">
-
                 Demo-Funktion für die Website-Vorschau.
                 Für einen echten Shop werden später sichere
                 Server-/Datenbankfunktionen benötigt.
-
             </p>
 
         </div>
@@ -2082,14 +1691,9 @@ footer p{
 
 </section>
 
-<!-- =========================
-     CONTACT
-========================= -->
+<!-- CONTACT -->
 
-<section
-    class="contact-section"
-    id="contact"
->
+<section class="contact-section" id="contact">
 
     <h2 class="section-title">
         KONTAKT
@@ -2121,9 +1725,7 @@ footer p{
 
 </section>
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -2137,9 +1739,7 @@ footer p{
 
 </footer>
 
-<!-- =========================
-     PRODUCT MODAL
-========================= -->
+<!-- PRODUCT MODAL -->
 
 <div
     class="modal"
@@ -2173,11 +1773,33 @@ footer p{
                 Preis folgt
             </div>
 
-            <div class="size-title">
-                GRÖSSE
+            <div
+                class="modal-size"
+                id="modalSizeBox"
+            >
+
+                <div class="modal-size-label">
+                    GRÖSSE / ABMESSUNG
+                </div>
+
+                <div
+                    class="modal-size-value"
+                    id="modalSizeValue"
+                ></div>
+
             </div>
 
-            <div class="sizes">
+            <div
+                class="size-title"
+                id="clothingSizeTitle"
+            >
+                GRÖSSE AUSWÄHLEN
+            </div>
+
+            <div
+                class="sizes"
+                id="clothingSizes"
+            >
 
                 <button
                     class="size"
@@ -2222,9 +1844,7 @@ footer p{
 
 </div>
 
-<!-- =========================
-     CART
-========================= -->
+<!-- CART -->
 
 <div
     class="cart-panel"
@@ -2275,9 +1895,7 @@ footer p{
 
 <script>
 
-/* =========================
-   PRODUKTE
-========================= */
+/* PRODUKTE */
 
 const products = [
 
@@ -2285,264 +1903,278 @@ const products = [
         id:1,
         name:"Gonschiki Russia Shirt",
         category:"Shirts",
-        image:"assets/Shirt-black-Russia.jpg"
+        image:"assets/Shirt-black-Russia.jpg",
+        size:"S / M / L / XL"
     },
 
     {
         id:2,
         name:"Gonschiki Kreuz Zipper",
         category:"Zipper",
-        image:"assets/Zipper-black-Kreuz.jpg"
+        image:"assets/Zipper-black-Kreuz.jpg",
+        size:"S / M / L / XL"
     },
 
     {
         id:3,
         name:"Gonschiki E36 Hoodie",
         category:"Hoodies",
-        image:"assets/Hoodie-black-e36.jpg"
+        image:"assets/Hoodie-black-e36.jpg",
+        size:"S / M / L / XL"
     },
 
     {
         id:4,
         name:"Gonschiki E34 Hoodie",
         category:"Hoodies",
-        image:"assets/Hoodie-black-e34.jpg"
+        image:"assets/Hoodie-black-e34.jpg",
+        size:"S / M / L / XL"
     },
 
     {
         id:5,
         name:"Gonschiki Kreuz Hoodie",
         category:"Hoodies",
-        image:"assets/Hoodie-black-Kreuz.jpg"
+        image:"assets/Hoodie-black-Kreuz.jpg",
+        size:"S / M / L / XL"
     },
 
     {
         id:6,
         name:"Gonschiki E36 Shirt",
         category:"Shirts",
-        image:"assets/Shirt-black-e36.jpg"
+        image:"assets/Shirt-black-e36.jpg",
+        size:"S / M / L / XL"
     },
 
     {
         id:7,
         name:"Gonschiki Russia Hoodie",
         category:"Hoodies",
-        image:"assets/Hoodie-black-Russia.jpg"
+        image:"assets/Hoodie-black-Russia.jpg",
+        size:"S / M / L / XL"
     },
 
     {
         id:8,
         name:"Gonschiki E34 Shirt",
         category:"Shirts",
-        image:"assets/Shirt-black-e34.jpg"
+        image:"assets/Shirt-black-e34.jpg",
+        size:"S / M / L / XL"
     },
 
     {
         id:9,
         name:"Gonschiki E36 Beige Hoodie",
         category:"Hoodies",
-        image:"assets/Hoodie-beige-e36.jpg"
+        image:"assets/Hoodie-beige-e36.jpg",
+        size:"S / M / L / XL"
     },
 
     {
         id:10,
         name:"Gonschiki Pants",
         category:"Hosen",
-        image:"assets/Pants-black-gonschiki.jpg"
+        image:"assets/Pants-black-gonschiki.jpg",
+        size:"S / M / L / XL"
+    },
+
+    /* STICKER */
+
+    {
+        id:11,
+        name:"Gonschiki Scheibenkeil",
+        category:"Sticker",
+        image:"assets/Scheibenkeil .PNG",
+        size:"UNIVERSELL FÜR ALLE AUTOS",
+        sticker:true
+    },
+
+    {
+        id:12,
+        name:"Gonschiki Heckscheiben Sticker",
+        category:"Sticker",
+        image:"assets/Heckscheiben Sticker.PNG",
+        size:"700 × 300 mm",
+        sticker:true
+    },
+
+    {
+        id:13,
+        name:"Gonschiki Sticker",
+        category:"Sticker",
+        image:"assets/Sticker.PNG",
+        size:"200 × 80 mm",
+        sticker:true
     }
 
 ];
 
-/* =========================
-   STATUS
-========================= */
-
 let selectedGender="men";
-
 let selectedCategory="all";
-
 let selectedProduct=null;
-
 let selectedSize=null;
 
 let cart=JSON.parse(
     localStorage.getItem("gonschikiCart") || "[]"
 );
 
-/* =========================
-   PRODUKTE ANZEIGEN
-========================= */
+/* PRODUKTE ANZEIGEN */
 
 function renderProducts(){
 
-    const grid=
-        document.getElementById(
-            "productsGrid"
-        );
+    const grid=document.getElementById("productsGrid");
 
-    const filtered=
-        products.filter(product=>{
+    const filtered=products.filter(product=>{
 
-            const categoryMatch=
-                selectedCategory==="all" ||
-                product.category===selectedCategory;
+        return selectedCategory==="all" ||
+               product.category===selectedCategory;
 
-            return categoryMatch;
+    });
 
-        });
+    grid.innerHTML=filtered.map(product=>`
 
-    grid.innerHTML=
-        filtered.map(product=>`
+        <div
+            class="product-card ${product.sticker ? "sticker-product" : ""}"
+            onclick="openProduct(${product.id})"
+        >
 
-            <div
-                class="product-card"
-                onclick="openProduct(${product.id})"
-            >
+            <div class="product-image">
 
-                <div class="product-image">
+                <img
+                    src="${product.image}"
+                    alt="${product.name}"
+                >
 
-                    <img
-                        src="${product.image}"
-                        alt="${product.name}"
-                    >
+            </div>
 
+            <div class="product-info">
+
+                <div class="product-name">
+                    ${product.name}
                 </div>
 
-                <div class="product-info">
+                <div class="product-category">
+                    ${product.category}
+                </div>
 
-                    <div class="product-name">
-                        ${product.name}
-                    </div>
+                <div class="product-size">
+                    ${product.size}
+                </div>
 
-                    <div class="product-category">
-                        ${product.category}
-                    </div>
+                <div class="product-price">
+                    PREIS FOLGT
+                </div>
 
-                    <div class="product-price">
-                        PREIS FOLGT
-                    </div>
-
-                    <div class="preview-price">
-                        SHOP-VORSCHAU
-                    </div>
-
+                <div class="preview-price">
+                    SHOP-VORSCHAU
                 </div>
 
             </div>
 
-        `).join("");
+        </div>
 
+    `).join("");
 }
 
-/* =========================
-   KATEGORIEN
-========================= */
+/* KATEGORIEN */
 
 document
 .querySelectorAll(".category-tabs button")
 .forEach(button=>{
 
-    button.addEventListener(
-        "click",
-        ()=>{
+    button.addEventListener("click",()=>{
 
-            document
-            .querySelectorAll(
-                ".category-tabs button"
-            )
-            .forEach(btn=>
-                btn.classList.remove(
-                    "active"
-                )
-            );
+        document
+        .querySelectorAll(".category-tabs button")
+        .forEach(btn=>{
+            btn.classList.remove("active");
+        });
 
-            button.classList.add("active");
+        button.classList.add("active");
 
-            selectedCategory=
-                button.dataset.category;
+        selectedCategory=button.dataset.category;
 
-            renderProducts();
+        renderProducts();
 
-        }
-    );
+    });
 
 });
 
-/* =========================
-   MÄNNER / FRAUEN
-========================= */
+/* MÄNNER / FRAUEN */
 
 document
 .querySelectorAll(".gender-tabs button")
 .forEach(button=>{
 
-    button.addEventListener(
-        "click",
-        ()=>{
+    button.addEventListener("click",()=>{
 
-            document
-            .querySelectorAll(
-                ".gender-tabs button"
-            )
-            .forEach(btn=>
-                btn.classList.remove(
-                    "active"
-                )
-            );
+        document
+        .querySelectorAll(".gender-tabs button")
+        .forEach(btn=>{
+            btn.classList.remove("active");
+        });
 
-            button.classList.add("active");
+        button.classList.add("active");
 
-            selectedGender=
-                button.dataset.gender;
+        selectedGender=button.dataset.gender;
 
-            renderProducts();
+        renderProducts();
 
-        }
-    );
+    });
 
 });
 
-/* =========================
-   PRODUKT ÖFFNEN
-========================= */
+/* PRODUKT ÖFFNEN */
 
 function openProduct(id){
 
-    const product=
-        products.find(
-            p=>p.id===id
-        );
+    const product=products.find(p=>p.id===id);
 
-    if(!product){
-        return;
-    }
+    if(!product) return;
 
     selectedProduct=product;
-
     selectedSize=null;
 
     document
     .getElementById("modalName")
-    .textContent=
-        product.name;
+    .textContent=product.name;
 
     document
     .getElementById("modalImage")
-    .src=
-        product.image;
+    .src=product.image;
+
+    document
+    .getElementById("modalSizeValue")
+    .textContent=product.size;
+
+    const clothingSizes=
+        document.getElementById("clothingSizes");
+
+    const clothingSizeTitle=
+        document.getElementById("clothingSizeTitle");
+
+    if(product.sticker){
+
+        clothingSizes.style.display="none";
+        clothingSizeTitle.style.display="none";
+
+    }else{
+
+        clothingSizes.style.display="flex";
+        clothingSizeTitle.style.display="block";
+
+    }
 
     document
     .querySelectorAll(".size")
-    .forEach(button=>
-        button.classList.remove(
-            "active"
-        )
-    );
+    .forEach(button=>{
+        button.classList.remove("active");
+    });
 
     document
     .getElementById("productModal")
     .classList.add("show");
-
 }
 
 function closeModal(){
@@ -2550,41 +2182,33 @@ function closeModal(){
     document
     .getElementById("productModal")
     .classList.remove("show");
-
 }
 
-/* =========================
-   GRÖSSE
-========================= */
+/* GRÖSSE */
 
 function selectSize(button){
 
     document
     .querySelectorAll(".size")
-    .forEach(btn=>
-        btn.classList.remove(
-            "active"
-        )
-    );
+    .forEach(btn=>{
+        btn.classList.remove("active");
+    });
 
     button.classList.add("active");
 
-    selectedSize=
-        button.textContent.trim();
-
+    selectedSize=button.textContent.trim();
 }
 
-/* =========================
-   WARENKORB HINZUFÜGEN
-========================= */
+/* WARENKORB */
 
 function addToCart(){
 
-    if(!selectedProduct){
-        return;
-    }
+    if(!selectedProduct) return;
 
-    if(!selectedSize){
+    if(
+        !selectedProduct.sticker &&
+        !selectedSize
+    ){
 
         alert(
             "Bitte zuerst eine Größe auswählen."
@@ -2597,17 +2221,15 @@ function addToCart(){
 
         id:Date.now(),
 
-        productId:
-            selectedProduct.id,
+        productId:selectedProduct.id,
 
-        name:
-            selectedProduct.name,
+        name:selectedProduct.name,
 
-        image:
-            selectedProduct.image,
+        image:selectedProduct.image,
 
-        size:
-            selectedSize
+        size:selectedProduct.sticker
+            ? selectedProduct.size
+            : selectedSize
 
     });
 
@@ -2623,20 +2245,13 @@ function addToCart(){
     alert(
         "Artikel wurde zum Warenkorb hinzugefügt."
     );
-
 }
-
-/* =========================
-   WARENKORB
-========================= */
 
 function updateCartCount(){
 
     document
     .getElementById("cartCount")
-    .textContent=
-        cart.length;
-
+    .textContent=cart.length;
 }
 
 function openCart(){
@@ -2646,7 +2261,6 @@ function openCart(){
     document
     .getElementById("cartPanel")
     .classList.add("open");
-
 }
 
 function closeCart(){
@@ -2654,15 +2268,12 @@ function closeCart(){
     document
     .getElementById("cartPanel")
     .classList.remove("open");
-
 }
 
 function renderCart(){
 
     const container=
-        document.getElementById(
-            "cartItems"
-        );
+        document.getElementById("cartItems");
 
     if(cart.length===0){
 
@@ -2677,51 +2288,46 @@ function renderCart(){
         return;
     }
 
-    container.innerHTML=
-        cart.map(item=>`
+    container.innerHTML=cart.map(item=>`
 
-            <div class="cart-item">
+        <div class="cart-item">
 
-                <img
-                    src="${item.image}"
-                    alt="${item.name}"
-                >
+            <img
+                src="${item.image}"
+                alt="${item.name}"
+            >
 
-                <div>
+            <div>
 
-                    <div class="cart-item-name">
-                        ${item.name}
-                    </div>
-
-                    <div class="cart-item-size">
-                        Größe ${item.size}
-                    </div>
-
-                    <div class="cart-item-price">
-                        PREIS FOLGT
-                    </div>
-
+                <div class="cart-item-name">
+                    ${item.name}
                 </div>
 
-                <button
-                    class="remove-item"
-                    onclick="removeFromCart(${item.id})"
-                >
-                    ENTFERNEN
-                </button>
+                <div class="cart-item-size">
+                    ${item.size}
+                </div>
+
+                <div class="cart-item-price">
+                    PREIS FOLGT
+                </div>
 
             </div>
 
-        `).join("");
+            <button
+                class="remove-item"
+                onclick="removeFromCart(${item.id})"
+            >
+                ENTFERNEN
+            </button>
 
+        </div>
+
+    `).join("");
 }
 
 function removeFromCart(id){
 
-    cart=
-        cart.filter(
-            item=>item.id!==id
-        );
+    cart=cart.filter(item=>item.id!==id);
 
     localStorage.setItem(
         "gonschikiCart",
@@ -2731,7 +2337,6 @@ function removeFromCart(id){
     updateCartCount();
 
     renderCart();
-
 }
 
 function checkoutDisabled(){
@@ -2739,28 +2344,19 @@ function checkoutDisabled(){
     alert(
         "Der Shop befindet sich derzeit noch in der Vorschau. Bestellungen sind noch nicht möglich."
     );
-
 }
 
-/* =========================
-   ACCOUNT
-========================= */
+/* ACCOUNT */
 
 function register(event){
 
     event.preventDefault();
 
     const password=
-        document
-        .getElementById(
-            "registerPassword"
-        ).value;
+        document.getElementById("registerPassword").value;
 
     const password2=
-        document
-        .getElementById(
-            "registerPassword2"
-        ).value;
+        document.getElementById("registerPassword2").value;
 
     if(password!==password2){
 
@@ -2774,40 +2370,22 @@ function register(event){
     const user={
 
         firstName:
-            document
-            .getElementById(
-                "firstName"
-            ).value,
+            document.getElementById("firstName").value,
 
         lastName:
-            document
-            .getElementById(
-                "lastName"
-            ).value,
+            document.getElementById("lastName").value,
 
         email:
-            document
-            .getElementById(
-                "registerEmail"
-            ).value,
+            document.getElementById("registerEmail").value,
 
         street:
-            document
-            .getElementById(
-                "street"
-            ).value,
+            document.getElementById("street").value,
 
         zip:
-            document
-            .getElementById(
-                "zip"
-            ).value,
+            document.getElementById("zip").value,
 
         city:
-            document
-            .getElementById(
-                "city"
-            ).value
+            document.getElementById("city").value
 
     };
 
@@ -2819,7 +2397,6 @@ function register(event){
     alert(
         "Demo-Account wurde gespeichert."
     );
-
 }
 
 function login(event){
@@ -2827,10 +2404,7 @@ function login(event){
     event.preventDefault();
 
     const email=
-        document
-        .getElementById(
-            "loginEmail"
-        ).value;
+        document.getElementById("loginEmail").value;
 
     const user=
         JSON.parse(
@@ -2839,10 +2413,7 @@ function login(event){
             ) || "null"
         );
 
-    if(
-        user &&
-        user.email===email
-    ){
+    if(user && user.email===email){
 
         alert(
             "Demo-Anmeldung erfolgreich."
@@ -2855,60 +2426,43 @@ function login(event){
         );
 
     }
-
 }
 
-/* =========================
-   EVENTS
-========================= */
+/* EVENTS */
 
 function eventInfo(){
 
     alert(
         "Weitere Informationen werden noch veröffentlicht."
     );
-
 }
 
-/* =========================
-   SPRACHE
-========================= */
+/* SPRACHE */
 
 document
 .querySelectorAll(".lang button")
 .forEach(button=>{
 
-    button.addEventListener(
-        "click",
-        ()=>{
+    button.addEventListener("click",()=>{
 
-            document
-            .querySelectorAll(
-                ".lang button"
-            )
-            .forEach(btn=>
-                btn.classList.remove(
-                    "active"
-                )
-            );
+        document
+        .querySelectorAll(".lang button")
+        .forEach(btn=>{
+            btn.classList.remove("active");
+        });
 
-            button.classList.add(
-                "active"
-            );
+        button.classList.add("active");
 
-            localStorage.setItem(
-                "gonschikiLanguage",
-                button.textContent
-            );
+        localStorage.setItem(
+            "gonschikiLanguage",
+            button.textContent
+        );
 
-        }
-    );
+    });
 
 });
 
-/* =========================
-   START
-========================= */
+/* START */
 
 renderProducts();
 
