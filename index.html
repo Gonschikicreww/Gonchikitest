@@ -420,14 +420,8 @@ section{
   display:block;
 }
 
-.car:nth-child(1) .car-image img{
-  object-position:center 68%;
-}
-
-.car:nth-child(3) .car-image img{
-  object-position:center 68%;
-}
-
+.car:nth-child(1) .car-image img,
+.car:nth-child(3) .car-image img,
 .car:nth-child(5) .car-image img{
   object-position:center 68%;
 }
@@ -629,7 +623,7 @@ footer{
 }
 
 /* =========================
-   LEGAL PAGES
+   LEGAL
 ========================= */
 
 .legal-box{
@@ -657,26 +651,15 @@ footer{
   margin:30px 0 10px;
 }
 
-.legal-content h3{
-  color:#fff;
-  font-size:14px;
-  margin:20px 0 8px;
-}
-
 .legal-content p{
   margin-bottom:12px;
 }
 
-.legal-content ul{
-  margin:10px 0 15px 20px;
-}
-
-.legal-content li{
-  margin-bottom:5px;
-}
-
-.legal-content strong{
+.legal-placeholder{
   color:#fff;
+  background:#222;
+  border:1px dashed #555;
+  padding:2px 5px;
 }
 
 .legal-note{
@@ -687,13 +670,6 @@ footer{
   color:#aaa;
   font-size:10px;
   line-height:1.7;
-}
-
-.legal-placeholder{
-  color:#fff;
-  background:#222;
-  border:1px dashed #555;
-  padding:2px 5px;
 }
 
 .legal-nav{
@@ -1007,8 +983,7 @@ footer{
   margin-bottom:7px;
 }
 
-.form-group input,
-.form-group select{
+.form-group input{
   width:100%;
   padding:13px;
   background:#111;
@@ -1017,8 +992,7 @@ footer{
   outline:none;
 }
 
-.form-group input:focus,
-.form-group select:focus{
+.form-group input:focus{
   border-color:#777;
 }
 
@@ -1605,18 +1579,6 @@ footer{
     max-width:none;
   }
 
-  .car:nth-child(1) .car-image img{
-    object-position:center 68%;
-  }
-
-  .car:nth-child(3) .car-image img{
-    object-position:center 68%;
-  }
-
-  .car:nth-child(5) .car-image img{
-    object-position:center 68%;
-  }
-
   .about-grid,
   .contact-grid{
     grid-template-columns:1fr;
@@ -1790,9 +1752,7 @@ footer{
 
 <section class="shop-section" id="shop">
 
-  <h2 class="section-title">
-    SHOP
-  </h2>
+  <h2 class="section-title">SHOP</h2>
 
   <p class="section-subtitle">
     GONSHIKI STREETWEAR — BLACK COLLECTION
@@ -1820,63 +1780,40 @@ footer{
 
   <div class="categories">
 
-    <button
-      class="category-btn active"
-      onclick="filterProducts('Alle',this)"
-    >
+    <button class="category-btn active" onclick="filterProducts('Alle',this)">
       ALLE
     </button>
 
-    <button
-      class="category-btn"
-      onclick="filterProducts('Shirts',this)"
-    >
+    <button class="category-btn" onclick="filterProducts('Shirts',this)">
       SHIRTS
     </button>
 
-    <button
-      class="category-btn"
-      onclick="filterProducts('Hoodies',this)"
-    >
+    <button class="category-btn" onclick="filterProducts('Hoodies',this)">
       HOODIES
     </button>
 
-    <button
-      class="category-btn"
-      onclick="filterProducts('Zipper',this)"
-    >
+    <button class="category-btn" onclick="filterProducts('Zipper',this)">
       ZIPPER
     </button>
 
-    <button
-      class="category-btn"
-      onclick="filterProducts('Hosen',this)"
-    >
+    <button class="category-btn" onclick="filterProducts('Hosen',this)">
       HOSEN
     </button>
 
-    <button
-      class="category-btn"
-      onclick="filterProducts('Sticker',this)"
-    >
+    <button class="category-btn" onclick="filterProducts('Sticker',this)">
       STICKER
     </button>
 
   </div>
 
-  <div
-    class="product-grid"
-    id="productGrid"
-  ></div>
+  <div class="product-grid" id="productGrid"></div>
 
 </section>
 
 
 <section class="cars-section" id="cars">
 
-  <h2 class="section-title">
-    CARS
-  </h2>
+  <h2 class="section-title">CARS</h2>
 
   <p class="section-subtitle">
     UNSERE WELT. UNSERE AUTOS. UNSERE SPUR.
@@ -1941,9 +1878,7 @@ footer{
 
 <section class="events-section" id="events">
 
-  <h2 class="section-title">
-    EVENTS
-  </h2>
+  <h2 class="section-title">EVENTS</h2>
 
   <p class="section-subtitle">
     MEHR ALS NUR CLOTHING.
@@ -1951,9 +1886,7 @@ footer{
 
   <div class="events-box">
 
-    <h3>
-      GONSHIKI CREW
-    </h3>
+    <h3>GONSHIKI CREW</h3>
 
     <p>
       Treffen, Autos, Nächte und gemeinsame Projekte.
@@ -1972,13 +1905,9 @@ footer{
 
     <div>
 
-      <h2 class="section-title">
-        ABOUT
-      </h2>
+      <h2 class="section-title">ABOUT</h2>
 
-      <p class="section-subtitle">
-        EST. 2025
-      </p>
+      <p class="section-subtitle">EST. 2025</p>
 
       <p class="about-text">
         Gonschiki steht für Autos, Nächte, Geschwindigkeit und den eigenen Style.
@@ -2001,9 +1930,7 @@ footer{
 
 <section class="contact-section" id="contact">
 
-  <h2 class="section-title">
-    KONTAKT
-  </h2>
+  <h2 class="section-title">KONTAKT</h2>
 
   <p class="section-subtitle">
     GONSHIKI CREW
@@ -2045,6 +1972,7 @@ footer{
     </div>
 
     <div class="footer-links">
+
       <a href="#shop">SHOP</a>
       <a href="#cars">CARS</a>
       <a href="#events">EVENTS</a>
@@ -2066,6 +1994,7 @@ footer{
       <a href="#" onclick="openLegal('agb');return false;">
         AGB
       </a>
+
     </div>
 
   </div>
@@ -2077,17 +2006,13 @@ footer{
 </footer>
 
 
-<!-- =========================
-     PRODUCT MODAL
-========================= -->
+<!-- PRODUCT MODAL -->
 
 <div class="modal" id="productModal">
 
   <div class="modal-box">
 
-    <button class="modal-close" onclick="closeProduct()">
-      ×
-    </button>
+    <button class="modal-close" onclick="closeProduct()">×</button>
 
     <div class="product-modal-content">
 
@@ -2119,17 +2044,11 @@ footer{
 
         <div class="quantity-box">
 
-          <button onclick="changeModalQuantity(-1)">
-            −
-          </button>
+          <button onclick="changeModalQuantity(-1)">−</button>
 
-          <strong id="modalQuantity">
-            1
-          </strong>
+          <strong id="modalQuantity">1</strong>
 
-          <button onclick="changeModalQuantity(1)">
-            +
-          </button>
+          <button onclick="changeModalQuantity(1)">+</button>
 
         </div>
 
@@ -2150,17 +2069,13 @@ footer{
 </div>
 
 
-<!-- =========================
-     CART MODAL
-========================= -->
+<!-- CART -->
 
 <div class="modal" id="cartModal">
 
   <div class="modal-box cart-box">
 
-    <button class="modal-close" onclick="closeCart()">
-      ×
-    </button>
+    <button class="modal-close" onclick="closeCart()">×</button>
 
     <div class="modal-title">
       WARENKORB
@@ -2173,17 +2088,13 @@ footer{
 </div>
 
 
-<!-- =========================
-     CHECKOUT
-========================= -->
+<!-- CHECKOUT -->
 
 <div class="modal" id="checkoutModal">
 
   <div class="modal-box form-box">
 
-    <button class="modal-close" onclick="closeCheckout()">
-      ×
-    </button>
+    <button class="modal-close" onclick="closeCheckout()">×</button>
 
     <div class="modal-title">
       CHECKOUT
@@ -2244,17 +2155,13 @@ footer{
 </div>
 
 
-<!-- =========================
-     ACCOUNT
-========================= -->
+<!-- ACCOUNT -->
 
 <div class="modal" id="accountModal">
 
   <div class="modal-box account-box">
 
-    <button class="modal-close" onclick="closeAccount()">
-      ×
-    </button>
+    <button class="modal-close" onclick="closeAccount()">×</button>
 
     <div class="modal-title">
       ACCOUNT
@@ -2272,17 +2179,13 @@ footer{
 </div>
 
 
-<!-- =========================
-     AUTH
-========================= -->
+<!-- AUTH -->
 
 <div class="modal" id="authModal">
 
   <div class="modal-box form-box">
 
-    <button class="modal-close" onclick="closeAuth()">
-      ×
-    </button>
+    <button class="modal-close" onclick="closeAuth()">×</button>
 
     <div class="modal-title" id="authTitle">
       ACCOUNT ERSTELLEN
@@ -2320,63 +2223,48 @@ footer{
 </div>
 
 
-<!-- =========================
-     LEGAL MODAL
-========================= -->
+<!-- LEGAL -->
 
 <div class="modal" id="legalModal">
 
   <div class="modal-box legal-box">
 
-    <button class="modal-close" onclick="closeLegal()">
-      ×
-    </button>
+    <button class="modal-close" onclick="closeLegal()">×</button>
 
     <div class="legal-nav">
 
-      <button id="legalTabImpressum"
-        onclick="openLegal('impressum')">
+      <button id="legalTabImpressum" onclick="openLegal('impressum')">
         IMPRESSUM
       </button>
 
-      <button id="legalTabDatenschutz"
-        onclick="openLegal('datenschutz')">
+      <button id="legalTabDatenschutz" onclick="openLegal('datenschutz')">
         DATENSCHUTZ
       </button>
 
-      <button id="legalTabWiderruf"
-        onclick="openLegal('widerruf')">
+      <button id="legalTabWiderruf" onclick="openLegal('widerruf')">
         WIDERRUF
       </button>
 
-      <button id="legalTabAgb"
-        onclick="openLegal('agb')">
+      <button id="legalTabAgb" onclick="openLegal('agb')">
         AGB
       </button>
 
     </div>
 
-    <div
-      class="legal-content"
-      id="legalContent"
-    ></div>
+    <div class="legal-content" id="legalContent"></div>
 
   </div>
 
 </div>
 
 
-<!-- =========================
-     ADMIN LOGIN
-========================= -->
+<!-- ADMIN LOGIN -->
 
 <div class="modal" id="adminLoginModal">
 
   <div class="modal-box admin-login-box">
 
-    <button class="modal-close" onclick="closeAdminLogin()">
-      ×
-    </button>
+    <button class="modal-close" onclick="closeAdminLogin()">×</button>
 
     <div class="admin-login-title">
       ADMIN
@@ -2396,9 +2284,7 @@ footer{
 
       <div class="form-group">
 
-        <label>
-          BENUTZERNAME
-        </label>
+        <label>BENUTZERNAME</label>
 
         <input
           id="adminUsername"
@@ -2410,9 +2296,7 @@ footer{
 
       <div class="form-group">
 
-        <label>
-          PASSWORT
-        </label>
+        <label>PASSWORT</label>
 
         <input
           id="adminPassword"
@@ -2434,9 +2318,7 @@ footer{
 </div>
 
 
-<!-- =========================
-     ADMIN DASHBOARD
-========================= -->
+<!-- ADMIN DASHBOARD -->
 
 <div class="modal" id="adminModal">
 
@@ -2500,9 +2382,7 @@ footer{
 
       <div class="admin-empty">
 
-        <strong>
-          GONSHIKI SHOP ADMIN
-        </strong>
+        <strong>GONSHIKI SHOP ADMIN</strong>
 
         <br><br>
 
@@ -2764,24 +2644,15 @@ let adminLoggedIn =
 ========================= */
 
 function saveCart(){
-  localStorage.setItem(
-    "gonschikiCart",
-    JSON.stringify(cart)
-  );
+  localStorage.setItem("gonschikiCart",JSON.stringify(cart));
 }
 
 function saveOrders(){
-  localStorage.setItem(
-    "gonschikiOrders",
-    JSON.stringify(orders)
-  );
+  localStorage.setItem("gonschikiOrders",JSON.stringify(orders));
 }
 
 function saveAccount(){
-  localStorage.setItem(
-    "gonschikiAccount",
-    JSON.stringify(account)
-  );
+  localStorage.setItem("gonschikiAccount",JSON.stringify(account));
 }
 
 
@@ -2790,6 +2661,7 @@ function saveAccount(){
 ========================= */
 
 function formatPrice(price){
+
   return price.toLocaleString(
     "de-DE",
     {
@@ -2797,22 +2669,26 @@ function formatPrice(price){
       currency:"EUR"
     }
   );
+
 }
 
 function escapeHtml(value){
+
   return String(value ?? "")
     .replace(/&/g,"&amp;")
     .replace(/</g,"&lt;")
     .replace(/>/g,"&gt;")
     .replace(/"/g,"&quot;")
     .replace(/'/g,"&#039;");
+
 }
 
 function getProduct(id){
+
   return products.find(
-    product =>
-      product.id === Number(id)
+    product => product.id === Number(id)
   );
+
 }
 
 function getStockForSize(product,size){
@@ -2825,9 +2701,8 @@ function getStockForSize(product,size){
     return Number(product.stock || 0);
   }
 
-  return Number(
-    product.stock?.[size] || 0
-  );
+  return Number(product.stock?.[size] || 0);
+
 }
 
 function getTotalProductStock(product){
@@ -2840,33 +2715,29 @@ function getTotalProductStock(product){
     return Number(product.stock || 0);
   }
 
-  return Object.values(
-    product.stock || {}
-  ).reduce(
-    (sum,value)=>
-      sum + Number(value || 0),
-    0
-  );
+  return Object.values(product.stock || {})
+    .reduce(
+      (sum,value) => sum + Number(value || 0),
+      0
+    );
+
 }
 
 function isProductAvailable(product){
+
   return getTotalProductStock(product) > 0;
+
 }
 
-function getCartQuantityForProduct(
-  productId,
-  size
-){
+function getCartQuantityForProduct(productId,size){
 
   const item = cart.find(item =>
-    Number(item.productId) ===
-      Number(productId) &&
+    Number(item.productId) === Number(productId) &&
     item.size === size
   );
 
-  return item
-    ? Number(item.quantity)
-    : 0;
+  return item ? Number(item.quantity) : 0;
+
 }
 
 
@@ -2876,31 +2747,28 @@ function getCartQuantityForProduct(
 
 function renderProducts(){
 
-  const grid =
-    document.getElementById(
-      "productGrid"
-    );
+  const grid = document.getElementById("productGrid");
 
-  const filtered =
-    products.filter(product => {
+  const filtered = products.filter(product => {
 
-      if(!product.active){
-        return false;
-      }
+    if(!product.active){
+      return false;
+    }
 
-      if(!product.gender.includes(currentGender)){
-        return false;
-      }
+    if(!product.gender.includes(currentGender)){
+      return false;
+    }
 
-      if(
-        currentCategory !== "Alle" &&
-        product.category !== currentCategory
-      ){
-        return false;
-      }
+    if(
+      currentCategory !== "Alle" &&
+      product.category !== currentCategory
+    ){
+      return false;
+    }
 
-      return true;
-    });
+    return true;
+
+  });
 
   if(!filtered.length){
 
@@ -2916,65 +2784,63 @@ function renderProducts(){
     `;
 
     return;
+
   }
 
-  grid.innerHTML =
-    filtered.map(product => {
+  grid.innerHTML = filtered.map(product => {
 
-      const stock =
-        getTotalProductStock(product);
+    const stock = getTotalProductStock(product);
+    const soldOut = stock <= 0;
 
-      const soldOut =
-        stock <= 0;
+    return `
+      <article class="product-card">
 
-      return `
-        <article class="product-card">
+        <div class="product-image">
 
-          <div class="product-image">
+          <img
+            src="${product.image}"
+            alt="${escapeHtml(product.name)}"
+          >
 
-            <img
-              src="${product.image}"
-              alt="${escapeHtml(product.name)}"
-            >
-
-            <div class="product-stock ${soldOut ? "soldout" : ""}">
-              ${
-                soldOut
-                  ? "AUSVERKAUFT"
-                  : `${stock} VERFÜGBAR`
-              }
-            </div>
-
+          <div class="product-stock ${soldOut ? "soldout" : ""}">
+            ${
+              soldOut
+                ? "AUSVERKAUFT"
+                : `${stock} VERFÜGBAR`
+            }
           </div>
 
-          <div class="product-info">
+        </div>
 
-            <div class="product-category">
-              ${escapeHtml(product.category)}
-            </div>
+        <div class="product-info">
 
-            <h3>
-              ${escapeHtml(product.name)}
-            </h3>
-
-            <div class="product-price">
-              ${formatPrice(product.price)}
-            </div>
-
-            <button
-              class="product-open"
-              onclick="openProduct(${product.id})"
-              ${soldOut ? "disabled" : ""}
-            >
-              ${soldOut ? "AUSVERKAUFT" : "ANSCHAUEN"}
-            </button>
-
+          <div class="product-category">
+            ${escapeHtml(product.category)}
           </div>
 
-        </article>
-      `;
+          <h3>
+            ${escapeHtml(product.name)}
+          </h3>
 
-    }).join("");
+          <div class="product-price">
+            ${formatPrice(product.price)}
+          </div>
+
+          <button
+            class="product-open"
+            onclick="openProduct(${product.id})"
+            ${soldOut ? "disabled" : ""}
+          >
+            ${soldOut ? "AUSVERKAUFT" : "ANSCHAUEN"}
+          </button>
+
+        </div>
+
+      </article>
+    `;
+
+  }).join("");
+
 }
 
 function filterProducts(category,button){
@@ -2983,13 +2849,12 @@ function filterProducts(category,button){
 
   document
     .querySelectorAll(".category-btn")
-    .forEach(btn =>
-      btn.classList.remove("active")
-    );
+    .forEach(btn => btn.classList.remove("active"));
 
   button.classList.add("active");
 
   renderProducts();
+
 }
 
 function switchGender(gender){
@@ -3005,6 +2870,7 @@ function switchGender(gender){
     .classList.toggle("active",gender === "Frauen");
 
   renderProducts();
+
 }
 
 
@@ -3024,13 +2890,16 @@ function openProduct(id){
   modalQuantity = 1;
 
   if(product.sticker){
+
     selectedSize = product.size;
+
   }else{
+
     selectedSize =
       product.sizes.find(
-        size =>
-          getStockForSize(product,size) > 0
+        size => getStockForSize(product,size) > 0
       ) || product.sizes[0];
+
   }
 
   document.getElementById("modalImage").src = product.image;
@@ -3079,6 +2948,7 @@ function openProduct(id){
         `;
 
       }).join("");
+
   }
 
   updateModalStock();
@@ -3086,6 +2956,7 @@ function openProduct(id){
   document
     .getElementById("productModal")
     .classList.add("active");
+
 }
 
 function closeProduct(){
@@ -3095,6 +2966,7 @@ function closeProduct(){
     .classList.remove("active");
 
   selectedProduct = null;
+
 }
 
 function selectSize(size){
@@ -3125,6 +2997,7 @@ function selectSize(size){
   document.getElementById("modalQuantity").textContent = modalQuantity;
 
   updateModalStock();
+
 }
 
 function updateModalStock(){
@@ -3164,6 +3037,7 @@ function updateModalStock(){
     remaining <= 0
       ? "AUSVERKAUFT"
       : "IN DEN WARENKORB";
+
 }
 
 function changeModalQuantity(change){
@@ -3200,6 +3074,7 @@ function changeModalQuantity(change){
   document.getElementById("modalQuantity").textContent = modalQuantity;
 
   updateModalStock();
+
 }
 
 
@@ -3236,13 +3111,17 @@ function addToCart(){
   }
 
   if(existing){
+
     existing.quantity += modalQuantity;
+
   }else{
+
     cart.push({
       productId:selectedProduct.id,
       size:selectedSize,
       quantity:modalQuantity
     });
+
   }
 
   saveCart();
@@ -3250,6 +3129,7 @@ function addToCart(){
   closeProduct();
   renderCart();
   openCart();
+
 }
 
 function changeQuantity(index,change){
@@ -3260,8 +3140,7 @@ function changeQuantity(index,change){
     return;
   }
 
-  const product =
-    getProduct(item.productId);
+  const product = getProduct(item.productId);
 
   if(!product){
     return;
@@ -3274,17 +3153,24 @@ function changeQuantity(index,change){
     item.quantity + change;
 
   if(newQuantity <= 0){
+
     cart.splice(index,1);
+
   }else if(newQuantity <= stock){
+
     item.quantity = newQuantity;
+
   }else{
+
     alert("Maximaler Lagerbestand erreicht.");
+
     return;
   }
 
   saveCart();
   renderCart();
   updateCartCount();
+
 }
 
 function removeCartItem(index){
@@ -3294,6 +3180,7 @@ function removeCartItem(index){
   saveCart();
   renderCart();
   updateCartCount();
+
 }
 
 function clearCart(){
@@ -3307,6 +3194,7 @@ function clearCart(){
   saveCart();
   renderCart();
   updateCartCount();
+
 }
 
 function getCartSubtotal(){
@@ -3320,11 +3208,10 @@ function getCartSubtotal(){
       return sum;
     }
 
-    return sum +
-      product.price *
-      item.quantity;
+    return sum + product.price * item.quantity;
 
   },0);
+
 }
 
 function getShipping(){
@@ -3336,23 +3223,25 @@ function getShipping(){
   }
 
   return subtotal >= 100 ? 0 : 5.99;
+
 }
 
 function getCartTotal(){
 
   return getCartSubtotal() + getShipping();
+
 }
 
 function updateCartCount(){
 
   const count =
     cart.reduce(
-      (sum,item) =>
-        sum + Number(item.quantity),
+      (sum,item) => sum + Number(item.quantity),
       0
     );
 
   document.getElementById("cartCount").textContent = count;
+
 }
 
 function renderCart(){
@@ -3412,9 +3301,7 @@ function renderCart(){
                 −
               </button>
 
-              <strong>
-                ${item.quantity}
-              </strong>
+              <strong>${item.quantity}</strong>
 
               <button onclick="changeQuantity(${index},1)">
                 +
@@ -3495,7 +3382,9 @@ function renderCart(){
       </div>
 
     </div>
+
   `;
+
 }
 
 function openCart(){
@@ -3505,6 +3394,7 @@ function openCart(){
   document
     .getElementById("cartModal")
     .classList.add("active");
+
 }
 
 function closeCart(){
@@ -3512,6 +3402,7 @@ function closeCart(){
   document
     .getElementById("cartModal")
     .classList.remove("active");
+
 }
 
 
@@ -3535,6 +3426,7 @@ function openCheckout(){
   document
     .getElementById("checkoutModal")
     .classList.add("active");
+
 }
 
 function closeCheckout(){
@@ -3542,6 +3434,7 @@ function closeCheckout(){
   document
     .getElementById("checkoutModal")
     .classList.remove("active");
+
 }
 
 function renderCheckoutSummary(){
@@ -3578,7 +3471,9 @@ function renderCheckoutSummary(){
       </div>
 
     </div>
+
   `;
+
 }
 
 
@@ -3599,6 +3494,7 @@ function createOrderNumber(){
     Math.floor(1000 + Math.random()*9000);
 
   return `GON-${date}-${random}`;
+
 }
 
 function placeOrder(event){
@@ -3704,6 +3600,7 @@ function placeOrder(event){
     `Demo-Bestellung ${order.orderNumber} wurde erstellt.\n\n` +
     `Die Bestellung wurde nur lokal als Vorschau gespeichert.`
   );
+
 }
 
 function formatOrderDate(dateString){
@@ -3720,6 +3617,7 @@ function formatOrderDate(dateString){
       minute:"2-digit"
     }
   );
+
 }
 
 function renderOrderHistory(){
@@ -3739,6 +3637,7 @@ function renderOrderHistory(){
 
       </div>
     `;
+
   }
 
   const orderHtml =
@@ -3848,7 +3747,9 @@ function renderOrderHistory(){
               <div class="order-summary-row">
                 <span>VERSAND</span>
                 <strong>
-                  ${order.shipping === 0 ? "KOSTENLOS" : formatPrice(order.shipping)}
+                  ${order.shipping === 0
+                    ? "KOSTENLOS"
+                    : formatPrice(order.shipping)}
                 </strong>
               </div>
 
@@ -3884,7 +3785,9 @@ function renderOrderHistory(){
       </div>
 
     </div>
+
   `;
+
 }
 
 function toggleOrder(id){
@@ -3895,6 +3798,7 @@ function toggleOrder(id){
   if(card){
     card.classList.toggle("open");
   }
+
 }
 
 
@@ -3909,6 +3813,7 @@ function openAccount(){
   document
     .getElementById("accountModal")
     .classList.add("active");
+
 }
 
 function closeAccount(){
@@ -3916,6 +3821,7 @@ function closeAccount(){
   document
     .getElementById("accountModal")
     .classList.remove("active");
+
 }
 
 function renderAccount(){
@@ -3982,6 +3888,7 @@ function renderAccount(){
     ${renderOrderHistory()}
 
   `;
+
 }
 
 let authMode = "register";
@@ -4003,6 +3910,7 @@ function openAuth(mode){
   document
     .getElementById("authModal")
     .classList.add("active");
+
 }
 
 function closeAuth(){
@@ -4010,6 +3918,7 @@ function closeAuth(){
   document
     .getElementById("authModal")
     .classList.remove("active");
+
 }
 
 function handleAuth(event){
@@ -4049,6 +3958,7 @@ function handleAuth(event){
   document
     .getElementById("authForm")
     .reset();
+
 }
 
 function logout(){
@@ -4058,6 +3968,7 @@ function logout(){
   saveAccount();
 
   renderAccount();
+
 }
 
 
@@ -4067,18 +3978,14 @@ function logout(){
 
 const legalPages = {
 
-  impressum: {
-
+  impressum:{
     title:"IMPRESSUM",
-
     content:`
-
       <div class="legal-note">
         <strong>MUSTER / PLATZHALTER</strong><br>
-        Diese Seite ist aktuell nur eine Vorlage für den späteren echten
-        Shop. Die markierten Angaben müssen vor einer Veröffentlichung
-        bzw. vor dem echten Verkauf vollständig ergänzt und rechtlich
-        geprüft werden.
+        Diese Seite ist aktuell nur eine Vorlage. Die markierten Angaben
+        müssen vor einem echten Shopbetrieb vollständig ergänzt und
+        rechtlich geprüft werden.
       </div>
 
       <h2>Angaben zum Anbieter</h2>
@@ -4087,9 +3994,7 @@ const legalPages = {
         <strong>
           <span class="legal-placeholder">[NAME / FIRMA]</span>
         </strong>
-      </p>
-
-      <p>
+        <br>
         <span class="legal-placeholder">[STRAßE &amp; HAUSNUMMER]</span><br>
         <span class="legal-placeholder">[PLZ &amp; ORT]</span><br>
         Deutschland
@@ -4109,187 +4014,99 @@ const legalPages = {
 
       <p>
         <span class="legal-placeholder">
-          [VOR- UND NACHNAME DER VERTRETUNGSBERECHTIGTEN PERSON]
+          [VOR- UND NACHNAME]
         </span>
-      </p>
-
-      <h2>Registerangaben</h2>
-
-      <p>
-        Falls vorhanden:
-        <br>
-        Registergericht:
-        <span class="legal-placeholder">[REGISTERGERICHT]</span>
-        <br>
-        Registernummer:
-        <span class="legal-placeholder">[REGISTERNUMMER]</span>
       </p>
 
       <h2>Umsatzsteuer</h2>
 
       <p>
-        Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:
+        Umsatzsteuer-Identifikationsnummer:
         <br>
-        <span class="legal-placeholder">[UST-IDNR., FALLS VORHANDEN]</span>
+        <span class="legal-placeholder">
+          [UST-IDNR., FALLS VORHANDEN]
+        </span>
       </p>
-
-      <h2>Hinweis</h2>
-
-      <p>
-        Die vorstehenden Angaben sind für die aktuelle Shop-Vorschau
-        Platzhalter. Vor dem echten Betrieb des Onlineshops müssen die
-        tatsächlichen Anbieter- und Kontaktdaten eingesetzt werden.
-      </p>
-
     `
   },
 
-
-  datenschutz: {
-
+  datenschutz:{
     title:"DATENSCHUTZERKLÄRUNG",
-
     content:`
-
       <div class="legal-note">
         <strong>MUSTER / PLATZHALTER</strong><br>
-        Die folgende Datenschutzerklärung ist eine technische Vorlage.
-        Welche Angaben tatsächlich erforderlich sind, hängt unter anderem
-        von Hosting, Zahlungsanbietern, Analyse-Tools, Cookies,
-        Kontaktmöglichkeiten und weiteren Diensten ab, die später
-        tatsächlich eingesetzt werden.
+        Diese Datenschutzerklärung ist eine technische Vorlage und muss
+        vor einem echten Shopbetrieb an die tatsächlich verwendeten
+        Dienste und Datenverarbeitungen angepasst werden.
       </div>
 
       <h2>1. Verantwortlicher</h2>
 
       <p>
-        Verantwortlich für die Verarbeitung personenbezogener Daten ist:
-      </p>
-
-      <p>
-        <strong>
-          <span class="legal-placeholder">[NAME / FIRMA]</span>
-        </strong>
-        <br>
-        <span class="legal-placeholder">[ANSCHRIFT]</span>
-        <br>
+        <span class="legal-placeholder">[NAME / FIRMA]</span><br>
+        <span class="legal-placeholder">[ANSCHRIFT]</span><br>
         E-Mail:
         <span class="legal-placeholder">[E-MAIL-ADRESSE]</span>
       </p>
 
-      <h2>2. Besuch der Website</h2>
+      <h2>2. Website</h2>
 
       <p>
         Beim Aufrufen einer Website können technisch erforderliche Daten
-        verarbeitet werden. Dazu können insbesondere IP-Adresse,
-        Datum und Uhrzeit des Zugriffs, angeforderte Dateien,
-        Browserinformationen und technische Zugriffsdaten gehören.
-      </p>
-
-      <p>
-        Welche Daten beim Hosting konkret verarbeitet und wie lange sie
-        gespeichert werden, hängt vom tatsächlich verwendeten Hosting-
-        Anbieter und dessen technischen Einstellungen ab.
+        verarbeitet werden. Welche Daten konkret verarbeitet werden,
+        hängt vom verwendeten Hosting und den technischen Einstellungen ab.
       </p>
 
       <h2>3. GitHub Pages</h2>
 
       <p>
         Diese Website kann über GitHub Pages bereitgestellt werden.
-        Wenn GitHub Pages tatsächlich für die Veröffentlichung verwendet
-        wird, müssen die aktuellen Datenschutzinformationen des
-        eingesetzten Dienstes bei der finalen Datenschutzerklärung
-        berücksichtigt werden.
+        Für den endgültigen Shop müssen die aktuellen Informationen des
+        tatsächlich eingesetzten Hostings berücksichtigt werden.
       </p>
 
-      <h2>4. Warenkorb und Shop-Vorschau</h2>
+      <h2>4. LocalStorage</h2>
 
       <p>
-        Die aktuelle Website verwendet den lokalen Browser-Speicher
-        (localStorage), um beispielsweise Warenkorb-, Demo-Account-
-        und Demo-Bestelldaten im Browser zu speichern.
+        Die aktuelle Shop-Vorschau verwendet localStorage und
+        sessionStorage für Warenkorb, Demo-Account, Demo-Bestellungen
+        und den Demo-Adminstatus.
       </p>
+
+      <h2>5. Demo-Bestellungen</h2>
 
       <p>
-        Diese Funktionen sind derzeit Teil einer technischen Shop-
-        Vorschau. Es besteht aktuell keine echte Zahlungsabwicklung
-        über die Website.
+        Die aktuellen Bestellungen werden ausschließlich lokal im Browser
+        gespeichert. Es findet derzeit keine echte Zahlungs- oder
+        Versandabwicklung statt.
       </p>
 
-      <h2>5. Demo-Account</h2>
+      <h2>6. Cookies und Tracking</h2>
 
       <p>
-        Die derzeitige Account-Funktion ist lediglich eine lokale
-        Demo-Funktion. Die eingegebenen Daten werden aktuell im
-        Browser gespeichert und nicht an ein echtes Kundenkonto-
-        System übertragen.
+        In dieser Vorschau sind keine bewusst eingerichteten Analyse-
+        oder Marketing-Tracking-Dienste eingebunden. Bei späteren
+        Änderungen muss die Datenschutzerklärung angepasst werden.
       </p>
 
-      <h2>6. Demo-Bestellungen</h2>
-
-      <p>
-        Im aktuellen Vorschau-System können Testbestellungen erzeugt
-        werden. Diese werden lediglich lokal im Browser gespeichert.
-        Es erfolgt derzeit keine Übertragung an ein echtes
-        Warenwirtschafts-, Zahlungs- oder Versand-System.
-      </p>
-
-      <h2>7. Kontaktaufnahme</h2>
-
-      <p>
-        Wenn später eine Kontaktmöglichkeit per E-Mail oder Formular
-        angeboten wird, können die dabei übermittelten Daten zur
-        Bearbeitung der Anfrage verarbeitet werden.
-      </p>
-
-      <h2>8. Cookies und Tracking</h2>
-
-      <p>
-        Die aktuelle Website verwendet keine bewusst eingerichteten
-        Analyse- oder Marketing-Tracking-Dienste. Falls später Dienste
-        wie Analyse-, Werbe-, Social-Media- oder Conversion-Tracking
-        eingebunden werden, muss diese Datenschutzerklärung entsprechend
-        angepasst werden.
-      </p>
-
-      <h2>9. Deine Rechte</h2>
+      <h2>7. Betroffenenrechte</h2>
 
       <p>
         Betroffene Personen haben nach den gesetzlichen Voraussetzungen
         insbesondere Rechte auf Auskunft, Berichtigung, Löschung,
-        Einschränkung der Verarbeitung, Datenübertragbarkeit sowie
-        Widerspruch gegen bestimmte Verarbeitungen.
+        Einschränkung der Verarbeitung und Datenübertragbarkeit.
       </p>
-
-      <p>
-        Außerdem besteht grundsätzlich ein Beschwerderecht bei einer
-        zuständigen Datenschutzaufsichtsbehörde.
-      </p>
-
-      <h2>10. Aktualisierung</h2>
-
-      <p>
-        Diese Datenschutzerklärung muss angepasst werden, sobald sich
-        die technischen Funktionen, Anbieter oder Verarbeitungen dieser
-        Website ändern.
-      </p>
-
     `
   },
 
-
-  widerruf: {
-
+  widerruf:{
     title:"WIDERRUFSBELEHRUNG",
-
     content:`
-
       <div class="legal-note">
         <strong>MUSTER / PLATZHALTER</strong><br>
-        Die folgende Widerrufsbelehrung ist eine Vorlage für einen späteren
-        B2C-Onlineshop. Vor dem echten Verkauf muss geprüft werden, welche
-        Widerrufsrechte und Ausnahmen für die konkret angebotenen Produkte
-        gelten.
+        Diese Widerrufsbelehrung ist eine Vorlage für einen späteren
+        echten B2C-Onlineshop und muss für die konkret angebotenen
+        Produkte rechtlich geprüft werden.
       </div>
 
       <h2>Widerrufsrecht</h2>
@@ -4300,25 +4117,11 @@ const legalPages = {
         gesetzliche Ausnahme greift.
       </p>
 
-      <h2>Widerrufsfrist</h2>
-
-      <p>
-        Die Widerrufsfrist beträgt 14 Tage ab dem Tag, an dem der
-        Verbraucher oder ein von ihm benannter Dritter, der nicht der
-        Beförderer ist, die Ware erhalten hat.
-      </p>
-
-      <h2>Ausübung des Widerrufs</h2>
+      <h2>Ausübung</h2>
 
       <p>
         Um das Widerrufsrecht auszuüben, muss der Verbraucher den Anbieter
-        mittels einer eindeutigen Erklärung über seinen Entschluss,
-        den Vertrag zu widerrufen, informieren.
-      </p>
-
-      <p>
-        Die Erklärung kann beispielsweise per E-Mail oder postalisch an
-        folgende Kontaktdaten gesendet werden:
+        durch eine eindeutige Erklärung über seinen Entschluss informieren.
       </p>
 
       <p>
@@ -4335,81 +4138,43 @@ const legalPages = {
       <h2>Folgen des Widerrufs</h2>
 
       <p>
-        Wenn der Verbraucher den Vertrag widerruft, sind die erhaltenen
-        Zahlungen grundsätzlich nach Maßgabe der gesetzlichen Vorschriften
-        zurückzugewähren.
+        Im Falle eines wirksamen Widerrufs sind die empfangenen Leistungen
+        nach Maßgabe der gesetzlichen Vorschriften zurückzugewähren.
       </p>
+
+      <h2>Ausnahmen</h2>
 
       <p>
-        Für die Rückzahlung kann grundsätzlich dasselbe Zahlungsmittel
-        verwendet werden, das bei der ursprünglichen Transaktion eingesetzt
-        wurde, sofern nichts anderes vereinbart wurde.
+        Für bestimmte Waren können gesetzliche Ausnahmen oder besondere
+        Voraussetzungen gelten. Dies muss vor dem echten Verkauf anhand
+        der konkreten Produkte geprüft werden.
       </p>
 
-      <h2>Rücksendung der Ware</h2>
+      <h2>Aktuelle Vorschau</h2>
 
       <p>
-        Die Ware ist grundsätzlich nach Maßgabe der gesetzlichen
-        Bestimmungen zurückzusenden. Die konkreten Rücksendekosten und
-        deren Tragung müssen für den späteren Shop entsprechend der
-        tatsächlichen Versand- und Widerrufsbedingungen festgelegt werden.
+        Der aktuelle Gonschiki-Shop ist lediglich eine technische
+        Vorschau. Es werden derzeit keine echten Zahlungen verarbeitet.
       </p>
-
-      <h2>Ausschluss bzw. Erlöschen des Widerrufsrechts</h2>
-
-      <p>
-        Für bestimmte Waren und Dienstleistungen können gesetzliche
-        Ausnahmen vom Widerrufsrecht bestehen. Dies kann beispielsweise
-        bei Waren relevant sein, die nach Kundenspezifikation angefertigt
-        oder eindeutig auf persönliche Bedürfnisse zugeschnitten wurden.
-      </p>
-
-      <p>
-        Ob eine konkrete Ausnahme auf ein später angebotenes Gonschiki-
-        Produkt zutrifft, muss anhand des jeweiligen Produkts geprüft
-        werden.
-      </p>
-
-      <h2>Wichtiger Hinweis für die aktuelle Vorschau</h2>
-
-      <p>
-        Der aktuelle Gonschiki-Shop ist eine technische Vorschau.
-        Es werden derzeit keine echten Zahlungen verarbeitet und keine
-        echten Bestellungen an ein Shopsystem übermittelt.
-      </p>
-
     `
   },
 
-
-  agb: {
-
+  agb:{
     title:"ALLGEMEINE GESCHÄFTSBEDINGUNGEN",
-
     content:`
-
       <div class="legal-note">
         <strong>MUSTER / PLATZHALTER</strong><br>
-        Diese AGB sind eine technische Vorlage und keine abschließende
-        Rechtsberatung. Vor dem echten Verkauf müssen sie an das konkrete
-        Geschäftsmodell, die Zahlungsarten, Versandbedingungen,
-        Produktarten und die tatsächlichen Anbieterangaben angepasst
-        und rechtlich geprüft werden.
+        Diese AGB sind eine Vorlage und keine abschließende Rechtsberatung.
       </div>
 
       <h2>§ 1 Geltungsbereich</h2>
 
       <p>
-        Diese Allgemeinen Geschäftsbedingungen sollen für Verträge über
-        Waren gelten, die über den späteren Gonschiki-Onlineshop zwischen
-        dem Anbieter und Verbrauchern bzw. Kunden geschlossen werden.
+        Diese Allgemeinen Geschäftsbedingungen sollen für spätere
+        Verträge über Waren des Gonschiki-Onlineshops gelten.
       </p>
 
       <h2>§ 2 Vertragspartner</h2>
-
-      <p>
-        Vertragspartner ist:
-      </p>
 
       <p>
         <strong>
@@ -4425,49 +4190,32 @@ const legalPages = {
       <h2>§ 3 Vertragsschluss</h2>
 
       <p>
-        Die Darstellung der Produkte im Onlineshop stellt grundsätzlich
-        noch kein verbindliches Vertragsangebot dar, sofern die konkrete
-        Shopgestaltung nichts anderes bestimmt.
-      </p>
-
-      <p>
-        Ein Vertrag kommt durch die jeweils im späteren Shop vorgesehenen
-        Bestell- und Bestätigungsschritte zustande.
+        Die Darstellung der Produkte stellt grundsätzlich noch kein
+        verbindliches Vertragsangebot dar, sofern der spätere Shop nichts
+        anderes bestimmt.
       </p>
 
       <h2>§ 4 Preise</h2>
 
       <p>
-        Die jeweils gültigen Preise werden im späteren Onlineshop
-        angegeben. Ob Preise inklusive gesetzlicher Umsatzsteuer oder
-        aufgrund einer steuerlichen Sonderregelung dargestellt werden,
-        muss für das tatsächliche Geschäftsmodell festgelegt werden.
+        Die jeweils gültigen Preise werden im späteren Shop angegeben.
       </p>
 
       <h2>§ 5 Zahlung</h2>
 
       <p>
-        Die verfügbaren Zahlungsmethoden werden im späteren Onlineshop
-        angegeben. Derzeit ist keine echte Zahlungsabwicklung aktiviert.
+        Die später verfügbaren Zahlungsmethoden werden im Shop angegeben.
+        Derzeit ist keine echte Zahlungsabwicklung aktiviert.
       </p>
 
       <h2>§ 6 Lieferung</h2>
 
       <p>
         Liefergebiet, Lieferzeit, Versanddienstleister und Versandkosten
-        werden im späteren Onlineshop vor dem echten Verkaufsstart
-        verbindlich festgelegt und angegeben.
+        werden vor dem echten Verkaufsstart verbindlich festgelegt.
       </p>
 
-      <h2>§ 7 Eigentumsvorbehalt</h2>
-
-      <p>
-        Bei einem späteren echten Verkauf kann die Ware bis zur
-        vollständigen Zahlung im Eigentum des Anbieters bleiben, soweit
-        dies gesetzlich zulässig ist.
-      </p>
-
-      <h2>§ 8 Gewährleistung</h2>
+      <h2>§ 7 Gewährleistung</h2>
 
       <p>
         Es gelten die gesetzlichen Mängelhaftungsrechte, soweit keine
@@ -4475,55 +4223,28 @@ const legalPages = {
         bestimmt.
       </p>
 
-      <h2>§ 9 Haftung</h2>
+      <h2>§ 8 Widerruf</h2>
 
       <p>
-        Die Haftung richtet sich nach den gesetzlichen Vorschriften.
-        Haftungsbeschränkungen müssen im späteren endgültigen AGB-Text
-        rechtlich wirksam formuliert werden.
-      </p>
-
-      <h2>§ 10 Widerrufsrecht</h2>
-
-      <p>
-        Soweit der Kunde Verbraucher ist und ein gesetzliches
-        Widerrufsrecht besteht, gelten die hierfür vorgesehenen
+        Soweit ein gesetzliches Widerrufsrecht besteht, gelten die
         gesetzlichen Bestimmungen und die entsprechende
         Widerrufsbelehrung.
       </p>
 
-      <h2>§ 11 Verbraucherstreitbeilegung</h2>
+      <h2>§ 9 Verbraucherstreitbeilegung</h2>
 
       <p>
         Die Angaben zur Teilnahme oder Nichtteilnahme an einem
         Verbraucherschlichtungsverfahren müssen vor dem echten
-        Verkaufsstart anhand der tatsächlichen rechtlichen Situation
-        des Unternehmens ergänzt werden.
+        Verkaufsstart anhand der tatsächlichen Situation ergänzt werden.
       </p>
+
+      <h2>§ 10 Shop-Vorschau</h2>
 
       <p>
-        <span class="legal-placeholder">
-          [ANGABE ZUR TEILNAHME AN VERBRAUCHERSTREITBEILEGUNG ERGÄNZEN]
-        </span>
+        Die aktuelle Website befindet sich im Aufbau. Warenkorb und
+        Checkout sind derzeit ausschließlich Demo-Funktionen.
       </p>
-
-      <h2>§ 12 Schlussbestimmungen</h2>
-
-      <p>
-        Es gelten die gesetzlichen Vorschriften. Soweit zulässig, können
-        für das Vertragsverhältnis ergänzende Regelungen zum anwendbaren
-        Recht und Gerichtsstand getroffen werden.
-      </p>
-
-      <h2>Hinweis zur aktuellen Shop-Vorschau</h2>
-
-      <p>
-        Die aktuelle Website befindet sich noch im Aufbau. Die im
-        Warenkorb und Checkout angezeigten Bestellungen sind derzeit
-        ausschließlich Demo-Daten und stellen keine echte Bestellung
-        bzw. keinen echten Vertragsschluss dar.
-      </p>
-
     `
   }
 
@@ -4532,28 +4253,20 @@ const legalPages = {
 
 function openLegal(page){
 
-  const legalPage =
-    legalPages[page];
+  const legalPage = legalPages[page];
 
   if(!legalPage){
     return;
   }
 
   document.getElementById("legalContent").innerHTML = `
-
-    <h1>
-      ${legalPage.title}
-    </h1>
-
+    <h1>${legalPage.title}</h1>
     ${legalPage.content}
-
   `;
 
   document
     .querySelectorAll(".legal-nav button")
-    .forEach(button =>
-      button.classList.remove("active")
-    );
+    .forEach(button => button.classList.remove("active"));
 
   const activeButton =
     document.getElementById(
@@ -4569,6 +4282,7 @@ function openLegal(page){
   document
     .getElementById("legalModal")
     .classList.add("active");
+
 }
 
 function closeLegal(){
@@ -4576,6 +4290,7 @@ function closeLegal(){
   document
     .getElementById("legalModal")
     .classList.remove("active");
+
 }
 
 
@@ -4585,6 +4300,7 @@ function closeLegal(){
 
 const ADMIN_USERNAME = "admin";
 const ADMIN_PASSWORD = "gonschiki2025";
+
 
 function openAdmin(){
 
@@ -4603,14 +4319,18 @@ function openAdmin(){
       .classList.add("active");
 
   }
+
 }
+
 
 function closeAdminLogin(){
 
   document
     .getElementById("adminLoginModal")
     .classList.remove("active");
+
 }
+
 
 function adminLogin(event){
 
@@ -4647,48 +4367,46 @@ function adminLogin(event){
 
   }else{
 
-    alert(
-      "Benutzername oder Passwort falsch."
-    );
+    alert("Benutzername oder Passwort falsch.");
 
   }
+
 }
+
 
 function adminLogout(){
 
   adminLoggedIn = false;
 
-  sessionStorage.removeItem(
-    "gonschikiAdmin"
-  );
+  sessionStorage.removeItem("gonschikiAdmin");
 
   document
     .getElementById("adminModal")
     .classList.remove("active");
+
 }
+
 
 function renderAdmin(){
 
   renderAdminStats();
   renderAdminProducts();
   renderAdminOrders();
+
 }
+
 
 function showAdminTab(tab,button){
 
   document
     .querySelectorAll(".admin-tab")
-    .forEach(btn =>
-      btn.classList.remove("active")
-    );
+    .forEach(btn => btn.classList.remove("active"));
 
   button.classList.add("active");
 
   document
     .querySelectorAll(".admin-section")
-    .forEach(section =>
-      section.classList.remove("active")
-    );
+    .forEach(section => section.classList.remove("active"));
 
   if(tab === "dashboard"){
     document
@@ -4707,7 +4425,9 @@ function showAdminTab(tab,button){
       .getElementById("adminOrders")
       .classList.add("active");
   }
+
 }
+
 
 function renderAdminStats(){
 
@@ -4719,12 +4439,9 @@ function renderAdminStats(){
   }
 
   const activeProducts =
-    products.filter(
-      product => product.active
-    ).length;
+    products.filter(product => product.active).length;
 
-  const totalProducts =
-    products.length;
+  const totalProducts = products.length;
 
   const totalStock =
     products.reduce(
@@ -4733,8 +4450,7 @@ function renderAdminStats(){
       0
     );
 
-  const totalOrders =
-    orders.length;
+  const totalOrders = orders.length;
 
   const demoRevenue =
     orders.reduce(
@@ -4774,7 +4490,9 @@ function renderAdminStats(){
     </div>
 
   `;
+
 }
+
 
 function renderAdminProducts(){
 
@@ -4838,6 +4556,7 @@ function renderAdminProducts(){
 
           </div>
         `;
+
       }
 
       return `
@@ -4917,12 +4636,13 @@ function renderAdminProducts(){
       `;
 
     }).join("");
+
 }
+
 
 function updateProductPrice(id,value){
 
-  const product =
-    getProduct(id);
+  const product = getProduct(id);
 
   if(!product){
     return;
@@ -4930,10 +4650,7 @@ function updateProductPrice(id,value){
 
   const price = Number(value);
 
-  if(
-    !Number.isFinite(price) ||
-    price < 0
-  ){
+  if(!Number.isFinite(price) || price < 0){
     return;
   }
 
@@ -4942,24 +4659,21 @@ function updateProductPrice(id,value){
 
   renderProducts();
   renderAdminProducts();
+
 }
+
 
 function updateProductStock(id,size,value){
 
-  const product =
-    getProduct(id);
+  const product = getProduct(id);
 
   if(!product){
     return;
   }
 
-  let stock =
-    parseInt(value,10);
+  let stock = parseInt(value,10);
 
-  if(
-    !Number.isFinite(stock) ||
-    stock < 0
-  ){
+  if(!Number.isFinite(stock) || stock < 0){
     stock = 0;
   }
 
@@ -4968,24 +4682,21 @@ function updateProductStock(id,size,value){
   renderProducts();
   renderAdminStats();
   renderAdminProducts();
+
 }
+
 
 function updateStickerStock(id,value){
 
-  const product =
-    getProduct(id);
+  const product = getProduct(id);
 
   if(!product){
     return;
   }
 
-  let stock =
-    parseInt(value,10);
+  let stock = parseInt(value,10);
 
-  if(
-    !Number.isFinite(stock) ||
-    stock < 0
-  ){
+  if(!Number.isFinite(stock) || stock < 0){
     stock = 0;
   }
 
@@ -4994,24 +4705,26 @@ function updateStickerStock(id,value){
   renderProducts();
   renderAdminStats();
   renderAdminProducts();
+
 }
+
 
 function toggleProduct(id){
 
-  const product =
-    getProduct(id);
+  const product = getProduct(id);
 
   if(!product){
     return;
   }
 
-  product.active =
-    !product.active;
+  product.active = !product.active;
 
   renderProducts();
   renderAdminStats();
   renderAdminProducts();
+
 }
+
 
 function renderAdminOrders(){
 
@@ -5031,6 +4744,7 @@ function renderAdminOrders(){
     `;
 
     return;
+
   }
 
   container.innerHTML =
@@ -5073,16 +4787,22 @@ function renderAdminOrders(){
               </div>
 
               <div class="admin-order-customer">
+
                 ${formatOrderDate(order.date)}
+
                 <br>
+
                 ${escapeHtml(order.customer.firstName)}
                 ${escapeHtml(order.customer.lastName)}
                 ·
                 ${escapeHtml(order.customer.email)}
+
                 <br>
+
                 ${escapeHtml(order.customer.street)},
                 ${escapeHtml(order.customer.postal)}
                 ${escapeHtml(order.customer.city)}
+
               </div>
 
             </div>
@@ -5099,9 +4819,7 @@ function renderAdminOrders(){
 
           <div class="admin-order-total">
 
-            <span>
-              GESAMT
-            </span>
+            <span>GESAMT</span>
 
             <strong>
               ${formatPrice(order.total)}
@@ -5113,6 +4831,7 @@ function renderAdminOrders(){
       `;
 
     }).join("");
+
 }
 
 
@@ -5129,9 +4848,7 @@ document
       function(event){
 
         if(event.target === modal){
-
           modal.classList.remove("active");
-
         }
 
       }
@@ -5140,27 +4857,64 @@ document
   });
 
 
-/* =========================
-   SECRET ADMIN URL
-========================= */
+/* =========================================================
+   ADMIN URL + #ADMIN
+========================================================= */
 
-function checkAdminUrl(){
+/*
+   GitHub Pages kann /admin nicht als eigene Datei finden.
+   Deshalb funktioniert der Admin zusätzlich über:
+
+   https://gonschikicrew.github.io/Gonchikitest/#admin
+
+   Alles nach # wird nicht als Datei angefordert.
+*/
+
+function checkAdminAccess(){
 
   const path =
     window.location.pathname
       .toLowerCase()
       .replace(/\/+$/,"");
 
-  if(
+  const hash =
+    window.location.hash
+      .toLowerCase();
+
+  const adminByPath =
     path === "/admin" ||
-    path.endsWith("/admin")
-  ){
+    path.endsWith("/admin");
+
+  const adminByHash =
+    hash === "#admin";
+
+  if(adminByPath || adminByHash){
 
     openAdmin();
 
   }
 
 }
+
+
+/* =========================
+   HASH CHANGE
+========================= */
+
+window.addEventListener(
+  "hashchange",
+  function(){
+
+    if(
+      window.location.hash.toLowerCase() === "#admin"
+    ){
+
+      openAdmin();
+
+    }
+
+  }
+);
 
 
 /* =========================
@@ -5179,7 +4933,7 @@ if(adminLoggedIn){
   renderAdmin();
 }
 
-checkAdminUrl();
+checkAdminAccess();
 
 </script>
 
