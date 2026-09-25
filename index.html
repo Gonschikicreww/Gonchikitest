@@ -303,6 +303,7 @@ section{
 }
 
 .product{
+    position:relative;
     background:#101010;
     border:1px solid #1e1e1e;
     cursor:pointer;
@@ -351,6 +352,30 @@ section{
     margin-top:13px;
     font-size:14px;
     font-weight:900;
+}
+
+.product-status{
+    margin-top:8px;
+    font-size:9px;
+    color:#777;
+    letter-spacing:1px;
+}
+
+.product-status.out{
+    color:#777;
+}
+
+.product-badge{
+    position:absolute;
+    top:10px;
+    left:10px;
+    z-index:2;
+    padding:6px 9px;
+    background:#fff;
+    color:#000;
+    font-size:8px;
+    font-weight:900;
+    letter-spacing:1px;
 }
 
 /* =========================
@@ -722,6 +747,23 @@ section{
     color:#000;
 }
 
+.size:disabled{
+    opacity:.25;
+    cursor:not-allowed;
+    text-decoration:line-through;
+}
+
+.stock-info{
+    margin-top:12px;
+    color:#777;
+    font-size:10px;
+    letter-spacing:1px;
+}
+
+.stock-info strong{
+    color:#fff;
+}
+
 .modal-quantity{
     display:flex;
     align-items:center;
@@ -761,6 +803,11 @@ section{
 
 .add-cart:hover{
     background:#ddd;
+}
+
+.add-cart:disabled{
+    opacity:.35;
+    cursor:not-allowed;
 }
 
 /* =========================
@@ -1291,10 +1338,6 @@ footer{
         font-size:9px;
     }
 
-    .checkout-form .two{
-        grid-template-columns:1fr;
-    }
-
 }
 
 </style>
@@ -1303,17 +1346,9 @@ footer{
 
 <body>
 
-<!-- =========================
-     TOP BAR
-========================= -->
-
 <div class="topbar">
 SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BESTELLUNGEN DERZEIT MÖGLICH!
 </div>
-
-<!-- =========================
-     NAV
-========================= -->
 
 <nav>
 
@@ -1344,17 +1379,9 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
 
         <div class="lang">
 
-            <button class="active">
-                DE
-            </button>
-
-            <button>
-                EN
-            </button>
-
-            <button>
-                RU
-            </button>
+            <button class="active">DE</button>
+            <button>EN</button>
+            <button>RU</button>
 
         </div>
 
@@ -1377,10 +1404,6 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
     </div>
 
 </nav>
-
-<!-- =========================
-     HERO
-========================= -->
 
 <header class="hero">
 
@@ -1414,17 +1437,11 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
 
 </header>
 
-<!-- =========================
-     SHOP
-========================= -->
-
 <section id="shop">
 
     <div class="section-title">
 
-        <h2>
-            SHOP
-        </h2>
+        <h2>SHOP</h2>
 
         <p>
             GONSCHIKI STREETWEAR
@@ -1503,20 +1520,11 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
 
 </section>
 
-<!-- =========================
-     CARS
-========================= -->
-
-<section
-    id="cars"
-    class="cars"
->
+<section id="cars" class="cars">
 
     <div class="section-title">
 
-        <h2>
-            CARS
-        </h2>
+        <h2>CARS</h2>
 
         <p>
             OUR CULTURE. OUR CARS.
@@ -1534,9 +1542,7 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
 
             <div class="car-info">
 
-                <h3>
-                    GONSCHIKI #01
-                </h3>
+                <h3>GONSCHIKI #01</h3>
 
                 <p>
                     BUILT FOR THE STREETS.
@@ -1554,9 +1560,7 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
 
             <div class="car-info">
 
-                <h3>
-                    GONSCHIKI #02
-                </h3>
+                <h3>GONSCHIKI #02</h3>
 
                 <p>
                     LOW. CLEAN. DIFFERENT.
@@ -1574,9 +1578,7 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
 
             <div class="car-info">
 
-                <h3>
-                    GONSCHIKI #03
-                </h3>
+                <h3>GONSCHIKI #03</h3>
 
                 <p>
                     OWN YOUR STYLE.
@@ -1594,9 +1596,7 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
 
             <div class="car-info">
 
-                <h3>
-                    GONSCHIKI #04
-                </h3>
+                <h3>GONSCHIKI #04</h3>
 
                 <p>
                     NO LIMITS.
@@ -1614,9 +1614,7 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
 
             <div class="car-info">
 
-                <h3>
-                    GONSCHIKI #05
-                </h3>
+                <h3>GONSCHIKI #05</h3>
 
                 <p>
                     DRIVE YOUR OWN WAY.
@@ -1630,21 +1628,13 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
 
 </section>
 
-<!-- =========================
-     EVENTS
-========================= -->
-
 <section id="events">
 
     <div class="section-title">
 
-        <h2>
-            EVENTS
-        </h2>
+        <h2>EVENTS</h2>
 
-        <p>
-            MEET THE CREW
-        </p>
+        <p>MEET THE CREW</p>
 
     </div>
 
@@ -1700,21 +1690,13 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
 
 </section>
 
-<!-- =========================
-     ABOUT
-========================= -->
-
 <section id="about">
 
     <div class="section-title">
 
-        <h2>
-            ABOUT
-        </h2>
+        <h2>ABOUT</h2>
 
-        <p>
-            GONSCHIKI CREW
-        </p>
+        <p>GONSCHIKI CREW</p>
 
     </div>
 
@@ -1732,21 +1714,13 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
 
 </section>
 
-<!-- =========================
-     CONTACT
-========================= -->
-
 <section id="contact">
 
     <div class="section-title">
 
-        <h2>
-            KONTAKT
-        </h2>
+        <h2>KONTAKT</h2>
 
-        <p>
-            SCHREIB UNS
-        </p>
+        <p>SCHREIB UNS</p>
 
     </div>
 
@@ -1784,21 +1758,13 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
 
 </section>
 
-<!-- =========================
-     ACCOUNT
-========================= -->
-
 <section id="account">
 
     <div class="section-title">
 
-        <h2>
-            ACCOUNT
-        </h2>
+        <h2>ACCOUNT</h2>
 
-        <p>
-            DEIN GONSCHIKI ACCOUNT
-        </p>
+        <p>DEIN GONSCHIKI ACCOUNT</p>
 
     </div>
 
@@ -1808,10 +1774,6 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
     ></div>
 
 </section>
-
-<!-- =========================
-     PRODUCT MODAL
-========================= -->
 
 <div
     class="modal"
@@ -1846,18 +1808,14 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
                     id="modalCategory"
                 ></div>
 
-                <h2
-                    id="modalName"
-                ></h2>
+                <h2 id="modalName"></h2>
 
                 <div
                     class="modal-price"
                     id="modalPrice"
                 ></div>
 
-                <p
-                    id="modalDescription"
-                ></p>
+                <p id="modalDescription"></p>
 
                 <div
                     class="option-title"
@@ -1871,15 +1829,18 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
                     id="modalSizes"
                 ></div>
 
+                <div
+                    class="stock-info"
+                    id="modalStock"
+                ></div>
+
                 <div class="option-title">
                     MENGE
                 </div>
 
                 <div class="modal-quantity">
 
-                    <button
-                        onclick="changeModalQuantity(-1)"
-                    >
+                    <button onclick="changeModalQuantity(-1)">
                         −
                     </button>
 
@@ -1890,9 +1851,7 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
                         1
                     </div>
 
-                    <button
-                        onclick="changeModalQuantity(1)"
-                    >
+                    <button onclick="changeModalQuantity(1)">
                         +
                     </button>
 
@@ -1900,6 +1859,7 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
 
                 <button
                     class="add-cart"
+                    id="addCartButton"
                     onclick="addToCart()"
                 >
                     IN DEN WARENKORB
@@ -1913,10 +1873,6 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
 
 </div>
 
-<!-- =========================
-     CART
-========================= -->
-
 <div
     class="cart-panel"
     id="cartPanel"
@@ -1924,9 +1880,7 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
 
     <div class="cart-header">
 
-        <h2>
-            WARENKORB
-        </h2>
+        <h2>WARENKORB</h2>
 
         <button
             class="cart-close"
@@ -1937,15 +1891,9 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
 
     </div>
 
-    <div
-        id="cartItems"
-    ></div>
+    <div id="cartItems"></div>
 
 </div>
-
-<!-- =========================
-     CHECKOUT
-========================= -->
 
 <div
     class="checkout-modal"
@@ -2120,10 +2068,6 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
 
 </div>
 
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
     ГОНЩИКИ — GONSCHIKI CREW EST. 2025
@@ -2132,163 +2076,427 @@ SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BE
 
 <script>
 
-/* =========================
-   PRODUCTS
-========================= */
+/* =========================================================
+   GONSCHIKI PRODUKTVERWALTUNG
+   =========================================================
+
+   HIER WERDEN ALLE PRODUKTE ZENTRAL VERWALTET.
+
+   Du kannst später bei jedem Produkt ändern:
+
+   - id
+   - name
+   - image
+   - category
+   - price
+   - description
+   - gender
+   - sizes
+   - stock
+   - sticker
+   - size
+   - active
+
+   Der spätere Admin-Bereich kann genau auf
+   diese Datenstruktur aufbauen.
+========================================================= */
 
 const products = [
 
     {
         id:1,
+
         name:"GONSCHIKI SHIRT RUSSIA",
+
         image:"assets/Shirt-black-Russia.jpg",
+
         category:"Shirts",
+
         price:34.99,
+
         description:
-            "Schwarzes Gonschiki Shirt mit dem charakteristischen Russia-Motiv. Schlicht, sportlich und für den täglichen Streetwear-Look."
+            "Schwarzes Gonschiki Shirt mit dem charakteristischen Russia-Motiv. Schlicht, sportlich und für den täglichen Streetwear-Look.",
+
+        gender:["Männer","Frauen"],
+
+        sizes:["S","M","L","XL"],
+
+        stock:{
+            S:10,
+            M:10,
+            L:10,
+            XL:10
+        },
+
+        sticker:false,
+
+        active:true
     },
 
     {
         id:2,
+
         name:"GONSCHIKI ZIPPER KREUZ",
+
         image:"assets/Zipper-black-Kreuz.jpg",
+
         category:"Zipper",
+
         price:69.99,
+
         description:
-            "Schwarzer Gonschiki Zipper mit Kreuz-Motiv. Ein vielseitiges Piece für unterwegs, Treffen und kalte Nächte."
+            "Schwarzer Gonschiki Zipper mit Kreuz-Motiv. Ein vielseitiges Piece für unterwegs, Treffen und kalte Nächte.",
+
+        gender:["Männer","Frauen"],
+
+        sizes:["S","M","L","XL"],
+
+        stock:{
+            S:10,
+            M:10,
+            L:10,
+            XL:10
+        },
+
+        sticker:false,
+
+        active:true
     },
 
     {
         id:3,
+
         name:"GONSCHIKI HOODIE E36",
+
         image:"assets/Hoodie-black-e36.jpg",
+
         category:"Hoodies",
+
         price:59.99,
+
         description:
-            "Schwarzer Gonschiki Hoodie mit E36-Motiv. Ein Teil für alle, die Autos und Streetwear verbinden."
+            "Schwarzer Gonschiki Hoodie mit E36-Motiv. Ein Teil für alle, die Autos und Streetwear verbinden.",
+
+        gender:["Männer","Frauen"],
+
+        sizes:["S","M","L","XL"],
+
+        stock:{
+            S:10,
+            M:10,
+            L:10,
+            XL:10
+        },
+
+        sticker:false,
+
+        active:true
     },
 
     {
         id:4,
+
         name:"GONSCHIKI HOODIE E34",
+
         image:"assets/Hoodie-black-e34.jpg",
+
         category:"Hoodies",
+
         price:59.99,
+
         description:
-            "Schwarzer Gonschiki Hoodie mit E34-Motiv. Cleanes Design mit klarer Automotive-DNA."
+            "Schwarzer Gonschiki Hoodie mit E34-Motiv. Cleanes Design mit klarer Automotive-DNA.",
+
+        gender:["Männer","Frauen"],
+
+        sizes:["S","M","L","XL"],
+
+        stock:{
+            S:10,
+            M:10,
+            L:10,
+            XL:10
+        },
+
+        sticker:false,
+
+        active:true
     },
 
     {
         id:5,
+
         name:"GONSCHIKI HOODIE KREUZ",
+
         image:"assets/Hoodie-black-Kreuz.jpg",
+
         category:"Hoodies",
+
         price:59.99,
+
         description:
-            "Schwarzer Gonschiki Hoodie mit Kreuz-Motiv. Schlichtes Design für den Alltag."
+            "Schwarzer Gonschiki Hoodie mit Kreuz-Motiv. Schlichtes Design für den Alltag.",
+
+        gender:["Männer","Frauen"],
+
+        sizes:["S","M","L","XL"],
+
+        stock:{
+            S:10,
+            M:10,
+            L:10,
+            XL:10
+        },
+
+        sticker:false,
+
+        active:true
     },
 
     {
         id:6,
+
         name:"GONSCHIKI SHIRT E36",
+
         image:"assets/Shirt-black-e36.jpg",
+
         category:"Shirts",
+
         price:34.99,
+
         description:
-            "Schwarzes Gonschiki Shirt mit E36-Motiv. Automotive Streetwear mit schlichtem Look."
+            "Schwarzes Gonschiki Shirt mit E36-Motiv. Automotive Streetwear mit schlichtem Look.",
+
+        gender:["Männer","Frauen"],
+
+        sizes:["S","M","L","XL"],
+
+        stock:{
+            S:10,
+            M:10,
+            L:10,
+            XL:10
+        },
+
+        sticker:false,
+
+        active:true
     },
 
     {
         id:7,
+
         name:"GONSCHIKI HOODIE RUSSIA",
+
         image:"assets/Hoodie-black-Russia.jpg",
+
         category:"Hoodies",
+
         price:59.99,
+
         description:
-            "Schwarzer Gonschiki Hoodie mit Russia-Motiv und markantem Crew-Style."
+            "Schwarzer Gonschiki Hoodie mit Russia-Motiv und markantem Crew-Style.",
+
+        gender:["Männer","Frauen"],
+
+        sizes:["S","M","L","XL"],
+
+        stock:{
+            S:10,
+            M:10,
+            L:10,
+            XL:10
+        },
+
+        sticker:false,
+
+        active:true
     },
 
     {
         id:8,
+
         name:"GONSCHIKI SHIRT E34",
+
         image:"assets/Shirt-black-e34.jpg",
+
         category:"Shirts",
+
         price:34.99,
+
         description:
-            "Schwarzes Gonschiki Shirt mit E34-Motiv für einen cleanen Automotive-Look."
+            "Schwarzes Gonschiki Shirt mit E34-Motiv für einen cleanen Automotive-Look.",
+
+        gender:["Männer","Frauen"],
+
+        sizes:["S","M","L","XL"],
+
+        stock:{
+            S:10,
+            M:10,
+            L:10,
+            XL:10
+        },
+
+        sticker:false,
+
+        active:true
     },
 
     {
         id:9,
+
         name:"GONSCHIKI HOODIE E36 BEIGE",
+
         image:"assets/Hoodie-beige-e36.jpg",
+
         category:"Hoodies",
+
         price:59.99,
+
         description:
-            "Beiger Gonschiki Hoodie mit E36-Motiv. Etwas heller, aber weiterhin im typischen Crew-Style."
+            "Beiger Gonschiki Hoodie mit E36-Motiv. Etwas heller, aber weiterhin im typischen Crew-Style.",
+
+        gender:["Männer","Frauen"],
+
+        sizes:["S","M","L","XL"],
+
+        stock:{
+            S:10,
+            M:10,
+            L:10,
+            XL:10
+        },
+
+        sticker:false,
+
+        active:true
     },
 
     {
         id:10,
+
         name:"GONSCHIKI PANTS",
+
         image:"assets/Pants-black-gonschiki.jpg",
+
         category:"Hosen",
+
         price:79.99,
+
         description:
-            "Schwarze Gonschiki Hose mit dem typischen Crew-Style. Für einen kompletten Streetwear-Look."
+            "Schwarze Gonschiki Hose mit dem typischen Crew-Style. Für einen kompletten Streetwear-Look.",
+
+        gender:["Männer","Frauen"],
+
+        sizes:["S","M","L","XL"],
+
+        stock:{
+            S:10,
+            M:10,
+            L:10,
+            XL:10
+        },
+
+        sticker:false,
+
+        active:true
     },
 
     {
         id:11,
+
         name:"GONSCHIKI SCHEIBENKEIL",
+
         image:"assets/Scheibenkeil .PNG",
+
         category:"Sticker",
+
         price:35.99,
-        sticker:true,
-        size:"UNIVERSELL FÜR ALLE AUTOS",
+
         description:
-            "Gonschiki Scheibenkeil Sticker. Universell für alle Autos."
+            "Gonschiki Scheibenkeil Sticker. Universell für alle Autos.",
+
+        gender:["Männer","Frauen"],
+
+        sizes:[],
+
+        stock:20,
+
+        sticker:true,
+
+        size:"UNIVERSELL FÜR ALLE AUTOS",
+
+        active:true
     },
 
     {
         id:12,
+
         name:"GONSCHIKI HECKSCHEIBEN STICKER",
+
         image:"assets/Heckscheiben Sticker.PNG",
+
         category:"Sticker",
+
         price:25.99,
-        sticker:true,
-        size:"700 × 300 MM",
+
         description:
-            "Großer Gonschiki Heckscheiben Sticker mit den Maßen 700 × 300 mm."
+            "Großer Gonschiki Heckscheiben Sticker mit den Maßen 700 × 300 mm.",
+
+        gender:["Männer","Frauen"],
+
+        sizes:[],
+
+        stock:20,
+
+        sticker:true,
+
+        size:"700 × 300 MM",
+
+        active:true
     },
 
     {
         id:13,
+
         name:"GONSCHIKI STICKER",
+
         image:"assets/Sticker.PNG",
+
         category:"Sticker",
+
         price:12.99,
-        sticker:true,
-        size:"200 × 80 MM",
+
         description:
-            "Gonschiki Sticker mit den Maßen 200 × 80 mm."
+            "Gonschiki Sticker mit den Maßen 200 × 80 mm.",
+
+        gender:["Männer","Frauen"],
+
+        sizes:[],
+
+        stock:30,
+
+        sticker:true,
+
+        size:"200 × 80 MM",
+
+        active:true
     }
 
 ];
 
-/* =========================
-   SETTINGS
-========================= */
+/* =========================================================
+   SHOP EINSTELLUNGEN
+========================================================= */
 
 const SHIPPING_COST = 5.99;
 
 const FREE_SHIPPING_FROM = 100;
 
-/* =========================
-   VARIABLES
-========================= */
-
 let currentCategory = "Alle";
+
+let currentGender = "Männer";
 
 let selectedProduct = null;
 
@@ -2306,9 +2514,9 @@ let account =
         localStorage.getItem("gonschikiAccount") || "null"
     );
 
-/* =========================
-   FORMAT PRICE
-========================= */
+/* =========================================================
+   PREIS FORMATIEREN
+========================================================= */
 
 function formatPrice(value){
 
@@ -2318,9 +2526,91 @@ function formatPrice(value){
 
 }
 
-/* =========================
-   RENDER PRODUCTS
-========================= */
+/* =========================================================
+   PRODUKT VERFÜGBAR?
+========================================================= */
+
+function isProductAvailable(product){
+
+    if(!product.active){
+        return false;
+    }
+
+    if(product.sticker){
+
+        return product.stock > 0;
+
+    }
+
+    return Object
+        .values(product.stock || {})
+        .some(stock => stock > 0);
+
+}
+
+/* =========================================================
+   LAGERBESTAND EINER GRÖSSE
+========================================================= */
+
+function getStockForSize(product,size){
+
+    if(product.sticker){
+
+        return product.stock || 0;
+
+    }
+
+    return (
+        product.stock &&
+        product.stock[size]
+    ) || 0;
+
+}
+
+/* =========================================================
+   GESAMTEN PRODUKTBESTAND
+========================================================= */
+
+function getTotalProductStock(product){
+
+    if(product.sticker){
+
+        return product.stock || 0;
+
+    }
+
+    return Object
+        .values(product.stock || {})
+        .reduce(
+            (sum,value) =>
+                sum + Number(value || 0),
+            0
+        );
+
+}
+
+/* =========================================================
+   VERFÜGBAREN BESTAND NACH WARENKORB
+========================================================= */
+
+function getCartQuantityForProduct(productId,size){
+
+    return cart
+        .filter(item =>
+            item.productId === productId &&
+            item.size === size
+        )
+        .reduce(
+            (sum,item) =>
+                sum + (item.quantity || 0),
+            0
+        );
+
+}
+
+/* =========================================================
+   PRODUKTE RENDERN
+========================================================= */
 
 function renderProducts(){
 
@@ -2330,10 +2620,22 @@ function renderProducts(){
     container.innerHTML = "";
 
     products
-        .filter(product =>
-            currentCategory === "Alle"
-            || product.category === currentCategory
-        )
+        .filter(product => {
+
+            if(!product.active){
+                return false;
+            }
+
+            const categoryMatch =
+                currentCategory === "Alle"
+                || product.category === currentCategory;
+
+            const genderMatch =
+                product.gender.includes(currentGender);
+
+            return categoryMatch && genderMatch;
+
+        })
         .forEach(product => {
 
             const div =
@@ -2344,7 +2646,27 @@ function renderProducts(){
             div.onclick = () =>
                 openProduct(product);
 
+            const available =
+                isProductAvailable(product);
+
+            const stock =
+                getTotalProductStock(product);
+
+            let badge = "";
+
+            if(!available){
+
+                badge = `
+                    <div class="product-badge">
+                        AUSVERKAUFT
+                    </div>
+                `;
+
+            }
+
             div.innerHTML = `
+
+                ${badge}
 
                 <div class="product-image">
 
@@ -2369,6 +2691,18 @@ function renderProducts(){
                         ${formatPrice(product.price)}
                     </div>
 
+                    <div class="product-status ${
+                        !available ? "out" : ""
+                    }">
+
+                        ${
+                            available
+                            ? stock + " VERFÜGBAR"
+                            : "AUSVERKAUFT"
+                        }
+
+                    </div>
+
                 </div>
 
             `;
@@ -2379,9 +2713,9 @@ function renderProducts(){
 
 }
 
-/* =========================
-   FILTER
-========================= */
+/* =========================================================
+   KATEGORIE FILTER
+========================================================= */
 
 function filterProducts(category,button){
 
@@ -2399,9 +2733,9 @@ function filterProducts(category,button){
 
 }
 
-/* =========================
-   GENDER
-========================= */
+/* =========================================================
+   GESCHLECHT
+========================================================= */
 
 function switchGender(button){
 
@@ -2413,11 +2747,18 @@ function switchGender(button){
 
     button.classList.add("active");
 
+    currentGender =
+        button.textContent.trim() === "FRAUEN"
+        ? "Frauen"
+        : "Männer";
+
+    renderProducts();
+
 }
 
-/* =========================
-   PRODUCT MODAL
-========================= */
+/* =========================================================
+   PRODUKT MODAL
+========================================================= */
 
 function openProduct(product){
 
@@ -2457,7 +2798,16 @@ function openProduct(product){
     const sizeTitle =
         document.getElementById("sizeTitle");
 
+    const stockInfo =
+        document.getElementById("modalStock");
+
+    const addButton =
+        document.getElementById("addCartButton");
+
     sizes.innerHTML = "";
+
+    const available =
+        isProductAvailable(product);
 
     if(product.sticker){
 
@@ -2478,12 +2828,27 @@ function openProduct(product){
         selectedSize =
             product.size;
 
+        const stock =
+            getStockForSize(
+                product,
+                product.size
+            );
+
+        stockInfo.innerHTML =
+            `<strong>${stock}</strong> VERFÜGBAR`;
+
     }else{
 
         sizeTitle.textContent =
             "GRÖSSE";
 
-        ["S","M","L","XL"].forEach(sizeName => {
+        product.sizes.forEach(sizeName => {
+
+            const stock =
+                getStockForSize(
+                    product,
+                    sizeName
+                );
 
             const size =
                 document.createElement("button");
@@ -2494,10 +2859,15 @@ function openProduct(product){
             size.textContent =
                 sizeName;
 
+            size.disabled =
+                stock <= 0;
+
             size.onclick = () => {
 
                 document
-                    .querySelectorAll("#modalSizes .size")
+                    .querySelectorAll(
+                        "#modalSizes .size"
+                    )
                     .forEach(x =>
                         x.classList.remove("active")
                     );
@@ -2507,11 +2877,30 @@ function openProduct(product){
                 selectedSize =
                     sizeName;
 
+                updateModalStock();
+
             };
 
             sizes.appendChild(size);
 
         });
+
+        stockInfo.textContent =
+            "Bitte Größe auswählen.";
+
+    }
+
+    addButton.disabled =
+        !available ||
+        (
+            !product.sticker &&
+            !selectedSize
+        );
+
+    if(!available){
+
+        stockInfo.textContent =
+            "DERZEIT AUSVERKAUFT.";
 
     }
 
@@ -2521,20 +2910,96 @@ function openProduct(product){
 
 }
 
-/* =========================
-   MODAL QUANTITY
-========================= */
+/* =========================================================
+   MODAL BESTAND AKTUALISIEREN
+========================================================= */
+
+function updateModalStock(){
+
+    if(!selectedProduct){
+        return;
+    }
+
+    const stockInfo =
+        document.getElementById("modalStock");
+
+    const addButton =
+        document.getElementById("addCartButton");
+
+    if(!selectedSize){
+
+        stockInfo.textContent =
+            "Bitte Größe auswählen.";
+
+        addButton.disabled = true;
+
+        return;
+
+    }
+
+    const stock =
+        getStockForSize(
+            selectedProduct,
+            selectedSize
+        );
+
+    stockInfo.innerHTML =
+        `<strong>${stock}</strong> VERFÜGBAR`;
+
+    addButton.disabled =
+        stock <= 0;
+
+}
+
+/* =========================================================
+   MODAL MENGE
+========================================================= */
 
 function changeModalQuantity(change){
+
+    if(!selectedProduct){
+        return;
+    }
+
+    let maxStock = 99;
+
+    if(selectedSize){
+
+        const stock =
+            getStockForSize(
+                selectedProduct,
+                selectedSize
+            );
+
+        const alreadyInCart =
+            getCartQuantityForProduct(
+                selectedProduct.id,
+                selectedSize
+            );
+
+        maxStock =
+            Math.max(
+                0,
+                stock - alreadyInCart
+            );
+
+    }
 
     modalQuantity += change;
 
     if(modalQuantity < 1){
+
         modalQuantity = 1;
+
     }
 
-    if(modalQuantity > 99){
-        modalQuantity = 99;
+    if(modalQuantity > maxStock){
+
+        modalQuantity =
+            maxStock > 0
+            ? maxStock
+            : 1;
+
     }
 
     document
@@ -2543,9 +3008,9 @@ function changeModalQuantity(change){
 
 }
 
-/* =========================
-   CLOSE MODAL
-========================= */
+/* =========================================================
+   MODAL SCHLIESSEN
+========================================================= */
 
 function closeModal(){
 
@@ -2567,13 +3032,15 @@ function modalBackground(event){
 
 }
 
-/* =========================
-   ADD TO CART
-========================= */
+/* =========================================================
+   IN DEN WARENKORB
+========================================================= */
 
 function addToCart(){
 
-    if(!selectedProduct) return;
+    if(!selectedProduct){
+        return;
+    }
 
     if(
         !selectedProduct.sticker &&
@@ -2585,12 +3052,39 @@ function addToCart(){
         );
 
         return;
+
     }
 
     const finalSize =
         selectedProduct.sticker
         ? selectedProduct.size
         : selectedSize;
+
+    const availableStock =
+        getStockForSize(
+            selectedProduct,
+            finalSize
+        );
+
+    const existingQuantity =
+        getCartQuantityForProduct(
+            selectedProduct.id,
+            finalSize
+        );
+
+    if(
+        existingQuantity +
+        modalQuantity >
+        availableStock
+    ){
+
+        alert(
+            "Die gewünschte Menge ist derzeit nicht verfügbar."
+        );
+
+        return;
+
+    }
 
     const existingItem =
         cart.find(item =>
@@ -2640,9 +3134,9 @@ function addToCart(){
 
 }
 
-/* =========================
-   SAVE CART
-========================= */
+/* =========================================================
+   WARENKORB SPEICHERN
+========================================================= */
 
 function saveCart(){
 
@@ -2655,9 +3149,9 @@ function saveCart(){
 
 }
 
-/* =========================
-   CART COUNT
-========================= */
+/* =========================================================
+   WARENKORB ANZAHL
+========================================================= */
 
 function updateCartCount(){
 
@@ -2674,9 +3168,9 @@ function updateCartCount(){
 
 }
 
-/* =========================
-   CART SUBTOTAL
-========================= */
+/* =========================================================
+   ZWISCHENSUMME
+========================================================= */
 
 function getCartSubtotal(){
 
@@ -2693,9 +3187,9 @@ function getCartSubtotal(){
 
 }
 
-/* =========================
-   SHIPPING
-========================= */
+/* =========================================================
+   VERSAND
+========================================================= */
 
 function getShipping(){
 
@@ -2717,9 +3211,9 @@ function getShipping(){
 
 }
 
-/* =========================
-   CART TOTAL
-========================= */
+/* =========================================================
+   GESAMT
+========================================================= */
 
 function getCartTotal(){
 
@@ -2731,9 +3225,9 @@ function getCartTotal(){
 
 }
 
-/* =========================
-   OPEN CART
-========================= */
+/* =========================================================
+   WARENKORB ÖFFNEN
+========================================================= */
 
 function openCart(){
 
@@ -2745,9 +3239,9 @@ function openCart(){
 
 }
 
-/* =========================
-   CLOSE CART
-========================= */
+/* =========================================================
+   WARENKORB SCHLIESSEN
+========================================================= */
 
 function closeCart(){
 
@@ -2757,9 +3251,9 @@ function closeCart(){
 
 }
 
-/* =========================
-   CHANGE CART QUANTITY
-========================= */
+/* =========================================================
+   WARENKORB MENGE ÄNDERN
+========================================================= */
 
 function changeQuantity(id,change){
 
@@ -2768,7 +3262,37 @@ function changeQuantity(id,change){
             item.id === id
         );
 
-    if(!item) return;
+    if(!item){
+        return;
+    }
+
+    const product =
+        products.find(product =>
+            product.id === item.productId
+        );
+
+    if(change > 0 && product){
+
+        const stock =
+            getStockForSize(
+                product,
+                item.size
+            );
+
+        if(
+            item.quantity + change >
+            stock
+        ){
+
+            alert(
+                "Diese Menge ist derzeit nicht verfügbar."
+            );
+
+            return;
+
+        }
+
+    }
 
     item.quantity =
         (item.quantity || 1)
@@ -2789,9 +3313,9 @@ function changeQuantity(id,change){
 
 }
 
-/* =========================
-   REMOVE ITEM
-========================= */
+/* =========================================================
+   ARTIKEL ENTFERNEN
+========================================================= */
 
 function removeFromCart(id){
 
@@ -2806,9 +3330,9 @@ function removeFromCart(id){
 
 }
 
-/* =========================
-   CLEAR CART
-========================= */
+/* =========================================================
+   WARENKORB LEEREN
+========================================================= */
 
 function clearCart(){
 
@@ -2833,9 +3357,9 @@ function clearCart(){
 
 }
 
-/* =========================
-   RENDER CART
-========================= */
+/* =========================================================
+   WARENKORB RENDERN
+========================================================= */
 
 function renderCart(){
 
@@ -2849,9 +3373,7 @@ function renderCart(){
         container.innerHTML = `
 
             <div class="empty-cart">
-
                 DEIN WARENKORB IST LEER.
-
             </div>
 
         `;
@@ -3043,9 +3565,9 @@ function renderCart(){
 
 }
 
-/* =========================
+/* =========================================================
    CHECKOUT
-========================= */
+========================================================= */
 
 function openCheckout(){
 
@@ -3079,9 +3601,9 @@ function closeCheckout(){
 
 }
 
-/* =========================
-   RENDER CHECKOUT
-========================= */
+/* =========================================================
+   CHECKOUT RENDERN
+========================================================= */
 
 function renderCheckout(){
 
@@ -3156,9 +3678,9 @@ function renderCheckout(){
 
 }
 
-/* =========================
-   FILL CHECKOUT ACCOUNT
-========================= */
+/* =========================================================
+   CHECKOUT ACCOUNT
+========================================================= */
 
 function fillCheckoutFromAccount(){
 
@@ -3198,9 +3720,9 @@ function fillCheckoutFromAccount(){
 
 }
 
-/* =========================
-   PLACE ORDER
-========================= */
+/* =========================================================
+   BESTELLUNG
+========================================================= */
 
 function placeOrder(){
 
@@ -3229,9 +3751,9 @@ function placeOrder(){
 
 }
 
-/* =========================
-   ACCOUNT RENDER
-========================= */
+/* =========================================================
+   ACCOUNT
+========================================================= */
 
 function renderAccount(){
 
@@ -3393,9 +3915,9 @@ function renderAccount(){
 
 }
 
-/* =========================
-   REGISTER
-========================= */
+/* =========================================================
+   REGISTRIEREN
+========================================================= */
 
 function register(event){
 
@@ -3468,9 +3990,9 @@ function register(event){
 
 }
 
-/* =========================
+/* =========================================================
    LOGIN
-========================= */
+========================================================= */
 
 function login(event){
 
@@ -3484,12 +4006,6 @@ function login(event){
     if(!email){
         return;
     }
-
-    /*
-       Demo-Verhalten:
-       Für die Vorschau wird nur die
-       E-Mail verwendet.
-    */
 
     if(account){
 
@@ -3506,10 +4022,15 @@ function login(event){
         account = {
 
             firstName:"Gonschiki",
+
             lastName:"User",
+
             email:email,
+
             street:"",
+
             postal:"",
+
             city:""
 
         };
@@ -3529,9 +4050,9 @@ function login(event){
 
 }
 
-/* =========================
+/* =========================================================
    LOGOUT
-========================= */
+========================================================= */
 
 function logout(){
 
@@ -3545,9 +4066,9 @@ function logout(){
 
 }
 
-/* =========================
-   CONTACT
-========================= */
+/* =========================================================
+   KONTAKT
+========================================================= */
 
 function sendContact(event){
 
@@ -3561,9 +4082,9 @@ function sendContact(event){
 
 }
 
-/* =========================
+/* =========================================================
    EVENTS
-========================= */
+========================================================= */
 
 function eventInfo(){
 
@@ -3573,9 +4094,9 @@ function eventInfo(){
 
 }
 
-/* =========================
-   LANGUAGE
-========================= */
+/* =========================================================
+   SPRACHE
+========================================================= */
 
 document
     .querySelectorAll(".lang button")
@@ -3603,9 +4124,9 @@ document
 
     });
 
-/* =========================
-   INITIALIZE
-========================= */
+/* =========================================================
+   INITIALISIERUNG
+========================================================= */
 
 renderProducts();
 
