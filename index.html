@@ -214,7 +214,6 @@ nav{
     line-height:.78;
     font-weight:1000;
     letter-spacing:4px;
-
     text-shadow:0 10px 40px rgba(0,0,0,.8);
 }
 
@@ -396,7 +395,7 @@ section{
     transform:scale(1.035);
 }
 
-/* Sticker-Bilder */
+/* STICKER */
 
 .product-card.sticker-product .product-image{
     background:#080808;
@@ -477,6 +476,20 @@ section{
     object-fit:cover;
     object-position:center center;
     transition:.4s;
+}
+
+/* NUR AUTO 1, 3 UND 5 ETWAS TIEFER */
+
+.car:nth-child(1) .car-image img{
+    object-position:center 68%;
+}
+
+.car:nth-child(3) .car-image img{
+    object-position:center 68%;
+}
+
+.car:nth-child(5) .car-image img{
+    object-position:center 68%;
 }
 
 .car:hover .car-image img{
@@ -746,9 +759,7 @@ footer p{
 .modal-image img{
     width:100%;
     height:100%;
-
     display:block;
-
     object-fit:contain;
 }
 
@@ -1043,6 +1054,20 @@ footer p{
         height:205px;
     }
 
+    /* Auch auf dem Handy Auto 1, 3 und 5 etwas tiefer */
+
+    .car:nth-child(1) .car-image img{
+        object-position:center 68%;
+    }
+
+    .car:nth-child(3) .car-image img{
+        object-position:center 68%;
+    }
+
+    .car:nth-child(5) .car-image img{
+        object-position:center 68%;
+    }
+
     .events-grid{
         grid-template-columns:1fr;
     }
@@ -1182,11 +1207,9 @@ footer p{
     <div class="nav-right">
 
         <div class="lang">
-
             <button class="active">DE</button>
             <button>EN</button>
             <button>RU</button>
-
         </div>
 
         <button
@@ -1213,7 +1236,6 @@ footer p{
 <section class="hero" id="home">
 
     <div class="hero-car-background"></div>
-
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
@@ -1384,6 +1406,7 @@ footer p{
 
         </div>
 
+
         <div class="car">
 
             <div class="car-image">
@@ -1400,6 +1423,7 @@ footer p{
             </div>
 
         </div>
+
 
         <div class="car">
 
@@ -1418,6 +1442,7 @@ footer p{
 
         </div>
 
+
         <div class="car">
 
             <div class="car-image">
@@ -1434,6 +1459,7 @@ footer p{
             </div>
 
         </div>
+
 
         <div class="car">
 
@@ -1492,6 +1518,7 @@ footer p{
             </button>
 
         </div>
+
 
         <div class="event">
 
@@ -1591,9 +1618,7 @@ footer p{
 
                 <div class="form-group">
 
-                    <label>
-                        E-MAIL
-                    </label>
+                    <label>E-MAIL</label>
 
                     <input
                         type="email"
@@ -1605,9 +1630,7 @@ footer p{
 
                 <div class="form-group">
 
-                    <label>
-                        PASSWORT
-                    </label>
+                    <label>PASSWORT</label>
 
                     <input
                         type="password"
@@ -1624,6 +1647,7 @@ footer p{
             </form>
 
         </div>
+
 
         <div class="account-box">
 
@@ -1978,8 +2002,6 @@ const products = [
         image:"assets/Pants-black-gonschiki.jpg",
         size:"S / M / L / XL"
     },
-
-    /* STICKER */
 
     {
         id:11,
