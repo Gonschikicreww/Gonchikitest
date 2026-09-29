@@ -1214,177 +1214,188 @@ footer{
 }
 
 @media(max-width:1000px){
-  .product-grid{grid-template-columns:repeat(3,1fr)}
-  .admin-product{grid-template-columns:65px 1fr 1fr}
-  .admin-product>div:nth-child(5){grid-column:2/-1}
+
+.product-grid{
+  grid-template-columns:repeat(3,1fr)
+}
+
+.admin-product{
+  grid-template-columns:65px 1fr 1fr
+}
+
+.admin-product>div:nth-child(5){
+  grid-column:2/-1
+}
+
 }
 
 @media(max-width:760px){
 
-  .preview-bar{
-    font-size:8px;
-    padding:8px 7px
-  }
+.preview-bar{
+  font-size:8px;
+  padding:8px 7px
+}
 
-  header{
-    top:29px;
-    padding:13px 4%;
-  }
+header{
+  top:29px;
+  padding:13px 4%;
+}
 
-  .logo{
-    font-size:17px
-  }
+.logo{
+  font-size:17px
+}
 
-  .logo small{
-    font-size:6px;
-    margin-top:5px
-  }
+.logo small{
+  font-size:6px;
+  margin-top:5px
+}
 
-  .nav{
-    display:none
-  }
+.nav{
+  display:none
+}
 
-  .header-actions{
-    gap:7px
-  }
+.header-actions{
+  gap:7px
+}
 
-  .hero{
-    min-height:100svh;
-    padding:140px 15px 70px;
-    background-position:center center
-  }
+.hero{
+  min-height:100svh;
+  padding:140px 15px 70px;
+  background-position:center center
+}
 
-  .hero-logo{
-    font-size:clamp(45px,15vw,90px);
-    letter-spacing:3px
-  }
+.hero-logo{
+  font-size:clamp(45px,15vw,90px);
+  letter-spacing:3px
+}
 
-  .hero-est{
-    margin-top:25px;
-    letter-spacing:5px;
-    font-size:13px
-  }
+.hero-est{
+  margin-top:25px;
+  letter-spacing:5px;
+  font-size:13px
+}
 
-  .hero-text{
-    margin-top:45px;
-    font-size:12px
-  }
+.hero-text{
+  margin-top:45px;
+  font-size:12px
+}
 
-  .hero-slogan{
-    margin-top:40px;
-    font-size:18px
-  }
+.hero-slogan{
+  margin-top:40px;
+  font-size:18px
+}
 
-  section{
-    padding:75px 4%
-  }
+section{
+  padding:75px 4%
+}
 
-  .section-title{
-    font-size:42px
-  }
+.section-title{
+  font-size:42px
+}
 
-  .product-grid{
-    grid-template-columns:repeat(2,1fr);
-    gap:9px
-  }
+.product-grid{
+  grid-template-columns:repeat(2,1fr);
+  gap:9px
+}
 
-  .product-info{
-    padding:11px
-  }
+.product-info{
+  padding:11px
+}
 
-  .product-info h3{
-    font-size:9px
-  }
+.product-info h3{
+  font-size:9px
+}
 
-  .product-price{
-    font-size:12px
-  }
+.product-price{
+  font-size:12px
+}
 
-  .product-open{
-    padding:10px 5px;
-    font-size:8px
-  }
+.product-open{
+  padding:10px 5px;
+  font-size:8px
+}
 
-  .cars-grid{
-    grid-template-columns:1fr
-  }
+.cars-grid{
+  grid-template-columns:1fr
+}
 
-  .car:last-child{
-    grid-column:auto;
-    max-width:none
-  }
+.car:last-child{
+  grid-column:auto;
+  max-width:none
+}
 
-  .about-grid,
-  .contact-grid{
-    grid-template-columns:1fr;
-    gap:35px
-  }
+.about-grid,
+.contact-grid{
+  grid-template-columns:1fr;
+  gap:35px
+}
 
-  .product-modal-content{
-    grid-template-columns:1fr
-  }
+.product-modal-content{
+  grid-template-columns:1fr
+}
 
-  .modal-product-image{
-    min-height:330px;
-    max-height:50vh
-  }
+.modal-product-image{
+  min-height:330px;
+  max-height:50vh
+}
 
-  .modal-product-info{
-    padding:35px 20px 22px
-  }
+.modal-product-info{
+  padding:35px 20px 22px
+}
 
-  .form-grid{
-    grid-template-columns:1fr
-  }
+.form-grid{
+  grid-template-columns:1fr
+}
 
-  .form-group.full{
-    grid-column:auto
-  }
+.form-group.full{
+  grid-column:auto
+}
 
-  .payment-options{
-    grid-template-columns:1fr
-  }
+.payment-options{
+  grid-template-columns:1fr
+}
 
-  .admin-stats{
-    grid-template-columns:repeat(2,1fr)
-  }
+.admin-stats{
+  grid-template-columns:repeat(2,1fr)
+}
 
-  .admin-product{
-    grid-template-columns:60px 1fr
-  }
+.admin-product{
+  grid-template-columns:60px 1fr
+}
 
-  .admin-product>div:nth-child(n+3){
-    grid-column:1/-1
-  }
+.admin-product>div:nth-child(n+3){
+  grid-column:1/-1
+}
 
-  .coupon-card{
-    grid-template-columns:1fr 1fr
-  }
+.coupon-card{
+  grid-template-columns:1fr 1fr
+}
 
-  .coupon-card button{
-    width:100%
-  }
+.coupon-card button{
+  width:100%
+}
 
-  .cart-box,
-  .account-box,
-  .form-box,
-  .admin-box,
-  .legal-box{
-    padding:22px 15px
-  }
+.cart-box,
+.account-box,
+.form-box,
+.admin-box,
+.legal-box{
+  padding:22px 15px
+}
 
-  .cart-item{
-    grid-template-columns:60px 1fr auto
-  }
+.cart-item{
+  grid-template-columns:60px 1fr auto
+}
 
-  .cart-item img{
-    width:60px;
-    height:60px
-  }
+.cart-item img{
+  width:60px;
+  height:60px
+}
 
-  .footer-top{
-    flex-direction:column
-  }
+.footer-top{
+  flex-direction:column
+}
+
 }
 </style>
 </head>
@@ -1412,47 +1423,115 @@ SHOP VORSCHAU — PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT — KEINE
 
 <div class="header-actions">
 
-<select id="languageSelect" onchange="setLanguage(this.value)"
+<select
+id="languageSelect"
+onchange="setLanguage(this.value)"
 style="background:#111;color:#fff;border:1px solid #333;padding:6px;font-size:9px">
+
 <option value="de">DE</option>
 <option value="en">EN</option>
 <option value="ru">RU</option>
+
 </select>
 
-<button class="header-icon wheel-icon"
+<button
+class="header-icon wheel-icon"
 onclick="openAdmin()"
 title="Admin">
 
 <svg viewBox="0 0 100 100" fill="none">
-<circle cx="50" cy="50" r="38" stroke="white" stroke-width="8"/>
-<circle cx="50" cy="50" r="10" stroke="white" stroke-width="7"/>
-<path d="M50 12V40" stroke="white" stroke-width="7" stroke-linecap="round"/>
-<path d="M50 60V88" stroke="white" stroke-width="7" stroke-linecap="round"/>
-<path d="M12 50H40" stroke="white" stroke-width="7" stroke-linecap="round"/>
-<path d="M60 50H88" stroke="white" stroke-width="7" stroke-linecap="round"/>
-<path d="M23 23L43 43" stroke="white" stroke-width="7" stroke-linecap="round"/>
-<path d="M57 57L77 77" stroke="white" stroke-width="7" stroke-linecap="round"/>
-<path d="M77 23L57 43" stroke="white" stroke-width="7" stroke-linecap="round"/>
-<path d="M43 57L23 77" stroke="white" stroke-width="7" stroke-linecap="round"/>
+
+<circle
+cx="50"
+cy="50"
+r="38"
+stroke="white"
+stroke-width="8"/>
+
+<circle
+cx="50"
+cy="50"
+r="10"
+stroke="white"
+stroke-width="7"/>
+
+<path
+d="M50 12V40"
+stroke="white"
+stroke-width="7"
+stroke-linecap="round"/>
+
+<path
+d="M50 60V88"
+stroke="white"
+stroke-width="7"
+stroke-linecap="round"/>
+
+<path
+d="M12 50H40"
+stroke="white"
+stroke-width="7"
+stroke-linecap="round"/>
+
+<path
+d="M60 50H88"
+stroke="white"
+stroke-width="7"
+stroke-linecap="round"/>
+
+<path
+d="M23 23L43 43"
+stroke="white"
+stroke-width="7"
+stroke-linecap="round"/>
+
+<path
+d="M57 57L77 77"
+stroke="white"
+stroke-width="7"
+stroke-linecap="round"/>
+
+<path
+d="M77 23L57 43"
+stroke="white"
+stroke-width="7"
+stroke-linecap="round"/>
+
+<path
+d="M43 57L23 77"
+stroke="white"
+stroke-width="7"
+stroke-linecap="round"/>
+
 </svg>
 
 </button>
 
-<button class="header-icon"
+<button
+class="header-icon"
 onclick="openAccount()"
 title="Account">
 👤
 </button>
 
-<button class="header-icon"
+<button
+class="header-icon"
 onclick="openCart()"
 title="Warenkorb">
+
 🛒
-<span class="cart-count" id="cartCount">0</span>
+
+<span
+class="cart-count"
+id="cartCount">
+0
+</span>
+
 </button>
 
 </div>
 </header>
+
 
 <main id="home">
 
@@ -1460,88 +1539,133 @@ title="Warenkorb">
 
 <div class="hero-content">
 
-<div class="hero-logo">ГОНЩИКИ</div>
+<div class="hero-logo">
+ГОНЩИКИ
+</div>
 
-<div class="hero-est">EST. 2025</div>
+<div class="hero-est">
+EST. 2025
+</div>
 
-<p class="hero-text" data-i="heroText">
-Gonschiki steht für Autos, Nächte, Geschwindigkeit und den eigenen Style.
+<p
+class="hero-text"
+data-i="heroText">
+
+Gonschiki steht für Autos, Nächte,
+Geschwindigkeit und den eigenen Style.
 Streetwear für alle, die ihre eigene Spur fahren.
+
 </p>
 
 <div class="hero-slogan">
-<span data-i="slogan1">GEMACHT FÜR DIE NACHT.</span>
-<span data-i="slogan2">GEMACHT FÜR DEN TAG.</span>
-<span data-i="slogan3">KEINE REGEL. NUR STYLE.</span>
+
+<span data-i="slogan1">
+GEMACHT FÜR DIE NACHT.
+</span>
+
+<span data-i="slogan2">
+GEMACHT FÜR DEN TAG.
+</span>
+
+<span data-i="slogan3">
+KEINE REGEL. NUR STYLE.
+</span>
+
 </div>
 
-<a href="#shop" class="hero-button" data-i="discover">
+<a
+href="#shop"
+class="hero-button"
+data-i="discover">
+
 SHOP ENTDECKEN
+
 </a>
 
 </div>
 </section>
 
-<section class="shop-section" id="shop">
 
-<h2 class="section-title" data-i="shopTitle">SHOP</h2>
+<section
+class="shop-section"
+id="shop">
 
-<p class="section-subtitle" data-i="shopSub">
+<h2
+class="section-title"
+data-i="shopTitle">
+SHOP
+</h2>
+
+<p
+class="section-subtitle"
+data-i="shopSub">
 GONSHIKI STREETWEAR — BLACK COLLECTION
 </p>
 
+
 <div class="gender-tabs">
 
-<button class="gender-tab active"
+<button
+class="gender-tab active"
 onclick="setGender('all',this)">
 ALLE
 </button>
 
-<button class="gender-tab"
+<button
+class="gender-tab"
 onclick="setGender('men',this)">
 HERREN
 </button>
 
-<button class="gender-tab"
+<button
+class="gender-tab"
 onclick="setGender('women',this)">
 DAMEN
 </button>
 
 </div>
 
+
 <div class="categories">
 
-<button class="category-btn active"
+<button
+class="category-btn active"
 onclick="setCategory('all',this)">
 ALLE
 </button>
 
-<button class="category-btn"
+<button
+class="category-btn"
 onclick="setCategory('shirt',this)">
 T-SHIRTS
 </button>
 
-<button class="category-btn"
+<button
+class="category-btn"
 onclick="setCategory('hoodie',this)">
 HOODIES
 </button>
 
-<button class="category-btn"
+<button
+class="category-btn"
 onclick="setCategory('zipper',this)">
 ZIPPER
 </button>
 
-<button class="category-btn"
+<button
+class="category-btn"
 onclick="setCategory('pants',this)">
 HOSEN
 </button>
 
-<button class="category-btn"
+<button
+class="category-btn"
 onclick="setCategory('sticker',this)">
 STICKER
 </button>
 
 </div>
+
 
 <div class="search-row">
 
@@ -1549,88 +1673,184 @@ STICKER
 id="productSearch"
 type="search"
 placeholder="Produkte suchen..."
-oninput="renderProducts()">
+oninput="renderProducts">
 
-<button onclick="clearSearch()">
+<button onclick="clearSearch">
 X
 </button>
 
 </div>
 
-<div class="product-grid" id="productGrid"></div>
+
+<div
+class="product-grid"
+id="productGrid">
+</div>
 
 </section>
 
-<section class="cars-section" id="cars">
 
-<h2 class="section-title">CARS</h2>
+<section
+class="cars-section"
+id="cars">
 
-<p class="section-subtitle">CARS. CREW. CULTURE.</p>
+<h2 class="section-title">
+CARS
+</h2>
+
+<p class="section-subtitle">
+CARS. CREW. CULTURE.
+</p>
 
 <div class="cars-grid">
 
 <div class="car">
+
 <div class="car-image">
-<img src="assets/Car-1.JPG" alt="Gonschiki Car">
+
+<img
+src="assets/Car-1.JPG"
+alt="Gonschiki Car">
+
 </div>
+
 <div class="car-info">
-<h3>ГОНЩИКИ CREW</h3>
-<p>Unsere Autos, unser Style, unsere Straße.</p>
+
+<h3>
+ГОНЩИКИ CREW
+</h3>
+
+<p>
+Unsere Autos, unser Style,
+unsere Straße.
+</p>
+
 </div>
+
 </div>
+
 
 <div class="car">
+
 <div class="car-image">
-<img src="assets/Car-2.JPG" alt="Gonschiki Car">
+
+<img
+src="assets/Car-2.JPG"
+alt="Gonschiki Car">
+
 </div>
+
 <div class="car-info">
-<h3>STREET CULTURE</h3>
-<p>Gebaut für die Nacht.</p>
+
+<h3>
+STREET CULTURE
+</h3>
+
+<p>
+Gebaut für die Nacht.
+</p>
+
 </div>
+
 </div>
+
 
 <div class="car">
+
 <div class="car-image">
-<img src="assets/Car-3.jpg" alt="Gonschiki Car">
+
+<img
+src="assets/Car-3.jpg"
+alt="Gonschiki Car">
+
 </div>
+
 <div class="car-info">
-<h3>CREW LIFE</h3>
-<p>Kein Mainstream. Eigene Spur.</p>
+
+<h3>
+CREW LIFE
+</h3>
+
+<p>
+Kein Mainstream. Eigene Spur.
+</p>
+
 </div>
+
 </div>
+
 
 <div class="car">
+
 <div class="car-image">
-<img src="assets/Car-4.jpg" alt="Gonschiki Car">
+
+<img
+src="assets/Car-4.jpg"
+alt="Gonschiki Car">
+
 </div>
+
 <div class="car-info">
-<h3>GONSHIKI</h3>
-<p>Cars &amp; Streetwear.</p>
+
+<h3>
+GONSHIKI
+</h3>
+
+<p>
+Cars &amp; Streetwear.
+</p>
+
 </div>
+
 </div>
+
 
 <div class="car">
+
 <div class="car-image">
-<img src="assets/Car-5.jpg" alt="Gonschiki Car">
+
+<img
+src="assets/Car-5.jpg"
+alt="Gonschiki Car">
+
 </div>
+
 <div class="car-info">
-<h3>EST. 2025</h3>
-<p>Unsere Geschichte beginnt hier.</p>
-</div>
+
+<h3>
+EST. 2025
+</h3>
+
+<p>
+Unsere Geschichte beginnt hier.
+</p>
+
 </div>
 
 </div>
+
+</div>
+
 </section>
 
-<section class="events-section" id="events">
 
-<h2 class="section-title">EVENTS</h2>
+<section
+class="events-section"
+id="events">
 
-<p class="section-subtitle">GONSHIKI EVENTS</p>
+<h2 class="section-title">
+EVENTS
+</h2>
+
+<p class="section-subtitle">
+GONSHIKI EVENTS
+</p>
 
 <div class="events-box">
 
-<h3>EVENTS &amp; MEETUPS</h3>
+<h3>
+EVENTS &amp; MEETUPS
+</h3>
 
 <p>
 Dieser Bereich ist für zukünftige Treffen,
@@ -1642,15 +1862,21 @@ Aktuell noch keine Veranstaltung veröffentlicht.
 </p>
 
 </div>
+
 </section>
 
-<section class="about-section" id="about">
+
+<section
+class="about-section"
+id="about">
 
 <div class="about-grid">
 
 <div>
 
-<h2 class="section-title">ГОНЩИКИ</h2>
+<h2 class="section-title">
+ГОНЩИКИ
+</h2>
 
 <p class="section-subtitle">
 EST. 2025 — STREETWEAR
@@ -1667,83 +1893,149 @@ die ihre eigene Spur fährt.
 </div>
 
 <div class="about-highlight">
+
 DRIVE<br>
 YOUR<br>
 OWN<br>
 LANE.
+
 </div>
 
 </div>
+
 </section>
 
-<section class="contact-section" id="contact">
 
-<h2 class="section-title">KONTAKT</h2>
+<section
+class="contact-section"
+id="contact">
 
-<p class="section-subtitle">GONSHIKI CREW</p>
+<h2 class="section-title">
+KONTAKT
+</h2>
+
+<p class="section-subtitle">
+GONSHIKI CREW
+</p>
 
 <div class="contact-grid">
 
 <div>
 
 <div class="contact-item">
-<span>INSTAGRAM</span>
+
+<span>
+INSTAGRAM
+</span>
+
 <strong>
-<a href="https://www.instagram.com/gonschikicrew/"
+
+<a
+href="https://www.instagram.com/gonschikicrew/"
 target="_blank"
 rel="noopener">
+
 @gonschikicrew
+
 </a>
+
 </strong>
+
 </div>
+
 
 <div class="contact-item">
-<span>EMAIL</span>
-<strong>info@gonschikicrew.de</strong>
+
+<span>
+EMAIL
+</span>
+
+<strong>
+info@gonschikicrew.de
+</strong>
+
 </div>
 
 </div>
+
 
 <div>
 
 <div class="contact-item">
-<span>STATUS</span>
-<strong>SHOP VORSCHAU / DEMO</strong>
+
+<span>
+STATUS
+</span>
+
+<strong>
+SHOP VORSCHAU / DEMO
+</strong>
+
 </div>
+
 
 <div class="contact-item">
-<span>ORDERS</span>
-<strong>NOCH NICHT AKTIV</strong>
-</div>
+
+<span>
+ORDERS
+</span>
+
+<strong>
+NOCH NICHT AKTIV
+</strong>
 
 </div>
 
 </div>
+
+</div>
+
 </section>
 
 </main>
+
+
+<!-- FOOTER -->
 
 <footer>
 
 <div class="footer-top">
 
-<div class="footer-logo">ГОНЩИКИ</div>
+<div class="footer-logo">
+ГОНЩИКИ
+</div>
 
 <div class="footer-links">
 
-<a onclick="openLegal('impressum')">IMPRESSUM</a>
-<a onclick="openLegal('datenschutz')">DATENSCHUTZ</a>
-<a onclick="openLegal('widerruf')">WIDERRUF</a>
-<a onclick="openLegal('agb')">AGB</a>
-<a onclick="openAccount()">ACCOUNT</a>
-<a onclick="openAdmin()">ADMIN</a>
+<a onclick="openLegal('impressum')">
+IMPRESSUM
+</a>
+
+<a onclick="openLegal('datenschutz')">
+DATENSCHUTZ
+</a>
+
+<a onclick="openLegal('widerruf')">
+WIDERRUF
+</a>
+
+<a onclick="openLegal('agb')">
+AGB
+</a>
+
+<a onclick="openAccount()">
+ACCOUNT
+</a>
 
 </div>
 
 </div>
+
 
 <div class="footer-bottom">
+
 © 2025 ГОНЩИКИ CREW — DEMO SHOP
+
 </div>
 
 </footer>
@@ -1751,20 +2043,29 @@ rel="noopener">
 
 <!-- PRODUKT MODAL -->
 
-<div class="modal" id="productModal">
+<div
+class="modal"
+id="productModal">
 
 <div class="modal-box">
 
-<button class="modal-close"
-onclick="closeProductModal()">×</button>
+<button
+class="modal-close"
+onclick="closeProductModal()">
+×
+</button>
 
 <div class="product-modal-content">
 
 <div class="modal-product-image">
 
-<img id="modalProductImage" src="" alt="Produkt">
+<img
+id="modalProductImage"
+src=""
+alt="Produkt">
 
-<div id="modalSaleBadge"
+<div
+id="modalSaleBadge"
 class="modal-sale-badge"
 style="display:none">
 SALE
@@ -1772,239 +2073,428 @@ SALE
 
 </div>
 
+
 <div class="modal-product-info">
 
-<div class="small-label" id="modalProductCategory"></div>
+<div
+class="small-label"
+id="modalProductCategory">
+</div>
 
 <h2 id="modalProductName"></h2>
 
-<div class="modal-price" id="modalProductPrice"></div>
+<div
+class="modal-price"
+id="modalProductPrice">
+</div>
 
-<p class="modal-description"
-id="modalProductDescription"></p>
+<p
+class="modal-description"
+id="modalProductDescription">
+</p>
+
 
 <div id="modalSizeWrap">
 
-<span class="option-label" id="sizeLabel">
+<span
+class="option-label"
+id="sizeLabel">
 GRÖSSE
 </span>
 
-<div class="size-options" id="sizeOptions"></div>
+<div
+class="size-options"
+id="sizeOptions">
+</div>
 
 </div>
 
-<div class="modal-stock" id="modalStock"></div>
+
+<div
+class="modal-stock"
+id="modalStock">
+</div>
+
 
 <div class="quantity-box">
 
-<button onclick="changeModalQty(-1)">−</button>
+<button
+onclick="changeModalQty(-1)">
+−
+</button>
 
-<strong id="modalQty">1</strong>
+<strong id="modalQty">
+1
+</strong>
 
-<button onclick="changeModalQty(1)">+</button>
-
-</div>
-
-<button class="add-button"
-id="addToCartButton"
-onclick="addCurrentToCart()">
-IN DEN WARENKORB
+<button
+onclick="changeModalQty(1)">
++
 </button>
 
 </div>
+
+
+<button
+class="add-button"
+id="addToCartButton"
+onclick="addCurrentToCart()">
+
+IN DEN WARENKORB
+
+</button>
+
 </div>
+
 </div>
+
+</div>
+
 </div>
 
 
 <!-- WARENKORB -->
 
-<div class="modal" id="cartModal">
+<div
+class="modal"
+id="cartModal">
 
 <div class="modal-box">
 
-<button class="modal-close"
-onclick="closeCart()">×</button>
+<button
+class="modal-close"
+onclick="closeCart()">
+×
+</button>
 
 <div class="cart-box">
 
-<h2 class="modal-title">WARENKORB</h2>
+<h2 class="modal-title">
+WARENKORB
+</h2>
 
-<div id="cartItems" class="cart-items"></div>
+<div
+id="cartItems"
+class="cart-items">
+</div>
 
-<div id="cartSummary" class="cart-summary"></div>
+<div
+id="cartSummary"
+class="cart-summary">
+</div>
 
 </div>
+
 </div>
+
 </div>
 
 
 <!-- ACCOUNT -->
 
-<div class="modal" id="accountModal">
+<div
+class="modal"
+id="accountModal">
 
 <div class="modal-box">
 
-<button class="modal-close"
-onclick="closeAccount()">×</button>
+<button
+class="modal-close"
+onclick="closeAccount()">
+×
+</button>
 
 <div class="account-box">
 
-<h2 class="modal-title">ACCOUNT</h2>
+<h2 class="modal-title">
+ACCOUNT
+</h2>
 
 <div class="account-tabs">
 
-<button class="account-tab active"
+<button
+class="account-tab active"
 onclick="showAccountTab('login',this)">
 LOGIN
 </button>
 
-<button class="account-tab"
+<button
+class="account-tab"
 onclick="showAccountTab('register',this)">
 REGISTRIEREN
 </button>
 
-<button class="account-tab"
+<button
+class="account-tab"
 onclick="showAccountTab('orders',this)">
 BESTELLUNGEN
 </button>
 
 </div>
 
-<div id="accountLogin" class="account-panel active">
+
+<div
+id="accountLogin"
+class="account-panel active">
 
 <form onsubmit="loginAccount(event)">
 
 <div class="form-group">
-<label>E-MAIL</label>
-<input id="loginEmail" type="email" required>
+
+<label>
+E-MAIL
+</label>
+
+<input
+id="loginEmail"
+type="email"
+required>
+
 </div>
+
 
 <div class="form-group">
-<label>PASSWORT</label>
-<input id="loginPassword" type="password" required>
+
+<label>
+PASSWORT
+</label>
+
+<input
+id="loginPassword"
+type="password"
+required>
+
 </div>
 
-<button class="light-button">EINLOGGEN</button>
+
+<button class="light-button">
+EINLOGGEN
+</button>
 
 </form>
+
 </div>
 
-<div id="accountRegister" class="account-panel">
+
+<div
+id="accountRegister"
+class="account-panel">
 
 <form onsubmit="registerAccount(event)">
 
 <div class="form-grid">
 
 <div class="form-group">
-<label>VORNAME</label>
-<input id="registerFirstName" required>
+
+<label>
+VORNAME
+</label>
+
+<input
+id="registerFirstName"
+required>
+
 </div>
+
 
 <div class="form-group">
-<label>NACHNAME</label>
-<input id="registerLastName" required>
+
+<label>
+NACHNAME
+</label>
+
+<input
+id="registerLastName"
+required>
+
 </div>
 
-<div class="form-group full">
-<label>E-MAIL</label>
-<input id="registerEmail" type="email" required>
-</div>
 
 <div class="form-group full">
-<label>PASSWORT</label>
-<input id="registerPassword"
+
+<label>
+E-MAIL
+</label>
+
+<input
+id="registerEmail"
+type="email"
+required>
+
+</div>
+
+
+<div class="form-group full">
+
+<label>
+PASSWORT
+</label>
+
+<input
+id="registerPassword"
 type="password"
 minlength="6"
 required>
+
 </div>
 
 </div>
+
 
 <button class="light-button">
 ACCOUNT ERSTELLEN
 </button>
 
 </form>
-</div>
-
-<div id="accountOrders" class="account-panel">
-
-<div id="accountContent"></div>
 
 </div>
 
+
+<div
+id="accountOrders"
+class="account-panel">
+
+<div id="accountContent">
 </div>
+
 </div>
+
+</div>
+
+</div>
+
 </div>
 
 
 <!-- CHECKOUT -->
 
-<div class="modal" id="checkoutModal">
+<div
+class="modal"
+id="checkoutModal">
 
 <div class="modal-box">
 
-<button class="modal-close"
-onclick="closeCheckout()">×</button>
+<button
+class="modal-close"
+onclick="closeCheckout()">
+×
+</button>
 
 <div class="form-box">
 
-<h2 class="modal-title">CHECKOUT — DEMO</h2>
+<h2 class="modal-title">
+CHECKOUT — DEMO
+</h2>
 
-<form onsubmit="placeDemoOrder(event)">
+<form
+onsubmit="placeDemoOrder(event)">
 
 <div class="form-grid">
 
 <div class="form-group">
-<label>VORNAME</label>
-<input id="checkoutFirstName" required>
+
+<label>
+VORNAME
+</label>
+
+<input
+id="checkoutFirstName"
+required>
+
 </div>
 
+
 <div class="form-group">
-<label>NACHNAME</label>
-<input id="checkoutLastName" required>
+
+<label>
+NACHNAME
+</label>
+
+<input
+id="checkoutLastName"
+required>
+
 </div>
+
 
 <div class="form-group full">
-<label>E-MAIL</label>
-<input id="checkoutEmail" type="email" required>
+
+<label>
+E-MAIL
+</label>
+
+<input
+id="checkoutEmail"
+type="email"
+required>
+
 </div>
+
 
 <div class="form-group full">
-<label>STRASSE &amp; HAUSNUMMER</label>
-<input id="checkoutStreet" required>
+
+<label>
+STRASSE &amp; HAUSNUMMER
+</label>
+
+<input
+id="checkoutStreet"
+required>
+
 </div>
+
 
 <div class="form-group">
-<label>PLZ</label>
-<input id="checkoutPostal" required>
+
+<label>
+PLZ
+</label>
+
+<input
+id="checkoutPostal"
+required>
+
 </div>
+
 
 <div class="form-group">
-<label>ORT</label>
-<input id="checkoutCity" required>
-</div>
+
+<label>
+ORT
+</label>
+
+<input
+id="checkoutCity"
+required>
 
 </div>
 
-<label class="option-label">ZAHLUNGSART</label>
+</div>
+
+
+<label class="option-label">
+ZAHLUNGSART
+</label>
+
 
 <div class="payment-options">
 
-<button type="button"
+<button
+type="button"
 class="payment-option active"
 onclick="selectPayment('Karte',this)">
 💳 KARTE
 </button>
 
-<button type="button"
+<button
+type="button"
 class="payment-option"
 onclick="selectPayment('PayPal',this)">
 PAYPAL
 </button>
 
-<button type="button"
+<button
+type="button"
 class="payment-option"
 onclick="selectPayment('Klarna',this)">
 KLARNA
@@ -2012,91 +2502,149 @@ KLARNA
 
 </div>
 
-<label class="option-label">GUTSCHEINCODE</label>
+
+<label class="option-label">
+GUTSCHEINCODE
+</label>
+
 
 <div class="coupon-row">
 
-<input id="couponInput"
+<input
+id="couponInput"
 placeholder="z.B. GONSHIKI10">
 
-<button type="button"
+<button
+type="button"
 onclick="applyCoupon()">
 EINLÖSEN
 </button>
 
 </div>
 
-<div id="checkoutCouponMessage"
+
+<div
+id="checkoutCouponMessage"
 style="font-size:9px;color:#777;margin-bottom:15px">
 </div>
 
-<div id="checkoutSummary" class="cart-summary"></div>
 
-<button class="light-button"
+<div
+id="checkoutSummary"
+class="cart-summary">
+</div>
+
+
+<button
+class="light-button"
 style="margin-top:20px">
+
 DEMO-BESTELLUNG ABSENDEN
+
 </button>
 
 </form>
 
 </div>
+
 </div>
+
 </div>
 
 
 <!-- LEGAL -->
 
-<div class="modal" id="legalModal">
+<div
+class="modal"
+id="legalModal">
 
 <div class="modal-box">
 
-<button class="modal-close"
-onclick="closeLegal()">×</button>
+<button
+class="modal-close"
+onclick="closeLegal()">
+×
+</button>
 
-<div class="legal-box" id="legalContent"></div>
+<div
+class="legal-box"
+id="legalContent">
+</div>
 
 </div>
+
 </div>
 
 
 <!-- ADMIN LOGIN -->
 
-<div class="modal" id="adminLoginModal">
+<div
+class="modal"
+id="adminLoginModal">
 
 <div class="admin-login">
 
-<button class="modal-close"
-onclick="closeAdminLogin()">×</button>
+<button
+class="modal-close"
+onclick="closeAdminLogin()">
+×
+</button>
 
-<h2>ADMIN LOGIN</h2>
+<h2>
+ADMIN LOGIN
+</h2>
 
-<form onsubmit="adminLogin(event)">
+<form
+onsubmit="adminLogin(event)">
 
 <div class="form-group">
-<label>BENUTZERNAME</label>
-<input id="adminUsername" required>
+
+<label>
+BENUTZERNAME
+</label>
+
+<input
+id="adminUsername"
+required>
+
 </div>
+
 
 <div class="form-group">
-<label>PASSWORT</label>
-<input id="adminPassword" type="password" required>
+
+<label>
+PASSWORT
+</label>
+
+<input
+id="adminPassword"
+type="password"
+required>
+
 </div>
 
-<button class="light-button">LOGIN</button>
+
+<button class="light-button">
+LOGIN
+</button>
 
 </form>
 
 </div>
+
 </div>
 
 
 <!-- ADMIN -->
 
-<div class="modal" id="adminModal">
+<div
+class="modal"
+id="adminModal">
 
 <div class="modal-box">
 
-<button class="modal-close"
+<button
+class="modal-close"
 onclick="adminModal.classList.remove('active')">
 ×
 </button>
@@ -2107,160 +2655,201 @@ onclick="adminModal.classList.remove('active')">
 
 <div>
 
-<div class="small-label">GONSHIKI CREW</div>
+<div class="small-label">
+GONSHIKI CREW
+</div>
 
-<h2 class="modal-title"
+<h2
+class="modal-title"
 style="margin:5px 0 0">
 ADMIN
 </h2>
 
 </div>
 
-<button class="dark-button"
+
+<button
+class="dark-button"
 style="flex:none"
 onclick="adminLogout()">
+
 LOGOUT
+
 </button>
 
 </div>
 
+
 <div class="admin-tabs">
 
-<button class="admin-tab active"
+<button
+class="admin-tab active"
 onclick="showAdminTab('dashboard',this)">
 DASHBOARD
 </button>
 
-<button class="admin-tab"
+<button
+class="admin-tab"
 onclick="showAdminTab('products',this)">
 PRODUKTE
 </button>
 
-<button class="admin-tab"
+<button
+class="admin-tab"
 onclick="showAdminTab('orders',this)">
 BESTELLUNGEN
 </button>
 
-<button class="admin-tab"
+<button
+class="admin-tab"
 onclick="showAdminTab('coupons',this)">
 GUTSCHEINE
 </button>
 
 </div>
 
-<div id="adminDashboard"
+
+<div
+id="adminDashboard"
 class="admin-section active">
 
-<div class="admin-stats" id="adminStats"></div>
+<div
+class="admin-stats"
+id="adminStats">
+</div>
 
 </div>
 
-<div id="adminProducts"
+
+<div
+id="adminProducts"
 class="admin-section">
 
-<div id="adminProductsList"></div>
+<div
+id="adminProductsList">
+</div>
 
 </div>
 
-<div id="adminOrders"
+
+<div
+id="adminOrders"
 class="admin-section">
 
-<div id="adminOrdersList"></div>
+<div
+id="adminOrdersList">
+</div>
 
 </div>
 
-<div id="adminCoupons"
+
+<div
+id="adminCoupons"
 class="admin-section">
 
 <div class="form-grid">
 
 <div class="form-group">
-<label>CODE</label>
-<input id="newCouponCode" placeholder="GONSHIKI20">
+
+<label>
+CODE
+</label>
+
+<input
+id="newCouponCode"
+placeholder="GONSHIKI20">
+
 </div>
 
+
 <div class="form-group">
-<label>PROZENT</label>
-<input id="newCouponPercent"
+
+<label>
+PROZENT
+</label>
+
+<input
+id="newCouponPercent"
 type="number"
 min="1"
 max="100"
 placeholder="20">
+
 </div>
 
+
 <div class="form-group">
-<label>MINDESTWERT</label>
-<input id="newCouponMin"
+
+<label>
+MINDESTWERT
+</label>
+
+<input
+id="newCouponMin"
 type="number"
 min="0"
 step=".01"
 placeholder="0">
-</div>
 
 </div>
 
-<button class="light-button"
+</div>
+
+
+<button
+class="light-button"
 onclick="createCoupon()">
+
 GUTSCHEIN ERSTELLEN
+
 </button>
 
-<div style="margin-top:20px" id="couponList"></div>
+
+<div
+style="margin-top:20px"
+id="couponList">
+</div>
+
+</div>
 
 </div>
 
 </div>
-</div>
+
 </div>
 
 
-<div class="toast" id="toast"></div>
+<div
+class="toast"
+id="toast">
+</div>
 
 
 <script>
 
-/* =========================================================
-   EMAILJS
-   ========================================================= */
-
 const EMAILJS_CONFIG={
-  enabled:false,
-  publicKey:"DEIN_PUBLIC_KEY",
-  serviceId:"DEIN_SERVICE_ID",
-  templateId:"DEIN_TEMPLATE_ID"
+enabled:false,
+publicKey:"DEIN_PUBLIC_KEY",
+serviceId:"DEIN_SERVICE_ID",
+templateId:"DEIN_TEMPLATE_ID"
 };
 
+
 if(
-  EMAILJS_CONFIG.enabled &&
-  EMAILJS_CONFIG.publicKey!=="DEIN_PUBLIC_KEY"
+EMAILJS_CONFIG.enabled &&
+EMAILJS_CONFIG.publicKey!=="DEIN_PUBLIC_KEY"
 ){
-  emailjs.init({
-    publicKey:EMAILJS_CONFIG.publicKey
-  });
+
+emailjs.init({
+publicKey:EMAILJS_CONFIG.publicKey
+});
+
 }
 
 
-/* =========================================================
-   PRODUKTE
-   =========================================================
-
-   HERREN:
-   S / M / L / XL / XXL
-
-   DAMEN:
-   XS / S / M / L / XL
-
-   ALLE:
-   XS / S / M / L / XL / XXL
-
-   WICHTIG:
-   Die Produkte selbst sind für HERREN und DAMEN gleich.
-   ========================================================= */
+/* PRODUKTE */
 
 const defaultProducts=[
-
-/* =========================
-   T-SHIRTS
-   ========================= */
 
 {
 id:1,
@@ -2303,10 +2892,6 @@ XXL:2
 },
 active:true
 },
-
-/* =========================
-   HOODIES
-   ========================= */
 
 {
 id:4,
@@ -2371,10 +2956,6 @@ XXL:2
 active:true
 },
 
-/* =========================
-   ZIPPER
-   ========================= */
-
 {
 id:9,
 name:"GONSHIKI ZIPPER KREUZ",
@@ -2396,10 +2977,6 @@ XXL:2
 active:true
 },
 
-/* =========================
-   HOSEN
-   ========================= */
-
 {
 id:10,
 name:"GONSHIKI HOSE",
@@ -2420,10 +2997,6 @@ XXL:2
 },
 active:true
 },
-
-/* =========================
-   STICKER
-   ========================= */
 
 {
 id:11,
@@ -2470,10 +3043,6 @@ active:true
 ];
 
 
-/* =========================================================
-   GRÖSSEN NACH GESCHLECHT
-   ========================================================= */
-
 const genderSizes={
 all:["XS","S","M","L","XL","XXL"],
 men:["S","M","L","XL","XXL"],
@@ -2481,17 +3050,15 @@ women:["XS","S","M","L","XL"]
 };
 
 
-/* =========================================================
-   STORAGE
-   ========================================================= */
-
 function load(key,fallback){
 
 try{
 
 const data=localStorage.getItem(key);
 
-return data?JSON.parse(data):fallback;
+return data?
+JSON.parse(data):
+fallback;
 
 }catch(e){
 
@@ -2513,13 +3080,17 @@ JSON.stringify(value)
 
 
 let productSettings=
-load("gonschikiProductSettings",{});
+load(
+"gonschikiProductSettings",
+{}
+);
 
 
 let products=
 defaultProducts.map(p=>{
 
-const custom=productSettings[p.id];
+const custom=
+productSettings[p.id];
 
 if(!custom){
 
@@ -2527,30 +3098,36 @@ return {...p};
 
 }
 
-const merged={
+return{
+
 ...p,
-...custom
-};
-
-if(!p.sticker){
-
-merged.stock={
+...custom,
+stock:{
 ...p.stock,
 ...(custom.stock||{})
-};
-
 }
 
-return merged;
+};
 
 });
 
 
-let cart=load("gonschikiCart",[]);
+let cart=
+load(
+"gonschikiCart",
+[]
+);
 
-let orders=load("gonschikiOrders",[]);
 
-let coupons=load(
+let orders=
+load(
+"gonschikiOrders",
+[]
+);
+
+
+let coupons=
+load(
 "gonschikiCoupons",
 [
 {
@@ -2568,9 +3145,16 @@ active:true
 ]
 );
 
-let account=load("gonschikiAccount",null);
 
-let visitors=load(
+let account=
+load(
+"gonschikiAccount",
+null
+);
+
+
+let visitors=
+load(
 "gonschikiVisitors",
 {
 total:0,
@@ -2587,7 +3171,6 @@ let currentProductGender="all";
 let modalQty=1;
 let selectedPayment="Karte";
 let appliedCoupon=null;
-
 let selectedGender="all";
 let selectedCategory="all";
 
@@ -2628,10 +3211,6 @@ document.getElementById("adminModal");
 const toast=
 document.getElementById("toast");
 
-
-/* =========================================================
-   HILFSFUNKTIONEN
-   ========================================================= */
 
 function money(value){
 
@@ -2675,8 +3254,9 @@ return Number(p.stock)||0;
 
 }
 
-return Object.values(p.stock||{})
-.reduce(
+return Object.values(
+p.stock||{}
+).reduce(
 (a,b)=>a+(Number(b)||0),
 0
 );
@@ -2711,9 +3291,7 @@ p.stock[size]
 }
 
 
-/* =========================================================
-   SHOP
-   ========================================================= */
+/* SHOP */
 
 function renderProducts(){
 
@@ -2723,43 +3301,23 @@ const query=
 .toLowerCase();
 
 
-const filtered=products.filter(p=>{
+const filtered=
+products.filter(p=>{
 
 if(!p.active)return false;
 
 
-/*
-=========================================================
-STICKER SIND EINE EIGENE KATEGORIE
-=========================================================
-*/
-
 if(selectedCategory==="sticker"){
 
 if(!p.sticker){
-
 return false;
-
 }
 
 }else{
 
-/*
-   Bei allen normalen Kategorien werden Sticker
-   ausgeblendet.
-*/
-
 if(p.sticker){
-
 return false;
-
 }
-
-/*
-   Kleidung hat KEIN festes Geschlecht mehr.
-   Dasselbe Produkt wird bei Herren und Damen
-   angezeigt.
-*/
 
 if(
 selectedCategory!=="all" &&
@@ -2792,9 +3350,12 @@ if(!filtered.length){
 
 productGrid.innerHTML=`
 
-<div class="admin-empty"
+<div
+class="admin-empty"
 style="grid-column:1/-1">
+
 KEINE PRODUKTE GEFUNDEN.
+
 </div>
 
 `;
@@ -2807,12 +3368,17 @@ return;
 productGrid.innerHTML=
 filtered.map(p=>{
 
-const stock=totalStock(p);
-const price=productPrice(p);
+const stock=
+totalStock(p);
+
+const price=
+productPrice(p);
+
 
 return `
 
-<article class="product-card ${p.sticker?"sticker-card":""}">
+<article
+class="product-card ${p.sticker?"sticker-card":""}">
 
 <div class="product-image">
 
@@ -2828,7 +3394,8 @@ p.sale
 ""
 }
 
-<div class="product-stock ${stock<=0?"soldout":""}">
+<div
+class="product-stock ${stock<=0?"soldout":""}">
 
 ${
 stock<=0
@@ -2845,6 +3412,7 @@ stock<=5
 </div>
 
 </div>
+
 
 <div class="product-info">
 
@@ -2887,9 +3455,11 @@ p.category.toUpperCase()
 
 </div>
 
+
 <h3>
 ${esc(p.name)}
 </h3>
+
 
 <div class="product-price">
 
@@ -2910,6 +3480,7 @@ money(price)
 }
 
 </div>
+
 
 <button
 class="product-open"
@@ -2943,7 +3514,9 @@ selectedGender=g;
 
 document
 .querySelectorAll(".gender-tab")
-.forEach(x=>x.classList.remove("active"));
+.forEach(
+x=>x.classList.remove("active")
+);
 
 b.classList.add("active");
 
@@ -2958,7 +3531,9 @@ selectedCategory=c;
 
 document
 .querySelectorAll(".category-btn")
-.forEach(x=>x.classList.remove("active"));
+.forEach(
+x=>x.classList.remove("active")
+);
 
 b.classList.add("active");
 
@@ -2967,50 +3542,19 @@ renderProducts();
 }
 
 
-/* =========================================================
-   VERFÜGBARE GRÖSSEN
-   ========================================================= */
-
-function getAvailableSizes(){
-
-if(selectedGender==="women"){
-
-return genderSizes.women;
-
-}
-
-if(selectedGender==="men"){
-
-return genderSizes.men;
-
-}
-
-return genderSizes.all;
-
-}
-
-
-/*
-   Für das Produktfenster:
-   Wenn man ein Produkt bei HERREN öffnet:
-   S-XXL
-
-   Bei DAMEN:
-   XS-XL
-
-   Bei ALLE:
-   XS-XXL
-*/
-
 function getProductSizesForGender(){
 
-if(currentProductGender==="women"){
+if(
+selectedGender==="women"
+){
 
 return genderSizes.women;
 
 }
 
-if(currentProductGender==="men"){
+if(
+selectedGender==="men"
+){
 
 return genderSizes.men;
 
@@ -3030,25 +3574,18 @@ renderProducts();
 }
 
 
-/* =========================================================
-   PRODUKT MODAL
-   ========================================================= */
+/* PRODUKT */
 
 function openProduct(id){
 
-const p=product(id);
+const p=
+product(id);
 
 if(!p)return;
 
 currentProduct=p;
 
 modalQty=1;
-
-
-/*
-   Merken, aus welchem Geschlecht-Tab
-   das Produkt geöffnet wurde.
-*/
 
 currentProductGender=
 selectedGender;
@@ -3089,7 +3626,8 @@ p.sticker
 
 document.getElementById(
 "modalProductName"
-).textContent=p.name;
+).textContent=
+p.name;
 
 
 document.getElementById(
@@ -3100,10 +3638,12 @@ p.description;
 
 document.getElementById(
 "modalQty"
-).textContent=modalQty;
+).textContent=
+modalQty;
 
 
-const price=productPrice(p);
+const price=
+productPrice(p);
 
 
 document.getElementById(
@@ -3153,7 +3693,6 @@ sizeWrap.style.display="none";
 
 sizeWrap.style.display="block";
 
-
 const sizes=
 getProductSizesForGender();
 
@@ -3165,7 +3704,9 @@ sizes.map(s=>`
 class="size-option ${s===currentSize?"active":""}"
 ${stockForSize(p,s)<=0?"disabled":""}
 onclick="selectSize('${s}',this)">
+
 ${s}
+
 </button>
 
 `).join("");
@@ -3175,7 +3716,9 @@ ${s}
 
 updateModalStock();
 
-productModal.classList.add("active");
+productModal.classList.add(
+"active"
+);
 
 }
 
@@ -3186,7 +3729,9 @@ currentSize=size;
 
 document
 .querySelectorAll(".size-option")
-.forEach(x=>x.classList.remove("active"));
+.forEach(
+x=>x.classList.remove("active")
+);
 
 b.classList.add("active");
 
@@ -3194,7 +3739,8 @@ modalQty=1;
 
 document.getElementById(
 "modalQty"
-).textContent=modalQty;
+).textContent=
+modalQty;
 
 updateModalStock();
 
@@ -3261,7 +3807,8 @@ function addCurrentToCart(){
 
 if(!currentProduct)return;
 
-const p=currentProduct;
+const p=
+currentProduct;
 
 const stock=
 stockForSize(
@@ -3285,7 +3832,8 @@ if(existing){
 existing.quantity=
 Math.min(
 stock,
-existing.quantity+modalQty
+existing.quantity+
+modalQty
 );
 
 }else{
@@ -3330,15 +3878,14 @@ productModal.classList.remove(
 }
 
 
-/* =========================================================
-   WARENKORB
-   ========================================================= */
+/* WARENKORB */
 
 function updateCartCount(){
 
 cartCount.textContent=
 cart.reduce(
-(sum,i)=>sum+i.quantity,
+(sum,i)=>
+sum+i.quantity,
 0
 );
 
@@ -3401,6 +3948,7 @@ return `
 src="${p.image}"
 alt="${esc(p.name)}">
 
+
 <div>
 
 <div class="cart-item-name">
@@ -3421,6 +3969,7 @@ p.sticker
 ${money(line)}
 </div>
 
+
 <div class="cart-quantity">
 
 <button
@@ -3439,10 +3988,13 @@ onclick="changeCartQty(${index},1)">
 
 </div>
 
+
 <button
 class="cart-remove"
 onclick="removeCartItem(${index})">
+
 ENTFERNEN
+
 </button>
 
 </div>
@@ -3489,18 +4041,23 @@ money(shipping)}
 <strong>${money(total)}</strong>
 </div>
 
+
 <div class="cart-actions">
 
 <button
 class="dark-button"
 onclick="closeCart()">
+
 WEITER SHOPPEN
+
 </button>
 
 <button
 class="light-button"
 onclick="openCheckout()">
+
 ZUR KASSE
+
 </button>
 
 </div>
@@ -3512,13 +4069,13 @@ ZUR KASSE
 
 function changeCartQty(index,delta){
 
-const item=cart[index];
+const item=
+cart[index];
 
 if(!item)return;
 
-const p=product(
-item.productId
-);
+const p=
+product(item.productId);
 
 if(!p)return;
 
@@ -3553,7 +4110,10 @@ updateCartCount();
 
 function removeCartItem(index){
 
-cart.splice(index,1);
+cart.splice(
+index,
+1
+);
 
 save(
 "gonschikiCart",
@@ -3587,9 +4147,7 @@ cartModal.classList.remove(
 }
 
 
-/* =========================================================
-   CHECKOUT
-   ========================================================= */
+/* CHECKOUT */
 
 function openCheckout(){
 
@@ -3635,6 +4193,7 @@ account.email||"";
 
 }
 
+
 renderCheckoutSummary();
 
 checkoutModal.classList.add(
@@ -3655,7 +4214,8 @@ checkoutModal.classList.remove(
 
 function selectPayment(payment,b){
 
-selectedPayment=payment;
+selectedPayment=
+payment;
 
 document
 .querySelectorAll(".payment-option")
@@ -3782,6 +4342,7 @@ input.value
 .trim()
 .toUpperCase();
 
+
 const coupon=
 coupons.find(
 c=>
@@ -3789,8 +4350,10 @@ c.code===code &&
 c.active
 );
 
+
 const subtotal=
 cartSubtotal();
+
 
 const message=
 document.getElementById(
@@ -3839,9 +4402,7 @@ renderCheckoutSummary();
 }
 
 
-/* =========================================================
-   EMAILJS
-   ========================================================= */
+/* EMAIL */
 
 async function sendOrderEmail(order){
 
@@ -3903,9 +4464,11 @@ new Date(
 order.date
 ).toLocaleString("de-DE"),
 
-products:productText,
+products:
+productText,
 
-product_list:productText,
+product_list:
+productText,
 
 subtotal:
 money(order.subtotal),
@@ -3982,9 +4545,7 @@ error
 }
 
 
-/* =========================================================
-   DEMO BESTELLUNG
-   ========================================================= */
+/* BESTELLUNG */
 
 async function placeDemoOrder(e){
 
@@ -4012,6 +4573,7 @@ subtotal>=100
 :
 5.99;
 
+
 const discount=
 appliedCoupon
 ?
@@ -4020,6 +4582,7 @@ appliedCoupon.percent/
 100
 :
 0;
+
 
 const total=
 Math.max(
@@ -4132,8 +4695,6 @@ orders
 );
 
 
-/* LAGER */
-
 cart.forEach(item=>{
 
 const p=
@@ -4173,6 +4734,7 @@ save(
 cart
 );
 
+
 renderProducts();
 
 renderCart();
@@ -4196,8 +4758,7 @@ EMAILJS_CONFIG.enabled &&
 
 alert(
 `Bestellung ${order.orderNumber} wurde als Demo erstellt.\n\n`+
-`Die Bestellung wurde gespeichert, aber die Bestätigungs-E-Mail konnte nicht versendet werden.\n\n`+
-`Bitte EmailJS-Konfiguration prüfen.`
+`Die Bestellung wurde gespeichert, aber die Bestätigungs-E-Mail konnte nicht versendet werden.`
 );
 
 }else if(
@@ -4231,9 +4792,7 @@ renderAdmin();
 }
 
 
-/* =========================================================
-   ACCOUNT
-   ========================================================= */
+/* ACCOUNT */
 
 function openAccount(){
 
@@ -4265,11 +4824,13 @@ x=>x.classList.remove("active")
 
 b.classList.add("active");
 
+
 document
 .querySelectorAll(".account-panel")
 .forEach(
 x=>x.classList.remove("active")
 );
+
 
 document.getElementById(
 "account"+
@@ -4290,6 +4851,7 @@ renderAccount();
 function registerAccount(e){
 
 e.preventDefault();
+
 
 account={
 
@@ -4315,10 +4877,12 @@ document.getElementById(
 
 };
 
+
 save(
 "gonschikiAccount",
 account
 );
+
 
 alert(
 "Demo-Account wurde erstellt."
@@ -4333,10 +4897,12 @@ function loginAccount(e){
 
 e.preventDefault();
 
+
 const email=
 document.getElementById(
 "loginEmail"
 ).value.trim();
+
 
 const password=
 document.getElementById(
@@ -4387,10 +4953,13 @@ content.innerHTML=`
 Kein Account angemeldet.
 </strong>
 
-<p style="color:#777;font-size:9px;margin-top:8px">
+<p
+style="color:#777;font-size:9px;margin-top:8px">
+
 Dieser Account funktioniert aktuell
 nur als Demo und speichert Daten
 lokal im Browser.
+
 </p>
 
 </div>
@@ -4420,15 +4989,21 @@ ANGEMELDET ALS
 </div>
 
 <h3 style="margin-top:7px">
+
 ${esc(account.firstName)}
 ${esc(account.lastName)}
+
 </h3>
 
-<p style="color:#777;font-size:9px;margin-top:5px">
+<p
+style="color:#777;font-size:9px;margin-top:5px">
+
 ${esc(account.email)}
+
 </p>
 
 </div>
+
 
 ${
 userOrders.length
@@ -4459,6 +5034,7 @@ ${esc(o.status)}
 
 </div>
 
+
 <div class="order-lines">
 
 ${
@@ -4467,13 +5043,19 @@ o.items.map(i=>`
 <div class="order-line">
 
 <span>
+
 ${esc(i.name)}
 · ${esc(i.size)}
 × ${i.quantity}
+
 </span>
 
 <strong>
-${money(i.price*i.quantity)}
+
+${money(
+i.price*i.quantity
+)}
+
 </strong>
 
 </div>
@@ -4483,10 +5065,14 @@ ${money(i.price*i.quantity)}
 
 </div>
 
-<div class="summary-row"
+
+<div
+class="summary-row"
 style="margin-top:13px">
 
-<span>GESAMT</span>
+<span>
+GESAMT
+</span>
 
 <strong>
 ${money(o.total)}
@@ -4510,9 +5096,7 @@ NOCH KEINE BESTELLUNGEN.
 }
 
 
-/* =========================================================
-   RECHTLICHES
-   ========================================================= */
+/* LEGAL */
 
 const legal={
 
@@ -4629,9 +5213,7 @@ legalModal.classList.remove(
 }
 
 
-/* =========================================================
-   ADMIN
-   ========================================================= */
+/* ADMIN */
 
 const ADMIN_USERNAME="admin";
 const ADMIN_PASSWORD="gonschiki2025";
@@ -4740,11 +5322,13 @@ x=>x.classList.remove("active")
 
 b.classList.add("active");
 
+
 document
 .querySelectorAll(".admin-section")
 .forEach(
 x=>x.classList.remove("active")
 );
+
 
 document.getElementById(
 "admin"+
@@ -4828,12 +5412,18 @@ c=>c.active
 </strong>
 </div>
 
-<div class="admin-stat"
+<div
+class="admin-stat"
 style="grid-column:span 2">
-<span>DEMO-UMSATZ</span>
+
+<span>
+DEMO-UMSATZ
+</span>
+
 <strong>
 ${money(revenue)}
 </strong>
+
 </div>
 
 `;
@@ -4854,6 +5444,7 @@ products.map(p=>`
 <img
 src="${p.image}"
 alt="${esc(p.name)}">
+
 
 <div>
 
@@ -4880,18 +5471,23 @@ p.sticker
 }
 
 · ${p.active
-?"AKTIV"
-:"DEAKTIVIERT"}
+?
+"AKTIV"
+:
+"DEAKTIVIERT"}
 
 </div>
 
 </div>
+
 
 <div>
 
 <label
 style="font-size:7px;color:#777">
+
 PREIS
+
 </label>
 
 <input
@@ -4906,11 +5502,14 @@ this.value
 
 </div>
 
+
 <div>
 
 <label
 style="font-size:7px;color:#777">
+
 SALE
+
 </label>
 
 <input
@@ -4923,6 +5522,7 @@ onchange="updateSale(
 ${p.id},
 this.value
 )">
+
 
 <label
 style="font-size:8px;color:#aaa">
@@ -4941,12 +5541,16 @@ aktiv
 
 </div>
 
+
 <div>
 
 <label
 style="font-size:7px;color:#777">
+
 LAGER
+
 </label>
+
 
 ${
 p.sticker
@@ -4997,6 +5601,7 @@ this.value
 `
 }
 
+
 <button
 class="admin-small-button"
 onclick="toggleProduct(${p.id})">
@@ -5022,9 +5627,12 @@ p.active
 
 function updatePrice(id,v){
 
-const p=product(id);
+const p=
+product(id);
 
-const n=Number(v);
+const n=
+Number(v);
+
 
 if(
 !Number.isFinite(n) ||
@@ -5034,6 +5642,7 @@ n<0
 return renderAdminProducts();
 
 }
+
 
 p.price=
 Math.round(n*100)/100;
@@ -5048,6 +5657,7 @@ p.sale=false;
 
 }
 
+
 saveSettings();
 
 renderProducts();
@@ -5061,9 +5671,12 @@ renderAdminStats();
 
 function updateSale(id,v){
 
-const p=product(id);
+const p=
+product(id);
 
-const n=Number(v);
+const n=
+Number(v);
+
 
 p.salePrice=
 Number.isFinite(n)
@@ -5081,6 +5694,7 @@ p.sale=false;
 
 }
 
+
 saveSettings();
 
 renderProducts();
@@ -5094,7 +5708,9 @@ renderAdminStats();
 
 function toggleSale(id,on){
 
-const p=product(id);
+const p=
+product(id);
+
 
 if(
 on &&
@@ -5109,6 +5725,7 @@ return alert(
 );
 
 }
+
 
 p.sale=on;
 
@@ -5125,13 +5742,15 @@ renderAdminStats();
 
 function updateStock(id,s,v){
 
-const p=product(id);
+const p=
+product(id);
 
 const n=
 Math.max(
 0,
 parseInt(v)||0
 );
+
 
 if(p.sticker){
 
@@ -5142,6 +5761,7 @@ p.stock=n;
 p.stock[s]=n;
 
 }
+
 
 saveSettings();
 
@@ -5156,7 +5776,8 @@ renderAdminStats();
 
 function toggleProduct(id){
 
-const p=product(id);
+const p=
+product(id);
 
 p.active=!p.active;
 
@@ -5190,6 +5811,7 @@ active:p.active
 };
 
 });
+
 
 save(
 "gonschikiProductSettings",
@@ -5247,11 +5869,13 @@ ${esc(o.payment)}
 
 </div>
 
+
 <div class="order-status">
 ${esc(o.status)}
 </div>
 
 </div>
+
 
 ${
 o.items.map(i=>`
@@ -5259,15 +5883,19 @@ o.items.map(i=>`
 <div class="admin-order-item">
 
 <span>
+
 ${esc(i.name)}
 · ${esc(i.size)}
 × ${i.quantity}
+
 </span>
 
 <strong>
+
 ${money(
 i.price*i.quantity
 )}
+
 </strong>
 
 </div>
@@ -5275,9 +5903,12 @@ i.price*i.quantity
 `).join("")
 }
 
+
 <div class="admin-order-total">
 
-<span>GESAMT</span>
+<span>
+GESAMT
+</span>
 
 <strong>
 ${money(o.total)}
@@ -5290,9 +5921,11 @@ ${money(o.total)}
 `).join("")
 :
 `
+
 <div class="admin-empty">
 NOCH KEINE DEMO-BESTELLUNGEN.
 </div>
+
 `;
 
 }
@@ -5307,12 +5940,14 @@ document.getElementById(
 .trim()
 .toUpperCase();
 
+
 let percent=
 Number(
 document.getElementById(
 "newCouponPercent"
 ).value
 );
+
 
 let min=
 Number(
@@ -5356,6 +5991,7 @@ min,
 active:true
 
 });
+
 
 save(
 "gonschikiCoupons",
@@ -5402,12 +6038,15 @@ ${esc(c.code)}
 </div>
 
 <div class="coupon-meta">
+
 ${c.percent}%
 · Mindestwert
 ${money(c.min)}
+
 </div>
 
 </div>
+
 
 <span
 style="font-size:8px;color:
@@ -5420,6 +6059,7 @@ ${c.active
 "INAKTIV"}
 
 </span>
+
 
 <button
 class="admin-small-button"
@@ -5435,6 +6075,7 @@ c.active
 
 </button>
 
+
 <button
 class="admin-small-button"
 onclick="deleteCoupon(${i})">
@@ -5448,9 +6089,11 @@ LÖSCHEN
 `).join("")
 :
 `
+
 <div class="admin-empty">
 NOCH KEINE GUTSCHEINE.
 </div>
+
 `;
 
 }
@@ -5489,9 +6132,7 @@ renderAdminStats();
 }
 
 
-/* =========================================================
-   SPRACHEN
-   ========================================================= */
+/* SPRACHEN */
 
 const translations={
 
@@ -5600,13 +6241,16 @@ localStorage.setItem(
 l
 );
 
+
 document
 .querySelectorAll("[data-i]")
 .forEach(e=>{
 
 const k=e.dataset.i;
 
-if(translations[l][k]){
+if(
+translations[l][k]
+){
 
 e.textContent=
 translations[l][k];
@@ -5633,9 +6277,7 @@ languageSelect.value=l;
 }
 
 
-/* =========================================================
-   TOAST
-   ========================================================= */
+/* TOAST */
 
 function showToast(message){
 
@@ -5651,9 +6293,7 @@ setTimeout(
 }
 
 
-/* =========================================================
-   BESUCHER
-   ========================================================= */
+/* BESUCHER */
 
 function trackVisitor(){
 
@@ -5661,6 +6301,7 @@ let today=
 new Date()
 .toISOString()
 .slice(0,10);
+
 
 visitors.total++;
 
@@ -5682,6 +6323,7 @@ visitors.today++;
 
 visitors.sessions++;
 
+
 save(
 "gonschikiVisitors",
 visitors
@@ -5690,9 +6332,7 @@ visitors
 }
 
 
-/* =========================================================
-   MODALS
-   ========================================================= */
+/* MODALS */
 
 document
 .querySelectorAll(".modal")
@@ -5711,6 +6351,7 @@ m.classList.remove(
 }
 
 }
+
 );
 
 });
@@ -5735,9 +6376,7 @@ m=>m.classList.remove(
 });
 
 
-/* =========================================================
-   ADMIN URL
-   ========================================================= */
+/* ADMIN DIREKT ÜBER URL */
 
 function checkAdminUrl(){
 
@@ -5755,9 +6394,7 @@ openAdmin();
 }
 
 
-/* =========================================================
-   START
-   ========================================================= */
+/* START */
 
 trackVisitor();
 
