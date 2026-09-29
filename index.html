@@ -19,7 +19,6 @@
   --bg2:#101010;
   --bg3:#161616;
   --card:#111;
-  --card2:#181818;
   --white:#fff;
   --grey:#aaa;
   --darkgrey:#666;
@@ -35,7 +34,7 @@ html{
 
 body{
   background:var(--bg);
-  color:var(--white);
+  color:#fff;
   font-family:Arial,Helvetica,sans-serif;
   overflow-x:hidden;
 }
@@ -125,7 +124,7 @@ header{
   height:42px;
   border:1px solid var(--line);
   background:#111;
-  color:white;
+  color:#fff;
   border-radius:50%;
   display:flex;
   align-items:center;
@@ -275,6 +274,168 @@ header{
 }
 
 /* =========================
+   GARAGE / AUTO GALERIE
+========================= */
+
+.garage{
+  background:#080808;
+  border-top:1px solid #151515;
+  border-bottom:1px solid #151515;
+}
+
+.garage-inner{
+  max-width:1450px;
+  margin:auto;
+  padding:85px 28px;
+}
+
+.garage-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  gap:25px;
+  margin-bottom:28px;
+}
+
+.garage-title{
+  font-family:"Times New Roman",serif;
+  font-size:52px;
+  line-height:.9;
+}
+
+.garage-description{
+  max-width:420px;
+  color:#777;
+  font-size:12px;
+  line-height:1.6;
+}
+
+.car-gallery{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  grid-template-rows:280px 280px;
+  gap:8px;
+}
+
+.car-card{
+  position:relative;
+  overflow:hidden;
+  background:#111;
+  cursor:pointer;
+  border:1px solid #202020;
+}
+
+.car-card:first-child{
+  grid-row:1 / 3;
+}
+
+.car-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:.5s ease;
+  filter:brightness(.8);
+}
+
+.car-card:hover img{
+  transform:scale(1.06);
+  filter:brightness(1);
+}
+
+.car-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,.75),
+    transparent 55%
+  );
+  pointer-events:none;
+}
+
+.car-number{
+  position:absolute;
+  left:15px;
+  bottom:14px;
+  font-family:"Times New Roman",serif;
+  font-size:24px;
+  color:#fff;
+}
+
+.car-view{
+  position:absolute;
+  right:14px;
+  bottom:14px;
+  border:1px solid rgba(255,255,255,.35);
+  background:rgba(0,0,0,.45);
+  backdrop-filter:blur(8px);
+  padding:7px 10px;
+  font-size:8px;
+  letter-spacing:2px;
+}
+
+/* =========================
+   CAR LIGHTBOX
+========================= */
+
+.car-lightbox{
+  position:fixed;
+  inset:0;
+  z-index:6000;
+  background:rgba(0,0,0,.94);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.car-lightbox.open{
+  display:flex;
+}
+
+.car-lightbox img{
+  max-width:95vw;
+  max-height:90vh;
+  object-fit:contain;
+}
+
+.car-lightbox-close{
+  position:absolute;
+  top:20px;
+  right:20px;
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  background:#111;
+  color:#fff;
+  border:1px solid #444;
+  font-size:22px;
+}
+
+.car-lightbox-prev,
+.car-lightbox-next{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  border:1px solid #444;
+  background:rgba(0,0,0,.7);
+  color:#fff;
+  font-size:22px;
+}
+
+.car-lightbox-prev{
+  left:25px;
+}
+
+.car-lightbox-next{
+  right:25px;
+}
+
+/* =========================
    SECTION
 ========================= */
 
@@ -314,7 +475,7 @@ header{
 }
 
 /* =========================
-   SHOP CONTROLS
+   SHOP
 ========================= */
 
 .shop-tools{
@@ -406,10 +567,6 @@ header{
   font-size:11px;
 }
 
-/* =========================
-   PRODUCT GRID
-========================= */
-
 .product-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
@@ -417,7 +574,7 @@ header{
 }
 
 .product-card{
-  background:var(--card);
+  background:#111;
   border:1px solid #1d1d1d;
   position:relative;
   overflow:hidden;
@@ -576,7 +733,7 @@ header{
 }
 
 /* =========================
-   MODAL SYSTEM
+   MODALS
 ========================= */
 
 .modal{
@@ -617,10 +774,6 @@ header{
   background:#111;
   color:#fff;
   font-size:18px;
-}
-
-.modal-scroll{
-  overflow:auto;
 }
 
 /* =========================
@@ -1119,12 +1272,6 @@ header{
   border-color:#fff;
 }
 
-.checkout-summary{
-  margin-top:20px;
-  padding-top:18px;
-  border-top:1px solid #292929;
-}
-
 /* =========================
    ACCOUNT
 ========================= */
@@ -1182,10 +1329,6 @@ header{
   gap:15px;
   padding:14px 0;
   border-bottom:1px solid #252525;
-}
-
-.order-row:last-child{
-  border-bottom:0;
 }
 
 .order-id{
@@ -1387,6 +1530,7 @@ footer{
 ========================= */
 
 @media(max-width:1100px){
+
   .product-grid{
     grid-template-columns:repeat(3,1fr);
   }
@@ -1394,9 +1538,11 @@ footer{
   .feature-grid{
     grid-template-columns:repeat(2,1fr);
   }
+
 }
 
 @media(max-width:800px){
+
   header{
     height:64px;
   }
@@ -1449,6 +1595,40 @@ footer{
   .hero h1 span{
     font-size:12px;
     letter-spacing:4px;
+  }
+
+  .garage-inner{
+    padding:60px 15px;
+  }
+
+  .garage-head{
+    display:block;
+  }
+
+  .garage-title{
+    font-size:42px;
+    margin-bottom:15px;
+  }
+
+  .car-gallery{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+    padding-bottom:5px;
+  }
+
+  .car-gallery::-webkit-scrollbar{
+    display:none;
+  }
+
+  .car-card,
+  .car-card:first-child{
+    flex:0 0 82vw;
+    height:430px;
+    grid-row:auto;
+    scroll-snap-align:start;
   }
 
   .section{
@@ -1542,9 +1722,11 @@ footer{
     margin-top:25px;
     gap:14px;
   }
+
 }
 
 @media(max-width:500px){
+
   .preview-bar{
     font-size:8px;
     padding:6px 5px;
@@ -1564,6 +1746,12 @@ footer{
 
   .hero-buttons .btn{
     flex:1;
+  }
+
+  .car-card,
+  .car-card:first-child{
+    flex:0 0 86vw;
+    height:390px;
   }
 
   .product-grid{
@@ -1607,17 +1795,45 @@ footer{
     display:grid;
     grid-template-columns:1fr 1fr;
   }
+
+  .car-lightbox-prev{
+    left:8px;
+  }
+
+  .car-lightbox-next{
+    right:8px;
+  }
+
+}
+
+/* Mobile extra */
+@media(max-width:380px){
+
+  .header-actions{
+    gap:3px;
+  }
+
+  .icon-btn{
+    width:34px;
+    height:34px;
+  }
+
+  .logo{
+    font-size:18px;
+  }
+
 }
 </style>
 </head>
 
 <body>
 
-<div class="preview-bar" data-i18n="preview">
+<div class="preview-bar">
 SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BESTELLUNGEN!
 </div>
 
 <header>
+
   <div class="header-inner">
 
     <div>
@@ -1627,24 +1843,25 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 
     <div class="header-actions">
 
-      <button class="icon-btn" onclick="openWishlist()" aria-label="Wishlist">
+      <button class="icon-btn" onclick="openWishlist()">
         ♡
         <span class="badge" id="wishlistBadge">0</span>
       </button>
 
-      <button class="icon-btn" onclick="openAccount()" aria-label="Account">
+      <button class="icon-btn" onclick="openAccount()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
           <circle cx="12" cy="8" r="4"></circle>
           <path d="M4 21c0-4.2 3.5-7 8-7s8 2.8 8 7"></path>
         </svg>
       </button>
 
-      <button class="icon-btn" onclick="openCart()" aria-label="Cart">
+      <button class="icon-btn" onclick="openCart()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
           <path d="M4 5h2l2 11h10l2-8H7"></path>
           <circle cx="10" cy="20" r="1"></circle>
           <circle cx="17" cy="20" r="1"></circle>
         </svg>
+
         <span class="badge" id="cartBadge">0</span>
       </button>
 
@@ -1655,119 +1872,291 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
       </select>
 
     </div>
+
   </div>
+
 </header>
+
 
 <main>
 
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
 
-  <img class="hero-image" src="assets/Car-1.JPG" alt="ГОНЩИКИ">
+  <img
+    class="hero-image"
+    src="assets/Car-1.JPG"
+    alt="ГОНЩИКИ"
+  >
 
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
 
-    <div class="hero-tag" data-i18n="heroTag">
+    <div class="hero-tag">
       GONSHIKI CREW · EST. 2025
     </div>
 
     <h1>
       ГОНЩИКИ
-      <span data-i18n="heroSub">STREETWARE FOR THE CAR CULTURE</span>
+      <span>STREETWARE FOR THE CAR CULTURE</span>
     </h1>
 
     <div class="hero-buttons">
-      <button class="btn" onclick="scrollToShop()" data-i18n="shopNow">
+
+      <button class="btn" onclick="scrollToShop()">
         SHOP ENTDECKEN
       </button>
 
-      <button class="btn dark" onclick="openWishlist()" data-i18n="wishlist">
+      <button class="btn dark" onclick="openWishlist()">
         WUNSCHLISTE
       </button>
+
     </div>
 
   </div>
 
 </section>
 
+
+<!-- =========================
+     CAR GARAGE
+========================= -->
+
+<section class="garage">
+
+  <div class="garage-inner">
+
+    <div class="garage-head">
+
+      <div>
+
+        <div class="eyebrow">
+          GONSHIKI CREW
+        </div>
+
+        <h2 class="garage-title">
+          GARAGE.
+        </h2>
+
+      </div>
+
+      <p class="garage-description">
+        Autos, Builds und die Welt hinter ГОНЩИКИ.
+        Fünf Bilder unserer aktuellen Car-Collection.
+      </p>
+
+    </div>
+
+
+    <div class="car-gallery">
+
+      <div class="car-card" onclick="openCarImage(0)">
+
+        <img src="assets/Car-1.JPG" alt="ГОНЩИКИ Car 1">
+
+        <div class="car-overlay"></div>
+
+        <div class="car-number">01</div>
+
+        <div class="car-view">
+          VIEW
+        </div>
+
+      </div>
+
+
+      <div class="car-card" onclick="openCarImage(1)">
+
+        <img src="assets/Car-2.JPG" alt="ГОНЩИКИ Car 2">
+
+        <div class="car-overlay"></div>
+
+        <div class="car-number">02</div>
+
+        <div class="car-view">
+          VIEW
+        </div>
+
+      </div>
+
+
+      <div class="car-card" onclick="openCarImage(2)">
+
+        <img src="assets/Car-3.jpg" alt="ГОНЩИКИ Car 3">
+
+        <div class="car-overlay"></div>
+
+        <div class="car-number">03</div>
+
+        <div class="car-view">
+          VIEW
+        </div>
+
+      </div>
+
+
+      <div class="car-card" onclick="openCarImage(3)">
+
+        <img src="assets/Car-4.jpg" alt="ГОНЩИКИ Car 4">
+
+        <div class="car-overlay"></div>
+
+        <div class="car-number">04</div>
+
+        <div class="car-view">
+          VIEW
+        </div>
+
+      </div>
+
+
+      <div class="car-card" onclick="openCarImage(4)">
+
+        <img src="assets/Car-5.jpg" alt="ГОНЩИКИ Car 5">
+
+        <div class="car-overlay"></div>
+
+        <div class="car-number">05</div>
+
+        <div class="car-view">
+          VIEW
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     SHOP
+========================= -->
+
 <section class="section" id="shop">
 
   <div class="section-head">
 
     <div>
-      <div class="eyebrow" data-i18n="collection">COLLECTION</div>
-      <h2 class="section-title" data-i18n="shopTitle">SHOP</h2>
+
+      <div class="eyebrow">
+        COLLECTION
+      </div>
+
+      <h2 class="section-title">
+        SHOP
+      </h2>
+
     </div>
 
-    <p class="section-description" data-i18n="shopDescription">
-      Schlichte Streetwear für Menschen, die Autos nicht nur fahren,
-      sondern leben.
+    <p class="section-description">
+      Schlichte Streetwear für Menschen,
+      die Autos nicht nur fahren, sondern leben.
     </p>
 
   </div>
+
 
   <div class="shop-tools">
 
     <div class="search-row">
 
       <div class="search-box">
+
         <input
           id="searchInput"
           type="text"
           placeholder="Produkte suchen..."
           oninput="renderProducts()"
-          data-i18n-placeholder="searchPlaceholder"
         >
 
         <span class="search-icon">⌕</span>
+
       </div>
 
-      <button class="clear-search" onclick="clearSearch()" data-i18n="clear">
+      <button
+        class="clear-search"
+        onclick="clearSearch()"
+      >
         X
       </button>
 
     </div>
 
+
     <div class="filter-row" id="genderFilters">
 
-      <button class="filter-btn active" onclick="setGender('all',this)" data-i18n="all">
+      <button
+        class="filter-btn active"
+        onclick="setGender('all',this)"
+      >
         ALLE
       </button>
 
-      <button class="filter-btn" onclick="setGender('men',this)" data-i18n="men">
+      <button
+        class="filter-btn"
+        onclick="setGender('men',this)"
+      >
         HERREN
       </button>
 
-      <button class="filter-btn" onclick="setGender('women',this)" data-i18n="women">
+      <button
+        class="filter-btn"
+        onclick="setGender('women',this)"
+      >
         DAMEN
       </button>
 
     </div>
 
+
     <div class="filter-row" id="categoryFilters">
 
-      <button class="filter-btn active" onclick="setCategory('all',this)" data-i18n="all">
+      <button
+        class="filter-btn active"
+        onclick="setCategory('all',this)"
+      >
         ALLE
       </button>
 
-      <button class="filter-btn" onclick="setCategory('shirt',this)" data-i18n="shirts">
+      <button
+        class="filter-btn"
+        onclick="setCategory('shirt',this)"
+      >
         T-SHIRTS
       </button>
 
-      <button class="filter-btn" onclick="setCategory('hoodie',this)" data-i18n="hoodies">
+      <button
+        class="filter-btn"
+        onclick="setCategory('hoodie',this)"
+      >
         HOODIES
       </button>
 
-      <button class="filter-btn" onclick="setCategory('zipper',this)" data-i18n="zipper">
+      <button
+        class="filter-btn"
+        onclick="setCategory('zipper',this)"
+      >
         ZIPPER
       </button>
 
-      <button class="filter-btn" onclick="setCategory('pants',this)" data-i18n="pants">
+      <button
+        class="filter-btn"
+        onclick="setCategory('pants',this)"
+      >
         HOSEN
       </button>
 
-      <button class="filter-btn" onclick="setCategory('sticker',this)" data-i18n="stickers">
+      <button
+        class="filter-btn"
+        onclick="setCategory('sticker',this)"
+      >
         STICKER
       </button>
 
@@ -1775,20 +2164,39 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 
   </div>
 
+
   <div class="shop-info">
-    <span id="productCount">0 Produkte</span>
-    <span data-i18n="universalSizes">KLEIDUNG · HERREN + DAMEN</span>
+
+    <span id="productCount">
+      0 Produkte
+    </span>
+
+    <span>
+      KLEIDUNG · HERREN + DAMEN
+    </span>
+
   </div>
 
-  <div class="product-grid" id="productGrid"></div>
+
+  <div
+    class="product-grid"
+    id="productGrid"
+  ></div>
 
 </section>
 
+
+<!-- =========================
+     FEATURES
+========================= -->
+
 <section class="section">
 
-  <div class="eyebrow" data-i18n="whyUs">WHY GONSHIKI</div>
+  <div class="eyebrow">
+    WHY GONSHIKI
+  </div>
 
-  <h2 class="section-title" data-i18n="madeForCulture">
+  <h2 class="section-title">
     MADE FOR THE CULTURE.
   </h2>
 
@@ -1796,36 +2204,37 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 
     <div class="feature-card">
       <div class="feature-number">01</div>
-      <h3 data-i18n="feature1Title">STREETWEAR</h3>
-      <p data-i18n="feature1Text">
-        Schlichte Farben, klare Designs und ein Stil, der auch außerhalb
-        des Treffens funktioniert.
+      <h3>STREETWEAR</h3>
+      <p>
+        Schlichte Farben, klare Designs und ein Stil,
+        der auch außerhalb des Treffens funktioniert.
       </p>
     </div>
 
     <div class="feature-card">
       <div class="feature-number">02</div>
-      <h3 data-i18n="feature2Title">CAR CULTURE</h3>
-      <p data-i18n="feature2Text">
-        Inspiriert von BMW, japanischen Builds, Night Drives und der
-        gesamten Auto-Community.
+      <h3>CAR CULTURE</h3>
+      <p>
+        Inspiriert von BMW, japanischen Builds,
+        Night Drives und der gesamten Auto-Community.
       </p>
     </div>
 
     <div class="feature-card">
       <div class="feature-number">03</div>
-      <h3 data-i18n="feature3Title">COMMUNITY</h3>
-      <p data-i18n="feature3Text">
-        ГОНЩИКИ soll nicht nur eine Marke sein, sondern eine Crew.
+      <h3>COMMUNITY</h3>
+      <p>
+        ГОНЩИКИ soll nicht nur eine Marke sein,
+        sondern eine Crew.
       </p>
     </div>
 
     <div class="feature-card">
       <div class="feature-number">04</div>
-      <h3 data-i18n="feature4Title">EST. 2025</h3>
-      <p data-i18n="feature4Text">
-        Angefangen als Idee. Entwickelt für die nächste Generation
-        der Auto-Community.
+      <h3>EST. 2025</h3>
+      <p>
+        Angefangen als Idee. Entwickelt für die
+        nächste Generation der Auto-Community.
       </p>
     </div>
 
@@ -1835,31 +2244,38 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 
 </main>
 
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
   <div class="footer-top">
 
-    <div class="footer-logo">ГОНЩИКИ</div>
+    <div class="footer-logo">
+      ГОНЩИКИ
+    </div>
 
     <div class="footer-links">
 
-      <button onclick="openLegal('impressum')" data-i18n="imprint">
+      <button onclick="openLegal('impressum')">
         IMPRESSUM
       </button>
 
-      <button onclick="openLegal('privacy')" data-i18n="privacy">
+      <button onclick="openLegal('privacy')">
         DATENSCHUTZ
       </button>
 
-      <button onclick="openLegal('withdrawal')" data-i18n="withdrawal">
+      <button onclick="openLegal('withdrawal')">
         WIDERRUF
       </button>
 
-      <button onclick="openLegal('terms')" data-i18n="terms">
+      <button onclick="openLegal('terms')">
         AGB
       </button>
 
-      <button onclick="openAccount()" data-i18n="account">
+      <button onclick="openAccount()">
         ACCOUNT
       </button>
 
@@ -1875,60 +2291,142 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 
 
 <!-- =========================
+     CAR LIGHTBOX
+========================= -->
+
+<div
+  class="car-lightbox"
+  id="carLightbox"
+  onclick="closeCarLightbox(event)"
+>
+
+  <button
+    class="car-lightbox-close"
+    onclick="closeCarLightbox()"
+  >
+    ×
+  </button>
+
+  <button
+    class="car-lightbox-prev"
+    onclick="changeCarImage(-1,event)"
+  >
+    ‹
+  </button>
+
+  <img
+    id="carLightboxImage"
+    src=""
+    alt=""
+  >
+
+  <button
+    class="car-lightbox-next"
+    onclick="changeCarImage(1,event)"
+  >
+    ›
+  </button>
+
+</div>
+
+
+<!-- =========================
      PRODUCT MODAL
 ========================= -->
 
-<div class="modal" id="productModal" onclick="modalOutside(event,'productModal')">
+<div
+  class="modal"
+  id="productModal"
+  onclick="modalOutside(event,'productModal')"
+>
 
   <div class="modal-box">
 
-    <button class="close" onclick="closeModal('productModal')">×</button>
+    <button
+      class="close"
+      onclick="closeModal('productModal')"
+    >
+      ×
+    </button>
 
     <div class="product-modal-grid">
 
-      <div class="product-modal-image" id="productModalImage">
-        <img id="modalProductImage" src="" alt="">
-        <div class="zoom-label" data-i18n="zoom">
+      <div
+        class="product-modal-image"
+        id="productModalImage"
+      >
+
+        <img
+          id="modalProductImage"
+          src=""
+          alt=""
+        >
+
+        <div class="zoom-label">
           KLICKEN ZUM ZOOM
         </div>
+
       </div>
 
       <div class="product-modal-content">
 
-        <div class="modal-category" id="modalProductCategory"></div>
+        <div
+          class="modal-category"
+          id="modalProductCategory"
+        ></div>
 
-        <h2 class="modal-title" id="modalProductName"></h2>
+        <h2
+          class="modal-title"
+          id="modalProductName"
+        ></h2>
 
-        <div class="modal-price" id="modalProductPrice"></div>
+        <div
+          class="modal-price"
+          id="modalProductPrice"
+        ></div>
 
-        <p class="modal-description" id="modalProductDescription"></p>
+        <p
+          class="modal-description"
+          id="modalProductDescription"
+        ></p>
 
         <div id="sizeArea">
 
-          <div class="option-title" data-i18n="chooseSize">
+          <div class="option-title">
             GRÖSSE
           </div>
 
-          <div class="size-list" id="sizeList"></div>
+          <div
+            class="size-list"
+            id="sizeList"
+          ></div>
 
         </div>
 
         <div class="quantity-row">
 
           <div>
-            <div class="option-title" data-i18n="quantity">
+
+            <div class="option-title">
               MENGE
             </div>
 
             <div class="quantity">
 
-              <button onclick="changeModalQuantity(-1)">−</button>
+              <button onclick="changeModalQuantity(-1)">
+                −
+              </button>
 
-              <span id="modalQuantity">1</span>
+              <span id="modalQuantity">
+                1
+              </span>
 
-              <button onclick="changeModalQuantity(1)">+</button>
+              <button onclick="changeModalQuantity(1)">
+                +
+              </button>
 
             </div>
+
           </div>
 
           <button
@@ -1946,20 +2444,25 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
           class="add-cart"
           id="addCartButton"
           onclick="addCurrentProductToCart()"
-          data-i18n="addCart"
         >
           IN DEN WARENKORB
         </button>
 
-        <div class="modal-stock" id="modalStock"></div>
+        <div
+          class="modal-stock"
+          id="modalStock"
+        ></div>
 
         <div class="similar">
 
-          <div class="option-title" data-i18n="similar">
+          <div class="option-title">
             ÄHNLICHE PRODUKTE
           </div>
 
-          <div class="similar-grid" id="similarProducts"></div>
+          <div
+            class="similar-grid"
+            id="similarProducts"
+          ></div>
 
         </div>
 
@@ -1973,26 +2476,39 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 
 
 <!-- =========================
-     CART DRAWER
+     CART
 ========================= -->
 
-<div class="drawer" id="cartDrawer" onclick="drawerOutside(event,'cartDrawer')">
+<div
+  class="drawer"
+  id="cartDrawer"
+  onclick="drawerOutside(event,'cartDrawer')"
+>
 
   <div class="drawer-panel">
 
     <div class="drawer-head">
 
-      <h2 data-i18n="cart">WARENKORB</h2>
+      <h2>WARENKORB</h2>
 
-      <button class="drawer-close" onclick="closeDrawer('cartDrawer')">
+      <button
+        class="drawer-close"
+        onclick="closeDrawer('cartDrawer')"
+      >
         ×
       </button>
 
     </div>
 
-    <div class="drawer-body" id="cartBody"></div>
+    <div
+      class="drawer-body"
+      id="cartBody"
+    ></div>
 
-    <div class="cart-summary" id="cartSummary"></div>
+    <div
+      class="cart-summary"
+      id="cartSummary"
+    ></div>
 
   </div>
 
@@ -2000,24 +2516,41 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 
 
 <!-- =========================
-     WISHLIST MODAL
+     WISHLIST
 ========================= -->
 
-<div class="modal" id="wishlistModal" onclick="modalOutside(event,'wishlistModal')">
+<div
+  class="modal"
+  id="wishlistModal"
+  onclick="modalOutside(event,'wishlistModal')"
+>
 
-  <div class="modal-box" style="width:min(900px,100%)">
+  <div
+    class="modal-box"
+    style="width:min(900px,100%)"
+  >
 
-    <button class="close" onclick="closeModal('wishlistModal')">×</button>
+    <button
+      class="close"
+      onclick="closeModal('wishlistModal')"
+    >
+      ×
+    </button>
 
     <div class="checkout-inner">
 
-      <div class="eyebrow">ГОНЩИКИ</div>
+      <div class="eyebrow">
+        ГОНЩИКИ
+      </div>
 
-      <h2 class="checkout-title" data-i18n="wishlistTitle">
+      <h2 class="checkout-title">
         WUNSCHLISTE
       </h2>
 
-      <div class="wishlist-grid" id="wishlistGrid"></div>
+      <div
+        class="wishlist-grid"
+        id="wishlistGrid"
+      ></div>
 
     </div>
 
@@ -2027,20 +2560,31 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 
 
 <!-- =========================
-     CHECKOUT MODAL
+     CHECKOUT
 ========================= -->
 
-<div class="modal" id="checkoutModal" onclick="modalOutside(event,'checkoutModal')">
+<div
+  class="modal"
+  id="checkoutModal"
+  onclick="modalOutside(event,'checkoutModal')"
+>
 
   <div class="modal-box checkout-box">
 
-    <button class="close" onclick="closeModal('checkoutModal')">×</button>
+    <button
+      class="close"
+      onclick="closeModal('checkoutModal')"
+    >
+      ×
+    </button>
 
     <div class="checkout-inner">
 
-      <div class="eyebrow">DEMO CHECKOUT</div>
+      <div class="eyebrow">
+        DEMO CHECKOUT
+      </div>
 
-      <h2 class="checkout-title" data-i18n="checkout">
+      <h2 class="checkout-title">
         CHECKOUT
       </h2>
 
@@ -2053,52 +2597,59 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
       <div class="checkout-grid">
 
         <div class="form-group">
-          <label data-i18n="firstName">VORNAME</label>
+          <label>VORNAME</label>
           <input id="checkoutFirstName" type="text">
         </div>
 
         <div class="form-group">
-          <label data-i18n="lastName">NACHNAME</label>
+          <label>NACHNAME</label>
           <input id="checkoutLastName" type="text">
         </div>
 
         <div class="form-group full">
-          <label data-i18n="email">E-MAIL</label>
+          <label>E-MAIL</label>
           <input id="checkoutEmail" type="email">
         </div>
 
         <div class="form-group full">
-          <label data-i18n="street">STRASSE + HAUSNUMMER</label>
+          <label>STRASSE + HAUSNUMMER</label>
           <input id="checkoutStreet" type="text">
         </div>
 
         <div class="form-group">
-          <label data-i18n="zip">PLZ</label>
+          <label>PLZ</label>
           <input id="checkoutZip" type="text">
         </div>
 
         <div class="form-group">
-          <label data-i18n="city">ORT</label>
+          <label>ORT</label>
           <input id="checkoutCity" type="text">
         </div>
 
         <div class="form-group full">
 
-          <label data-i18n="payment">
-            ZAHLUNG
-          </label>
+          <label>ZAHLUNG</label>
 
           <div class="payment-options">
 
-            <div class="payment-option active" onclick="selectPayment(this)">
+            <div
+              class="payment-option active"
+              onclick="selectPayment(this)"
+            >
               💳 CARD
             </div>
 
-            <div class="payment-option" onclick="selectPayment(this)">
+            <div
+              class="payment-option"
+              onclick="selectPayment(this)"
+            >
               🅿️ PAYPAL
             </div>
 
-            <div class="payment-option" onclick="selectPayment(this)">
+            <div
+              class="payment-option"
+              onclick="selectPayment(this)"
+            >
               K KLARNA
             </div>
 
@@ -2108,20 +2659,22 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 
       </div>
 
-      <div class="checkout-summary" id="checkoutSummary"></div>
+      <div
+        class="checkout-summary"
+        id="checkoutSummary"
+      ></div>
 
       <button
         class="add-cart"
         onclick="placeDemoOrder()"
         style="margin-top:20px"
-        data-i18n="placeOrder"
       >
         DEMO-BESTELLUNG ABSCHICKEN
       </button>
 
       <p style="color:#555;font-size:9px;line-height:1.5;margin-top:12px">
-        Dies ist ausschließlich eine Demo. Es wird keine echte Bestellung
-        aufgegeben und keine Zahlung durchgeführt.
+        Dies ist ausschließlich eine Demo. Es wird keine echte
+        Bestellung aufgegeben und keine Zahlung durchgeführt.
       </p>
 
     </div>
@@ -2132,26 +2685,28 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 
 
 <!-- =========================
-     ACCOUNT MODAL
+     ACCOUNT
 ========================= -->
 
-<div class="modal" id="accountModal" onclick="modalOutside(event,'accountModal')">
+<div
+  class="modal"
+  id="accountModal"
+  onclick="modalOutside(event,'accountModal')"
+>
 
   <div class="modal-box account-box">
 
-    <button class="close" onclick="closeModal('accountModal')">×</button>
+    <button
+      class="close"
+      onclick="closeModal('accountModal')"
+    >
+      ×
+    </button>
 
-    <div class="account-content">
-
-      <div class="eyebrow">ГОНЩИКИ</div>
-
-      <h2 class="checkout-title" data-i18n="account">
-        ACCOUNT
-      </h2>
-
-      <div id="accountContent"></div>
-
-    </div>
+    <div
+      class="account-content"
+      id="accountContent"
+    ></div>
 
   </div>
 
@@ -2159,16 +2714,28 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 
 
 <!-- =========================
-     LEGAL MODAL
+     LEGAL
 ========================= -->
 
-<div class="modal" id="legalModal" onclick="modalOutside(event,'legalModal')">
+<div
+  class="modal"
+  id="legalModal"
+  onclick="modalOutside(event,'legalModal')"
+>
 
   <div class="modal-box legal-box">
 
-    <button class="close" onclick="closeModal('legalModal')">×</button>
+    <button
+      class="close"
+      onclick="closeModal('legalModal')"
+    >
+      ×
+    </button>
 
-    <div class="legal-content" id="legalContent"></div>
+    <div
+      class="legal-content"
+      id="legalContent"
+    ></div>
 
   </div>
 
@@ -2176,329 +2743,46 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 
 
 <!-- =========================
-     ADMIN MODAL
+     ADMIN
 ========================= -->
 
-<div class="modal" id="adminModal">
+<div
+  class="modal"
+  id="adminModal"
+>
 
   <div class="modal-box admin-box">
 
-    <button class="close" onclick="closeModal('adminModal')">×</button>
+    <button
+      class="close"
+      onclick="closeModal('adminModal')"
+    >
+      ×
+    </button>
 
-    <div class="admin-content" id="adminContent"></div>
+    <div
+      class="admin-content"
+      id="adminContent"
+    ></div>
 
   </div>
 
 </div>
 
 
-<div class="toast" id="toast"></div>
+<div
+  class="toast"
+  id="toast"
+></div>
 
 
 <script>
 
 /* =========================================================
-   TRANSLATIONS
-========================================================= */
-
-const translations = {
-
-  de:{
-    preview:"SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BESTELLUNGEN!",
-    heroTag:"GONSHIKI CREW · EST. 2025",
-    heroSub:"STREETWARE FOR THE CAR CULTURE",
-    shopNow:"SHOP ENTDECKEN",
-    wishlist:"WUNSCHLISTE",
-    collection:"COLLECTION",
-    shopTitle:"SHOP",
-    shopDescription:"Schlichte Streetwear für Menschen, die Autos nicht nur fahren, sondern leben.",
-    all:"ALLE",
-    men:"HERREN",
-    women:"DAMEN",
-    shirts:"T-SHIRTS",
-    hoodies:"HOODIES",
-    zipper:"ZIPPER",
-    pants:"HOSEN",
-    stickers:"STICKER",
-    universalSizes:"KLEIDUNG · HERREN + DAMEN",
-    searchPlaceholder:"Produkte suchen...",
-    clear:"X",
-    whyUs:"WHY GONSHIKI",
-    madeForCulture:"MADE FOR THE CULTURE.",
-    feature1Title:"STREETWEAR",
-    feature1Text:"Schlichte Farben, klare Designs und ein Stil, der auch außerhalb des Treffens funktioniert.",
-    feature2Title:"CAR CULTURE",
-    feature2Text:"Inspiriert von BMW, japanischen Builds, Night Drives und der gesamten Auto-Community.",
-    feature3Title:"COMMUNITY",
-    feature3Text:"ГОНЩИКИ soll nicht nur eine Marke sein, sondern eine Crew.",
-    feature4Title:"EST. 2025",
-    feature4Text:"Angefangen als Idee. Entwickelt für die nächste Generation der Auto-Community.",
-    zoom:"KLICKEN ZUM ZOOM",
-    chooseSize:"GRÖSSE",
-    quantity:"MENGE",
-    addCart:"IN DEN WARENKORB",
-    similar:"ÄHNLICHE PRODUKTE",
-    cart:"WARENKORB",
-    wishlistTitle:"WUNSCHLISTE",
-    checkout:"CHECKOUT",
-    firstName:"VORNAME",
-    lastName:"NACHNAME",
-    email:"E-MAIL",
-    street:"STRASSE + HAUSNUMMER",
-    zip:"PLZ",
-    city:"ORT",
-    payment:"ZAHLUNG",
-    placeOrder:"DEMO-BESTELLUNG ABSCHICKEN",
-    imprint:"IMPRESSUM",
-    privacy:"DATENSCHUTZ",
-    withdrawal:"WIDERRUF",
-    terms:"AGB",
-    account:"ACCOUNT",
-    subtotal:"ZWISCHENSUMME",
-    shipping:"VERSAND",
-    free:"KOSTENLOS",
-    total:"GESAMT",
-    toFreeShipping:"NOCH {amount} € BIS KOSTENLOSER VERSAND",
-    freeShippingReached:"KOSTENLOSER VERSAND ERREICHT",
-    checkoutNow:"ZUR KASSE",
-    emptyCart:"DEIN WARENKORB IST LEER",
-    emptyCartText:"Entdecke unsere aktuelle Collection.",
-    emptyWishlist:"DEINE WUNSCHLISTE IST LEER",
-    emptyWishlistText:"Speichere Produkte mit dem Herz-Symbol.",
-    login:"EINLOGGEN",
-    register:"REGISTRIEREN",
-    logout:"AUSLOGGEN",
-    orders:"BESTELLUNGEN",
-    wishlistTab:"WUNSCHLISTE",
-    noOrders:"Noch keine Bestellungen.",
-    loginDemo:"Demo-Login",
-    username:"BENUTZERNAME",
-    password:"PASSWORT",
-    demoLogin:"DEMO EINLOGGEN",
-    createAccount:"ACCOUNT ERSTELLEN",
-    registered:"ACCOUNT ERSTELLT",
-    orderSuccess:"DEMO-BESTELLUNG ERFOLGREICH ERSTELLT",
-    added:"Zum Warenkorb hinzugefügt",
-    removed:"Aus Wunschliste entfernt",
-    saved:"Zur Wunschliste hinzugefügt",
-    noProducts:"KEINE PRODUKTE GEFUNDEN",
-    noProductsText:"Versuche einen anderen Suchbegriff oder Filter.",
-    available:"VERFÜGBAR",
-    soldOut:"AUSVERKAUFT",
-    lowStock:"NUR NOCH {count} VERFÜGBAR",
-    sizeRequired:"Bitte zuerst eine Größe auswählen.",
-    cartEmptyCheckout:"Dein Warenkorb ist leer.",
-    imprintTitle:"IMPRESSUM",
-    privacyTitle:"DATENSCHUTZ",
-    withdrawalTitle:"WIDERRUF",
-    termsTitle:"AGB",
-    adminLogin:"ADMIN LOGIN",
-    adminDashboard:"ADMIN DASHBOARD",
-    adminPassword:"PASSWORT",
-    adminEnter:"ÖFFNEN",
-    wrongPassword:"Falsches Passwort."
-  },
-
-  en:{
-    preview:"SHOP PREVIEW — PRICES, SIZES & SHIPPING NOT CONFIRMED — NO ORDERS!",
-    heroTag:"GONSHIKI CREW · EST. 2025",
-    heroSub:"STREETWEAR FOR THE CAR CULTURE",
-    shopNow:"EXPLORE SHOP",
-    wishlist:"WISHLIST",
-    collection:"COLLECTION",
-    shopTitle:"SHOP",
-    shopDescription:"Minimal streetwear for people who don't just drive cars — they live them.",
-    all:"ALL",
-    men:"MEN",
-    women:"WOMEN",
-    shirts:"T-SHIRTS",
-    hoodies:"HOODIES",
-    zipper:"ZIPPER",
-    pants:"PANTS",
-    stickers:"STICKERS",
-    universalSizes:"CLOTHING · MEN + WOMEN",
-    searchPlaceholder:"Search products...",
-    clear:"X",
-    whyUs:"WHY GONSHIKI",
-    madeForCulture:"MADE FOR THE CULTURE.",
-    feature1Title:"STREETWEAR",
-    feature1Text:"Minimal colors, clean designs and a style that works beyond the car meet.",
-    feature2Title:"CAR CULTURE",
-    feature2Text:"Inspired by BMW, Japanese builds, night drives and the entire car community.",
-    feature3Title:"COMMUNITY",
-    feature3Text:"ГОНЩИКИ is meant to be more than a brand. It's a crew.",
-    feature4Title:"EST. 2025",
-    feature4Text:"Started as an idea. Built for the next generation of car culture.",
-    zoom:"CLICK TO ZOOM",
-    chooseSize:"SIZE",
-    quantity:"QUANTITY",
-    addCart:"ADD TO CART",
-    similar:"YOU MAY ALSO LIKE",
-    cart:"CART",
-    wishlistTitle:"WISHLIST",
-    checkout:"CHECKOUT",
-    firstName:"FIRST NAME",
-    lastName:"LAST NAME",
-    email:"E-MAIL",
-    street:"STREET + NUMBER",
-    zip:"ZIP",
-    city:"CITY",
-    payment:"PAYMENT",
-    placeOrder:"PLACE DEMO ORDER",
-    imprint:"IMPRINT",
-    privacy:"PRIVACY",
-    withdrawal:"WITHDRAWAL",
-    terms:"TERMS",
-    account:"ACCOUNT",
-    subtotal:"SUBTOTAL",
-    shipping:"SHIPPING",
-    free:"FREE",
-    total:"TOTAL",
-    toFreeShipping:"{amount} € TO FREE SHIPPING",
-    freeShippingReached:"FREE SHIPPING UNLOCKED",
-    checkoutNow:"CHECKOUT",
-    emptyCart:"YOUR CART IS EMPTY",
-    emptyCartText:"Discover our current collection.",
-    emptyWishlist:"YOUR WISHLIST IS EMPTY",
-    emptyWishlistText:"Save products using the heart icon.",
-    login:"LOGIN",
-    register:"REGISTER",
-    logout:"LOG OUT",
-    orders:"ORDERS",
-    wishlistTab:"WISHLIST",
-    noOrders:"No orders yet.",
-    loginDemo:"Demo Login",
-    username:"USERNAME",
-    password:"PASSWORD",
-    demoLogin:"DEMO LOGIN",
-    createAccount:"CREATE ACCOUNT",
-    registered:"ACCOUNT CREATED",
-    orderSuccess:"DEMO ORDER CREATED",
-    added:"Added to cart",
-    removed:"Removed from wishlist",
-    saved:"Added to wishlist",
-    noProducts:"NO PRODUCTS FOUND",
-    noProductsText:"Try another search term or filter.",
-    available:"AVAILABLE",
-    soldOut:"SOLD OUT",
-    lowStock:"ONLY {count} LEFT",
-    sizeRequired:"Please select a size first.",
-    cartEmptyCheckout:"Your cart is empty.",
-    imprintTitle:"IMPRINT",
-    privacyTitle:"PRIVACY",
-    withdrawalTitle:"WITHDRAWAL",
-    termsTitle:"TERMS",
-    adminLogin:"ADMIN LOGIN",
-    adminDashboard:"ADMIN DASHBOARD",
-    adminPassword:"PASSWORD",
-    adminEnter:"OPEN",
-    wrongPassword:"Wrong password."
-  },
-
-  ru:{
-    preview:"ПРЕДПРОСМОТР МАГАЗИНА — ЦЕНЫ, РАЗМЕРЫ И ДОСТАВКА ЕЩЁ НЕ ПОДТВЕРЖДЕНЫ — ЗАКАЗЫ НЕ ПРИНИМАЮТСЯ!",
-    heroTag:"GONSHIKI CREW · EST. 2025",
-    heroSub:"STREETWEAR FOR THE CAR CULTURE",
-    shopNow:"ОТКРЫТЬ МАГАЗИН",
-    wishlist:"ЖЕЛАЕМЫЕ",
-    collection:"КОЛЛЕКЦИЯ",
-    shopTitle:"МАГАЗИН",
-    shopDescription:"Минималистичная одежда для тех, кто не просто водит машины — они живут ими.",
-    all:"ВСЕ",
-    men:"МУЖЧИНЫ",
-    women:"ЖЕНЩИНЫ",
-    shirts:"ФУТБОЛКИ",
-    hoodies:"ХУДИ",
-    zipper:"ЗИППЕРЫ",
-    pants:"БРЮКИ",
-    stickers:"СТИКЕРЫ",
-    universalSizes:"ОДЕЖДА · МУЖЧИНЫ + ЖЕНЩИНЫ",
-    searchPlaceholder:"Поиск товаров...",
-    clear:"X",
-    whyUs:"ПОЧЕМУ GONSHIKI",
-    madeForCulture:"MADE FOR THE CULTURE.",
-    feature1Title:"STREETWEAR",
-    feature1Text:"Минималистичные цвета, чистый дизайн и стиль для повседневной жизни.",
-    feature2Title:"CAR CULTURE",
-    feature2Text:"Вдохновлено BMW, японскими проектами, ночными поездками и автокультурой.",
-    feature3Title:"COMMUNITY",
-    feature3Text:"ГОНЩИКИ — это не просто бренд. Это команда.",
-    feature4Title:"EST. 2025",
-    feature4Text:"Началось с идеи. Создано для нового поколения автокультуры.",
-    zoom:"НАЖМИТЕ ДЛЯ УВЕЛИЧЕНИЯ",
-    chooseSize:"РАЗМЕР",
-    quantity:"КОЛИЧЕСТВО",
-    addCart:"В КОРЗИНУ",
-    similar:"ПОХОЖИЕ ТОВАРЫ",
-    cart:"КОРЗИНА",
-    wishlistTitle:"ЖЕЛАЕМЫЕ",
-    checkout:"ОФОРМЛЕНИЕ",
-    firstName:"ИМЯ",
-    lastName:"ФАМИЛИЯ",
-    email:"E-MAIL",
-    street:"УЛИЦА + НОМЕР",
-    zip:"ИНДЕКС",
-    city:"ГОРОД",
-    payment:"ОПЛАТА",
-    placeOrder:"ОФОРМИТЬ DEMO-ЗАКАЗ",
-    imprint:"ИМПРЕССУМ",
-    privacy:"КОНФИДЕНЦИАЛЬНОСТЬ",
-    withdrawal:"ВОЗВРАТ",
-    terms:"УСЛОВИЯ",
-    account:"АККАУНТ",
-    subtotal:"ПОДЫТОГ",
-    shipping:"ДОСТАВКА",
-    free:"БЕСПЛАТНО",
-    total:"ИТОГО",
-    toFreeShipping:"ЕЩЁ {amount} € ДО БЕСПЛАТНОЙ ДОСТАВКИ",
-    freeShippingReached:"БЕСПЛАТНАЯ ДОСТАВКА ДОСТИГНУТА",
-    checkoutNow:"ОФОРМИТЬ",
-    emptyCart:"КОРЗИНА ПУСТА",
-    emptyCartText:"Откройте нашу актуальную коллекцию.",
-    emptyWishlist:"СПИСОК ПУСТ",
-    emptyWishlistText:"Сохраняйте товары с помощью сердца.",
-    login:"ВОЙТИ",
-    register:"РЕГИСТРАЦИЯ",
-    logout:"ВЫЙТИ",
-    orders:"ЗАКАЗЫ",
-    wishlistTab:"ЖЕЛАЕМЫЕ",
-    noOrders:"Заказов пока нет.",
-    loginDemo:"Demo вход",
-    username:"ИМЯ ПОЛЬЗОВАТЕЛЯ",
-    password:"ПАРОЛЬ",
-    demoLogin:"ВОЙТИ",
-    createAccount:"СОЗДАТЬ АККАУНТ",
-    registered:"АККАУНТ СОЗДАН",
-    orderSuccess:"DEMO-ЗАКАЗ СОЗДАН",
-    added:"Добавлено в корзину",
-    removed:"Удалено из списка",
-    saved:"Добавлено в список",
-    noProducts:"ТОВАРЫ НЕ НАЙДЕНЫ",
-    noProductsText:"Попробуйте другой поиск или фильтр.",
-    available:"В НАЛИЧИИ",
-    soldOut:"НЕТ В НАЛИЧИИ",
-    lowStock:"ОСТАЛОСЬ {count}",
-    sizeRequired:"Сначала выберите размер.",
-    cartEmptyCheckout:"Корзина пуста.",
-    imprintTitle:"ИМПРЕССУМ",
-    privacyTitle:"КОНФИДЕНЦИАЛЬНОСТЬ",
-    withdrawalTitle:"ВОЗВРАТ",
-    termsTitle:"УСЛОВИЯ",
-    adminLogin:"ADMIN LOGIN",
-    adminDashboard:"ADMIN DASHBOARD",
-    adminPassword:"ПАРОЛЬ",
-    adminEnter:"ОТКРЫТЬ",
-    wrongPassword:"Неверный пароль."
-  }
-
-};
-
-
-/* =========================================================
    PRODUCTS
 ========================================================= */
 
-const products = [
+const products=[
 
   {
     id:1,
@@ -2508,12 +2792,7 @@ const products = [
     image:"assets/Shirt-black-e36.jpg",
     description:"Schwarzes ГОНЩИКИ T-Shirt mit E36 Design.",
     stock:{
-      XS:5,
-      S:10,
-      M:10,
-      L:10,
-      XL:5,
-      XXL:2
+      XS:5,S:10,M:10,L:10,XL:5,XXL:2
     }
   },
 
@@ -2525,12 +2804,7 @@ const products = [
     image:"assets/Shirt-black-e34.jpg",
     description:"Schwarzes ГОНЩИКИ T-Shirt mit E34 Design.",
     stock:{
-      XS:5,
-      S:10,
-      M:10,
-      L:10,
-      XL:5,
-      XXL:2
+      XS:5,S:10,M:10,L:10,XL:5,XXL:2
     }
   },
 
@@ -2542,12 +2816,7 @@ const products = [
     image:"assets/Hoodie-black-e36.jpg",
     description:"Schwarzer ГОНЩИКИ Hoodie mit E36 Motiv.",
     stock:{
-      XS:4,
-      S:8,
-      M:8,
-      L:8,
-      XL:5,
-      XXL:2
+      XS:4,S:8,M:8,L:8,XL:5,XXL:2
     }
   },
 
@@ -2559,12 +2828,7 @@ const products = [
     image:"assets/Hoodie-black-e34.jpg",
     description:"Schwarzer ГОНЩИКИ Hoodie mit E34 Motiv.",
     stock:{
-      XS:4,
-      S:8,
-      M:8,
-      L:8,
-      XL:5,
-      XXL:2
+      XS:4,S:8,M:8,L:8,XL:5,XXL:2
     }
   },
 
@@ -2576,12 +2840,7 @@ const products = [
     image:"assets/Hoodie-black-Kreuz.jpg",
     description:"Schwarzer ГОНЩИКИ Hoodie mit Kreuz Design.",
     stock:{
-      XS:4,
-      S:8,
-      M:8,
-      L:8,
-      XL:5,
-      XXL:2
+      XS:4,S:8,M:8,L:8,XL:5,XXL:2
     }
   },
 
@@ -2593,12 +2852,7 @@ const products = [
     image:"assets/Zipper-black-Kreuz.jpg",
     description:"Schwarzer ГОНЩИКИ Zipper mit Kreuz Design.",
     stock:{
-      XS:4,
-      S:8,
-      M:8,
-      L:8,
-      XL:5,
-      XXL:2
+      XS:4,S:8,M:8,L:8,XL:5,XXL:2
     }
   },
 
@@ -2610,12 +2864,7 @@ const products = [
     image:"assets/Pants-black-gonschiki.jpg",
     description:"Schwarze ГОНЩИКИ Hose.",
     stock:{
-      XS:4,
-      S:8,
-      M:8,
-      L:8,
-      XL:5,
-      XXL:2
+      XS:4,S:8,M:8,L:8,XL:5,XXL:2
     }
   },
 
@@ -2662,48 +2911,44 @@ const products = [
    STATE
 ========================================================= */
 
-let currentLanguage =
-  localStorage.getItem("gonschiki_language") || "de";
+let selectedGender="all";
+let selectedCategory="all";
 
-let selectedGender = "all";
-let selectedCategory = "all";
+let currentProduct=null;
+let currentProductGender="all";
+let currentSize=null;
+let currentQuantity=1;
 
-let currentProduct = null;
-let currentProductGender = "all";
-let currentSize = null;
-let currentQuantity = 1;
-
-let cart = JSON.parse(
-  localStorage.getItem("gonschiki_cart") || "[]"
+let cart=JSON.parse(
+  localStorage.getItem("gonschiki_cart")||"[]"
 );
 
-let wishlist = JSON.parse(
-  localStorage.getItem("gonschiki_wishlist") || "[]"
+let wishlist=JSON.parse(
+  localStorage.getItem("gonschiki_wishlist")||"[]"
 );
 
-let orders = JSON.parse(
-  localStorage.getItem("gonschiki_orders") || "[]"
+let orders=JSON.parse(
+  localStorage.getItem("gonschiki_orders")||"[]"
 );
 
-let account = JSON.parse(
-  localStorage.getItem("gonschiki_account") || "null"
+let account=JSON.parse(
+  localStorage.getItem("gonschiki_account")||"null"
 );
 
-let selectedPayment = "CARD";
+let currentCarImage=0;
+
+const carImages=[
+  "assets/Car-1.JPG",
+  "assets/Car-2.JPG",
+  "assets/Car-3.jpg",
+  "assets/Car-4.jpg",
+  "assets/Car-5.jpg"
+];
 
 
 /* =========================================================
    HELPERS
 ========================================================= */
-
-function t(key){
-
-  const language =
-    translations[currentLanguage] || translations.de;
-
-  return language[key] || translations.de[key] || key;
-
-}
 
 function saveState(){
 
@@ -2732,11 +2977,7 @@ function saveState(){
 function formatPrice(value){
 
   return new Intl.NumberFormat(
-    currentLanguage === "de"
-      ? "de-DE"
-      : currentLanguage === "ru"
-        ? "ru-RU"
-        : "en-US",
+    "de-DE",
     {
       style:"currency",
       currency:"EUR"
@@ -2745,21 +2986,17 @@ function formatPrice(value){
 
 }
 
-function escapeHtml(value){
+function getTotalStock(product){
 
-  return String(value)
-    .replaceAll("&","&amp;")
-    .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;")
-    .replaceAll("'","&#039;");
+  return Object.values(product.stock)
+    .reduce((a,b)=>a+b,0);
 
 }
 
 function totalCartItems(){
 
   return cart.reduce(
-    (sum,item)=>sum + item.quantity,
+    (sum,item)=>sum+item.quantity,
     0
   );
 
@@ -2769,12 +3006,15 @@ function cartSubtotal(){
 
   return cart.reduce(
     (sum,item)=>{
-      const product = products.find(p=>p.id===item.id);
-      return sum + (
-        product
-          ? product.price * item.quantity
-          : 0
-      );
+
+      const product=
+        products.find(p=>p.id===item.id);
+
+      return sum+
+        (product
+          ? product.price*item.quantity
+          : 0);
+
     },
     0
   );
@@ -2783,32 +3023,34 @@ function cartSubtotal(){
 
 function shippingCost(){
 
-  return cartSubtotal() >= 100 || cart.length === 0
-    ? 0
-    : 5.99;
+  return cartSubtotal()>=100||cart.length===0
+    ?0
+    :5.99;
 
 }
 
 function updateBadges(){
 
-  document.getElementById("cartBadge").textContent =
-    totalCartItems();
+  document.getElementById("cartBadge")
+    .textContent=totalCartItems();
 
-  document.getElementById("wishlistBadge").textContent =
-    wishlist.length;
+  document.getElementById("wishlistBadge")
+    .textContent=wishlist.length;
 
 }
 
 function showToast(message){
 
-  const toast = document.getElementById("toast");
+  const toast=
+    document.getElementById("toast");
 
-  toast.textContent = message;
+  toast.textContent=message;
+
   toast.classList.add("show");
 
   clearTimeout(window.toastTimer);
 
-  window.toastTimer = setTimeout(()=>{
+  window.toastTimer=setTimeout(()=>{
     toast.classList.remove("show");
   },2200);
 
@@ -2816,14 +3058,17 @@ function showToast(message){
 
 function openModal(id){
 
-  document.getElementById(id).classList.add("open");
+  document.getElementById(id)
+    .classList.add("open");
+
   document.body.style.overflow="hidden";
 
 }
 
 function closeModal(id){
 
-  document.getElementById(id).classList.remove("open");
+  document.getElementById(id)
+    .classList.remove("open");
 
   if(
     !document.querySelector(".modal.open") &&
@@ -2844,14 +3089,17 @@ function modalOutside(event,id){
 
 function openDrawer(id){
 
-  document.getElementById(id).classList.add("open");
+  document.getElementById(id)
+    .classList.add("open");
+
   document.body.style.overflow="hidden";
 
 }
 
 function closeDrawer(id){
 
-  document.getElementById(id).classList.remove("open");
+  document.getElementById(id)
+    .classList.remove("open");
 
   if(
     !document.querySelector(".modal.open") &&
@@ -2872,70 +3120,69 @@ function drawerOutside(event,id){
 
 
 /* =========================================================
-   LANGUAGE
+   CAR GALLERY
 ========================================================= */
 
-function changeLanguage(language){
+function openCarImage(index){
 
-  currentLanguage = language;
+  currentCarImage=index;
 
-  localStorage.setItem(
-    "gonschiki_language",
-    language
-  );
+  document.getElementById("carLightboxImage")
+    .src=carImages[currentCarImage];
 
-  applyTranslations();
+  document.getElementById("carLightbox")
+    .classList.add("open");
 
-  renderProducts();
-
-  renderCart();
-
-  updateAccount();
+  document.body.style.overflow="hidden";
 
 }
 
-function applyTranslations(){
+function closeCarLightbox(event){
 
-  document.documentElement.lang =
-    currentLanguage;
+  if(
+    event &&
+    event.target.id!=="carLightbox" &&
+    !event.target.classList.contains("car-lightbox-close")
+  ){
+    return;
+  }
 
-  document.querySelectorAll("[data-i18n]")
-    .forEach(el=>{
+  document.getElementById("carLightbox")
+    .classList.remove("open");
 
-      const key = el.dataset.i18n;
+  document.body.style.overflow="";
 
-      if(translations[currentLanguage][key]){
-        el.textContent =
-          translations[currentLanguage][key];
-      }
+}
 
-    });
+function changeCarImage(direction,event){
 
-  document.querySelectorAll("[data-i18n-placeholder]")
-    .forEach(el=>{
+  if(event){
+    event.stopPropagation();
+  }
 
-      const key = el.dataset.i18nPlaceholder;
+  currentCarImage+=direction;
 
-      if(translations[currentLanguage][key]){
-        el.placeholder =
-          translations[currentLanguage][key];
-      }
+  if(currentCarImage<0){
+    currentCarImage=carImages.length-1;
+  }
 
-    });
+  if(currentCarImage>=carImages.length){
+    currentCarImage=0;
+  }
 
-  document.getElementById("languageSelect").value =
-    currentLanguage;
+  document.getElementById("carLightboxImage")
+    .src=carImages[currentCarImage];
 
 }
 
 
 /* =========================================================
-   SHOP FILTER
+   SHOP
 ========================================================= */
 
 function setGender(gender,button){
 
-  selectedGender = gender;
+  selectedGender=gender;
 
   document
     .querySelectorAll("#genderFilters .filter-btn")
@@ -2949,7 +3196,7 @@ function setGender(gender,button){
 
 function setCategory(category,button){
 
-  selectedCategory = category;
+  selectedCategory=category;
 
   document
     .querySelectorAll("#categoryFilters .filter-btn")
@@ -2963,80 +3210,92 @@ function setCategory(category,button){
 
 function clearSearch(){
 
-  document.getElementById("searchInput").value="";
+  document.getElementById("searchInput")
+    .value="";
+
   renderProducts();
 
 }
 
 function renderProducts(){
 
-  const grid =
+  const grid=
     document.getElementById("productGrid");
 
-  const search =
+  const search=
     document.getElementById("searchInput")
       .value
       .trim()
       .toLowerCase();
 
-  const filtered =
+  const filtered=
     products.filter(product=>{
 
-      const categoryMatch =
-        selectedCategory==="all" ||
+      const categoryMatch=
+        selectedCategory==="all"||
         product.category===selectedCategory;
 
-      const searchMatch =
-        !search ||
-        product.name.toLowerCase().includes(search) ||
+      const searchMatch=
+        !search||
+        product.name.toLowerCase().includes(search)||
         product.description.toLowerCase().includes(search);
 
-      return categoryMatch && searchMatch;
+      return categoryMatch&&searchMatch;
 
     });
 
-  document.getElementById("productCount").textContent =
-    filtered.length +
-    (currentLanguage==="de"
-      ? (filtered.length===1 ? " Produkt" : " Produkte")
-      : currentLanguage==="en"
-        ? (filtered.length===1 ? " product" : " products")
-        : " товаров");
+  document.getElementById("productCount")
+    .textContent=
+      filtered.length+
+      (
+        filtered.length===1
+        ?" Produkt"
+        :" Produkte"
+      );
 
   if(!filtered.length){
 
     grid.innerHTML=`
+
       <div class="no-products">
-        <strong>${t("noProducts")}</strong>
-        ${t("noProductsText")}
+
+        <strong>
+          KEINE PRODUKTE GEFUNDEN
+        </strong>
+
+        Versuche einen anderen Suchbegriff
+        oder Filter.
+
       </div>
+
     `;
 
     return;
 
   }
 
-  grid.innerHTML =
+  grid.innerHTML=
     filtered.map(product=>{
 
-      const available =
+      const available=
         getTotalStock(product);
 
-      const isWishlisted =
+      const liked=
         wishlist.includes(product.id);
 
-      let stockText = t("available");
-      let stockClass = "";
+      let stockText="VERFÜGBAR";
+      let stockClass="";
 
       if(available<=0){
 
-        stockText=t("soldOut");
+        stockText="AUSVERKAUFT";
         stockClass="out";
 
       }else if(available<=4){
 
-        stockText=t("lowStock")
-          .replace("{count}",available);
+        stockText=
+          "NUR NOCH "+available+
+          " VERFÜGBAR";
 
         stockClass="low";
 
@@ -3054,22 +3313,24 @@ function renderProducts(){
             <img
               class="product-image"
               src="${product.image}"
-              alt="${escapeHtml(product.name)}"
+              alt="${product.name}"
               loading="lazy"
             >
 
             ${
-              available<=4 && available>0
-              ? `<div class="product-badge">LOW STOCK</div>`
-              : ""
+              available<=4&&available>0
+              ?`<div class="product-badge">LOW STOCK</div>`
+              :""
             }
 
             <button
-              class="product-heart ${isWishlisted ? "active":""}"
-              onclick="event.stopPropagation();toggleWishlist(${product.id})"
-              aria-label="Wishlist"
+              class="product-heart ${liked?"active":""}"
+              onclick="
+                event.stopPropagation();
+                toggleWishlist(${product.id})
+              "
             >
-              ${isWishlisted ? "♥":"♡"}
+              ${liked?"♥":"♡"}
             </button>
 
           </div>
@@ -3077,11 +3338,11 @@ function renderProducts(){
           <div class="product-info">
 
             <div class="product-category">
-              ${getCategoryLabel(product.category)}
+              ${product.category.toUpperCase()}
             </div>
 
             <div class="product-name">
-              ${escapeHtml(product.name)}
+              ${product.name}
             </div>
 
             <div class="product-bottom">
@@ -3106,66 +3367,39 @@ function renderProducts(){
 
 }
 
-function getCategoryLabel(category){
-
-  const labels = {
-    shirt:t("shirts"),
-    hoodie:t("hoodies"),
-    zipper:t("zipper"),
-    pants:t("pants"),
-    sticker:t("stickers")
-  };
-
-  return labels[category] || category;
-
-}
-
-function getTotalStock(product){
-
-  return Object.values(product.stock)
-    .reduce((a,b)=>a+b,0);
-
-}
-
 
 /* =========================================================
-   PRODUCT MODAL
+   PRODUCT
 ========================================================= */
 
 function openProduct(id){
 
-  const product =
+  currentProduct=
     products.find(p=>p.id===id);
 
-  if(!product) return;
+  if(!currentProduct)return;
 
-  currentProduct = product;
-  currentProductGender = selectedGender;
+  currentProductGender=selectedGender;
+
   currentQuantity=1;
   currentSize=null;
 
-  document.getElementById("modalProductImage").src =
-    product.image;
+  document.getElementById("modalProductImage")
+    .src=currentProduct.image;
 
-  document.getElementById("modalProductImage").alt =
-    product.name;
+  document.getElementById("modalProductName")
+    .textContent=currentProduct.name;
 
-  document.getElementById("modalProductCategory").textContent =
-    getCategoryLabel(product.category);
+  document.getElementById("modalProductPrice")
+    .textContent=formatPrice(currentProduct.price);
 
-  document.getElementById("modalProductName").textContent =
-    product.name;
+  document.getElementById("modalProductDescription")
+    .textContent=currentProduct.description;
 
-  document.getElementById("modalProductPrice").textContent =
-    formatPrice(product.price);
+  document.getElementById("modalQuantity")
+    .textContent="1";
 
-  document.getElementById("modalProductDescription").textContent =
-    product.description;
-
-  document.getElementById("modalQuantity").textContent="1";
-
-  document
-    .getElementById("productModalImage")
+  document.getElementById("productModalImage")
     .classList.remove("zoomed");
 
   renderSizes();
@@ -3180,30 +3414,12 @@ function openProduct(id){
 
 }
 
-function getSizesForProduct(product){
-
-  if(product.category==="sticker"){
-    return ["UNIVERSAL"];
-  }
-
-  if(currentProductGender==="women"){
-    return ["XS","S","M","L","XL"];
-  }
-
-  if(currentProductGender==="men"){
-    return ["S","M","L","XL","XXL"];
-  }
-
-  return ["XS","S","M","L","XL","XXL"];
-
-}
-
 function renderSizes(){
 
-  const area =
+  const area=
     document.getElementById("sizeArea");
 
-  const list =
+  const list=
     document.getElementById("sizeList");
 
   if(currentProduct.category==="sticker"){
@@ -3217,26 +3433,42 @@ function renderSizes(){
 
   area.style.display="block";
 
-  list.innerHTML =
-    getSizesForProduct(currentProduct)
-      .map(size=>{
+  let sizes=[
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+  ];
 
-        const stock =
-          currentProduct.stock[size] || 0;
+  if(currentProductGender==="women"){
+    sizes=["XS","S","M","L","XL"];
+  }
 
-        return `
+  if(currentProductGender==="men"){
+    sizes=["S","M","L","XL","XXL"];
+  }
 
-          <button
-            class="size-btn"
-            ${stock<=0 ? "disabled":""}
-            onclick="selectSize('${size}',this)"
-          >
-            ${size}
-          </button>
+  list.innerHTML=
+    sizes.map(size=>{
 
-        `;
+      const stock=
+        currentProduct.stock[size]||0;
 
-      }).join("");
+      return `
+
+        <button
+          class="size-btn"
+          ${stock<=0?"disabled":""}
+          onclick="selectSize('${size}',this)"
+        >
+          ${size}
+        </button>
+
+      `;
+
+    }).join("");
 
 }
 
@@ -3256,23 +3488,20 @@ function selectSize(size,button){
 
 function changeModalQuantity(amount){
 
-  if(!currentProduct) return;
+  if(!currentProduct)return;
 
   let max=99;
 
   if(currentSize){
-
-    max =
-      currentProduct.stock[currentSize] || 0;
-
+    max=currentProduct.stock[currentSize]||0;
   }
 
-  currentQuantity =
+  currentQuantity=
     Math.max(
       1,
       Math.min(
-        currentQuantity + amount,
-        max || 1
+        currentQuantity+amount,
+        max||1
       )
     );
 
@@ -3283,21 +3512,21 @@ function changeModalQuantity(amount){
 
 function updateModalStock(){
 
-  const stockEl =
+  const stockEl=
     document.getElementById("modalStock");
 
-  const button =
+  const button=
     document.getElementById("addCartButton");
 
   if(currentProduct.category==="sticker"){
 
-    const stock =
-      currentProduct.stock.UNIVERSAL || 0;
+    const stock=
+      currentProduct.stock.UNIVERSAL||0;
 
-    stockEl.textContent =
+    stockEl.textContent=
       stock>0
-        ? `${stock} ${t("available")}`
-        : t("soldOut");
+      ?stock+" VERFÜGBAR"
+      :"AUSVERKAUFT";
 
     button.disabled=stock<=0;
 
@@ -3307,8 +3536,8 @@ function updateModalStock(){
 
   if(!currentSize){
 
-    stockEl.textContent =
-      t("chooseSize");
+    stockEl.textContent=
+      "BITTE GRÖSSE AUSWÄHLEN";
 
     button.disabled=false;
 
@@ -3316,70 +3545,54 @@ function updateModalStock(){
 
   }
 
-  const stock =
-    currentProduct.stock[currentSize] || 0;
+  const stock=
+    currentProduct.stock[currentSize]||0;
 
-  if(stock<=0){
+  stockEl.textContent=
+    stock>0
+    ?stock+" VERFÜGBAR"
+    :"AUSVERKAUFT";
 
-    stockEl.textContent=t("soldOut");
-    button.disabled=true;
-
-  }else{
-
-    stockEl.textContent =
-      `${stock} ${t("available")}`;
-
-    button.disabled=false;
-
-  }
+  button.disabled=stock<=0;
 
 }
 
 function addCurrentProductToCart(){
 
-  if(!currentProduct) return;
-
   if(
-    currentProduct.category!=="sticker" &&
+    currentProduct.category!=="sticker"&&
     !currentSize
   ){
 
-    showToast(t("sizeRequired"));
+    showToast(
+      "Bitte zuerst eine Größe auswählen."
+    );
+
     return;
 
   }
 
-  const size =
+  const size=
     currentProduct.category==="sticker"
-      ? "UNIVERSAL"
-      : currentSize;
+    ?"UNIVERSAL"
+    :currentSize;
 
-  const stock =
-    currentProduct.stock[size] || 0;
-
-  if(stock < currentQuantity){
-
-    showToast(t("soldOut"));
-    return;
-
-  }
-
-  const existing =
+  const existing=
     cart.find(
-      item =>
-        item.id===currentProduct.id &&
+      item=>
+        item.id===currentProduct.id&&
         item.size===size
     );
 
   if(existing){
 
-    existing.quantity += currentQuantity;
+    existing.quantity+=currentQuantity;
 
   }else{
 
     cart.push({
       id:currentProduct.id,
-      size,
+      size:size,
       quantity:currentQuantity
     });
 
@@ -3391,7 +3604,9 @@ function addCurrentProductToCart(){
 
   renderCart();
 
-  showToast(t("added"));
+  showToast(
+    "Zum Warenkorb hinzugefügt"
+  );
 
   closeModal("productModal");
 
@@ -3399,26 +3614,19 @@ function addCurrentProductToCart(){
 
 function renderSimilarProducts(){
 
-  const container =
+  const container=
     document.getElementById("similarProducts");
 
-  const similar =
+  const similar=
     products
       .filter(
-        p =>
-          p.id!==currentProduct.id &&
+        p=>
+          p.id!==currentProduct.id&&
           p.category===currentProduct.category
       )
       .slice(0,3);
 
-  if(!similar.length){
-
-    container.innerHTML="";
-    return;
-
-  }
-
-  container.innerHTML =
+  container.innerHTML=
     similar.map(product=>`
 
       <div
@@ -3426,9 +3634,14 @@ function renderSimilarProducts(){
         onclick="openProduct(${product.id})"
       >
 
-        <img src="${product.image}" alt="">
+        <img
+          src="${product.image}"
+          alt=""
+        >
 
-        <div>${escapeHtml(product.name)}</div>
+        <div>
+          ${product.name}
+        </div>
 
       </div>
 
@@ -3455,28 +3668,42 @@ function toggleWishlist(id){
 
   if(wishlist.includes(id)){
 
-    wishlist =
+    wishlist=
       wishlist.filter(item=>item!==id);
 
-    showToast(t("removed"));
+    showToast(
+      "Aus Wunschliste entfernt"
+    );
 
   }else{
 
     wishlist.push(id);
 
-    showToast(t("saved"));
+    showToast(
+      "Zur Wunschliste hinzugefügt"
+    );
 
   }
 
   saveState();
+
   updateBadges();
+
   renderProducts();
+
+  if(
+    document
+      .getElementById("wishlistModal")
+      .classList.contains("open")
+  ){
+    renderWishlist();
+  }
 
 }
 
 function toggleWishlistFromModal(){
 
-  if(!currentProduct) return;
+  if(!currentProduct)return;
 
   toggleWishlist(currentProduct.id);
 
@@ -3486,16 +3713,16 @@ function toggleWishlistFromModal(){
 
 function updateModalWishlist(){
 
-  const button =
+  const button=
     document.getElementById("modalHeart");
 
-  if(!currentProduct) return;
+  if(!currentProduct)return;
 
-  const active =
+  const active=
     wishlist.includes(currentProduct.id);
 
-  button.textContent =
-    active ? "♥":"♡";
+  button.textContent=
+    active?"♥":"♡";
 
   button.classList.toggle(
     "active",
@@ -3514,10 +3741,10 @@ function openWishlist(){
 
 function renderWishlist(){
 
-  const grid =
+  const grid=
     document.getElementById("wishlistGrid");
 
-  const items =
+  const items=
     wishlist
       .map(id=>products.find(p=>p.id===id))
       .filter(Boolean);
@@ -3526,11 +3753,16 @@ function renderWishlist(){
 
     grid.innerHTML=`
 
-      <div class="empty-state" style="grid-column:1/-1">
+      <div
+        class="empty-state"
+        style="grid-column:1/-1"
+      >
 
-        <strong>${t("emptyWishlist")}</strong>
+        <strong>
+          DEINE WUNSCHLISTE IST LEER
+        </strong>
 
-        ${t("emptyWishlistText")}
+        Speichere Produkte mit dem Herz-Symbol.
 
       </div>
 
@@ -3540,7 +3772,7 @@ function renderWishlist(){
 
   }
 
-  grid.innerHTML =
+  grid.innerHTML=
     items.map(product=>`
 
       <div
@@ -3548,13 +3780,20 @@ function renderWishlist(){
         onclick="openProduct(${product.id})"
       >
 
-        <img src="${product.image}" alt="">
+        <img
+          src="${product.image}"
+          alt=""
+        >
 
         <div class="wishlist-item-info">
 
-          <strong>${escapeHtml(product.name)}</strong>
+          <strong>
+            ${product.name}
+          </strong>
 
-          <span>${formatPrice(product.price)}</span>
+          <span>
+            ${formatPrice(product.price)}
+          </span>
 
         </div>
 
@@ -3579,10 +3818,10 @@ function openCart(){
 
 function renderCart(){
 
-  const body =
+  const body=
     document.getElementById("cartBody");
 
-  const summary =
+  const summary=
     document.getElementById("cartSummary");
 
   if(!cart.length){
@@ -3591,9 +3830,11 @@ function renderCart(){
 
       <div class="empty-state">
 
-        <strong>${t("emptyCart")}</strong>
+        <strong>
+          DEIN WARENKORB IST LEER
+        </strong>
 
-        ${t("emptyCartText")}
+        Entdecke unsere aktuelle Collection.
 
       </div>
 
@@ -3605,28 +3846,31 @@ function renderCart(){
 
   }
 
-  body.innerHTML =
+  body.innerHTML=
     cart.map((item,index)=>{
 
-      const product =
+      const product=
         products.find(p=>p.id===item.id);
 
-      if(!product) return "";
+      if(!product)return "";
 
       return `
 
         <div class="cart-item">
 
-          <img src="${product.image}" alt="">
+          <img
+            src="${product.image}"
+            alt=""
+          >
 
           <div>
 
             <div class="cart-name">
-              ${escapeHtml(product.name)}
+              ${product.name}
             </div>
 
             <div class="cart-meta">
-              ${item.size}
+              Größe: ${item.size}
             </div>
 
             <div class="cart-controls">
@@ -3637,7 +3881,9 @@ function renderCart(){
                 −
               </button>
 
-              <span>${item.quantity}</span>
+              <span>
+                ${item.quantity}
+              </span>
 
               <button
                 onclick="changeCartQuantity(${index},1)"
@@ -3657,7 +3903,9 @@ function renderCart(){
           </div>
 
           <div class="cart-price">
-            ${formatPrice(product.price * item.quantity)}
+            ${formatPrice(
+              product.price*item.quantity
+            )}
           </div>
 
         </div>
@@ -3666,23 +3914,26 @@ function renderCart(){
 
     }).join("");
 
-  const subtotal =
+  const subtotal=
     cartSubtotal();
 
-  const shipping =
+  const shipping=
     shippingCost();
 
-  const total =
-    subtotal + shipping;
+  const total=
+    subtotal+shipping;
 
-  const progress =
+  const progress=
     Math.min(
       100,
-      (subtotal/100)*100
+      subtotal
     );
 
-  const remaining =
-    Math.max(0,100-subtotal);
+  const remaining=
+    Math.max(
+      0,
+      100-subtotal
+    );
 
   summary.innerHTML=`
 
@@ -3693,12 +3944,10 @@ function renderCart(){
         <span>
           ${
             remaining>0
-              ? t("toFreeShipping")
-                  .replace(
-                    "{amount}",
-                    formatPrice(remaining)
-                  )
-              : t("freeShippingReached")
+            ?"NOCH "+
+              formatPrice(remaining)+
+              " BIS KOSTENLOSER VERSAND"
+            :"KOSTENLOSER VERSAND ERREICHT"
           }
         </span>
 
@@ -3707,26 +3956,47 @@ function renderCart(){
       </div>
 
       <div class="progress">
-        <span style="width:${progress}%"></span>
+
+        <span
+          style="width:${progress}%"
+        ></span>
+
       </div>
 
     </div>
 
     <div class="summary-row">
-      <span>${t("subtotal")}</span>
-      <span>${formatPrice(subtotal)}</span>
+
+      <span>ZWISCHENSUMME</span>
+
+      <span>
+        ${formatPrice(subtotal)}
+      </span>
+
     </div>
 
     <div class="summary-row">
-      <span>${t("shipping")}</span>
+
+      <span>VERSAND</span>
+
       <span>
-        ${shipping===0 ? t("free") : formatPrice(shipping)}
+        ${
+          shipping===0
+          ?"KOSTENLOS"
+          :formatPrice(shipping)
+        }
       </span>
+
     </div>
 
     <div class="summary-row total">
-      <span>${t("total")}</span>
-      <span>${formatPrice(total)}</span>
+
+      <span>GESAMT</span>
+
+      <span>
+        ${formatPrice(total)}
+      </span>
+
     </div>
 
     <button
@@ -3734,7 +4004,7 @@ function renderCart(){
       onclick="openCheckout()"
       style="margin-top:16px"
     >
-      ${t("checkoutNow")}
+      ZUR KASSE
     </button>
 
   `;
@@ -3745,17 +4015,17 @@ function changeCartQuantity(index,amount){
 
   const item=cart[index];
 
-  if(!item) return;
+  if(!item)return;
 
-  const product =
+  const product=
     products.find(p=>p.id===item.id);
 
-  if(!product) return;
+  if(!product)return;
 
-  const max =
-    product.stock[item.size] || 0;
+  const max=
+    product.stock[item.size]||0;
 
-  item.quantity =
+  item.quantity=
     Math.max(
       0,
       Math.min(
@@ -3769,7 +4039,9 @@ function changeCartQuantity(index,amount){
   }
 
   saveState();
+
   updateBadges();
+
   renderCart();
 
 }
@@ -3779,7 +4051,9 @@ function removeCartItem(index){
   cart.splice(index,1);
 
   saveState();
+
   updateBadges();
+
   renderCart();
 
 }
@@ -3793,7 +4067,8 @@ function openCheckout(){
 
   if(!cart.length){
 
-    showToast(t("cartEmptyCheckout"));
+    showToast("Dein Warenkorb ist leer.");
+
     return;
 
   }
@@ -3802,26 +4077,39 @@ function openCheckout(){
     .innerHTML=`
 
       <div class="summary-row">
-        <span>${t("subtotal")}</span>
-        <span>${formatPrice(cartSubtotal())}</span>
+
+        <span>ZWISCHENSUMME</span>
+
+        <span>
+          ${formatPrice(cartSubtotal())}
+        </span>
+
       </div>
 
       <div class="summary-row">
-        <span>${t("shipping")}</span>
+
+        <span>VERSAND</span>
+
         <span>
           ${
             shippingCost()===0
-              ? t("free")
-              : formatPrice(shippingCost())
+            ?"KOSTENLOS"
+            :formatPrice(shippingCost())
           }
         </span>
+
       </div>
 
       <div class="summary-row total">
-        <span>${t("total")}</span>
+
+        <span>GESAMT</span>
+
         <span>
-          ${formatPrice(cartSubtotal()+shippingCost())}
+          ${formatPrice(
+            cartSubtotal()+shippingCost()
+          )}
         </span>
+
       </div>
 
     `;
@@ -3842,57 +4130,53 @@ function selectPayment(element){
 
   element.classList.add("active");
 
-  selectedPayment =
-    element.textContent.trim();
-
 }
 
 function placeDemoOrder(){
 
   if(!cart.length){
 
-    showToast(t("cartEmptyCheckout"));
+    showToast("Dein Warenkorb ist leer.");
+
     return;
 
   }
 
-  const firstName =
-    document.getElementById("checkoutFirstName").value.trim();
+  const firstName=
+    document.getElementById(
+      "checkoutFirstName"
+    ).value.trim();
 
-  const lastName =
-    document.getElementById("checkoutLastName").value.trim();
+  const lastName=
+    document.getElementById(
+      "checkoutLastName"
+    ).value.trim();
 
-  const email =
-    document.getElementById("checkoutEmail").value.trim();
+  const email=
+    document.getElementById(
+      "checkoutEmail"
+    ).value.trim();
 
-  if(!firstName || !lastName || !email){
+  if(!firstName||!lastName||!email){
 
     showToast(
-      currentLanguage==="de"
-        ? "Bitte Name und E-Mail ausfüllen."
-        : currentLanguage==="en"
-          ? "Please enter your name and email."
-          : "Введите имя и e-mail."
+      "Bitte Name und E-Mail ausfüllen."
     );
 
     return;
 
   }
 
-  const order = {
+  const order={
 
     id:
-      "GON-" +
-      Date.now().toString().slice(-7),
+      "GON-"+
+      Date.now()
+        .toString()
+        .slice(-7),
 
     date:
-      new Date().toLocaleDateString(
-        currentLanguage==="de"
-          ? "de-DE"
-          : currentLanguage==="ru"
-            ? "ru-RU"
-            : "en-US"
-      ),
+      new Date().toLocaleDateString("de-DE"),
 
     items:
       cart.map(item=>({...item})),
@@ -3916,9 +4200,9 @@ function placeDemoOrder(){
 
   closeModal("checkoutModal");
 
-  showToast(t("orderSuccess"));
-
-  updateAccount();
+  showToast(
+    "DEMO-BESTELLUNG ERFOLGREICH ERSTELLT"
+  );
 
 }
 
@@ -3937,7 +4221,7 @@ function openAccount(){
 
 function updateAccount(){
 
-  const container =
+  const container=
     document.getElementById("accountContent");
 
   if(!account){
@@ -3950,22 +4234,20 @@ function updateAccount(){
           class="account-tab active"
           onclick="showLoginForm()"
         >
-          ${t("login")}
+          EINLOGGEN
         </button>
 
         <button
           class="account-tab"
           onclick="showRegisterForm()"
         >
-          ${t("register")}
+          REGISTRIEREN
         </button>
 
       </div>
 
       <div id="accountForm">
-
         ${loginForm()}
-
       </div>
 
     `;
@@ -3979,11 +4261,11 @@ function updateAccount(){
     <div class="account-card">
 
       <h3>
-        ${escapeHtml(account.username)}
+        ${account.username}
       </h3>
 
       <p>
-        ${escapeHtml(account.email)}
+        ${account.email}
       </p>
 
     </div>
@@ -3994,14 +4276,17 @@ function updateAccount(){
         class="account-tab active"
         onclick="showOrders()"
       >
-        ${t("orders")}
+        BESTELLUNGEN
       </button>
 
       <button
         class="account-tab"
-        onclick="openWishlist();closeModal('accountModal')"
+        onclick="
+          closeModal('accountModal');
+          openWishlist();
+        "
       >
-        ${t("wishlistTab")}
+        WUNSCHLISTE
       </button>
 
     </div>
@@ -4015,7 +4300,7 @@ function updateAccount(){
       onclick="logoutAccount()"
       style="margin-top:15px"
     >
-      ${t("logout")}
+      AUSLOGGEN
     </button>
 
   `;
@@ -4028,21 +4313,30 @@ function loginForm(){
 
     <div class="account-card">
 
-      <h3>${t("loginDemo")}</h3>
+      <h3>Demo-Login</h3>
 
-      <div class="form-group" style="margin-top:18px">
+      <div
+        class="form-group"
+        style="margin-top:18px"
+      >
 
-        <label>${t("username")}</label>
+        <label>BENUTZERNAME</label>
 
-        <input id="loginUsername" type="text">
+        <input
+          id="loginUsername"
+          type="text"
+        >
 
       </div>
 
       <div class="form-group">
 
-        <label>${t("email")}</label>
+        <label>E-MAIL</label>
 
-        <input id="loginEmail" type="email">
+        <input
+          id="loginEmail"
+          type="email"
+        >
 
       </div>
 
@@ -4050,7 +4344,7 @@ function loginForm(){
         class="add-cart"
         onclick="loginAccount()"
       >
-        ${t("login")}
+        EINLOGGEN
       </button>
 
     </div>
@@ -4065,21 +4359,30 @@ function registerForm(){
 
     <div class="account-card">
 
-      <h3>${t("createAccount")}</h3>
+      <h3>ACCOUNT ERSTELLEN</h3>
 
-      <div class="form-group" style="margin-top:18px">
+      <div
+        class="form-group"
+        style="margin-top:18px"
+      >
 
-        <label>${t("username")}</label>
+        <label>BENUTZERNAME</label>
 
-        <input id="registerUsername" type="text">
+        <input
+          id="registerUsername"
+          type="text"
+        >
 
       </div>
 
       <div class="form-group">
 
-        <label>${t("email")}</label>
+        <label>E-MAIL</label>
 
-        <input id="registerEmail" type="email">
+        <input
+          id="registerEmail"
+          type="email"
+        >
 
       </div>
 
@@ -4087,7 +4390,7 @@ function registerForm(){
         class="add-cart"
         onclick="registerAccount()"
       >
-        ${t("createAccount")}
+        ACCOUNT ERSTELLEN
       </button>
 
     </div>
@@ -4098,32 +4401,34 @@ function registerForm(){
 
 function showLoginForm(){
 
-  document.getElementById("accountForm").innerHTML =
-    loginForm();
+  document.getElementById("accountForm")
+    .innerHTML=loginForm();
 
 }
 
 function showRegisterForm(){
 
-  document.getElementById("accountForm").innerHTML =
-    registerForm();
+  document.getElementById("accountForm")
+    .innerHTML=registerForm();
 
 }
 
 function loginAccount(){
 
-  const username =
-    document.getElementById("loginUsername").value.trim();
+  const username=
+    document.getElementById(
+      "loginUsername"
+    ).value.trim();
 
-  const email =
-    document.getElementById("loginEmail").value.trim();
+  const email=
+    document.getElementById(
+      "loginEmail"
+    ).value.trim();
 
-  if(!username || !email){
+  if(!username||!email){
 
     showToast(
-      currentLanguage==="de"
-        ? "Bitte Felder ausfüllen."
-        : "Please fill in all fields."
+      "Bitte Felder ausfüllen."
     );
 
     return;
@@ -4143,18 +4448,20 @@ function loginAccount(){
 
 function registerAccount(){
 
-  const username =
-    document.getElementById("registerUsername").value.trim();
+  const username=
+    document.getElementById(
+      "registerUsername"
+    ).value.trim();
 
-  const email =
-    document.getElementById("registerEmail").value.trim();
+  const email=
+    document.getElementById(
+      "registerEmail"
+    ).value.trim();
 
-  if(!username || !email){
+  if(!username||!email){
 
     showToast(
-      currentLanguage==="de"
-        ? "Bitte Felder ausfüllen."
-        : "Please fill in all fields."
+      "Bitte Felder ausfüllen."
     );
 
     return;
@@ -4170,7 +4477,9 @@ function registerAccount(){
 
   updateAccount();
 
-  showToast(t("registered"));
+  showToast(
+    "ACCOUNT ERSTELLT"
+  );
 
 }
 
@@ -4186,7 +4495,7 @@ function logoutAccount(){
 
 function showOrders(){
 
-  const panel =
+  const panel=
     document.getElementById("accountPanel");
 
   if(panel){
@@ -4203,7 +4512,9 @@ function ordersHtml(){
 
       <div class="empty-state">
 
-        <strong>${t("noOrders")}</strong>
+        <strong>
+          NOCH KEINE BESTELLUNGEN
+        </strong>
 
       </div>
 
@@ -4218,11 +4529,11 @@ function ordersHtml(){
       <div>
 
         <div class="order-id">
-          ${escapeHtml(order.id)}
+          ${order.id}
         </div>
 
         <div class="order-date">
-          ${escapeHtml(order.date)}
+          ${order.date}
         </div>
 
       </div>
@@ -4233,7 +4544,12 @@ function ordersHtml(){
           DEMO
         </div>
 
-        <div style="font-size:11px;margin-top:5px">
+        <div
+          style="
+            font-size:11px;
+            margin-top:5px
+          "
+        >
           ${formatPrice(order.total)}
         </div>
 
@@ -4252,24 +4568,32 @@ function ordersHtml(){
 
 function openLegal(type){
 
-  const content =
+  const content=
     document.getElementById("legalContent");
 
   const data={
 
     impressum:`
-      <h2>${t("imprintTitle")}</h2>
+
+      <h2>IMPRESSUM</h2>
+
       <p>
         ГОНЩИКИ CREW<br>
         Streetwear · Est. 2025<br><br>
+
         Kontakt:<br>
         info@gonschikicrew.de<br><br>
-        Instagram: @gonschikicrew
+
+        Instagram:<br>
+        @gonschikicrew
       </p>
+
     `,
 
     privacy:`
-      <h2>${t("privacyTitle")}</h2>
+
+      <h2>DATENSCHUTZ</h2>
+
       <p>
         Diese Website ist aktuell eine Demo-Version.
         Es werden keine echten Bestellungen oder Zahlungen
@@ -4277,32 +4601,39 @@ function openLegal(type){
         Wunschliste und Demo-Account können ausschließlich
         im Browser gespeichert werden.
       </p>
+
     `,
 
     withdrawal:`
-      <h2>${t("withdrawalTitle")}</h2>
+
+      <h2>WIDERRUF</h2>
+
       <p>
         Diese Website ist aktuell ein Demo-Shop.
         Es werden keine echten Bestellungen angenommen.
         Daher entsteht über diese Website derzeit kein
         echter Kaufvertrag.
       </p>
+
     `,
 
     terms:`
-      <h2>${t("termsTitle")}</h2>
+
+      <h2>AGB</h2>
+
       <p>
         Dies ist eine nicht öffentliche Verkaufs-Demo.
         Preise, Größen, Versandkosten und Verfügbarkeit
         können sich noch ändern. Die Checkout-Funktion
         dient ausschließlich zu Demonstrationszwecken.
       </p>
+
     `
 
   };
 
-  content.innerHTML =
-    data[type] || "";
+  content.innerHTML=
+    data[type]||"";
 
   openModal("legalModal");
 
@@ -4311,8 +4642,6 @@ function openLegal(type){
 
 /* =========================================================
    ADMIN
-   ONLY ACCESSIBLE VIA URL HASH:
-   https://DEINE-SEITE/#admin
 ========================================================= */
 
 function checkAdminUrl(){
@@ -4332,20 +4661,25 @@ function openAdminLogin(){
   document.getElementById("adminContent")
     .innerHTML=`
 
-      <div class="eyebrow">ГОНЩИКИ</div>
+      <div class="eyebrow">
+        ГОНЩИКИ
+      </div>
 
       <h2 class="admin-title">
-        ${t("adminLogin")}
+        ADMIN LOGIN
       </h2>
 
       <div class="form-group">
 
-        <label>${t("adminPassword")}</label>
+        <label>PASSWORT</label>
 
         <input
           id="adminPasswordInput"
           type="password"
-          onkeydown="if(event.key==='Enter')checkAdminPassword()"
+          onkeydown="
+            if(event.key==='Enter')
+            checkAdminPassword()
+          "
         >
 
       </div>
@@ -4354,7 +4688,7 @@ function openAdminLogin(){
         class="add-cart"
         onclick="checkAdminPassword()"
       >
-        ${t("adminEnter")}
+        ÖFFNEN
       </button>
 
     `;
@@ -4365,14 +4699,17 @@ function openAdminLogin(){
 
 function checkAdminPassword(){
 
-  const password =
+  const password=
     document.getElementById(
       "adminPasswordInput"
     ).value;
 
   if(password!=="gonschiki2025"){
 
-    showToast(t("wrongPassword"));
+    showToast(
+      "Falsches Passwort."
+    );
+
     return;
 
   }
@@ -4383,10 +4720,10 @@ function checkAdminPassword(){
 
 function renderAdmin(){
 
-  const totalProducts =
+  const totalProducts=
     products.length;
 
-  const totalStock =
+  const totalStock=
     products.reduce(
       (sum,p)=>sum+getTotalStock(p),
       0
@@ -4395,71 +4732,85 @@ function renderAdmin(){
   document.getElementById("adminContent")
     .innerHTML=`
 
-      <div class="eyebrow">ГОНЩИКИ · ADMIN</div>
+      <div class="eyebrow">
+        ГОНЩИКИ · ADMIN
+      </div>
 
       <h2 class="admin-title">
-        ${t("adminDashboard")}
+        ADMIN DASHBOARD
       </h2>
 
       <div class="admin-grid">
 
         <div class="admin-stat">
-          <span>PRODUCTS</span>
-          <strong>${totalProducts}</strong>
+
+          <span>
+            PRODUCTS
+          </span>
+
+          <strong>
+            ${totalProducts}
+          </strong>
+
         </div>
 
         <div class="admin-stat">
-          <span>STOCK</span>
-          <strong>${totalStock}</strong>
+
+          <span>
+            STOCK
+          </span>
+
+          <strong>
+            ${totalStock}
+          </strong>
+
         </div>
 
         <div class="admin-stat">
-          <span>ORDERS</span>
-          <strong>${orders.length}</strong>
+
+          <span>
+            ORDERS
+          </span>
+
+          <strong>
+            ${orders.length}
+          </strong>
+
         </div>
 
       </div>
 
-      <div>
+      ${
+        products.map(product=>`
 
-        ${
-          products.map(product=>`
+          <div class="admin-product">
 
-            <div class="admin-product">
+            <img
+              src="${product.image}"
+              alt=""
+            >
 
-              <img src="${product.image}" alt="">
+            <div>
 
-              <div>
+              <strong>
+                ${product.name}
+              </strong>
 
-                <strong>
-                  ${escapeHtml(product.name)}
-                </strong>
-
-                <small>
-                  ${formatPrice(product.price)}
-                  · Bestand ${getTotalStock(product)}
-                </small>
-
-              </div>
-
-              <div>
-                ${product.category.toUpperCase()}
-              </div>
+              <small>
+                ${formatPrice(product.price)}
+                · Bestand ${getTotalStock(product)}
+              </small>
 
             </div>
 
-          `).join("")
-        }
+            <div>
+              ${product.category.toUpperCase()}
+            </div>
 
-      </div>
+          </div>
 
-      <button
-        class="admin-logout"
-        onclick="closeModal('adminModal');history.replaceState(null,'',window.location.pathname+window.location.search)"
-        style="margin-top:20px"
-      >
-        SCHLIESSEN
-      </button>
+        `).join("")
+      }
 
     `;
 
@@ -4482,12 +4833,10 @@ function scrollToShop(){
 
 
 /* =========================================================
-   INITIALIZATION
+   INIT
 ========================================================= */
 
 function init(){
-
-  applyTranslations();
 
   renderProducts();
 
