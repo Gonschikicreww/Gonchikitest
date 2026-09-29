@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080808">
-
 <title>ГОНЩИКИ — Streetwear</title>
 
 <style>
@@ -334,7 +333,7 @@ header{
 }
 
 /* =========================
-   SECTIONS
+   SHOP
 ========================= */
 
 .section{
@@ -350,10 +349,6 @@ header{
   gap:25px;
   margin-bottom:30px;
 }
-
-/* =========================
-   SHOP FILTER
-========================= */
 
 .shop-tools{
   display:flex;
@@ -485,6 +480,7 @@ header{
 
 /* =========================
    ZIPPER
+   ALTER DATEINAME
 ========================= */
 
 .product-card[data-product-id="9"] .product-image-wrap{
@@ -629,7 +625,7 @@ header{
 }
 
 /* =========================
-   MODALS
+   MODAL
 ========================= */
 
 .modal{
@@ -699,6 +695,8 @@ header{
   transition:.3s;
 }
 
+/* ZIPPER MODAL - gleicher Hintergrund */
+
 .product-modal-image.zipper-modal-image{
   background:#151515;
   padding:35px;
@@ -710,6 +708,8 @@ header{
   object-fit:contain;
   opacity:1;
 }
+
+/* STICKER MODAL */
 
 .product-modal-image.sticker-modal-image{
   padding:40px;
@@ -1288,17 +1288,9 @@ footer{
 
 <body>
 
-<!-- =========================
-     PREVIEW BAR
-========================= -->
-
 <div class="preview-bar">
   SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BESTELLUNGEN!
 </div>
-
-<!-- =========================
-     HEADER
-========================= -->
 
 <header>
 
@@ -1306,37 +1298,103 @@ footer{
 
     <div>
       <div class="logo">ГОНЩИКИ</div>
-      <span class="logo-sub">STREETWARE · EST. 2025</span>
+      <span class="logo-sub">
+        STREETWARE · EST. 2025
+      </span>
     </div>
 
     <div class="header-actions">
 
-      <button class="icon-btn" onclick="openWishlist()">
+      <button
+        class="icon-btn"
+        onclick="openWishlist()"
+      >
         ♡
-        <span class="badge" id="wishlistBadge">0</span>
+        <span
+          class="badge"
+          id="wishlistBadge"
+        >0</span>
       </button>
 
-      <button class="icon-btn" onclick="openAccount()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-          <circle cx="12" cy="8" r="4"></circle>
-          <path d="M4 21c0-4.2 3.5-7 8-7s8 2.8 8 7"></path>
+      <button
+        class="icon-btn"
+        onclick="openAccount()"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+        >
+          <circle
+            cx="12"
+            cy="8"
+            r="4"
+          ></circle>
+
+          <path
+            d="M4 21c0-4.2 3.5-7 8-7s8 2.8 8 7"
+          ></path>
+
         </svg>
+
       </button>
 
-      <button class="icon-btn" onclick="openCart()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-          <path d="M4 5h2l2 11h10l2-8H7"></path>
-          <circle cx="10" cy="20" r="1"></circle>
-          <circle cx="17" cy="20" r="1"></circle>
+      <button
+        class="icon-btn"
+        onclick="openCart()"
+      >
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.6"
+        >
+
+          <path
+            d="M4 5h2l2 11h10l2-8H7"
+          ></path>
+
+          <circle
+            cx="10"
+            cy="20"
+            r="1"
+          ></circle>
+
+          <circle
+            cx="17"
+            cy="20"
+            r="1"
+          ></circle>
+
         </svg>
 
-        <span class="badge" id="cartBadge">0</span>
+        <span
+          class="badge"
+          id="cartBadge"
+        >0</span>
+
       </button>
 
-      <select class="lang-select" onchange="changeLanguage(this.value)">
-        <option value="de">DE</option>
-        <option value="en">EN</option>
-        <option value="ru">RU</option>
+      <select
+        class="lang-select"
+        onchange="changeLanguage(this.value)"
+      >
+
+        <option value="de">
+          DE
+        </option>
+
+        <option value="en">
+          EN
+        </option>
+
+        <option value="ru">
+          RU
+        </option>
+
       </select>
 
     </div>
@@ -1344,10 +1402,6 @@ footer{
   </div>
 
 </header>
-
-<!-- =========================
-     MAIN
-========================= -->
 
 <main>
 
@@ -1371,16 +1425,24 @@ footer{
 
     <h1>
       ГОНЩИКИ
-      <span>STREETWARE FOR THE CAR CULTURE</span>
+      <span>
+        STREETWARE FOR THE CAR CULTURE
+      </span>
     </h1>
 
     <div class="hero-buttons">
 
-      <button class="btn" onclick="scrollToShop()">
+      <button
+        class="btn"
+        onclick="scrollToShop()"
+      >
         SHOP ENTDECKEN
       </button>
 
-      <button class="btn dark" onclick="openWishlist()">
+      <button
+        class="btn dark"
+        onclick="openWishlist()"
+      >
         WUNSCHLISTE
       </button>
 
@@ -1390,9 +1452,7 @@ footer{
 
 </section>
 
-<!-- =========================
-     GARAGE
-========================= -->
+<!-- GARAGE -->
 
 <section class="garage">
 
@@ -1401,6 +1461,7 @@ footer{
     <div class="garage-head">
 
       <div>
+
         <div class="eyebrow">
           GONSHIKI CREW
         </div>
@@ -1408,6 +1469,7 @@ footer{
         <h2 class="garage-title">
           GARAGE.
         </h2>
+
       </div>
 
       <p class="garage-description">
@@ -1420,35 +1482,50 @@ footer{
     <div class="car-gallery">
 
       <div class="car-card">
-        <img src="assets/Car-1.JPG" alt="Car 1">
+        <img
+          src="assets/Car-1.JPG"
+          alt="Car 1"
+        >
         <div class="car-overlay"></div>
         <div class="car-number">01</div>
         <div class="car-view">VIEW</div>
       </div>
 
       <div class="car-card">
-        <img src="assets/Car-2.JPG" alt="Car 2">
+        <img
+          src="assets/Car-2.JPG"
+          alt="Car 2"
+        >
         <div class="car-overlay"></div>
         <div class="car-number">02</div>
         <div class="car-view">VIEW</div>
       </div>
 
       <div class="car-card">
-        <img src="assets/Car-3.jpg" alt="Car 3">
+        <img
+          src="assets/Car-3.jpg"
+          alt="Car 3"
+        >
         <div class="car-overlay"></div>
         <div class="car-number">03</div>
         <div class="car-view">VIEW</div>
       </div>
 
       <div class="car-card">
-        <img src="assets/Car-4.jpg" alt="Car 4">
+        <img
+          src="assets/Car-4.jpg"
+          alt="Car 4"
+        >
         <div class="car-overlay"></div>
         <div class="car-number">04</div>
         <div class="car-view">VIEW</div>
       </div>
 
       <div class="car-card">
-        <img src="assets/Car-5.jpg" alt="Car 5">
+        <img
+          src="assets/Car-5.jpg"
+          alt="Car 5"
+        >
         <div class="car-overlay"></div>
         <div class="car-number">05</div>
         <div class="car-view">VIEW</div>
@@ -1460,11 +1537,12 @@ footer{
 
 </section>
 
-<!-- =========================
-     SHOP
-========================= -->
+<!-- SHOP -->
 
-<section class="section" id="shop">
+<section
+  class="section"
+  id="shop"
+>
 
   <div class="section-head">
 
@@ -1488,8 +1566,6 @@ footer{
   </div>
 
   <div class="shop-tools">
-
-    <!-- SEARCH -->
 
     <div class="search-row">
 
@@ -1517,8 +1593,6 @@ footer{
 
     </div>
 
-    <!-- GENDER -->
-
     <div class="filter-row">
 
       <button
@@ -1543,8 +1617,6 @@ footer{
       </button>
 
     </div>
-
-    <!-- CATEGORY -->
 
     <div class="filter-row">
 
@@ -1613,9 +1685,7 @@ footer{
 
 </section>
 
-<!-- =========================
-     FEATURES
-========================= -->
+<!-- FEATURES -->
 
 <section class="section">
 
@@ -1631,7 +1701,11 @@ footer{
 
     <div class="feature-card">
       <div class="feature-number">01</div>
-      <h3>STREETWEAR</h3>
+
+      <h3>
+        STREETWEAR
+      </h3>
+
       <p>
         Schlichte Farben, klare Designs und ein Stil,
         der auch außerhalb des Treffens funktioniert.
@@ -1640,7 +1714,11 @@ footer{
 
     <div class="feature-card">
       <div class="feature-number">02</div>
-      <h3>CAR CULTURE</h3>
+
+      <h3>
+        CAR CULTURE
+      </h3>
+
       <p>
         Inspiriert von BMW, japanischen Builds,
         Night Drives und der gesamten Auto-Community.
@@ -1649,7 +1727,11 @@ footer{
 
     <div class="feature-card">
       <div class="feature-number">03</div>
-      <h3>COMMUNITY</h3>
+
+      <h3>
+        COMMUNITY
+      </h3>
+
       <p>
         ГОНЩИКИ soll nicht nur eine Marke sein,
         sondern eine Crew.
@@ -1658,7 +1740,11 @@ footer{
 
     <div class="feature-card">
       <div class="feature-number">04</div>
-      <h3>EST. 2025</h3>
+
+      <h3>
+        EST. 2025
+      </h3>
+
       <p>
         Angefangen als Idee. Entwickelt für die
         nächste Generation der Auto-Community.
@@ -1671,9 +1757,7 @@ footer{
 
 </main>
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -1715,9 +1799,7 @@ footer{
 
 </footer>
 
-<!-- =========================
-     PRODUCT MODAL
-========================= -->
+<!-- PRODUCT MODAL -->
 
 <div
   class="modal"
@@ -1837,9 +1919,7 @@ footer{
 
 </div>
 
-<!-- =========================
-     CART
-========================= -->
+<!-- CART -->
 
 <div
   class="drawer"
@@ -1878,9 +1958,7 @@ footer{
 
 </div>
 
-<!-- =========================
-     WISHLIST
-========================= -->
+<!-- WISHLIST -->
 
 <div
   class="modal"
@@ -1919,9 +1997,7 @@ footer{
 
 </div>
 
-<!-- =========================
-     ACCOUNT
-========================= -->
+<!-- ACCOUNT -->
 
 <div
   class="modal"
@@ -1947,9 +2023,7 @@ footer{
 
 </div>
 
-<!-- =========================
-     LEGAL
-========================= -->
+<!-- LEGAL -->
 
 <div
   class="modal"
@@ -1975,10 +2049,6 @@ footer{
 
 </div>
 
-<!-- =========================
-     TOAST
-========================= -->
-
 <div
   class="toast"
   id="toast"
@@ -1987,7 +2057,7 @@ footer{
 <script>
 
 /* =========================
-   PRODUCTS
+   PRODUKTE
 ========================= */
 
 const products = [
@@ -2082,7 +2152,10 @@ const products = [
     name:"GONSHIKI ZIPPER KREUZ",
     category:"zipper",
     price:69.99,
-    image:"assets/Zipper-black-Kreuz-transparent.png",
+
+    /* ALTER DATEINAME */
+    image:"assets/Zipper-black-Kreuz.jpg",
+
     description:"Schwarzer ГОНЩИКИ Zipper mit Kreuz Design.",
     stock:{
       XS:4,
@@ -2151,7 +2224,7 @@ const products = [
 
 
 /* =========================
-   VARIABLES
+   VARIABLEN
 ========================= */
 
 let selectedGender = "all";
@@ -2161,17 +2234,19 @@ let currentProduct = null;
 let currentSize = null;
 let currentQuantity = 1;
 
-let cart = JSON.parse(
-  localStorage.getItem("gonschiki_cart") || "[]"
-);
+let cart =
+  JSON.parse(
+    localStorage.getItem("gonschiki_cart") || "[]"
+  );
 
-let wishlist = JSON.parse(
-  localStorage.getItem("gonschiki_wishlist") || "[]"
-);
+let wishlist =
+  JSON.parse(
+    localStorage.getItem("gonschiki_wishlist") || "[]"
+  );
 
 
 /* =========================
-   PRICE
+   PREIS
 ========================= */
 
 function formatPrice(value){
@@ -2194,7 +2269,10 @@ function formatPrice(value){
 function totalStock(product){
 
   return Object.values(product.stock)
-    .reduce((a,b) => a + b, 0);
+    .reduce(
+      (a,b) => a + b,
+      0
+    );
 
 }
 
@@ -2205,13 +2283,18 @@ function totalStock(product){
 
 function updateBadges(){
 
-  document.getElementById("cartBadge").textContent =
+  document.getElementById(
+    "cartBadge"
+  ).textContent =
     cart.reduce(
       (a,b) => a + b.quantity,
       0
     );
 
-  document.getElementById("wishlistBadge").textContent =
+
+  document.getElementById(
+    "wishlistBadge"
+  ).textContent =
     wishlist.length;
 
 }
@@ -2230,11 +2313,15 @@ function toast(message){
 
   t.classList.add("show");
 
-  clearTimeout(window.toastTimer);
+  clearTimeout(
+    window.toastTimer
+  );
 
   window.toastTimer =
     setTimeout(
-      () => t.classList.remove("show"),
+      () => {
+        t.classList.remove("show");
+      },
       2200
     );
 
@@ -2242,7 +2329,7 @@ function toast(message){
 
 
 /* =========================
-   GENDER
+   GENDER FILTER
 ========================= */
 
 function setGender(gender,button){
@@ -2264,7 +2351,7 @@ function setGender(gender,button){
 
 
 /* =========================
-   CATEGORY
+   CATEGORY FILTER
 ========================= */
 
 function setCategory(category,button){
@@ -2301,7 +2388,7 @@ function clearSearch(){
 
 
 /* =========================
-   RENDER PRODUCTS
+   PRODUCTS RENDERN
 ========================= */
 
 function renderProducts(){
@@ -2313,12 +2400,14 @@ function renderProducts(){
       .toLowerCase()
       .trim();
 
+
   const filtered =
     products.filter(product => {
 
       const categoryMatch =
         selectedCategory === "all" ||
         product.category === selectedCategory;
+
 
       const searchMatch =
         !search ||
@@ -2328,6 +2417,7 @@ function renderProducts(){
         product.description
           .toLowerCase()
           .includes(search);
+
 
       return (
         categoryMatch &&
@@ -2350,76 +2440,81 @@ function renderProducts(){
 
   document.getElementById(
     "productGrid"
-  ).innerHTML = filtered.map(product => {
+  ).innerHTML =
+    filtered.map(product => {
 
-    const stock =
-      totalStock(product);
+      const stock =
+        totalStock(product);
 
-    const liked =
-      wishlist.includes(product.id);
+      const liked =
+        wishlist.includes(product.id);
 
 
-    return `
+      return `
 
-      <article
-        class="product-card ${product.category === "sticker" ? "sticker-card" : ""}"
-        data-product-id="${product.id}"
-        onclick="openProduct(${product.id})"
-      >
+        <article
+          class="product-card ${product.category === "sticker" ? "sticker-card" : ""}"
+          data-product-id="${product.id}"
+          onclick="openProduct(${product.id})"
+        >
 
-        <div class="product-image-wrap">
+          <div class="product-image-wrap">
 
-          <img
-            class="product-image"
-            src="${product.image}"
-            alt="${product.name}"
-            loading="lazy"
-          >
+            <img
+              class="product-image"
+              src="${product.image}"
+              alt="${product.name}"
+              loading="lazy"
+            >
 
-          <button
-            class="product-heart ${liked ? "active" : ""}"
-            onclick="event.stopPropagation();toggleWishlist(${product.id})"
-          >
-            ${liked ? "♥" : "♡"}
-          </button>
+            <button
+              class="product-heart ${liked ? "active" : ""}"
+              onclick="event.stopPropagation();toggleWishlist(${product.id})"
+            >
+              ${liked ? "♥" : "♡"}
+            </button>
 
-        </div>
-
-        <div class="product-info">
-
-          <div class="product-category">
-            ${product.category.toUpperCase()}
           </div>
 
-          <div class="product-name">
-            ${product.name}
-          </div>
+          <div class="product-info">
 
-          <div class="product-bottom">
-
-            <div class="product-price">
-              ${formatPrice(product.price)}
+            <div class="product-category">
+              ${product.category.toUpperCase()}
             </div>
 
-            <div class="product-stock">
-              ${stock > 0 ? "VERFÜGBAR" : "AUSVERKAUFT"}
+            <div class="product-name">
+              ${product.name}
+            </div>
+
+            <div class="product-bottom">
+
+              <div class="product-price">
+                ${formatPrice(product.price)}
+              </div>
+
+              <div class="product-stock">
+                ${
+                  stock > 0
+                    ? "VERFÜGBAR"
+                    : "AUSVERKAUFT"
+                }
+              </div>
+
             </div>
 
           </div>
 
-        </div>
+        </article>
 
-      </article>
+      `;
 
-    `;
-
-  }).join("");
+    }).join("");
 
 }
 
 
 /* =========================
-   OPEN PRODUCT
+   PRODUCT ÖFFNEN
 ========================= */
 
 function openProduct(id){
@@ -2429,9 +2524,11 @@ function openProduct(id){
       product => product.id === id
     );
 
+
   if(!currentProduct){
     return;
   }
+
 
   currentSize = null;
   currentQuantity = 1;
@@ -2441,6 +2538,7 @@ function openProduct(id){
     document.getElementById(
       "productModalImage"
     );
+
 
   imageBox.classList.remove(
     "zipper-modal-image",
@@ -2500,7 +2598,8 @@ function openProduct(id){
 
   document.getElementById(
     "modalQuantity"
-  ).textContent = "1";
+  ).textContent =
+    "1";
 
 
   renderSizes();
@@ -2513,7 +2612,7 @@ function openProduct(id){
 
 
 /* =========================
-   SIZES
+   GRÖSSEN
 ========================= */
 
 function renderSizes(){
@@ -2529,11 +2628,14 @@ function renderSizes(){
     );
 
 
-  if(currentProduct.category === "sticker"){
+  if(
+    currentProduct.category === "sticker"
+  ){
 
     area.style.display = "none";
 
-    currentSize = "UNIVERSAL";
+    currentSize =
+      "UNIVERSAL";
 
     return;
 
@@ -2553,7 +2655,9 @@ function renderSizes(){
   ];
 
 
-  if(selectedGender === "women"){
+  if(
+    selectedGender === "women"
+  ){
 
     sizes = [
       "XS",
@@ -2566,7 +2670,9 @@ function renderSizes(){
   }
 
 
-  if(selectedGender === "men"){
+  if(
+    selectedGender === "men"
+  ){
 
     sizes = [
       "S",
@@ -2584,7 +2690,11 @@ function renderSizes(){
 
       <button
         class="size-btn"
-        ${currentProduct.stock[size] <= 0 ? "disabled" : ""}
+        ${
+          currentProduct.stock[size] <= 0
+            ? "disabled"
+            : ""
+        }
         onclick="selectSize('${size}',this)"
       >
         ${size}
@@ -2596,7 +2706,7 @@ function renderSizes(){
 
 
 /* =========================
-   SELECT SIZE
+   GRÖSSE AUSWÄHLEN
 ========================= */
 
 function selectSize(size,button){
@@ -2637,18 +2747,23 @@ function updateModalStock(){
     );
 
 
-  if(currentProduct.category === "sticker"){
+  if(
+    currentProduct.category === "sticker"
+  ){
 
     const stock =
       currentProduct.stock.UNIVERSAL;
+
 
     stockText.textContent =
       stock > 0
         ? stock + " VERFÜGBAR"
         : "AUSVERKAUFT";
 
+
     button.disabled =
       stock <= 0;
+
 
     return;
 
@@ -2684,7 +2799,7 @@ function updateModalStock(){
 
 
 /* =========================
-   QUANTITY
+   MENGE
 ========================= */
 
 function changeModalQuantity(amount){
@@ -2697,7 +2812,9 @@ function changeModalQuantity(amount){
   let max = 1;
 
 
-  if(currentProduct.category === "sticker"){
+  if(
+    currentProduct.category === "sticker"
+  ){
 
     max =
       currentProduct.stock.UNIVERSAL;
@@ -2730,7 +2847,7 @@ function changeModalQuantity(amount){
 
 
 /* =========================
-   ADD TO CART
+   IN WARENKORB
 ========================= */
 
 function addCurrentProductToCart(){
@@ -2740,7 +2857,9 @@ function addCurrentProductToCart(){
     !currentSize
   ){
 
-    toast("Bitte Größe auswählen.");
+    toast(
+      "Bitte Größe auswählen."
+    );
 
     return;
 
@@ -2796,12 +2915,14 @@ function addCurrentProductToCart(){
 
 
 /* =========================
-   WISHLIST
+   WUNSCHLISTE
 ========================= */
 
 function toggleWishlist(id){
 
-  if(wishlist.includes(id)){
+  if(
+    wishlist.includes(id)
+  ){
 
     wishlist =
       wishlist.filter(
@@ -2838,7 +2959,7 @@ function toggleWishlist(id){
 
 
 /* =========================
-   OPEN WISHLIST
+   WUNSCHLISTE ÖFFNEN
 ========================= */
 
 function openWishlist(){
@@ -2916,13 +3037,15 @@ function openWishlist(){
   }
 
 
-  openModal("wishlistModal");
+  openModal(
+    "wishlistModal"
+  );
 
 }
 
 
 /* =========================
-   CART OPEN
+   WARENKORB ÖFFNEN
 ========================= */
 
 function openCart(){
@@ -2965,7 +3088,7 @@ function drawerOutside(event){
 
 
 /* =========================
-   RENDER CART
+   WARENKORB RENDERN
 ========================= */
 
 function renderCart(){
@@ -3005,79 +3128,81 @@ function renderCart(){
 
 
   body.innerHTML =
-    cart.map((item,index) => {
+    cart.map(
+      (item,index) => {
 
-      const product =
-        products.find(
-          x => x.id === item.id
-        );
+        const product =
+          products.find(
+            x => x.id === item.id
+          );
 
 
-      if(!product){
-        return "";
+        if(!product){
+          return "";
+        }
+
+
+        return `
+
+          <div class="cart-item">
+
+            <img
+              src="${product.image}"
+              alt=""
+            >
+
+            <div>
+
+              <div class="cart-name">
+                ${product.name}
+              </div>
+
+              <div class="cart-meta">
+                Größe: ${item.size}
+              </div>
+
+              <div class="cart-controls">
+
+                <button
+                  onclick="changeCartQuantity(${index},-1)"
+                >
+                  −
+                </button>
+
+                <span>
+                  ${item.quantity}
+                </span>
+
+                <button
+                  onclick="changeCartQuantity(${index},1)"
+                >
+                  +
+                </button>
+
+                <button
+                  class="cart-remove"
+                  onclick="removeCartItem(${index})"
+                >
+                  ×
+                </button>
+
+              </div>
+
+            </div>
+
+            <div class="cart-price">
+              ${formatPrice(
+                product.price *
+                item.quantity
+              )}
+            </div>
+
+          </div>
+
+        `;
+
       }
-
-
-      return `
-
-        <div class="cart-item">
-
-          <img
-            src="${product.image}"
-            alt=""
-          >
-
-          <div>
-
-            <div class="cart-name">
-              ${product.name}
-            </div>
-
-            <div class="cart-meta">
-              Größe: ${item.size}
-            </div>
-
-            <div class="cart-controls">
-
-              <button
-                onclick="changeCartQuantity(${index},-1)"
-              >
-                −
-              </button>
-
-              <span>
-                ${item.quantity}
-              </span>
-
-              <button
-                onclick="changeCartQuantity(${index},1)"
-              >
-                +
-              </button>
-
-              <button
-                class="cart-remove"
-                onclick="removeCartItem(${index})"
-              >
-                ×
-              </button>
-
-            </div>
-
-          </div>
-
-          <div class="cart-price">
-            ${formatPrice(
-              product.price *
-              item.quantity
-            )}
-          </div>
-
-        </div>
-
-      `;
-
-    }).join("");
+    ).join("");
 
 
   const subtotal =
@@ -3089,11 +3214,13 @@ function renderCart(){
             x => x.id === item.id
           );
 
+
         return (
           sum +
           (
             product
-              ? product.price * item.quantity
+              ? product.price *
+                item.quantity
               : 0
           )
         );
@@ -3159,12 +3286,17 @@ function renderCart(){
 
 
 /* =========================
-   CHANGE CART
+   CART MENGE ÄNDERN
 ========================= */
 
-function changeCartQuantity(index,amount){
+function changeCartQuantity(
+  index,
+  amount
+){
 
-  const item = cart[index];
+  const item =
+    cart[index];
+
 
   if(!item){
     return;
@@ -3196,7 +3328,9 @@ function changeCartQuantity(index,amount){
     );
 
 
-  if(item.quantity === 0){
+  if(
+    item.quantity === 0
+  ){
 
     cart.splice(index,1);
 
@@ -3217,17 +3351,22 @@ function changeCartQuantity(index,amount){
 
 
 /* =========================
-   REMOVE CART ITEM
+   CART ITEM LÖSCHEN
 ========================= */
 
 function removeCartItem(index){
 
-  cart.splice(index,1);
+  cart.splice(
+    index,
+    1
+  );
+
 
   localStorage.setItem(
     "gonschiki_cart",
     JSON.stringify(cart)
   );
+
 
   updateBadges();
 
@@ -3291,7 +3430,10 @@ function openAccount(){
 
   `;
 
-  openModal("accountModal");
+
+  openModal(
+    "accountModal"
+  );
 
 }
 
@@ -3420,13 +3562,15 @@ function openLegal(type){
     data[type] || "";
 
 
-  openModal("legalModal");
+  openModal(
+    "legalModal"
+  );
 
 }
 
 
 /* =========================
-   MODALS
+   MODAL
 ========================= */
 
 function openModal(id){
@@ -3453,9 +3597,14 @@ function closeModal(id){
 }
 
 
-function modalOutside(event,id){
+function modalOutside(
+  event,
+  id
+){
 
-  if(event.target.id === id){
+  if(
+    event.target.id === id
+  ){
 
     closeModal(id);
 
@@ -3500,7 +3649,7 @@ function changeLanguage(language){
 
 
 /* =========================
-   SCROLL SHOP
+   SHOP SCROLL
 ========================= */
 
 function scrollToShop(){
@@ -3515,11 +3664,13 @@ function scrollToShop(){
 
 
 /* =========================
-   PRODUCT IMAGE ZOOM
+   ZOOM
 ========================= */
 
 document
-  .getElementById("productModalImage")
+  .getElementById(
+    "productModalImage"
+  )
   .addEventListener(
     "click",
     function(){
@@ -3533,7 +3684,7 @@ document
 
 
 /* =========================
-   START SHOP
+   START
 ========================= */
 
 renderProducts();
