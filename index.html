@@ -2,8 +2,9 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080808">
+
 <title>ГОНЩИКИ — Streetwear</title>
 
 <style>
@@ -24,13 +25,19 @@ body{
   overflow-x:hidden;
 }
 
-button,input,select{
+button,
+input,
+select{
   font:inherit;
 }
 
 button{
   cursor:pointer;
 }
+
+/* =========================
+   PREVIEW BAR
+========================= */
 
 .preview-bar{
   background:#fff;
@@ -41,6 +48,10 @@ button{
   font-weight:900;
   letter-spacing:1px;
 }
+
+/* =========================
+   HEADER
+========================= */
 
 header{
   position:sticky;
@@ -130,7 +141,9 @@ header{
   border-radius:20px;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero{
   min-height:calc(100vh - 106px);
@@ -217,7 +230,9 @@ header{
   border-color:#555;
 }
 
-/* GARAGE */
+/* =========================
+   GARAGE
+========================= */
 
 .garage{
   border-top:1px solid #151515;
@@ -318,7 +333,9 @@ header{
   letter-spacing:2px;
 }
 
-/* LIGHTBOX */
+/* =========================
+   CAR LIGHTBOX
+========================= */
 
 .car-lightbox{
   position:fixed;
@@ -370,7 +387,9 @@ header{
   font-size:25px;
 }
 
-/* SHOP */
+/* =========================
+   SHOP
+========================= */
 
 .section{
   max-width:1450px;
@@ -506,7 +525,9 @@ header{
   transform:scale(1.04);
 }
 
-/* STICKER */
+/* =========================
+   STICKER
+========================= */
 
 .product-card.sticker-card .product-image-wrap{
   background:#111;
@@ -531,11 +552,18 @@ header{
   padding:20px 12px;
 }
 
-/* ZIPPER */
+/* =========================
+   ZIPPER
+   KORRIGIERT
+========================= */
+
 /*
-   Der originale Zipper hat einen hellen Hintergrund.
-   Multiply macht den weißen/hellen Bereich transparent
-   wirkend und übernimmt optisch den dunklen Kartenhintergrund.
+  Der Zipper hat im Originalbild einen hellen Hintergrund.
+
+  DARKEN sorgt dafür:
+  - dunkler Zipper bleibt sichtbar
+  - heller Bildhintergrund wird nicht mehr als helles Rechteck angezeigt
+  - Produktkarte bleibt dunkel wie die anderen Produkte
 */
 
 .product-card[data-product-id="9"] .product-image-wrap{
@@ -543,16 +571,18 @@ header{
 }
 
 .product-card[data-product-id="9"] .product-image{
-  mix-blend-mode:multiply;
+  mix-blend-mode:darken;
   background:#151515;
 }
 
 .product-card[data-product-id="9"]:hover .product-image{
-  mix-blend-mode:multiply;
+  mix-blend-mode:darken;
   transform:scale(1.04);
 }
 
-/* PRODUCT INFO */
+/* =========================
+   PRODUCT INFO
+========================= */
 
 .product-heart{
   position:absolute;
@@ -643,7 +673,9 @@ header{
   margin-bottom:8px;
 }
 
-/* FEATURES */
+/* =========================
+   FEATURES
+========================= */
 
 .feature-grid{
   display:grid;
@@ -676,7 +708,9 @@ header{
   line-height:1.6;
 }
 
-/* MODALS */
+/* =========================
+   MODALS
+========================= */
 
 .modal{
   position:fixed;
@@ -717,7 +751,9 @@ header{
   font-size:18px;
 }
 
-/* PRODUCT MODAL */
+/* =========================
+   PRODUCT MODAL
+========================= */
 
 .product-modal-grid{
   display:grid;
@@ -743,14 +779,12 @@ header{
   transition:.3s;
 }
 
-/* Zipper auch im großen Fenster */
-
 .product-modal-image.zipper-modal-image{
   background:#151515;
 }
 
 .product-modal-image.zipper-modal-image img{
-  mix-blend-mode:multiply;
+  mix-blend-mode:darken;
 }
 
 .product-modal-image.sticker-modal-image{
@@ -921,7 +955,9 @@ header{
   font-weight:800;
 }
 
-/* CART */
+/* =========================
+   CART
+========================= */
 
 .drawer{
   position:fixed;
@@ -1094,7 +1130,9 @@ header{
   font-weight:900;
 }
 
-/* WISHLIST */
+/* =========================
+   WISHLIST
+========================= */
 
 .wishlist-grid{
   display:grid;
@@ -1129,7 +1167,9 @@ header{
   font-size:10px;
 }
 
-/* ACCOUNT / LEGAL / ADMIN */
+/* =========================
+   ACCOUNT / LEGAL / ADMIN
+========================= */
 
 .account-content,
 .legal-content,
@@ -1265,7 +1305,9 @@ header{
   margin-top:4px;
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
   border-top:1px solid #222;
@@ -1314,7 +1356,9 @@ footer{
   letter-spacing:1px;
 }
 
-/* TOAST */
+/* =========================
+   TOAST
+========================= */
 
 .toast{
   position:fixed;
@@ -1337,9 +1381,12 @@ footer{
   transform:translate(-50%,0);
 }
 
-/* RESPONSIVE */
+/* =========================
+   RESPONSIVE
+========================= */
 
 @media(max-width:1100px){
+
   .product-grid{
     grid-template-columns:repeat(3,1fr);
   }
@@ -1347,6 +1394,7 @@ footer{
   .feature-grid{
     grid-template-columns:repeat(2,1fr);
   }
+
 }
 
 @media(max-width:800px){
@@ -1458,6 +1506,7 @@ footer{
   .footer-links{
     margin-top:25px;
   }
+
 }
 
 @media(max-width:500px){
@@ -1521,58 +1570,143 @@ footer{
     display:grid;
     grid-template-columns:1fr 1fr;
   }
+
 }
 </style>
 </head>
 
 <body>
 
+<!-- =========================
+     PREVIEW BAR
+========================= -->
+
 <div class="preview-bar">
 SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BESTELLUNGEN!
 </div>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
+
 <div class="header-inner">
 
   <div>
-    <div class="logo">ГОНЩИКИ</div>
-    <span class="logo-sub">STREETWARE · EST. 2025</span>
+
+    <div class="logo">
+      ГОНЩИКИ
+    </div>
+
+    <span class="logo-sub">
+      STREETWARE · EST. 2025
+    </span>
+
   </div>
+
 
   <div class="header-actions">
 
-    <button class="icon-btn" onclick="openWishlist()">
+    <button
+      class="icon-btn"
+      onclick="openWishlist()"
+    >
       ♡
-      <span class="badge" id="wishlistBadge">0</span>
+      <span
+        class="badge"
+        id="wishlistBadge"
+      >0</span>
     </button>
 
-    <button class="icon-btn" onclick="openAccount()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-        <circle cx="12" cy="8" r="4"></circle>
-        <path d="M4 21c0-4.2 3.5-7 8-7s8 2.8 8 7"></path>
+
+    <button
+      class="icon-btn"
+      onclick="openAccount()"
+    >
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+      >
+        <circle
+          cx="12"
+          cy="8"
+          r="4"
+        ></circle>
+
+        <path
+          d="M4 21c0-4.2 3.5-7 8-7s8 2.8 8 7"
+        ></path>
       </svg>
+
     </button>
 
-    <button class="icon-btn" onclick="openCart()">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-        <path d="M4 5h2l2 11h10l2-8H7"></path>
-        <circle cx="10" cy="20" r="1"></circle>
-        <circle cx="17" cy="20" r="1"></circle>
+
+    <button
+      class="icon-btn"
+      onclick="openCart()"
+    >
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+      >
+
+        <path
+          d="M4 5h2l2 11h10l2-8H7"
+        ></path>
+
+        <circle
+          cx="10"
+          cy="20"
+          r="1"
+        ></circle>
+
+        <circle
+          cx="17"
+          cy="20"
+          r="1"
+        ></circle>
+
       </svg>
-      <span class="badge" id="cartBadge">0</span>
+
+      <span
+        class="badge"
+        id="cartBadge"
+      >0</span>
+
     </button>
 
-    <select class="lang-select" onchange="changeLanguage(this.value)">
+
+    <select
+      class="lang-select"
+      onchange="changeLanguage(this.value)"
+    >
+
       <option value="de">DE</option>
       <option value="en">EN</option>
       <option value="ru">RU</option>
+
     </select>
 
   </div>
+
 </div>
+
 </header>
 
+
 <main>
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
@@ -1591,17 +1725,28 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
     </div>
 
     <h1>
+
       ГОНЩИКИ
-      <span>STREETWARE FOR THE CAR CULTURE</span>
+
+      <span>
+        STREETWARE FOR THE CAR CULTURE
+      </span>
+
     </h1>
 
     <div class="hero-buttons">
 
-      <button class="btn" onclick="scrollToShop()">
+      <button
+        class="btn"
+        onclick="scrollToShop()"
+      >
         SHOP ENTDECKEN
       </button>
 
-      <button class="btn dark" onclick="openWishlist()">
+      <button
+        class="btn dark"
+        onclick="openWishlist()"
+      >
         WUNSCHLISTE
       </button>
 
@@ -1612,6 +1757,10 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 </section>
 
 
+<!-- =========================
+     GARAGE
+========================= -->
+
 <section class="garage">
 
 <div class="garage-inner">
@@ -1619,13 +1768,22 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
   <div class="garage-head">
 
     <div>
-      <div class="eyebrow">GONSHIKI CREW</div>
-      <h2 class="garage-title">GARAGE.</h2>
+
+      <div class="eyebrow">
+        GONSHIKI CREW
+      </div>
+
+      <h2 class="garage-title">
+        GARAGE.
+      </h2>
+
     </div>
 
     <p class="garage-description">
+
       Autos, Builds und die Welt hinter ГОНЩИКИ.
       Fünf Bilder unserer aktuellen Car-Collection.
+
     </p>
 
   </div>
@@ -1633,59 +1791,155 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 
   <div class="car-gallery">
 
-    <div class="car-card" onclick="openCarImage(0)">
-      <img src="assets/Car-1.JPG" alt="Car 1">
+    <div
+      class="car-card"
+      onclick="openCarImage(0)"
+    >
+
+      <img
+        src="assets/Car-1.JPG"
+        alt="Car 1"
+      >
+
       <div class="car-overlay"></div>
-      <div class="car-number">01</div>
-      <div class="car-view">VIEW</div>
+
+      <div class="car-number">
+        01
+      </div>
+
+      <div class="car-view">
+        VIEW
+      </div>
+
     </div>
 
-    <div class="car-card" onclick="openCarImage(1)">
-      <img src="assets/Car-2.JPG" alt="Car 2">
+
+    <div
+      class="car-card"
+      onclick="openCarImage(1)"
+    >
+
+      <img
+        src="assets/Car-2.JPG"
+        alt="Car 2"
+      >
+
       <div class="car-overlay"></div>
-      <div class="car-number">02</div>
-      <div class="car-view">VIEW</div>
+
+      <div class="car-number">
+        02
+      </div>
+
+      <div class="car-view">
+        VIEW
+      </div>
+
     </div>
 
-    <div class="car-card" onclick="openCarImage(2)">
-      <img src="assets/Car-3.jpg" alt="Car 3">
+
+    <div
+      class="car-card"
+      onclick="openCarImage(2)"
+    >
+
+      <img
+        src="assets/Car-3.jpg"
+        alt="Car 3"
+      >
+
       <div class="car-overlay"></div>
-      <div class="car-number">03</div>
-      <div class="car-view">VIEW</div>
+
+      <div class="car-number">
+        03
+      </div>
+
+      <div class="car-view">
+        VIEW
+      </div>
+
     </div>
 
-    <div class="car-card" onclick="openCarImage(3)">
-      <img src="assets/Car-4.jpg" alt="Car 4">
+
+    <div
+      class="car-card"
+      onclick="openCarImage(3)"
+    >
+
+      <img
+        src="assets/Car-4.jpg"
+        alt="Car 4"
+      >
+
       <div class="car-overlay"></div>
-      <div class="car-number">04</div>
-      <div class="car-view">VIEW</div>
+
+      <div class="car-number">
+        04
+      </div>
+
+      <div class="car-view">
+        VIEW
+      </div>
+
     </div>
 
-    <div class="car-card" onclick="openCarImage(4)">
-      <img src="assets/Car-5.jpg" alt="Car 5">
+
+    <div
+      class="car-card"
+      onclick="openCarImage(4)"
+    >
+
+      <img
+        src="assets/Car-5.jpg"
+        alt="Car 5"
+      >
+
       <div class="car-overlay"></div>
-      <div class="car-number">05</div>
-      <div class="car-view">VIEW</div>
+
+      <div class="car-number">
+        05
+      </div>
+
+      <div class="car-view">
+        VIEW
+      </div>
+
     </div>
 
   </div>
 
 </div>
+
 </section>
 
 
-<section class="section" id="shop">
+<!-- =========================
+     SHOP
+========================= -->
+
+<section
+  class="section"
+  id="shop"
+>
 
 <div class="section-head">
 
   <div>
-    <div class="eyebrow">COLLECTION</div>
-    <h2 class="section-title">SHOP</h2>
+
+    <div class="eyebrow">
+      COLLECTION
+    </div>
+
+    <h2 class="section-title">
+      SHOP
+    </h2>
+
   </div>
 
   <p class="section-description">
+
     Schlichte Streetwear für Menschen,
     die Autos nicht nur fahren, sondern leben.
+
   </p>
 
 </div>
@@ -1704,11 +1958,16 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
         oninput="renderProducts()"
       >
 
-      <span class="search-icon">⌕</span>
+      <span class="search-icon">
+        ⌕
+      </span>
 
     </div>
 
-    <button class="clear-search" onclick="clearSearch()">
+    <button
+      class="clear-search"
+      onclick="clearSearch()"
+    >
       X
     </button>
 
@@ -1791,68 +2050,124 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 
 
 <div class="shop-info">
-  <span id="productCount">0 Produkte</span>
-  <span>KLEIDUNG · HERREN + DAMEN</span>
+
+  <span id="productCount">
+    0 Produkte
+  </span>
+
+  <span>
+    KLEIDUNG · HERREN + DAMEN
+  </span>
+
 </div>
 
 
-<div class="product-grid" id="productGrid"></div>
+<div
+  class="product-grid"
+  id="productGrid"
+></div>
 
 </section>
 
 
+<!-- =========================
+     FEATURES
+========================= -->
+
 <section class="section">
 
-<div class="eyebrow">WHY GONSHIKI</div>
-
-<h2 class="section-title">
-  MADE FOR THE CULTURE.
-</h2>
-
-<div class="feature-grid">
-
-  <div class="feature-card">
-    <div class="feature-number">01</div>
-    <h3>STREETWEAR</h3>
-    <p>
-      Schlichte Farben, klare Designs und ein Stil,
-      der auch außerhalb des Treffens funktioniert.
-    </p>
+  <div class="eyebrow">
+    WHY GONSHIKI
   </div>
 
-  <div class="feature-card">
-    <div class="feature-number">02</div>
-    <h3>CAR CULTURE</h3>
-    <p>
-      Inspiriert von BMW, japanischen Builds,
-      Night Drives und der gesamten Auto-Community.
-    </p>
-  </div>
+  <h2 class="section-title">
+    MADE FOR THE CULTURE.
+  </h2>
 
-  <div class="feature-card">
-    <div class="feature-number">03</div>
-    <h3>COMMUNITY</h3>
-    <p>
-      ГОНЩИКИ soll nicht nur eine Marke sein,
-      sondern eine Crew.
-    </p>
-  </div>
 
-  <div class="feature-card">
-    <div class="feature-number">04</div>
-    <h3>EST. 2025</h3>
-    <p>
-      Angefangen als Idee. Entwickelt für die
-      nächste Generation der Auto-Community.
-    </p>
-  </div>
+  <div class="feature-grid">
 
-</div>
+    <div class="feature-card">
+
+      <div class="feature-number">
+        01
+      </div>
+
+      <h3>
+        STREETWEAR
+      </h3>
+
+      <p>
+        Schlichte Farben, klare Designs und ein Stil,
+        der auch außerhalb des Treffens funktioniert.
+      </p>
+
+    </div>
+
+
+    <div class="feature-card">
+
+      <div class="feature-number">
+        02
+      </div>
+
+      <h3>
+        CAR CULTURE
+      </h3>
+
+      <p>
+        Inspiriert von BMW, japanischen Builds,
+        Night Drives und der gesamten Auto-Community.
+      </p>
+
+    </div>
+
+
+    <div class="feature-card">
+
+      <div class="feature-number">
+        03
+      </div>
+
+      <h3>
+        COMMUNITY
+      </h3>
+
+      <p>
+        ГОНЩИКИ soll nicht nur eine Marke sein,
+        sondern eine Crew.
+      </p>
+
+    </div>
+
+
+    <div class="feature-card">
+
+      <div class="feature-number">
+        04
+      </div>
+
+      <h3>
+        EST. 2025
+      </h3>
+
+      <p>
+        Angefangen als Idee. Entwickelt für die
+        nächste Generation der Auto-Community.
+      </p>
+
+    </div>
+
+  </div>
 
 </section>
 
 </main>
 
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -1895,7 +2210,9 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 </footer>
 
 
-<!-- CAR LIGHTBOX -->
+<!-- =========================
+     CAR LIGHTBOX
+========================= -->
 
 <div
   class="car-lightbox"
@@ -1917,7 +2234,11 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
     ‹
   </button>
 
-  <img id="carLightboxImage" src="" alt="">
+  <img
+    id="carLightboxImage"
+    src=""
+    alt=""
+  >
 
   <button
     class="car-lightbox-next"
@@ -1929,7 +2250,9 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 </div>
 
 
-<!-- PRODUCT MODAL -->
+<!-- =========================
+     PRODUCT MODAL
+========================= -->
 
 <div
   class="modal"
@@ -1939,9 +2262,13 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 
 <div class="modal-box">
 
-<button class="close" onclick="closeModal('productModal')">
+<button
+  class="close"
+  onclick="closeModal('productModal')"
+>
   ×
 </button>
+
 
 <div class="product-modal-grid">
 
@@ -2014,7 +2341,9 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
   −
 </button>
 
-<span id="modalQuantity">1</span>
+<span id="modalQuantity">
+  1
+</span>
 
 <button onclick="changeModalQuantity(1)">
   +
@@ -2045,6 +2374,7 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
   IN DEN WARENKORB
 </button>
 
+
 <div
   class="modal-stock"
   id="modalStock"
@@ -2065,12 +2395,17 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 </div>
 
 </div>
+
 </div>
+
 </div>
+
 </div>
 
 
-<!-- CART -->
+<!-- =========================
+     CART
+========================= -->
 
 <div
   class="drawer"
@@ -2082,21 +2417,25 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 
 <div class="drawer-head">
 
-<h2>WARENKORB</h2>
+<h2>
+  WARENKORB
+</h2>
 
 <button
   class="drawer-close"
-  onclick="closeDrawer('cartDrawer')"
+  onclick="closeCart()"
 >
   ×
 </button>
 
 </div>
 
+
 <div
   class="drawer-body"
   id="cartBody"
 ></div>
+
 
 <div
   class="cart-summary"
@@ -2104,10 +2443,13 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 ></div>
 
 </div>
+
 </div>
 
 
-<!-- WISHLIST -->
+<!-- =========================
+     WISHLIST
+========================= -->
 
 <div
   class="modal"
@@ -2124,9 +2466,12 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
   ×
 </button>
 
+
 <div class="checkout-inner">
 
-<div class="eyebrow">ГОНЩИКИ</div>
+<div class="eyebrow">
+  ГОНЩИКИ
+</div>
 
 <h2 class="checkout-title">
   WUNSCHLISTE
@@ -2138,11 +2483,15 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 ></div>
 
 </div>
+
 </div>
+
 </div>
 
 
-<!-- CHECKOUT -->
+<!-- =========================
+     CHECKOUT
+========================= -->
 
 <div
   class="modal"
@@ -2159,6 +2508,7 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
   ×
 </button>
 
+
 <div class="checkout-inner">
 
 <div class="eyebrow">
@@ -2169,72 +2519,142 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
   CHECKOUT
 </h2>
 
+
 <div class="form-group">
-<label>VORNAME</label>
+
+<label>
+  VORNAME
+</label>
+
 <input id="checkoutFirstName">
+
 </div>
 
+
 <div class="form-group">
-<label>NACHNAME</label>
+
+<label>
+  NACHNAME
+</label>
+
 <input id="checkoutLastName">
+
 </div>
 
-<div class="form-group">
-<label>E-MAIL</label>
-<input id="checkoutEmail" type="email">
-</div>
 
 <div class="form-group">
-<label>STRASSE + HAUSNUMMER</label>
+
+<label>
+  E-MAIL
+</label>
+
+<input
+  id="checkoutEmail"
+  type="email"
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+  STRASSE + HAUSNUMMER
+</label>
+
 <input id="checkoutStreet">
+
 </div>
 
+
 <div class="form-group">
-<label>PLZ</label>
+
+<label>
+  PLZ
+</label>
+
 <input id="checkoutZip">
+
 </div>
 
+
 <div class="form-group">
-<label>ORT</label>
+
+<label>
+  ORT
+</label>
+
 <input id="checkoutCity">
+
 </div>
+
 
 <div class="form-group">
 
-<label>ZAHLUNG</label>
+<label>
+  ZAHLUNG
+</label>
 
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+<div
+  style="
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px
+  "
+>
 
 <div
   class="payment-option"
-  style="border:1px solid #333;padding:15px;text-align:center;font-size:10px;background:#fff;color:#000"
+  style="
+    border:1px solid #333;
+    padding:15px;
+    text-align:center;
+    font-size:10px;
+    background:#fff;
+    color:#000
+  "
   onclick="selectPayment(this)"
 >
   CARD
 </div>
 
+
 <div
   class="payment-option"
-  style="border:1px solid #333;padding:15px;text-align:center;font-size:10px;background:#151515"
+  style="
+    border:1px solid #333;
+    padding:15px;
+    text-align:center;
+    font-size:10px;
+    background:#151515
+  "
   onclick="selectPayment(this)"
 >
   PAYPAL
 </div>
 
+
 <div
   class="payment-option"
-  style="border:1px solid #333;padding:15px;text-align:center;font-size:10px;background:#151515"
+  style="
+    border:1px solid #333;
+    padding:15px;
+    text-align:center;
+    font-size:10px;
+    background:#151515
+  "
   onclick="selectPayment(this)"
 >
   KLARNA
 </div>
 
 </div>
+
 </div>
 
-<div
-  id="checkoutSummary"
-></div>
+
+<div id="checkoutSummary"></div>
+
 
 <button
   class="add-cart"
@@ -2243,17 +2663,28 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
   DEMO-BESTELLUNG ABSCHICKEN
 </button>
 
-<p style="color:#555;font-size:9px;margin-top:12px">
+
+<p
+  style="
+    color:#555;
+    font-size:9px;
+    margin-top:12px
+  "
+>
   Dies ist ausschließlich eine Demo.
   Es wird keine echte Bestellung aufgegeben.
 </p>
 
 </div>
+
 </div>
+
 </div>
 
 
-<!-- ACCOUNT -->
+<!-- =========================
+     ACCOUNT
+========================= -->
 
 <div
   class="modal"
@@ -2270,16 +2701,20 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
   ×
 </button>
 
+
 <div
   class="account-content"
   id="accountContent"
 ></div>
 
 </div>
+
 </div>
 
 
-<!-- LEGAL -->
+<!-- =========================
+     LEGAL
+========================= -->
 
 <div
   class="modal"
@@ -2296,16 +2731,20 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
   ×
 </button>
 
+
 <div
   class="legal-content"
   id="legalContent"
 ></div>
 
 </div>
+
 </div>
 
 
-<!-- ADMIN -->
+<!-- =========================
+     ADMIN
+========================= -->
 
 <div
   class="modal"
@@ -2321,12 +2760,14 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
   ×
 </button>
 
+
 <div
   class="admin-content"
   id="adminContent"
 ></div>
 
 </div>
+
 </div>
 
 
@@ -2338,7 +2779,9 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 
 <script>
 
-/* PRODUCTS */
+/* =========================
+   PRODUCTS
+========================= */
 
 const products=[
 
@@ -2349,7 +2792,14 @@ const products=[
   price:34.99,
   image:"assets/Shirt-black-e36.jpg",
   description:"Schwarzes ГОНЩИКИ T-Shirt mit E36 Design.",
-  stock:{XS:5,S:10,M:10,L:10,XL:5,XXL:2}
+  stock:{
+    XS:5,
+    S:10,
+    M:10,
+    L:10,
+    XL:5,
+    XXL:2
+  }
 },
 
 {
@@ -2359,7 +2809,14 @@ const products=[
   price:34.99,
   image:"assets/Shirt-black-e34.jpg",
   description:"Schwarzes ГОНЩИКИ T-Shirt mit E34 Design.",
-  stock:{XS:5,S:10,M:10,L:10,XL:5,XXL:2}
+  stock:{
+    XS:5,
+    S:10,
+    M:10,
+    L:10,
+    XL:5,
+    XXL:2
+  }
 },
 
 {
@@ -2369,7 +2826,14 @@ const products=[
   price:59.99,
   image:"assets/Hoodie-black-e36.jpg",
   description:"Schwarzer ГОНЩИКИ Hoodie mit E36 Motiv.",
-  stock:{XS:4,S:8,M:8,L:8,XL:5,XXL:2}
+  stock:{
+    XS:4,
+    S:8,
+    M:8,
+    L:8,
+    XL:5,
+    XXL:2
+  }
 },
 
 {
@@ -2379,7 +2843,14 @@ const products=[
   price:59.99,
   image:"assets/Hoodie-black-e34.jpg",
   description:"Schwarzer ГОНЩИКИ Hoodie mit E34 Motiv.",
-  stock:{XS:4,S:8,M:8,L:8,XL:5,XXL:2}
+  stock:{
+    XS:4,
+    S:8,
+    M:8,
+    L:8,
+    XL:5,
+    XXL:2
+  }
 },
 
 {
@@ -2389,7 +2860,14 @@ const products=[
   price:59.99,
   image:"assets/Hoodie-black-Kreuz.jpg",
   description:"Schwarzer ГОНЩИКИ Hoodie mit Kreuz Design.",
-  stock:{XS:4,S:8,M:8,L:8,XL:5,XXL:2}
+  stock:{
+    XS:4,
+    S:8,
+    M:8,
+    L:8,
+    XL:5,
+    XXL:2
+  }
 },
 
 {
@@ -2399,7 +2877,14 @@ const products=[
   price:69.99,
   image:"assets/Zipper-black-Kreuz.jpg",
   description:"Schwarzer ГОНЩИКИ Zipper mit Kreuz Design.",
-  stock:{XS:4,S:8,M:8,L:8,XL:5,XXL:2}
+  stock:{
+    XS:4,
+    S:8,
+    M:8,
+    L:8,
+    XL:5,
+    XXL:2
+  }
 },
 
 {
@@ -2409,7 +2894,14 @@ const products=[
   price:79.99,
   image:"assets/Pants-black-gonschiki.jpg",
   description:"Schwarze ГОНЩИКИ Hose.",
-  stock:{XS:4,S:8,M:8,L:8,XL:5,XXL:2}
+  stock:{
+    XS:4,
+    S:8,
+    M:8,
+    L:8,
+    XL:5,
+    XXL:2
+  }
 },
 
 {
@@ -2419,7 +2911,9 @@ const products=[
   price:35.99,
   image:"assets/Scheibenkeil .PNG",
   description:"Universeller ГОНЩИКИ Scheibenkeil.",
-  stock:{UNIVERSAL:10}
+  stock:{
+    UNIVERSAL:10
+  }
 },
 
 {
@@ -2429,7 +2923,9 @@ const products=[
   price:25.99,
   image:"assets/Heckscheiben Sticker.PNG",
   description:"ГОНЩИКИ Heckscheiben Sticker · 700 × 300 mm.",
-  stock:{UNIVERSAL:10}
+  stock:{
+    UNIVERSAL:10
+  }
 },
 
 {
@@ -2439,19 +2935,25 @@ const products=[
   price:12.99,
   image:"assets/Sticker.PNG",
   description:"ГОНЩИКИ Sticker · 200 × 80 mm.",
-  stock:{UNIVERSAL:20}
+  stock:{
+    UNIVERSAL:20
+  }
 }
 
 ];
 
 
-/* STATE */
+/* =========================
+   STATE
+========================= */
 
 let selectedGender="all";
 let selectedCategory="all";
+
 let currentProduct=null;
 let currentSize=null;
 let currentQuantity=1;
+
 let currentCarImage=0;
 
 let cart=JSON.parse(
@@ -2470,6 +2972,7 @@ let account=JSON.parse(
   localStorage.getItem("gonschiki_account")||"null"
 );
 
+
 const carImages=[
   "assets/Car-1.JPG",
   "assets/Car-2.JPG",
@@ -2479,16 +2982,34 @@ const carImages=[
 ];
 
 
-/* HELPERS */
+/* =========================
+   HELPERS
+========================= */
 
 function saveState(){
 
-  localStorage.setItem("gonschiki_cart",JSON.stringify(cart));
-  localStorage.setItem("gonschiki_wishlist",JSON.stringify(wishlist));
-  localStorage.setItem("gonschiki_orders",JSON.stringify(orders));
-  localStorage.setItem("gonschiki_account",JSON.stringify(account));
+  localStorage.setItem(
+    "gonschiki_cart",
+    JSON.stringify(cart)
+  );
+
+  localStorage.setItem(
+    "gonschiki_wishlist",
+    JSON.stringify(wishlist)
+  );
+
+  localStorage.setItem(
+    "gonschiki_orders",
+    JSON.stringify(orders)
+  );
+
+  localStorage.setItem(
+    "gonschiki_account",
+    JSON.stringify(account)
+  );
 
 }
+
 
 function formatPrice(value){
 
@@ -2502,12 +3023,17 @@ function formatPrice(value){
 
 }
 
+
 function totalStock(product){
 
   return Object.values(product.stock)
-    .reduce((a,b)=>a+b,0);
+    .reduce(
+      (a,b)=>a+b,
+      0
+    );
 
 }
+
 
 function cartCount(){
 
@@ -2517,6 +3043,7 @@ function cartCount(){
   );
 
 }
+
 
 function cartSubtotal(){
 
@@ -2536,6 +3063,7 @@ function cartSubtotal(){
 
 }
 
+
 function shipping(){
 
   return cartSubtotal()>=100||!cart.length
@@ -2543,6 +3071,7 @@ function shipping(){
     :5.99;
 
 }
+
 
 function updateBadges(){
 
@@ -2554,21 +3083,27 @@ function updateBadges(){
 
 }
 
+
 function toast(message){
 
-  const t=document.getElementById("toast");
+  const t=
+    document.getElementById("toast");
 
   t.textContent=message;
+
   t.classList.add("show");
 
   clearTimeout(window.toastTimer);
 
   window.toastTimer=setTimeout(
-    ()=>t.classList.remove("show"),
+    ()=>{
+      t.classList.remove("show");
+    },
     2200
   );
 
 }
+
 
 function openModal(id){
 
@@ -2578,6 +3113,7 @@ function openModal(id){
   document.body.style.overflow="hidden";
 
 }
+
 
 function closeModal(id){
 
@@ -2590,6 +3126,7 @@ function closeModal(id){
 
 }
 
+
 function modalOutside(e,id){
 
   if(e.target.id===id){
@@ -2599,31 +3136,39 @@ function modalOutside(e,id){
 }
 
 
-/* CAR GALLERY */
+/* =========================
+   CAR GALLERY
+========================= */
 
 function openCarImage(index){
 
   currentCarImage=index;
 
-  document.getElementById("carLightboxImage")
-    .src=carImages[index];
+  document.getElementById(
+    "carLightboxImage"
+  ).src=carImages[index];
 
-  document.getElementById("carLightbox")
-    .classList.add("open");
+  document.getElementById(
+    "carLightbox"
+  ).classList.add("open");
 
   document.body.style.overflow="hidden";
 
 }
 
+
 function closeCarLightbox(e){
 
   if(
     e.target.id==="carLightbox"||
-    e.target.classList.contains("car-lightbox-close")
+    e.target.classList.contains(
+      "car-lightbox-close"
+    )
   ){
 
-    document.getElementById("carLightbox")
-      .classList.remove("open");
+    document.getElementById(
+      "carLightbox"
+    ).classList.remove("open");
 
     document.body.style.overflow="";
 
@@ -2631,25 +3176,31 @@ function closeCarLightbox(e){
 
 }
 
+
 function changeCarImage(direction,e){
 
   e.stopPropagation();
 
   currentCarImage+=direction;
 
-  if(currentCarImage<0)
+  if(currentCarImage<0){
     currentCarImage=carImages.length-1;
+  }
 
-  if(currentCarImage>=carImages.length)
+  if(currentCarImage>=carImages.length){
     currentCarImage=0;
+  }
 
-  document.getElementById("carLightboxImage")
-    .src=carImages[currentCarImage];
+  document.getElementById(
+    "carLightboxImage"
+  ).src=carImages[currentCarImage];
 
 }
 
 
-/* SHOP FILTER */
+/* =========================
+   FILTER
+========================= */
 
 function setGender(gender,button){
 
@@ -2657,13 +3208,16 @@ function setGender(gender,button){
 
   button.parentElement
     .querySelectorAll(".filter-btn")
-    .forEach(x=>x.classList.remove("active"));
+    .forEach(
+      x=>x.classList.remove("active")
+    );
 
   button.classList.add("active");
 
   renderProducts();
 
 }
+
 
 function setCategory(category,button){
 
@@ -2671,7 +3225,9 @@ function setCategory(category,button){
 
   button.parentElement
     .querySelectorAll(".filter-btn")
-    .forEach(x=>x.classList.remove("active"));
+    .forEach(
+      x=>x.classList.remove("active")
+    );
 
   button.classList.add("active");
 
@@ -2679,197 +3235,296 @@ function setCategory(category,button){
 
 }
 
+
 function clearSearch(){
 
-  document.getElementById("searchInput")
-    .value="";
+  document.getElementById(
+    "searchInput"
+  ).value="";
 
   renderProducts();
 
 }
 
 
-/* PRODUCTS */
+/* =========================
+   RENDER PRODUCTS
+========================= */
 
 function renderProducts(){
 
   const search=
-    document.getElementById("searchInput")
-      .value
+    document.getElementById(
+      "searchInput"
+    ).value
       .toLowerCase()
       .trim();
 
-  const filtered=products.filter(p=>{
 
-    const category=
-      selectedCategory==="all"||
-      p.category===selectedCategory;
+  const filtered=
+    products.filter(p=>{
 
-    const searchMatch=
-      !search||
-      p.name.toLowerCase().includes(search)||
-      p.description.toLowerCase().includes(search);
+      const category=
+        selectedCategory==="all"||
+        p.category===selectedCategory;
 
-    return category&&searchMatch;
 
-  });
+      const searchMatch=
+        !search||
+        p.name.toLowerCase()
+          .includes(search)||
+        p.description.toLowerCase()
+          .includes(search);
 
-  document.getElementById("productCount")
-    .textContent=
-      filtered.length+
-      (filtered.length===1?" Produkt":" Produkte");
+
+      return category&&searchMatch;
+
+    });
+
+
+  document.getElementById(
+    "productCount"
+  ).textContent=
+    filtered.length+
+    (
+      filtered.length===1
+      ?" Produkt"
+      :" Produkte"
+    );
+
 
   const grid=
-    document.getElementById("productGrid");
+    document.getElementById(
+      "productGrid"
+    );
+
 
   if(!filtered.length){
 
     grid.innerHTML=`
+
       <div class="no-products">
-        <strong>KEINE PRODUKTE GEFUNDEN</strong>
+
+        <strong>
+          KEINE PRODUKTE GEFUNDEN
+        </strong>
+
         Versuche einen anderen Suchbegriff.
+
       </div>
+
     `;
 
     return;
 
   }
 
-  grid.innerHTML=filtered.map(p=>{
 
-    const stock=totalStock(p);
-    const liked=wishlist.includes(p.id);
+  grid.innerHTML=
+    filtered.map(p=>{
 
-    let stockText="VERFÜGBAR";
-    let stockClass="";
+      const stock=
+        totalStock(p);
 
-    if(stock<=0){
-      stockText="AUSVERKAUFT";
-      stockClass="out";
-    }
-    else if(stock<=4){
-      stockText="NUR NOCH "+stock;
-      stockClass="low";
-    }
+      const liked=
+        wishlist.includes(p.id);
 
-    return `
 
-      <article
-        class="product-card ${p.category==="sticker"?"sticker-card":""}"
-        data-product-id="${p.id}"
-        onclick="openProduct(${p.id})"
-      >
+      let stockText="VERFÜGBAR";
+      let stockClass="";
 
-        <div class="product-image-wrap">
 
-          <img
-            class="product-image"
-            src="${p.image}"
-            alt="${p.name}"
-            loading="lazy"
-          >
+      if(stock<=0){
 
-          ${
-            stock<=4&&stock>0
-            ?`<div class="product-badge">LOW STOCK</div>`
-            :""
-          }
+        stockText="AUSVERKAUFT";
+        stockClass="out";
 
-          <button
-            class="product-heart ${liked?"active":""}"
-            onclick="
-              event.stopPropagation();
-              toggleWishlist(${p.id})
-            "
-          >
-            ${liked?"♥":"♡"}
-          </button>
+      }
+      else if(stock<=4){
 
-        </div>
+        stockText=
+          "NUR NOCH "+stock;
 
-        <div class="product-info">
+        stockClass="low";
 
-          <div class="product-category">
-            ${p.category.toUpperCase()}
+      }
+
+
+      return `
+
+        <article
+          class="
+            product-card
+            ${p.category==="sticker"
+              ?"sticker-card"
+              :""
+            }
+          "
+          data-product-id="${p.id}"
+          onclick="openProduct(${p.id})"
+        >
+
+          <div class="product-image-wrap">
+
+            <img
+              class="product-image"
+              src="${p.image}"
+              alt="${p.name}"
+              loading="lazy"
+            >
+
+
+            ${
+              stock<=4&&stock>0
+              ?`
+                <div class="product-badge">
+                  LOW STOCK
+                </div>
+              `
+              :""
+            }
+
+
+            <button
+              class="
+                product-heart
+                ${liked?"active":""}
+              "
+              onclick="
+                event.stopPropagation();
+                toggleWishlist(${p.id})
+              "
+            >
+              ${liked?"♥":"♡"}
+            </button>
+
           </div>
 
-          <div class="product-name">
-            ${p.name}
-          </div>
 
-          <div class="product-bottom">
+          <div class="product-info">
 
-            <div class="product-price">
-              ${formatPrice(p.price)}
+            <div class="product-category">
+              ${p.category.toUpperCase()}
             </div>
 
-            <div class="product-stock ${stockClass}">
-              ${stockText}
+            <div class="product-name">
+              ${p.name}
+            </div>
+
+
+            <div class="product-bottom">
+
+              <div class="product-price">
+                ${formatPrice(p.price)}
+              </div>
+
+              <div
+                class="
+                  product-stock
+                  ${stockClass}
+                "
+              >
+                ${stockText}
+              </div>
+
             </div>
 
           </div>
 
-        </div>
+        </article>
 
-      </article>
+      `;
 
-    `;
-
-  }).join("");
+    }).join("");
 
 }
 
 
-/* PRODUCT MODAL */
+/* =========================
+   PRODUCT MODAL
+========================= */
 
 function openProduct(id){
 
-  currentProduct=products.find(
-    p=>p.id===id
-  );
+  currentProduct=
+    products.find(
+      p=>p.id===id
+    );
 
-  if(!currentProduct)return;
+
+  if(!currentProduct){
+    return;
+  }
+
 
   currentQuantity=1;
   currentSize=null;
 
+
   const modalImage=
-    document.getElementById("productModalImage");
+    document.getElementById(
+      "productModalImage"
+    );
+
 
   modalImage.classList.remove(
     "sticker-modal-image",
     "zipper-modal-image"
   );
 
+
   if(currentProduct.category==="sticker"){
+
     modalImage.classList.add(
       "sticker-modal-image"
     );
+
   }
 
+
   if(currentProduct.id===9){
+
     modalImage.classList.add(
       "zipper-modal-image"
     );
+
   }
 
-  document.getElementById("modalProductImage")
-    .src=currentProduct.image;
 
-  document.getElementById("modalProductName")
-    .textContent=currentProduct.name;
+  document.getElementById(
+    "modalProductImage"
+  ).src=currentProduct.image;
 
-  document.getElementById("modalProductCategory")
-    .textContent=currentProduct.category.toUpperCase();
 
-  document.getElementById("modalProductPrice")
-    .textContent=formatPrice(currentProduct.price);
+  document.getElementById(
+    "modalProductName"
+  ).textContent=currentProduct.name;
 
-  document.getElementById("modalProductDescription")
-    .textContent=currentProduct.description;
 
-  document.getElementById("modalQuantity")
-    .textContent="1";
+  document.getElementById(
+    "modalProductCategory"
+  ).textContent=
+    currentProduct.category.toUpperCase();
+
+
+  document.getElementById(
+    "modalProductPrice"
+  ).textContent=
+    formatPrice(
+      currentProduct.price
+    );
+
+
+  document.getElementById(
+    "modalProductDescription"
+  ).textContent=
+    currentProduct.description;
+
+
+  document.getElementById(
+    "modalQuantity"
+  ).textContent="1";
+
 
   renderSizes();
   updateModalStock();
@@ -2880,59 +3535,111 @@ function openProduct(id){
 
 }
 
+
 function renderSizes(){
 
-  const area=document.getElementById("sizeArea");
-  const list=document.getElementById("sizeList");
+  const area=
+    document.getElementById(
+      "sizeArea"
+    );
 
-  if(currentProduct.category==="sticker"){
+  const list=
+    document.getElementById(
+      "sizeList"
+    );
+
+
+  if(
+    currentProduct.category==="sticker"
+  ){
 
     area.style.display="none";
+
     currentSize="UNIVERSAL";
+
     return;
 
   }
 
+
   area.style.display="block";
 
+
   let sizes=[
-    "XS","S","M","L","XL","XXL"
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
   ];
 
+
   if(selectedGender==="women"){
-    sizes=["XS","S","M","L","XL"];
+
+    sizes=[
+      "XS",
+      "S",
+      "M",
+      "L",
+      "XL"
+    ];
+
   }
+
 
   if(selectedGender==="men"){
-    sizes=["S","M","L","XL","XXL"];
+
+    sizes=[
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ];
+
   }
 
-  list.innerHTML=sizes.map(size=>{
 
-    const stock=
-      currentProduct.stock[size]||0;
+  list.innerHTML=
+    sizes.map(size=>{
 
-    return `
-      <button
-        class="size-btn"
-        ${stock<=0?"disabled":""}
-        onclick="selectSize('${size}',this)"
-      >
-        ${size}
-      </button>
-    `;
+      const stock=
+        currentProduct.stock[size]||0;
 
-  }).join("");
+
+      return `
+
+        <button
+          class="size-btn"
+          ${stock<=0?"disabled":""}
+          onclick="
+            selectSize('${size}',this)
+          "
+        >
+          ${size}
+        </button>
+
+      `;
+
+    }).join("");
 
 }
+
 
 function selectSize(size,button){
 
   currentSize=size;
 
+
   document
-    .querySelectorAll("#sizeList .size-btn")
-    .forEach(x=>x.classList.remove("active"));
+    .querySelectorAll(
+      "#sizeList .size-btn"
+    )
+    .forEach(
+      x=>x.classList.remove("active")
+    );
+
 
   button.classList.add("active");
 
@@ -2940,47 +3647,72 @@ function selectSize(size,button){
 
 }
 
+
 function changeModalQuantity(amount){
 
-  if(!currentProduct)return;
+  if(!currentProduct){
+    return;
+  }
+
 
   const max=
     currentProduct.category==="sticker"
     ?currentProduct.stock.UNIVERSAL
     :(currentProduct.stock[currentSize]||1);
 
-  currentQuantity=Math.max(
-    1,
-    Math.min(currentQuantity+amount,max)
-  );
 
-  document.getElementById("modalQuantity")
-    .textContent=currentQuantity;
+  currentQuantity=
+    Math.max(
+      1,
+      Math.min(
+        currentQuantity+amount,
+        max
+      )
+    );
+
+
+  document.getElementById(
+    "modalQuantity"
+  ).textContent=
+    currentQuantity;
 
 }
+
 
 function updateModalStock(){
 
   const button=
-    document.getElementById("addCartButton");
+    document.getElementById(
+      "addCartButton"
+    );
 
   const stockEl=
-    document.getElementById("modalStock");
+    document.getElementById(
+      "modalStock"
+    );
 
-  if(currentProduct.category==="sticker"){
+
+  if(
+    currentProduct.category==="sticker"
+  ){
 
     const stock=
       currentProduct.stock.UNIVERSAL||0;
+
 
     stockEl.textContent=
       stock>0
       ?stock+" VERFÜGBAR"
       :"AUSVERKAUFT";
 
-    button.disabled=stock<=0;
+
+    button.disabled=
+      stock<=0;
+
     return;
 
   }
+
 
   if(!currentSize){
 
@@ -2988,21 +3720,27 @@ function updateModalStock(){
       "BITTE GRÖSSE AUSWÄHLEN";
 
     button.disabled=false;
+
     return;
 
   }
 
+
   const stock=
     currentProduct.stock[currentSize]||0;
+
 
   stockEl.textContent=
     stock>0
     ?stock+" VERFÜGBAR"
     :"AUSVERKAUFT";
 
-  button.disabled=stock<=0;
+
+  button.disabled=
+    stock<=0;
 
 }
+
 
 function addCurrentProductToCart(){
 
@@ -3011,32 +3749,47 @@ function addCurrentProductToCart(){
     !currentSize
   ){
 
-    toast("Bitte Größe auswählen.");
+    toast(
+      "Bitte Größe auswählen."
+    );
+
     return;
 
   }
+
 
   const size=
     currentProduct.category==="sticker"
     ?"UNIVERSAL"
     :currentSize;
 
+
   const existing=
     cart.find(
-      x=>x.id===currentProduct.id&&
-      x.size===size
+      x=>
+        x.id===currentProduct.id&&
+        x.size===size
     );
 
+
   if(existing){
-    existing.quantity+=currentQuantity;
+
+    existing.quantity+=
+      currentQuantity;
+
   }
   else{
+
     cart.push({
+
       id:currentProduct.id,
       size:size,
       quantity:currentQuantity
+
     });
+
   }
+
 
   saveState();
   updateBadges();
@@ -3044,20 +3797,30 @@ function addCurrentProductToCart(){
 
   closeModal("productModal");
 
-  toast("Zum Warenkorb hinzugefügt.");
+  toast(
+    "Zum Warenkorb hinzugefügt."
+  );
 
 }
+
 
 function updateModalHeart(){
 
   const button=
-    document.getElementById("modalHeart");
+    document.getElementById(
+      "modalHeart"
+    );
+
 
   const active=
-    wishlist.includes(currentProduct.id);
+    wishlist.includes(
+      currentProduct.id
+    );
+
 
   button.textContent=
     active?"♥":"♡";
+
 
   button.classList.toggle(
     "active",
@@ -3066,70 +3829,104 @@ function updateModalHeart(){
 
 }
 
+
 function renderSimilarProducts(){
 
   const box=
-    document.getElementById("similarProducts");
+    document.getElementById(
+      "similarProducts"
+    );
+
 
   const similar=
-    products.filter(
-      p=>
-        p.id!==currentProduct.id&&
-        p.category===currentProduct.category
-    ).slice(0,3);
+    products
+      .filter(
+        p=>
+          p.id!==currentProduct.id&&
+          p.category===currentProduct.category
+      )
+      .slice(0,3);
 
-  box.innerHTML=similar.map(p=>`
 
-    <div
-      class="similar-card"
-      onclick="openProduct(${p.id})"
-    >
+  box.innerHTML=
+    similar.map(p=>`
 
-      <img src="${p.image}" alt="">
+      <div
+        class="similar-card"
+        onclick="openProduct(${p.id})"
+      >
 
-      <div>${p.name}</div>
+        <img
+          src="${p.image}"
+          alt=""
+        >
 
-    </div>
+        <div>
+          ${p.name}
+        </div>
 
-  `).join("");
+      </div>
+
+    `).join("");
 
 }
 
 
-/* ZOOM */
+/* =========================
+   IMAGE ZOOM
+========================= */
 
-document.getElementById("productModalImage")
-.addEventListener("click",function(){
+document
+  .getElementById(
+    "productModalImage"
+  )
+  .addEventListener(
+    "click",
+    function(){
 
-  this.classList.toggle("zoomed");
+      this.classList.toggle(
+        "zoomed"
+      );
 
-});
+    }
+  );
 
 
-/* WISHLIST */
+/* =========================
+   WISHLIST
+========================= */
 
 function toggleWishlist(id){
 
   if(wishlist.includes(id)){
 
     wishlist=
-      wishlist.filter(x=>x!==id);
+      wishlist.filter(
+        x=>x!==id
+      );
 
-    toast("Aus Wunschliste entfernt.");
+    toast(
+      "Aus Wunschliste entfernt."
+    );
 
-  }else{
+  }
+  else{
 
     wishlist.push(id);
 
-    toast("Zur Wunschliste hinzugefügt.");
+    toast(
+      "Zur Wunschliste hinzugefügt."
+    );
 
   }
+
 
   saveState();
   updateBadges();
   renderProducts();
 
 }
+
 
 function toggleWishlistFromModal(){
 
@@ -3141,78 +3938,119 @@ function toggleWishlistFromModal(){
 
 }
 
+
 function openWishlist(){
 
   renderWishlist();
-  openModal("wishlistModal");
+
+  openModal(
+    "wishlistModal"
+  );
 
 }
+
 
 function renderWishlist(){
 
   const grid=
-    document.getElementById("wishlistGrid");
+    document.getElementById(
+      "wishlistGrid"
+    );
+
 
   const items=
-    wishlist.map(
-      id=>products.find(p=>p.id===id)
-    ).filter(Boolean);
+    wishlist
+      .map(
+        id=>products.find(
+          p=>p.id===id
+        )
+      )
+      .filter(Boolean);
+
 
   if(!items.length){
 
     grid.innerHTML=`
-      <div class="empty-state" style="grid-column:1/-1">
-        <strong>DEINE WUNSCHLISTE IST LEER</strong>
+
+      <div
+        class="empty-state"
+        style="grid-column:1/-1"
+      >
+
+        <strong>
+          DEINE WUNSCHLISTE IST LEER
+        </strong>
+
         Speichere Produkte mit dem Herz.
+
       </div>
+
     `;
 
     return;
 
   }
 
-  grid.innerHTML=items.map(p=>`
 
-    <div
-      class="wishlist-item"
-      onclick="openProduct(${p.id})"
-    >
+  grid.innerHTML=
+    items.map(p=>`
 
-      <img src="${p.image}" alt="">
+      <div
+        class="wishlist-item"
+        onclick="openProduct(${p.id})"
+      >
 
-      <div class="wishlist-item-info">
-        <strong>${p.name}</strong>
-        <span>${formatPrice(p.price)}</span>
+        <img
+          src="${p.image}"
+          alt=""
+        >
+
+        <div class="wishlist-item-info">
+
+          <strong>
+            ${p.name}
+          </strong>
+
+          <span>
+            ${formatPrice(p.price)}
+          </span>
+
+        </div>
+
       </div>
 
-    </div>
-
-  `).join("");
+    `).join("");
 
 }
 
 
-/* CART */
+/* =========================
+   CART
+========================= */
 
 function openCart(){
 
   renderCart();
 
-  document.getElementById("cartDrawer")
-    .classList.add("open");
+  document.getElementById(
+    "cartDrawer"
+  ).classList.add("open");
 
   document.body.style.overflow="hidden";
 
 }
 
+
 function closeCart(){
 
-  document.getElementById("cartDrawer")
-    .classList.remove("open");
+  document.getElementById(
+    "cartDrawer"
+  ).classList.remove("open");
 
   document.body.style.overflow="";
 
 }
+
 
 function drawerOutside(e,id){
 
@@ -3222,123 +4060,231 @@ function drawerOutside(e,id){
 
 }
 
+
 function renderCart(){
 
   const body=
-    document.getElementById("cartBody");
+    document.getElementById(
+      "cartBody"
+    );
 
   const summary=
-    document.getElementById("cartSummary");
+    document.getElementById(
+      "cartSummary"
+    );
+
 
   if(!cart.length){
 
     body.innerHTML=`
+
       <div class="empty-state">
-        <strong>DEIN WARENKORB IST LEER</strong>
+
+        <strong>
+          DEIN WARENKORB IST LEER
+        </strong>
+
         Entdecke unsere Collection.
+
       </div>
+
     `;
 
     summary.innerHTML="";
+
     return;
 
   }
 
-  body.innerHTML=cart.map((item,index)=>{
 
-    const p=
-      products.find(x=>x.id===item.id);
+  body.innerHTML=
+    cart.map(
+      (item,index)=>{
 
-    if(!p)return "";
+        const p=
+          products.find(
+            x=>x.id===item.id
+          );
 
-    return `
 
-      <div class="cart-item">
+        if(!p){
+          return "";
+        }
 
-        <img src="${p.image}" alt="">
 
-        <div>
+        return `
 
-          <div class="cart-name">
-            ${p.name}
-          </div>
+          <div class="cart-item">
 
-          <div class="cart-meta">
-            Größe: ${item.size}
-          </div>
-
-          <div class="cart-controls">
-
-            <button onclick="changeCartQuantity(${index},-1)">
-              −
-            </button>
-
-            <span>${item.quantity}</span>
-
-            <button onclick="changeCartQuantity(${index},1)">
-              +
-            </button>
-
-            <button
-              class="cart-remove"
-              onclick="removeCartItem(${index})"
+            <img
+              src="${p.image}"
+              alt=""
             >
-              ×
-            </button>
+
+
+            <div>
+
+              <div class="cart-name">
+                ${p.name}
+              </div>
+
+              <div class="cart-meta">
+                Größe: ${item.size}
+              </div>
+
+
+              <div class="cart-controls">
+
+                <button
+                  onclick="
+                    changeCartQuantity(
+                      ${index},
+                      -1
+                    )
+                  "
+                >
+                  −
+                </button>
+
+
+                <span>
+                  ${item.quantity}
+                </span>
+
+
+                <button
+                  onclick="
+                    changeCartQuantity(
+                      ${index},
+                      1
+                    )
+                  "
+                >
+                  +
+                </button>
+
+
+                <button
+                  class="cart-remove"
+                  onclick="
+                    removeCartItem(
+                      ${index}
+                    )
+                  "
+                >
+                  ×
+                </button>
+
+              </div>
+
+            </div>
+
+
+            <div class="cart-price">
+              ${formatPrice(
+                p.price*item.quantity
+              )}
+            </div>
 
           </div>
 
-        </div>
+        `;
 
-        <div class="cart-price">
-          ${formatPrice(p.price*item.quantity)}
-        </div>
+      }
+    ).join("");
 
-      </div>
 
-    `;
+  const sub=
+    cartSubtotal();
 
-  }).join("");
+  const ship=
+    shipping();
 
-  const sub=cartSubtotal();
-  const ship=shipping();
-  const total=sub+ship;
+  const total=
+    sub+ship;
+
 
   summary.innerHTML=`
 
     <div class="shipping-progress">
 
       <div class="shipping-progress-text">
+
         <span>
+
           ${
             sub>=100
             ?"KOSTENLOSER VERSAND ERREICHT"
-            :"NOCH "+formatPrice(100-sub)
+            :"NOCH "+
+              formatPrice(100-sub)
           }
+
         </span>
-        <span>100 €</span>
+
+        <span>
+          100 €
+        </span>
+
       </div>
+
 
       <div class="progress">
-        <span style="width:${Math.min(sub,100)}%"></span>
+
+        <span
+          style="
+            width:${Math.min(sub,100)}%
+          "
+        ></span>
+
       </div>
 
     </div>
 
-    <div class="summary-row">
-      <span>ZWISCHENSUMME</span>
-      <span>${formatPrice(sub)}</span>
-    </div>
 
     <div class="summary-row">
-      <span>VERSAND</span>
-      <span>${ship===0?"KOSTENLOS":formatPrice(ship)}</span>
+
+      <span>
+        ZWISCHENSUMME
+      </span>
+
+      <span>
+        ${formatPrice(sub)}
+      </span>
+
     </div>
+
+
+    <div class="summary-row">
+
+      <span>
+        VERSAND
+      </span>
+
+      <span>
+
+        ${
+          ship===0
+          ?"KOSTENLOS"
+          :formatPrice(ship)
+        }
+
+      </span>
+
+    </div>
+
 
     <div class="summary-row total">
-      <span>GESAMT</span>
-      <span>${formatPrice(total)}</span>
+
+      <span>
+        GESAMT
+      </span>
+
+      <span>
+        ${formatPrice(total)}
+      </span>
+
     </div>
+
 
     <button
       class="checkout-btn"
@@ -3352,41 +4298,66 @@ function renderCart(){
 
 }
 
+
 function changeCartQuantity(index,amount){
 
-  const item=cart[index];
+  const item=
+    cart[index];
 
-  if(!item)return;
+
+  if(!item){
+    return;
+  }
+
 
   const p=
-    products.find(x=>x.id===item.id);
+    products.find(
+      x=>x.id===item.id
+    );
 
-  if(!p)return;
+
+  if(!p){
+    return;
+  }
+
 
   const max=
     p.stock[item.size]||0;
 
-  item.quantity=Math.max(
-    0,
-    Math.min(
-      item.quantity+amount,
-      max
-    )
-  );
+
+  item.quantity=
+    Math.max(
+      0,
+      Math.min(
+        item.quantity+amount,
+        max
+      )
+    );
+
 
   if(item.quantity===0){
-    cart.splice(index,1);
+
+    cart.splice(
+      index,
+      1
+    );
+
   }
+
 
   saveState();
   updateBadges();
   renderCart();
 
 }
+
 
 function removeCartItem(index){
 
-  cart.splice(index,1);
+  cart.splice(
+    index,
+    1
+  );
 
   saveState();
   updateBadges();
@@ -3395,119 +4366,217 @@ function removeCartItem(index){
 }
 
 
-/* CHECKOUT */
+/* =========================
+   CHECKOUT
+========================= */
 
 function openCheckout(){
 
   if(!cart.length){
 
-    toast("Warenkorb ist leer.");
+    toast(
+      "Warenkorb ist leer."
+    );
+
     return;
 
   }
 
-  document.getElementById("checkoutSummary")
-    .innerHTML=`
 
-      <div class="summary-row">
-        <span>ZWISCHENSUMME</span>
-        <span>${formatPrice(cartSubtotal())}</span>
-      </div>
+  document.getElementById(
+    "checkoutSummary"
+  ).innerHTML=`
 
-      <div class="summary-row">
-        <span>VERSAND</span>
-        <span>
-          ${shipping()===0?"KOSTENLOS":formatPrice(shipping())}
-        </span>
-      </div>
+    <div class="summary-row">
 
-      <div class="summary-row total">
-        <span>GESAMT</span>
-        <span>${formatPrice(cartSubtotal()+shipping())}</span>
-      </div>
+      <span>
+        ZWISCHENSUMME
+      </span>
 
-    `;
+      <span>
+        ${formatPrice(
+          cartSubtotal()
+        )}
+      </span>
+
+    </div>
+
+
+    <div class="summary-row">
+
+      <span>
+        VERSAND
+      </span>
+
+      <span>
+
+        ${
+          shipping()===0
+          ?"KOSTENLOS"
+          :formatPrice(
+            shipping()
+          )
+        }
+
+      </span>
+
+    </div>
+
+
+    <div class="summary-row total">
+
+      <span>
+        GESAMT
+      </span>
+
+      <span>
+        ${formatPrice(
+          cartSubtotal()+shipping()
+        )}
+      </span>
+
+    </div>
+
+  `;
+
 
   closeCart();
-  openModal("checkoutModal");
+
+  openModal(
+    "checkoutModal"
+  );
 
 }
+
 
 function selectPayment(el){
 
   document
-    .querySelectorAll(".payment-option")
-    .forEach(x=>{
-      x.style.background="#151515";
-      x.style.color="#fff";
-    });
+    .querySelectorAll(
+      ".payment-option"
+    )
+    .forEach(
+      x=>{
 
-  el.style.background="#fff";
-  el.style.color="#000";
+        x.style.background=
+          "#151515";
+
+        x.style.color=
+          "#fff";
+
+      }
+    );
+
+
+  el.style.background=
+    "#fff";
+
+  el.style.color=
+    "#000";
 
 }
+
 
 function placeDemoOrder(){
 
   const first=
-    document.getElementById("checkoutFirstName")
-      .value.trim();
+    document.getElementById(
+      "checkoutFirstName"
+    ).value.trim();
+
 
   const last=
-    document.getElementById("checkoutLastName")
-      .value.trim();
+    document.getElementById(
+      "checkoutLastName"
+    ).value.trim();
+
 
   const email=
-    document.getElementById("checkoutEmail")
-      .value.trim();
+    document.getElementById(
+      "checkoutEmail"
+    ).value.trim();
 
-  if(!first||!last||!email){
 
-    toast("Bitte Name und E-Mail ausfüllen.");
+  if(
+    !first||
+    !last||
+    !email
+  ){
+
+    toast(
+      "Bitte Name und E-Mail ausfüllen."
+    );
+
     return;
 
   }
 
+
   orders.unshift({
 
-    id:"GON-"+Date.now().toString().slice(-7),
+    id:
+      "GON-"+
+      Date.now()
+        .toString()
+        .slice(-7),
 
-    date:new Date()
-      .toLocaleDateString("de-DE"),
+    date:
+      new Date()
+        .toLocaleDateString(
+          "de-DE"
+        ),
 
-    total:cartSubtotal()+shipping(),
+    total:
+      cartSubtotal()+shipping(),
 
-    items:[...cart],
+    items:[
+      ...cart
+    ],
 
-    status:"Demo"
+    status:
+      "Demo"
 
   });
+
 
   cart=[];
 
   saveState();
   updateBadges();
 
-  closeModal("checkoutModal");
+  closeModal(
+    "checkoutModal"
+  );
 
-  toast("DEMO-BESTELLUNG ERSTELLT.");
+  toast(
+    "DEMO-BESTELLUNG ERSTELLT."
+  );
 
 }
 
 
-/* ACCOUNT */
+/* =========================
+   ACCOUNT
+========================= */
 
 function openAccount(){
 
   renderAccount();
-  openModal("accountModal");
+
+  openModal(
+    "accountModal"
+  );
 
 }
+
 
 function renderAccount(){
 
   const box=
-    document.getElementById("accountContent");
+    document.getElementById(
+      "accountContent"
+    );
+
 
   if(!account){
 
@@ -3522,6 +4591,7 @@ function renderAccount(){
           EINLOGGEN
         </button>
 
+
         <button
           class="account-tab"
           onclick="showRegister()"
@@ -3531,8 +4601,11 @@ function renderAccount(){
 
       </div>
 
+
       <div id="accountForm">
+
         ${loginForm()}
+
       </div>
 
     `;
@@ -3541,39 +4614,59 @@ function renderAccount(){
 
   }
 
+
   box.innerHTML=`
 
     <div class="account-card">
 
-      <h3>${account.username}</h3>
+      <h3>
+        ${account.username}
+      </h3>
 
-      <p>${account.email}</p>
+      <p>
+        ${account.email}
+      </p>
 
     </div>
 
+
     <div class="account-card">
 
-      <h3>BESTELLUNGEN</h3>
+      <h3>
+        BESTELLUNGEN
+      </h3>
+
 
       ${
         orders.length
-        ?orders.map(o=>`
-          <div
-            style="
-              border-top:1px solid #292929;
-              padding:12px 0;
-              font-size:11px
-            "
-          >
-            ${o.id}
-            · ${o.date}
-            · ${formatPrice(o.total)}
-          </div>
-        `).join("")
+
+        ?orders.map(
+          o=>`
+
+            <div
+              style="
+                border-top:1px solid #292929;
+                padding:12px 0;
+                font-size:11px
+              "
+            >
+
+              ${o.id}
+              ·
+              ${o.date}
+              ·
+              ${formatPrice(o.total)}
+
+            </div>
+
+          `
+        ).join("")
+
         :"<p>Noch keine Bestellungen.</p>"
       }
 
     </div>
+
 
     <button
       class="add-cart"
@@ -3586,23 +4679,47 @@ function renderAccount(){
 
 }
 
+
 function loginForm(){
 
   return `
 
     <div class="account-card">
 
-      <h3>DEMO LOGIN</h3>
+      <h3>
+        DEMO LOGIN
+      </h3>
 
-      <div class="form-group" style="margin-top:18px">
-        <label>BENUTZERNAME</label>
-        <input id="loginUsername">
+
+      <div
+        class="form-group"
+        style="margin-top:18px"
+      >
+
+        <label>
+          BENUTZERNAME
+        </label>
+
+        <input
+          id="loginUsername"
+        >
+
       </div>
+
 
       <div class="form-group">
-        <label>E-MAIL</label>
-        <input id="loginEmail" type="email">
+
+        <label>
+          E-MAIL
+        </label>
+
+        <input
+          id="loginEmail"
+          type="email"
+        >
+
       </div>
+
 
       <button
         class="add-cart"
@@ -3617,23 +4734,47 @@ function loginForm(){
 
 }
 
+
 function registerForm(){
 
   return `
 
     <div class="account-card">
 
-      <h3>ACCOUNT ERSTELLEN</h3>
+      <h3>
+        ACCOUNT ERSTELLEN
+      </h3>
 
-      <div class="form-group" style="margin-top:18px">
-        <label>BENUTZERNAME</label>
-        <input id="registerUsername">
+
+      <div
+        class="form-group"
+        style="margin-top:18px"
+      >
+
+        <label>
+          BENUTZERNAME
+        </label>
+
+        <input
+          id="registerUsername"
+        >
+
       </div>
+
 
       <div class="form-group">
-        <label>E-MAIL</label>
-        <input id="registerEmail" type="email">
+
+        <label>
+          E-MAIL
+        </label>
+
+        <input
+          id="registerEmail"
+          type="email"
+        >
+
       </div>
+
 
       <button
         class="add-cart"
@@ -3648,125 +4789,226 @@ function registerForm(){
 
 }
 
+
 function showLogin(){
-  document.getElementById("accountForm")
-    .innerHTML=loginForm();
+
+  document.getElementById(
+    "accountForm"
+  ).innerHTML=
+    loginForm();
+
 }
 
+
 function showRegister(){
-  document.getElementById("accountForm")
-    .innerHTML=registerForm();
+
+  document.getElementById(
+    "accountForm"
+  ).innerHTML=
+    registerForm();
+
 }
+
 
 function loginAccount(){
 
   const username=
-    document.getElementById("loginUsername").value.trim();
+    document.getElementById(
+      "loginUsername"
+    ).value.trim();
+
 
   const email=
-    document.getElementById("loginEmail").value.trim();
+    document.getElementById(
+      "loginEmail"
+    ).value.trim();
+
 
   if(!username||!email){
 
-    toast("Bitte Felder ausfüllen.");
+    toast(
+      "Bitte Felder ausfüllen."
+    );
+
     return;
 
   }
 
-  account={username,email};
+
+  account={
+    username,
+    email
+  };
+
 
   saveState();
+
   renderAccount();
 
 }
+
 
 function registerAccount(){
 
   const username=
-    document.getElementById("registerUsername").value.trim();
+    document.getElementById(
+      "registerUsername"
+    ).value.trim();
+
 
   const email=
-    document.getElementById("registerEmail").value.trim();
+    document.getElementById(
+      "registerEmail"
+    ).value.trim();
+
 
   if(!username||!email){
 
-    toast("Bitte Felder ausfüllen.");
+    toast(
+      "Bitte Felder ausfüllen."
+    );
+
     return;
 
   }
 
-  account={username,email};
+
+  account={
+    username,
+    email
+  };
+
 
   saveState();
+
   renderAccount();
 
-  toast("ACCOUNT ERSTELLT.");
+  toast(
+    "ACCOUNT ERSTELLT."
+  );
 
 }
+
 
 function logoutAccount(){
 
   account=null;
 
   saveState();
+
   renderAccount();
 
 }
 
 
-/* LEGAL */
+/* =========================
+   LEGAL
+========================= */
 
 function openLegal(type){
 
   const texts={
 
     impressum:`
-      <h2>IMPRESSUM</h2>
+
+      <h2>
+        IMPRESSUM
+      </h2>
+
       <p>
+
         ГОНЩИКИ CREW<br>
         Streetwear · Est. 2025<br><br>
-        E-Mail: info@gonschikicrew.de<br><br>
-        Instagram: @gonschikicrew
+
+        E-Mail:
+        info@gonschikicrew.de<br><br>
+
+        Instagram:
+        @gonschikicrew
+
       </p>
+
     `,
+
 
     privacy:`
-      <h2>DATENSCHUTZ</h2>
+
+      <h2>
+        DATENSCHUTZ
+      </h2>
+
       <p>
-        Diese Website ist aktuell eine Demo-Version.
-        Lokale Demo-Daten wie Warenkorb, Wunschliste
-        und Demo-Account können im Browser gespeichert werden.
+
+        Diese Website ist aktuell
+        eine Demo-Version.
+
+        Lokale Demo-Daten wie Warenkorb,
+        Wunschliste und Demo-Account
+        können im Browser gespeichert werden.
+
       </p>
+
     `,
+
 
     withdrawal:`
-      <h2>WIDERRUF</h2>
+
+      <h2>
+        WIDERRUF
+      </h2>
+
       <p>
-        Diese Website ist aktuell ein Demo-Shop.
-        Es werden keine echten Bestellungen angenommen.
+
+        Diese Website ist aktuell
+        ein Demo-Shop.
+
+        Es werden keine echten
+        Bestellungen angenommen.
+
       </p>
+
     `,
 
+
     terms:`
-      <h2>AGB</h2>
+
+      <h2>
+        AGB
+      </h2>
+
       <p>
-        Diese Website dient aktuell ausschließlich
-        als Verkaufs-Demo. Preise, Größen, Versandkosten
-        und Verfügbarkeit können sich noch ändern.
+
+        Diese Website dient aktuell
+        ausschließlich als Verkaufs-Demo.
+
+        Preise, Größen, Versandkosten
+        und Verfügbarkeit können sich
+        noch ändern.
+
       </p>
+
     `
 
   };
 
-  document.getElementById("legalContent")
-    .innerHTML=texts[type]||"";
 
-  openModal("legalModal");
+  document.getElementById(
+    "legalContent"
+  ).innerHTML=
+    texts[type]||"";
+
+
+  openModal(
+    "legalModal"
+  );
 
 }
 
 
-/* ADMIN NUR ÜBER #admin */
+/* =========================
+   ADMIN
+   NUR ÜBER #admin
+========================= */
 
 function checkAdminUrl(){
 
@@ -3780,116 +5022,178 @@ function checkAdminUrl(){
 
 }
 
+
 function openAdminLogin(){
 
-  document.getElementById("adminContent")
-    .innerHTML=`
+  document.getElementById(
+    "adminContent"
+  ).innerHTML=`
 
-      <div class="eyebrow">
-        ГОНЩИКИ
-      </div>
+    <div class="eyebrow">
+      ГОНЩИКИ
+    </div>
 
-      <h2 class="admin-title">
-        ADMIN LOGIN
-      </h2>
 
-      <div class="form-group">
+    <h2 class="admin-title">
+      ADMIN LOGIN
+    </h2>
 
-        <label>PASSWORT</label>
 
-        <input
-          id="adminPassword"
-          type="password"
-          onkeydown="
-            if(event.key==='Enter')
+    <div class="form-group">
+
+      <label>
+        PASSWORT
+      </label>
+
+      <input
+        id="adminPassword"
+        type="password"
+        onkeydown="
+          if(event.key==='Enter'){
             checkAdminPassword()
-          "
-        >
-
-      </div>
-
-      <button
-        class="add-cart"
-        onclick="checkAdminPassword()"
+          }
+        "
       >
-        ÖFFNEN
-      </button>
 
-    `;
+    </div>
 
-  openModal("adminModal");
+
+    <button
+      class="add-cart"
+      onclick="checkAdminPassword()"
+    >
+      ÖFFNEN
+    </button>
+
+  `;
+
+
+  openModal(
+    "adminModal"
+  );
 
 }
+
 
 function checkAdminPassword(){
 
   const password=
-    document.getElementById("adminPassword").value;
+    document.getElementById(
+      "adminPassword"
+    ).value;
 
-  if(password!=="gonschiki2025"){
 
-    toast("Falsches Passwort.");
+  if(
+    password!=="gonschiki2025"
+  ){
+
+    toast(
+      "Falsches Passwort."
+    );
+
     return;
 
   }
+
 
   renderAdmin();
 
 }
 
+
 function renderAdmin(){
 
-  document.getElementById("adminContent")
-    .innerHTML=`
+  document.getElementById(
+    "adminContent"
+  ).innerHTML=`
 
-      <div class="eyebrow">
-        ГОНЩИКИ · ADMIN
-      </div>
+    <div class="eyebrow">
+      ГОНЩИКИ · ADMIN
+    </div>
 
-      <h2 class="admin-title">
-        ADMIN DASHBOARD
-      </h2>
 
-      <div class="admin-grid">
+    <h2 class="admin-title">
+      ADMIN DASHBOARD
+    </h2>
 
-        <div class="admin-stat">
-          <span>PRODUCTS</span>
-          <strong>${products.length}</strong>
-        </div>
 
-        <div class="admin-stat">
-          <span>STOCK</span>
-          <strong>
-            ${products.reduce(
-              (sum,p)=>sum+totalStock(p),0
-            )}
-          </strong>
-        </div>
+    <div class="admin-grid">
 
-        <div class="admin-stat">
-          <span>ORDERS</span>
-          <strong>${orders.length}</strong>
-        </div>
+      <div class="admin-stat">
+
+        <span>
+          PRODUCTS
+        </span>
+
+        <strong>
+          ${products.length}
+        </strong>
 
       </div>
 
-      ${
-        products.map(p=>`
+
+      <div class="admin-stat">
+
+        <span>
+          STOCK
+        </span>
+
+        <strong>
+
+          ${products.reduce(
+            (sum,p)=>
+              sum+totalStock(p),
+            0
+          )}
+
+        </strong>
+
+      </div>
+
+
+      <div class="admin-stat">
+
+        <span>
+          ORDERS
+        </span>
+
+        <strong>
+          ${orders.length}
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    ${
+      products.map(
+        p=>`
 
           <div class="admin-product">
 
-            <img src="${p.image}" alt="">
+            <img
+              src="${p.image}"
+              alt=""
+            >
+
 
             <div>
 
-              <strong>${p.name}</strong>
+              <strong>
+                ${p.name}
+              </strong>
 
               <small>
+
                 ${formatPrice(p.price)}
-                · Bestand ${totalStock(p)}
+                · Bestand
+                ${totalStock(p)}
+
               </small>
 
             </div>
+
 
             <div>
               ${p.category.toUpperCase()}
@@ -3897,58 +5201,81 @@ function renderAdmin(){
 
           </div>
 
-        `).join("")
-      }
+        `
+      ).join("")
+    }
 
-    `;
+  `;
 
 }
 
 
-/* LANGUAGE */
+/* =========================
+   LANGUAGE
+========================= */
 
 function changeLanguage(language){
 
-  if(language==="de")
-    toast("Deutsch ausgewählt.");
+  if(language==="de"){
+    toast(
+      "Deutsch ausgewählt."
+    );
+  }
 
-  if(language==="en")
-    toast("English version vorbereitet.");
+  if(language==="en"){
+    toast(
+      "English version vorbereitet."
+    );
+  }
 
-  if(language==="ru")
-    toast("Русская версия подготовлена.");
+  if(language==="ru"){
+    toast(
+      "Русская версия подготовлена."
+    );
+  }
 
 }
 
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION
+========================= */
 
 function scrollToShop(){
 
-  document.getElementById("shop")
-    .scrollIntoView({
-      behavior:"smooth"
-    });
+  document.getElementById(
+    "shop"
+  ).scrollIntoView({
+    behavior:"smooth"
+  });
 
 }
 
 
-/* INIT */
+/* =========================
+   INIT
+========================= */
 
 function init(){
 
   renderProducts();
+
   renderCart();
+
   updateBadges();
+
   renderAccount();
+
   checkAdminUrl();
 
 }
+
 
 window.addEventListener(
   "hashchange",
   checkAdminUrl
 );
+
 
 init();
 
