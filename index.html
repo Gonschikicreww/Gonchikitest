@@ -2,140 +2,106 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>ГОНЩИКИ — Streetwear</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{
   font-family:Arial,Helvetica,sans-serif;
   background:#050505;
   color:#fff;
-  overflow-x:hidden;
+  overflow-x:hidden
 }
-
-button,input,select{
-  font:inherit;
-}
-
-button{
-  cursor:pointer;
-}
-
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-/* =========================
-   TOP BAR
-========================= */
+button,input,select{font:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
 
 .preview-bar{
   background:#fff;
   color:#000;
   text-align:center;
-  padding:10px 15px;
-  font-size:11px;
+  padding:9px 12px;
+  font-size:10px;
   font-weight:900;
-  letter-spacing:.7px;
+  letter-spacing:.7px
 }
-
-/* =========================
-   HEADER
-========================= */
 
 header{
   position:fixed;
-  top:34px;
+  top:32px;
   left:0;
   width:100%;
   z-index:1000;
-  padding:18px 5%;
+  padding:16px 5%;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  background:rgba(0,0,0,.82);
+  background:rgba(0,0,0,.84);
   backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid #222
 }
 
 .logo{
-  font-size:25px;
+  font-size:24px;
   font-weight:1000;
   letter-spacing:2px;
-  line-height:.9;
+  line-height:.9
 }
 
 .logo small{
   display:block;
-  margin-top:8px;
-  font-size:9px;
+  margin-top:7px;
+  font-size:8px;
   letter-spacing:3px;
-  text-align:center;
+  text-align:center
 }
 
 .nav{
   display:flex;
-  align-items:center;
-  gap:25px;
+  gap:24px
 }
 
 .nav a{
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:1px;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1px
 }
 
-.nav a:hover{
-  opacity:.55;
-}
+.nav a:hover{opacity:.55}
 
 .header-actions{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:12px
 }
 
 .header-icon{
   background:none;
   border:0;
   color:#fff;
-  font-size:20px;
-  position:relative;
+  font-size:19px;
+  position:relative
 }
 
 .wheel-icon{
   width:30px;
-  height:30px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  height:30px
 }
 
 .wheel-icon svg{
   width:27px;
-  height:27px;
-  display:block;
-  transition:.35s ease;
+  transition:.3s
 }
 
 .wheel-icon:hover svg{
-  transform:rotate(25deg);
+  transform:rotate(25deg)
 }
 
 .cart-count{
   position:absolute;
-  top:-7px;
+  top:-6px;
   right:-8px;
   min-width:17px;
   height:17px;
@@ -147,12 +113,8 @@ header{
   color:#000;
   border-radius:50%;
   font-size:9px;
-  font-weight:900;
+  font-weight:900
 }
-
-/* =========================
-   HERO
-========================= */
 
 .hero{
   min-height:100vh;
@@ -164,650 +126,459 @@ header{
   padding:150px 20px 100px;
   overflow:hidden;
   background:
-    linear-gradient(rgba(0,0,0,.46),rgba(0,0,0,.76)),
-    url("assets/Car-1.JPG") center center / cover no-repeat;
+    linear-gradient(rgba(0,0,0,.46),rgba(0,0,0,.78)),
+    url("assets/Car-1.JPG") center/cover no-repeat
 }
 
-.hero::after{
+.hero:after{
   content:"";
   position:absolute;
   inset:0;
   background:linear-gradient(
     to bottom,
     transparent 55%,
-    rgba(5,5,5,.95) 100%
-  );
+    rgba(5,5,5,.96)
+  )
 }
 
 .hero-content{
   position:relative;
   z-index:2;
-  max-width:1100px;
+  max-width:1100px
 }
 
 .hero-logo{
   font-size:clamp(60px,12vw,155px);
   font-weight:1000;
   letter-spacing:7px;
-  line-height:.85;
+  line-height:.85
 }
 
 .hero-est{
-  margin-top:42px;
+  margin-top:40px;
   font-size:clamp(15px,2vw,25px);
   letter-spacing:10px;
-  font-weight:700;
+  font-weight:700
 }
 
 .hero-text{
   max-width:650px;
-  margin:85px auto 0;
+  margin:80px auto 0;
   font-size:15px;
   line-height:1.8;
-  color:#ddd;
+  color:#ddd
 }
 
 .hero-slogan{
-  margin-top:75px;
+  margin-top:65px;
   font-weight:1000;
   letter-spacing:3px;
   line-height:1.5;
-  font-size:clamp(18px,3vw,32px);
+  font-size:clamp(18px,3vw,32px)
 }
 
-.hero-slogan span{
-  display:block;
-}
+.hero-slogan span{display:block}
 
 .hero-button{
   display:inline-block;
-  margin-top:45px;
-  padding:16px 30px;
+  margin-top:40px;
+  padding:15px 28px;
   background:#fff;
   color:#000;
   font-weight:900;
-  font-size:12px;
-  letter-spacing:1px;
-  transition:.2s;
+  font-size:11px;
+  letter-spacing:1px
 }
 
-.hero-button:hover{
-  background:#ddd;
-  transform:translateY(-2px);
-}
-
-/* =========================
-   GENERAL
-========================= */
-
-section{
-  padding:110px 5%;
-}
+section{padding:105px 5%}
 
 .section-title{
   font-size:clamp(35px,6vw,75px);
   font-weight:1000;
   letter-spacing:2px;
-  margin-bottom:15px;
+  margin-bottom:12px
 }
 
 .section-subtitle{
   color:#888;
-  font-size:13px;
+  font-size:12px;
   letter-spacing:1px;
-  margin-bottom:45px;
+  margin-bottom:35px
 }
 
-/* =========================
-   SHOP
-========================= */
+.shop-section{background:#050505}
 
-.shop-section{
-  background:#050505;
-}
-
-.gender-tabs{
-  display:flex;
-  gap:8px;
-  margin-bottom:25px;
-}
-
-.gender-tab{
-  border:1px solid #333;
-  background:transparent;
-  color:#fff;
-  padding:12px 22px;
-  font-size:11px;
-  font-weight:900;
-  letter-spacing:1px;
-}
-
-.gender-tab.active{
-  background:#fff;
-  color:#000;
-}
-
+.gender-tabs,
 .categories{
   display:flex;
   flex-wrap:wrap;
-  gap:8px;
-  margin-bottom:45px;
+  gap:7px;
+  margin-bottom:20px
 }
 
+.gender-tab,
 .category-btn{
-  border:1px solid #292929;
+  border:1px solid #333;
   background:#0c0c0c;
   color:#fff;
-  padding:11px 18px;
+  padding:11px 17px;
   font-size:10px;
   font-weight:900;
-  letter-spacing:1px;
+  letter-spacing:1px
 }
 
+.gender-tab.active,
 .category-btn.active{
   background:#fff;
+  color:#000
+}
+
+.search-row{
+  display:flex;
+  gap:8px;
+  margin:0 0 25px;
+  max-width:700px
+}
+
+.search-row input{
+  flex:1;
+  background:#0c0c0c;
+  color:#fff;
+  border:1px solid #333;
+  padding:13px 14px;
+  outline:none
+}
+
+.search-row button{
+  background:#fff;
   color:#000;
+  border:0;
+  padding:0 18px;
+  font-weight:900;
+  font-size:10px
 }
 
 .product-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:18px;
+  gap:18px
 }
 
 .product-card{
   background:#0b0b0b;
   border:1px solid #171717;
   overflow:hidden;
-  transition:.25s;
+  transition:.25s
 }
 
 .product-card:hover{
   transform:translateY(-4px);
-  border-color:#444;
+  border-color:#444
 }
 
 .product-image{
   position:relative;
-  aspect-ratio:1/1;
+  aspect-ratio:1;
   background:#111;
-  overflow:hidden;
+  overflow:hidden
 }
 
 .product-image img{
   width:100%;
   height:100%;
   object-fit:cover;
-  transition:.3s;
+  transition:.3s
 }
 
 .product-card:hover .product-image img{
-  transform:scale(1.04);
+  transform:scale(1.04)
 }
 
 .product-card.sticker-card .product-image{
-  background:#111;
-  padding:22px;
+  padding:20px;
   display:flex;
   align-items:center;
-  justify-content:center;
+  justify-content:center
 }
 
 .product-card.sticker-card .product-image img{
-  width:100%;
-  height:100%;
-  max-width:90%;
-  max-height:78%;
   object-fit:contain;
-  object-position:center;
-  transform:none !important;
-  padding:8px;
+  max-width:92%;
+  max-height:80%;
+  padding:5px;
+  transform:none!important
 }
 
-.product-card.sticker-card:hover .product-image img{
-  transform:scale(1.025) !important;
+.product-stock,
+.sale-badge{
+  position:absolute;
+  top:10px;
+  padding:7px 9px;
+  font-size:8px;
+  font-weight:1000;
+  z-index:3
 }
 
 .product-stock{
-  position:absolute;
-  top:12px;
-  left:12px;
+  left:10px;
   background:#fff;
-  color:#000;
-  padding:7px 9px;
-  font-size:9px;
-  font-weight:1000;
-  letter-spacing:.5px;
-  z-index:3;
+  color:#000
 }
 
 .product-stock.soldout{
   background:#111;
   color:#777;
-  border:1px solid #333;
+  border:1px solid #333
 }
 
 .sale-badge{
-  position:absolute;
-  top:12px;
-  right:12px;
+  right:10px;
   background:#e00000;
   color:#fff;
-  padding:8px 10px;
-  font-size:9px;
-  font-weight:1000;
+  letter-spacing:1px
+}
+
+.product-info{padding:16px}
+
+.product-category{
+  color:#777;
+  font-size:8px;
+  text-transform:uppercase;
+  margin-bottom:8px
+}
+
+.product-info h3{
+  font-size:11px;
   letter-spacing:1px;
-  z-index:3;
+  margin-bottom:8px
 }
 
 .product-price{
-  font-size:15px;
-  font-weight:900;
-}
-
-.product-price.sale{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  flex-wrap:wrap;
+  font-size:14px;
+  font-weight:900
 }
 
 .old-price{
   color:#777;
   text-decoration:line-through;
-  font-size:12px;
-  font-weight:700;
+  font-size:11px;
+  margin-right:7px
 }
 
 .sale-price{
   color:#e00000;
-  font-size:16px;
-  font-weight:1000;
-}
-
-.product-info{
-  padding:18px;
-}
-
-.product-info h3{
-  font-size:12px;
-  letter-spacing:1px;
-  margin-bottom:8px;
-}
-
-.product-category{
-  color:#777;
-  font-size:9px;
-  text-transform:uppercase;
-  margin-bottom:12px;
+  font-size:15px;
+  font-weight:1000
 }
 
 .product-open{
   width:100%;
-  margin-top:15px;
-  padding:12px;
+  margin-top:13px;
+  padding:11px;
   border:1px solid #333;
   background:transparent;
   color:#fff;
-  font-size:10px;
-  font-weight:900;
-  letter-spacing:1px;
+  font-size:9px;
+  font-weight:900
 }
 
 .product-open:hover{
   background:#fff;
-  color:#000;
+  color:#000
 }
 
-.product-open:disabled{
-  opacity:.35;
-  cursor:not-allowed;
-}
+.product-open:disabled{opacity:.3}
 
-/* =========================
-   CARS
-========================= */
-
-.cars-section{
-  background:#080808;
-}
+.cars-section{background:#080808}
 
 .cars-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:25px;
+  gap:24px
 }
 
 .car{
   background:#0d0d0d;
-  overflow:hidden;
+  overflow:hidden
 }
 
 .car-image{
-  width:100%;
   aspect-ratio:16/10;
-  overflow:hidden;
+  overflow:hidden
 }
 
 .car-image img{
   width:100%;
   height:100%;
-  object-fit:cover;
-  display:block;
+  object-fit:cover
 }
 
-.car:nth-child(1) .car-image img,
-.car:nth-child(3) .car-image img,
-.car:nth-child(5) .car-image img{
-  object-position:center 68%;
-}
-
-.car:last-child{
-  grid-column:1 / -1;
-  max-width:calc(50% - 12.5px);
-}
-
-.car-info{
-  padding:20px;
-}
+.car-info{padding:18px}
 
 .car-info h3{
-  font-size:15px;
-  letter-spacing:1px;
+  font-size:14px;
+  letter-spacing:1px
 }
 
 .car-info p{
-  margin-top:8px;
+  margin-top:7px;
   color:#777;
-  font-size:11px;
+  font-size:10px
 }
 
-/* =========================
-   EVENTS
-========================= */
-
-.events-section{
-  background:#050505;
+.car:last-child{
+  grid-column:1/-1;
+  max-width:calc(50% - 12px)
 }
+
+.events-section{background:#050505}
 
 .events-box{
   border:1px solid #222;
-  padding:35px;
-  max-width:900px;
-}
-
-.events-box h3{
-  font-size:20px;
-  margin-bottom:15px;
+  padding:32px;
+  max-width:900px
 }
 
 .events-box p{
   color:#888;
   line-height:1.8;
-  font-size:13px;
+  font-size:12px;
+  margin-top:12px
 }
-
-/* =========================
-   ABOUT
-========================= */
 
 .about-section{
   background:#fff;
-  color:#000;
+  color:#000
 }
 
-.about-grid{
+.about-grid,
+.contact-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:70px;
-  align-items:center;
-}
-
-.about-section .section-subtitle{
-  color:#555;
+  gap:60px
 }
 
 .about-text{
-  font-size:16px;
+  font-size:15px;
   line-height:1.9;
-  color:#333;
+  color:#333
 }
+
+.about-section .section-subtitle{color:#555}
 
 .about-highlight{
   font-size:clamp(35px,5vw,70px);
   font-weight:1000;
-  line-height:.95;
+  line-height:.95
 }
 
-/* =========================
-   CONTACT
-========================= */
-
-.contact-section{
-  background:#080808;
-}
-
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:50px;
-}
+.contact-section{background:#080808}
 
 .contact-item{
   border-bottom:1px solid #222;
-  padding:20px 0;
+  padding:19px 0
 }
 
 .contact-item span{
   display:block;
   color:#777;
-  font-size:9px;
+  font-size:8px;
   letter-spacing:2px;
-  margin-bottom:7px;
+  margin-bottom:6px
 }
 
-.contact-item strong{
-  font-size:16px;
-}
-
-/* =========================
-   FOOTER
-========================= */
+.contact-item strong{font-size:15px}
 
 footer{
-  padding:60px 5%;
+  padding:55px 5%;
   background:#000;
-  border-top:1px solid #171717;
+  border-top:1px solid #171717
 }
 
 .footer-top{
   display:flex;
   justify-content:space-between;
   gap:30px;
-  flex-wrap:wrap;
+  flex-wrap:wrap
 }
 
 .footer-logo{
-  font-size:30px;
-  font-weight:1000;
+  font-size:28px;
+  font-weight:1000
 }
 
 .footer-links{
   display:flex;
-  gap:25px;
-  flex-wrap:wrap;
+  gap:22px;
+  flex-wrap:wrap
 }
 
 .footer-links a{
-  font-size:10px;
+  font-size:9px;
   color:#888;
-  cursor:pointer;
+  cursor:pointer
 }
 
-.footer-links a:hover{
-  color:#fff;
-}
+.footer-links a:hover{color:#fff}
 
 .footer-bottom{
-  margin-top:50px;
-  padding-top:20px;
+  margin-top:45px;
+  padding-top:18px;
   border-top:1px solid #171717;
   color:#555;
-  font-size:9px;
+  font-size:8px
 }
-
-/* =========================
-   MODALS
-========================= */
 
 .modal{
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,.82);
+  background:rgba(0,0,0,.84);
   backdrop-filter:blur(10px);
   z-index:2000;
   display:none;
   align-items:center;
   justify-content:center;
-  padding:20px;
+  padding:18px
 }
 
-.modal.active{
-  display:flex;
-}
+.modal.active{display:flex}
 
 .modal-box{
   width:min(900px,100%);
-  max-height:90vh;
+  max-height:92vh;
   overflow:auto;
   background:#0b0b0b;
   border:1px solid #292929;
-  position:relative;
+  position:relative
 }
 
 .modal-close{
   position:absolute;
-  top:15px;
-  right:15px;
+  top:13px;
+  right:13px;
   background:#fff;
   color:#000;
-  width:34px;
-  height:34px;
+  width:33px;
+  height:33px;
   border:0;
   font-weight:1000;
-  z-index:2;
+  z-index:4
 }
-
-/* =========================
-   LEGAL
-========================= */
-
-.legal-box{
-  width:min(1000px,100%);
-  max-height:92vh;
-  padding:55px 45px 45px;
-}
-
-.legal-content{
-  color:#aaa;
-  font-size:12px;
-  line-height:1.8;
-}
-
-.legal-content h1{
-  color:#fff;
-  font-size:34px;
-  line-height:1.1;
-  margin-bottom:12px;
-}
-
-.legal-content h2{
-  color:#fff;
-  font-size:18px;
-  margin:30px 0 10px;
-}
-
-.legal-content h3{
-  color:#fff;
-  font-size:14px;
-  margin:20px 0 8px;
-}
-
-.legal-content p{
-  margin-bottom:12px;
-}
-
-.legal-content ul{
-  margin:10px 0 15px 20px;
-}
-
-.legal-content li{
-  margin-bottom:5px;
-}
-
-.legal-content strong{
-  color:#fff;
-}
-
-.legal-note{
-  padding:15px;
-  margin-bottom:25px;
-  border:1px solid #393939;
-  background:#151515;
-  color:#aaa;
-  font-size:10px;
-  line-height:1.7;
-}
-
-.legal-placeholder{
-  color:#fff;
-  background:#222;
-  border:1px dashed #555;
-  padding:2px 5px;
-}
-
-.legal-nav{
-  display:flex;
-  flex-wrap:wrap;
-  gap:7px;
-  margin-bottom:25px;
-  padding-bottom:20px;
-  border-bottom:1px solid #222;
-}
-
-.legal-nav button{
-  background:#111;
-  border:1px solid #333;
-  color:#fff;
-  padding:9px 12px;
-  font-size:9px;
-  font-weight:900;
-}
-
-.legal-nav button.active{
-  background:#fff;
-  color:#000;
-}
-
-/* =========================
-   PRODUCT MODAL
-========================= */
 
 .product-modal-content{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:1fr 1fr
 }
 
 .modal-product-image{
   min-height:500px;
-  background:#111;
-  position:relative;
+  background:#111
 }
 
 .modal-product-image img{
   width:100%;
   height:100%;
-  object-fit:cover;
+  object-fit:cover
 }
 
 .modal-sale-badge{
@@ -815,1108 +586,801 @@ footer{
   top:18px;
   left:18px;
   background:#e00000;
-  color:#fff;
-  padding:9px 12px;
-  font-size:10px;
-  font-weight:1000;
-  letter-spacing:1px;
+  padding:8px 11px;
+  font-size:9px;
+  font-weight:1000
 }
 
 .modal-product-info{
-  padding:50px 35px 35px;
+  padding:48px 32px 32px
 }
 
-.modal-product-info .small-label{
+.small-label{
   color:#777;
-  font-size:9px;
-  letter-spacing:2px;
+  font-size:8px;
+  letter-spacing:2px
 }
 
 .modal-product-info h2{
-  margin:10px 0;
-  font-size:28px;
+  margin:9px 0;
+  font-size:27px
 }
 
 .modal-price{
   font-size:20px;
   font-weight:900;
-  margin-bottom:25px;
-}
-
-.modal-price.sale{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  flex-wrap:wrap;
-}
-
-.modal-old-price{
-  color:#777;
-  text-decoration:line-through;
-  font-size:14px;
-}
-
-.modal-sale-price{
-  color:#e00000;
-  font-size:21px;
-  font-weight:1000;
+  margin-bottom:22px
 }
 
 .modal-description{
   color:#999;
-  font-size:12px;
+  font-size:11px;
   line-height:1.7;
-  margin-bottom:25px;
+  margin-bottom:22px
 }
 
 .option-label{
+  display:block;
   color:#777;
-  font-size:9px;
+  font-size:8px;
   font-weight:900;
   letter-spacing:1px;
-  margin-bottom:10px;
-  display:block;
+  margin-bottom:9px
 }
 
 .size-options{
   display:flex;
-  gap:7px;
+  gap:6px;
   flex-wrap:wrap;
-  margin-bottom:22px;
+  margin-bottom:20px
 }
 
 .size-option{
-  min-width:48px;
-  padding:11px;
+  min-width:47px;
+  padding:10px;
   border:1px solid #333;
   background:transparent;
   color:#fff;
-  font-size:10px;
-  font-weight:900;
+  font-size:9px;
+  font-weight:900
 }
 
 .size-option.active{
   background:#fff;
-  color:#000;
+  color:#000
 }
 
-.size-option:disabled{
-  opacity:.25;
-  cursor:not-allowed;
-}
+.size-option:disabled{opacity:.25}
 
 .modal-stock{
   color:#999;
-  font-size:10px;
-  margin-bottom:20px;
+  font-size:9px;
+  margin-bottom:18px
 }
 
 .quantity-box{
   display:flex;
   align-items:center;
-  gap:15px;
-  margin-bottom:25px;
+  gap:14px;
+  margin-bottom:22px
 }
 
 .quantity-box button{
-  width:35px;
-  height:35px;
+  width:34px;
+  height:34px;
   border:1px solid #333;
   background:transparent;
-  color:#fff;
+  color:#fff
 }
 
 .quantity-box strong{
-  min-width:25px;
-  text-align:center;
+  min-width:22px;
+  text-align:center
 }
 
-.add-button{
+.add-button,
+.light-button{
   width:100%;
-  padding:16px;
+  padding:15px;
   background:#fff;
   color:#000;
   border:0;
-  font-size:11px;
+  font-size:10px;
   font-weight:1000;
-  letter-spacing:1px;
+  letter-spacing:1px
 }
 
-.add-button:disabled{
-  opacity:.3;
-  cursor:not-allowed;
-}
+.add-button:disabled{opacity:.3}
 
-/* =========================
-   CART
-========================= */
-
-.cart-box{
-  width:min(800px,100%);
-  padding:35px;
+.cart-box,
+.account-box,
+.form-box,
+.admin-box,
+.legal-box{
+  padding:32px
 }
 
 .modal-title{
-  font-size:30px;
+  font-size:29px;
   font-weight:1000;
-  margin-bottom:30px;
+  margin-bottom:25px
 }
 
 .cart-items{
   display:flex;
   flex-direction:column;
-  gap:10px;
+  gap:9px
 }
 
 .cart-item{
   display:grid;
-  grid-template-columns:80px 1fr auto;
-  gap:15px;
-  padding:12px;
+  grid-template-columns:75px 1fr auto;
+  gap:14px;
+  padding:11px;
   background:#111;
   border:1px solid #1c1c1c;
-  align-items:center;
+  align-items:center
 }
 
 .cart-item img{
-  width:80px;
-  height:80px;
-  object-fit:cover;
+  width:75px;
+  height:75px;
+  object-fit:cover
 }
 
 .cart-item-name{
-  font-size:11px;
-  font-weight:900;
+  font-size:10px;
+  font-weight:900
 }
 
 .cart-item-meta{
   color:#777;
-  font-size:9px;
-  margin-top:6px;
+  font-size:8px;
+  margin-top:5px
 }
 
 .cart-item-price{
-  margin-top:7px;
-  font-size:11px;
-  font-weight:900;
-}
-
-.cart-price-old{
-  color:#666;
-  text-decoration:line-through;
-  font-size:9px;
-  margin-right:5px;
-}
-
-.cart-price-sale{
-  color:#e00000;
-  font-weight:1000;
+  margin-top:6px;
+  font-size:10px;
+  font-weight:900
 }
 
 .cart-quantity{
   display:flex;
+  gap:7px;
   align-items:center;
-  gap:8px;
-  margin-top:10px;
+  margin-top:9px
 }
 
 .cart-quantity button{
-  width:25px;
-  height:25px;
+  width:24px;
+  height:24px;
   background:#181818;
   border:1px solid #333;
-  color:#fff;
+  color:#fff
 }
 
 .cart-remove{
   background:none;
   border:0;
   color:#777;
-  font-size:9px;
-  margin-top:7px;
+  font-size:8px;
+  margin-top:6px
 }
 
 .cart-summary{
   border-top:1px solid #292929;
-  margin-top:25px;
-  padding-top:20px;
+  margin-top:22px;
+  padding-top:18px
 }
 
 .summary-row{
   display:flex;
   justify-content:space-between;
-  margin-bottom:10px;
-  font-size:12px;
+  margin-bottom:9px;
+  font-size:11px
 }
 
 .summary-total{
-  margin-top:15px;
-  padding-top:15px;
+  margin-top:13px;
+  padding-top:13px;
   border-top:1px solid #292929;
-  font-size:17px;
-  font-weight:1000;
+  font-size:16px;
+  font-weight:1000
 }
 
 .cart-actions{
   display:flex;
-  gap:10px;
-  margin-top:25px;
-}
-
-.dark-button,
-.light-button{
-  flex:1;
-  padding:15px;
-  font-size:10px;
-  font-weight:1000;
-  letter-spacing:1px;
+  gap:9px;
+  margin-top:22px
 }
 
 .dark-button{
+  flex:1;
+  padding:14px;
   background:transparent;
   color:#fff;
   border:1px solid #333;
+  font-size:9px;
+  font-weight:1000
 }
 
-.light-button{
-  background:#fff;
-  color:#000;
-  border:1px solid #fff;
-}
-
-.empty-cart{
-  padding:50px 10px;
+.empty-cart,
+.no-orders{
+  padding:45px 10px;
   text-align:center;
   color:#777;
-  font-size:12px;
-}
-
-/* =========================
-   FORMS
-========================= */
-
-.form-box{
-  padding:40px;
+  font-size:11px
 }
 
 .form-grid{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:15px;
+  gap:14px
 }
 
-.form-group{
-  margin-bottom:15px;
-}
+.form-group{margin-bottom:14px}
 
-.form-group.full{
-  grid-column:1 / -1;
-}
+.form-group.full{grid-column:1/-1}
 
 .form-group label{
   display:block;
   color:#777;
-  font-size:9px;
+  font-size:8px;
   letter-spacing:1px;
-  margin-bottom:7px;
+  margin-bottom:6px
 }
 
 .form-group input,
 .form-group select{
   width:100%;
-  padding:13px;
   background:#111;
-  border:1px solid #333;
   color:#fff;
-  outline:none;
-}
-
-.form-group input:focus,
-.form-group select:focus{
-  border-color:#777;
-}
-
-.demo-note{
+  border:1px solid #333;
   padding:12px;
-  background:#151515;
-  border:1px solid #282828;
-  color:#777;
-  font-size:9px;
-  line-height:1.6;
-  margin-bottom:20px;
+  outline:none
 }
 
-/* =========================
-   ACCOUNT
-========================= */
-
-.account-box{
-  width:min(800px,100%);
-  padding:40px;
+.payment-options{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin:10px 0 20px
 }
 
-.account-status{
-  padding:18px;
+.payment-option{
+  padding:13px 8px;
   background:#111;
-  border:1px solid #222;
-  margin-bottom:20px;
-}
-
-.account-status strong{
-  display:block;
-  font-size:15px;
-  margin-bottom:5px;
-}
-
-.account-status span{
-  color:#777;
-  font-size:10px;
-}
-
-.account-buttons{
-  display:flex;
-  gap:10px;
-  margin-bottom:35px;
-}
-
-.account-buttons button{
-  padding:13px 18px;
-  border:1px solid #333;
-  background:transparent;
   color:#fff;
-  font-size:10px;
-  font-weight:900;
+  border:1px solid #333;
+  font-size:9px;
+  font-weight:900
 }
 
-.account-buttons button:hover{
+.payment-option.active{
+  background:#fff;
+  color:#000
+}
+
+.coupon-row{
+  display:flex;
+  gap:7px;
+  margin:10px 0 20px
+}
+
+.coupon-row input{
+  flex:1;
+  background:#111;
+  color:#fff;
+  border:1px solid #333;
+  padding:12px
+}
+
+.coupon-row button{
   background:#fff;
   color:#000;
+  border:0;
+  padding:0 16px;
+  font-size:9px;
+  font-weight:900
 }
 
-/* =========================
-   ORDER HISTORY
-========================= */
-
-.order-history{
-  border-top:1px solid #222;
-  padding-top:30px;
-}
-
-.order-history-title{
-  font-size:18px;
-  font-weight:1000;
-  margin-bottom:18px;
-  letter-spacing:1px;
-}
-
-.no-orders{
-  color:#777;
-  font-size:11px;
-  line-height:1.7;
-  padding:20px 0;
-}
-
-.order-list{
+.account-tabs{
   display:flex;
-  flex-direction:column;
-  gap:10px;
+  gap:7px;
+  margin-bottom:22px
+}
+
+.account-tab{
+  padding:10px 14px;
+  background:#111;
+  border:1px solid #333;
+  color:#fff;
+  font-size:9px;
+  font-weight:900
+}
+
+.account-tab.active{
+  background:#fff;
+  color:#000
+}
+
+.account-panel{display:none}
+.account-panel.active{display:block}
+
+.account-user{
+  background:#111;
+  border:1px solid #222;
+  padding:18px;
+  margin-bottom:18px
 }
 
 .order-card{
   background:#111;
-  border:1px solid #242424;
+  border:1px solid #222;
+  padding:17px;
+  margin-bottom:9px
 }
 
-.order-header{
-  padding:17px;
-  display:grid;
-  grid-template-columns:1fr auto auto;
-  gap:15px;
-  align-items:center;
-  cursor:pointer;
+.order-card-top{
+  display:flex;
+  justify-content:space-between;
+  gap:10px
 }
 
 .order-number{
-  font-size:12px;
-  font-weight:1000;
+  font-size:10px;
+  font-weight:1000
+}
+
+.order-status{
+  font-size:8px;
+  color:#aaa
 }
 
 .order-date{
   color:#777;
-  font-size:9px;
-  margin-top:5px;
-}
-
-.order-status{
-  padding:7px 9px;
-  background:#222;
-  color:#aaa;
   font-size:8px;
-  font-weight:900;
-  letter-spacing:1px;
+  margin-top:5px
 }
 
-.order-header-total{
-  font-size:12px;
-  font-weight:900;
-}
-
-.order-details{
-  display:none;
+.order-lines{
   border-top:1px solid #222;
-  padding:17px;
+  margin-top:12px;
+  padding-top:12px
 }
 
-.order-card.open .order-details{
-  display:block;
-}
-
-.order-item{
-  display:grid;
-  grid-template-columns:55px 1fr auto;
-  gap:12px;
-  align-items:center;
-  padding:10px 0;
-  border-bottom:1px solid #1d1d1d;
-}
-
-.order-item:last-child{
-  border-bottom:0;
-}
-
-.order-item img{
-  width:55px;
-  height:55px;
-  object-fit:cover;
-}
-
-.order-item-name{
-  font-size:10px;
-  font-weight:900;
-}
-
-.order-item-meta{
-  color:#777;
-  font-size:8px;
-  margin-top:5px;
-}
-
-.order-item-price{
-  font-size:10px;
-  font-weight:900;
-}
-
-.order-address{
-  margin-top:15px;
-  padding-top:15px;
-  border-top:1px solid #222;
-  color:#777;
-  font-size:9px;
-  line-height:1.7;
-}
-
-.order-summary{
-  margin-top:15px;
-  padding-top:15px;
-  border-top:1px solid #222;
-}
-
-.order-summary-row{
+.order-line{
   display:flex;
   justify-content:space-between;
-  font-size:10px;
-  margin-bottom:7px;
+  font-size:9px;
+  padding:4px 0
+}
+
+.legal-box h1{
+  font-size:32px;
+  margin-bottom:25px
+}
+
+.legal-box h2{
+  font-size:16px;
+  margin:25px 0 9px
+}
+
+.legal-box p{
   color:#aaa;
+  font-size:11px;
+  line-height:1.8
 }
 
-.order-summary-row.total{
-  color:#fff;
-  font-size:14px;
-  font-weight:1000;
-  padding-top:10px;
-  margin-top:10px;
-  border-top:1px solid #292929;
+.legal-note{
+  background:#111;
+  border:1px solid #292929;
+  padding:14px;
+  color:#aaa;
+  font-size:10px;
+  line-height:1.7
 }
 
-.history-demo-note{
-  margin-top:15px;
-  color:#555;
-  font-size:8px;
-  line-height:1.6;
-}
-
-/* =========================
-   ADMIN
-========================= */
-
-.admin-login-box{
+.admin-login{
   width:min(450px,100%);
-  padding:40px;
+  padding:32px;
+  background:#0b0b0b;
+  border:1px solid #292929
 }
 
-.admin-login-title{
-  font-size:32px;
-  font-weight:1000;
-  margin-bottom:8px;
+.admin-login h2{
+  font-size:28px;
+  margin-bottom:22px
 }
 
-.admin-login-subtitle{
-  color:#777;
-  font-size:10px;
-  line-height:1.7;
-  margin-bottom:30px;
-}
-
-.admin-box{
-  width:min(1300px,100%);
-  max-height:94vh;
-  padding:35px;
-}
-
-.admin-header{
+.admin-top{
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  gap:20px;
-  padding-bottom:25px;
-  border-bottom:1px solid #252525;
-  margin-bottom:25px;
-}
-
-.admin-title{
-  font-size:32px;
-  font-weight:1000;
-}
-
-.admin-subtitle{
-  color:#777;
-  font-size:9px;
-  margin-top:6px;
-}
-
-.admin-logout{
-  background:transparent;
-  border:1px solid #333;
-  color:#fff;
-  padding:11px 16px;
-  font-size:9px;
-  font-weight:900;
+  align-items:center;
+  gap:15px;
+  margin-bottom:20px;
+  flex-wrap:wrap
 }
 
 .admin-tabs{
   display:flex;
-  gap:7px;
+  gap:6px;
   flex-wrap:wrap;
-  margin-bottom:25px;
+  border-bottom:1px solid #292929;
+  margin-bottom:20px
 }
 
 .admin-tab{
-  background:#111;
-  border:1px solid #292929;
-  color:#fff;
-  padding:11px 17px;
+  padding:10px 13px;
+  border:0;
+  background:transparent;
+  color:#777;
   font-size:9px;
-  font-weight:900;
-  letter-spacing:1px;
+  font-weight:900
 }
 
 .admin-tab.active{
-  background:#fff;
-  color:#000;
+  color:#fff;
+  border-bottom:2px solid #fff
 }
 
-.admin-section{
-  display:none;
-}
+.admin-section{display:none}
+.admin-section.active{display:block}
 
-.admin-section.active{
-  display:block;
-}
-
-.admin-stat-grid{
+.admin-stats{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:12px;
-  margin-bottom:25px;
+  gap:10px;
+  margin-bottom:25px
 }
 
 .admin-stat{
   background:#111;
   border:1px solid #222;
-  padding:20px;
+  padding:18px
 }
 
 .admin-stat span{
-  color:#777;
   display:block;
-  font-size:8px;
+  color:#777;
+  font-size:7px;
   letter-spacing:1px;
-  margin-bottom:10px;
+  margin-bottom:8px
 }
 
 .admin-stat strong{
-  font-size:25px;
-}
-
-.admin-products{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
+  font-size:22px
 }
 
 .admin-product{
   display:grid;
-  grid-template-columns:70px 1.5fr 130px 190px 230px;
-  gap:15px;
+  grid-template-columns:65px 1.5fr 1fr 1fr 1.5fr;
+  gap:12px;
   align-items:center;
   background:#111;
   border:1px solid #222;
   padding:12px;
+  margin-bottom:8px
 }
 
 .admin-product img{
-  width:70px;
-  height:70px;
-  object-fit:cover;
+  width:65px;
+  height:65px;
+  object-fit:cover
 }
 
 .admin-product-name{
-  font-size:11px;
-  font-weight:900;
+  font-size:9px;
+  font-weight:1000
 }
 
 .admin-product-meta{
   color:#777;
-  font-size:8px;
-  margin-top:5px;
+  font-size:7px;
+  margin-top:5px
 }
 
 .admin-input{
   width:100%;
-  background:#090909;
+  background:#0a0a0a;
   color:#fff;
   border:1px solid #333;
-  padding:9px;
-  outline:none;
-  font-size:10px;
+  padding:8px;
+  font-size:9px
 }
 
 .admin-stock-box{
   display:flex;
   gap:5px;
-  flex-wrap:wrap;
+  flex-wrap:wrap
 }
 
 .admin-stock-input{
-  width:43px;
-  background:#090909;
+  display:block;
+  width:48px;
+  background:#0a0a0a;
   color:#fff;
   border:1px solid #333;
-  padding:8px 3px;
-  text-align:center;
-  font-size:9px;
-}
-
-.admin-action{
-  display:flex;
-  gap:5px;
-  flex-wrap:wrap;
+  padding:6px;
+  font-size:8px;
+  margin-top:3px
 }
 
 .admin-small-button{
-  padding:8px 9px;
-  border:1px solid #333;
-  background:#181818;
+  margin-top:6px;
+  padding:7px 9px;
+  background:#171717;
   color:#fff;
-  font-size:8px;
-  font-weight:900;
-}
-
-.admin-small-button:hover{
-  background:#fff;
-  color:#000;
-}
-
-.admin-sale-box{
-  display:flex;
-  flex-direction:column;
-  gap:7px;
-}
-
-.admin-sale-row{
-  display:flex;
-  align-items:center;
-  gap:7px;
-}
-
-.admin-sale-row label{
-  color:#777;
+  border:1px solid #333;
   font-size:7px;
-  min-width:55px;
-}
-
-.admin-sale-price{
-  width:100%;
-  background:#090909;
-  color:#fff;
-  border:1px solid #333;
-  padding:8px;
-  outline:none;
-  font-size:9px;
-}
-
-.admin-sale-active{
-  display:flex;
-  align-items:center;
-  gap:7px;
-  color:#aaa;
-  font-size:8px;
-  font-weight:900;
-}
-
-.admin-sale-active input{
-  accent-color:#e00000;
-}
-
-.admin-sale-preview{
-  color:#e00000;
-  font-size:8px;
-  font-weight:1000;
-}
-
-.admin-orders{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
+  font-weight:900
 }
 
 .admin-order{
   background:#111;
   border:1px solid #222;
-  padding:18px;
+  padding:17px;
+  margin-bottom:9px
 }
 
 .admin-order-top{
   display:flex;
   justify-content:space-between;
-  gap:15px;
-  flex-wrap:wrap;
-  margin-bottom:15px;
+  gap:15px
 }
 
 .admin-order-number{
-  font-size:12px;
-  font-weight:1000;
+  font-size:10px;
+  font-weight:1000
 }
 
 .admin-order-customer{
   color:#777;
-  font-size:9px;
-  line-height:1.6;
-}
-
-.admin-order-items{
-  border-top:1px solid #222;
-  padding-top:12px;
+  font-size:8px;
+  line-height:1.7;
+  margin-top:6px
 }
 
 .admin-order-item{
   display:flex;
   justify-content:space-between;
-  gap:15px;
-  color:#aaa;
-  font-size:9px;
-  padding:5px 0;
+  border-top:1px solid #222;
+  padding-top:9px;
+  margin-top:9px;
+  font-size:8px
 }
 
 .admin-order-total{
-  border-top:1px solid #222;
-  margin-top:10px;
-  padding-top:12px;
   display:flex;
   justify-content:space-between;
+  margin-top:13px;
+  padding-top:13px;
+  border-top:1px solid #333;
+  font-size:11px
+}
+
+.coupon-card{
+  display:grid;
+  grid-template-columns:1fr auto auto auto;
+  gap:12px;
+  align-items:center;
+  background:#111;
+  border:1px solid #222;
+  padding:14px;
+  margin-bottom:8px
+}
+
+.coupon-code{
   font-weight:1000;
-  font-size:12px;
+  font-size:11px;
+  letter-spacing:1px
+}
+
+.coupon-meta{
+  color:#777;
+  font-size:8px;
+  margin-top:5px
 }
 
 .admin-empty{
-  color:#777;
   padding:40px;
   text-align:center;
-  border:1px solid #222;
-  background:#0c0c0c;
+  color:#666;
+  font-size:9px
 }
 
-.admin-demo-warning{
-  padding:13px;
-  margin-bottom:20px;
-  background:#151515;
-  border:1px solid #292929;
-  color:#777;
-  font-size:9px;
-  line-height:1.7;
+.toast{
+  position:fixed;
+  bottom:22px;
+  left:50%;
+  transform:translateX(-50%) translateY(20px);
+  background:#fff;
+  color:#000;
+  padding:13px 18px;
+  font-size:10px;
+  font-weight:900;
+  opacity:0;
+  pointer-events:none;
+  transition:.3s;
+  z-index:5000
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:1100px){
-
-  .product-grid{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .nav{
-    display:none;
-  }
-
-  .admin-product{
-    grid-template-columns:60px 1fr;
-  }
-
-  .admin-product img{
-    width:60px;
-    height:60px;
-  }
-
-  .admin-product > *:not(img):not(.admin-product-name){
-    grid-column:2;
-  }
-
-  .admin-stat-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
+.toast.show{
+  opacity:1;
+  transform:translateX(-50%) translateY(0)
 }
 
-@media(max-width:700px){
+@media(max-width:1000px){
+  .product-grid{grid-template-columns:repeat(3,1fr)}
+  .admin-product{grid-template-columns:65px 1fr 1fr}
+  .admin-product>div:nth-child(5){grid-column:2/-1}
+}
+
+@media(max-width:760px){
+  .preview-bar{
+    font-size:8px;
+    padding:8px 7px
+  }
 
   header{
-    top:34px;
-    padding:15px 4%;
+    top:29px;
+    padding:13px 4%;
   }
 
   .logo{
-    font-size:19px;
+    font-size:17px
   }
 
   .logo small{
-    font-size:7px;
-    margin-top:6px;
+    font-size:6px;
+    margin-top:5px
   }
 
-  .wheel-icon{
-    width:28px;
-    height:28px;
+  .nav{
+    display:none
   }
 
-  .wheel-icon svg{
-    width:25px;
-    height:25px;
+  .header-actions{
+    gap:7px
   }
-
-  section{
-    padding:80px 4%;
-  }
-
-  /* =========================
-     HANDY HERO
-     BILD WIRD NICHT MEHR
-     SO STARK ZUGESCHNITTEN
-  ========================= */
 
   .hero{
     min-height:100svh;
-    padding:140px 18px 80px;
-
-    background:
-      linear-gradient(
-        rgba(0,0,0,.46),
-        rgba(0,0,0,.76)
-      ),
-      url("assets/Car-1.JPG")
-      center 45% / 100% auto
-      no-repeat;
-
-    background-color:#050505;
+    padding:140px 15px 70px;
+    background-position:center center
   }
 
   .hero-logo{
-    font-size:16vw;
-    letter-spacing:4px;
+    font-size:clamp(45px,15vw,90px);
+    letter-spacing:3px
   }
 
   .hero-est{
-    margin-top:35px;
-    font-size:13px;
-    letter-spacing:7px;
+    margin-top:25px;
+    letter-spacing:5px;
+    font-size:13px
   }
 
   .hero-text{
-    margin-top:65px;
-    font-size:12px;
+    margin-top:45px;
+    font-size:12px
   }
 
   .hero-slogan{
-    margin-top:60px;
-    font-size:18px;
+    margin-top:40px;
+    font-size:18px
+  }
+
+  section{
+    padding:75px 4%
+  }
+
+  .section-title{
+    font-size:42px
   }
 
   .product-grid{
     grid-template-columns:repeat(2,1fr);
-    gap:9px;
+    gap:9px
   }
 
   .product-info{
-    padding:12px;
+    padding:11px
   }
 
   .product-info h3{
-    font-size:10px;
+    font-size:9px
   }
 
   .product-price{
-    font-size:13px;
-  }
-
-  .sale-price{
-    font-size:14px;
-  }
-
-  .old-price{
-    font-size:10px;
-  }
-
-  .sale-badge{
-    top:7px;
-    right:7px;
-    padding:6px 7px;
-    font-size:7px;
-  }
-
-  .product-stock{
-    top:7px;
-    left:7px;
-    padding:5px 6px;
-    font-size:7px;
+    font-size:12px
   }
 
   .product-open{
-    font-size:8px;
     padding:10px 5px;
-  }
-
-  .product-card.sticker-card .product-image{
-    padding:10px;
-  }
-
-  .product-card.sticker-card .product-image img{
-    max-width:92%;
-    max-height:75%;
-    padding:6px;
+    font-size:8px
   }
 
   .cars-grid{
-    grid-template-columns:1fr;
+    grid-template-columns:1fr
   }
 
   .car:last-child{
     grid-column:auto;
-    max-width:none;
-  }
-
-  .car:nth-child(1) .car-image img,
-  .car:nth-child(3) .car-image img,
-  .car:nth-child(5) .car-image img{
-    object-position:center 68%;
+    max-width:none
   }
 
   .about-grid,
   .contact-grid{
     grid-template-columns:1fr;
-    gap:30px;
+    gap:35px
   }
 
   .product-modal-content{
-    grid-template-columns:1fr;
+    grid-template-columns:1fr
   }
 
   .modal-product-image{
-    min-height:300px;
-    max-height:50vh;
+    min-height:330px;
+    max-height:50vh
   }
 
   .modal-product-info{
-    padding:30px 20px 25px;
+    padding:35px 20px 22px
+  }
+
+  .form-grid{
+    grid-template-columns:1fr
+  }
+
+  .form-group.full{
+    grid-column:auto
+  }
+
+  .payment-options{
+    grid-template-columns:1fr
+  }
+
+  .admin-stats{
+    grid-template-columns:repeat(2,1fr)
+  }
+
+  .admin-product{
+    grid-template-columns:60px 1fr
+  }
+
+  .admin-product>div:nth-child(n+3){
+    grid-column:1/-1
+  }
+
+  .coupon-card{
+    grid-template-columns:1fr 1fr
+  }
+
+  .coupon-card button{
+    width:100%
   }
 
   .cart-box,
   .account-box,
   .form-box,
   .admin-box,
-  .admin-login-box,
   .legal-box{
-    padding:25px 18px;
-  }
-
-  .legal-content h1{
-    font-size:27px;
+    padding:22px 15px
   }
 
   .cart-item{
-    grid-template-columns:60px 1fr;
-  }
-
-  .cart-item > div:last-child{
-    grid-column:2;
+    grid-template-columns:60px 1fr auto
   }
 
   .cart-item img{
     width:60px;
-    height:60px;
+    height:60px
   }
 
-  .cart-actions{
-    flex-direction:column;
-  }
-
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .form-group.full{
-    grid-column:auto;
-  }
-
-  .order-header{
-    grid-template-columns:1fr auto;
-  }
-
-  .order-header-total{
-    grid-column:1;
-  }
-
-  .order-status{
-    grid-column:2;
-    grid-row:1 / span 2;
-  }
-
-  .admin-header{
-    align-items:flex-start;
-    flex-direction:column;
-  }
-
-  .admin-stat-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .admin-product{
-    grid-template-columns:55px 1fr;
-  }
-
-  .admin-product img{
-    width:55px;
-    height:55px;
+  .footer-top{
+    flex-direction:column
   }
 }
 </style>
@@ -1925,3719 +1389,4120 @@ footer{
 <body>
 
 <div class="preview-bar">
-SHOP-VORSCHAU – PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT, KEINE BESTELLUNGEN DERZEIT MÖGLICH!
+  SHOP VORSCHAU — PREISE, GRÖSSEN &amp; VERSAND NOCH NICHT BESTÄTIGT — KEINE BESTELLUNGEN!
 </div>
 
 <header>
+  <a href="#home" class="logo">
+    ГОНЩИКИ
+    <small>EST. 2025</small>
+  </a>
 
-<a href="#home">
-<div class="logo">
-ГОНЩИКИ
-<small>EST. 2025</small>
-</div>
-</a>
+  <nav class="nav">
+    <a href="#shop" data-i="navShop">SHOP</a>
+    <a href="#cars" data-i="navCars">CARS</a>
+    <a href="#events" data-i="navEvents">EVENTS</a>
+    <a href="#about" data-i="navAbout">ABOUT</a>
+    <a href="#contact" data-i="navContact">KONTAKT</a>
+  </nav>
 
-<nav class="nav">
-<a href="#shop">SHOP</a>
-<a href="#cars">CARS</a>
-<a href="#events">EVENTS</a>
-<a href="#about">ABOUT</a>
-<a href="#contact">KONTAKT</a>
-</nav>
+  <div class="header-actions">
 
-<div class="header-actions">
+    <select id="languageSelect"
+            onchange="setLanguage(this.value)"
+            style="background:#111;color:#fff;border:1px solid #333;padding:6px;font-size:9px">
+      <option value="de">DE</option>
+      <option value="en">EN</option>
+      <option value="ru">RU</option>
+    </select>
 
-<button
-class="header-icon wheel-icon"
-onclick="openAccount()"
-aria-label="Account"
-title="Account"
->
-<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+    <button class="header-icon wheel-icon"
+            onclick="openAdmin()"
+            title="Admin">
 
-<circle cx="32" cy="32" r="28"
-fill="none"
-stroke="currentColor"
-stroke-width="3"/>
+      <svg viewBox="0 0 100 100" fill="none">
+        <circle cx="50" cy="50" r="38" stroke="white" stroke-width="8"/>
+        <circle cx="50" cy="50" r="10" stroke="white" stroke-width="7"/>
 
-<circle cx="32" cy="32" r="23"
-fill="none"
-stroke="currentColor"
-stroke-width="2"
-opacity=".75"/>
+        <path d="M50 12V40"
+              stroke="white"
+              stroke-width="7"
+              stroke-linecap="round"/>
 
-<g
-fill="none"
-stroke="currentColor"
-stroke-width="3"
-stroke-linecap="round"
-stroke-linejoin="round"
->
+        <path d="M50 60V88"
+              stroke="white"
+              stroke-width="7"
+              stroke-linecap="round"/>
 
-<path d="M32 9 L28.5 25"/>
-<path d="M45.5 13.8 L36.5 27"/>
-<path d="M53 25 L39 29"/>
-<path d="M53 39 L39 35"/>
-<path d="M45.5 50.2 L36.5 37"/>
-<path d="M32 55 L28.5 39"/>
-<path d="M18.5 50.2 L27.5 37"/>
-<path d="M11 39 L25 35"/>
-<path d="M11 25 L25 29"/>
-<path d="M18.5 13.8 L27.5 27"/>
+        <path d="M12 50H40"
+              stroke="white"
+              stroke-width="7"
+              stroke-linecap="round"/>
 
-</g>
+        <path d="M60 50H88"
+              stroke="white"
+              stroke-width="7"
+              stroke-linecap="round"/>
 
-<circle cx="32" cy="32" r="10"
-fill="none"
-stroke="currentColor"
-stroke-width="3"/>
+        <path d="M23 23L43 43"
+              stroke="white"
+              stroke-width="7"
+              stroke-linecap="round"/>
 
-<g fill="currentColor">
-<circle cx="32" cy="24.5" r="1.5"/>
-<circle cx="39.1" cy="29.2" r="1.5"/>
-<circle cx="36.4" cy="37.2" r="1.5"/>
-<circle cx="27.6" cy="37.2" r="1.5"/>
-<circle cx="24.9" cy="29.2" r="1.5"/>
-</g>
+        <path d="M57 57L77 77"
+              stroke="white"
+              stroke-width="7"
+              stroke-linecap="round"/>
 
-<circle cx="32" cy="32" r="4" fill="currentColor"/>
+        <path d="M77 23L57 43"
+              stroke="white"
+              stroke-width="7"
+              stroke-linecap="round"/>
 
-</svg>
-</button>
+        <path d="M43 57L23 77"
+              stroke="white"
+              stroke-width="7"
+              stroke-linecap="round"/>
+      </svg>
 
-<button
-class="header-icon"
-onclick="openCart()"
-aria-label="Warenkorb"
->
-🛒
-<span class="cart-count" id="cartCount">0</span>
-</button>
+    </button>
 
-</div>
+    <button class="header-icon"
+            onclick="openAccount()"
+            title="Account">
+      👤
+    </button>
+
+    <button class="header-icon"
+            onclick="openCart()"
+            title="Warenkorb">
+      🛒
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+
+  </div>
 </header>
 
-<section class="hero" id="home">
+<main id="home">
 
-<div class="hero-content">
+<section class="hero">
 
-<div class="hero-logo">
-ГОНЩИКИ
-</div>
+  <div class="hero-content">
 
-<div class="hero-est">
-EST. 2025
-</div>
+    <div class="hero-logo">
+      ГОНЩИКИ
+    </div>
 
-<p class="hero-text">
-Gonschiki steht für Autos, Nächte, Geschwindigkeit und den eigenen Style.
-Streetwear für alle, die ihre eigene Spur fahren.
-</p>
+    <div class="hero-est">
+      EST. 2025
+    </div>
 
-<div class="hero-slogan">
-<span>GEMACHT FÜR DIE NACHT.</span>
-<span>GEMACHT FÜR DEN TAG.</span>
-<br>
-<span>KEINE REGEL. NUR STYLE.</span>
-</div>
+    <p class="hero-text" data-i="heroText">
+      Gonschiki steht für Autos, Nächte, Geschwindigkeit und den eigenen Style.
+      Streetwear für alle, die ihre eigene Spur fahren.
+    </p>
 
-<a class="hero-button" href="#shop">
-SHOP ENTDECKEN
-</a>
+    <div class="hero-slogan">
+      <span data-i="slogan1">GEMACHT FÜR DIE NACHT.</span>
+      <span data-i="slogan2">GEMACHT FÜR DEN TAG.</span>
+      <span data-i="slogan3">KEINE REGEL. NUR STYLE.</span>
+    </div>
 
-</div>
+    <a href="#shop"
+       class="hero-button"
+       data-i="discover">
+       SHOP ENTDECKEN
+    </a>
+
+  </div>
+
 </section>
+
 
 <section class="shop-section" id="shop">
 
-<h2 class="section-title">SHOP</h2>
+  <h2 class="section-title" data-i="shopTitle">
+    SHOP
+  </h2>
 
-<p class="section-subtitle">
-GONSHIKI STREETWEAR — BLACK COLLECTION
-</p>
+  <p class="section-subtitle" data-i="shopSub">
+    GONSHIKI STREETWEAR — BLACK COLLECTION
+  </p>
 
-<div class="gender-tabs">
+  <div class="gender-tabs">
 
-<button
-class="gender-tab active"
-id="genderMale"
-onclick="switchGender('Männer')"
->
-MÄNNER
-</button>
+    <button class="gender-tab active"
+            data-gender="all"
+            onclick="setGender('all',this)">
+      ALLE
+    </button>
 
-<button
-class="gender-tab"
-id="genderFemale"
-onclick="switchGender('Frauen')"
->
-FRAUEN
-</button>
+    <button class="gender-tab"
+            data-gender="men"
+            onclick="setGender('men',this)">
+      HERREN
+    </button>
 
-</div>
+    <button class="gender-tab"
+            data-gender="women"
+            onclick="setGender('women',this)">
+      DAMEN
+    </button>
 
-<div class="categories">
+    <button class="gender-tab"
+            data-gender="unisex"
+            onclick="setGender('unisex',this)">
+      UNISEX
+    </button>
 
-<button class="category-btn active"
-onclick="filterProducts('Alle',this)">
-ALLE
-</button>
+  </div>
 
-<button class="category-btn"
-onclick="filterProducts('Shirts',this)">
-SHIRTS
-</button>
+  <div class="categories">
 
-<button class="category-btn"
-onclick="filterProducts('Hoodies',this)">
-HOODIES
-</button>
+    <button class="category-btn active"
+            data-category="all"
+            onclick="setCategory('all',this)">
+      ALLE
+    </button>
 
-<button class="category-btn"
-onclick="filterProducts('Zipper',this)">
-ZIPPER
-</button>
+    <button class="category-btn"
+            data-category="shirt"
+            onclick="setCategory('shirt',this)">
+      T-SHIRTS
+    </button>
 
-<button class="category-btn"
-onclick="filterProducts('Hosen',this)">
-HOSEN
-</button>
+    <button class="category-btn"
+            data-category="hoodie"
+            onclick="setCategory('hoodie',this)">
+      HOODIES
+    </button>
 
-<button class="category-btn"
-onclick="filterProducts('Sticker',this)">
-STICKER
-</button>
+    <button class="category-btn"
+            data-category="zipper"
+            onclick="setCategory('zipper',this)">
+      ZIPPER
+    </button>
 
-</div>
+    <button class="category-btn"
+            data-category="pants"
+            onclick="setCategory('pants',this)">
+      HOSEN
+    </button>
 
-<div class="product-grid" id="productGrid"></div>
+    <button class="category-btn"
+            data-category="sticker"
+            onclick="setCategory('sticker',this)">
+      STICKER
+    </button>
+
+  </div>
+
+  <div class="search-row">
+
+    <input
+      id="productSearch"
+      type="search"
+      placeholder="Produkte suchen..."
+      oninput="renderProducts()"
+    >
+
+    <button onclick="clearSearch()">
+      X
+    </button>
+
+  </div>
+
+  <div class="product-grid" id="productGrid"></div>
 
 </section>
+
 
 <section class="cars-section" id="cars">
 
-<h2 class="section-title">CARS</h2>
+  <h2 class="section-title">CARS</h2>
 
-<p class="section-subtitle">
-UNSERE WELT. UNSERE AUTOS. UNSERE SPUR.
-</p>
+  <p class="section-subtitle">
+    CARS. CREW. CULTURE.
+  </p>
 
-<div class="cars-grid">
+  <div class="cars-grid">
 
-<div class="car">
-<div class="car-image">
-<img src="assets/Car-1.JPG" alt="Gonschiki Car 1">
-</div>
-<div class="car-info">
-<h3>GONSHIKI — 01</h3>
-<p>Built for the night.</p>
-</div>
-</div>
+    <div class="car">
 
-<div class="car">
-<div class="car-image">
-<img src="assets/Car-2.JPG" alt="Gonschiki Car 2">
-</div>
-<div class="car-info">
-<h3>GONSHIKI — 02</h3>
-<p>Street culture meets machines.</p>
-</div>
-</div>
+      <div class="car-image">
+        <img src="assets/Car-1.JPG" alt="Gonschiki Car">
+      </div>
 
-<div class="car">
-<div class="car-image">
-<img src="assets/Car-3.jpg" alt="Gonschiki Car 3">
-</div>
-<div class="car-info">
-<h3>GONSHIKI — 03</h3>
-<p>No limits. No shortcuts.</p>
-</div>
-</div>
+      <div class="car-info">
+        <h3>ГОНЩИКИ CREW</h3>
+        <p>
+          Unsere Autos, unser Style, unsere Straße.
+        </p>
+      </div>
 
-<div class="car">
-<div class="car-image">
-<img src="assets/Car-4.jpg" alt="Gonschiki Car 4">
-</div>
-<div class="car-info">
-<h3>GONSHIKI — 04</h3>
-<p>Own your lane.</p>
-</div>
-</div>
+    </div>
 
-<div class="car">
-<div class="car-image">
-<img src="assets/Car-5.jpg" alt="Gonschiki Car 5">
-</div>
-<div class="car-info">
-<h3>GONSHIKI — 05</h3>
-<p>Drive your own style.</p>
-</div>
-</div>
 
-</div>
+    <div class="car">
+
+      <div class="car-image">
+        <img src="assets/Car-2.JPG" alt="Gonschiki Car">
+      </div>
+
+      <div class="car-info">
+        <h3>STREET CULTURE</h3>
+        <p>
+          Gebaut für die Nacht.
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="car">
+
+      <div class="car-image">
+        <img src="assets/Car-3.jpg" alt="Gonschiki Car">
+      </div>
+
+      <div class="car-info">
+        <h3>CREW LIFE</h3>
+        <p>
+          Kein Mainstream. Eigene Spur.
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="car">
+
+      <div class="car-image">
+        <img src="assets/Car-4.jpg" alt="Gonschiki Car">
+      </div>
+
+      <div class="car-info">
+        <h3>GONSHIKI</h3>
+        <p>
+          Cars &amp; Streetwear.
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="car">
+
+      <div class="car-image">
+        <img src="assets/Car-5.jpg" alt="Gonschiki Car">
+      </div>
+
+      <div class="car-info">
+        <h3>EST. 2025</h3>
+        <p>
+          Unsere Geschichte beginnt hier.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
+
 
 <section class="events-section" id="events">
 
-<h2 class="section-title">EVENTS</h2>
+  <h2 class="section-title">
+    EVENTS
+  </h2>
 
-<p class="section-subtitle">
-MEHR ALS NUR CLOTHING.
-</p>
+  <p class="section-subtitle">
+    GONSHIKI EVENTS
+  </p>
 
-<div class="events-box">
+  <div class="events-box">
 
-<h3>GONSHIKI CREW</h3>
+    <h3>
+      EVENTS &amp; MEETUPS
+    </h3>
 
-<p>
-Treffen, Autos, Nächte und gemeinsame Projekte.
-Hier werden zukünftig unsere Events, Car Meets und Crew-Aktionen
-veröffentlicht.
-</p>
+    <p>
+      Dieser Bereich ist für zukünftige Treffen,
+      Car Meets, Veranstaltungen und Tickets vorbereitet.
+    </p>
 
-</div>
+    <p>
+      Aktuell noch keine Veranstaltung veröffentlicht.
+    </p>
+
+  </div>
+
 </section>
+
 
 <section class="about-section" id="about">
 
-<div class="about-grid">
+  <div class="about-grid">
 
-<div>
+    <div>
 
-<h2 class="section-title">ABOUT</h2>
+      <h2 class="section-title">
+        ГОНЩИКИ
+      </h2>
 
-<p class="section-subtitle">
-EST. 2025
-</p>
+      <p class="section-subtitle">
+        EST. 2025 — STREETWEAR
+      </p>
 
-<p class="about-text">
-Gonschiki steht für Autos, Nächte, Geschwindigkeit und den eigenen Style.
-Wir verbinden Streetwear mit der Welt der Automobilkultur und bauen
-eine Crew für Menschen, die ihren eigenen Weg gehen.
-</p>
+      <p class="about-text">
+        Gonschiki steht für die Verbindung aus Autos,
+        Street Culture und eigenem Style.
+        Keine unnötigen Logos, keine übertriebene Werbung.
+        Einfach klare Designs und eine Community,
+        die ihre eigene Spur fährt.
+      </p>
 
-</div>
+    </div>
 
-<div class="about-highlight">
-OWN<br>
-YOUR<br>
-LANE.
-</div>
+    <div class="about-highlight">
+      DRIVE<br>
+      YOUR<br>
+      OWN<br>
+      LANE.
+    </div>
 
-</div>
+  </div>
+
 </section>
+
 
 <section class="contact-section" id="contact">
 
-<h2 class="section-title">KONTAKT</h2>
+  <h2 class="section-title">
+    KONTAKT
+  </h2>
 
-<p class="section-subtitle">
-GONSHIKI CREW
-</p>
+  <p class="section-subtitle">
+    GONSHIKI CREW
+  </p>
 
-<div class="contact-grid">
+  <div class="contact-grid">
 
-<div class="contact-item">
-<span>INSTAGRAM</span>
-<strong>@gonschikicrew</strong>
-</div>
+    <div>
 
-<div class="contact-item">
-<span>BRAND</span>
-<strong>ГОНЩИКИ — EST. 2025</strong>
-</div>
+      <div class="contact-item">
 
-<div class="contact-item">
-<span>SHOP</span>
-<strong>SHOP-VORSCHAU</strong>
-</div>
+        <span>INSTAGRAM</span>
 
-<div class="contact-item">
-<span>EMAIL</span>
-<strong>gonshikicrew@gmail.com</strong>
-</div>
+        <strong>
+          <a
+            href="https://www.instagram.com/gonschikicrew/"
+            target="_blank"
+            rel="noopener">
+            @gonschikicrew
+          </a>
+        </strong>
 
-</div>
+      </div>
+
+      <div class="contact-item">
+
+        <span>EMAIL</span>
+
+        <strong>
+          info@gonschikicrew.de
+        </strong>
+
+      </div>
+
+    </div>
+
+    <div>
+
+      <div class="contact-item">
+
+        <span>STATUS</span>
+
+        <strong>
+          SHOP VORSCHAU / DEMO
+        </strong>
+
+      </div>
+
+      <div class="contact-item">
+
+        <span>ORDERS</span>
+
+        <strong>
+          NOCH NICHT AKTIV
+        </strong>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
+
+</main>
+
 
 <footer>
 
-<div class="footer-top">
+  <div class="footer-top">
 
-<div class="footer-logo">
-ГОНЩИКИ
-</div>
+    <div class="footer-logo">
+      ГОНЩИКИ
+    </div>
 
-<div class="footer-links">
+    <div class="footer-links">
 
-<a href="#shop">SHOP</a>
-<a href="#cars">CARS</a>
-<a href="#events">EVENTS</a>
-<a href="#about">ABOUT</a>
-<a href="#contact">KONTAKT</a>
+      <a onclick="openLegal('impressum')">
+        IMPRESSUM
+      </a>
 
-<a href="#" onclick="openLegal('impressum');return false;">
-IMPRESSUM
-</a>
+      <a onclick="openLegal('datenschutz')">
+        DATENSCHUTZ
+      </a>
 
-<a href="#" onclick="openLegal('datenschutz');return false;">
-DATENSCHUTZ
-</a>
+      <a onclick="openLegal('widerruf')">
+        WIDERRUF
+      </a>
 
-<a href="#" onclick="openLegal('widerruf');return false;">
-WIDERRUF
-</a>
+      <a onclick="openLegal('agb')">
+        AGB
+      </a>
 
-<a href="#" onclick="openLegal('agb');return false;">
-AGB
-</a>
+      <a onclick="openAccount()">
+        ACCOUNT
+      </a>
 
-</div>
-</div>
+      <a onclick="openAdmin()">
+        ADMIN
+      </a>
 
-<div class="footer-bottom">
-© 2025–2026 ГОНЩИКИ CREW — EST. 2025
-</div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 ГОНЩИКИ CREW — DEMO SHOP
+  </div>
 
 </footer>
+
 
 <!-- PRODUCT MODAL -->
 
 <div class="modal" id="productModal">
 
-<div class="modal-box">
+  <div class="modal-box">
 
-<button class="modal-close" onclick="closeProduct()">
-×
-</button>
+    <button
+      class="modal-close"
+      onclick="closeProductModal()">
+      ×
+    </button>
 
-<div class="product-modal-content">
+    <div class="product-modal-content">
 
-<div class="modal-product-image">
+      <div class="modal-product-image">
 
-<img id="modalImage" src="" alt="">
+        <img
+          id="modalProductImage"
+          src=""
+          alt="Produkt">
 
-<div
-class="modal-sale-badge"
-id="modalSaleBadge"
-style="display:none;"
->
-SALE
+        <div
+          id="modalSaleBadge"
+          class="modal-sale-badge"
+          style="display:none">
+          SALE
+        </div>
+
+      </div>
+
+      <div class="modal-product-info">
+
+        <div class="small-label"
+             id="modalProductCategory">
+        </div>
+
+        <h2 id="modalProductName"></h2>
+
+        <div
+          class="modal-price"
+          id="modalProductPrice">
+        </div>
+
+        <p
+          class="modal-description"
+          id="modalProductDescription">
+        </p>
+
+        <div id="modalSizeWrap">
+
+          <span class="option-label">
+            GRÖSSE
+          </span>
+
+          <div
+            class="size-options"
+            id="sizeOptions">
+          </div>
+
+        </div>
+
+        <div
+          class="modal-stock"
+          id="modalStock">
+        </div>
+
+        <div class="quantity-box">
+
+          <button onclick="changeModalQty(-1)">
+            −
+          </button>
+
+          <strong id="modalQty">
+            1
+          </strong>
+
+          <button onclick="changeModalQty(1)">
+            +
+          </button>
+
+        </div>
+
+        <button
+          class="add-button"
+          id="addToCartButton"
+          onclick="addCurrentToCart()">
+          IN DEN WARENKORB
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </div>
 
-</div>
-
-<div class="modal-product-info">
-
-<span class="small-label" id="modalCategory"></span>
-
-<h2 id="modalName"></h2>
-
-<div class="modal-price" id="modalPrice"></div>
-
-<p class="modal-description" id="modalDescription"></p>
-
-<div id="sizeArea">
-
-<span class="option-label" id="sizeLabel">
-GRÖSSE
-</span>
-
-<div class="size-options" id="sizeOptions"></div>
-
-</div>
-
-<div class="modal-stock" id="modalStock"></div>
-
-<div class="quantity-box">
-
-<button onclick="changeModalQuantity(-1)">
-−
-</button>
-
-<strong id="modalQuantity">
-1
-</strong>
-
-<button onclick="changeModalQuantity(1)">
-+
-</button>
-
-</div>
-
-<button
-class="add-button"
-id="modalAddButton"
-onclick="addToCart()"
->
-IN DEN WARENKORB
-</button>
-
-</div>
-</div>
-</div>
-</div>
 
 <!-- CART -->
 
 <div class="modal" id="cartModal">
 
-<div class="modal-box cart-box">
+  <div class="modal-box">
 
-<button class="modal-close" onclick="closeCart()">
-×
-</button>
+    <button
+      class="modal-close"
+      onclick="closeCart()">
+      ×
+    </button>
 
-<div class="modal-title">
-WARENKORB
-</div>
+    <div class="cart-box">
 
-<div id="cartItems"></div>
+      <h2 class="modal-title">
+        WARENKORB
+      </h2>
 
-</div>
-</div>
+      <div
+        id="cartItems"
+        class="cart-items">
+      </div>
 
-<!-- CHECKOUT -->
+      <div
+        id="cartSummary"
+        class="cart-summary">
+      </div>
 
-<div class="modal" id="checkoutModal">
+    </div>
 
-<div class="modal-box form-box">
-
-<button class="modal-close" onclick="closeCheckout()">
-×
-</button>
-
-<div class="modal-title">
-CHECKOUT
-</div>
-
-<div class="demo-note">
-SHOP-VORSCHAU: Dies ist derzeit nur ein Demo-Checkout.
-Es werden keine echten Zahlungen verarbeitet und keine echte
-Bestellung an ein Shopsystem übertragen.
-</div>
-
-<form id="checkoutForm" onsubmit="placeOrder(event)">
-
-<div class="form-grid">
-
-<div class="form-group">
-<label>VORNAME</label>
-<input id="checkoutFirstName" required>
-</div>
-
-<div class="form-group">
-<label>NACHNAME</label>
-<input id="checkoutLastName" required>
-</div>
-
-<div class="form-group full">
-<label>E-MAIL</label>
-<input id="checkoutEmail" type="email" required>
-</div>
-
-<div class="form-group full">
-<label>STRASSE &amp; HAUSNUMMER</label>
-<input id="checkoutStreet" required>
-</div>
-
-<div class="form-group">
-<label>PLZ</label>
-<input id="checkoutPostal" required>
-</div>
-
-<div class="form-group">
-<label>ORT</label>
-<input id="checkoutCity" required>
-</div>
+  </div>
 
 </div>
 
-<div id="checkoutSummary"></div>
-
-<button class="light-button" type="submit">
-BESTELLUNG AUFGEBEN
-</button>
-
-</form>
-</div>
-</div>
 
 <!-- ACCOUNT -->
 
 <div class="modal" id="accountModal">
 
-<div class="modal-box account-box">
+  <div class="modal-box">
 
-<button class="modal-close" onclick="closeAccount()">
-×
-</button>
+    <button
+      class="modal-close"
+      onclick="closeAccount()">
+      ×
+    </button>
 
-<div class="modal-title">
-ACCOUNT
+    <div class="account-box">
+
+      <h2 class="modal-title">
+        ACCOUNT
+      </h2>
+
+      <div class="account-tabs">
+
+        <button
+          class="account-tab active"
+          onclick="showAccountTab('login',this)">
+          LOGIN
+        </button>
+
+        <button
+          class="account-tab"
+          onclick="showAccountTab('register',this)">
+          REGISTRIEREN
+        </button>
+
+        <button
+          class="account-tab"
+          onclick="showAccountTab('orders',this)">
+          BESTELLUNGEN
+        </button>
+
+      </div>
+
+
+      <div
+        id="accountLogin"
+        class="account-panel active">
+
+        <form onsubmit="loginAccount(event)">
+
+          <div class="form-group">
+
+            <label>
+              E-MAIL
+            </label>
+
+            <input
+              id="loginEmail"
+              type="email"
+              required>
+
+          </div>
+
+          <div class="form-group">
+
+            <label>
+              PASSWORT
+            </label>
+
+            <input
+              id="loginPassword"
+              type="password"
+              required>
+
+          </div>
+
+          <button class="light-button">
+            EINLOGGEN
+          </button>
+
+        </form>
+
+      </div>
+
+
+      <div
+        id="accountRegister"
+        class="account-panel">
+
+        <form onsubmit="registerAccount(event)">
+
+          <div class="form-grid">
+
+            <div class="form-group">
+
+              <label>
+                VORNAME
+              </label>
+
+              <input
+                id="registerFirstName"
+                required>
+
+            </div>
+
+            <div class="form-group">
+
+              <label>
+                NACHNAME
+              </label>
+
+              <input
+                id="registerLastName"
+                required>
+
+            </div>
+
+            <div class="form-group full">
+
+              <label>
+                E-MAIL
+              </label>
+
+              <input
+                id="registerEmail"
+                type="email"
+                required>
+
+            </div>
+
+            <div class="form-group full">
+
+              <label>
+                PASSWORT
+              </label>
+
+              <input
+                id="registerPassword"
+                type="password"
+                minlength="6"
+                required>
+
+            </div>
+
+          </div>
+
+          <button class="light-button">
+            ACCOUNT ERSTELLEN
+          </button>
+
+        </form>
+
+      </div>
+
+
+      <div
+        id="accountOrders"
+        class="account-panel">
+
+        <div id="accountContent"></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </div>
 
-<div class="demo-note">
-DEMO-ACCOUNT: Die Account-Funktion läuft derzeit nur lokal im Browser.
-Es handelt sich noch nicht um ein echtes sicheres Kundenkonto.
+
+<!-- CHECKOUT -->
+
+<div class="modal" id="checkoutModal">
+
+  <div class="modal-box">
+
+    <button
+      class="modal-close"
+      onclick="closeCheckout()">
+      ×
+    </button>
+
+    <div class="form-box">
+
+      <h2 class="modal-title">
+        CHECKOUT — DEMO
+      </h2>
+
+      <form onsubmit="placeDemoOrder(event)">
+
+        <div class="form-grid">
+
+          <div class="form-group">
+
+            <label>
+              VORNAME
+            </label>
+
+            <input
+              id="checkoutFirstName"
+              required>
+
+          </div>
+
+          <div class="form-group">
+
+            <label>
+              NACHNAME
+            </label>
+
+            <input
+              id="checkoutLastName"
+              required>
+
+          </div>
+
+          <div class="form-group full">
+
+            <label>
+              E-MAIL
+            </label>
+
+            <input
+              id="checkoutEmail"
+              type="email"
+              required>
+
+          </div>
+
+          <div class="form-group full">
+
+            <label>
+              STRASSE &amp; HAUSNUMMER
+            </label>
+
+            <input
+              id="checkoutStreet"
+              required>
+
+          </div>
+
+          <div class="form-group">
+
+            <label>
+              PLZ
+            </label>
+
+            <input
+              id="checkoutPostal"
+              required>
+
+          </div>
+
+          <div class="form-group">
+
+            <label>
+              ORT
+            </label>
+
+            <input
+              id="checkoutCity"
+              required>
+
+          </div>
+
+        </div>
+
+
+        <label class="option-label">
+          ZAHLUNGSART
+        </label>
+
+        <div class="payment-options">
+
+          <button
+            type="button"
+            class="payment-option active"
+            data-payment="Karte"
+            onclick="selectPayment('Karte',this)">
+            💳 KARTE
+          </button>
+
+          <button
+            type="button"
+            class="payment-option"
+            data-payment="PayPal"
+            onclick="selectPayment('PayPal',this)">
+            PAYPAL
+          </button>
+
+          <button
+            type="button"
+            class="payment-option"
+            data-payment="Klarna"
+            onclick="selectPayment('Klarna',this)">
+            KLARNA
+          </button>
+
+        </div>
+
+
+        <label class="option-label">
+          GUTSCHEINCODE
+        </label>
+
+        <div class="coupon-row">
+
+          <input
+            id="couponInput"
+            placeholder="z.B. GONSHIKI10">
+
+          <button
+            type="button"
+            onclick="applyCoupon()">
+            EINLÖSEN
+          </button>
+
+        </div>
+
+        <div id="checkoutCouponMessage"
+             style="font-size:9px;color:#777;margin-bottom:15px">
+        </div>
+
+
+        <div
+          id="checkoutSummary"
+          class="cart-summary">
+        </div>
+
+        <button
+          class="light-button"
+          style="margin-top:20px">
+          DEMO-BESTELLUNG ABSENDEN
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
 </div>
 
-<div id="accountContent"></div>
-
-</div>
-</div>
-
-<!-- AUTH -->
-
-<div class="modal" id="authModal">
-
-<div class="modal-box form-box">
-
-<button class="modal-close" onclick="closeAuth()">
-×
-</button>
-
-<div class="modal-title" id="authTitle">
-ACCOUNT ERSTELLEN
-</div>
-
-<div class="demo-note">
-DEMO-FUNKTION FÜR DIE SHOP-VORSCHAU.
-</div>
-
-<form id="authForm" onsubmit="handleAuth(event)">
-
-<div class="form-group">
-<label>NAME</label>
-<input id="authName" required>
-</div>
-
-<div class="form-group">
-<label>E-MAIL</label>
-<input id="authEmail" type="email" required>
-</div>
-
-<div class="form-group">
-<label>PASSWORT</label>
-<input id="authPassword" type="password" required>
-</div>
-
-<button class="light-button" type="submit">
-ACCOUNT ERSTELLEN
-</button>
-
-</form>
-</div>
-</div>
 
 <!-- LEGAL -->
 
 <div class="modal" id="legalModal">
 
-<div class="modal-box legal-box">
+  <div class="modal-box">
 
-<button class="modal-close" onclick="closeLegal()">
-×
-</button>
+    <button
+      class="modal-close"
+      onclick="closeLegal()">
+      ×
+    </button>
 
-<div class="legal-nav">
+    <div
+      class="legal-box"
+      id="legalContent">
+    </div>
 
-<button id="legalTabImpressum"
-onclick="openLegal('impressum')">
-IMPRESSUM
-</button>
-
-<button id="legalTabDatenschutz"
-onclick="openLegal('datenschutz')">
-DATENSCHUTZ
-</button>
-
-<button id="legalTabWiderruf"
-onclick="openLegal('widerruf')">
-WIDERRUF
-</button>
-
-<button id="legalTabAgb"
-onclick="openLegal('agb')">
-AGB
-</button>
+  </div>
 
 </div>
 
-<div class="legal-content" id="legalContent"></div>
-
-</div>
-</div>
 
 <!-- ADMIN LOGIN -->
 
 <div class="modal" id="adminLoginModal">
 
-<div class="modal-box admin-login-box">
+  <div class="admin-login">
 
-<button class="modal-close" onclick="closeAdminLogin()">
-×
-</button>
+    <button
+      class="modal-close"
+      onclick="closeAdminLogin()">
+      ×
+    </button>
 
-<div class="admin-login-title">
-ADMIN
+    <h2>
+      ADMIN LOGIN
+    </h2>
+
+    <form onsubmit="adminLogin(event)">
+
+      <div class="form-group">
+
+        <label>
+          BENUTZERNAME
+        </label>
+
+        <input
+          id="adminUsername"
+          required>
+
+      </div>
+
+      <div class="form-group">
+
+        <label>
+          PASSWORT
+        </label>
+
+        <input
+          id="adminPassword"
+          type="password"
+          required>
+
+      </div>
+
+      <button class="light-button">
+        LOGIN
+      </button>
+
+    </form>
+
+  </div>
+
 </div>
 
-<div class="admin-login-subtitle">
-GONSHIKI CREW SHOP-VERWALTUNG
-</div>
 
-<div class="demo-note">
-DEMO-ADMIN: Dieser Zugang ist nur für die aktuelle
-GitHub-Pages-Vorschau gedacht und bietet noch keine echte
-sichere Authentifizierung.
-</div>
-
-<form onsubmit="adminLogin(event)">
-
-<div class="form-group">
-<label>BENUTZERNAME</label>
-<input id="adminUsername" autocomplete="username" required>
-</div>
-
-<div class="form-group">
-<label>PASSWORT</label>
-<input id="adminPassword" type="password" autocomplete="current-password" required>
-</div>
-
-<button class="light-button" type="submit">
-ADMIN ANMELDEN
-</button>
-
-</form>
-</div>
-</div>
-
-<!-- ADMIN DASHBOARD -->
+<!-- ADMIN -->
 
 <div class="modal" id="adminModal">
 
-<div class="modal-box admin-box">
+  <div class="modal-box">
 
-<div class="admin-header">
+    <button
+      class="modal-close"
+      onclick="adminModal.classList.remove('active')">
+      ×
+    </button>
 
-<div>
+    <div class="admin-box">
 
-<div class="admin-title">
-GONSHIKI ADMIN
+      <div class="admin-top">
+
+        <div>
+
+          <div class="small-label">
+            GONSHIKI CREW
+          </div>
+
+          <h2 class="modal-title"
+              style="margin:5px 0 0">
+            ADMIN
+          </h2>
+
+        </div>
+
+        <button
+          class="dark-button"
+          style="flex:none"
+          onclick="adminLogout()">
+          LOGOUT
+        </button>
+
+      </div>
+
+
+      <div class="admin-tabs">
+
+        <button
+          class="admin-tab active"
+          onclick="showAdminTab('dashboard',this)">
+          DASHBOARD
+        </button>
+
+        <button
+          class="admin-tab"
+          onclick="showAdminTab('products',this)">
+          PRODUKTE
+        </button>
+
+        <button
+          class="admin-tab"
+          onclick="showAdminTab('orders',this)">
+          BESTELLUNGEN
+        </button>
+
+        <button
+          class="admin-tab"
+          onclick="showAdminTab('coupons',this)">
+          GUTSCHEINE
+        </button>
+
+      </div>
+
+
+      <div
+        id="adminDashboard"
+        class="admin-section active">
+
+        <div
+          class="admin-stats"
+          id="adminStats">
+        </div>
+
+      </div>
+
+
+      <div
+        id="adminProducts"
+        class="admin-section">
+
+        <div
+          id="adminProductsList">
+        </div>
+
+      </div>
+
+
+      <div
+        id="adminOrders"
+        class="admin-section">
+
+        <div
+          id="adminOrdersList">
+        </div>
+
+      </div>
+
+
+      <div
+        id="adminCoupons"
+        class="admin-section">
+
+        <div class="form-grid">
+
+          <div class="form-group">
+
+            <label>
+              CODE
+            </label>
+
+            <input
+              id="newCouponCode"
+              placeholder="GONSHIKI20">
+
+          </div>
+
+          <div class="form-group">
+
+            <label>
+              PROZENT
+            </label>
+
+            <input
+              id="newCouponPercent"
+              type="number"
+              min="1"
+              max="100"
+              placeholder="20">
+
+          </div>
+
+          <div class="form-group">
+
+            <label>
+              MINDESTWERT
+            </label>
+
+            <input
+              id="newCouponMin"
+              type="number"
+              min="0"
+              step=".01"
+              placeholder="0">
+
+          </div>
+
+        </div>
+
+        <button
+          class="light-button"
+          onclick="createCoupon()">
+          GUTSCHEIN ERSTELLEN
+        </button>
+
+        <div
+          style="margin-top:20px"
+          id="couponList">
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </div>
 
-<div class="admin-subtitle">
-SHOP-VERWALTUNG · DEMO
+
+<div
+  class="toast"
+  id="toast">
 </div>
 
-</div>
-
-<button class="admin-logout" onclick="adminLogout()">
-ABMELDEN
-</button>
-
-</div>
-
-<div class="admin-demo-warning">
-DEMO-SYSTEM: Änderungen werden aktuell lokal in deinem Browser
-gespeichert. Für einen echten Shop benötigen wir später ein echtes
-Backend mit Datenbank und sicherem Login.
-</div>
-
-<div class="admin-tabs">
-
-<button class="admin-tab active"
-onclick="showAdminTab('dashboard',this)">
-ÜBERSICHT
-</button>
-
-<button class="admin-tab"
-onclick="showAdminTab('products',this)">
-PRODUKTE
-</button>
-
-<button class="admin-tab"
-onclick="showAdminTab('orders',this)">
-BESTELLUNGEN
-</button>
-
-</div>
-
-<div class="admin-section active" id="adminDashboard">
-
-<div class="admin-stat-grid" id="adminStats"></div>
-
-<div class="admin-empty">
-
-<strong>
-GONSHIKI SHOP ADMIN
-</strong>
-
-<br><br>
-
-Hier kannst du Produkte, Preise, Sale-Preise,
-Lagerbestand und Demo-Bestellungen verwalten.
-
-</div>
-
-</div>
-
-<div class="admin-section" id="adminProducts">
-
-<div class="admin-products" id="adminProductsList"></div>
-
-</div>
-
-<div class="admin-section" id="adminOrders">
-
-<div class="admin-orders" id="adminOrdersList"></div>
-
-</div>
-
-</div>
-</div>
 
 <script>
 
-/* =========================
-   PRODUCTS
-========================= */
-
-const products = [
+const defaultProducts = [
 
 {
-id:1,
-name:"GONSCHIKI SHIRT RUSSIA",
-image:"assets/Shirt-black-Russia.jpg",
-category:"Shirts",
-price:34.99,
-description:"Schwarzes Gonschiki Shirt mit dem charakteristischen Russia-Motiv.",
-gender:["Männer","Frauen"],
-sizes:["S","M","L","XL"],
-stock:{S:10,M:10,L:10,XL:10},
-sticker:false,
-sale:false,
-salePrice:0,
-active:true
+ id:1,
+ name:"GONSHIKI T-SHIRT E36",
+ category:"shirt",
+ gender:"unisex",
+ price:34.99,
+ salePrice:0,
+ sale:false,
+ image:"assets/Shirt-black-e36.jpg",
+ description:"Schwarzes ГОНЩИКИ T-Shirt mit E36 Motiv.",
+ sizes:["S","M","L","XL","XXL"],
+ stock:{S:5,M:10,L:10,XL:5,XXL:2},
+ active:true
 },
 
 {
-id:2,
-name:"GONSCHIKI ZIPPER KREUZ",
-image:"assets/Zipper-black-Kreuz.jpg",
-category:"Zipper",
-price:69.99,
-description:"Schwarzer Gonschiki Zipper mit Kreuz-Motiv.",
-gender:["Männer","Frauen"],
-sizes:["S","M","L","XL"],
-stock:{S:10,M:10,L:10,XL:10},
-sticker:false,
-sale:false,
-salePrice:0,
-active:true
+ id:2,
+ name:"GONSHIKI T-SHIRT E34",
+ category:"shirt",
+ gender:"unisex",
+ price:34.99,
+ salePrice:0,
+ sale:false,
+ image:"assets/Shirt-black-e34.jpg",
+ description:"Schwarzes ГОНЩИКИ T-Shirt mit E34 Motiv.",
+ sizes:["S","M","L","XL","XXL"],
+ stock:{S:5,M:10,L:10,XL:5,XXL:2},
+ active:true
 },
 
 {
-id:3,
-name:"GONSCHIKI HOODIE E36",
-image:"assets/Hoodie-black-e36.jpg",
-category:"Hoodies",
-price:59.99,
-description:"Schwarzer Hoodie mit E36-Motiv für die Gonschiki Crew.",
-gender:["Männer","Frauen"],
-sizes:["S","M","L","XL"],
-stock:{S:10,M:10,L:10,XL:10},
-sticker:false,
-sale:false,
-salePrice:0,
-active:true
+ id:3,
+ name:"GONSHIKI T-SHIRT RUSSIA",
+ category:"shirt",
+ gender:"unisex",
+ price:34.99,
+ salePrice:0,
+ sale:false,
+ image:"assets/Shirt-black-Russia.jpg",
+ description:"Schwarzes ГОНЩИКИ T-Shirt mit Russia Design.",
+ sizes:["S","M","L","XL","XXL"],
+ stock:{S:5,M:10,L:10,XL:5,XXL:2},
+ active:true
 },
 
 {
-id:4,
-name:"GONSCHIKI HOODIE E34",
-image:"assets/Hoodie-black-e34.jpg",
-category:"Hoodies",
-price:59.99,
-description:"Schwarzer Hoodie mit E34-Motiv.",
-gender:["Männer","Frauen"],
-sizes:["S","M","L","XL"],
-stock:{S:10,M:10,L:10,XL:10},
-sticker:false,
-sale:false,
-salePrice:0,
-active:true
+ id:4,
+ name:"GONSHIKI HOODIE E36",
+ category:"hoodie",
+ gender:"unisex",
+ price:59.99,
+ salePrice:0,
+ sale:false,
+ image:"assets/Hoodie-black-e36.jpg",
+ description:"Schwarzer ГОНЩИКИ Hoodie mit E36 Motiv.",
+ sizes:["S","M","L","XL","XXL"],
+ stock:{S:4,M:8,L:8,XL:5,XXL:2},
+ active:true
 },
 
 {
-id:5,
-name:"GONSCHIKI HOODIE KREUZ",
-image:"assets/Hoodie-black-Kreuz.jpg",
-category:"Hoodies",
-price:59.99,
-description:"Schwarzer Gonschiki Hoodie mit Kreuz-Motiv.",
-gender:["Männer","Frauen"],
-sizes:["S","M","L","XL"],
-stock:{S:10,M:10,L:10,XL:10},
-sticker:false,
-sale:false,
-salePrice:0,
-active:true
+ id:5,
+ name:"GONSHIKI HOODIE E34",
+ category:"hoodie",
+ gender:"unisex",
+ price:59.99,
+ salePrice:0,
+ sale:false,
+ image:"assets/Hoodie-black-e34.jpg",
+ description:"Schwarzer ГОНЩИКИ Hoodie mit E34 Motiv.",
+ sizes:["S","M","L","XL","XXL"],
+ stock:{S:4,M:8,L:8,XL:5,XXL:2},
+ active:true
 },
 
 {
-id:6,
-name:"GONSCHIKI SHIRT E36",
-image:"assets/Shirt-black-e36.jpg",
-category:"Shirts",
-price:34.99,
-description:"Schwarzes Gonschiki Shirt mit E36-Motiv.",
-gender:["Männer","Frauen"],
-sizes:["S","M","L","XL"],
-stock:{S:10,M:10,L:10,XL:10},
-sticker:false,
-sale:false,
-salePrice:0,
-active:true
+ id:6,
+ name:"GONSHIKI HOODIE KREUZ",
+ category:"hoodie",
+ gender:"unisex",
+ price:59.99,
+ salePrice:0,
+ sale:false,
+ image:"assets/Hoodie-black-Kreuz.jpg",
+ description:"Schwarzer ГОНЩИКИ Hoodie mit Kreuz Design.",
+ sizes:["S","M","L","XL","XXL"],
+ stock:{S:4,M:8,L:8,XL:5,XXL:2},
+ active:true
 },
 
 {
-id:7,
-name:"GONSCHIKI HOODIE RUSSIA",
-image:"assets/Hoodie-black-Russia.jpg",
-category:"Hoodies",
-price:59.99,
-description:"Schwarzer Hoodie mit Gonschiki Russia-Motiv.",
-gender:["Männer","Frauen"],
-sizes:["S","M","L","XL"],
-stock:{S:10,M:10,L:10,XL:10},
-sticker:false,
-sale:false,
-salePrice:0,
-active:true
+ id:7,
+ name:"GONSHIKI HOODIE RUSSIA",
+ category:"hoodie",
+ gender:"unisex",
+ price:59.99,
+ salePrice:0,
+ sale:false,
+ image:"assets/Hoodie-black-Russia.jpg",
+ description:"Schwarzer ГОНЩИКИ Hoodie mit Russia Design.",
+ sizes:["S","M","L","XL","XXL"],
+ stock:{S:4,M:8,L:8,XL:5,XXL:2},
+ active:true
 },
 
 {
-id:8,
-name:"GONSCHIKI SHIRT E34",
-image:"assets/Shirt-black-e34.jpg",
-category:"Shirts",
-price:34.99,
-description:"Schwarzes Gonschiki Shirt mit E34-Motiv.",
-gender:["Männer","Frauen"],
-sizes:["S","M","L","XL"],
-stock:{S:10,M:10,L:10,XL:10},
-sticker:false,
-sale:false,
-salePrice:0,
-active:true
+ id:8,
+ name:"GONSHIKI HOODIE E36 BEIGE",
+ category:"hoodie",
+ gender:"unisex",
+ price:59.99,
+ salePrice:0,
+ sale:false,
+ image:"assets/Hoodie-beige-e36.jpg",
+ description:"Beiger ГОНЩИКИ Hoodie mit E36 Motiv.",
+ sizes:["S","M","L","XL","XXL"],
+ stock:{S:4,M:8,L:8,XL:5,XXL:2},
+ active:true
 },
 
 {
-id:9,
-name:"GONSCHIKI HOODIE E36 BEIGE",
-image:"assets/Hoodie-beige-e36.jpg",
-category:"Hoodies",
-price:59.99,
-description:"Beiger Hoodie mit E36-Motiv.",
-gender:["Männer","Frauen"],
-sizes:["S","M","L","XL"],
-stock:{S:10,M:10,L:10,XL:10},
-sticker:false,
-sale:false,
-salePrice:0,
-active:true
+ id:9,
+ name:"GONSHIKI ZIPPER KREUZ",
+ category:"zipper",
+ gender:"unisex",
+ price:69.99,
+ salePrice:0,
+ sale:false,
+ image:"assets/Zipper-black-Kreuz.jpg",
+ description:"Schwarzer ГОНЩИКИ Zipper.",
+ sizes:["S","M","L","XL","XXL"],
+ stock:{S:4,M:8,L:8,XL:5,XXL:2},
+ active:true
 },
 
 {
-id:10,
-name:"GONSCHIKI PANTS",
-image:"assets/Pants-black-gonschiki.jpg",
-category:"Hosen",
-price:79.99,
-description:"Schwarze Gonschiki Pants.",
-gender:["Männer","Frauen"],
-sizes:["S","M","L","XL"],
-stock:{S:10,M:10,L:10,XL:10},
-sticker:false,
-sale:false,
-salePrice:0,
-active:true
+ id:10,
+ name:"GONSHIKI HOSE",
+ category:"pants",
+ gender:"unisex",
+ price:79.99,
+ salePrice:0,
+ sale:false,
+ image:"assets/Pants-black-gonschiki.jpg",
+ description:"Schwarze ГОНЩИКИ Hose.",
+ sizes:["S","M","L","XL","XXL"],
+ stock:{S:4,M:8,L:8,XL:5,XXL:2},
+ active:true
 },
 
 {
-id:11,
-name:"GONSCHIKI SCHEIBENKEIL",
-image:"assets/Scheibenkeil .PNG",
-category:"Sticker",
-price:35.99,
-description:"Universeller Gonschiki Scheibenkeil für alle Autos.",
-gender:["Männer","Frauen"],
-sizes:[],
-stock:20,
-sticker:true,
-size:"UNIVERSELL FÜR ALLE AUTOS",
-sale:false,
-salePrice:0,
-active:true
+ id:11,
+ name:"SCHEIBENKEIL",
+ category:"sticker",
+ gender:"unisex",
+ price:35.99,
+ salePrice:0,
+ sale:false,
+ image:"assets/Scheibenkeil .PNG",
+ description:"ГОНЩИКИ Scheibenkeil – universal.",
+ sticker:true,
+ stock:10,
+ active:true
 },
 
 {
-id:12,
-name:"GONSCHIKI HECKSCHEIBEN STICKER",
-image:"assets/Heckscheiben Sticker.PNG",
-category:"Sticker",
-price:25.99,
-description:"Gonschiki Heckscheiben Sticker. Format 700 × 300 mm.",
-gender:["Männer","Frauen"],
-sizes:[],
-stock:20,
-sticker:true,
-size:"700 × 300 MM",
-sale:false,
-salePrice:0,
-active:true
+ id:12,
+ name:"HECKSCHEIBEN STICKER",
+ category:"sticker",
+ gender:"unisex",
+ price:25.99,
+ salePrice:0,
+ sale:false,
+ image:"assets/Heckscheiben Sticker.PNG",
+ description:"Heckscheiben Sticker 700mm x 300mm.",
+ sticker:true,
+ stock:10,
+ active:true
 },
 
 {
-id:13,
-name:"GONSCHIKI STICKER",
-image:"assets/Sticker.PNG",
-category:"Sticker",
-price:12.99,
-description:"Schlichter Gonschiki Sticker. Format 200 × 80 mm.",
-gender:["Männer","Frauen"],
-sizes:[],
-stock:30,
-sticker:true,
-size:"200 × 80 MM",
-sale:false,
-salePrice:0,
-active:true
+ id:13,
+ name:"ГОНЩИКИ STICKER",
+ category:"sticker",
+ gender:"unisex",
+ price:12.99,
+ salePrice:0,
+ sale:false,
+ image:"assets/Sticker.PNG",
+ description:"ГОНЩИКИ Sticker 200mm x 80mm.",
+ sticker:true,
+ stock:20,
+ active:true
 }
 
 ];
 
-/* =========================
-   STATE
-========================= */
 
-let currentCategory="Alle";
-let currentGender="Männer";
-let selectedProduct=null;
-let selectedSize=null;
-let modalQuantity=1;
+function load(key,fallback){
 
-let cart=JSON.parse(
-localStorage.getItem("gonschikiCart")||"[]"
+  try{
+
+    const data=localStorage.getItem(key);
+
+    return data ? JSON.parse(data) : fallback;
+
+  }catch(e){
+
+    return fallback;
+
+  }
+
+}
+
+
+function save(key,value){
+
+  localStorage.setItem(
+    key,
+    JSON.stringify(value)
+  );
+
+}
+
+
+let productSettings=load(
+  "gonschikiProductSettings",
+  {}
 );
 
-let orders=JSON.parse(
-localStorage.getItem("gonschikiOrders")||"[]"
+
+let products=defaultProducts.map(p=>{
+
+  const custom=productSettings[p.id];
+
+  return custom
+    ? {...p,...custom}
+    : {...p};
+
+});
+
+
+let cart=load(
+  "gonschikiCart",
+  []
 );
 
-let account=JSON.parse(
-localStorage.getItem("gonschikiAccount")||"null"
+
+let orders=load(
+  "gonschikiOrders",
+  []
 );
+
+
+let coupons=load(
+  "gonschikiCoupons",
+  [
+    {
+      code:"GONSHIKI10",
+      percent:10,
+      min:0,
+      active:true
+    },
+    {
+      code:"CREW15",
+      percent:15,
+      min:50,
+      active:true
+    }
+  ]
+);
+
+
+let account=load(
+  "gonschikiAccount",
+  null
+);
+
+
+let visitors=load(
+  "gonschikiVisitors",
+  {
+    total:0,
+    today:0,
+    lastDay:"",
+    sessions:0
+  }
+);
+
+
+let currentProduct=null;
+let currentSize="";
+let modalQty=1;
+let selectedPayment="Karte";
+let appliedCoupon=null;
+
+let selectedGender="all";
+let selectedCategory="all";
 
 let adminLoggedIn=
-sessionStorage.getItem("gonschikiAdmin")==="true";
+  sessionStorage.getItem("gonschikiAdmin")==="true";
 
-/* =========================
-   SAVED SETTINGS
-========================= */
 
-const savedProductSettings=
-JSON.parse(
-localStorage.getItem("gonschikiProductSettings")||"{}"
-);
+const productGrid=
+  document.getElementById("productGrid");
 
-products.forEach(product=>{
+const cartCount=
+  document.getElementById("cartCount");
 
-const saved=savedProductSettings[product.id];
+const productSearch=
+  document.getElementById("productSearch");
 
-if(!saved)return;
+const languageSelect=
+  document.getElementById("languageSelect");
 
-if(typeof saved.price==="number"&&Number.isFinite(saved.price))
-product.price=saved.price;
+const productModal=
+  document.getElementById("productModal");
 
-if(typeof saved.sale==="boolean")
-product.sale=saved.sale;
+const cartModal=
+  document.getElementById("cartModal");
 
-if(typeof saved.salePrice==="number"&&Number.isFinite(saved.salePrice))
-product.salePrice=saved.salePrice;
+const accountModal=
+  document.getElementById("accountModal");
 
-if(typeof saved.active==="boolean")
-product.active=saved.active;
+const checkoutModal=
+  document.getElementById("checkoutModal");
 
-if(saved.stock!==undefined)
-product.stock=saved.stock;
+const legalModal=
+  document.getElementById("legalModal");
 
-});
+const adminLoginModal=
+  document.getElementById("adminLoginModal");
 
-/* =========================
-   STORAGE
-========================= */
+const adminModal=
+  document.getElementById("adminModal");
 
-function saveCart(){
-localStorage.setItem("gonschikiCart",JSON.stringify(cart));
-}
+const toast=
+  document.getElementById("toast");
 
-function saveOrders(){
-localStorage.setItem("gonschikiOrders",JSON.stringify(orders));
-}
 
-function saveAccount(){
-localStorage.setItem("gonschikiAccount",JSON.stringify(account));
-}
+function money(value){
 
-function saveProductSettings(){
-
-const settings={};
-
-products.forEach(product=>{
-settings[product.id]={
-price:product.price,
-sale:product.sale,
-salePrice:product.salePrice,
-active:product.active,
-stock:product.stock
-};
-});
-
-localStorage.setItem(
-"gonschikiProductSettings",
-JSON.stringify(settings)
-);
-}
-
-/* =========================
-   HELPERS
-========================= */
-
-function formatPrice(price){
-
-return Number(price).toLocaleString(
-"de-DE",
-{
-style:"currency",
-currency:"EUR"
-}
-);
+  return Number(value||0).toLocaleString(
+    "de-DE",
+    {
+      style:"currency",
+      currency:"EUR"
+    }
+  );
 
 }
 
-function escapeHtml(value){
 
-return String(value??"")
-.replace(/&/g,"&amp;")
-.replace(/</g,"&lt;")
-.replace(/>/g,"&gt;")
-.replace(/"/g,"&quot;")
-.replace(/'/g,"&#039;");
+function esc(value){
 
-}
-
-function getProduct(id){
-
-return products.find(
-product=>product.id===Number(id)
-);
+  return String(value)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
 
 }
 
-function getProductPrice(product){
 
-if(
-product&&
-product.sale===true&&
-Number(product.salePrice)>0&&
-Number(product.salePrice)<Number(product.price)
-){
-return Number(product.salePrice);
-}
+function product(id){
 
-return Number(product?.price||0);
+  return products.find(
+    p=>p.id===Number(id)
+  );
 
 }
 
-function isOnSale(product){
 
-return !!(
-product&&
-product.sale===true&&
-Number(product.salePrice)>0&&
-Number(product.salePrice)<Number(product.price)
-);
+function totalStock(p){
 
-}
+  if(p.sticker){
+    return Number(p.stock)||0;
+  }
 
-function getStockForSize(product,size){
-
-if(!product)return 0;
-
-if(product.sticker)
-return Number(product.stock||0);
-
-return Number(
-product.stock?.[size]||0
-);
+  return Object.values(p.stock||{})
+    .reduce(
+      (a,b)=>a+(Number(b)||0),
+      0
+    );
 
 }
 
-function getTotalProductStock(product){
 
-if(!product)return 0;
+function productPrice(p){
 
-if(product.sticker)
-return Number(product.stock||0);
-
-return Object.values(product.stock||{})
-.reduce(
-(sum,value)=>sum+Number(value||0),
-0
-);
+  return p.sale && p.salePrice < p.price
+    ? p.salePrice
+    : p.price;
 
 }
 
-function isProductAvailable(product){
-return getTotalProductStock(product)>0;
-}
 
-function getCartQuantityForProduct(productId,size){
+function stockForSize(p,size){
 
-const item=cart.find(item=>
-Number(item.productId)===Number(productId)&&
-item.size===size
-);
+  if(p.sticker){
+    return Number(p.stock)||0;
+  }
 
-return item?Number(item.quantity):0;
+  return Number(p.stock[size])||0;
 
 }
 
-/* =========================
-   SHOP
-========================= */
 
 function renderProducts(){
 
-const grid=document.getElementById("productGrid");
+  const query=
+    (productSearch.value||"")
+    .trim()
+    .toLowerCase();
 
-const filtered=products.filter(product=>{
+  const filtered=products.filter(p=>{
 
-if(!product.active)return false;
+    if(!p.active)return false;
 
-if(!product.gender.includes(currentGender))
-return false;
+    if(
+      selectedGender!=="all" &&
+      p.gender!==selectedGender &&
+      p.gender!=="unisex"
+    )return false;
 
-if(
-currentCategory!=="Alle"&&
-product.category!==currentCategory
-)
-return false;
+    if(
+      selectedCategory!=="all" &&
+      p.category!==selectedCategory
+    )return false;
 
-return true;
+    if(
+      query &&
+      !p.name.toLowerCase().includes(query) &&
+      !p.description.toLowerCase().includes(query)
+    )return false;
 
-});
+    return true;
 
-if(!filtered.length){
+  });
 
-grid.innerHTML=`
-<div style="
-grid-column:1/-1;
-padding:50px;
-color:#777;
-text-align:center;
-">
-KEINE PRODUKTE VERFÜGBAR.
-</div>
-`;
 
-return;
+  if(!filtered.length){
+
+    productGrid.innerHTML=`
+      <div class="admin-empty"
+           style="grid-column:1/-1">
+        KEINE PRODUKTE GEFUNDEN.
+      </div>
+    `;
+
+    return;
+
+  }
+
+
+  productGrid.innerHTML=filtered.map(p=>{
+
+    const stock=totalStock(p);
+
+    const price=productPrice(p);
+
+    return `
+
+      <article
+        class="product-card ${p.sticker?"sticker-card":""}">
+
+        <div class="product-image">
+
+          <img
+            src="${p.image}"
+            alt="${esc(p.name)}">
+
+          ${
+            p.sale
+            ?
+            `<div class="sale-badge">SALE</div>`
+            :
+            ""
+          }
+
+          <div class="product-stock ${stock<=0?"soldout":""}">
+            ${
+              stock<=0
+              ? "AUSVERKAUFT"
+              : stock<=5
+              ? "FAST AUSVERKAUFT"
+              : "AUF LAGER"
+            }
+          </div>
+
+        </div>
+
+
+        <div class="product-info">
+
+          <div class="product-category">
+            ${esc(p.category)}
+          </div>
+
+          <h3>
+            ${esc(p.name)}
+          </h3>
+
+          <div class="product-price">
+
+            ${
+              p.sale
+              ?
+              `
+              <span class="old-price">
+                ${money(p.price)}
+              </span>
+
+              <span class="sale-price">
+                ${money(price)}
+              </span>
+              `
+              :
+              money(price)
+            }
+
+          </div>
+
+          <button
+            class="product-open"
+            onclick="openProduct(${p.id})"
+            ${stock<=0?"disabled":""}>
+            ${
+              stock<=0
+              ? "NICHT VERFÜGBAR"
+              : "ANSCHAUEN"
+            }
+          </button>
+
+        </div>
+
+      </article>
+
+    `;
+
+  }).join("");
+
 }
 
-grid.innerHTML=filtered.map(product=>{
 
-const stock=getTotalProductStock(product);
-const soldOut=stock<=0;
-const sale=isOnSale(product);
+function setGender(g,b){
 
-const priceHtml=sale?`
-<div class="product-price sale">
-<span class="old-price">
-${formatPrice(product.price)}
-</span>
-<span class="sale-price">
-${formatPrice(product.salePrice)}
-</span>
-</div>
-`:`
-<div class="product-price">
-${formatPrice(product.price)}
-</div>
-`;
+  selectedGender=g;
 
-return `
-<article class="product-card ${product.sticker?"sticker-card":""}">
+  document
+    .querySelectorAll(".gender-tab")
+    .forEach(x=>x.classList.remove("active"));
 
-<div class="product-image">
+  b.classList.add("active");
 
-${sale?`
-<div class="sale-badge">SALE</div>
-`:""}
-
-<img
-src="${product.image}"
-alt="${escapeHtml(product.name)}"
->
-
-<div class="product-stock ${soldOut?"soldout":""}">
-${soldOut?"AUSVERKAUFT":`${stock} VERFÜGBAR`}
-</div>
-
-</div>
-
-<div class="product-info">
-
-<div class="product-category">
-${escapeHtml(product.category)}
-</div>
-
-<h3>
-${escapeHtml(product.name)}
-</h3>
-
-${priceHtml}
-
-<button
-class="product-open"
-onclick="openProduct(${product.id})"
-${soldOut?"disabled":""}
->
-${soldOut?"AUSVERKAUFT":"ANSCHAUEN"}
-</button>
-
-</div>
-
-</article>
-`;
-
-}).join("");
+  renderProducts();
 
 }
 
-function filterProducts(category,button){
 
-currentCategory=category;
+function setCategory(c,b){
 
-document
-.querySelectorAll(".category-btn")
-.forEach(btn=>btn.classList.remove("active"));
+  selectedCategory=c;
 
-button.classList.add("active");
+  document
+    .querySelectorAll(".category-btn")
+    .forEach(x=>x.classList.remove("active"));
 
-renderProducts();
+  b.classList.add("active");
 
-}
-
-function switchGender(gender){
-
-currentGender=gender;
-
-document
-.getElementById("genderMale")
-.classList.toggle("active",gender==="Männer");
-
-document
-.getElementById("genderFemale")
-.classList.toggle("active",gender==="Frauen");
-
-renderProducts();
+  renderProducts();
 
 }
 
-/* =========================
-   PRODUCT MODAL
-========================= */
+
+function clearSearch(){
+
+  productSearch.value="";
+
+  renderProducts();
+
+}
+
 
 function openProduct(id){
 
-const product=getProduct(id);
+  const p=product(id);
 
-if(
-!product||
-!product.active||
-!isProductAvailable(product)
-)return;
+  if(!p)return;
 
-selectedProduct=product;
-modalQuantity=1;
+  currentProduct=p;
+  modalQty=1;
 
-if(product.sticker){
-selectedSize=product.size;
-}else{
-selectedSize=
-product.sizes.find(
-size=>getStockForSize(product,size)>0
-)||product.sizes[0];
-}
+  currentSize=
+    p.sticker
+    ? "UNIVERSAL"
+    : p.sizes.find(
+        s=>stockForSize(p,s)>0
+      ) || p.sizes[0];
 
-document.getElementById("modalImage").src=product.image;
-document.getElementById("modalImage").alt=product.name;
-document.getElementById("modalCategory").textContent=product.category;
-document.getElementById("modalName").textContent=product.name;
-document.getElementById("modalDescription").textContent=product.description;
-document.getElementById("modalQuantity").textContent=modalQuantity;
+  document.getElementById(
+    "modalProductImage"
+  ).src=p.image;
 
-const modalPrice=document.getElementById("modalPrice");
-const saleBadge=document.getElementById("modalSaleBadge");
+  document.getElementById(
+    "modalProductCategory"
+  ).textContent=p.category.toUpperCase();
 
-if(isOnSale(product)){
+  document.getElementById(
+    "modalProductName"
+  ).textContent=p.name;
 
-modalPrice.className="modal-price sale";
+  document.getElementById(
+    "modalProductDescription"
+  ).textContent=p.description;
 
-modalPrice.innerHTML=`
-<span class="modal-old-price">
-${formatPrice(product.price)}
-</span>
+  document.getElementById(
+    "modalQty"
+  ).textContent=modalQty;
 
-<span class="modal-sale-price">
-${formatPrice(product.salePrice)}
-</span>
-`;
+  const price=productPrice(p);
 
-saleBadge.style.display="block";
+  document.getElementById(
+    "modalProductPrice"
+  ).innerHTML=
+    p.sale
+    ?
+    `
+      <span class="old-price">
+        ${money(p.price)}
+      </span>
 
-}else{
+      <span class="sale-price">
+        ${money(price)}
+      </span>
+    `
+    :
+    money(price);
 
-modalPrice.className="modal-price";
-modalPrice.textContent=formatPrice(product.price);
-saleBadge.style.display="none";
 
-}
+  document.getElementById(
+    "modalSaleBadge"
+  ).style.display=
+    p.sale ? "block" : "none";
 
-const sizeArea=document.getElementById("sizeArea");
-const sizeOptions=document.getElementById("sizeOptions");
 
-sizeArea.style.display="block";
+  const sizeWrap=
+    document.getElementById("modalSizeWrap");
 
-if(product.sticker){
+  const sizeOptions=
+    document.getElementById("sizeOptions");
 
-document.getElementById("sizeLabel").textContent="FORMAT";
 
-sizeOptions.innerHTML=`
-<button
-class="size-option active"
-disabled
->
-${escapeHtml(product.size)}
-</button>
-`;
+  if(p.sticker){
 
-}else{
+    sizeWrap.style.display="none";
 
-document.getElementById("sizeLabel").textContent="GRÖSSE";
+  }else{
 
-sizeOptions.innerHTML=
-product.sizes.map(size=>{
+    sizeWrap.style.display="block";
 
-const stock=getStockForSize(product,size);
-const active=selectedSize===size;
+    sizeOptions.innerHTML=
+      p.sizes.map(s=>`
 
-return `
-<button
-class="size-option ${active?"active":""}"
-onclick="selectSize('${size}')"
-${stock<=0?"disabled":""}
->
-${size}
-</button>
-`;
+        <button
+          class="size-option ${s===currentSize?"active":""}"
+          ${stockForSize(p,s)<=0?"disabled":""}
+          onclick="selectSize('${s}',this)">
+          ${s}
+        </button>
 
-}).join("");
+      `).join("");
 
-}
+  }
 
-updateModalStock();
 
-document
-.getElementById("productModal")
-.classList.add("active");
+  updateModalStock();
+
+  productModal.classList.add("active");
 
 }
 
-function closeProduct(){
 
-document
-.getElementById("productModal")
-.classList.remove("active");
+function selectSize(size,b){
 
-selectedProduct=null;
+  currentSize=size;
 
-}
+  document
+    .querySelectorAll(".size-option")
+    .forEach(x=>x.classList.remove("active"));
 
-function selectSize(size){
+  b.classList.add("active");
 
-if(!selectedProduct)return;
+  modalQty=1;
 
-if(
-getStockForSize(selectedProduct,size)<=0
-)return;
+  document.getElementById(
+    "modalQty"
+  ).textContent=modalQty;
 
-selectedSize=size;
-
-document
-.querySelectorAll("#sizeOptions .size-option")
-.forEach(button=>{
-button.classList.toggle(
-"active",
-button.textContent.trim()===size
-);
-});
-
-modalQuantity=1;
-
-document.getElementById(
-"modalQuantity"
-).textContent=modalQuantity;
-
-updateModalStock();
+  updateModalStock();
 
 }
+
 
 function updateModalStock(){
 
-if(!selectedProduct)return;
+  if(!currentProduct)return;
 
-const stock=
-getStockForSize(
-selectedProduct,
-selectedSize
-);
+  const stock=
+    stockForSize(
+      currentProduct,
+      currentSize
+    );
 
-const cartQuantity=
-getCartQuantityForProduct(
-selectedProduct.id,
-selectedSize
-);
+  document.getElementById(
+    "modalStock"
+  ).textContent=
+    stock>0
+    ? `${stock} Stück verfügbar`
+    : "Nicht verfügbar";
 
-const remaining=Math.max(
-0,
-stock-cartQuantity
-);
-
-document.getElementById(
-"modalStock"
-).textContent=
-remaining>0
-?`${remaining} NOCH VERFÜGBAR`
-:"AUSVERKAUFT";
-
-const button=
-document.getElementById("modalAddButton");
-
-button.disabled=
-remaining<=0||
-modalQuantity>remaining;
-
-button.textContent=
-remaining<=0
-?"AUSVERKAUFT"
-:"IN DEN WARENKORB";
+  document.getElementById(
+    "addToCartButton"
+  ).disabled=stock<=0;
 
 }
 
-function changeModalQuantity(change){
 
-if(!selectedProduct)return;
+function changeModalQty(delta){
 
-const stock=
-getStockForSize(
-selectedProduct,
-selectedSize
-);
+  if(!currentProduct)return;
 
-const alreadyInCart=
-getCartQuantityForProduct(
-selectedProduct.id,
-selectedSize
-);
+  const stock=
+    stockForSize(
+      currentProduct,
+      currentSize
+    );
 
-const available=Math.max(
-0,
-stock-alreadyInCart
-);
+  modalQty=Math.max(
+    1,
+    Math.min(
+      stock,
+      modalQty+delta
+    )
+  );
 
-modalQuantity+=change;
-
-if(modalQuantity<1)
-modalQuantity=1;
-
-if(modalQuantity>available)
-modalQuantity=available;
-
-document.getElementById(
-"modalQuantity"
-).textContent=modalQuantity;
-
-updateModalStock();
+  document.getElementById(
+    "modalQty"
+  ).textContent=modalQty;
 
 }
 
-/* =========================
-   CART
-========================= */
 
-function addToCart(){
+function addCurrentToCart(){
 
-if(!selectedProduct)return;
+  if(!currentProduct)return;
 
-const stock=
-getStockForSize(
-selectedProduct,
-selectedSize
-);
+  const p=currentProduct;
 
-const existing=
-cart.find(item=>
-Number(item.productId)===Number(selectedProduct.id)&&
-item.size===selectedSize
-);
+  const stock=
+    stockForSize(
+      p,
+      currentSize
+    );
 
-const currentQuantity=
-existing?existing.quantity:0;
+  if(stock<=0)return;
 
-if(
-currentQuantity+modalQuantity>stock
-){
+  const existing=cart.find(
+    i=>
+      i.productId===p.id &&
+      i.size===currentSize
+  );
 
-alert("Diese Menge ist nicht mehr verfügbar.");
-return;
+  if(existing){
 
-}
+    existing.quantity=
+      Math.min(
+        stock,
+        existing.quantity+modalQty
+      );
 
-if(existing){
+  }else{
 
-existing.quantity+=modalQuantity;
+    cart.push({
+      productId:p.id,
+      size:currentSize,
+      quantity:modalQty
+    });
 
-}else{
+  }
 
-cart.push({
-productId:selectedProduct.id,
-size:selectedSize,
-quantity:modalQuantity
-});
+  save("gonschikiCart",cart);
 
-}
+  renderCart();
 
-saveCart();
-updateCartCount();
-closeProduct();
-renderCart();
-openCart();
+  updateCartCount();
+
+  closeProductModal();
+
+  showToast("Produkt wurde hinzugefügt.");
 
 }
 
-function changeQuantity(index,change){
-
-const item=cart[index];
-
-if(!item)return;
-
-const product=getProduct(item.productId);
-
-if(!product)return;
-
-const stock=
-getStockForSize(product,item.size);
-
-const newQuantity=item.quantity+change;
-
-if(newQuantity<=0){
-
-cart.splice(index,1);
-
-}else if(newQuantity<=stock){
-
-item.quantity=newQuantity;
-
-}else{
-
-alert("Maximaler Lagerbestand erreicht.");
-return;
-
-}
-
-saveCart();
-renderCart();
-updateCartCount();
-
-}
-
-function removeCartItem(index){
-
-cart.splice(index,1);
-
-saveCart();
-renderCart();
-updateCartCount();
-
-}
-
-function clearCart(){
-
-if(!cart.length)return;
-
-cart=[];
-
-saveCart();
-renderCart();
-updateCartCount();
-
-}
-
-function getCartSubtotal(){
-
-return cart.reduce((sum,item)=>{
-
-const product=getProduct(item.productId);
-
-if(!product)return sum;
-
-return sum+
-getProductPrice(product)*
-item.quantity;
-
-},0);
-
-}
-
-function getShipping(){
-
-const subtotal=getCartSubtotal();
-
-if(subtotal<=0)return 0;
-
-return subtotal>=100?0:5.99;
-
-}
-
-function getCartTotal(){
-
-return getCartSubtotal()+getShipping();
-
-}
 
 function updateCartCount(){
 
-const count=cart.reduce(
-(sum,item)=>sum+Number(item.quantity),
-0
-);
-
-document.getElementById(
-"cartCount"
-).textContent=count;
+  cartCount.textContent=
+    cart.reduce(
+      (sum,i)=>sum+i.quantity,
+      0
+    );
 
 }
+
 
 function renderCart(){
 
-const container=document.getElementById("cartItems");
+  const container=
+    document.getElementById("cartItems");
 
-if(!cart.length){
+  const summary=
+    document.getElementById("cartSummary");
 
-container.innerHTML=`
-<div class="empty-cart">
-DEIN WARENKORB IST LEER.
-</div>
-`;
+  if(!cart.length){
 
-return;
+    container.innerHTML=`
+      <div class="empty-cart">
+        DEIN WARENKORB IST LEER.
+      </div>
+    `;
+
+    summary.innerHTML="";
+
+    return;
+
+  }
+
+
+  let subtotal=0;
+
+
+  container.innerHTML=
+    cart.map((item,index)=>{
+
+      const p=product(item.productId);
+
+      if(!p)return "";
+
+      const line=
+        productPrice(p)*item.quantity;
+
+      subtotal+=line;
+
+      return `
+
+        <div class="cart-item">
+
+          <img
+            src="${p.image}"
+            alt="${esc(p.name)}">
+
+          <div>
+
+            <div class="cart-item-name">
+              ${esc(p.name)}
+            </div>
+
+            <div class="cart-item-meta">
+              Größe: ${esc(item.size)}
+            </div>
+
+            <div class="cart-item-price">
+              ${money(line)}
+            </div>
+
+            <div class="cart-quantity">
+
+              <button
+                onclick="changeCartQty(${index},-1)">
+                −
+              </button>
+
+              <strong>
+                ${item.quantity}
+              </strong>
+
+              <button
+                onclick="changeCartQty(${index},1)">
+                +
+              </button>
+
+            </div>
+
+            <button
+              class="cart-remove"
+              onclick="removeCartItem(${index})">
+              ENTFERNEN
+            </button>
+
+          </div>
+
+        </div>
+
+      `;
+
+    }).join("");
+
+
+  const shipping=
+    subtotal>=100 || subtotal===0
+    ? 0
+    : 5.99;
+
+  const total=
+    subtotal+shipping;
+
+
+  summary.innerHTML=`
+
+    <div class="summary-row">
+      <span>ZWISCHENSUMME</span>
+      <strong>${money(subtotal)}</strong>
+    </div>
+
+    <div class="summary-row">
+      <span>VERSAND</span>
+      <strong>
+        ${shipping===0?"KOSTENLOS":money(shipping)}
+      </strong>
+    </div>
+
+    <div class="summary-row summary-total">
+      <span>GESAMT</span>
+      <strong>${money(total)}</strong>
+    </div>
+
+    <div class="cart-actions">
+
+      <button
+        class="dark-button"
+        onclick="closeCart()">
+        WEITER SHOPPEN
+      </button>
+
+      <button
+        class="light-button"
+        onclick="openCheckout()">
+        ZUR KASSE
+      </button>
+
+    </div>
+
+  `;
+
+}
+
+
+function changeCartQty(index,delta){
+
+  const item=cart[index];
+
+  if(!item)return;
+
+  const p=product(item.productId);
+
+  const stock=
+    stockForSize(
+      p,
+      item.size
+    );
+
+  item.quantity=
+    Math.max(
+      1,
+      Math.min(
+        stock,
+        item.quantity+delta
+      )
+    );
+
+  save("gonschikiCart",cart);
+
+  renderCart();
+
+  updateCartCount();
 
 }
 
-const itemsHtml=cart.map((item,index)=>{
 
-const product=getProduct(item.productId);
+function removeCartItem(index){
 
-if(!product)return "";
+  cart.splice(index,1);
 
-const itemPrice=getProductPrice(product);
-const itemTotal=itemPrice*item.quantity;
-const sale=isOnSale(product);
+  save("gonschikiCart",cart);
 
-return `
-<div class="cart-item">
+  renderCart();
 
-<img
-src="${product.image}"
-alt="${escapeHtml(product.name)}"
->
-
-<div>
-
-<div class="cart-item-name">
-${escapeHtml(product.name)}
-</div>
-
-<div class="cart-item-meta">
-${escapeHtml(item.size)}
-</div>
-
-<div class="cart-item-price">
-
-${sale?`
-<span class="cart-price-old">
-${formatPrice(product.price)}
-</span>
-
-<span class="cart-price-sale">
-${formatPrice(itemTotal)}
-</span>
-`:formatPrice(itemTotal)}
-
-</div>
-
-<div class="cart-quantity">
-
-<button onclick="changeQuantity(${index},-1)">
-−
-</button>
-
-<strong>
-${item.quantity}
-</strong>
-
-<button onclick="changeQuantity(${index},1)">
-+
-</button>
-
-</div>
-
-<button
-class="cart-remove"
-onclick="removeCartItem(${index})"
->
-ENTFERNEN
-</button>
-
-</div>
-</div>
-`;
-
-}).join("");
-
-const subtotal=getCartSubtotal();
-const shipping=getShipping();
-const total=getCartTotal();
-
-container.innerHTML=`
-
-<div class="cart-items">
-${itemsHtml}
-</div>
-
-<div class="cart-summary">
-
-<div class="summary-row">
-<span>ZWISCHENSUMME</span>
-<strong>${formatPrice(subtotal)}</strong>
-</div>
-
-<div class="summary-row">
-<span>VERSAND</span>
-<strong>
-${shipping===0?"KOSTENLOS":formatPrice(shipping)}
-</strong>
-</div>
-
-<div class="summary-row summary-total">
-<span>GESAMT</span>
-<strong>${formatPrice(total)}</strong>
-</div>
-
-${subtotal<100?`
-<div style="
-color:#666;
-font-size:9px;
-margin-top:12px;
-">
-NOCH ${formatPrice(100-subtotal)}
-BIS ZUM KOSTENLOSEN VERSAND.
-</div>
-`:""}
-
-<div class="cart-actions">
-
-<button
-class="dark-button"
-onclick="clearCart()"
->
-WARENKORB LEEREN
-</button>
-
-<button
-class="light-button"
-onclick="openCheckout()"
->
-ZUR KASSE
-</button>
-
-</div>
-
-</div>
-`;
+  updateCartCount();
 
 }
+
 
 function openCart(){
 
-renderCart();
+  renderCart();
 
-document
-.getElementById("cartModal")
-.classList.add("active");
+  cartModal.classList.add("active");
 
 }
+
 
 function closeCart(){
 
-document
-.getElementById("cartModal")
-.classList.remove("active");
+  cartModal.classList.remove("active");
 
 }
 
-/* =========================
-   CHECKOUT
-========================= */
+
+function closeProductModal(){
+
+  productModal.classList.remove("active");
+
+}
+
 
 function openCheckout(){
 
-if(!cart.length){
+  if(!cart.length){
 
-alert("Dein Warenkorb ist leer.");
-return;
+    alert("Dein Warenkorb ist leer.");
+
+    return;
+
+  }
+
+  closeCart();
+
+  appliedCoupon=null;
+
+  document.getElementById(
+    "couponInput"
+  ).value="";
+
+  document.getElementById(
+    "checkoutCouponMessage"
+  ).textContent="";
+
+  if(account){
+
+    document.getElementById(
+      "checkoutFirstName"
+    ).value=account.firstName||"";
+
+    document.getElementById(
+      "checkoutLastName"
+    ).value=account.lastName||"";
+
+    document.getElementById(
+      "checkoutEmail"
+    ).value=account.email||"";
+
+  }
+
+  renderCheckoutSummary();
+
+  checkoutModal.classList.add("active");
 
 }
 
-closeCart();
-renderCheckoutSummary();
-
-document
-.getElementById("checkoutModal")
-.classList.add("active");
-
-}
 
 function closeCheckout(){
 
-document
-.getElementById("checkoutModal")
-.classList.remove("active");
+  checkoutModal.classList.remove("active");
 
 }
+
+
+function selectPayment(payment,b){
+
+  selectedPayment=payment;
+
+  document
+    .querySelectorAll(".payment-option")
+    .forEach(x=>x.classList.remove("active"));
+
+  b.classList.add("active");
+
+}
+
+
+function cartSubtotal(){
+
+  return cart.reduce(
+    (sum,item)=>{
+
+      const p=product(item.productId);
+
+      return sum+
+        (
+          p
+          ? productPrice(p)*item.quantity
+          : 0
+        );
+
+    },
+    0
+  );
+
+}
+
 
 function renderCheckoutSummary(){
 
-const container=
-document.getElementById("checkoutSummary");
+  const subtotal=cartSubtotal();
 
-const subtotal=getCartSubtotal();
-const shipping=getShipping();
-const total=getCartTotal();
+  const shipping=
+    subtotal>=100 ? 0 : 5.99;
 
-container.innerHTML=`
+  const discount=
+    appliedCoupon
+    ? subtotal*appliedCoupon.percent/100
+    : 0;
 
-<div
-class="cart-summary"
-style="margin-bottom:25px;"
->
+  const total=
+    Math.max(
+      0,
+      subtotal+shipping-discount
+    );
 
-<div class="summary-row">
-<span>ZWISCHENSUMME</span>
-<strong>${formatPrice(subtotal)}</strong>
-</div>
+  document.getElementById(
+    "checkoutSummary"
+  ).innerHTML=`
 
-<div class="summary-row">
-<span>VERSAND</span>
-<strong>
-${shipping===0?"KOSTENLOS":formatPrice(shipping)}
-</strong>
-</div>
+    <div class="summary-row">
+      <span>ZWISCHENSUMME</span>
+      <strong>${money(subtotal)}</strong>
+    </div>
 
-<div class="summary-row summary-total">
-<span>GESAMT</span>
-<strong>${formatPrice(total)}</strong>
-</div>
+    ${
+      appliedCoupon
+      ?
+      `
+      <div class="summary-row">
+        <span>GUTSCHEIN</span>
+        <strong>-${money(discount)}</strong>
+      </div>
+      `
+      :
+      ""
+    }
 
-</div>
-`;
+    <div class="summary-row">
+      <span>VERSAND</span>
+      <strong>
+        ${shipping===0?"KOSTENLOS":money(shipping)}
+      </strong>
+    </div>
 
-}
+    <div class="summary-row summary-total">
+      <span>GESAMT</span>
+      <strong>${money(total)}</strong>
+    </div>
 
-/* =========================
-   ORDERS
-========================= */
-
-function createOrderNumber(){
-
-const now=new Date();
-
-const date=
-now.getFullYear().toString()+
-String(now.getMonth()+1).padStart(2,"0")+
-String(now.getDate()).padStart(2,"0");
-
-const random=Math.floor(
-1000+Math.random()*9000
-);
-
-return `GON-${date}-${random}`;
+  `;
 
 }
 
-function placeOrder(event){
 
-event.preventDefault();
+function applyCoupon(){
 
-if(!cart.length){
+  const input=
+    document.getElementById(
+      "couponInput"
+    );
 
-alert("Dein Warenkorb ist leer.");
-return;
+  const code=
+    input.value.trim().toUpperCase();
 
-}
+  const coupon=
+    coupons.find(
+      c=>
+        c.code===code &&
+        c.active
+    );
 
-const firstName=
-document.getElementById("checkoutFirstName").value.trim();
+  const subtotal=cartSubtotal();
 
-const lastName=
-document.getElementById("checkoutLastName").value.trim();
+  const message=
+    document.getElementById(
+      "checkoutCouponMessage"
+    );
 
-const email=
-document.getElementById("checkoutEmail").value.trim();
 
-const street=
-document.getElementById("checkoutStreet").value.trim();
+  if(!coupon){
 
-const postal=
-document.getElementById("checkoutPostal").value.trim();
+    appliedCoupon=null;
 
-const city=
-document.getElementById("checkoutCity").value.trim();
+    message.textContent=
+      "Gutscheincode nicht gefunden.";
 
-const orderItems=cart.map(item=>{
+    renderCheckoutSummary();
 
-const product=getProduct(item.productId);
+    return;
 
-return{
-productId:item.productId,
-name:product.name,
-image:product.image,
-size:item.size,
-price:getProductPrice(product),
-originalPrice:product.price,
-sale:isOnSale(product),
-quantity:item.quantity
-};
+  }
 
-});
 
-const order={
+  if(subtotal<Number(coupon.min||0)){
 
-id:Date.now(),
+    appliedCoupon=null;
 
-orderNumber:createOrderNumber(),
+    message.textContent=
+      `Mindestbestellwert: ${money(coupon.min)}`;
 
-date:new Date().toISOString(),
+    renderCheckoutSummary();
 
-status:"Vorschau",
+    return;
 
-customer:{
-firstName,
-lastName,
-email,
-street,
-postal,
-city
-},
+  }
 
-items:orderItems,
 
-subtotal:getCartSubtotal(),
+  appliedCoupon=coupon;
 
-shipping:getShipping(),
+  message.textContent=
+    `${coupon.code} angewendet: ${coupon.percent}% Rabatt`;
 
-total:getCartTotal()
-
-};
-
-orders.unshift(order);
-
-saveOrders();
-
-cart=[];
-
-saveCart();
-
-updateCartCount();
-
-closeCheckout();
-
-renderCart();
-renderAccount();
-renderAdminOrders();
-renderAdminStats();
-
-document
-.getElementById("checkoutForm")
-.reset();
-
-alert(
-`Demo-Bestellung ${order.orderNumber} wurde erstellt.\n\n`+
-`Die Bestellung wurde nur lokal als Vorschau gespeichert.`
-);
+  renderCheckoutSummary();
 
 }
 
-function formatOrderDate(dateString){
 
-const date=new Date(dateString);
+function placeDemoOrder(e){
 
-return date.toLocaleString(
-"de-DE",
-{
-day:"2-digit",
-month:"2-digit",
-year:"numeric",
-hour:"2-digit",
-minute:"2-digit"
+  e.preventDefault();
+
+  if(!cart.length){
+
+    alert("Warenkorb ist leer.");
+
+    return;
+
+  }
+
+
+  const subtotal=cartSubtotal();
+
+  const shipping=
+    subtotal>=100 ? 0 : 5.99;
+
+  const discount=
+    appliedCoupon
+    ? subtotal*appliedCoupon.percent/100
+    : 0;
+
+  const total=
+    Math.max(
+      0,
+      subtotal+shipping-discount
+    );
+
+
+  const customer={
+
+    firstName:
+      document.getElementById(
+        "checkoutFirstName"
+      ).value.trim(),
+
+    lastName:
+      document.getElementById(
+        "checkoutLastName"
+      ).value.trim(),
+
+    email:
+      document.getElementById(
+        "checkoutEmail"
+      ).value.trim(),
+
+    street:
+      document.getElementById(
+        "checkoutStreet"
+      ).value.trim(),
+
+    postal:
+      document.getElementById(
+        "checkoutPostal"
+      ).value.trim(),
+
+    city:
+      document.getElementById(
+        "checkoutCity"
+      ).value.trim()
+
+  };
+
+
+  const items=
+    cart.map(item=>{
+
+      const p=product(item.productId);
+
+      return {
+
+        productId:p.id,
+
+        name:p.name,
+
+        size:item.size,
+
+        quantity:item.quantity,
+
+        price:productPrice(p)
+
+      };
+
+    });
+
+
+  const order={
+
+    orderNumber:
+      "GON-"+Date.now(),
+
+    date:
+      new Date().toISOString(),
+
+    customer,
+
+    payment:selectedPayment,
+
+    coupon:
+      appliedCoupon
+      ? appliedCoupon.code
+      : null,
+
+    items,
+
+    subtotal,
+
+    shipping,
+
+    discount,
+
+    total,
+
+    status:"DEMO / NEU"
+
+  };
+
+
+  orders.unshift(order);
+
+  save(
+    "gonschikiOrders",
+    orders
+  );
+
+
+  cart.forEach(item=>{
+
+    const p=product(item.productId);
+
+    if(p.sticker){
+
+      p.stock=
+        Math.max(
+          0,
+          p.stock-item.quantity
+        );
+
+    }else{
+
+      p.stock[item.size]=
+        Math.max(
+          0,
+          p.stock[item.size]-item.quantity
+        );
+
+    }
+
+  });
+
+
+  products.forEach(p=>{
+
+    const original=defaultProducts.find(
+      x=>x.id===p.id
+    );
+
+    if(!original)return;
+
+    productSettings[p.id]={
+
+      price:p.price,
+
+      salePrice:p.salePrice,
+
+      sale:p.sale,
+
+      stock:p.stock,
+
+      active:p.active
+
+    };
+
+  });
+
+
+  save(
+    "gonschikiProductSettings",
+    productSettings
+  );
+
+
+  cart=[];
+
+  save(
+    "gonschikiCart",
+    cart
+  );
+
+
+  renderProducts();
+
+  renderCart();
+
+  updateCartCount();
+
+  closeCheckout();
+
+  renderAccount();
+
+  if(adminLoggedIn){
+
+    renderAdmin();
+
+  }
+
+
+  alert(
+    `Demo-Bestellung ${order.orderNumber} wurde erstellt.\n\n`+
+    `Zahlung: ${selectedPayment}\n`+
+    `Gesamt: ${money(total)}\n\n`+
+    `Es wurde KEINE echte Zahlung durchgeführt.`
+  );
+
 }
-);
 
-}
-
-function renderOrderHistory(){
-
-if(!orders.length){
-
-return`
-<div class="order-history">
-
-<div class="order-history-title">
-BESTELLHISTORIE
-</div>
-
-<div class="no-orders">
-DU HAST NOCH KEINE BESTELLUNGEN.
-</div>
-
-</div>
-`;
-
-}
-
-const orderHtml=orders.map(order=>{
-
-const itemsHtml=order.items.map(item=>{
-
-const currentItemPrice=
-Number(item.price||0);
-
-return`
-<div class="order-item">
-
-<img
-src="${escapeHtml(item.image)}"
-alt="${escapeHtml(item.name)}"
->
-
-<div>
-
-<div class="order-item-name">
-${escapeHtml(item.name)}
-</div>
-
-<div class="order-item-meta">
-
-${escapeHtml(item.size)}
-·
-${item.quantity} ×
-${formatPrice(currentItemPrice)}
-${item.sale?" · SALE":""}
-
-</div>
-
-</div>
-
-<div class="order-item-price">
-${formatPrice(currentItemPrice*item.quantity)}
-</div>
-
-</div>
-`;
-
-}).join("");
-
-return`
-<div
-class="order-card"
-id="order-${order.id}"
->
-
-<div
-class="order-header"
-onclick="toggleOrder(${order.id})"
->
-
-<div>
-
-<div class="order-number">
-${escapeHtml(order.orderNumber)}
-</div>
-
-<div class="order-date">
-${formatOrderDate(order.date)}
-</div>
-
-</div>
-
-<div class="order-status">
-${escapeHtml(order.status)}
-</div>
-
-<div class="order-header-total">
-${formatPrice(order.total)}
-</div>
-
-</div>
-
-<div class="order-details">
-
-${itemsHtml}
-
-<div class="order-address">
-
-<strong style="color:#fff;">
-LIEFERADRESSE
-</strong>
-
-<br>
-
-${escapeHtml(order.customer.firstName)}
-${escapeHtml(order.customer.lastName)}
-
-<br>
-
-${escapeHtml(order.customer.street)}
-
-<br>
-
-${escapeHtml(order.customer.postal)}
-${escapeHtml(order.customer.city)}
-
-<br><br>
-
-${escapeHtml(order.customer.email)}
-
-</div>
-
-<div class="order-summary">
-
-<div class="order-summary-row">
-<span>ZWISCHENSUMME</span>
-<strong>
-${formatPrice(order.subtotal)}
-</strong>
-</div>
-
-<div class="order-summary-row">
-<span>VERSAND</span>
-<strong>
-${order.shipping===0?"KOSTENLOS":formatPrice(order.shipping)}
-</strong>
-</div>
-
-<div class="order-summary-row total">
-<span>GESAMT</span>
-<strong>
-${formatPrice(order.total)}
-</strong>
-</div>
-
-</div>
-
-</div>
-</div>
-`;
-
-}).join("");
-
-return`
-<div class="order-history">
-
-<div class="order-history-title">
-BESTELLHISTORIE
-</div>
-
-<div class="order-list">
-${orderHtml}
-</div>
-
-<div class="history-demo-note">
-DEMO: Bestellungen werden derzeit nur lokal
-in diesem Browser gespeichert.
-</div>
-
-</div>
-`;
-
-}
-
-function toggleOrder(id){
-
-const card=document.getElementById(`order-${id}`);
-
-if(card){
-card.classList.toggle("open");
-}
-
-}
-
-/* =========================
-   ACCOUNT
-========================= */
 
 function openAccount(){
 
-renderAccount();
+  renderAccount();
 
-document
-.getElementById("accountModal")
-.classList.add("active");
+  accountModal.classList.add("active");
 
 }
+
 
 function closeAccount(){
 
-document
-.getElementById("accountModal")
-.classList.remove("active");
+  accountModal.classList.remove("active");
 
 }
+
+
+function showAccountTab(tab,b){
+
+  document
+    .querySelectorAll(".account-tab")
+    .forEach(x=>x.classList.remove("active"));
+
+  b.classList.add("active");
+
+  document
+    .querySelectorAll(".account-panel")
+    .forEach(x=>x.classList.remove("active"));
+
+  document
+    .getElementById(
+      "account"+
+      tab.charAt(0).toUpperCase()+
+      tab.slice(1)
+    )
+    .classList.add("active");
+
+  if(tab==="orders"){
+
+    renderAccount();
+
+  }
+
+}
+
+
+function registerAccount(e){
+
+  e.preventDefault();
+
+  account={
+
+    firstName:
+      document.getElementById(
+        "registerFirstName"
+      ).value.trim(),
+
+    lastName:
+      document.getElementById(
+        "registerLastName"
+      ).value.trim(),
+
+    email:
+      document.getElementById(
+        "registerEmail"
+      ).value.trim(),
+
+    password:
+      document.getElementById(
+        "registerPassword"
+      ).value
+
+  };
+
+
+  save(
+    "gonschikiAccount",
+    account
+  );
+
+
+  alert(
+    "Demo-Account wurde erstellt."
+  );
+
+  renderAccount();
+
+}
+
+
+function loginAccount(e){
+
+  e.preventDefault();
+
+  const email=
+    document.getElementById(
+      "loginEmail"
+    ).value.trim();
+
+  const password=
+    document.getElementById(
+      "loginPassword"
+    ).value;
+
+
+  if(
+    account &&
+    account.email===email &&
+    account.password===password
+  ){
+
+    alert(
+      "Demo-Login erfolgreich."
+    );
+
+    renderAccount();
+
+  }else{
+
+    alert(
+      "Login-Daten stimmen nicht."
+    );
+
+  }
+
+}
+
 
 function renderAccount(){
 
-const container=
-document.getElementById("accountContent");
+  const content=
+    document.getElementById(
+      "accountContent"
+    );
 
-if(!account){
+  if(!content)return;
 
-container.innerHTML=`
 
-<div class="account-status">
+  if(!account){
 
-<strong>
-NOCH NICHT ANGEMELDET
-</strong>
+    content.innerHTML=`
 
-<span>
-Erstelle einen Demo-Account, um deine
-Bestellhistorie hier anzuzeigen.
-</span>
+      <div class="account-user">
 
-</div>
+        <strong>
+          Kein Account angemeldet.
+        </strong>
 
-<div class="account-buttons">
+        <p style="color:#777;font-size:9px;margin-top:8px">
+          Dieser Account funktioniert aktuell
+          nur als Demo und speichert Daten
+          lokal im Browser.
+        </p>
 
-<button onclick="openAuth('register')">
-ACCOUNT ERSTELLEN
-</button>
+      </div>
 
-<button onclick="openAuth('login')">
-ANMELDEN
-</button>
+    `;
 
-</div>
-`;
+    return;
 
-return;
+  }
+
+
+  const userOrders=
+    orders.filter(
+      o=>
+        o.customer &&
+        o.customer.email===account.email
+    );
+
+
+  content.innerHTML=`
+
+    <div class="account-user">
+
+      <div class="small-label">
+        ANGEMELDET ALS
+      </div>
+
+      <h3 style="margin-top:7px">
+        ${esc(account.firstName)}
+        ${esc(account.lastName)}
+      </h3>
+
+      <p style="color:#777;font-size:9px;margin-top:5px">
+        ${esc(account.email)}
+      </p>
+
+    </div>
+
+
+    ${
+      userOrders.length
+      ?
+      userOrders.map(o=>`
+
+        <div class="order-card">
+
+          <div class="order-card-top">
+
+            <div>
+
+              <div class="order-number">
+                ${esc(o.orderNumber)}
+              </div>
+
+              <div class="order-date">
+                ${new Date(o.date).toLocaleString("de-DE")}
+              </div>
+
+            </div>
+
+            <div class="order-status">
+              ${esc(o.status)}
+            </div>
+
+          </div>
+
+
+          <div class="order-lines">
+
+            ${
+              o.items.map(i=>`
+
+                <div class="order-line">
+
+                  <span>
+                    ${esc(i.name)}
+                    · ${esc(i.size)}
+                    × ${i.quantity}
+                  </span>
+
+                  <strong>
+                    ${money(i.price*i.quantity)}
+                  </strong>
+
+                </div>
+
+              `).join("")
+            }
+
+          </div>
+
+
+          <div class="summary-row"
+               style="margin-top:13px">
+
+            <span>GESAMT</span>
+
+            <strong>
+              ${money(o.total)}
+            </strong>
+
+          </div>
+
+        </div>
+
+      `).join("")
+      :
+      `
+        <div class="no-orders">
+          NOCH KEINE BESTELLUNGEN.
+        </div>
+      `
+    }
+
+  `;
 
 }
 
-container.innerHTML=`
 
-<div class="account-status">
-
-<strong>
-WILLKOMMEN,
-${escapeHtml(account.name)}
-</strong>
-
-<span>
-${escapeHtml(account.email)}
-</span>
-
-</div>
-
-<div class="account-buttons">
-
-<button onclick="logout()">
-ABMELDEN
-</button>
-
-</div>
-
-${renderOrderHistory()}
-`;
-
-}
-
-let authMode="register";
-
-function openAuth(mode){
-
-authMode=mode;
-
-document.getElementById("authTitle").textContent=
-mode==="register"
-?"ACCOUNT ERSTELLEN"
-:"ANMELDEN";
-
-document.querySelector(
-"#authForm button"
-).textContent=
-mode==="register"
-?"ACCOUNT ERSTELLEN"
-:"ANMELDEN";
-
-document
-.getElementById("authModal")
-.classList.add("active");
-
-}
-
-function closeAuth(){
-
-document
-.getElementById("authModal")
-.classList.remove("active");
-
-}
-
-function handleAuth(event){
-
-event.preventDefault();
-
-const name=
-document.getElementById("authName").value.trim();
-
-const email=
-document.getElementById("authEmail").value.trim();
-
-const password=
-document.getElementById("authPassword").value;
-
-if(!name||!email||!password)
-return;
-
-account={
-name,
-email
-};
-
-saveAccount();
-closeAuth();
-renderAccount();
-
-alert(
-authMode==="register"
-?"Demo-Account wurde erstellt."
-:"Demo-Anmeldung erfolgreich."
-);
-
-document.getElementById("authForm").reset();
-
-}
-
-function logout(){
-
-account=null;
-
-saveAccount();
-renderAccount();
-
-}
-
-/* =========================
-   LEGAL
-========================= */
-
-const legalPages={
-
-impressum:{
-title:"IMPRESSUM",
-content:`
-<div class="legal-note">
-<strong>MUSTER / PLATZHALTER</strong><br>
-Diese Seite ist aktuell nur eine Vorlage für den späteren echten
-Shop. Die markierten Angaben müssen vor einer Veröffentlichung
-bzw. vor dem echten Verkauf vollständig ergänzt und rechtlich
-geprüft werden.
-</div>
-
-<h2>Angaben zum Anbieter</h2>
-
-<p>
-<strong>
-<span class="legal-placeholder">
-[NAME / FIRMA]
-</span>
-</strong>
-</p>
-
-<p>
-<span class="legal-placeholder">
-[STRAßE &amp; HAUSNUMMER]
-</span>
-<br>
-<span class="legal-placeholder">
-[PLZ &amp; ORT]
-</span>
-<br>
-Deutschland
-</p>
-
-<h2>Kontakt</h2>
-
-<p>
-E-Mail:
-<span class="legal-placeholder">
-[E-MAIL-ADRESSE]
-</span>
-<br>
-Telefon:
-<span class="legal-placeholder">
-[TELEFONNUMMER]
-</span>
-</p>
-
-<h2>Vertretungsberechtigte Person</h2>
-
-<p>
-<span class="legal-placeholder">
-[VOR- UND NACHNAME DER VERTRETUNGSBERECHTIGTEN PERSON]
-</span>
-</p>
-
-<h2>Registerangaben</h2>
-
-<p>
-Falls vorhanden:
-<br>
-Registergericht:
-<span class="legal-placeholder">
-[REGISTERGERICHT]
-</span>
-<br>
-Registernummer:
-<span class="legal-placeholder">
-[REGISTERNUMMER]
-</span>
-</p>
-
-<h2>Umsatzsteuer</h2>
-
-<p>
-Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:
-<br>
-<span class="legal-placeholder">
-[UST-IDNR., FALLS VORHANDEN]
-</span>
-</p>
-
-<h2>Hinweis</h2>
-
-<p>
-Die vorstehenden Angaben sind für die aktuelle Shop-Vorschau
-Platzhalter. Vor dem echten Betrieb des Onlineshops müssen die
-tatsächlichen Anbieter- und Kontaktdaten eingesetzt werden.
-</p>
-`
-},
-
-datenschutz:{
-title:"DATENSCHUTZERKLÄRUNG",
-content:`
-<div class="legal-note">
-<strong>MUSTER / PLATZHALTER</strong><br>
-Die folgende Datenschutzerklärung ist eine technische Vorlage.
-Welche Angaben tatsächlich erforderlich sind, hängt unter anderem
-von Hosting, Zahlungsanbietern, Analyse-Tools, Cookies,
-Kontaktmöglichkeiten und weiteren Diensten ab, die später
-tatsächlich eingesetzt werden.
-</div>
-
-<h2>1. Verantwortlicher</h2>
-
-<p>
-Verantwortlich für die Verarbeitung personenbezogener Daten ist:
-</p>
-
-<p>
-<strong>
-<span class="legal-placeholder">
-[NAME / FIRMA]
-</span>
-</strong>
-<br>
-<span class="legal-placeholder">
-[ANSCHRIFT]
-</span>
-<br>
-E-Mail:
-<span class="legal-placeholder">
-[E-MAIL-ADRESSE]
-</span>
-</p>
-
-<h2>2. Besuch der Website</h2>
-
-<p>
-Beim Aufrufen einer Website können technisch erforderliche Daten
-verarbeitet werden. Dazu können insbesondere IP-Adresse,
-Datum und Uhrzeit des Zugriffs, angeforderte Dateien,
-Browserinformationen und technische Zugriffsdaten gehören.
-</p>
-
-<h2>3. GitHub Pages</h2>
-
-<p>
-Diese Website kann über GitHub Pages bereitgestellt werden.
-Wenn GitHub Pages tatsächlich für die Veröffentlichung verwendet
-wird, müssen die aktuellen Datenschutzinformationen des
-eingesetzten Dienstes bei der finalen Datenschutzerklärung
-berücksichtigt werden.
-</p>
-
-<h2>4. Warenkorb und Shop-Vorschau</h2>
-
-<p>
-Die aktuelle Website verwendet den lokalen Browser-Speicher
-(localStorage), um beispielsweise Warenkorb-, Demo-Account-
-und Demo-Bestelldaten im Browser zu speichern.
-</p>
-
-<h2>5. Demo-Account</h2>
-
-<p>
-Die derzeitige Account-Funktion ist lediglich eine lokale
-Demo-Funktion. Die eingegebenen Daten werden aktuell im
-Browser gespeichert und nicht an ein echtes Kundenkonto-System
-übertragen.
-</p>
-
-<h2>6. Demo-Bestellungen</h2>
-
-<p>
-Im aktuellen Vorschau-System können Testbestellungen erzeugt
-werden. Diese werden lediglich lokal im Browser gespeichert.
-</p>
-
-<h2>7. Kontaktaufnahme</h2>
-
-<p>
-Wenn später eine Kontaktmöglichkeit per E-Mail oder Formular
-angeboten wird, können die dabei übermittelten Daten zur
-Bearbeitung der Anfrage verarbeitet werden.
-</p>
-
-<h2>8. Cookies und Tracking</h2>
-
-<p>
-Die aktuelle Website verwendet keine bewusst eingerichteten
-Analyse- oder Marketing-Tracking-Dienste.
-</p>
-
-<h2>9. Deine Rechte</h2>
-
-<p>
-Betroffene Personen haben nach den gesetzlichen Voraussetzungen
-insbesondere Rechte auf Auskunft, Berichtigung, Löschung,
-Einschränkung der Verarbeitung, Datenübertragbarkeit sowie
-Widerspruch gegen bestimmte Verarbeitungen.
-</p>
-
-<h2>10. Aktualisierung</h2>
-
-<p>
-Diese Datenschutzerklärung muss angepasst werden, sobald sich
-die technischen Funktionen, Anbieter oder Verarbeitungen dieser
-Website ändern.
-</p>
-`
-},
-
-widerruf:{
-title:"WIDERRUFSBELEHRUNG",
-content:`
-<div class="legal-note">
-<strong>MUSTER / PLATZHALTER</strong><br>
-Die folgende Widerrufsbelehrung ist eine Vorlage für einen späteren
-B2C-Onlineshop. Vor dem echten Verkauf muss geprüft werden, welche
-Widerrufsrechte und Ausnahmen für die konkret angebotenen Produkte
-gelten.
-</div>
-
-<h2>Widerrufsrecht</h2>
-
-<p>
-Verbrauchern steht grundsätzlich ein gesetzliches Widerrufsrecht
-zu. Die Widerrufsfrist beträgt grundsätzlich 14 Tage, sofern keine
-gesetzliche Ausnahme greift.
-</p>
-
-<h2>Widerrufsfrist</h2>
-
-<p>
-Die Widerrufsfrist beträgt 14 Tage ab dem Tag, an dem der
-Verbraucher oder ein von ihm benannter Dritter, der nicht der
-Beförderer ist, die Ware erhalten hat.
-</p>
-
-<h2>Ausübung des Widerrufs</h2>
-
-<p>
-Um das Widerrufsrecht auszuüben, muss der Verbraucher den Anbieter
-mittels einer eindeutigen Erklärung über seinen Entschluss,
-den Vertrag zu widerrufen, informieren.
-</p>
-
-<p>
-<strong>
-<span class="legal-placeholder">
-[NAME / FIRMA]
-</span>
-</strong>
-<br>
-<span class="legal-placeholder">
-[ANSCHRIFT]
-</span>
-<br>
-E-Mail:
-<span class="legal-placeholder">
-[E-MAIL-ADRESSE]
-</span>
-</p>
-
-<h2>Folgen des Widerrufs</h2>
-
-<p>
-Wenn der Verbraucher den Vertrag widerruft, sind die erhaltenen
-Zahlungen grundsätzlich nach Maßgabe der gesetzlichen Vorschriften
-zurückzugewähren.
-</p>
-
-<h2>Rücksendung der Ware</h2>
-
-<p>
-Die Ware ist grundsätzlich nach Maßgabe der gesetzlichen
-Bestimmungen zurückzusenden. Die konkreten Rücksendekosten und
-deren Tragung müssen für den späteren Shop entsprechend der
-tatsächlichen Versand- und Widerrufsbedingungen festgelegt werden.
-</p>
-
-<h2>Ausschluss bzw. Erlöschen des Widerrufsrechts</h2>
-
-<p>
-Für bestimmte Waren und Dienstleistungen können gesetzliche
-Ausnahmen vom Widerrufsrecht bestehen.
-</p>
-
-<h2>Wichtiger Hinweis für die aktuelle Vorschau</h2>
-
-<p>
-Der aktuelle Gonschiki-Shop ist eine technische Vorschau.
-Es werden derzeit keine echten Zahlungen verarbeitet und keine
-echten Bestellungen an ein Shopsystem übermittelt.
-</p>
-`
-},
-
-agb:{
-title:"ALLGEMEINE GESCHÄFTSBEDINGUNGEN",
-content:`
-<div class="legal-note">
-<strong>MUSTER / PLATZHALTER</strong><br>
-Diese AGB sind eine technische Vorlage und keine abschließende
-Rechtsberatung. Vor dem echten Verkauf müssen sie an das konkrete
-Geschäftsmodell, die Zahlungsarten, Versandbedingungen,
-Produktarten und die tatsächlichen Anbieterangaben angepasst
-und rechtlich geprüft werden.
-</div>
-
-<h2>§ 1 Geltungsbereich</h2>
-
-<p>
-Diese Allgemeinen Geschäftsbedingungen sollen für Verträge über
-Waren gelten, die über den späteren Gonschiki-Onlineshop zwischen
-dem Anbieter und Verbrauchern bzw. Kunden geschlossen werden.
-</p>
-
-<h2>§ 2 Vertragspartner</h2>
-
-<p>
-Vertragspartner ist:
-</p>
-
-<p>
-<strong>
-<span class="legal-placeholder">
-[NAME / FIRMA]
-</span>
-</strong>
-<br>
-<span class="legal-placeholder">
-[ANSCHRIFT]
-</span>
-<br>
-E-Mail:
-<span class="legal-placeholder">
-[E-MAIL-ADRESSE]
-</span>
-</p>
-
-<h2>§ 3 Vertragsschluss</h2>
-
-<p>
-Die Darstellung der Produkte im Onlineshop stellt grundsätzlich
-noch kein verbindliches Vertragsangebot dar, sofern die konkrete
-Shopgestaltung nichts anderes bestimmt.
-</p>
-
-<h2>§ 4 Preise</h2>
-
-<p>
-Die jeweils gültigen Preise werden im späteren Onlineshop
-angegeben. Ob Preise inklusive gesetzlicher Umsatzsteuer oder
-aufgrund einer steuerlichen Sonderregelung dargestellt werden,
-muss für das tatsächliche Geschäftsmodell festgelegt werden.
-</p>
-
-<h2>§ 5 Zahlung</h2>
-
-<p>
-Die verfügbaren Zahlungsmethoden werden im späteren Onlineshop
-angegeben. Derzeit ist keine echte Zahlungsabwicklung aktiviert.
-</p>
-
-<h2>§ 6 Lieferung</h2>
-
-<p>
-Liefergebiet, Lieferzeit, Versanddienstleister und Versandkosten
-werden im späteren Onlineshop vor dem echten Verkaufsstart
-verbindlich festgelegt.
-</p>
-
-<h2>§ 7 Eigentumsvorbehalt</h2>
-
-<p>
-Bei einem späteren echten Verkauf kann die Ware bis zur
-vollständigen Zahlung im Eigentum des Anbieters bleiben,
-soweit dies gesetzlich zulässig ist.
-</p>
-
-<h2>§ 8 Gewährleistung</h2>
-
-<p>
-Es gelten die gesetzlichen Mängelhaftungsrechte, soweit keine
-wirksame gesetzliche oder vertragliche Regelung etwas anderes
-bestimmt.
-</p>
-
-<h2>§ 9 Haftung</h2>
-
-<p>
-Die Haftung richtet sich nach den gesetzlichen Vorschriften.
-</p>
-
-<h2>§ 10 Widerrufsrecht</h2>
-
-<p>
-Soweit der Kunde Verbraucher ist und ein gesetzliches
-Widerrufsrecht besteht, gelten die hierfür vorgesehenen
-gesetzlichen Bestimmungen und die entsprechende
-Widerrufsbelehrung.
-</p>
-
-<h2>§ 11 Verbraucherstreitbeilegung</h2>
-
-<p>
-Die Angaben zur Teilnahme oder Nichtteilnahme an einem
-Verbraucherschlichtungsverfahren müssen vor dem echten
-Verkaufsstart anhand der tatsächlichen rechtlichen Situation
-des Unternehmens ergänzt werden.
-</p>
-
-<p>
-<span class="legal-placeholder">
-[ANGABE ZUR TEILNAHME AN VERBRAUCHERSTREITBEILEGUNG ERGÄNZEN]
-</span>
-</p>
-
-<h2>§ 12 Schlussbestimmungen</h2>
-
-<p>
-Es gelten die gesetzlichen Vorschriften. Soweit zulässig, können
-für das Vertragsverhältnis ergänzende Regelungen zum anwendbaren
-Recht und Gerichtsstand getroffen werden.
-</p>
-
-<h2>Hinweis zur aktuellen Shop-Vorschau</h2>
-
-<p>
-Die aktuelle Website befindet sich noch im Aufbau. Die im
-Warenkorb und Checkout angezeigten Bestellungen sind derzeit
-ausschließlich Demo-Daten.
-</p>
-`
-}
+const legal={
+
+  impressum:[
+    "IMPRESSUM",
+    `
+      <div class="legal-note">
+        Demo-Vorlage. Vor dem echten Shopbetrieb
+        müssen die vollständigen Anbieterangaben
+        ergänzt werden.
+      </div>
+
+      <h2>
+        Anbieter
+      </h2>
+
+      <p>
+        ГОНЩИКИ CREW<br>
+        Name / Firma ergänzen<br>
+        Anschrift ergänzen<br>
+        Deutschland
+      </p>
+
+      <h2>
+        Kontakt
+      </h2>
+
+      <p>
+        E-Mail: info@gonschikicrew.de
+      </p>
+    `
+  ],
+
+  datenschutz:[
+    "DATENSCHUTZ",
+    `
+      <div class="legal-note">
+        Technische Demo-Vorlage. Vor echtem Betrieb
+        an Hosting, Cookies, Zahlungsanbieter
+        und Tracking anpassen.
+      </div>
+
+      <h2>
+        Demo-Daten
+      </h2>
+
+      <p>
+        Warenkorb, Account, Bestellungen,
+        Gutscheine und Besucherstatistik
+        werden derzeit lokal im Browser gespeichert.
+      </p>
+    `
+  ],
+
+  widerruf:[
+    "WIDERRUF",
+    `
+      <div class="legal-note">
+        Vorlage für die spätere Shopversion;
+        vor echtem Verkauf rechtlich prüfen.
+      </div>
+
+      <h2>
+        Widerrufsrecht
+      </h2>
+
+      <p>
+        Für Verbraucher gilt grundsätzlich ein
+        gesetzliches Widerrufsrecht von 14 Tagen,
+        soweit keine gesetzliche Ausnahme greift.
+      </p>
+    `
+  ],
+
+  agb:[
+    "AGB",
+    `
+      <div class="legal-note">
+        Technische Vorlage – keine abschließende
+        Rechtsberatung.
+      </div>
+
+      <h2>
+        Geltungsbereich
+      </h2>
+
+      <p>
+        Diese AGB sind für den späteren
+        Gonschiki-Onlineshop vorgesehen und müssen
+        vor dem echten Verkauf an das konkrete
+        Geschäftsmodell angepasst werden.
+      </p>
+    `
+  ]
 
 };
 
-function openLegal(page){
 
-const legalPage=legalPages[page];
+function openLegal(p){
 
-if(!legalPage)return;
+  legalContent.innerHTML=
+    "<h1>"+
+    legal[p][0]+
+    "</h1>"+
+    legal[p][1];
 
-document.getElementById("legalContent").innerHTML=`
-
-<h1>
-${legalPage.title}
-</h1>
-
-${legalPage.content}
-
-`;
-
-document
-.querySelectorAll(".legal-nav button")
-.forEach(button=>
-button.classList.remove("active")
-);
-
-const activeButton=document.getElementById(
-"legalTab"+
-page.charAt(0).toUpperCase()+
-page.slice(1)
-);
-
-if(activeButton)
-activeButton.classList.add("active");
-
-document
-.getElementById("legalModal")
-.classList.add("active");
+  legalModal.classList.add("active");
 
 }
+
 
 function closeLegal(){
 
-document
-.getElementById("legalModal")
-.classList.remove("active");
+  legalModal.classList.remove("active");
 
 }
 
-/* =========================
-   ADMIN
-========================= */
 
 const ADMIN_USERNAME="admin";
 const ADMIN_PASSWORD="gonschiki2025";
 
+
 function openAdmin(){
 
-if(adminLoggedIn){
+  if(adminLoggedIn){
 
-renderAdmin();
+    renderAdmin();
 
-document
-.getElementById("adminModal")
-.classList.add("active");
+    adminModal.classList.add("active");
 
-}else{
+  }else{
 
-document
-.getElementById("adminLoginModal")
-.classList.add("active");
+    adminLoginModal.classList.add("active");
+
+  }
 
 }
 
-}
 
 function closeAdminLogin(){
 
-document
-.getElementById("adminLoginModal")
-.classList.remove("active");
+  adminLoginModal.classList.remove("active");
 
 }
 
-function adminLogin(event){
 
-event.preventDefault();
+function adminLogin(e){
 
-const username=
-document.getElementById("adminUsername").value.trim();
+  e.preventDefault();
 
-const password=
-document.getElementById("adminPassword").value;
+  if(
+    adminUsername.value===ADMIN_USERNAME &&
+    adminPassword.value===ADMIN_PASSWORD
+  ){
 
-if(
-username===ADMIN_USERNAME&&
-password===ADMIN_PASSWORD
-){
+    adminLoggedIn=true;
 
-adminLoggedIn=true;
+    sessionStorage.setItem(
+      "gonschikiAdmin",
+      "true"
+    );
 
-sessionStorage.setItem(
-"gonschikiAdmin",
-"true"
-);
+    closeAdminLogin();
 
-document.getElementById("adminUsername").value="";
-document.getElementById("adminPassword").value="";
+    renderAdmin();
 
-closeAdminLogin();
+    adminModal.classList.add("active");
 
-renderAdmin();
+  }else{
 
-document
-.getElementById("adminModal")
-.classList.add("active");
+    alert(
+      "Benutzername oder Passwort falsch."
+    );
 
-}else{
-
-alert("Benutzername oder Passwort falsch.");
+  }
 
 }
 
-}
 
 function adminLogout(){
 
-adminLoggedIn=false;
+  adminLoggedIn=false;
 
-sessionStorage.removeItem("gonschikiAdmin");
+  sessionStorage.removeItem(
+    "gonschikiAdmin"
+  );
 
-document
-.getElementById("adminModal")
-.classList.remove("active");
+  adminModal.classList.remove(
+    "active"
+  );
 
 }
+
+
+function showAdminTab(t,b){
+
+  document
+    .querySelectorAll(".admin-tab")
+    .forEach(x=>x.classList.remove("active"));
+
+  b.classList.add("active");
+
+  document
+    .querySelectorAll(".admin-section")
+    .forEach(x=>x.classList.remove("active"));
+
+  document
+    .getElementById(
+      "admin"+
+      t.charAt(0).toUpperCase()+
+      t.slice(1)
+    )
+    .classList.add("active");
+
+  if(t==="coupons"){
+
+    renderCoupons();
+
+  }
+
+}
+
 
 function renderAdmin(){
 
-renderAdminStats();
-renderAdminProducts();
-renderAdminOrders();
+  renderAdminStats();
+
+  renderAdminProducts();
+
+  renderAdminOrders();
+
+  renderCoupons();
 
 }
 
-function showAdminTab(tab,button){
-
-document
-.querySelectorAll(".admin-tab")
-.forEach(btn=>btn.classList.remove("active"));
-
-button.classList.add("active");
-
-document
-.querySelectorAll(".admin-section")
-.forEach(section=>section.classList.remove("active"));
-
-if(tab==="dashboard")
-document.getElementById("adminDashboard").classList.add("active");
-
-if(tab==="products")
-document.getElementById("adminProducts").classList.add("active");
-
-if(tab==="orders")
-document.getElementById("adminOrders").classList.add("active");
-
-}
 
 function renderAdminStats(){
 
-const container=document.getElementById("adminStats");
+  let revenue=
+    orders.reduce(
+      (a,o)=>
+        a+Number(o.total||0),
+      0
+    );
 
-if(!container)return;
 
-const activeProducts=
-products.filter(product=>product.active).length;
+  adminStats.innerHTML=`
 
-const totalProducts=products.length;
+    <div class="admin-stat">
+      <span>BESUCHER</span>
+      <strong>${visitors.total}</strong>
+    </div>
 
-const totalStock=
-products.reduce(
-(sum,product)=>
-sum+getTotalProductStock(product),
-0
-);
+    <div class="admin-stat">
+      <span>SESSIONS</span>
+      <strong>${visitors.sessions}</strong>
+    </div>
 
-const totalOrders=orders.length;
+    <div class="admin-stat">
+      <span>PRODUKTE</span>
+      <strong>${products.length}</strong>
+    </div>
 
-const demoRevenue=
-orders.reduce(
-(sum,order)=>
-sum+Number(order.total||0),
-0
-);
+    <div class="admin-stat">
+      <span>LAGER</span>
+      <strong>
+        ${products.reduce(
+          (a,p)=>a+totalStock(p),
+          0
+        )}
+      </strong>
+    </div>
 
-const saleProducts=
-products.filter(product=>isOnSale(product)).length;
+    <div class="admin-stat">
+      <span>BESTELLUNGEN</span>
+      <strong>${orders.length}</strong>
+    </div>
 
-container.innerHTML=`
+    <div class="admin-stat">
+      <span>GUTSCHEINE</span>
+      <strong>
+        ${coupons.filter(
+          c=>c.active
+        ).length}
+      </strong>
+    </div>
 
-<div class="admin-stat">
-<span>PRODUKTE</span>
-<strong>${totalProducts}</strong>
-</div>
+    <div
+      class="admin-stat"
+      style="grid-column:span 2">
 
-<div class="admin-stat">
-<span>AKTIV</span>
-<strong>${activeProducts}</strong>
-</div>
+      <span>DEMO-UMSATZ</span>
 
-<div class="admin-stat">
-<span>LAGERBESTAND</span>
-<strong>${totalStock}</strong>
-</div>
+      <strong>
+        ${money(revenue)}
+      </strong>
 
-<div class="admin-stat">
-<span>SALE</span>
-<strong>${saleProducts}</strong>
-</div>
+    </div>
 
-<div class="admin-stat">
-<span>BESTELLUNGEN</span>
-<strong>${totalOrders}</strong>
-</div>
-
-<div
-class="admin-stat"
-style="grid-column:span 3;"
->
-
-<span>DEMO-BESTELLUMSATZ</span>
-
-<strong>
-${formatPrice(demoRevenue)}
-</strong>
-
-</div>
-`;
+  `;
 
 }
+
 
 function renderAdminProducts(){
 
-const container=
-document.getElementById("adminProductsList");
+  adminProductsList.innerHTML=
+    products.map(p=>`
 
-if(!container)return;
+      <div class="admin-product">
 
-container.innerHTML=products.map(product=>{
+        <img src="${p.image}">
 
-let stockHtml="";
+        <div>
 
-if(product.sticker){
+          <div class="admin-product-name">
+            ${esc(p.name)}
+          </div>
 
-stockHtml=`
-<input
-class="admin-input"
-type="number"
-min="0"
-value="${product.stock}"
-onchange="updateStickerStock(${product.id},this.value)"
->
-`;
+          <div class="admin-product-meta">
+            ${p.category} ·
+            ${p.active?"AKTIV":"DEAKTIVIERT"}
+          </div>
 
-}else{
+        </div>
 
-stockHtml=`
-<div class="admin-stock-box">
 
-${product.sizes.map(size=>`
+        <div>
 
-<label
-style="
-font-size:7px;
-color:#777;
-text-align:center;
-">
+          <label
+            style="font-size:7px;color:#777">
+            PREIS
+          </label>
 
-${size}
+          <input
+            class="admin-input"
+            type="number"
+            step=".01"
+            value="${p.price}"
+            onchange="updatePrice(${p.id},this.value)">
 
-<input
-class="admin-stock-input"
-type="number"
-min="0"
-value="${product.stock[size]}"
-onchange="updateProductStock(
-${product.id},
-'${size}',
-this.value
-)"
->
+        </div>
 
-</label>
 
-`).join("")}
+        <div>
 
-</div>
-`;
+          <label
+            style="font-size:7px;color:#777">
+            SALE
+          </label>
 
-}
+          <input
+            class="admin-input"
+            type="number"
+            step=".01"
+            placeholder="Sale-Preis"
+            value="${p.salePrice||""}"
+            onchange="updateSale(${p.id},this.value)">
 
-const sale=isOnSale(product);
+          <label
+            style="font-size:8px;color:#aaa">
 
-return`
+            <input
+              type="checkbox"
+              ${p.sale?"checked":""}
+              onchange="toggleSale(${p.id},this.checked)">
 
-<div class="admin-product">
+            aktiv
 
-<img
-src="${product.image}"
-alt="${escapeHtml(product.name)}"
->
+          </label>
 
-<div>
+        </div>
 
-<div class="admin-product-name">
-${escapeHtml(product.name)}
-</div>
 
-<div class="admin-product-meta">
+        <div>
 
-${escapeHtml(product.category)}
-·
-${product.active?"AKTIV":"DEAKTIVIERT"}
-${sale?" · SALE":""}
+          <label
+            style="font-size:7px;color:#777">
+            LAGER
+          </label>
 
-</div>
+          ${
+            p.sticker
+            ?
+            `
+            <input
+              class="admin-input"
+              type="number"
+              value="${p.stock}"
+              onchange="updateStock(${p.id},null,this.value)">
+            `
+            :
+            `
+            <div class="admin-stock-box">
 
-</div>
+              ${
+                p.sizes.map(s=>`
 
-<div>
+                  <label
+                    style="font-size:7px;color:#777">
 
-<label
-style="
-display:block;
-color:#777;
-font-size:7px;
-margin-bottom:5px;
-"
->
-NORMALPREIS
-</label>
+                    ${s}
 
-<input
-class="admin-input"
-type="number"
-min="0"
-step="0.01"
-value="${product.price}"
-onchange="updateProductPrice(
-${product.id},
-this.value
-)"
->
+                    <input
+                      class="admin-stock-input"
+                      type="number"
+                      value="${p.stock[s]}"
+                      onchange="updateStock(${p.id},'${s}',this.value)">
 
-</div>
+                  </label>
 
-<div>
+                `).join("")
+              }
 
-<label
-style="
-display:block;
-color:#777;
-font-size:7px;
-margin-bottom:5px;
-"
->
-SALE
-</label>
+            </div>
+            `
+          }
 
-<div class="admin-sale-box">
 
-<label class="admin-sale-active">
+          <button
+            class="admin-small-button"
+            onclick="toggleProduct(${p.id})">
 
-<input
-type="checkbox"
-${sale?"checked":""}
-onchange="toggleSale(
-${product.id},
-this.checked
-)"
->
+            ${
+              p.active
+              ? "DEAKTIVIEREN"
+              : "AKTIVIEREN"
+            }
 
-SALE AKTIV
+          </button>
 
-</label>
+        </div>
 
-<div class="admin-sale-row">
+      </div>
 
-<label>
-SALE-PREIS
-</label>
-
-<input
-class="admin-sale-price"
-type="number"
-min="0"
-step="0.01"
-value="${product.salePrice||""}"
-placeholder="z.B. 39.99"
-onchange="updateSalePrice(
-${product.id},
-this.value
-)"
->
-
-</div>
-
-${sale?`
-<div class="admin-sale-preview">
-AKTUELL:
-${formatPrice(product.salePrice)}
-</div>
-`:""}
-
-</div>
-</div>
-
-<div>
-
-<label
-style="
-display:block;
-color:#777;
-font-size:7px;
-margin-bottom:5px;
-"
->
-LAGER
-</label>
-
-${stockHtml}
-
-</div>
-
-<div class="admin-action">
-
-<button
-class="admin-small-button"
-onclick="toggleProduct(${product.id})"
->
-
-${product.active?"DEAKTIVIEREN":"AKTIVIEREN"}
-
-</button>
-
-</div>
-
-</div>
-`;
-
-}).join("");
+    `).join("");
 
 }
 
-function updateProductPrice(id,value){
 
-const product=getProduct(id);
+function updatePrice(id,v){
 
-if(!product)return;
+  const p=product(id);
 
-const price=Number(value);
+  const n=Number(v);
 
-if(
-!Number.isFinite(price)||
-price<0
-){
+  if(
+    !Number.isFinite(n) ||
+    n<0
+  ){
 
-alert("Bitte einen gültigen Preis eingeben.");
-renderAdminProducts();
-return;
+    return renderAdminProducts();
 
-}
+  }
 
-product.price=
-Math.round(price*100)/100;
 
-if(
-isOnSale(product)&&
-product.salePrice>=product.price
-){
+  p.price=
+    Math.round(n*100)/100;
 
-product.sale=false;
 
-alert(
-"Der Sale wurde deaktiviert, weil der Sale-Preis nicht niedriger als der Normalpreis ist."
-);
+  if(
+    p.sale &&
+    p.salePrice>=p.price
+  ){
 
-}
+    p.sale=false;
 
-saveProductSettings();
+  }
 
-renderProducts();
-renderAdminProducts();
-renderAdminStats();
+
+  saveSettings();
+
+  renderProducts();
+
+  renderAdminProducts();
+
+  renderAdminStats();
 
 }
 
-function updateSalePrice(id,value){
 
-const product=getProduct(id);
+function updateSale(id,v){
 
-if(!product)return;
+  const p=product(id);
 
-const salePrice=Number(value);
+  const n=Number(v);
 
-if(
-!Number.isFinite(salePrice)||
-salePrice<=0
-){
+  p.salePrice=
+    Number.isFinite(n)
+    ? Math.max(0,n)
+    : 0;
 
-product.salePrice=0;
-product.sale=false;
 
-saveProductSettings();
+  if(
+    p.salePrice>=p.price
+  ){
 
-renderProducts();
-renderAdminProducts();
-renderAdminStats();
+    p.sale=false;
 
-return;
+  }
 
-}
 
-if(salePrice>=product.price){
+  saveSettings();
 
-alert(
-"Der Sale-Preis muss niedriger als der Normalpreis sein."
-);
+  renderProducts();
 
-renderAdminProducts();
+  renderAdminProducts();
 
-return;
+  renderAdminStats();
 
 }
 
-product.salePrice=
-Math.round(salePrice*100)/100;
 
-saveProductSettings();
+function toggleSale(id,on){
 
-renderProducts();
-renderAdminProducts();
-renderAdminStats();
+  const p=product(id);
 
-}
+  if(
+    on &&
+    (
+      !p.salePrice ||
+      p.salePrice>=p.price
+    )
+  ){
 
-function toggleSale(id,enabled){
+    return alert(
+      "Sale-Preis muss kleiner als Normalpreis sein."
+    );
 
-const product=getProduct(id);
+  }
 
-if(!product)return;
 
-if(enabled){
+  p.sale=on;
 
-if(
-!Number(product.salePrice)||
-Number(product.salePrice)<=0
-){
+  saveSettings();
 
-alert(
-"Bitte zuerst einen gültigen Sale-Preis eingeben."
-);
+  renderProducts();
 
-renderAdminProducts();
+  renderAdminProducts();
 
-return;
+  renderAdminStats();
 
 }
 
-if(
-Number(product.salePrice)>=
-Number(product.price)
-){
 
-alert(
-"Der Sale-Preis muss niedriger als der Normalpreis sein."
-);
+function updateStock(id,s,v){
 
-renderAdminProducts();
+  const p=product(id);
 
-return;
+  const n=
+    Math.max(
+      0,
+      parseInt(v)||0
+    );
 
-}
 
-product.sale=true;
+  if(p.sticker){
 
-}else{
+    p.stock=n;
 
-product.sale=false;
+  }else{
 
-}
+    p.stock[s]=n;
 
-saveProductSettings();
+  }
 
-renderProducts();
-renderAdminProducts();
-renderAdminStats();
 
-}
+  saveSettings();
 
-function updateProductStock(id,size,value){
+  renderProducts();
 
-const product=getProduct(id);
+  renderAdminProducts();
 
-if(!product)return;
-
-let stock=parseInt(value,10);
-
-if(
-!Number.isFinite(stock)||
-stock<0
-){
-
-stock=0;
+  renderAdminStats();
 
 }
 
-product.stock[size]=stock;
-
-saveProductSettings();
-
-renderProducts();
-renderAdminStats();
-renderAdminProducts();
-
-}
-
-function updateStickerStock(id,value){
-
-const product=getProduct(id);
-
-if(!product)return;
-
-let stock=parseInt(value,10);
-
-if(
-!Number.isFinite(stock)||
-stock<0
-){
-
-stock=0;
-
-}
-
-product.stock=stock;
-
-saveProductSettings();
-
-renderProducts();
-renderAdminStats();
-renderAdminProducts();
-
-}
 
 function toggleProduct(id){
 
-const product=getProduct(id);
+  const p=product(id);
 
-if(!product)return;
+  p.active=!p.active;
 
-product.active=!product.active;
+  saveSettings();
 
-saveProductSettings();
+  renderProducts();
 
-renderProducts();
-renderAdminStats();
-renderAdminProducts();
+  renderAdminProducts();
+
+  renderAdminStats();
 
 }
+
+
+function saveSettings(){
+
+  products.forEach(p=>{
+
+    productSettings[p.id]={
+
+      price:p.price,
+
+      salePrice:p.salePrice,
+
+      sale:p.sale,
+
+      stock:p.stock,
+
+      active:p.active
+
+    };
+
+  });
+
+
+  save(
+    "gonschikiProductSettings",
+    productSettings
+  );
+
+}
+
 
 function renderAdminOrders(){
 
-const container=
-document.getElementById("adminOrdersList");
+  adminOrdersList.innerHTML=
+    orders.length
+    ?
+    orders.map(o=>`
 
-if(!container)return;
+      <div class="admin-order">
 
-if(!orders.length){
+        <div class="admin-order-top">
 
-container.innerHTML=`
-<div class="admin-empty">
-NOCH KEINE BESTELLUNGEN VORHANDEN.
-</div>
-`;
+          <div>
 
-return;
+            <div class="admin-order-number">
+              ${esc(o.orderNumber)}
+            </div>
 
-}
+            <div class="admin-order-customer">
 
-container.innerHTML=orders.map(order=>{
+              ${new Date(o.date).toLocaleString("de-DE")}
 
-const items=order.items.map(item=>`
+              <br>
 
-<div class="admin-order-item">
+              ${esc(o.customer.firstName)}
+              ${esc(o.customer.lastName)}
+              ·
+              ${esc(o.customer.email)}
 
-<span>
+              <br>
 
-${escapeHtml(item.name)}
-·
-${escapeHtml(item.size)}
-×
-${item.quantity}
-${item.sale?" · SALE":""}
+              ${esc(o.customer.street)},
+              ${esc(o.customer.postal)}
+              ${esc(o.customer.city)}
 
-</span>
+              <br>
 
-<strong>
-${formatPrice(item.price*item.quantity)}
-</strong>
+              Zahlung:
+              ${esc(o.payment)}
 
-</div>
+            </div>
 
-`).join("");
+          </div>
 
-return`
-<div class="admin-order">
+          <div class="order-status">
+            ${esc(o.status)}
+          </div>
 
-<div class="admin-order-top">
+        </div>
 
-<div>
 
-<div class="admin-order-number">
-${escapeHtml(order.orderNumber)}
-</div>
+        ${
+          o.items.map(i=>`
 
-<div class="admin-order-customer">
+            <div class="admin-order-item">
 
-${formatOrderDate(order.date)}
+              <span>
+                ${esc(i.name)}
+                · ${esc(i.size)}
+                × ${i.quantity}
+              </span>
 
-<br>
+              <strong>
+                ${money(i.price*i.quantity)}
+              </strong>
 
-${escapeHtml(order.customer.firstName)}
-${escapeHtml(order.customer.lastName)}
-·
-${escapeHtml(order.customer.email)}
+            </div>
 
-<br>
+          `).join("")
+        }
 
-${escapeHtml(order.customer.street)},
-${escapeHtml(order.customer.postal)}
-${escapeHtml(order.customer.city)}
 
-</div>
+        <div class="admin-order-total">
 
-</div>
+          <span>
+            GESAMT
+          </span>
 
-<div class="order-status">
-${escapeHtml(order.status)}
-</div>
+          <strong>
+            ${money(o.total)}
+          </strong>
 
-</div>
+        </div>
 
-<div class="admin-order-items">
-${items}
-</div>
+      </div>
 
-<div class="admin-order-total">
-
-<span>
-GESAMT
-</span>
-
-<strong>
-${formatPrice(order.total)}
-</strong>
-
-</div>
-
-</div>
-`;
-
-}).join("");
+    `).join("")
+    :
+    `
+      <div class="admin-empty">
+        NOCH KEINE DEMO-BESTELLUNGEN.
+      </div>
+    `;
 
 }
 
-/* =========================
-   MODAL CLICK OUTSIDE
-========================= */
+
+function createCoupon(){
+
+  let code=
+    newCouponCode.value
+      .trim()
+      .toUpperCase();
+
+  let percent=
+    Number(
+      newCouponPercent.value
+    );
+
+  let min=
+    Number(
+      newCouponMin.value
+    )||0;
+
+
+  if(
+    !code ||
+    percent<=0 ||
+    percent>100
+  ){
+
+    return alert(
+      "Bitte gültige Werte eingeben."
+    );
+
+  }
+
+
+  if(
+    coupons.some(
+      c=>c.code===code
+    )
+  ){
+
+    return alert(
+      "Code existiert bereits."
+    );
+
+  }
+
+
+  coupons.push({
+
+    code,
+
+    percent,
+
+    min,
+
+    active:true
+
+  });
+
+
+  save(
+    "gonschikiCoupons",
+    coupons
+  );
+
+
+  newCouponCode.value="";
+  newCouponPercent.value="";
+  newCouponMin.value="";
+
+
+  renderCoupons();
+
+  renderAdminStats();
+
+}
+
+
+function renderCoupons(){
+
+  couponList.innerHTML=
+    coupons.length
+    ?
+    coupons.map((c,i)=>`
+
+      <div class="coupon-card">
+
+        <div>
+
+          <div class="coupon-code">
+            ${esc(c.code)}
+          </div>
+
+          <div class="coupon-meta">
+            ${c.percent}%
+            · Mindestwert
+            ${money(c.min)}
+          </div>
+
+        </div>
+
+        <span
+          style="font-size:8px;color:${c.active?"#aaa":"#555"}">
+
+          ${c.active?"AKTIV":"INAKTIV"}
+
+        </span>
+
+        <button
+          class="admin-small-button"
+          onclick="toggleCoupon(${i})">
+
+          ${
+            c.active
+            ? "DEAKTIVIEREN"
+            : "AKTIVIEREN"
+          }
+
+        </button>
+
+        <button
+          class="admin-small-button"
+          onclick="deleteCoupon(${i})">
+
+          LÖSCHEN
+
+        </button>
+
+      </div>
+
+    `).join("")
+    :
+    `
+      <div class="admin-empty">
+        NOCH KEINE GUTSCHEINE.
+      </div>
+    `;
+
+}
+
+
+function toggleCoupon(i){
+
+  coupons[i].active=
+    !coupons[i].active;
+
+  save(
+    "gonschikiCoupons",
+    coupons
+  );
+
+  renderCoupons();
+
+  renderAdminStats();
+
+}
+
+
+function deleteCoupon(i){
+
+  coupons.splice(i,1);
+
+  save(
+    "gonschikiCoupons",
+    coupons
+  );
+
+  renderCoupons();
+
+  renderAdminStats();
+
+}
+
+
+const translations={
+
+  de:{
+    navShop:"SHOP",
+    navCars:"CARS",
+    navEvents:"EVENTS",
+    navAbout:"ABOUT",
+    navContact:"KONTAKT",
+
+    heroText:
+      "Gonschiki steht für Autos, Nächte, Geschwindigkeit und den eigenen Style. Streetwear für alle, die ihre eigene Spur fahren.",
+
+    slogan1:
+      "GEMACHT FÜR DIE NACHT.",
+
+    slogan2:
+      "GEMACHT FÜR DEN TAG.",
+
+    slogan3:
+      "KEINE REGEL. NUR STYLE.",
+
+    discover:
+      "SHOP ENTDECKEN",
+
+    shopTitle:
+      "SHOP",
+
+    shopSub:
+      "GONSHIKI STREETWEAR — BLACK COLLECTION"
+  },
+
+
+  en:{
+
+    navShop:"SHOP",
+    navCars:"CARS",
+    navEvents:"EVENTS",
+    navAbout:"ABOUT",
+    navContact:"CONTACT",
+
+    heroText:
+      "Gonschiki stands for cars, nights, speed and your own style. Streetwear for everyone who drives their own lane.",
+
+    slogan1:
+      "MADE FOR THE NIGHT.",
+
+    slogan2:
+      "MADE FOR THE DAY.",
+
+    slogan3:
+      "NO RULES. JUST STYLE.",
+
+    discover:
+      "DISCOVER SHOP",
+
+    shopTitle:
+      "SHOP",
+
+    shopSub:
+      "GONSHIKI STREETWEAR — BLACK COLLECTION"
+  },
+
+
+  ru:{
+
+    navShop:"МАГАЗИН",
+    navCars:"АВТО",
+    navEvents:"СОБЫТИЯ",
+    navAbout:"О НАС",
+    navContact:"КОНТАКТ",
+
+    heroText:
+      "Gonschiki — это автомобили, ночи, скорость и собственный стиль. Streetwear для тех, кто едет своей дорогой.",
+
+    slogan1:
+      "СОЗДАНО ДЛЯ НОЧИ.",
+
+    slogan2:
+      "СОЗДАНО ДЛЯ ДНЯ.",
+
+    slogan3:
+      "НИКАКИХ ПРАВИЛ. ТОЛЬКО СТИЛЬ.",
+
+    discover:
+      "ОТКРЫТЬ МАГАЗИН",
+
+    shopTitle:
+      "МАГАЗИН",
+
+    shopSub:
+      "GONSHIKI STREETWEAR — BLACK COLLECTION"
+  }
+
+};
+
+
+function setLanguage(l){
+
+  document.documentElement.lang=l;
+
+  localStorage.setItem(
+    "gonschikiLang",
+    l
+  );
+
+
+  document
+    .querySelectorAll("[data-i]")
+    .forEach(e=>{
+
+      let k=e.dataset.i;
+
+      if(
+        translations[l][k]
+      ){
+
+        e.textContent=
+          translations[l][k];
+
+      }
+
+    });
+
+
+  productSearch.placeholder=
+    l==="ru"
+    ?
+    "Поиск товаров..."
+    :
+    l==="en"
+    ?
+    "Search products..."
+    :
+    "Produkte suchen...";
+
+
+  languageSelect.value=l;
+
+}
+
+
+function showToast(message){
+
+  toast.textContent=message;
+
+  toast.classList.add("show");
+
+  setTimeout(
+    ()=>toast.classList.remove("show"),
+    1800
+  );
+
+}
+
+
+function trackVisitor(){
+
+  let today=
+    new Date()
+      .toISOString()
+      .slice(0,10);
+
+
+  visitors.total++;
+
+
+  if(
+    visitors.lastDay!==today
+  ){
+
+    visitors.today=1;
+
+    visitors.lastDay=today;
+
+  }else{
+
+    visitors.today++;
+
+  }
+
+
+  visitors.sessions++;
+
+
+  save(
+    "gonschikiVisitors",
+    visitors
+  );
+
+}
+
 
 document
-.querySelectorAll(".modal")
-.forEach(modal=>{
+  .querySelectorAll(".modal")
+  .forEach(m=>{
 
-modal.addEventListener(
-"click",
-function(event){
+    m.addEventListener(
+      "click",
+      e=>{
 
-if(event.target===modal){
+        if(e.target===m){
 
-modal.classList.remove("active");
+          m.classList.remove(
+            "active"
+          );
 
-}
+        }
 
-}
+      }
+    );
+
+  });
+
+
+window.addEventListener(
+  "keydown",
+  e=>{
+
+    if(e.key==="Escape"){
+
+      document
+        .querySelectorAll(".modal.active")
+        .forEach(
+          m=>m.classList.remove("active")
+        );
+
+    }
+
+  }
 );
 
-});
-
-/* =========================
-   SECRET ADMIN URL
-========================= */
 
 function checkAdminUrl(){
 
-const hash=
-window.location.hash.toLowerCase();
+  if(
+    location.hash.toLowerCase()==="#admin" ||
+    location.pathname
+      .toLowerCase()
+      .endsWith("/admin")
+  ){
 
-const path=
-window.location.pathname
-.toLowerCase()
-.replace(/\/+/g,"");
+    openAdmin();
 
-if(
-hash==="#admin"||
-path==="/admin"||
-path.endsWith("/admin")
-){
-
-openAdmin();
+  }
 
 }
 
-}
 
-/* =========================
-   INIT
-========================= */
+trackVisitor();
 
 renderProducts();
+
 renderCart();
+
 updateCartCount();
+
 renderAccount();
 
+setLanguage(
+  localStorage.getItem("gonschikiLang")
+  || "de"
+);
+
 if(adminLoggedIn){
-renderAdmin();
+
+  renderAdmin();
+
 }
 
 checkAdminUrl();
