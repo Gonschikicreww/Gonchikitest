@@ -2,9 +2,8 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#080808">
-<meta name="description" content="ГОНЩИКИ CREW — Streetwear für die Auto-Community.">
 <title>ГОНЩИКИ — Streetwear</title>
 
 <style>
@@ -14,34 +13,18 @@
   padding:0;
 }
 
-:root{
-  --bg:#080808;
-  --bg2:#101010;
-  --bg3:#161616;
-  --card:#111;
-  --white:#fff;
-  --grey:#aaa;
-  --darkgrey:#666;
-  --line:#292929;
-  --green:#58ff89;
-  --red:#ff4545;
-  --yellow:#ffd84d;
-}
-
 html{
   scroll-behavior:smooth;
 }
 
 body{
-  background:var(--bg);
+  background:#080808;
   color:#fff;
   font-family:Arial,Helvetica,sans-serif;
   overflow-x:hidden;
 }
 
-button,
-input,
-select{
+button,input,select{
   font:inherit;
 }
 
@@ -49,31 +32,15 @@ button{
   cursor:pointer;
 }
 
-a{
-  color:inherit;
-  text-decoration:none;
-}
-
-/* =========================
-   PREVIEW BAR
-========================= */
-
 .preview-bar{
-  width:100%;
   background:#fff;
   color:#000;
   text-align:center;
-  padding:7px 12px;
-  font-size:10px;
-  font-weight:800;
+  padding:7px 10px;
+  font-size:9px;
+  font-weight:900;
   letter-spacing:1px;
-  position:relative;
-  z-index:1001;
 }
-
-/* =========================
-   HEADER
-========================= */
 
 header{
   position:sticky;
@@ -82,7 +49,7 @@ header{
   height:74px;
   background:rgba(8,8,8,.94);
   backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--line);
+  border-bottom:1px solid #292929;
 }
 
 .header-inner{
@@ -93,7 +60,6 @@ header{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
 }
 
 .logo{
@@ -101,28 +67,25 @@ header{
   font-size:27px;
   font-weight:900;
   letter-spacing:2px;
-  white-space:nowrap;
 }
 
 .logo-sub{
   display:block;
-  font-family:Arial,sans-serif;
-  font-size:8px;
-  letter-spacing:3px;
   color:#777;
-  margin-top:-2px;
+  font-size:7px;
+  letter-spacing:3px;
 }
 
 .header-actions{
   display:flex;
   align-items:center;
-  gap:9px;
+  gap:8px;
 }
 
 .icon-btn{
   width:42px;
   height:42px;
-  border:1px solid var(--line);
+  border:1px solid #292929;
   background:#111;
   color:#fff;
   border-radius:50%;
@@ -130,7 +93,6 @@ header{
   align-items:center;
   justify-content:center;
   position:relative;
-  transition:.2s;
 }
 
 .icon-btn:hover{
@@ -149,11 +111,10 @@ header{
   right:-2px;
   min-width:18px;
   height:18px;
-  padding:0 4px;
   border-radius:20px;
   background:#fff;
   color:#000;
-  font-size:10px;
+  font-size:9px;
   font-weight:900;
   display:flex;
   align-items:center;
@@ -162,19 +123,14 @@ header{
 
 .lang-select{
   height:40px;
-  border:1px solid var(--line);
+  padding:0 11px;
+  border:1px solid #292929;
   background:#111;
   color:#fff;
   border-radius:20px;
-  padding:0 12px;
-  outline:none;
-  font-size:12px;
-  cursor:pointer;
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
   min-height:calc(100vh - 106px);
@@ -182,7 +138,6 @@ header{
   display:flex;
   align-items:flex-end;
   overflow:hidden;
-  background:#000;
 }
 
 .hero-image{
@@ -193,7 +148,6 @@ header{
   object-fit:cover;
   object-position:center;
   filter:brightness(.55);
-  transform:scale(1.01);
 }
 
 .hero-overlay{
@@ -201,43 +155,40 @@ header{
   inset:0;
   background:
     linear-gradient(to top,rgba(0,0,0,.95),transparent 65%),
-    linear-gradient(to right,rgba(0,0,0,.55),transparent 70%);
+    linear-gradient(to right,rgba(0,0,0,.5),transparent);
 }
 
 .hero-content{
   position:relative;
   z-index:2;
-  max-width:1450px;
   width:100%;
+  max-width:1450px;
   margin:auto;
   padding:100px 28px 75px;
 }
 
 .hero-tag{
-  display:inline-flex;
-  border:1px solid rgba(255,255,255,.35);
+  display:inline-block;
+  border:1px solid #555;
   padding:7px 12px;
   border-radius:30px;
-  font-size:10px;
+  font-size:9px;
   letter-spacing:2px;
   margin-bottom:18px;
-  backdrop-filter:blur(10px);
 }
 
 .hero h1{
   font-family:"Times New Roman",serif;
-  font-size:clamp(50px,9vw,125px);
+  font-size:clamp(55px,9vw,125px);
   line-height:.8;
   letter-spacing:-4px;
-  max-width:900px;
 }
 
 .hero h1 span{
   display:block;
   font-family:Arial,sans-serif;
-  font-size:clamp(14px,2vw,24px);
-  line-height:1;
-  letter-spacing:7px;
+  font-size:clamp(12px,2vw,23px);
+  letter-spacing:6px;
   margin-top:22px;
   color:#ccc;
 }
@@ -246,39 +197,29 @@ header{
   display:flex;
   gap:10px;
   margin-top:30px;
-  flex-wrap:wrap;
 }
 
 .btn{
   min-height:46px;
-  padding:0 21px;
+  padding:0 22px;
   border:1px solid #fff;
   background:#fff;
   color:#000;
   border-radius:4px;
-  font-size:12px;
+  font-size:11px;
   font-weight:900;
   letter-spacing:1px;
-  transition:.2s;
-}
-
-.btn:hover{
-  transform:translateY(-2px);
 }
 
 .btn.dark{
   background:rgba(0,0,0,.55);
   color:#fff;
   border-color:#555;
-  backdrop-filter:blur(10px);
 }
 
-/* =========================
-   GARAGE
-========================= */
+/* GARAGE */
 
 .garage{
-  background:#080808;
   border-top:1px solid #151515;
   border-bottom:1px solid #151515;
 }
@@ -293,18 +234,28 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:flex-end;
-  gap:25px;
   margin-bottom:28px;
+  gap:30px;
 }
 
-.garage-title{
+.eyebrow{
+  color:#777;
+  font-size:10px;
+  letter-spacing:3px;
+  font-weight:800;
+  margin-bottom:9px;
+}
+
+.garage-title,
+.section-title{
   font-family:"Times New Roman",serif;
   font-size:52px;
   line-height:.9;
 }
 
-.garage-description{
-  max-width:420px;
+.garage-description,
+.section-description{
+  max-width:430px;
   color:#777;
   font-size:12px;
   line-height:1.6;
@@ -322,7 +273,6 @@ header{
   overflow:hidden;
   background:#111;
   cursor:pointer;
-  border:1px solid #202020;
 }
 
 .car-card:first-child{
@@ -334,8 +284,8 @@ header{
   height:100%;
   object-fit:cover;
   display:block;
-  transition:.5s ease;
   filter:brightness(.8);
+  transition:.5s;
 }
 
 .car-card:hover img{
@@ -346,44 +296,35 @@ header{
 .car-overlay{
   position:absolute;
   inset:0;
-  background:linear-gradient(
-    to top,
-    rgba(0,0,0,.75),
-    transparent 55%
-  );
-  pointer-events:none;
+  background:linear-gradient(to top,rgba(0,0,0,.75),transparent 55%);
 }
 
 .car-number{
   position:absolute;
-  left:15px;
   bottom:14px;
+  left:15px;
   font-family:"Times New Roman",serif;
   font-size:24px;
-  color:#fff;
 }
 
 .car-view{
   position:absolute;
   right:14px;
   bottom:14px;
-  border:1px solid rgba(255,255,255,.35);
-  background:rgba(0,0,0,.45);
-  backdrop-filter:blur(8px);
+  border:1px solid #555;
+  background:rgba(0,0,0,.5);
   padding:7px 10px;
   font-size:8px;
   letter-spacing:2px;
 }
 
-/* =========================
-   CAR LIGHTBOX
-========================= */
+/* LIGHTBOX */
 
 .car-lightbox{
   position:fixed;
   inset:0;
   z-index:6000;
-  background:rgba(0,0,0,.94);
+  background:rgba(0,0,0,.95);
   display:none;
   align-items:center;
   justify-content:center;
@@ -400,46 +341,36 @@ header{
   object-fit:contain;
 }
 
-.car-lightbox-close{
+.car-lightbox button{
   position:absolute;
-  top:20px;
-  right:20px;
   width:45px;
   height:45px;
   border-radius:50%;
   background:#111;
   color:#fff;
   border:1px solid #444;
-  font-size:22px;
   z-index:5;
 }
 
-.car-lightbox-prev,
-.car-lightbox-next{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  border:1px solid #444;
-  background:rgba(0,0,0,.7);
-  color:#fff;
+.car-lightbox-close{
+  top:20px;
+  right:20px;
   font-size:22px;
-  z-index:5;
 }
 
 .car-lightbox-prev{
   left:25px;
+  top:50%;
+  font-size:25px;
 }
 
 .car-lightbox-next{
   right:25px;
+  top:50%;
+  font-size:25px;
 }
 
-/* =========================
-   SECTION
-========================= */
+/* SHOP */
 
 .section{
   max-width:1450px;
@@ -454,31 +385,6 @@ header{
   gap:25px;
   margin-bottom:30px;
 }
-
-.eyebrow{
-  color:#777;
-  font-size:10px;
-  letter-spacing:3px;
-  font-weight:800;
-  margin-bottom:9px;
-}
-
-.section-title{
-  font-family:"Times New Roman",serif;
-  font-size:50px;
-  line-height:.9;
-}
-
-.section-description{
-  max-width:460px;
-  color:#888;
-  font-size:13px;
-  line-height:1.6;
-}
-
-/* =========================
-   SHOP
-========================= */
 
 .shop-tools{
   display:flex;
@@ -501,15 +407,10 @@ header{
   width:100%;
   height:48px;
   background:#111;
-  border:1px solid var(--line);
+  border:1px solid #292929;
   color:#fff;
-  padding:0 48px 0 16px;
-  border-radius:4px;
+  padding:0 45px 0 15px;
   outline:none;
-}
-
-.search-box input:focus{
-  border-color:#666;
 }
 
 .search-icon{
@@ -525,8 +426,7 @@ header{
   padding:0 18px;
   background:#151515;
   color:#aaa;
-  border:1px solid var(--line);
-  border-radius:4px;
+  border:1px solid #292929;
 }
 
 .filter-row{
@@ -534,7 +434,6 @@ header{
   gap:8px;
   overflow-x:auto;
   scrollbar-width:none;
-  padding-bottom:3px;
 }
 
 .filter-row::-webkit-scrollbar{
@@ -543,7 +442,7 @@ header{
 
 .filter-btn{
   flex:0 0 auto;
-  border:1px solid var(--line);
+  border:1px solid #292929;
   background:#111;
   color:#888;
   padding:10px 15px;
@@ -551,7 +450,6 @@ header{
   font-size:10px;
   font-weight:800;
   letter-spacing:1px;
-  transition:.2s;
 }
 
 .filter-btn.active{
@@ -563,10 +461,9 @@ header{
 .shop-info{
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  margin-bottom:15px;
   color:#666;
-  font-size:11px;
+  font-size:10px;
+  margin-bottom:15px;
 }
 
 .product-grid{
@@ -609,55 +506,53 @@ header{
   transform:scale(1.04);
 }
 
-/* =========================
-   STICKER PRODUKTE
-========================= */
-
-/*
-   Sticker werden komplett angezeigt.
-   Dadurch werden keine Buchstaben oder Teile
-   des Motivs abgeschnitten.
-*/
+/* STICKER */
 
 .product-card.sticker-card .product-image-wrap{
   background:#111;
   padding:20px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
 }
 
 .product-card.sticker-card .product-image{
-  width:100%;
-  height:100%;
   object-fit:contain;
-  object-position:center;
   padding:10px;
-  transform:none !important;
-  filter:none;
+  transform:none!important;
 }
 
 .product-card.sticker-card:hover .product-image{
-  transform:scale(1.02) !important;
+  transform:scale(1.02)!important;
 }
 
-/* Extra für lange Heckscheiben-Sticker */
-
-.product-card.sticker-card[data-product-id="12"]
-.product-image{
-  padding:20px 12px;
-}
-
-/* Extra für Scheibenkeil */
-
-.product-card.sticker-card[data-product-id="11"]
-.product-image{
+.product-card.sticker-card[data-product-id="11"] .product-image{
   padding:15px;
 }
 
-/* =========================
-   PRODUCT CARD
-========================= */
+.product-card.sticker-card[data-product-id="12"] .product-image{
+  padding:20px 12px;
+}
+
+/* ZIPPER */
+/*
+   Der originale Zipper hat einen hellen Hintergrund.
+   Multiply macht den weißen/hellen Bereich transparent
+   wirkend und übernimmt optisch den dunklen Kartenhintergrund.
+*/
+
+.product-card[data-product-id="9"] .product-image-wrap{
+  background:#151515;
+}
+
+.product-card[data-product-id="9"] .product-image{
+  mix-blend-mode:multiply;
+  background:#151515;
+}
+
+.product-card[data-product-id="9"]:hover .product-image{
+  mix-blend-mode:multiply;
+  transform:scale(1.04);
+}
+
+/* PRODUCT INFO */
 
 .product-heart{
   position:absolute;
@@ -674,7 +569,6 @@ header{
   align-items:center;
   justify-content:center;
   font-size:17px;
-  backdrop-filter:blur(10px);
 }
 
 .product-heart.active{
@@ -688,10 +582,9 @@ header{
   z-index:3;
   background:#fff;
   color:#000;
-  font-size:9px;
-  font-weight:900;
   padding:6px 8px;
-  letter-spacing:1px;
+  font-size:8px;
+  font-weight:900;
 }
 
 .product-info{
@@ -713,15 +606,14 @@ header{
 
 .product-bottom{
   display:flex;
-  align-items:flex-end;
   justify-content:space-between;
-  gap:10px;
+  align-items:flex-end;
   margin-top:14px;
 }
 
 .product-price{
-  font-weight:900;
   font-size:15px;
+  font-weight:900;
 }
 
 .product-stock{
@@ -741,7 +633,6 @@ header{
 .no-products{
   grid-column:1/-1;
   text-align:center;
-  border:1px dashed #333;
   padding:70px 20px;
   color:#777;
 }
@@ -749,12 +640,10 @@ header{
 .no-products strong{
   display:block;
   color:#fff;
-  margin-bottom:7px;
+  margin-bottom:8px;
 }
 
-/* =========================
-   FEATURES
-========================= */
+/* FEATURES */
 
 .feature-grid{
   display:grid;
@@ -764,7 +653,7 @@ header{
 }
 
 .feature-card{
-  border:1px solid var(--line);
+  border:1px solid #292929;
   background:#0d0d0d;
   padding:25px;
   min-height:180px;
@@ -787,9 +676,7 @@ header{
   line-height:1.6;
 }
 
-/* =========================
-   MODALS
-========================= */
+/* MODALS */
 
 .modal{
   position:fixed;
@@ -813,7 +700,6 @@ header{
   overflow:auto;
   background:#101010;
   border:1px solid #2c2c2c;
-  box-shadow:0 30px 100px rgba(0,0,0,.7);
   position:relative;
 }
 
@@ -831,9 +717,7 @@ header{
   font-size:18px;
 }
 
-/* =========================
-   PRODUCT MODAL
-========================= */
+/* PRODUCT MODAL */
 
 .product-modal-grid{
   display:grid;
@@ -843,11 +727,11 @@ header{
 .product-modal-image{
   min-height:620px;
   background:#151515;
-  position:relative;
-  overflow:hidden;
   display:flex;
   align-items:center;
   justify-content:center;
+  overflow:hidden;
+  position:relative;
 }
 
 .product-modal-image img{
@@ -856,28 +740,30 @@ header{
   min-height:620px;
   object-fit:contain;
   cursor:zoom-in;
-  transition:transform .3s;
+  transition:.3s;
 }
 
-/* Sticker im Produktfenster */
+/* Zipper auch im großen Fenster */
+
+.product-modal-image.zipper-modal-image{
+  background:#151515;
+}
+
+.product-modal-image.zipper-modal-image img{
+  mix-blend-mode:multiply;
+}
 
 .product-modal-image.sticker-modal-image{
   padding:40px;
-  background:#111;
 }
 
 .product-modal-image.sticker-modal-image img{
   object-fit:contain;
   padding:15px;
-  transform:none;
-}
-
-.product-modal-image.sticker-modal-image.zoomed img{
-  transform:scale(1.35);
 }
 
 .product-modal-image.zoomed img{
-  transform:scale(1.7);
+  transform:scale(1.6);
   cursor:zoom-out;
 }
 
@@ -949,19 +835,17 @@ header{
 .size-btn.active{
   background:#fff;
   color:#000;
-  border-color:#fff;
 }
 
 .size-btn:disabled{
   opacity:.25;
   text-decoration:line-through;
-  cursor:not-allowed;
 }
 
 .quantity-row{
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
   margin-bottom:20px;
 }
 
@@ -1037,9 +921,7 @@ header{
   font-weight:800;
 }
 
-/* =========================
-   DRAWER
-========================= */
+/* CART */
 
 .drawer{
   position:fixed;
@@ -1057,8 +939,8 @@ header{
   position:absolute;
   top:0;
   right:0;
-  height:100%;
   width:min(520px,100%);
+  height:100%;
   background:#0d0d0d;
   border-left:1px solid #2c2c2c;
   display:flex;
@@ -1107,7 +989,6 @@ header{
   width:75px;
   height:75px;
   object-fit:cover;
-  background:#151515;
 }
 
 .cart-name{
@@ -1124,7 +1005,6 @@ header{
 .cart-price{
   font-size:12px;
   font-weight:900;
-  text-align:right;
 }
 
 .cart-controls{
@@ -1145,7 +1025,6 @@ header{
 .cart-remove{
   color:#777!important;
   border:0!important;
-  margin-left:5px;
 }
 
 .empty-state{
@@ -1161,7 +1040,6 @@ header{
 }
 
 .cart-summary{
-  flex:0 0 auto;
   border-top:1px solid #292929;
   padding:18px;
   background:#101010;
@@ -1199,14 +1077,12 @@ header{
 .progress{
   height:5px;
   background:#222;
-  overflow:hidden;
 }
 
 .progress span{
   display:block;
   height:100%;
   background:#fff;
-  width:0;
 }
 
 .checkout-btn{
@@ -1216,13 +1092,9 @@ header{
   background:#fff;
   color:#000;
   font-weight:900;
-  font-size:11px;
-  letter-spacing:1px;
 }
 
-/* =========================
-   WISHLIST
-========================= */
+/* WISHLIST */
 
 .wishlist-grid{
   display:grid;
@@ -1257,106 +1129,20 @@ header{
   font-size:10px;
 }
 
-/* =========================
-   CHECKOUT
-========================= */
+/* ACCOUNT / LEGAL / ADMIN */
 
-.checkout-box{
-  width:min(850px,100%);
-}
-
+.account-content,
+.legal-content,
+.admin-content,
 .checkout-inner{
   padding:35px;
 }
 
-.checkout-title{
+.checkout-title,
+.admin-title{
   font-family:"Times New Roman",serif;
   font-size:45px;
   margin-bottom:25px;
-}
-
-.checkout-steps{
-  display:flex;
-  gap:7px;
-  margin-bottom:30px;
-}
-
-.step{
-  flex:1;
-  height:5px;
-  background:#292929;
-}
-
-.step.active{
-  background:#fff;
-}
-
-.checkout-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-}
-
-.form-group{
-  margin-bottom:14px;
-}
-
-.form-group.full{
-  grid-column:1/-1;
-}
-
-.form-group label{
-  display:block;
-  color:#777;
-  font-size:9px;
-  letter-spacing:1px;
-  margin-bottom:7px;
-}
-
-.form-group input,
-.form-group select{
-  width:100%;
-  height:44px;
-  background:#151515;
-  border:1px solid #333;
-  color:#fff;
-  padding:0 12px;
-  outline:none;
-  border-radius:2px;
-}
-
-.payment-options{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:8px;
-  margin-bottom:20px;
-}
-
-.payment-option{
-  border:1px solid #333;
-  background:#151515;
-  padding:15px 8px;
-  text-align:center;
-  font-size:10px;
-  cursor:pointer;
-}
-
-.payment-option.active{
-  background:#fff;
-  color:#000;
-  border-color:#fff;
-}
-
-/* =========================
-   ACCOUNT
-========================= */
-
-.account-box{
-  width:min(700px,100%);
-}
-
-.account-content{
-  padding:35px;
 }
 
 .account-tabs{
@@ -1398,40 +1184,27 @@ header{
   line-height:1.6;
 }
 
-.order-row{
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  padding:14px 0;
-  border-bottom:1px solid #252525;
+.form-group{
+  margin-bottom:14px;
 }
 
-.order-id{
-  font-weight:900;
-  font-size:11px;
-}
-
-.order-date{
-  color:#666;
+.form-group label{
+  display:block;
+  color:#777;
   font-size:9px;
-  margin-top:4px;
+  letter-spacing:1px;
+  margin-bottom:7px;
 }
 
-.order-status{
-  color:#58ff89;
-  font-size:9px;
-}
-
-/* =========================
-   LEGAL
-========================= */
-
-.legal-box{
-  width:min(800px,100%);
-}
-
-.legal-content{
-  padding:38px;
+.form-group input,
+.form-group select{
+  width:100%;
+  height:44px;
+  background:#151515;
+  border:1px solid #333;
+  color:#fff;
+  padding:0 12px;
+  outline:none;
 }
 
 .legal-content h2{
@@ -1440,33 +1213,10 @@ header{
   margin-bottom:22px;
 }
 
-.legal-content h3{
-  margin:22px 0 8px;
-  font-size:14px;
-}
-
 .legal-content p{
   color:#888;
   font-size:12px;
   line-height:1.7;
-}
-
-/* =========================
-   ADMIN
-========================= */
-
-.admin-box{
-  width:min(1000px,100%);
-}
-
-.admin-content{
-  padding:35px;
-}
-
-.admin-title{
-  font-family:"Times New Roman",serif;
-  font-size:42px;
-  margin-bottom:25px;
 }
 
 .admin-grid{
@@ -1515,42 +1265,7 @@ header{
   margin-top:4px;
 }
 
-.admin-logout{
-  border:1px solid #444;
-  background:#111;
-  color:#fff;
-  padding:10px 15px;
-}
-
-/* =========================
-   TOAST
-========================= */
-
-.toast{
-  position:fixed;
-  left:50%;
-  bottom:25px;
-  transform:translate(-50%,20px);
-  background:#fff;
-  color:#000;
-  padding:12px 18px;
-  border-radius:3px;
-  font-size:11px;
-  font-weight:900;
-  z-index:5000;
-  opacity:0;
-  pointer-events:none;
-  transition:.25s;
-}
-
-.toast.show{
-  opacity:1;
-  transform:translate(-50%,0);
-}
-
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
   border-top:1px solid #222;
@@ -1576,7 +1291,6 @@ footer{
   display:flex;
   flex-wrap:wrap;
   gap:20px;
-  align-items:center;
 }
 
 .footer-links button{
@@ -1593,19 +1307,39 @@ footer{
 
 .footer-bottom{
   border-top:1px solid #171717;
-  padding:18px 28px;
+  padding:18px;
   text-align:center;
   color:#555;
   font-size:9px;
   letter-spacing:1px;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* TOAST */
+
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:25px;
+  transform:translate(-50%,20px);
+  background:#fff;
+  color:#000;
+  padding:12px 18px;
+  font-size:11px;
+  font-weight:900;
+  z-index:7000;
+  opacity:0;
+  pointer-events:none;
+  transition:.25s;
+}
+
+.toast.show{
+  opacity:1;
+  transform:translate(-50%,0);
+}
+
+/* RESPONSIVE */
 
 @media(max-width:1100px){
-
   .product-grid{
     grid-template-columns:repeat(3,1fr);
   }
@@ -1613,7 +1347,6 @@ footer{
   .feature-grid{
     grid-template-columns:repeat(2,1fr);
   }
-
 }
 
 @media(max-width:800px){
@@ -1630,32 +1363,13 @@ footer{
     font-size:21px;
   }
 
-  .logo-sub{
-    font-size:6px;
-    letter-spacing:2px;
-  }
-
-  .header-actions{
-    gap:5px;
-  }
-
   .icon-btn{
     width:37px;
     height:37px;
   }
 
-  .lang-select{
-    height:36px;
-    padding:0 8px;
-    font-size:10px;
-  }
-
   .hero{
     min-height:calc(100svh - 94px);
-  }
-
-  .hero-image{
-    object-position:center;
   }
 
   .hero-content{
@@ -1664,12 +1378,6 @@ footer{
 
   .hero h1{
     font-size:62px;
-    letter-spacing:-3px;
-  }
-
-  .hero h1 span{
-    font-size:12px;
-    letter-spacing:4px;
   }
 
   .garage-inner{
@@ -1689,13 +1397,7 @@ footer{
     display:flex;
     gap:8px;
     overflow-x:auto;
-    scroll-snap-type:x mandatory;
     scrollbar-width:none;
-    padding-bottom:5px;
-  }
-
-  .car-gallery::-webkit-scrollbar{
-    display:none;
   }
 
   .car-card,
@@ -1703,7 +1405,6 @@ footer{
     flex:0 0 82vw;
     height:430px;
     grid-row:auto;
-    scroll-snap-align:start;
   }
 
   .section{
@@ -1724,33 +1425,8 @@ footer{
     gap:8px;
   }
 
-  .product-info{
-    padding:11px;
-  }
-
-  .product-name{
-    font-size:11px;
-  }
-
-  .product-price{
-    font-size:13px;
-  }
-
-  .product-stock{
-    font-size:8px;
-  }
-
   .feature-grid{
     grid-template-columns:1fr 1fr;
-  }
-
-  .feature-card{
-    min-height:150px;
-    padding:17px;
-  }
-
-  .feature-number{
-    margin-bottom:25px;
   }
 
   .product-modal-grid{
@@ -1765,39 +1441,13 @@ footer{
     min-height:360px;
   }
 
-  /* Sticker im mobilen Produktfenster */
-
   .product-modal-image.sticker-modal-image{
     min-height:330px;
     padding:25px;
   }
 
-  .product-modal-image.sticker-modal-image img{
-    min-height:280px;
-    padding:10px;
-  }
-
   .product-modal-content{
     padding:30px 20px;
-  }
-
-  .modal-title{
-    font-size:37px;
-  }
-
-  .checkout-grid{
-    grid-template-columns:1fr;
-  }
-
-  .form-group.full{
-    grid-column:auto;
-  }
-
-  .checkout-inner,
-  .account-content,
-  .legal-content,
-  .admin-content{
-    padding:25px 18px;
   }
 
   .footer-top{
@@ -1807,16 +1457,13 @@ footer{
 
   .footer-links{
     margin-top:25px;
-    gap:14px;
   }
-
 }
 
 @media(max-width:500px){
 
   .preview-bar{
     font-size:8px;
-    padding:6px 5px;
   }
 
   .lang-select{
@@ -1831,10 +1478,6 @@ footer{
     font-size:50px;
   }
 
-  .hero-buttons .btn{
-    flex:1;
-  }
-
   .car-card,
   .car-card:first-child{
     flex:0 0 86vw;
@@ -1845,55 +1488,29 @@ footer{
     gap:6px;
   }
 
-  .product-image-wrap{
-    aspect-ratio:1/1.15;
+  .product-info{
+    padding:10px;
   }
 
-  /* Stickerkarten auf Handy */
+  .product-name{
+    font-size:11px;
+  }
+
+  .product-price{
+    font-size:13px;
+  }
 
   .product-card.sticker-card .product-image-wrap{
     padding:10px;
-    min-height:180px;
   }
 
   .product-card.sticker-card .product-image{
     padding:5px;
-    object-fit:contain;
   }
 
-  .product-card.sticker-card[data-product-id="12"]
-  .product-image{
-    padding:8px 2px;
-  }
-
-  .product-card.sticker-card[data-product-id="11"]
-  .product-image{
-    padding:5px;
-  }
-
-  .product-heart{
-    width:31px;
-    height:31px;
-    top:7px;
-    right:7px;
-  }
-
-  .product-badge{
-    top:7px;
-    left:7px;
-    font-size:7px;
-  }
-
-  .wishlist-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .similar-grid{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .payment-options{
-    grid-template-columns:1fr;
+  .product-modal-image.sticker-modal-image{
+    min-height:290px;
+    padding:18px;
   }
 
   .admin-grid{
@@ -1904,42 +1521,6 @@ footer{
     display:grid;
     grid-template-columns:1fr 1fr;
   }
-
-  .car-lightbox-prev{
-    left:8px;
-  }
-
-  .car-lightbox-next{
-    right:8px;
-  }
-
-  .product-modal-image.sticker-modal-image{
-    min-height:290px;
-    padding:18px;
-  }
-
-  .product-modal-image.sticker-modal-image img{
-    min-height:240px;
-    padding:5px;
-  }
-
-}
-
-@media(max-width:380px){
-
-  .header-actions{
-    gap:3px;
-  }
-
-  .icon-btn{
-    width:34px;
-    height:34px;
-  }
-
-  .logo{
-    font-size:18px;
-  }
-
 }
 </style>
 </head>
@@ -1951,62 +1532,47 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 </div>
 
 <header>
+<div class="header-inner">
 
-  <div class="header-inner">
-
-    <div>
-      <div class="logo">ГОНЩИКИ</div>
-      <span class="logo-sub">STREETWARE · EST. 2025</span>
-    </div>
-
-    <div class="header-actions">
-
-      <button class="icon-btn" onclick="openWishlist()">
-        ♡
-        <span class="badge" id="wishlistBadge">0</span>
-      </button>
-
-      <button class="icon-btn" onclick="openAccount()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-          <circle cx="12" cy="8" r="4"></circle>
-          <path d="M4 21c0-4.2 3.5-7 8-7s8 2.8 8 7"></path>
-        </svg>
-      </button>
-
-      <button class="icon-btn" onclick="openCart()">
-
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-          <path d="M4 5h2l2 11h10l2-8H7"></path>
-          <circle cx="10" cy="20" r="1"></circle>
-          <circle cx="17" cy="20" r="1"></circle>
-        </svg>
-
-        <span class="badge" id="cartBadge">0</span>
-
-      </button>
-
-      <select
-        class="lang-select"
-        id="languageSelect"
-        onchange="changeLanguage(this.value)"
-      >
-        <option value="de">DE</option>
-        <option value="en">EN</option>
-        <option value="ru">RU</option>
-      </select>
-
-    </div>
-
+  <div>
+    <div class="logo">ГОНЩИКИ</div>
+    <span class="logo-sub">STREETWARE · EST. 2025</span>
   </div>
 
+  <div class="header-actions">
+
+    <button class="icon-btn" onclick="openWishlist()">
+      ♡
+      <span class="badge" id="wishlistBadge">0</span>
+    </button>
+
+    <button class="icon-btn" onclick="openAccount()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <circle cx="12" cy="8" r="4"></circle>
+        <path d="M4 21c0-4.2 3.5-7 8-7s8 2.8 8 7"></path>
+      </svg>
+    </button>
+
+    <button class="icon-btn" onclick="openCart()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M4 5h2l2 11h10l2-8H7"></path>
+        <circle cx="10" cy="20" r="1"></circle>
+        <circle cx="17" cy="20" r="1"></circle>
+      </svg>
+      <span class="badge" id="cartBadge">0</span>
+    </button>
+
+    <select class="lang-select" onchange="changeLanguage(this.value)">
+      <option value="de">DE</option>
+      <option value="en">EN</option>
+      <option value="ru">RU</option>
+    </select>
+
+  </div>
+</div>
 </header>
 
-
 <main>
-
-<!-- =========================
-     HERO
-========================= -->
 
 <section class="hero">
 
@@ -2031,17 +1597,11 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 
     <div class="hero-buttons">
 
-      <button
-        class="btn"
-        onclick="scrollToShop()"
-      >
+      <button class="btn" onclick="scrollToShop()">
         SHOP ENTDECKEN
       </button>
 
-      <button
-        class="btn dark"
-        onclick="openWishlist()"
-      >
+      <button class="btn dark" onclick="openWishlist()">
         WUNSCHLISTE
       </button>
 
@@ -2052,453 +1612,290 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 </section>
 
 
-<!-- =========================
-     GARAGE
-========================= -->
-
 <section class="garage">
 
-  <div class="garage-inner">
+<div class="garage-inner">
 
-    <div class="garage-head">
-
-      <div>
-
-        <div class="eyebrow">
-          GONSHIKI CREW
-        </div>
-
-        <h2 class="garage-title">
-          GARAGE.
-        </h2>
-
-      </div>
-
-      <p class="garage-description">
-        Autos, Builds und die Welt hinter ГОНЩИКИ.
-        Fünf Bilder unserer aktuellen Car-Collection.
-      </p>
-
-    </div>
-
-
-    <div class="car-gallery">
-
-      <div
-        class="car-card"
-        onclick="openCarImage(0)"
-      >
-
-        <img
-          src="assets/Car-1.JPG"
-          alt="ГОНЩИКИ Car 1"
-        >
-
-        <div class="car-overlay"></div>
-
-        <div class="car-number">01</div>
-
-        <div class="car-view">
-          VIEW
-        </div>
-
-      </div>
-
-
-      <div
-        class="car-card"
-        onclick="openCarImage(1)"
-      >
-
-        <img
-          src="assets/Car-2.JPG"
-          alt="ГОНЩИКИ Car 2"
-        >
-
-        <div class="car-overlay"></div>
-
-        <div class="car-number">02</div>
-
-        <div class="car-view">
-          VIEW
-        </div>
-
-      </div>
-
-
-      <div
-        class="car-card"
-        onclick="openCarImage(2)"
-      >
-
-        <img
-          src="assets/Car-3.jpg"
-          alt="ГОНЩИКИ Car 3"
-        >
-
-        <div class="car-overlay"></div>
-
-        <div class="car-number">03</div>
-
-        <div class="car-view">
-          VIEW
-        </div>
-
-      </div>
-
-
-      <div
-        class="car-card"
-        onclick="openCarImage(3)"
-      >
-
-        <img
-          src="assets/Car-4.jpg"
-          alt="ГОНЩИКИ Car 4"
-        >
-
-        <div class="car-overlay"></div>
-
-        <div class="car-number">04</div>
-
-        <div class="car-view">
-          VIEW
-        </div>
-
-      </div>
-
-
-      <div
-        class="car-card"
-        onclick="openCarImage(4)"
-      >
-
-        <img
-          src="assets/Car-5.jpg"
-          alt="ГОНЩИКИ Car 5"
-        >
-
-        <div class="car-overlay"></div>
-
-        <div class="car-number">05</div>
-
-        <div class="car-view">
-          VIEW
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     SHOP
-========================= -->
-
-<section
-  class="section"
-  id="shop"
->
-
-  <div class="section-head">
+  <div class="garage-head">
 
     <div>
-
-      <div class="eyebrow">
-        COLLECTION
-      </div>
-
-      <h2 class="section-title">
-        SHOP
-      </h2>
-
+      <div class="eyebrow">GONSHIKI CREW</div>
+      <h2 class="garage-title">GARAGE.</h2>
     </div>
 
-    <p class="section-description">
-      Schlichte Streetwear für Menschen,
-      die Autos nicht nur fahren, sondern leben.
+    <p class="garage-description">
+      Autos, Builds und die Welt hinter ГОНЩИКИ.
+      Fünf Bilder unserer aktuellen Car-Collection.
     </p>
 
   </div>
 
 
-  <div class="shop-tools">
+  <div class="car-gallery">
 
-    <div class="search-row">
-
-      <div class="search-box">
-
-        <input
-          id="searchInput"
-          type="text"
-          placeholder="Produkte suchen..."
-          oninput="renderProducts()"
-        >
-
-        <span class="search-icon">
-          ⌕
-        </span>
-
-      </div>
-
-      <button
-        class="clear-search"
-        onclick="clearSearch()"
-      >
-        X
-      </button>
-
+    <div class="car-card" onclick="openCarImage(0)">
+      <img src="assets/Car-1.JPG" alt="Car 1">
+      <div class="car-overlay"></div>
+      <div class="car-number">01</div>
+      <div class="car-view">VIEW</div>
     </div>
 
-
-    <div
-      class="filter-row"
-      id="genderFilters"
-    >
-
-      <button
-        class="filter-btn active"
-        onclick="setGender('all',this)"
-      >
-        ALLE
-      </button>
-
-      <button
-        class="filter-btn"
-        onclick="setGender('men',this)"
-      >
-        HERREN
-      </button>
-
-      <button
-        class="filter-btn"
-        onclick="setGender('women',this)"
-      >
-        DAMEN
-      </button>
-
+    <div class="car-card" onclick="openCarImage(1)">
+      <img src="assets/Car-2.JPG" alt="Car 2">
+      <div class="car-overlay"></div>
+      <div class="car-number">02</div>
+      <div class="car-view">VIEW</div>
     </div>
 
+    <div class="car-card" onclick="openCarImage(2)">
+      <img src="assets/Car-3.jpg" alt="Car 3">
+      <div class="car-overlay"></div>
+      <div class="car-number">03</div>
+      <div class="car-view">VIEW</div>
+    </div>
 
-    <div
-      class="filter-row"
-      id="categoryFilters"
-    >
+    <div class="car-card" onclick="openCarImage(3)">
+      <img src="assets/Car-4.jpg" alt="Car 4">
+      <div class="car-overlay"></div>
+      <div class="car-number">04</div>
+      <div class="car-view">VIEW</div>
+    </div>
 
-      <button
-        class="filter-btn active"
-        onclick="setCategory('all',this)"
-      >
-        ALLE
-      </button>
-
-      <button
-        class="filter-btn"
-        onclick="setCategory('shirt',this)"
-      >
-        T-SHIRTS
-      </button>
-
-      <button
-        class="filter-btn"
-        onclick="setCategory('hoodie',this)"
-      >
-        HOODIES
-      </button>
-
-      <button
-        class="filter-btn"
-        onclick="setCategory('zipper',this)"
-      >
-        ZIPPER
-      </button>
-
-      <button
-        class="filter-btn"
-        onclick="setCategory('pants',this)"
-      >
-        HOSEN
-      </button>
-
-      <button
-        class="filter-btn"
-        onclick="setCategory('sticker',this)"
-      >
-        STICKER
-      </button>
-
+    <div class="car-card" onclick="openCarImage(4)">
+      <img src="assets/Car-5.jpg" alt="Car 5">
+      <div class="car-overlay"></div>
+      <div class="car-number">05</div>
+      <div class="car-view">VIEW</div>
     </div>
 
   </div>
 
+</div>
+</section>
 
-  <div class="shop-info">
 
-    <span id="productCount">
-      0 Produkte
-    </span>
+<section class="section" id="shop">
 
-    <span>
-      KLEIDUNG · HERREN + DAMEN
-    </span>
+<div class="section-head">
+
+  <div>
+    <div class="eyebrow">COLLECTION</div>
+    <h2 class="section-title">SHOP</h2>
+  </div>
+
+  <p class="section-description">
+    Schlichte Streetwear für Menschen,
+    die Autos nicht nur fahren, sondern leben.
+  </p>
+
+</div>
+
+
+<div class="shop-tools">
+
+  <div class="search-row">
+
+    <div class="search-box">
+
+      <input
+        id="searchInput"
+        type="text"
+        placeholder="Produkte suchen..."
+        oninput="renderProducts()"
+      >
+
+      <span class="search-icon">⌕</span>
+
+    </div>
+
+    <button class="clear-search" onclick="clearSearch()">
+      X
+    </button>
 
   </div>
 
 
-  <div
-    class="product-grid"
-    id="productGrid"
-  ></div>
+  <div class="filter-row">
+
+    <button
+      class="filter-btn active"
+      onclick="setGender('all',this)"
+    >
+      ALLE
+    </button>
+
+    <button
+      class="filter-btn"
+      onclick="setGender('men',this)"
+    >
+      HERREN
+    </button>
+
+    <button
+      class="filter-btn"
+      onclick="setGender('women',this)"
+    >
+      DAMEN
+    </button>
+
+  </div>
+
+
+  <div class="filter-row">
+
+    <button
+      class="filter-btn active"
+      onclick="setCategory('all',this)"
+    >
+      ALLE
+    </button>
+
+    <button
+      class="filter-btn"
+      onclick="setCategory('shirt',this)"
+    >
+      T-SHIRTS
+    </button>
+
+    <button
+      class="filter-btn"
+      onclick="setCategory('hoodie',this)"
+    >
+      HOODIES
+    </button>
+
+    <button
+      class="filter-btn"
+      onclick="setCategory('zipper',this)"
+    >
+      ZIPPER
+    </button>
+
+    <button
+      class="filter-btn"
+      onclick="setCategory('pants',this)"
+    >
+      HOSEN
+    </button>
+
+    <button
+      class="filter-btn"
+      onclick="setCategory('sticker',this)"
+    >
+      STICKER
+    </button>
+
+  </div>
+
+</div>
+
+
+<div class="shop-info">
+  <span id="productCount">0 Produkte</span>
+  <span>KLEIDUNG · HERREN + DAMEN</span>
+</div>
+
+
+<div class="product-grid" id="productGrid"></div>
 
 </section>
 
 
-<!-- =========================
-     FEATURES
-========================= -->
-
 <section class="section">
 
-  <div class="eyebrow">
-    WHY GONSHIKI
+<div class="eyebrow">WHY GONSHIKI</div>
+
+<h2 class="section-title">
+  MADE FOR THE CULTURE.
+</h2>
+
+<div class="feature-grid">
+
+  <div class="feature-card">
+    <div class="feature-number">01</div>
+    <h3>STREETWEAR</h3>
+    <p>
+      Schlichte Farben, klare Designs und ein Stil,
+      der auch außerhalb des Treffens funktioniert.
+    </p>
   </div>
 
-  <h2 class="section-title">
-    MADE FOR THE CULTURE.
-  </h2>
-
-  <div class="feature-grid">
-
-    <div class="feature-card">
-
-      <div class="feature-number">
-        01
-      </div>
-
-      <h3>
-        STREETWEAR
-      </h3>
-
-      <p>
-        Schlichte Farben, klare Designs und ein Stil,
-        der auch außerhalb des Treffens funktioniert.
-      </p>
-
-    </div>
-
-
-    <div class="feature-card">
-
-      <div class="feature-number">
-        02
-      </div>
-
-      <h3>
-        CAR CULTURE
-      </h3>
-
-      <p>
-        Inspiriert von BMW, japanischen Builds,
-        Night Drives und der gesamten Auto-Community.
-      </p>
-
-    </div>
-
-
-    <div class="feature-card">
-
-      <div class="feature-number">
-        03
-      </div>
-
-      <h3>
-        COMMUNITY
-      </h3>
-
-      <p>
-        ГОНЩИКИ soll nicht nur eine Marke sein,
-        sondern eine Crew.
-      </p>
-
-    </div>
-
-
-    <div class="feature-card">
-
-      <div class="feature-number">
-        04
-      </div>
-
-      <h3>
-        EST. 2025
-      </h3>
-
-      <p>
-        Angefangen als Idee. Entwickelt für die
-        nächste Generation der Auto-Community.
-      </p>
-
-    </div>
-
+  <div class="feature-card">
+    <div class="feature-number">02</div>
+    <h3>CAR CULTURE</h3>
+    <p>
+      Inspiriert von BMW, japanischen Builds,
+      Night Drives und der gesamten Auto-Community.
+    </p>
   </div>
+
+  <div class="feature-card">
+    <div class="feature-number">03</div>
+    <h3>COMMUNITY</h3>
+    <p>
+      ГОНЩИКИ soll nicht nur eine Marke sein,
+      sondern eine Crew.
+    </p>
+  </div>
+
+  <div class="feature-card">
+    <div class="feature-number">04</div>
+    <h3>EST. 2025</h3>
+    <p>
+      Angefangen als Idee. Entwickelt für die
+      nächste Generation der Auto-Community.
+    </p>
+  </div>
+
+</div>
 
 </section>
 
 </main>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
-
 <footer>
 
-  <div class="footer-top">
+<div class="footer-top">
 
-    <div class="footer-logo">
-      ГОНЩИКИ
-    </div>
+  <div class="footer-logo">
+    ГОНЩИКИ
+  </div>
 
-    <div class="footer-links">
+  <div class="footer-links">
 
-      <button onclick="openLegal('impressum')">
-        IMPRESSUM
-      </button>
+    <button onclick="openLegal('impressum')">
+      IMPRESSUM
+    </button>
 
-      <button onclick="openLegal('privacy')">
-        DATENSCHUTZ
-      </button>
+    <button onclick="openLegal('privacy')">
+      DATENSCHUTZ
+    </button>
 
-      <button onclick="openLegal('withdrawal')">
-        WIDERRUF
-      </button>
+    <button onclick="openLegal('withdrawal')">
+      WIDERRUF
+    </button>
 
-      <button onclick="openLegal('terms')">
-        AGB
-      </button>
+    <button onclick="openLegal('terms')">
+      AGB
+    </button>
 
-      <button onclick="openAccount()">
-        ACCOUNT
-      </button>
-
-    </div>
+    <button onclick="openAccount()">
+      ACCOUNT
+    </button>
 
   </div>
 
-  <div class="footer-bottom">
-    © 2025 ГОНЩИКИ CREW — DEMO SHOP
-  </div>
+</div>
+
+<div class="footer-bottom">
+  © 2025 ГОНЩИКИ CREW — DEMO SHOP
+</div>
 
 </footer>
 
 
-<!-- =========================
-     CAR LIGHTBOX
-========================= -->
+<!-- CAR LIGHTBOX -->
 
 <div
   class="car-lightbox"
@@ -2520,11 +1917,7 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
     ‹
   </button>
 
-  <img
-    id="carLightboxImage"
-    src=""
-    alt=""
-  >
+  <img id="carLightboxImage" src="" alt="">
 
   <button
     class="car-lightbox-next"
@@ -2536,9 +1929,7 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 </div>
 
 
-<!-- =========================
-     PRODUCT MODAL
-========================= -->
+<!-- PRODUCT MODAL -->
 
 <div
   class="modal"
@@ -2546,151 +1937,140 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
   onclick="modalOutside(event,'productModal')"
 >
 
-  <div class="modal-box">
+<div class="modal-box">
 
-    <button
-      class="close"
-      onclick="closeModal('productModal')"
-    >
-      ×
-    </button>
+<button class="close" onclick="closeModal('productModal')">
+  ×
+</button>
 
-    <div class="product-modal-grid">
+<div class="product-modal-grid">
 
-      <div
-        class="product-modal-image"
-        id="productModalImage"
-      >
+<div
+  class="product-modal-image"
+  id="productModalImage"
+>
 
-        <img
-          id="modalProductImage"
-          src=""
-          alt=""
-        >
+<img
+  id="modalProductImage"
+  src=""
+  alt=""
+>
 
-        <div class="zoom-label">
-          KLICKEN ZUM ZOOM
-        </div>
-
-      </div>
-
-
-      <div class="product-modal-content">
-
-        <div
-          class="modal-category"
-          id="modalProductCategory"
-        ></div>
-
-        <h2
-          class="modal-title"
-          id="modalProductName"
-        ></h2>
-
-        <div
-          class="modal-price"
-          id="modalProductPrice"
-        ></div>
-
-        <p
-          class="modal-description"
-          id="modalProductDescription"
-        ></p>
-
-
-        <div id="sizeArea">
-
-          <div class="option-title">
-            GRÖSSE
-          </div>
-
-          <div
-            class="size-list"
-            id="sizeList"
-          ></div>
-
-        </div>
-
-
-        <div class="quantity-row">
-
-          <div>
-
-            <div class="option-title">
-              MENGE
-            </div>
-
-            <div class="quantity">
-
-              <button onclick="changeModalQuantity(-1)">
-                −
-              </button>
-
-              <span id="modalQuantity">
-                1
-              </span>
-
-              <button onclick="changeModalQuantity(1)">
-                +
-              </button>
-
-            </div>
-
-          </div>
-
-
-          <button
-            class="product-heart"
-            id="modalHeart"
-            onclick="toggleWishlistFromModal()"
-            style="position:static"
-          >
-            ♡
-          </button>
-
-        </div>
-
-
-        <button
-          class="add-cart"
-          id="addCartButton"
-          onclick="addCurrentProductToCart()"
-        >
-          IN DEN WARENKORB
-        </button>
-
-
-        <div
-          class="modal-stock"
-          id="modalStock"
-        ></div>
-
-
-        <div class="similar">
-
-          <div class="option-title">
-            ÄHNLICHE PRODUKTE
-          </div>
-
-          <div
-            class="similar-grid"
-            id="similarProducts"
-          ></div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
+<div class="zoom-label">
+  KLICKEN ZUM ZOOM
+</div>
 
 </div>
 
 
-<!-- =========================
-     CART
-========================= -->
+<div class="product-modal-content">
+
+<div
+  class="modal-category"
+  id="modalProductCategory"
+></div>
+
+<h2
+  class="modal-title"
+  id="modalProductName"
+></h2>
+
+<div
+  class="modal-price"
+  id="modalProductPrice"
+></div>
+
+<p
+  class="modal-description"
+  id="modalProductDescription"
+></p>
+
+
+<div id="sizeArea">
+
+<div class="option-title">
+  GRÖSSE
+</div>
+
+<div
+  class="size-list"
+  id="sizeList"
+></div>
+
+</div>
+
+
+<div class="quantity-row">
+
+<div>
+
+<div class="option-title">
+  MENGE
+</div>
+
+<div class="quantity">
+
+<button onclick="changeModalQuantity(-1)">
+  −
+</button>
+
+<span id="modalQuantity">1</span>
+
+<button onclick="changeModalQuantity(1)">
+  +
+</button>
+
+</div>
+
+</div>
+
+
+<button
+  class="product-heart"
+  id="modalHeart"
+  onclick="toggleWishlistFromModal()"
+  style="position:static"
+>
+  ♡
+</button>
+
+</div>
+
+
+<button
+  class="add-cart"
+  id="addCartButton"
+  onclick="addCurrentProductToCart()"
+>
+  IN DEN WARENKORB
+</button>
+
+<div
+  class="modal-stock"
+  id="modalStock"
+></div>
+
+
+<div class="similar">
+
+<div class="option-title">
+  ÄHNLICHE PRODUKTE
+</div>
+
+<div
+  class="similar-grid"
+  id="similarProducts"
+></div>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- CART -->
 
 <div
   class="drawer"
@@ -2698,41 +2078,36 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
   onclick="drawerOutside(event,'cartDrawer')"
 >
 
-  <div class="drawer-panel">
+<div class="drawer-panel">
 
-    <div class="drawer-head">
+<div class="drawer-head">
 
-      <h2>
-        WARENKORB
-      </h2>
+<h2>WARENKORB</h2>
 
-      <button
-        class="drawer-close"
-        onclick="closeDrawer('cartDrawer')"
-      >
-        ×
-      </button>
-
-    </div>
-
-    <div
-      class="drawer-body"
-      id="cartBody"
-    ></div>
-
-    <div
-      class="cart-summary"
-      id="cartSummary"
-    ></div>
-
-  </div>
+<button
+  class="drawer-close"
+  onclick="closeDrawer('cartDrawer')"
+>
+  ×
+</button>
 
 </div>
 
+<div
+  class="drawer-body"
+  id="cartBody"
+></div>
 
-<!-- =========================
-     WISHLIST
-========================= -->
+<div
+  class="cart-summary"
+  id="cartSummary"
+></div>
+
+</div>
+</div>
+
+
+<!-- WISHLIST -->
 
 <div
   class="modal"
@@ -2740,43 +2115,34 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
   onclick="modalOutside(event,'wishlistModal')"
 >
 
-  <div
-    class="modal-box"
-    style="width:min(900px,100%)"
-  >
+<div class="modal-box">
 
-    <button
-      class="close"
-      onclick="closeModal('wishlistModal')"
-    >
-      ×
-    </button>
+<button
+  class="close"
+  onclick="closeModal('wishlistModal')"
+>
+  ×
+</button>
 
-    <div class="checkout-inner">
+<div class="checkout-inner">
 
-      <div class="eyebrow">
-        ГОНЩИКИ
-      </div>
+<div class="eyebrow">ГОНЩИКИ</div>
 
-      <h2 class="checkout-title">
-        WUNSCHLISTE
-      </h2>
+<h2 class="checkout-title">
+  WUNSCHLISTE
+</h2>
 
-      <div
-        class="wishlist-grid"
-        id="wishlistGrid"
-      ></div>
+<div
+  class="wishlist-grid"
+  id="wishlistGrid"
+></div>
 
-    </div>
-
-  </div>
-
+</div>
+</div>
 </div>
 
 
-<!-- =========================
-     CHECKOUT
-========================= -->
+<!-- CHECKOUT -->
 
 <div
   class="modal"
@@ -2784,194 +2150,110 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
   onclick="modalOutside(event,'checkoutModal')"
 >
 
-  <div class="modal-box checkout-box">
+<div class="modal-box">
 
-    <button
-      class="close"
-      onclick="closeModal('checkoutModal')"
-    >
-      ×
-    </button>
+<button
+  class="close"
+  onclick="closeModal('checkoutModal')"
+>
+  ×
+</button>
 
-    <div class="checkout-inner">
+<div class="checkout-inner">
 
-      <div class="eyebrow">
-        DEMO CHECKOUT
-      </div>
+<div class="eyebrow">
+  DEMO CHECKOUT
+</div>
 
-      <h2 class="checkout-title">
-        CHECKOUT
-      </h2>
+<h2 class="checkout-title">
+  CHECKOUT
+</h2>
 
-      <div class="checkout-steps">
+<div class="form-group">
+<label>VORNAME</label>
+<input id="checkoutFirstName">
+</div>
 
-        <div class="step active"></div>
-        <div class="step active"></div>
-        <div class="step active"></div>
+<div class="form-group">
+<label>NACHNAME</label>
+<input id="checkoutLastName">
+</div>
 
-      </div>
+<div class="form-group">
+<label>E-MAIL</label>
+<input id="checkoutEmail" type="email">
+</div>
 
+<div class="form-group">
+<label>STRASSE + HAUSNUMMER</label>
+<input id="checkoutStreet">
+</div>
 
-      <div class="checkout-grid">
+<div class="form-group">
+<label>PLZ</label>
+<input id="checkoutZip">
+</div>
 
-        <div class="form-group">
+<div class="form-group">
+<label>ORT</label>
+<input id="checkoutCity">
+</div>
 
-          <label>
-            VORNAME
-          </label>
+<div class="form-group">
 
-          <input
-            id="checkoutFirstName"
-            type="text"
-          >
+<label>ZAHLUNG</label>
 
-        </div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
 
+<div
+  class="payment-option"
+  style="border:1px solid #333;padding:15px;text-align:center;font-size:10px;background:#fff;color:#000"
+  onclick="selectPayment(this)"
+>
+  CARD
+</div>
 
-        <div class="form-group">
+<div
+  class="payment-option"
+  style="border:1px solid #333;padding:15px;text-align:center;font-size:10px;background:#151515"
+  onclick="selectPayment(this)"
+>
+  PAYPAL
+</div>
 
-          <label>
-            NACHNAME
-          </label>
+<div
+  class="payment-option"
+  style="border:1px solid #333;padding:15px;text-align:center;font-size:10px;background:#151515"
+  onclick="selectPayment(this)"
+>
+  KLARNA
+</div>
 
-          <input
-            id="checkoutLastName"
-            type="text"
-          >
+</div>
+</div>
 
-        </div>
+<div
+  id="checkoutSummary"
+></div>
 
+<button
+  class="add-cart"
+  onclick="placeDemoOrder()"
+>
+  DEMO-BESTELLUNG ABSCHICKEN
+</button>
 
-        <div class="form-group full">
+<p style="color:#555;font-size:9px;margin-top:12px">
+  Dies ist ausschließlich eine Demo.
+  Es wird keine echte Bestellung aufgegeben.
+</p>
 
-          <label>
-            E-MAIL
-          </label>
-
-          <input
-            id="checkoutEmail"
-            type="email"
-          >
-
-        </div>
-
-
-        <div class="form-group full">
-
-          <label>
-            STRASSE + HAUSNUMMER
-          </label>
-
-          <input
-            id="checkoutStreet"
-            type="text"
-          >
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            PLZ
-          </label>
-
-          <input
-            id="checkoutZip"
-            type="text"
-          >
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            ORT
-          </label>
-
-          <input
-            id="checkoutCity"
-            type="text"
-          >
-
-        </div>
-
-
-        <div class="form-group full">
-
-          <label>
-            ZAHLUNG
-          </label>
-
-          <div class="payment-options">
-
-            <div
-              class="payment-option active"
-              onclick="selectPayment(this)"
-            >
-              💳 CARD
-            </div>
-
-            <div
-              class="payment-option"
-              onclick="selectPayment(this)"
-            >
-              🅿️ PAYPAL
-            </div>
-
-            <div
-              class="payment-option"
-              onclick="selectPayment(this)"
-            >
-              K KLARNA
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div
-        class="checkout-summary"
-        id="checkoutSummary"
-      ></div>
-
-
-      <button
-        class="add-cart"
-        onclick="placeDemoOrder()"
-        style="margin-top:20px"
-      >
-        DEMO-BESTELLUNG ABSCHICKEN
-      </button>
-
-
-      <p
-        style="
-          color:#555;
-          font-size:9px;
-          line-height:1.5;
-          margin-top:12px
-        "
-      >
-        Dies ist ausschließlich eine Demo.
-        Es wird keine echte Bestellung aufgegeben
-        und keine Zahlung durchgeführt.
-      </p>
-
-    </div>
-
-  </div>
-
+</div>
+</div>
 </div>
 
 
-<!-- =========================
-     ACCOUNT
-========================= -->
+<!-- ACCOUNT -->
 
 <div
   class="modal"
@@ -2979,28 +2261,25 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
   onclick="modalOutside(event,'accountModal')"
 >
 
-  <div class="modal-box account-box">
+<div class="modal-box">
 
-    <button
-      class="close"
-      onclick="closeModal('accountModal')"
-    >
-      ×
-    </button>
+<button
+  class="close"
+  onclick="closeModal('accountModal')"
+>
+  ×
+</button>
 
-    <div
-      class="account-content"
-      id="accountContent"
-    ></div>
+<div
+  class="account-content"
+  id="accountContent"
+></div>
 
-  </div>
-
+</div>
 </div>
 
 
-<!-- =========================
-     LEGAL
-========================= -->
+<!-- LEGAL -->
 
 <div
   class="modal"
@@ -3008,50 +2287,46 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
   onclick="modalOutside(event,'legalModal')"
 >
 
-  <div class="modal-box legal-box">
+<div class="modal-box">
 
-    <button
-      class="close"
-      onclick="closeModal('legalModal')"
-    >
-      ×
-    </button>
+<button
+  class="close"
+  onclick="closeModal('legalModal')"
+>
+  ×
+</button>
 
-    <div
-      class="legal-content"
-      id="legalContent"
-    ></div>
+<div
+  class="legal-content"
+  id="legalContent"
+></div>
 
-  </div>
-
+</div>
 </div>
 
 
-<!-- =========================
-     ADMIN
-========================= -->
+<!-- ADMIN -->
 
 <div
   class="modal"
   id="adminModal"
 >
 
-  <div class="modal-box admin-box">
+<div class="modal-box">
 
-    <button
-      class="close"
-      onclick="closeModal('adminModal')"
-    >
-      ×
-    </button>
+<button
+  class="close"
+  onclick="closeModal('adminModal')"
+>
+  ×
+</button>
 
-    <div
-      class="admin-content"
-      id="adminContent"
-    ></div>
+<div
+  class="admin-content"
+  id="adminContent"
+></div>
 
-  </div>
-
+</div>
 </div>
 
 
@@ -3063,181 +2338,121 @@ SHOP VORSCHAU — PREISE, GRÖSSEN & VERSAND NOCH NICHT BESTÄTIGT — KEINE BES
 
 <script>
 
-/* =========================================================
-   PRODUCTS
-========================================================= */
+/* PRODUCTS */
 
 const products=[
 
-  {
-    id:1,
-    name:"GONSHIKI T-SHIRT E36",
-    category:"shirt",
-    price:34.99,
-    image:"assets/Shirt-black-e36.jpg",
-    description:"Schwarzes ГОНЩИКИ T-Shirt mit E36 Design.",
-    stock:{
-      XS:5,
-      S:10,
-      M:10,
-      L:10,
-      XL:5,
-      XXL:2
-    }
-  },
+{
+  id:1,
+  name:"GONSHIKI T-SHIRT E36",
+  category:"shirt",
+  price:34.99,
+  image:"assets/Shirt-black-e36.jpg",
+  description:"Schwarzes ГОНЩИКИ T-Shirt mit E36 Design.",
+  stock:{XS:5,S:10,M:10,L:10,XL:5,XXL:2}
+},
 
-  {
-    id:2,
-    name:"GONSHIKI T-SHIRT E34",
-    category:"shirt",
-    price:34.99,
-    image:"assets/Shirt-black-e34.jpg",
-    description:"Schwarzes ГОНЩИКИ T-Shirt mit E34 Design.",
-    stock:{
-      XS:5,
-      S:10,
-      M:10,
-      L:10,
-      XL:5,
-      XXL:2
-    }
-  },
+{
+  id:2,
+  name:"GONSHIKI T-SHIRT E34",
+  category:"shirt",
+  price:34.99,
+  image:"assets/Shirt-black-e34.jpg",
+  description:"Schwarzes ГОНЩИКИ T-Shirt mit E34 Design.",
+  stock:{XS:5,S:10,M:10,L:10,XL:5,XXL:2}
+},
 
-  {
-    id:4,
-    name:"GONSHIKI HOODIE E36",
-    category:"hoodie",
-    price:59.99,
-    image:"assets/Hoodie-black-e36.jpg",
-    description:"Schwarzer ГОНЩИКИ Hoodie mit E36 Motiv.",
-    stock:{
-      XS:4,
-      S:8,
-      M:8,
-      L:8,
-      XL:5,
-      XXL:2
-    }
-  },
+{
+  id:4,
+  name:"GONSHIKI HOODIE E36",
+  category:"hoodie",
+  price:59.99,
+  image:"assets/Hoodie-black-e36.jpg",
+  description:"Schwarzer ГОНЩИКИ Hoodie mit E36 Motiv.",
+  stock:{XS:4,S:8,M:8,L:8,XL:5,XXL:2}
+},
 
-  {
-    id:5,
-    name:"GONSHIKI HOODIE E34",
-    category:"hoodie",
-    price:59.99,
-    image:"assets/Hoodie-black-e34.jpg",
-    description:"Schwarzer ГОНЩИКИ Hoodie mit E34 Motiv.",
-    stock:{
-      XS:4,
-      S:8,
-      M:8,
-      L:8,
-      XL:5,
-      XXL:2
-    }
-  },
+{
+  id:5,
+  name:"GONSHIKI HOODIE E34",
+  category:"hoodie",
+  price:59.99,
+  image:"assets/Hoodie-black-e34.jpg",
+  description:"Schwarzer ГОНЩИКИ Hoodie mit E34 Motiv.",
+  stock:{XS:4,S:8,M:8,L:8,XL:5,XXL:2}
+},
 
-  {
-    id:6,
-    name:"GONSHIKI HOODIE KREUZ",
-    category:"hoodie",
-    price:59.99,
-    image:"assets/Hoodie-black-Kreuz.jpg",
-    description:"Schwarzer ГОНЩИКИ Hoodie mit Kreuz Design.",
-    stock:{
-      XS:4,
-      S:8,
-      M:8,
-      L:8,
-      XL:5,
-      XXL:2
-    }
-  },
+{
+  id:6,
+  name:"GONSHIKI HOODIE KREUZ",
+  category:"hoodie",
+  price:59.99,
+  image:"assets/Hoodie-black-Kreuz.jpg",
+  description:"Schwarzer ГОНЩИКИ Hoodie mit Kreuz Design.",
+  stock:{XS:4,S:8,M:8,L:8,XL:5,XXL:2}
+},
 
-  {
-    id:9,
-    name:"GONSHIKI ZIPPER KREUZ",
-    category:"zipper",
-    price:69.99,
-    image:"assets/Zipper-black-Kreuz.jpg",
-    description:"Schwarzer ГОНЩИКИ Zipper mit Kreuz Design.",
-    stock:{
-      XS:4,
-      S:8,
-      M:8,
-      L:8,
-      XL:5,
-      XXL:2
-    }
-  },
+{
+  id:9,
+  name:"GONSHIKI ZIPPER KREUZ",
+  category:"zipper",
+  price:69.99,
+  image:"assets/Zipper-black-Kreuz.jpg",
+  description:"Schwarzer ГОНЩИКИ Zipper mit Kreuz Design.",
+  stock:{XS:4,S:8,M:8,L:8,XL:5,XXL:2}
+},
 
-  {
-    id:10,
-    name:"GONSHIKI HOSE",
-    category:"pants",
-    price:79.99,
-    image:"assets/Pants-black-gonschiki.jpg",
-    description:"Schwarze ГОНЩИКИ Hose.",
-    stock:{
-      XS:4,
-      S:8,
-      M:8,
-      L:8,
-      XL:5,
-      XXL:2
-    }
-  },
+{
+  id:10,
+  name:"GONSHIKI HOSE",
+  category:"pants",
+  price:79.99,
+  image:"assets/Pants-black-gonschiki.jpg",
+  description:"Schwarze ГОНЩИКИ Hose.",
+  stock:{XS:4,S:8,M:8,L:8,XL:5,XXL:2}
+},
 
-  {
-    id:11,
-    name:"SCHEIBENKEIL",
-    category:"sticker",
-    price:35.99,
-    image:"assets/Scheibenkeil .PNG",
-    description:"Universeller ГОНЩИКИ Scheibenkeil.",
-    stock:{
-      UNIVERSAL:10
-    }
-  },
+{
+  id:11,
+  name:"SCHEIBENKEIL",
+  category:"sticker",
+  price:35.99,
+  image:"assets/Scheibenkeil .PNG",
+  description:"Universeller ГОНЩИКИ Scheibenkeil.",
+  stock:{UNIVERSAL:10}
+},
 
-  {
-    id:12,
-    name:"HECKSCHEIBEN STICKER",
-    category:"sticker",
-    price:25.99,
-    image:"assets/Heckscheiben Sticker.PNG",
-    description:"ГОНЩИКИ Heckscheiben Sticker · 700 × 300 mm.",
-    stock:{
-      UNIVERSAL:10
-    }
-  },
+{
+  id:12,
+  name:"HECKSCHEIBEN STICKER",
+  category:"sticker",
+  price:25.99,
+  image:"assets/Heckscheiben Sticker.PNG",
+  description:"ГОНЩИКИ Heckscheiben Sticker · 700 × 300 mm.",
+  stock:{UNIVERSAL:10}
+},
 
-  {
-    id:13,
-    name:"ГОНЩИКИ STICKER",
-    category:"sticker",
-    price:12.99,
-    image:"assets/Sticker.PNG",
-    description:"ГОНЩИКИ Sticker · 200 × 80 mm.",
-    stock:{
-      UNIVERSAL:20
-    }
-  }
+{
+  id:13,
+  name:"ГОНЩИКИ STICKER",
+  category:"sticker",
+  price:12.99,
+  image:"assets/Sticker.PNG",
+  description:"ГОНЩИКИ Sticker · 200 × 80 mm.",
+  stock:{UNIVERSAL:20}
+}
 
 ];
 
 
-/* =========================================================
-   STATE
-========================================================= */
+/* STATE */
 
 let selectedGender="all";
 let selectedCategory="all";
-
 let currentProduct=null;
-let currentProductGender="all";
 let currentSize=null;
 let currentQuantity=1;
+let currentCarImage=0;
 
 let cart=JSON.parse(
   localStorage.getItem("gonschiki_cart")||"[]"
@@ -3255,8 +2470,6 @@ let account=JSON.parse(
   localStorage.getItem("gonschiki_account")||"null"
 );
 
-let currentCarImage=0;
-
 const carImages=[
   "assets/Car-1.JPG",
   "assets/Car-2.JPG",
@@ -3266,31 +2479,14 @@ const carImages=[
 ];
 
 
-/* =========================================================
-   HELPERS
-========================================================= */
+/* HELPERS */
 
 function saveState(){
 
-  localStorage.setItem(
-    "gonschiki_cart",
-    JSON.stringify(cart)
-  );
-
-  localStorage.setItem(
-    "gonschiki_wishlist",
-    JSON.stringify(wishlist)
-  );
-
-  localStorage.setItem(
-    "gonschiki_orders",
-    JSON.stringify(orders)
-  );
-
-  localStorage.setItem(
-    "gonschiki_account",
-    JSON.stringify(account)
-  );
+  localStorage.setItem("gonschiki_cart",JSON.stringify(cart));
+  localStorage.setItem("gonschiki_wishlist",JSON.stringify(wishlist));
+  localStorage.setItem("gonschiki_orders",JSON.stringify(orders));
+  localStorage.setItem("gonschiki_account",JSON.stringify(account));
 
 }
 
@@ -3306,14 +2502,14 @@ function formatPrice(value){
 
 }
 
-function getTotalStock(product){
+function totalStock(product){
 
   return Object.values(product.stock)
     .reduce((a,b)=>a+b,0);
 
 }
 
-function totalCartItems(){
+function cartCount(){
 
   return cart.reduce(
     (sum,item)=>sum+item.quantity,
@@ -3327,13 +2523,12 @@ function cartSubtotal(){
   return cart.reduce(
     (sum,item)=>{
 
-      const product=
-        products.find(p=>p.id===item.id);
+      const p=products.find(
+        x=>x.id===item.id
+      );
 
       return sum+
-        (product
-          ?product.price*item.quantity
-          :0);
+        (p?p.price*item.quantity:0);
 
     },
     0
@@ -3341,9 +2536,9 @@ function cartSubtotal(){
 
 }
 
-function shippingCost(){
+function shipping(){
 
-  return cartSubtotal()>=100||cart.length===0
+  return cartSubtotal()>=100||!cart.length
     ?0
     :5.99;
 
@@ -3352,27 +2547,26 @@ function shippingCost(){
 function updateBadges(){
 
   document.getElementById("cartBadge")
-    .textContent=totalCartItems();
+    .textContent=cartCount();
 
   document.getElementById("wishlistBadge")
     .textContent=wishlist.length;
 
 }
 
-function showToast(message){
+function toast(message){
 
-  const toast=
-    document.getElementById("toast");
+  const t=document.getElementById("toast");
 
-  toast.textContent=message;
-
-  toast.classList.add("show");
+  t.textContent=message;
+  t.classList.add("show");
 
   clearTimeout(window.toastTimer);
 
-  window.toastTimer=setTimeout(()=>{
-    toast.classList.remove("show");
-  },2200);
+  window.toastTimer=setTimeout(
+    ()=>t.classList.remove("show"),
+    2200
+  );
 
 }
 
@@ -3390,65 +2584,29 @@ function closeModal(id){
   document.getElementById(id)
     .classList.remove("open");
 
-  if(
-    !document.querySelector(".modal.open") &&
-    !document.querySelector(".drawer.open")
-  ){
+  if(!document.querySelector(".modal.open")){
     document.body.style.overflow="";
   }
 
 }
 
-function modalOutside(event,id){
+function modalOutside(e,id){
 
-  if(event.target.id===id){
+  if(e.target.id===id){
     closeModal(id);
   }
 
 }
 
-function openDrawer(id){
 
-  document.getElementById(id)
-    .classList.add("open");
-
-  document.body.style.overflow="hidden";
-
-}
-
-function closeDrawer(id){
-
-  document.getElementById(id)
-    .classList.remove("open");
-
-  if(
-    !document.querySelector(".modal.open") &&
-    !document.querySelector(".drawer.open")
-  ){
-    document.body.style.overflow="";
-  }
-
-}
-
-function drawerOutside(event,id){
-
-  if(event.target.id===id){
-    closeDrawer(id);
-  }
-
-}
-
-
-/* =========================================================
-   CAR GALLERY
-========================================================= */
+/* CAR GALLERY */
 
 function openCarImage(index){
 
   currentCarImage=index;
 
   document.getElementById("carLightboxImage")
-    .src=carImages[currentCarImage];
+    .src=carImages[index];
 
   document.getElementById("carLightbox")
     .classList.add("open");
@@ -3457,38 +2615,33 @@ function openCarImage(index){
 
 }
 
-function closeCarLightbox(event){
+function closeCarLightbox(e){
 
   if(
-    event &&
-    event.target.id!=="carLightbox" &&
-    !event.target.classList.contains("car-lightbox-close")
+    e.target.id==="carLightbox"||
+    e.target.classList.contains("car-lightbox-close")
   ){
-    return;
+
+    document.getElementById("carLightbox")
+      .classList.remove("open");
+
+    document.body.style.overflow="";
+
   }
-
-  document.getElementById("carLightbox")
-    .classList.remove("open");
-
-  document.body.style.overflow="";
 
 }
 
-function changeCarImage(direction,event){
+function changeCarImage(direction,e){
 
-  if(event){
-    event.stopPropagation();
-  }
+  e.stopPropagation();
 
   currentCarImage+=direction;
 
-  if(currentCarImage<0){
+  if(currentCarImage<0)
     currentCarImage=carImages.length-1;
-  }
 
-  if(currentCarImage>=carImages.length){
+  if(currentCarImage>=carImages.length)
     currentCarImage=0;
-  }
 
   document.getElementById("carLightboxImage")
     .src=carImages[currentCarImage];
@@ -3496,17 +2649,15 @@ function changeCarImage(direction,event){
 }
 
 
-/* =========================================================
-   SHOP
-========================================================= */
+/* SHOP FILTER */
 
 function setGender(gender,button){
 
   selectedGender=gender;
 
-  document
-    .querySelectorAll("#genderFilters .filter-btn")
-    .forEach(btn=>btn.classList.remove("active"));
+  button.parentElement
+    .querySelectorAll(".filter-btn")
+    .forEach(x=>x.classList.remove("active"));
 
   button.classList.add("active");
 
@@ -3518,9 +2669,9 @@ function setCategory(category,button){
 
   selectedCategory=category;
 
-  document
-    .querySelectorAll("#categoryFilters .filter-btn")
-    .forEach(btn=>btn.classList.remove("active"));
+  button.parentElement
+    .querySelectorAll(".filter-btn")
+    .forEach(x=>x.classList.remove("active"));
 
   button.classList.add("active");
 
@@ -3537,177 +2688,147 @@ function clearSearch(){
 
 }
 
-function renderProducts(){
 
-  const grid=
-    document.getElementById("productGrid");
+/* PRODUCTS */
+
+function renderProducts(){
 
   const search=
     document.getElementById("searchInput")
       .value
-      .trim()
-      .toLowerCase();
+      .toLowerCase()
+      .trim();
 
-  const filtered=
-    products.filter(product=>{
+  const filtered=products.filter(p=>{
 
-      const categoryMatch=
-        selectedCategory==="all"||
-        product.category===selectedCategory;
+    const category=
+      selectedCategory==="all"||
+      p.category===selectedCategory;
 
-      const searchMatch=
-        !search||
-        product.name.toLowerCase().includes(search)||
-        product.description.toLowerCase().includes(search);
+    const searchMatch=
+      !search||
+      p.name.toLowerCase().includes(search)||
+      p.description.toLowerCase().includes(search);
 
-      return categoryMatch&&searchMatch;
+    return category&&searchMatch;
 
-    });
+  });
 
   document.getElementById("productCount")
     .textContent=
       filtered.length+
-      (
-        filtered.length===1
-        ?" Produkt"
-        :" Produkte"
-      );
+      (filtered.length===1?" Produkt":" Produkte");
+
+  const grid=
+    document.getElementById("productGrid");
 
   if(!filtered.length){
 
     grid.innerHTML=`
-
       <div class="no-products">
-
-        <strong>
-          KEINE PRODUKTE GEFUNDEN
-        </strong>
-
-        Versuche einen anderen Suchbegriff
-        oder Filter.
-
+        <strong>KEINE PRODUKTE GEFUNDEN</strong>
+        Versuche einen anderen Suchbegriff.
       </div>
-
     `;
 
     return;
 
   }
 
-  grid.innerHTML=
-    filtered.map(product=>{
+  grid.innerHTML=filtered.map(p=>{
 
-      const available=
-        getTotalStock(product);
+    const stock=totalStock(p);
+    const liked=wishlist.includes(p.id);
 
-      const liked=
-        wishlist.includes(product.id);
+    let stockText="VERFÜGBAR";
+    let stockClass="";
 
-      let stockText="VERFÜGBAR";
-      let stockClass="";
+    if(stock<=0){
+      stockText="AUSVERKAUFT";
+      stockClass="out";
+    }
+    else if(stock<=4){
+      stockText="NUR NOCH "+stock;
+      stockClass="low";
+    }
 
-      if(available<=0){
+    return `
 
-        stockText="AUSVERKAUFT";
-        stockClass="out";
+      <article
+        class="product-card ${p.category==="sticker"?"sticker-card":""}"
+        data-product-id="${p.id}"
+        onclick="openProduct(${p.id})"
+      >
 
-      }else if(available<=4){
+        <div class="product-image-wrap">
 
-        stockText=
-          "NUR NOCH "+available+
-          " VERFÜGBAR";
+          <img
+            class="product-image"
+            src="${p.image}"
+            alt="${p.name}"
+            loading="lazy"
+          >
 
-        stockClass="low";
-
-      }
-
-      return `
-
-        <article
-          class="product-card ${
-            product.category==="sticker"
-            ?"sticker-card"
+          ${
+            stock<=4&&stock>0
+            ?`<div class="product-badge">LOW STOCK</div>`
             :""
-          }"
-          data-product-id="${product.id}"
-          onclick="openProduct(${product.id})"
-        >
+          }
 
-          <div class="product-image-wrap">
+          <button
+            class="product-heart ${liked?"active":""}"
+            onclick="
+              event.stopPropagation();
+              toggleWishlist(${p.id})
+            "
+          >
+            ${liked?"♥":"♡"}
+          </button>
 
-            <img
-              class="product-image"
-              src="${product.image}"
-              alt="${product.name}"
-              loading="lazy"
-            >
+        </div>
 
-            ${
-              available<=4&&available>0
-              ?`<div class="product-badge">LOW STOCK</div>`
-              :""
-            }
+        <div class="product-info">
 
-            <button
-              class="product-heart ${
-                liked?"active":""
-              }"
-              onclick="
-                event.stopPropagation();
-                toggleWishlist(${product.id})
-              "
-            >
-              ${liked?"♥":"♡"}
-            </button>
-
+          <div class="product-category">
+            ${p.category.toUpperCase()}
           </div>
 
+          <div class="product-name">
+            ${p.name}
+          </div>
 
-          <div class="product-info">
+          <div class="product-bottom">
 
-            <div class="product-category">
-              ${product.category.toUpperCase()}
+            <div class="product-price">
+              ${formatPrice(p.price)}
             </div>
 
-            <div class="product-name">
-              ${product.name}
-            </div>
-
-            <div class="product-bottom">
-
-              <div class="product-price">
-                ${formatPrice(product.price)}
-              </div>
-
-              <div class="product-stock ${stockClass}">
-                ${stockText}
-              </div>
-
+            <div class="product-stock ${stockClass}">
+              ${stockText}
             </div>
 
           </div>
 
-        </article>
+        </div>
 
-      `;
+      </article>
 
-    }).join("");
+    `;
+
+  }).join("");
 
 }
 
 
-/* =========================================================
-   PRODUCT
-========================================================= */
+/* PRODUCT MODAL */
 
 function openProduct(id){
 
-  currentProduct=
-    products.find(p=>p.id===id);
+  currentProduct=products.find(
+    p=>p.id===id
+  );
 
   if(!currentProduct)return;
-
-  currentProductGender=selectedGender;
 
   currentQuantity=1;
   currentSize=null;
@@ -3716,30 +2837,33 @@ function openProduct(id){
     document.getElementById("productModalImage");
 
   modalImage.classList.remove(
-    "sticker-modal-image"
+    "sticker-modal-image",
+    "zipper-modal-image"
   );
 
   if(currentProduct.category==="sticker"){
-
     modalImage.classList.add(
       "sticker-modal-image"
     );
+  }
 
+  if(currentProduct.id===9){
+    modalImage.classList.add(
+      "zipper-modal-image"
+    );
   }
 
   document.getElementById("modalProductImage")
     .src=currentProduct.image;
 
-  document.getElementById("modalProductImage")
-    .alt=currentProduct.name;
-
   document.getElementById("modalProductName")
     .textContent=currentProduct.name;
 
+  document.getElementById("modalProductCategory")
+    .textContent=currentProduct.category.toUpperCase();
+
   document.getElementById("modalProductPrice")
-    .textContent=formatPrice(
-      currentProduct.price
-    );
+    .textContent=formatPrice(currentProduct.price);
 
   document.getElementById("modalProductDescription")
     .textContent=currentProduct.description;
@@ -3747,35 +2871,24 @@ function openProduct(id){
   document.getElementById("modalQuantity")
     .textContent="1";
 
-  modalImage.classList.remove("zoomed");
-
   renderSizes();
-
-  updateModalWishlist();
-
-  renderSimilarProducts();
-
   updateModalStock();
+  updateModalHeart();
+  renderSimilarProducts();
 
   openModal("productModal");
 
 }
 
-
 function renderSizes(){
 
-  const area=
-    document.getElementById("sizeArea");
-
-  const list=
-    document.getElementById("sizeList");
+  const area=document.getElementById("sizeArea");
+  const list=document.getElementById("sizeList");
 
   if(currentProduct.category==="sticker"){
 
     area.style.display="none";
-
     currentSize="UNIVERSAL";
-
     return;
 
   }
@@ -3783,60 +2896,35 @@ function renderSizes(){
   area.style.display="block";
 
   let sizes=[
-    "XS",
-    "S",
-    "M",
-    "L",
-    "XL",
-    "XXL"
+    "XS","S","M","L","XL","XXL"
   ];
 
-  if(currentProductGender==="women"){
-
-    sizes=[
-      "XS",
-      "S",
-      "M",
-      "L",
-      "XL"
-    ];
-
+  if(selectedGender==="women"){
+    sizes=["XS","S","M","L","XL"];
   }
 
-  if(currentProductGender==="men"){
-
-    sizes=[
-      "S",
-      "M",
-      "L",
-      "XL",
-      "XXL"
-    ];
-
+  if(selectedGender==="men"){
+    sizes=["S","M","L","XL","XXL"];
   }
 
-  list.innerHTML=
-    sizes.map(size=>{
+  list.innerHTML=sizes.map(size=>{
 
-      const stock=
-        currentProduct.stock[size]||0;
+    const stock=
+      currentProduct.stock[size]||0;
 
-      return `
+    return `
+      <button
+        class="size-btn"
+        ${stock<=0?"disabled":""}
+        onclick="selectSize('${size}',this)"
+      >
+        ${size}
+      </button>
+    `;
 
-        <button
-          class="size-btn"
-          ${stock<=0?"disabled":""}
-          onclick="selectSize('${size}',this)"
-        >
-          ${size}
-        </button>
-
-      `;
-
-    }).join("");
+  }).join("");
 
 }
-
 
 function selectSize(size,button){
 
@@ -3844,7 +2932,7 @@ function selectSize(size,button){
 
   document
     .querySelectorAll("#sizeList .size-btn")
-    .forEach(btn=>btn.classList.remove("active"));
+    .forEach(x=>x.classList.remove("active"));
 
   button.classList.add("active");
 
@@ -3852,42 +2940,32 @@ function selectSize(size,button){
 
 }
 
-
 function changeModalQuantity(amount){
 
   if(!currentProduct)return;
 
-  let max=99;
+  const max=
+    currentProduct.category==="sticker"
+    ?currentProduct.stock.UNIVERSAL
+    :(currentProduct.stock[currentSize]||1);
 
-  if(currentSize){
-
-    max=
-      currentProduct.stock[currentSize]||0;
-
-  }
-
-  currentQuantity=
-    Math.max(
-      1,
-      Math.min(
-        currentQuantity+amount,
-        max||1
-      )
-    );
+  currentQuantity=Math.max(
+    1,
+    Math.min(currentQuantity+amount,max)
+  );
 
   document.getElementById("modalQuantity")
     .textContent=currentQuantity;
 
 }
 
-
 function updateModalStock(){
-
-  const stockEl=
-    document.getElementById("modalStock");
 
   const button=
     document.getElementById("addCartButton");
+
+  const stockEl=
+    document.getElementById("modalStock");
 
   if(currentProduct.category==="sticker"){
 
@@ -3900,7 +2978,6 @@ function updateModalStock(){
       :"AUSVERKAUFT";
 
     button.disabled=stock<=0;
-
     return;
 
   }
@@ -3911,7 +2988,6 @@ function updateModalStock(){
       "BITTE GRÖSSE AUSWÄHLEN";
 
     button.disabled=false;
-
     return;
 
   }
@@ -3928,7 +3004,6 @@ function updateModalStock(){
 
 }
 
-
 function addCurrentProductToCart(){
 
   if(
@@ -3936,10 +3011,7 @@ function addCurrentProductToCart(){
     !currentSize
   ){
 
-    showToast(
-      "Bitte zuerst eine Größe auswählen."
-    );
-
+    toast("Bitte Größe auswählen.");
     return;
 
   }
@@ -3951,160 +3023,38 @@ function addCurrentProductToCart(){
 
   const existing=
     cart.find(
-      item=>
-        item.id===currentProduct.id&&
-        item.size===size
+      x=>x.id===currentProduct.id&&
+      x.size===size
     );
 
   if(existing){
-
     existing.quantity+=currentQuantity;
-
-  }else{
-
+  }
+  else{
     cart.push({
       id:currentProduct.id,
       size:size,
       quantity:currentQuantity
     });
-
   }
 
   saveState();
-
   updateBadges();
-
   renderCart();
-
-  showToast(
-    "Zum Warenkorb hinzugefügt"
-  );
 
   closeModal("productModal");
 
-}
-
-
-function renderSimilarProducts(){
-
-  const container=
-    document.getElementById(
-      "similarProducts"
-    );
-
-  const similar=
-    products
-      .filter(
-        p=>
-          p.id!==currentProduct.id&&
-          p.category===currentProduct.category
-      )
-      .slice(0,3);
-
-  container.innerHTML=
-    similar.map(product=>`
-
-      <div
-        class="similar-card"
-        onclick="openProduct(${product.id})"
-      >
-
-        <img
-          src="${product.image}"
-          alt=""
-        >
-
-        <div>
-          ${product.name}
-        </div>
-
-      </div>
-
-    `).join("");
+  toast("Zum Warenkorb hinzugefügt.");
 
 }
 
-
-document
-  .getElementById("productModalImage")
-  .addEventListener(
-    "click",
-    ()=>{
-      document
-        .getElementById("productModalImage")
-        .classList.toggle("zoomed");
-    }
-  );
-
-
-/* =========================================================
-   WISHLIST
-========================================================= */
-
-function toggleWishlist(id){
-
-  if(wishlist.includes(id)){
-
-    wishlist=
-      wishlist.filter(item=>item!==id);
-
-    showToast(
-      "Aus Wunschliste entfernt"
-    );
-
-  }else{
-
-    wishlist.push(id);
-
-    showToast(
-      "Zur Wunschliste hinzugefügt"
-    );
-
-  }
-
-  saveState();
-
-  updateBadges();
-
-  renderProducts();
-
-  if(
-    document
-      .getElementById("wishlistModal")
-      .classList.contains("open")
-  ){
-
-    renderWishlist();
-
-  }
-
-}
-
-
-function toggleWishlistFromModal(){
-
-  if(!currentProduct)return;
-
-  toggleWishlist(
-    currentProduct.id
-  );
-
-  updateModalWishlist();
-
-}
-
-
-function updateModalWishlist(){
+function updateModalHeart(){
 
   const button=
     document.getElementById("modalHeart");
 
-  if(!currentProduct)return;
-
   const active=
-    wishlist.includes(
-      currentProduct.id
-    );
+    wishlist.includes(currentProduct.id);
 
   button.textContent=
     active?"♥":"♡";
@@ -4116,318 +3066,284 @@ function updateModalWishlist(){
 
 }
 
+function renderSimilarProducts(){
 
-function openWishlist(){
+  const box=
+    document.getElementById("similarProducts");
 
-  renderWishlist();
+  const similar=
+    products.filter(
+      p=>
+        p.id!==currentProduct.id&&
+        p.category===currentProduct.category
+    ).slice(0,3);
 
-  openModal(
-    "wishlistModal"
-  );
+  box.innerHTML=similar.map(p=>`
+
+    <div
+      class="similar-card"
+      onclick="openProduct(${p.id})"
+    >
+
+      <img src="${p.image}" alt="">
+
+      <div>${p.name}</div>
+
+    </div>
+
+  `).join("");
 
 }
 
 
+/* ZOOM */
+
+document.getElementById("productModalImage")
+.addEventListener("click",function(){
+
+  this.classList.toggle("zoomed");
+
+});
+
+
+/* WISHLIST */
+
+function toggleWishlist(id){
+
+  if(wishlist.includes(id)){
+
+    wishlist=
+      wishlist.filter(x=>x!==id);
+
+    toast("Aus Wunschliste entfernt.");
+
+  }else{
+
+    wishlist.push(id);
+
+    toast("Zur Wunschliste hinzugefügt.");
+
+  }
+
+  saveState();
+  updateBadges();
+  renderProducts();
+
+}
+
+function toggleWishlistFromModal(){
+
+  toggleWishlist(
+    currentProduct.id
+  );
+
+  updateModalHeart();
+
+}
+
+function openWishlist(){
+
+  renderWishlist();
+  openModal("wishlistModal");
+
+}
+
 function renderWishlist(){
 
   const grid=
-    document.getElementById(
-      "wishlistGrid"
-    );
+    document.getElementById("wishlistGrid");
 
   const items=
-    wishlist
-      .map(
-        id=>products.find(
-          p=>p.id===id
-        )
-      )
-      .filter(Boolean);
+    wishlist.map(
+      id=>products.find(p=>p.id===id)
+    ).filter(Boolean);
 
   if(!items.length){
 
     grid.innerHTML=`
-
-      <div
-        class="empty-state"
-        style="grid-column:1/-1"
-      >
-
-        <strong>
-          DEINE WUNSCHLISTE IST LEER
-        </strong>
-
-        Speichere Produkte mit dem Herz-Symbol.
-
+      <div class="empty-state" style="grid-column:1/-1">
+        <strong>DEINE WUNSCHLISTE IST LEER</strong>
+        Speichere Produkte mit dem Herz.
       </div>
-
     `;
 
     return;
 
   }
 
-  grid.innerHTML=
-    items.map(product=>`
+  grid.innerHTML=items.map(p=>`
 
-      <div
-        class="wishlist-item"
-        onclick="openProduct(${product.id})"
-      >
+    <div
+      class="wishlist-item"
+      onclick="openProduct(${p.id})"
+    >
 
-        <img
-          src="${product.image}"
-          alt=""
-        >
+      <img src="${p.image}" alt="">
 
-        <div class="wishlist-item-info">
-
-          <strong>
-            ${product.name}
-          </strong>
-
-          <span>
-            ${formatPrice(product.price)}
-          </span>
-
-        </div>
-
+      <div class="wishlist-item-info">
+        <strong>${p.name}</strong>
+        <span>${formatPrice(p.price)}</span>
       </div>
 
-    `).join("");
+    </div>
+
+  `).join("");
 
 }
 
 
-/* =========================================================
-   CART
-========================================================= */
+/* CART */
 
 function openCart(){
 
   renderCart();
 
-  openDrawer(
-    "cartDrawer"
-  );
+  document.getElementById("cartDrawer")
+    .classList.add("open");
+
+  document.body.style.overflow="hidden";
 
 }
 
+function closeCart(){
+
+  document.getElementById("cartDrawer")
+    .classList.remove("open");
+
+  document.body.style.overflow="";
+
+}
+
+function drawerOutside(e,id){
+
+  if(e.target.id===id){
+    closeCart();
+  }
+
+}
 
 function renderCart(){
 
   const body=
-    document.getElementById(
-      "cartBody"
-    );
+    document.getElementById("cartBody");
 
   const summary=
-    document.getElementById(
-      "cartSummary"
-    );
+    document.getElementById("cartSummary");
 
   if(!cart.length){
 
     body.innerHTML=`
-
       <div class="empty-state">
+        <strong>DEIN WARENKORB IST LEER</strong>
+        Entdecke unsere Collection.
+      </div>
+    `;
 
-        <strong>
-          DEIN WARENKORB IST LEER
-        </strong>
+    summary.innerHTML="";
+    return;
 
-        Entdecke unsere aktuelle Collection.
+  }
+
+  body.innerHTML=cart.map((item,index)=>{
+
+    const p=
+      products.find(x=>x.id===item.id);
+
+    if(!p)return "";
+
+    return `
+
+      <div class="cart-item">
+
+        <img src="${p.image}" alt="">
+
+        <div>
+
+          <div class="cart-name">
+            ${p.name}
+          </div>
+
+          <div class="cart-meta">
+            Größe: ${item.size}
+          </div>
+
+          <div class="cart-controls">
+
+            <button onclick="changeCartQuantity(${index},-1)">
+              −
+            </button>
+
+            <span>${item.quantity}</span>
+
+            <button onclick="changeCartQuantity(${index},1)">
+              +
+            </button>
+
+            <button
+              class="cart-remove"
+              onclick="removeCartItem(${index})"
+            >
+              ×
+            </button>
+
+          </div>
+
+        </div>
+
+        <div class="cart-price">
+          ${formatPrice(p.price*item.quantity)}
+        </div>
 
       </div>
 
     `;
 
-    summary.innerHTML="";
+  }).join("");
 
-    return;
-
-  }
-
-  body.innerHTML=
-    cart.map(
-      (item,index)=>{
-
-        const product=
-          products.find(
-            p=>p.id===item.id
-          );
-
-        if(!product)return "";
-
-        return `
-
-          <div class="cart-item">
-
-            <img
-              src="${product.image}"
-              alt=""
-            >
-
-            <div>
-
-              <div class="cart-name">
-                ${product.name}
-              </div>
-
-              <div class="cart-meta">
-                Größe: ${item.size}
-              </div>
-
-              <div class="cart-controls">
-
-                <button
-                  onclick="changeCartQuantity(${index},-1)"
-                >
-                  −
-                </button>
-
-                <span>
-                  ${item.quantity}
-                </span>
-
-                <button
-                  onclick="changeCartQuantity(${index},1)"
-                >
-                  +
-                </button>
-
-                <button
-                  class="cart-remove"
-                  onclick="removeCartItem(${index})"
-                >
-                  ×
-                </button>
-
-              </div>
-
-            </div>
-
-            <div class="cart-price">
-              ${formatPrice(
-                product.price*item.quantity
-              )}
-            </div>
-
-          </div>
-
-        `;
-
-      }
-    ).join("");
-
-
-  const subtotal=
-    cartSubtotal();
-
-  const shipping=
-    shippingCost();
-
-  const total=
-    subtotal+shipping;
-
-  const progress=
-    Math.min(
-      100,
-      subtotal
-    );
-
-  const remaining=
-    Math.max(
-      0,
-      100-subtotal
-    );
-
+  const sub=cartSubtotal();
+  const ship=shipping();
+  const total=sub+ship;
 
   summary.innerHTML=`
 
     <div class="shipping-progress">
 
       <div class="shipping-progress-text">
-
         <span>
-
           ${
-            remaining>0
-            ?"NOCH "+
-              formatPrice(remaining)+
-              " BIS KOSTENLOSER VERSAND"
-            :"KOSTENLOSER VERSAND ERREICHT"
+            sub>=100
+            ?"KOSTENLOSER VERSAND ERREICHT"
+            :"NOCH "+formatPrice(100-sub)
           }
-
         </span>
-
-        <span>
-          100 €
-        </span>
-
+        <span>100 €</span>
       </div>
-
 
       <div class="progress">
-
-        <span
-          style="width:${progress}%"
-        ></span>
-
+        <span style="width:${Math.min(sub,100)}%"></span>
       </div>
 
     </div>
 
-
     <div class="summary-row">
-
-      <span>
-        ZWISCHENSUMME
-      </span>
-
-      <span>
-        ${formatPrice(subtotal)}
-      </span>
-
+      <span>ZWISCHENSUMME</span>
+      <span>${formatPrice(sub)}</span>
     </div>
 
-
     <div class="summary-row">
-
-      <span>
-        VERSAND
-      </span>
-
-      <span>
-
-        ${
-          shipping===0
-          ?"KOSTENLOS"
-          :formatPrice(shipping)
-        }
-
-      </span>
-
+      <span>VERSAND</span>
+      <span>${ship===0?"KOSTENLOS":formatPrice(ship)}</span>
     </div>
-
 
     <div class="summary-row total">
-
-      <span>
-        GESAMT
-      </span>
-
-      <span>
-        ${formatPrice(total)}
-      </span>
-
+      <span>GESAMT</span>
+      <span>${formatPrice(total)}</span>
     </div>
-
 
     <button
       class="checkout-btn"
       onclick="openCheckout()"
-      style="margin-top:16px"
+      style="margin-top:15px"
     >
       ZUR KASSE
     </button>
@@ -4436,296 +3352,184 @@ function renderCart(){
 
 }
 
-
 function changeCartQuantity(index,amount){
 
   const item=cart[index];
 
   if(!item)return;
 
-  const product=
-    products.find(
-      p=>p.id===item.id
-    );
+  const p=
+    products.find(x=>x.id===item.id);
 
-  if(!product)return;
+  if(!p)return;
 
   const max=
-    product.stock[item.size]||0;
+    p.stock[item.size]||0;
 
-  item.quantity=
-    Math.max(
-      0,
-      Math.min(
-        item.quantity+amount,
-        max
-      )
-    );
+  item.quantity=Math.max(
+    0,
+    Math.min(
+      item.quantity+amount,
+      max
+    )
+  );
 
-  if(item.quantity<=0){
-
+  if(item.quantity===0){
     cart.splice(index,1);
-
   }
 
   saveState();
-
   updateBadges();
-
   renderCart();
 
 }
-
 
 function removeCartItem(index){
 
   cart.splice(index,1);
 
   saveState();
-
   updateBadges();
-
   renderCart();
 
 }
 
 
-/* =========================================================
-   CHECKOUT
-========================================================= */
+/* CHECKOUT */
 
 function openCheckout(){
 
   if(!cart.length){
 
-    showToast(
-      "Dein Warenkorb ist leer."
-    );
-
+    toast("Warenkorb ist leer.");
     return;
 
   }
 
-  document.getElementById(
-    "checkoutSummary"
-  ).innerHTML=`
+  document.getElementById("checkoutSummary")
+    .innerHTML=`
 
-    <div class="summary-row">
+      <div class="summary-row">
+        <span>ZWISCHENSUMME</span>
+        <span>${formatPrice(cartSubtotal())}</span>
+      </div>
 
-      <span>
-        ZWISCHENSUMME
-      </span>
+      <div class="summary-row">
+        <span>VERSAND</span>
+        <span>
+          ${shipping()===0?"KOSTENLOS":formatPrice(shipping())}
+        </span>
+      </div>
 
-      <span>
-        ${formatPrice(
-          cartSubtotal()
-        )}
-      </span>
+      <div class="summary-row total">
+        <span>GESAMT</span>
+        <span>${formatPrice(cartSubtotal()+shipping())}</span>
+      </div>
 
-    </div>
+    `;
 
-
-    <div class="summary-row">
-
-      <span>
-        VERSAND
-      </span>
-
-      <span>
-
-        ${
-          shippingCost()===0
-          ?"KOSTENLOS"
-          :formatPrice(
-            shippingCost()
-          )
-        }
-
-      </span>
-
-    </div>
-
-
-    <div class="summary-row total">
-
-      <span>
-        GESAMT
-      </span>
-
-      <span>
-        ${formatPrice(
-          cartSubtotal()+
-          shippingCost()
-        )}
-      </span>
-
-    </div>
-
-  `;
-
-  closeDrawer(
-    "cartDrawer"
-  );
-
-  openModal(
-    "checkoutModal"
-  );
+  closeCart();
+  openModal("checkoutModal");
 
 }
 
-
-function selectPayment(element){
+function selectPayment(el){
 
   document
     .querySelectorAll(".payment-option")
-    .forEach(option=>{
-      option.classList.remove(
-        "active"
-      );
+    .forEach(x=>{
+      x.style.background="#151515";
+      x.style.color="#fff";
     });
 
-  element.classList.add(
-    "active"
-  );
+  el.style.background="#fff";
+  el.style.color="#000";
 
 }
 
-
 function placeDemoOrder(){
 
-  if(!cart.length){
+  const first=
+    document.getElementById("checkoutFirstName")
+      .value.trim();
 
-    showToast(
-      "Dein Warenkorb ist leer."
-    );
-
-    return;
-
-  }
-
-  const firstName=
-    document.getElementById(
-      "checkoutFirstName"
-    ).value.trim();
-
-  const lastName=
-    document.getElementById(
-      "checkoutLastName"
-    ).value.trim();
+  const last=
+    document.getElementById("checkoutLastName")
+      .value.trim();
 
   const email=
-    document.getElementById(
-      "checkoutEmail"
-    ).value.trim();
+    document.getElementById("checkoutEmail")
+      .value.trim();
 
-  if(
-    !firstName||
-    !lastName||
-    !email
-  ){
+  if(!first||!last||!email){
 
-    showToast(
-      "Bitte Name und E-Mail ausfüllen."
-    );
-
+    toast("Bitte Name und E-Mail ausfüllen.");
     return;
 
   }
 
-  const order={
+  orders.unshift({
 
-    id:
-      "GON-"+
-      Date.now()
-        .toString()
-        .slice(-7),
+    id:"GON-"+Date.now().toString().slice(-7),
 
-    date:
-      new Date()
-        .toLocaleDateString(
-          "de-DE"
-        ),
+    date:new Date()
+      .toLocaleDateString("de-DE"),
 
-    items:
-      cart.map(
-        item=>({...item})
-      ),
+    total:cartSubtotal()+shipping(),
 
-    total:
-      cartSubtotal()+
-      shippingCost(),
+    items:[...cart],
 
     status:"Demo"
 
-  };
-
-  orders.unshift(
-    order
-  );
+  });
 
   cart=[];
 
   saveState();
-
   updateBadges();
 
-  renderCart();
+  closeModal("checkoutModal");
 
-  closeModal(
-    "checkoutModal"
-  );
-
-  showToast(
-    "DEMO-BESTELLUNG ERFOLGREICH ERSTELLT"
-  );
+  toast("DEMO-BESTELLUNG ERSTELLT.");
 
 }
 
 
-/* =========================================================
-   ACCOUNT
-========================================================= */
+/* ACCOUNT */
 
 function openAccount(){
 
-  updateAccount();
-
-  openModal(
-    "accountModal"
-  );
+  renderAccount();
+  openModal("accountModal");
 
 }
 
+function renderAccount(){
 
-function updateAccount(){
-
-  const container=
-    document.getElementById(
-      "accountContent"
-    );
+  const box=
+    document.getElementById("accountContent");
 
   if(!account){
 
-    container.innerHTML=`
+    box.innerHTML=`
 
       <div class="account-tabs">
 
         <button
           class="account-tab active"
-          onclick="showLoginForm()"
+          onclick="showLogin()"
         >
           EINLOGGEN
         </button>
 
         <button
           class="account-tab"
-          onclick="showRegisterForm()"
+          onclick="showRegister()"
         >
           REGISTRIEREN
         </button>
 
       </div>
-
 
       <div id="accountForm">
         ${loginForm()}
@@ -4737,53 +3541,43 @@ function updateAccount(){
 
   }
 
-
-  container.innerHTML=`
+  box.innerHTML=`
 
     <div class="account-card">
 
-      <h3>
-        ${account.username}
-      </h3>
+      <h3>${account.username}</h3>
 
-      <p>
-        ${account.email}
-      </p>
+      <p>${account.email}</p>
 
     </div>
 
+    <div class="account-card">
 
-    <div class="account-tabs">
+      <h3>BESTELLUNGEN</h3>
 
-      <button
-        class="account-tab active"
-        onclick="showOrders()"
-      >
-        BESTELLUNGEN
-      </button>
-
-      <button
-        class="account-tab"
-        onclick="
-          closeModal('accountModal');
-          openWishlist();
-        "
-      >
-        WUNSCHLISTE
-      </button>
+      ${
+        orders.length
+        ?orders.map(o=>`
+          <div
+            style="
+              border-top:1px solid #292929;
+              padding:12px 0;
+              font-size:11px
+            "
+          >
+            ${o.id}
+            · ${o.date}
+            · ${formatPrice(o.total)}
+          </div>
+        `).join("")
+        :"<p>Noch keine Bestellungen.</p>"
+      }
 
     </div>
-
-
-    <div id="accountPanel">
-      ${ordersHtml()}
-    </div>
-
 
     <button
-      class="admin-logout"
+      class="add-cart"
       onclick="logoutAccount()"
-      style="margin-top:15px"
     >
       AUSLOGGEN
     </button>
@@ -4792,48 +3586,23 @@ function updateAccount(){
 
 }
 
-
 function loginForm(){
 
   return `
 
     <div class="account-card">
 
-      <h3>
-        Demo-Login
-      </h3>
+      <h3>DEMO LOGIN</h3>
 
-
-      <div
-        class="form-group"
-        style="margin-top:18px"
-      >
-
-        <label>
-          BENUTZERNAME
-        </label>
-
-        <input
-          id="loginUsername"
-          type="text"
-        >
-
+      <div class="form-group" style="margin-top:18px">
+        <label>BENUTZERNAME</label>
+        <input id="loginUsername">
       </div>
-
 
       <div class="form-group">
-
-        <label>
-          E-MAIL
-        </label>
-
-        <input
-          id="loginEmail"
-          type="email"
-        >
-
+        <label>E-MAIL</label>
+        <input id="loginEmail" type="email">
       </div>
-
 
       <button
         class="add-cart"
@@ -4848,48 +3617,23 @@ function loginForm(){
 
 }
 
-
 function registerForm(){
 
   return `
 
     <div class="account-card">
 
-      <h3>
-        ACCOUNT ERSTELLEN
-      </h3>
+      <h3>ACCOUNT ERSTELLEN</h3>
 
-
-      <div
-        class="form-group"
-        style="margin-top:18px"
-      >
-
-        <label>
-          BENUTZERNAME
-        </label>
-
-        <input
-          id="registerUsername"
-          type="text"
-        >
-
+      <div class="form-group" style="margin-top:18px">
+        <label>BENUTZERNAME</label>
+        <input id="registerUsername">
       </div>
-
 
       <div class="form-group">
-
-        <label>
-          E-MAIL
-        </label>
-
-        <input
-          id="registerEmail"
-          type="email"
-        >
-
+        <label>E-MAIL</label>
+        <input id="registerEmail" type="email">
       </div>
-
 
       <button
         class="add-cart"
@@ -4904,292 +3648,130 @@ function registerForm(){
 
 }
 
-
-function showLoginForm(){
-
-  document.getElementById(
-    "accountForm"
-  ).innerHTML=loginForm();
-
+function showLogin(){
+  document.getElementById("accountForm")
+    .innerHTML=loginForm();
 }
 
-
-function showRegisterForm(){
-
-  document.getElementById(
-    "accountForm"
-  ).innerHTML=registerForm();
-
+function showRegister(){
+  document.getElementById("accountForm")
+    .innerHTML=registerForm();
 }
-
 
 function loginAccount(){
 
   const username=
-    document.getElementById(
-      "loginUsername"
-    ).value.trim();
+    document.getElementById("loginUsername").value.trim();
 
   const email=
-    document.getElementById(
-      "loginEmail"
-    ).value.trim();
+    document.getElementById("loginEmail").value.trim();
 
   if(!username||!email){
 
-    showToast(
-      "Bitte Felder ausfüllen."
-    );
-
+    toast("Bitte Felder ausfüllen.");
     return;
 
   }
 
-  account={
-    username,
-    email
-  };
+  account={username,email};
 
   saveState();
-
-  updateAccount();
+  renderAccount();
 
 }
-
 
 function registerAccount(){
 
   const username=
-    document.getElementById(
-      "registerUsername"
-    ).value.trim();
+    document.getElementById("registerUsername").value.trim();
 
   const email=
-    document.getElementById(
-      "registerEmail"
-    ).value.trim();
+    document.getElementById("registerEmail").value.trim();
 
   if(!username||!email){
 
-    showToast(
-      "Bitte Felder ausfüllen."
-    );
-
+    toast("Bitte Felder ausfüllen.");
     return;
 
   }
 
-  account={
-    username,
-    email
-  };
+  account={username,email};
 
   saveState();
+  renderAccount();
 
-  updateAccount();
-
-  showToast(
-    "ACCOUNT ERSTELLT"
-  );
+  toast("ACCOUNT ERSTELLT.");
 
 }
-
 
 function logoutAccount(){
 
   account=null;
 
   saveState();
-
-  updateAccount();
-
-}
-
-
-function showOrders(){
-
-  const panel=
-    document.getElementById(
-      "accountPanel"
-    );
-
-  if(panel){
-    panel.innerHTML=
-      ordersHtml();
-  }
+  renderAccount();
 
 }
 
 
-function ordersHtml(){
-
-  if(!orders.length){
-
-    return `
-
-      <div class="empty-state">
-
-        <strong>
-          NOCH KEINE BESTELLUNGEN
-        </strong>
-
-      </div>
-
-    `;
-
-  }
-
-  return orders.map(
-    order=>`
-
-      <div class="order-row">
-
-        <div>
-
-          <div class="order-id">
-            ${order.id}
-          </div>
-
-          <div class="order-date">
-            ${order.date}
-          </div>
-
-        </div>
-
-
-        <div style="text-align:right">
-
-          <div class="order-status">
-            DEMO
-          </div>
-
-          <div
-            style="
-              font-size:11px;
-              margin-top:5px
-            "
-          >
-            ${formatPrice(
-              order.total
-            )}
-          </div>
-
-        </div>
-
-      </div>
-
-    `
-  ).join("");
-
-}
-
-
-/* =========================================================
-   LEGAL
-========================================================= */
+/* LEGAL */
 
 function openLegal(type){
 
-  const content=
-    document.getElementById(
-      "legalContent"
-    );
-
-  const data={
+  const texts={
 
     impressum:`
-
-      <h2>
-        IMPRESSUM
-      </h2>
-
+      <h2>IMPRESSUM</h2>
       <p>
-
         ГОНЩИКИ CREW<br>
         Streetwear · Est. 2025<br><br>
-
-        Kontakt:<br>
-        info@gonschikicrew.de<br><br>
-
-        Instagram:<br>
-        @gonschikicrew
-
+        E-Mail: info@gonschikicrew.de<br><br>
+        Instagram: @gonschikicrew
       </p>
-
     `,
 
     privacy:`
-
-      <h2>
-        DATENSCHUTZ
-      </h2>
-
+      <h2>DATENSCHUTZ</h2>
       <p>
-
         Diese Website ist aktuell eine Demo-Version.
-        Es werden keine echten Bestellungen oder Zahlungen
-        verarbeitet. Lokale Demo-Daten wie Warenkorb,
-        Wunschliste und Demo-Account können ausschließlich
-        im Browser gespeichert werden.
-
+        Lokale Demo-Daten wie Warenkorb, Wunschliste
+        und Demo-Account können im Browser gespeichert werden.
       </p>
-
     `,
 
     withdrawal:`
-
-      <h2>
-        WIDERRUF
-      </h2>
-
+      <h2>WIDERRUF</h2>
       <p>
-
         Diese Website ist aktuell ein Demo-Shop.
         Es werden keine echten Bestellungen angenommen.
-        Daher entsteht über diese Website derzeit kein
-        echter Kaufvertrag.
-
       </p>
-
     `,
 
     terms:`
-
-      <h2>
-        AGB
-      </h2>
-
+      <h2>AGB</h2>
       <p>
-
-        Dies ist eine nicht öffentliche Verkaufs-Demo.
-        Preise, Größen, Versandkosten und Verfügbarkeit
-        können sich noch ändern. Die Checkout-Funktion
-        dient ausschließlich zu Demonstrationszwecken.
-
+        Diese Website dient aktuell ausschließlich
+        als Verkaufs-Demo. Preise, Größen, Versandkosten
+        und Verfügbarkeit können sich noch ändern.
       </p>
-
     `
 
   };
 
-  content.innerHTML=
-    data[type]||"";
+  document.getElementById("legalContent")
+    .innerHTML=texts[type]||"";
 
-  openModal(
-    "legalModal"
-  );
+  openModal("legalModal");
 
 }
 
 
-/* =========================================================
-   ADMIN
-========================================================= */
+/* ADMIN NUR ÜBER #admin */
 
 function checkAdminUrl(){
 
   if(
-    window.location.hash.toLowerCase()==="#admin"
+    location.hash.toLowerCase()==="#admin"
   ){
 
     openAdminLogin();
@@ -5198,71 +3780,55 @@ function checkAdminUrl(){
 
 }
 
-
 function openAdminLogin(){
 
-  document.getElementById(
-    "adminContent"
-  ).innerHTML=`
+  document.getElementById("adminContent")
+    .innerHTML=`
 
-    <div class="eyebrow">
-      ГОНЩИКИ
-    </div>
+      <div class="eyebrow">
+        ГОНЩИКИ
+      </div>
 
-    <h2 class="admin-title">
-      ADMIN LOGIN
-    </h2>
+      <h2 class="admin-title">
+        ADMIN LOGIN
+      </h2>
 
+      <div class="form-group">
 
-    <div class="form-group">
+        <label>PASSWORT</label>
 
-      <label>
-        PASSWORT
-      </label>
+        <input
+          id="adminPassword"
+          type="password"
+          onkeydown="
+            if(event.key==='Enter')
+            checkAdminPassword()
+          "
+        >
 
-      <input
-        id="adminPasswordInput"
-        type="password"
-        onkeydown="
-          if(event.key==='Enter')
-          checkAdminPassword()
-        "
+      </div>
+
+      <button
+        class="add-cart"
+        onclick="checkAdminPassword()"
       >
+        ÖFFNEN
+      </button>
 
-    </div>
+    `;
 
-
-    <button
-      class="add-cart"
-      onclick="checkAdminPassword()"
-    >
-      ÖFFNEN
-    </button>
-
-  `;
-
-  openModal(
-    "adminModal"
-  );
+  openModal("adminModal");
 
 }
-
 
 function checkAdminPassword(){
 
   const password=
-    document.getElementById(
-      "adminPasswordInput"
-    ).value;
+    document.getElementById("adminPassword").value;
 
-  if(
-    password!=="gonschiki2025"
-  ){
+  if(password!=="gonschiki2025"){
 
-    showToast(
-      "Falsches Passwort."
-    );
-
+    toast("Falsches Passwort.");
     return;
 
   }
@@ -5271,156 +3837,95 @@ function checkAdminPassword(){
 
 }
 
-
 function renderAdmin(){
 
-  const totalProducts=
-    products.length;
+  document.getElementById("adminContent")
+    .innerHTML=`
 
-  const totalStock=
-    products.reduce(
-      (sum,p)=>
-        sum+getTotalStock(p),
-      0
-    );
+      <div class="eyebrow">
+        ГОНЩИКИ · ADMIN
+      </div>
 
-  document.getElementById(
-    "adminContent"
-  ).innerHTML=`
+      <h2 class="admin-title">
+        ADMIN DASHBOARD
+      </h2>
 
-    <div class="eyebrow">
-      ГОНЩИКИ · ADMIN
-    </div>
+      <div class="admin-grid">
 
+        <div class="admin-stat">
+          <span>PRODUCTS</span>
+          <strong>${products.length}</strong>
+        </div>
 
-    <h2 class="admin-title">
-      ADMIN DASHBOARD
-    </h2>
+        <div class="admin-stat">
+          <span>STOCK</span>
+          <strong>
+            ${products.reduce(
+              (sum,p)=>sum+totalStock(p),0
+            )}
+          </strong>
+        </div>
 
-
-    <div class="admin-grid">
-
-      <div class="admin-stat">
-
-        <span>
-          PRODUCTS
-        </span>
-
-        <strong>
-          ${totalProducts}
-        </strong>
+        <div class="admin-stat">
+          <span>ORDERS</span>
+          <strong>${orders.length}</strong>
+        </div>
 
       </div>
 
-
-      <div class="admin-stat">
-
-        <span>
-          STOCK
-        </span>
-
-        <strong>
-          ${totalStock}
-        </strong>
-
-      </div>
-
-
-      <div class="admin-stat">
-
-        <span>
-          ORDERS
-        </span>
-
-        <strong>
-          ${orders.length}
-        </strong>
-
-      </div>
-
-    </div>
-
-
-    ${
-      products.map(
-        product=>`
+      ${
+        products.map(p=>`
 
           <div class="admin-product">
 
-            <img
-              src="${product.image}"
-              alt=""
-            >
+            <img src="${p.image}" alt="">
 
             <div>
 
-              <strong>
-                ${product.name}
-              </strong>
+              <strong>${p.name}</strong>
 
               <small>
-                ${formatPrice(product.price)}
-                · Bestand ${getTotalStock(product)}
+                ${formatPrice(p.price)}
+                · Bestand ${totalStock(p)}
               </small>
 
             </div>
 
             <div>
-              ${product.category.toUpperCase()}
+              ${p.category.toUpperCase()}
             </div>
 
           </div>
 
-        `
-      ).join("")
-    }
+        `).join("")
+      }
 
-  `;
+    `;
 
 }
 
 
-/* =========================================================
-   LANGUAGE
-========================================================= */
+/* LANGUAGE */
 
 function changeLanguage(language){
 
-  if(language==="en"){
+  if(language==="de")
+    toast("Deutsch ausgewählt.");
 
-    showToast(
-      "English version is prepared."
-    );
+  if(language==="en")
+    toast("English version vorbereitet.");
 
-  }
-
-  if(language==="ru"){
-
-    showToast(
-      "Русская версия подготовлена."
-    );
-
-  }
-
-  if(language==="de"){
-
-    showToast(
-      "Deutsch ausgewählt."
-    );
-
-  }
+  if(language==="ru")
+    toast("Русская версия подготовлена.");
 
 }
 
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
+/* NAVIGATION */
 
 function scrollToShop(){
 
-  document
-    .getElementById("shop")
+  document.getElementById("shop")
     .scrollIntoView({
       behavior:"smooth"
     });
@@ -5428,20 +3933,14 @@ function scrollToShop(){
 }
 
 
-/* =========================================================
-   INIT
-========================================================= */
+/* INIT */
 
 function init(){
 
   renderProducts();
-
   renderCart();
-
   updateBadges();
-
-  updateAccount();
-
+  renderAccount();
   checkAdminUrl();
 
 }
