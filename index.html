@@ -85,6 +85,24 @@ header{position:sticky;top:0;z-index:1000;height:74px;background:rgba(8,8,8,.94)
 .product-card.sticker-card .product-image{object-fit:contain;padding:10px;background:transparent}
 .product-heart{position:absolute;top:12px;right:12px;z-index:3;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:rgba(0,0,0,.6);color:#fff;display:flex;align-items:center;justify-content:center;font-size:17px}
 .product-heart.active{color:#ff4b62}
+
+/* SALE */
+.sale-badge{
+position:absolute;
+top:12px;
+left:12px;
+z-index:4;
+background:#fff;
+color:#000;
+padding:7px 10px;
+font-size:9px;
+font-weight:900;
+letter-spacing:2px;
+}
+.product-price-wrap{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.old-price{text-decoration:line-through;color:#666;font-size:12px;font-weight:700}
+.sale-price{color:#fff;font-size:15px;font-weight:900}
+.sale-price-large{color:#fff;font-size:22px;font-weight:900}
 .product-info{padding:15px}
 .product-category{color:#666;font-size:9px;letter-spacing:2px;margin-bottom:7px}
 .product-name{font-size:13px;font-weight:800;min-height:32px}
@@ -148,6 +166,8 @@ header{position:sticky;top:0;z-index:1000;height:74px;background:rgba(8,8,8,.94)
 .cart-name{font-size:12px;font-weight:800}
 .cart-meta{color:#666;font-size:10px;margin-top:5px}
 .cart-price{font-size:12px;font-weight:900}
+.cart-old-price{text-decoration:line-through;color:#555;font-size:9px;margin-bottom:3px}
+.cart-sale-price{font-size:12px;font-weight:900}
 .cart-controls{display:flex;align-items:center;gap:6px;margin-top:12px}
 .cart-controls button{width:26px;height:26px;border:1px solid #333;background:#111;color:#fff}
 .cart-remove{color:#777!important;border:0!important}
@@ -202,9 +222,11 @@ footer{border-top:1px solid #222;background:#050505}
 .admin-product img{width:70px;height:70px;object-fit:cover;background:#151515}
 .admin-product-name{font-weight:800;font-size:12px}
 .admin-product-meta{color:#666;font-size:10px;margin-top:5px}
+.admin-sale-status{display:inline-block;margin-top:6px;padding:4px 7px;background:#fff;color:#000;font-size:8px;font-weight:900;letter-spacing:1px}
 .admin-actions{display:flex;gap:7px;flex-wrap:wrap}
 .admin-button{border:1px solid #333;background:#151515;color:#fff;padding:9px 12px;font-size:10px;cursor:pointer}
 .admin-button:hover{background:#fff;color:#000}
+.admin-button.sale-active{background:#fff;color:#000;border-color:#fff}
 .admin-button.danger{color:#ff6262}
 .admin-form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 .admin-form-group label{display:block;color:#777;font-size:9px;letter-spacing:2px;margin-bottom:6px}
@@ -266,6 +288,8 @@ header{height:64px}
 .product-info{padding:10px}
 .product-name{font-size:11px}
 .product-price{font-size:13px}
+.sale-price{font-size:13px}
+.old-price{font-size:10px}
 .product-card[data-product-id="9"] .product-image-wrap{padding:10px}
 .product-modal-image.zipper-modal-image{padding:20px}
 .footer-links{display:grid;grid-template-columns:1fr 1fr}
@@ -579,7 +603,7 @@ oninput="renderProducts()"
 
 </div>
 
-<button class="add-cart" id="addCartButton" onclick="addCurrentProductToCart()">
+<button class="add-cart" id="addCartButton" onclick="addCurrentProductToCart">
 IN DEN WARENKORB
 </button>
 
@@ -711,7 +735,7 @@ Benutzername oder Passwort falsch.
 
 </div>
 
-<button class="admin-close" onclick="closeAdmin()">
+<button class="admin-close" onclick="closeAdmin">
 SHOP
 </button>
 
@@ -856,6 +880,8 @@ id:1,
 name:"GONSHIKI T-SHIRT E36",
 category:"shirt",
 price:34.99,
+sale:false,
+salePrice:null,
 image:"assets/Shirt-black-e36.jpg",
 description:"Schwarzes ГОНЩИКИ T-Shirt mit E36 Design.",
 stock:{XS:5,S:10,M:10,L:10,XL:5,XXL:2}
@@ -866,6 +892,8 @@ id:2,
 name:"GONSHIKI T-SHIRT E34",
 category:"shirt",
 price:34.99,
+sale:false,
+salePrice:null,
 image:"assets/Shirt-black-e34.jpg",
 description:"Schwarzes ГОНЩИКИ T-Shirt mit E34 Design.",
 stock:{XS:5,S:10,M:10,L:10,XL:5,XXL:2}
@@ -876,6 +904,8 @@ id:4,
 name:"GONSHIKI HOODIE E36",
 category:"hoodie",
 price:59.99,
+sale:false,
+salePrice:null,
 image:"assets/Hoodie-black-e36.jpg",
 description:"Schwarzer ГОНЩИКИ Hoodie mit E36 Motiv.",
 stock:{XS:4,S:8,M:8,L:8,XL:5,XXL:2}
@@ -886,6 +916,8 @@ id:5,
 name:"GONSHIKI HOODIE E34",
 category:"hoodie",
 price:59.99,
+sale:false,
+salePrice:null,
 image:"assets/Hoodie-black-e34.jpg",
 description:"Schwarzer ГОНЩИКИ Hoodie mit E34 Motiv.",
 stock:{XS:4,S:8,M:8,L:8,XL:5,XXL:2}
@@ -896,6 +928,8 @@ id:6,
 name:"GONSHIKI HOODIE KREUZ",
 category:"hoodie",
 price:59.99,
+sale:false,
+salePrice:null,
 image:"assets/Hoodie-black-Kreuz.jpg",
 description:"Schwarzer ГОНЩИКИ Hoodie mit Kreuz Design.",
 stock:{XS:4,S:8,M:8,L:8,XL:5,XXL:2}
@@ -906,6 +940,8 @@ id:9,
 name:"GONSHIKI ZIPPER KREUZ",
 category:"zipper",
 price:69.99,
+sale:false,
+salePrice:null,
 image:"assets/Zipper-black-Kreuz.jpg",
 description:"Schwarzer ГОНЩИКИ Zipper mit Kreuz Design.",
 stock:{XS:4,S:8,M:8,L:8,XL:5,XXL:2}
@@ -916,6 +952,8 @@ id:10,
 name:"GONSHIKI HOSE",
 category:"pants",
 price:79.99,
+sale:false,
+salePrice:null,
 image:"assets/Pants-black-gonschiki.jpg",
 description:"Schwarze ГОНЩИКИ Hose.",
 stock:{XS:4,S:8,M:8,L:8,XL:5,XXL:2}
@@ -926,6 +964,8 @@ id:11,
 name:"SCHEIBENKEIL",
 category:"sticker",
 price:35.99,
+sale:false,
+salePrice:null,
 image:"assets/Scheibenkeil .PNG",
 description:"Universeller ГОНЩИКИ Scheibenkeil.",
 stock:{UNIVERSAL:10}
@@ -936,6 +976,8 @@ id:12,
 name:"HECKSCHEIBEN STICKER",
 category:"sticker",
 price:25.99,
+sale:false,
+salePrice:null,
 image:"assets/Heckscheiben Sticker.PNG",
 description:"ГОНЩИКИ Heckscheiben Sticker · 700 × 300 mm.",
 stock:{UNIVERSAL:10}
@@ -946,6 +988,8 @@ id:13,
 name:"ГОНЩИКИ STICKER",
 category:"sticker",
 price:12.99,
+sale:false,
+salePrice:null,
 image:"assets/Sticker.PNG",
 description:"ГОНЩИКИ Sticker · 200 × 80 mm.",
 stock:{UNIVERSAL:20}
@@ -962,6 +1006,25 @@ let products=
 JSON.parse(
 localStorage.getItem("gonschiki_products")||"null"
 )||defaultProducts;
+
+
+/*
+   Alte gespeicherte Produkte werden
+   automatisch um SALE-Felder ergänzt.
+*/
+products=products.map(product=>({
+
+...product,
+
+sale:product.sale===true,
+
+salePrice:
+typeof product.salePrice==="number"
+?product.salePrice
+:null
+
+}));
+
 
 let selectedGender="all";
 let selectedCategory="all";
@@ -990,6 +1053,80 @@ return new Intl.NumberFormat("de-DE",{
 style:"currency",
 currency:"EUR"
 }).format(value);
+
+}
+
+
+/*
+   Gibt immer den tatsächlich
+   zu zahlenden Preis zurück.
+*/
+function getProductPrice(product){
+
+if(
+product.sale===true&&
+typeof product.salePrice==="number"&&
+product.salePrice>=0&&
+product.salePrice<product.price
+){
+
+return product.salePrice;
+
+}
+
+return product.price;
+
+}
+
+
+/*
+   Prüft ob ein Produkt einen
+   gültigen SALE besitzt.
+*/
+function isProductOnSale(product){
+
+return(
+product.sale===true&&
+typeof product.salePrice==="number"&&
+product.salePrice>=0&&
+product.salePrice<product.price
+);
+
+}
+
+
+/*
+   Erstellt die Preisanzeige.
+*/
+function getPriceHTML(product){
+
+if(isProductOnSale(product)){
+
+return`
+
+<div class="product-price-wrap">
+
+<span class="old-price">
+${formatPrice(product.price)}
+</span>
+
+<span class="sale-price">
+${formatPrice(product.salePrice)}
+</span>
+
+</div>
+
+`;
+
+}
+
+return`
+
+<div class="product-price">
+${formatPrice(product.price)}
+</div>
+
+`;
 
 }
 
@@ -1124,6 +1261,7 @@ filtered.map(product=>{
 
 const stock=totalStock(product);
 const liked=wishlist.includes(product.id);
+const sale=isProductOnSale(product);
 
 return `
 
@@ -1134,6 +1272,10 @@ onclick="openProduct(${product.id})"
 >
 
 <div class="product-image-wrap">
+
+${sale?`
+<div class="sale-badge">SALE</div>
+`:""}
 
 <img
 class="product-image"
@@ -1163,8 +1305,8 @@ ${product.name}
 
 <div class="product-bottom">
 
-<div class="product-price">
-${formatPrice(product.price)}
+<div>
+${getPriceHTML(product)}
 </div>
 
 <div class="product-stock">
@@ -1221,8 +1363,37 @@ currentProduct.name;
 document.getElementById("modalProductCategory").textContent=
 currentProduct.category.toUpperCase();
 
-document.getElementById("modalProductPrice").textContent=
+const modalPrice=
+document.getElementById("modalProductPrice");
+
+if(isProductOnSale(currentProduct)){
+
+modalPrice.innerHTML=`
+
+<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+
+<span style="text-decoration:line-through;color:#666;font-size:15px">
+${formatPrice(currentProduct.price)}
+</span>
+
+<span class="sale-price-large">
+${formatPrice(currentProduct.salePrice)}
+</span>
+
+<span style="background:#fff;color:#000;padding:5px 8px;font-size:8px;font-weight:900;letter-spacing:1px">
+SALE
+</span>
+
+</div>
+
+`;
+
+}else{
+
+modalPrice.textContent=
 formatPrice(currentProduct.price);
+
+}
 
 document.getElementById("modalProductDescription").textContent=
 currentProduct.description;
@@ -1478,11 +1649,15 @@ grid.innerHTML=
 items.map(product=>`
 
 <div
-class="product-card"
+class="product-card ${product.category==="sticker"?"sticker-card":""}"
 onclick="openProduct(${product.id})"
 >
 
 <div class="product-image-wrap">
+
+${isProductOnSale(product)?`
+<div class="sale-badge">SALE</div>
+`:""}
 
 <img
 class="product-image"
@@ -1498,9 +1673,7 @@ alt="${product.name}"
 ${product.name}
 </div>
 
-<div class="product-price">
-${formatPrice(product.price)}
-</div>
+${getPriceHTML(product)}
 
 </div>
 
@@ -1582,6 +1755,9 @@ products.find(x=>x.id===item.id);
 
 if(!product)return "";
 
+const unitPrice=getProductPrice(product);
+const sale=isProductOnSale(product);
+
 return `
 
 <div class="cart-item">
@@ -1622,7 +1798,18 @@ onclick="removeCartItem(${index})"
 </div>
 
 <div class="cart-price">
+
+${sale?`
+<div class="cart-old-price">
 ${formatPrice(product.price*item.quantity)}
+</div>
+<div class="cart-sale-price">
+${formatPrice(unitPrice*item.quantity)}
+</div>
+`:`
+${formatPrice(unitPrice*item.quantity)}
+`}
+
 </div>
 
 </div>
@@ -1639,13 +1826,15 @@ const product=
 products.find(x=>x.id===item.id);
 
 return sum+
-(product?product.price*item.quantity:0);
+(product?getProductPrice(product)*item.quantity:0);
 
 },0);
 
 
 const shipping=
-subtotal>=100?0:5.99;
+subtotal>=shopSettings.freeShipping
+?0
+:shopSettings.shipping;
 
 summary.innerHTML=`
 
@@ -2110,7 +2299,11 @@ const list=
 document.getElementById("adminProductList");
 
 list.innerHTML=
-products.map(product=>`
+products.map(product=>{
+
+const sale=isProductOnSale(product);
+
+return`
 
 <div class="admin-product">
 
@@ -2123,9 +2316,21 @@ ${product.name}
 </div>
 
 <div class="admin-product-meta">
-${formatPrice(product.price)}
+
+${sale
+?`<span style="text-decoration:line-through">${formatPrice(product.price)}</span> → ${formatPrice(product.salePrice)}`
+:`${formatPrice(product.price)}`
+}
+
 · Bestand: ${totalStock(product)}
+
 </div>
+
+${sale?`
+<div class="admin-sale-status">
+SALE AKTIV
+</div>
+`:""}
 
 </div>
 
@@ -2145,11 +2350,120 @@ onclick="adminEditStock(${product.id})"
 BESTAND
 </button>
 
-</div>
+<button
+class="admin-button ${sale?"sale-active":""}"
+onclick="adminEditSale(${product.id})"
+>
+${sale?"SALE BEARBEITEN":"SALE"}
+</button>
 
 </div>
 
-`).join("");
+</div>
+
+`;
+
+}).join("");
+
+}
+
+
+/* =========================
+   SALE FUNKTION
+========================= */
+
+function adminEditSale(id){
+
+const product=
+products.find(p=>p.id===id);
+
+if(!product)return;
+
+
+/*
+   Wenn bereits SALE aktiv ist,
+   kann der Benutzer ihn deaktivieren.
+*/
+if(isProductOnSale(product)){
+
+const action=
+confirm(
+"SALE für "+product.name+
+" deaktivieren?\n\nOK = SALE deaktivieren\nAbbrechen = SALE-Preis bearbeiten"
+);
+
+if(action){
+
+product.sale=false;
+product.salePrice=null;
+
+saveProducts();
+renderProducts();
+renderAdmin();
+
+toast("SALE deaktiviert.");
+
+return;
+
+}
+
+}
+
+
+/*
+   Sale-Preis eingeben.
+*/
+const entered=
+prompt(
+"SALE-PREIS für "+product.name+
+"\nNormalpreis: "+formatPrice(product.price)+
+"\n\nNeuen SALE-Preis eingeben:",
+product.salePrice||
+(Math.round(product.price*0.8*100)/100)
+);
+
+if(entered===null)return;
+
+const salePrice=
+Number(
+String(entered).replace(",",".")
+);
+
+
+if(
+isNaN(salePrice)||
+salePrice<=0
+){
+
+alert("Ungültiger SALE-Preis.");
+return;
+
+}
+
+
+if(salePrice>=product.price){
+
+alert(
+"Der SALE-Preis muss niedriger als der normale Preis sein."
+);
+
+return;
+
+}
+
+
+product.sale=true;
+product.salePrice=
+Math.round(salePrice*100)/100;
+
+saveProducts();
+renderProducts();
+renderAdmin();
+
+toast(
+"SALE aktiviert: "+
+formatPrice(product.salePrice)
+);
 
 }
 
@@ -2183,7 +2497,41 @@ return;
 
 }
 
-product.price=value;
+
+/*
+   Falls der normale Preis geändert wird
+   und ein Sale aktiv ist, muss der
+   Sale-Preis weiterhin darunter liegen.
+*/
+if(product.sale&&product.salePrice>=value){
+
+const keepSale=
+confirm(
+"Der aktuelle SALE-Preis "+
+formatPrice(product.salePrice)+
+" ist nicht mehr niedriger als der neue Normalpreis.\n\n"+
+"SALE deaktivieren?"
+);
+
+if(keepSale){
+
+product.sale=false;
+product.salePrice=null;
+
+}else{
+
+alert(
+"Bitte zuerst den SALE-Preis anpassen."
+);
+
+return;
+
+}
+
+}
+
+product.price=
+Math.round(value*100)/100;
 
 saveProducts();
 renderProducts();
